@@ -1,0 +1,642 @@
+/* ============================================================
+   PROFILE VIEW STYLES
+   NursePrep Pro v3.0
+
+   Matched to: index.html (static structure)
+             + profileRenderer.js (dynamic rendering)
+   Uses:       tokens.css design variables
+   Approach:   Mobile-first, fully responsive
+   ============================================================ */
+
+
+/* ============================================================
+   VIEW CONTAINER — #view-profile
+   The outermost wrapper for the entire profile screen.
+   ============================================================ */
+   #view-profile {
+    background: var(--c-bg);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  
+  /* ============================================================
+     PROFILE HEADER — .profile-header, .profile-title
+     Sticky top bar with the "Profile" heading.
+     ============================================================ */
+  .profile-header {
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-border);
+    padding: 0 var(--s-5);
+    height: var(--dim-header-h);
+    display: flex;
+    align-items: center;
+    gap: var(--s-4);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+  }
+  
+  .profile-title {
+    flex: 1;
+    font-size: var(--f-lg);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+  
+  
+  /* ============================================================
+     PROFILE CONTAINER — .profile-container
+     Scrollable body beneath the sticky header.
+     ============================================================ */
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  
+  /* ============================================================
+     SHARED SECTION PADDING
+     All content sections inside .profile-container get
+     consistent horizontal padding. Vertical spacing is
+     controlled per-section for precise layout.
+     ============================================================ */
+  .profile-card,
+  .profile-settings,
+  .profile-storage,
+  .profile-data,
+  .profile-queue,
+  .profile-about,
+  .profile-actions {
+    padding-left: var(--s-5);
+    padding-right: var(--s-5);
+  }
+  
+  .profile-card {
+    padding-top: var(--s-7);
+    padding-bottom: 0;
+  }
+  
+  .profile-settings,
+  .profile-storage,
+  .profile-data,
+  .profile-queue,
+  .profile-about {
+    padding-top: var(--s-2);
+    padding-bottom: 0;
+  }
+  
+  .profile-actions {
+    padding-top: var(--s-7);
+    /* Extra bottom padding to clear bottom nav / safe area */
+    padding-bottom: calc(var(--s-16) + env(safe-area-inset-bottom, 0px));
+  }
+  
+  
+  /* ============================================================
+     PROFILE CARD — .profile-card > .p-card-inner
+     Contains: .p-avatar, .p-info > .p-name, .p-email, .p-joined
+     Rendered by: _renderProfileCard() in profileRenderer.js
+     ============================================================ */
+  .p-card-inner {
+    background: var(--c-card);
+    border: 1px solid var(--c-border-hi);
+    border-radius: var(--r-xl);
+    padding: var(--s-7) var(--s-6);
+    display: flex;
+    align-items: center;
+    gap: var(--s-6);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .p-avatar {
+    width: 68px;
+    height: 68px;
+    border-radius: var(--r-circle);
+    background: linear-gradient(135deg, var(--c-blue), var(--c-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    font-weight: var(--fw-bold);
+    color: var(--c-text-inverse, #ffffff);
+    flex-shrink: 0;
+    border: 3px solid var(--c-border-hi);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .p-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .p-name {
+    font-size: var(--f-xl);
+    font-weight: var(--fw-extrabold);
+    color: var(--c-text);
+    margin: 0;
+    line-height: var(--lh-tight);
+    word-break: break-word;
+  }
+  
+  .p-email {
+    font-size: var(--f-sm);
+    color: var(--c-text-2);
+    margin: 0;
+    line-height: var(--lh-normal);
+    word-break: break-all;
+  }
+  
+  .p-joined {
+    font-size: var(--f-xs);
+    color: var(--c-text-3);
+    margin: 0;
+    line-height: var(--lh-normal);
+  }
+  
+  
+  /* ============================================================
+     SECTION TITLE — .p-section-title
+     Shared uppercase label used by settings, storage, data,
+     queue, and about sections.
+     Rendered by: each _render*() method in profileRenderer.js
+     ============================================================ */
+  .p-section-title {
+    font-size: var(--f-xs);
+    font-weight: var(--fw-bold);
+    color: var(--c-text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: var(--s-7) 0 var(--s-4) 0;
+    padding: 0;
+    line-height: var(--lh-snug);
+  }
+  
+  
+  /* ============================================================
+     SETTINGS — .profile-settings
+     Contains: .p-section-title + multiple .setting-row
+     Each .setting-row has .setting-label (.setting-desc) +
+     .setting-toggle (checkbox)
+     Rendered by: _renderSettings() in profileRenderer.js
+     ============================================================ */
+  .setting-row {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+    padding: var(--s-4) var(--s-5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--s-4);
+    margin-bottom: var(--s-3);
+    min-height: var(--dim-tap-min);
+    transition: background var(--dur-fast) var(--ease-default);
+  }
+  
+  .setting-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .setting-row:active {
+    background: var(--c-raised);
+  }
+  
+  .setting-label {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    cursor: pointer;
+    gap: 2px;
+  }
+  
+  /* The primary text inside .setting-label (first span child) */
+  .setting-label > span:first-child {
+    font-size: var(--f-body);
+    font-weight: var(--fw-medium);
+    color: var(--c-text);
+    line-height: var(--lh-snug);
+  }
+  
+  .setting-desc {
+    font-size: var(--f-xs);
+    color: var(--c-text-3);
+    line-height: var(--lh-snug);
+    font-weight: var(--fw-regular);
+  }
+  
+  /* ── Custom Toggle Switch — .setting-toggle ── */
+  .setting-toggle {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 48px;
+    height: 28px;
+    border-radius: var(--r-pill);
+    background: var(--c-raised);
+    border: 2px solid var(--c-border);
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background var(--dur-base) var(--ease-default),
+                border-color var(--dur-base) var(--ease-default);
+    outline: none;
+  }
+  
+  .setting-toggle::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--r-circle);
+    background: white;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--dur-base) var(--ease-bounce);
+  }
+  
+  .setting-toggle:checked {
+    background: var(--c-teal);
+    border-color: var(--c-teal-dim);
+  }
+  
+  .setting-toggle:checked::after {
+    transform: translateX(20px);
+  }
+  
+  .setting-toggle:focus-visible {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  
+  /* ============================================================
+     STORAGE USAGE — .profile-storage
+     Contains: .p-section-title + .storage-bar-bg
+               (.storage-bar-fill) + .storage-info
+     Rendered by: _renderStorage() in profileRenderer.js
+     ============================================================ */
+  .storage-bar-bg {
+    height: 8px;
+    background: var(--c-raised);
+    border-radius: var(--r-pill);
+    overflow: hidden;
+    margin: var(--s-3) 0;
+    border: 1px solid var(--c-border);
+  }
+  
+  .storage-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--c-teal), var(--c-blue));
+    border-radius: var(--r-pill);
+    transition: width var(--dur-slow) var(--ease-default);
+    min-width: 4px;
+  }
+  
+  .storage-info {
+    font-size: var(--f-sm);
+    color: var(--c-text-3);
+    margin: 0;
+    line-height: var(--lh-normal);
+  }
+  
+  
+  /* ============================================================
+     DATA MANAGEMENT — .profile-data
+     Contains: .p-section-title + .data-actions (buttons)
+               + hidden file input
+     Rendered by: _renderDataManagement() in profileRenderer.js
+     ============================================================ */
+  .data-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+  }
+  
+  .data-actions .btn-secondary,
+  .data-actions .btn-danger-outline {
+    width: 100%;
+    text-align: center;
+    padding: var(--s-3) var(--s-4);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-semibold);
+    font-family: var(--f-sans);
+    border-radius: var(--r-md);
+    min-height: var(--dim-tap-min);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    cursor: pointer;
+    transition: background var(--dur-fast) var(--ease-default),
+                border-color var(--dur-fast) var(--ease-default),
+                color var(--dur-fast) var(--ease-default);
+  }
+  
+  /* "Clear All Data" button spans the full grid width */
+  .data-actions .btn-danger-outline {
+    grid-column: 1 / -1;
+  }
+  
+  .btn-danger-outline {
+    background: transparent;
+    border: 1.5px solid var(--c-rose);
+    color: var(--c-rose);
+    border-radius: var(--r-md);
+    padding: var(--s-3) var(--s-5);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-semibold);
+    font-family: var(--f-sans);
+    cursor: pointer;
+    transition: background var(--dur-fast) var(--ease-default),
+                color var(--dur-fast) var(--ease-default);
+  }
+  
+  .btn-danger-outline:hover {
+    background: var(--c-rose-ghost);
+  }
+  
+  .btn-danger-outline:active {
+    background: var(--c-rose-ghost);
+    color: var(--c-rose-dim);
+    transform: scale(0.98);
+  }
+  
+  .btn-danger-outline:focus-visible {
+    box-shadow: var(--shadow-rose);
+    outline: none;
+  }
+  
+  
+  /* ============================================================
+     SUBMISSION QUEUE — .profile-queue
+     Contains: .p-section-title + .queue-status + optional
+               sync button (.btn-secondary)
+     Rendered by: _renderQueue() in profileRenderer.js
+     ============================================================ */
+  .queue-status {
+    font-size: var(--f-sm);
+    color: var(--c-text-2);
+    margin: 0 0 var(--s-4) 0;
+    line-height: var(--lh-relaxed);
+    background: var(--c-card);
+    padding: var(--s-4) var(--s-5);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--c-border);
+  }
+  
+  .queue-status strong {
+    color: var(--c-amber);
+    font-weight: var(--fw-bold);
+  }
+  
+  #profile-queue .btn-secondary {
+    width: 100%;
+    min-height: var(--dim-tap-min);
+  }
+  
+  
+  /* ============================================================
+     ABOUT SECTION — .profile-about
+     Contains: .p-section-title + .about-card
+               (.about-name, .about-tagline, .about-copy)
+     Rendered by: _renderAbout() in profileRenderer.js
+     ============================================================ */
+  .about-card {
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-xl);
+    padding: var(--s-6) var(--s-5);
+    text-align: center;
+  }
+  
+  .about-name {
+    font-size: var(--f-body);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    margin: 0 0 var(--s-2) 0;
+  }
+  
+  .about-tagline {
+    font-size: var(--f-sm);
+    color: var(--c-teal);
+    font-weight: var(--fw-medium);
+    margin: 0 0 var(--s-4) 0;
+  }
+  
+  .about-copy {
+    font-size: var(--f-xs);
+    color: var(--c-text-3);
+    margin: 0 0 var(--s-1) 0;
+    line-height: var(--lh-relaxed);
+  }
+  
+  .about-copy:last-child {
+    margin-bottom: 0;
+  }
+  
+  
+  /* ============================================================
+     PROFILE ACTIONS — .profile-actions
+     Contains navigation buttons (e.g., "Dashboard", "Analytics")
+     Rendered by: _renderActions() in profileRenderer.js
+     ============================================================ */
+  .profile-actions {
+    display: flex;
+    gap: var(--s-3);
+  }
+  
+  .profile-actions .btn-primary,
+  .profile-actions .btn-secondary {
+    flex: 1;
+    text-align: center;
+    padding: var(--s-4);
+    min-height: var(--dim-tap-min);
+    font-size: var(--f-body);
+    font-weight: var(--fw-semibold);
+    border-radius: var(--r-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    cursor: pointer;
+  }
+  
+  
+  /* ============================================================
+     UTILITY — hidden file input for data import
+     ============================================================ */
+  .hidden {
+    display: none !important;
+  }
+  
+  
+  /* ============================================================
+     RESPONSIVE — SMALL PHONES (≤360px)
+     Stack the card vertically, shrink avatar, go single-column
+     on data actions and profile actions.
+     ============================================================ */
+  @media (max-width: 360px) {
+    .profile-card,
+    .profile-settings,
+    .profile-storage,
+    .profile-data,
+    .profile-queue,
+    .profile-about,
+    .profile-actions {
+      padding-left: var(--s-4);
+      padding-right: var(--s-4);
+    }
+  
+    .p-card-inner {
+      flex-direction: column;
+      text-align: center;
+      padding: var(--s-6) var(--s-4);
+    }
+  
+    .p-info {
+      align-items: center;
+      text-align: center;
+    }
+  
+    .p-avatar {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+    }
+  
+    .p-name {
+      font-size: var(--f-lg);
+    }
+  
+    .profile-title {
+      font-size: var(--f-md);
+    }
+  
+    .data-actions {
+      grid-template-columns: 1fr;
+    }
+  
+    .profile-actions {
+      flex-direction: column;
+    }
+  
+    .profile-actions .btn-primary,
+    .profile-actions .btn-secondary {
+      flex: none;
+      width: 100%;
+    }
+  }
+  
+  
+  /* ============================================================
+     RESPONSIVE — TABLETS (≥600px)
+     Increase padding, enlarge avatar, allow side-by-side
+     data action buttons.
+     ============================================================ */
+  @media (min-width: 600px) {
+    .profile-card,
+    .profile-settings,
+    .profile-storage,
+    .profile-data,
+    .profile-queue,
+    .profile-about,
+    .profile-actions {
+      padding-left: var(--s-7);
+      padding-right: var(--s-7);
+    }
+  
+    .p-card-inner {
+      padding: var(--s-8) var(--s-7);
+      gap: var(--s-7);
+    }
+  
+    .p-avatar {
+      width: 80px;
+      height: 80px;
+      font-size: 2rem;
+    }
+  
+    .p-name {
+      font-size: var(--f-2xl);
+    }
+  
+    .data-actions {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .data-actions .btn-secondary,
+    .data-actions .btn-danger-outline {
+      min-width: 140px;
+    }
+  }
+  
+  
+  /* ============================================================
+     RESPONSIVE — TABLET+ (≥768px)
+     Constrain max-width for readability, add hover states.
+     ============================================================ */
+  @media (min-width: 768px) {
+    .profile-container {
+      max-width: 600px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  
+    .p-avatar {
+      width: 88px;
+      height: 88px;
+      font-size: 2.2rem;
+    }
+  
+    .setting-row {
+      border-radius: var(--r-xl);
+      padding: var(--s-5) var(--s-7);
+    }
+  
+    .setting-row:hover {
+      background: var(--c-raised);
+    }
+  
+    .about-card {
+      padding: var(--s-8) var(--s-7);
+    }
+  
+    .btn-danger-outline:hover {
+      background: var(--c-rose-ghost);
+    }
+  }
+  
+  
+  /* ============================================================
+     RESPONSIVE — DESKTOP (≥1024px)
+     Slightly wider container, more generous card padding.
+     ============================================================ */
+  @media (min-width: 1024px) {
+    .profile-container {
+      max-width: 680px;
+    }
+  
+    .profile-header {
+      padding: 0 var(--s-7);
+    }
+  
+    .p-card-inner {
+      padding: var(--s-9) var(--s-8);
+    }
+  }

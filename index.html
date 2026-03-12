@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="NursePrep Pro — AIIMS BSc Nursing Entrance Exam Preparation App" />
+  <meta name="theme-color" content="#f8fafc" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="NursePrep" />
+  <meta name="application-name" content="NursePrep Pro" />
+  <meta property="og:title" content="NursePrep Pro — AIIMS Nursing Entrance" />
+  <meta property="og:description" content="Crack AIIMS BSc Nursing Entrance with topic-wise tests, analytics and detailed explanations." />
+  <meta property="og:type" content="website" />
+
+  <title>NursePrep Pro — AIIMS Nursing Entrance</title>
+
+  <!-- Google Fonts — MUST be before CSS files -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS — tokens.css MUST be first, then reset, then rest -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/views/onboard.css" />
+  <link rel="stylesheet" href="css/views/dashboard.css" />
+  <link rel="stylesheet" href="css/views/exam.css" />
+  <link rel="stylesheet" href="css/views/result.css" />
+  <link rel="stylesheet" href="css/views/analytics.css" />
+  <link rel="stylesheet" href="css/views/profile.css" />
+</head>
+
+<body>
+
+  <!-- Screen reader live region — nav.js writes here on view change -->
+  <div
+    id="sr-announcement"
+    class="sr-only"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+  <div id="app">
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         VIEW 1 — ONBOARD
+
+         .onboard-container has EXACTLY 2 flex children:
+           1. .onboard-hero  (left on desktop)
+           2. .onboard-form  (right on desktop)
+
+         .onboard-footer lives INSIDE .onboard-form
+         so it stays inside the card on all screen sizes.
+         Moving it outside would make it a 3rd flex child
+         and it would float to the right of the card.
+    ═══════════════════════════════════════════════════════════ -->
+    <section
+      id="view-onboard"
+      class="view hidden"
+      role="main"
+      aria-label="Registration"
+      aria-hidden="true"
+      inert
+    >
+      <div class="onboard-container">
+
+        <!-- Child 1: Hero — logo + title + tagline -->
+        <div class="onboard-hero">
+          <span class="onboard-logo" aria-hidden="true">🏥</span>
+          <h1 class="onboard-title">NursePrep Pro</h1>
+          <p class="onboard-tagline">Crack AIIMS BSc Nursing Entrance</p>
+        </div>
+
+        <!-- Child 2: Form card — inputs + button + footer note -->
+        <form
+          id="onboard-form"
+          class="onboard-form"
+          novalidate
+          autocomplete="on"
+        >
+
+          <div class="form-group">
+            <label for="onboard-name" class="form-label">Full Name</label>
+            <input
+              type="text"
+              id="onboard-name"
+              class="form-input"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              inputmode="text"
+              required
+              aria-required="true"
+              aria-describedby="onboard-name-error"
+            />
+            <span
+              id="onboard-name-error"
+              class="form-error"
+              role="alert"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <div class="form-group">
+            <label for="onboard-email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              id="onboard-email"
+              class="form-input"
+              placeholder="Enter your email"
+              autocomplete="email"
+              inputmode="email"
+              required
+              aria-required="true"
+              aria-describedby="onboard-email-error"
+            />
+            <span
+              id="onboard-email-error"
+              class="form-error"
+              role="alert"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <button
+            type="submit"
+            id="onboard-submit-btn"
+            class="btn-primary btn-full"
+          >
+            🚀 Start Preparing
+          </button>
+
+          <!-- Footer note is INSIDE the form so it stays in the card -->
+          <p class="onboard-footer">
+            Your data is stored locally on your device only.
+          </p>
+
+        </form>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         VIEW 2 — DASHBOARD
+    ═══════════════════════════════════════════════════════════ -->
+    <section
+      id="view-dashboard"
+      class="view hidden"
+      role="main"
+      aria-label="Dashboard"
+      aria-hidden="true"
+      inert
+    >
+      <div class="dash-container">
+
+        <header class="dash-header">
+          <div id="dash-greeting" class="dash-greeting"></div>
+          <div class="dash-header-actions">
+            <button
+              id="dash-analytics-btn"
+              class="icon-btn"
+              aria-label="View analytics"
+              title="Analytics"
+              type="button"
+            >📈</button>
+            <button
+              id="dash-profile-btn"
+              class="icon-btn"
+              aria-label="View profile"
+              title="Profile"
+              type="button"
+            >👤</button>
+          </div>
+        </header>
+
+        <div
+          id="dash-stats-strip"
+          class="dash-stats-strip"
+          aria-label="Your stats"
+        ></div>
+
+        <div class="dash-controls">
+          <div
+            id="dash-filter-bar"
+            class="filter-bar"
+            role="group"
+            aria-label="Filter tests"
+          ></div>
+          <div class="search-wrap">
+            <input
+              type="search"
+              id="dash-search"
+              class="search-input"
+              placeholder="🔍 Search tests..."
+              aria-label="Search tests"
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </div>
+          <span
+            id="dash-test-count"
+            class="dash-test-count"
+            aria-live="polite"
+            aria-atomic="true"
+          ></span>
+        </div>
+
+        <div
+          id="dash-test-grid"
+          class="test-grid"
+          role="list"
+          aria-label="Available tests"
+        ></div>
+
+        <section class="dash-history" aria-label="Recent attempts">
+          <h2 class="dash-section-title">📋 Recent Attempts</h2>
+          <div
+            class="history-table-wrap"
+            role="region"
+            aria-label="History table"
+            tabindex="0"
+          >
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Test</th>
+                  <th scope="col">Score</th>
+                  <th scope="col">Accuracy</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="dash-history-table"></tbody>
+            </table>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         VIEW 3 — EXAM
+    ═══════════════════════════════════════════════════════════ -->
+    <section
+      id="view-exam"
+      class="view hidden"
+      role="main"
+      aria-label="Exam"
+      aria-hidden="true"
+      inert
+    >
+      <div class="exam-layout">
+
+        <header class="exam-header">
+          <h2 id="exam-title" class="exam-title"></h2>
+          <div class="exam-header-right">
+            <span
+              id="exam-timer"
+              class="exam-timer"
+              role="timer"
+              aria-live="off"
+              aria-label="Time remaining"
+            ></span>
+            <button
+              id="exam-submit-btn"
+              class="btn-submit"
+              aria-label="Submit exam"
+              type="button"
+            >Submit</button>
+          </div>
+        </header>
+
+        <div
+          id="exam-progress-wrap"
+          class="exam-progress-wrap"
+          role="progressbar"
+          aria-label="Exam progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <div class="exam-progress-bg">
+            <div id="exam-progress-bar" class="exam-progress-fill"></div>
+          </div>
+          <span
+            id="exam-progress-text"
+            class="exam-progress-text"
+            aria-hidden="true"
+          ></span>
+        </div>
+
+        <div class="exam-body">
+
+          <main class="exam-main">
+            <div class="question-card">
+
+              <div class="q-meta">
+                <span id="exam-q-number"     class="q-number"></span>
+                <span id="exam-q-subject"    class="q-subject-badge"></span>
+                <span id="exam-q-difficulty" class="q-diff-badge"></span>
+              </div>
+
+              <p id="exam-q-text" class="q-text"></p>
+
+              <div
+                id="exam-options"
+                class="q-options"
+                role="radiogroup"
+                aria-label="Answer options"
+              ></div>
+
+            </div>
+
+            <nav class="exam-nav" aria-label="Question navigation">
+              <button
+                id="exam-prev-btn"
+                class="btn-secondary"
+                aria-label="Previous question"
+                type="button"
+              >← Prev</button>
+              <button
+                id="exam-clear-btn"
+                class="btn-ghost"
+                aria-label="Clear response"
+                type="button"
+              >🧹 Clear</button>
+              <button
+                id="exam-review-btn"
+                class="btn-ghost"
+                aria-label="Mark for review"
+                aria-pressed="false"
+                type="button"
+              >🔖 Review</button>
+              <button
+                id="exam-next-btn"
+                class="btn-primary"
+                aria-label="Next question"
+                type="button"
+              >Next →</button>
+            </nav>
+          </main>
+
+          <aside class="exam-sidebar" aria-label="Question palette">
+            <div id="exam-sidebar-palette" class="sidebar-palette"></div>
+          </aside>
+
+        </div>
+
+        <div class="exam-status-strip" aria-label="Exam status">
+          <span class="ss-item ss-answered" aria-label="Answered">
+            ✅ <span id="ss-answered-count">0</span>
+          </span>
+          <span class="ss-item ss-unanswered" aria-label="Not answered">
+            ⬜ <span id="ss-unanswered-count">0</span>
+          </span>
+          <span class="ss-item ss-review" aria-label="Marked for review">
+            🔖 <span id="ss-review-count">0</span>
+          </span>
+          <button
+            id="exam-palette-fab"
+            class="palette-fab"
+            aria-label="Open question palette"
+            aria-expanded="false"
+            type="button"
+          >📋</button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         VIEW 4 — RESULT
+    ═══════════════════════════════════════════════════════════ -->
+    <section
+      id="view-result"
+      class="view hidden"
+      role="main"
+      aria-label="Results"
+      aria-hidden="true"
+      inert
+    >
+      <div class="result-container">
+        <div id="result-hero"       class="result-hero"></div>
+        <div id="result-stats"      class="result-stats"></div>
+        <div id="result-subjects"   class="result-subjects"></div>
+        <div id="result-difficulty" class="result-difficulty"></div>
+        <div id="result-questions"  class="result-questions"></div>
+        <div id="result-actions"    class="result-actions"></div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         VIEW 5 — ANALYTICS
+    ═══════════════════════════════════════════════════════════ -->
+    <section
+      id="view-analytics"
+      class="view hidden"
+      role="main"
+      aria-label="Analytics"
+      aria-hidden="true"
+      inert
+    >
+      <div class="analytics-container">
+
+        <header class="analytics-header">
+          <button
+            id="analytics-back-btn"
+            class="icon-btn"
+            aria-label="Back to dashboard"
+            type="button"
+          >←</button>
+          <h2 class="analytics-title">📊 Performance Analytics</h2>
+        </header>
+
+        <div id="analytics-hero"      class="analytics-hero"></div>
+        <div id="analytics-trend"     class="analytics-trend"></div>
+        <div id="analytics-subjects"  class="analytics-subjects"></div>
+        <div id="analytics-types"     class="analytics-types"></div>
+        <div id="analytics-strengths" class="analytics-strengths"></div>
+        <div id="analytics-actions"   class="analytics-actions"></div>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         VIEW 6 — PROFILE
+    ═══════════════════════════════════════════════════════════ -->
+    <section
+      id="view-profile"
+      class="view hidden"
+      role="main"
+      aria-label="Profile and Settings"
+      aria-hidden="true"
+      inert
+    >
+      <div class="profile-container">
+
+        <header class="profile-header">
+          <button
+            id="profile-back-btn"
+            class="icon-btn"
+            aria-label="Back to dashboard"
+            type="button"
+          >←</button>
+          <h2 class="profile-title">👤 Profile &amp; Settings</h2>
+        </header>
+
+        <div id="profile-card"     class="profile-card"></div>
+        <div id="profile-settings" class="profile-settings"></div>
+        <div id="profile-storage"  class="profile-storage"></div>
+        <div id="profile-data"     class="profile-data"></div>
+        <div id="profile-queue"    class="profile-queue"></div>
+        <div id="profile-about"    class="profile-about"></div>
+        <div id="profile-actions"  class="profile-actions"></div>
+
+      </div>
+    </section>
+
+
+  </div><!-- /#app -->
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       JAVASCRIPT — Load order is critical. Never reorder.
+
+       Layer 1: Constants & Data    (no dependencies)
+       Layer 2: Utilities           (no dependencies)
+       Layer 3: State               (depends on Layer 1)
+       Layer 4: Services            (depends on Layers 1–2)
+       Layer 5: Engines             (depends on Layers 1–4)
+       Layer 6: UI Components       (depends on Layers 1–3)
+       Layer 7: UI Renderers        (depends on Layers 1–6)
+       Layer 8: App Controller      (depends on ALL — must be last)
+  ═══════════════════════════════════════════════════════════ -->
+
+  <!-- Layer 1: Constants & Data -->
+  <script src="js/constants/examConstants.js"></script>
+  <script src="js/constants/uiConstants.js"></script>
+  <script src="js/data/questionBank.js"></script>
+  <script src="js/data/testConfig.js"></script>
+
+  <!-- Layer 2: Utilities -->
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/utils/formatters.js"></script>
+  <script src="js/utils/validators.js"></script>
+
+  <!-- Layer 3: State -->
+  <script src="js/state/examState.js"></script>
+  <script src="js/state/appState.js"></script>
+  <script src="js/state/index.js"></script>
+
+  <!-- Layer 4: Services -->
+  <script src="js/services/storageService.js"></script>
+  <script src="js/services/formSubmitter.js"></script>
+
+  <!-- Layer 5: Engines -->
+  <script src="js/engine/questionResolver.js"></script>
+  <script src="js/engine/scoringEngine.js"></script>
+  <script src="js/engine/timerModule.js"></script>
+  <script src="js/engine/examEngine.js"></script>
+
+  <!-- Layer 6: UI Components -->
+  <script src="js/ui/components/nav.js"></script>
+  <script src="js/ui/components/toastManager.js"></script>
+  <script src="js/ui/components/paletteManager.js"></script>
+
+  <!-- Layer 7: UI Renderers -->
+  <script src="js/ui/renderers/onboardRenderer.js"></script>
+  <script src="js/ui/renderers/dashboardRenderer.js"></script>
+  <script src="js/ui/renderers/examRenderer.js"></script>
+  <script src="js/ui/renderers/resultRenderer.js"></script>
+  <script src="js/ui/renderers/analyticsRenderer.js"></script>
+  <script src="js/ui/renderers/profileRenderer.js"></script>
+
+  <!-- Layer 8: App Controller — MUST be last -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>

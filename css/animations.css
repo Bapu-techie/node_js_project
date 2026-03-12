@@ -1,0 +1,1179 @@
+/* ============================================================
+   ANIMATIONS & TRANSITIONS
+   NursePrep Pro v3.0
+
+   Centralized keyframe definitions and transition presets.
+   All animations respect prefers-reduced-motion and the
+   app-level .no-animations toggle from Profile settings.
+
+   Naming convention:
+   - anim-*       : keyframe animation utility classes
+   - fade-*       : opacity transitions
+   - slide-*      : movement + opacity
+   - scale-*      : scale transforms
+   - pulse-*      : repeating attention animations
+   - transition-* : reusable transition presets
+
+   Usage in HTML:  <div class="anim-fade-in stagger-2">
+   Usage in CSS:   animation: sheetUp 0.3s var(--ease-default);
+   Usage in JS:    element.classList.add('anim-fade-in');
+
+   Dependencies:   tokens.css (--dur-*, --ease-*, --c-*, --r-*, --shadow-*)
+   ============================================================ */
+
+
+/* ============================================================
+   ACCESSIBILITY — REDUCED MOTION (OS-LEVEL)
+   Respects the user's OS-level motion preference.
+   Overrides ALL animations and transitions to near-instant,
+   preventing vestibular/motion-sickness triggers.
+   ============================================================ */
+   @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-delay: 0ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      transition-delay: 0ms !important;
+      scroll-behavior: auto !important;
+    }
+  
+    /* Views still toggle visibility, just without motion */
+    .view:not(.hidden) {
+      animation: none;
+      opacity: 1;
+    }
+  
+    /* Skeleton uses a static background instead of shimmer */
+    .skeleton {
+      animation: none;
+      background: var(--c-raised);
+    }
+  }
+  
+  
+  /* ============================================================
+     APP-LEVEL ANIMATION TOGGLE
+     Toggled by the "Animations" switch in Profile settings.
+     profileRenderer.js does:
+       document.body.classList.toggle('no-animations', !enabled)
+     ============================================================ */
+  .no-animations,
+  .no-animations *,
+  .no-animations *::before,
+  .no-animations *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0ms !important;
+  }
+  
+  
+  /* ============================================================
+     KEYFRAMES — ENTRANCE
+     ============================================================ */
+  
+  /* Fade in from transparent */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  /* Fade out to transparent */
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+  
+  /* Slide up from below (mobile bottom sheets, cards, modals) */
+  @keyframes sheetUp {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide down and fade out (sheet/card dismiss) */
+  @keyframes sheetDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+  }
+  
+  /* Slide up subtle (cards, list items — smaller travel) */
+  @keyframes slideUpSubtle {
+    from {
+      transform: translateY(16px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide down subtle (dropdowns, palette) */
+  @keyframes slideDownSubtle {
+    from {
+      transform: translateY(-16px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide in from right (page/view transition forward) */
+  @keyframes slideInRight {
+    from {
+      transform: translateX(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide out to left (page/view transition forward exit) */
+  @keyframes slideOutLeft {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+  }
+  
+  /* Slide in from left (page/view transition backward) */
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide out to right (page/view transition backward exit) */
+  @keyframes slideOutRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(30px);
+      opacity: 0;
+    }
+  }
+  
+  /* Scale up from center (buttons, cards) */
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Scale down to center (exit) */
+  @keyframes scaleOut {
+    from {
+      transform: scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+  }
+  
+  /* Pop in — bouncy scale (badges, achievements, score reveal) */
+  @keyframes popIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    70% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Pop out */
+  @keyframes popOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+  }
+  
+  
+  /* ============================================================
+     KEYFRAMES — VIEW TRANSITIONS
+     Nav.js toggles .hidden on .view elements.
+     These animate the switch between the 6 app views.
+     ============================================================ */
+  
+  /* View entering — fade + slight upward shift */
+  @keyframes viewEnter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* View exiting */
+  @keyframes viewExit {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+  }
+  
+  /* Active view gets entrance animation automatically */
+  .view:not(.hidden) {
+    animation: viewEnter var(--dur-slow) var(--ease-default) both;
+  }
+  
+  
+  /* ============================================================
+     KEYFRAMES — MODAL / TOAST
+     ============================================================ */
+  
+  /* Modal entrance — scale + fade (desktop) */
+  @keyframes modalIn {
+    from {
+      transform: scale(0.96) translateY(12px);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Modal exit */
+  @keyframes modalOut {
+    from {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.96) translateY(12px);
+      opacity: 0;
+    }
+  }
+  
+  /* Toast enter from bottom (toastManager.js) */
+  @keyframes toastIn {
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* Toast exit downward (toastManager.js) */
+  @keyframes toastOut {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(12px) scale(0.95);
+    }
+  }
+  
+  
+  /* ============================================================
+     KEYFRAMES — EXAM SPECIFIC
+     Used by examRenderer.js for question flow and timer states.
+     ============================================================ */
+  
+  /* Question card entrance (each new question) */
+  @keyframes questionEnter {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Question card exit (navigating away) */
+  @keyframes questionExit {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+  }
+  
+  /* Option selection — subtle scale bump on tap */
+  @keyframes optionSelect {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(0.97); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Correct answer flash (result review mode) */
+  @keyframes correctFlash {
+    0%   { background-color: transparent; }
+    30%  { background-color: var(--c-green-ghost); }
+    100% { background-color: var(--c-green-ghost); }
+  }
+  
+  /* Wrong answer flash (result review mode) */
+  @keyframes wrongFlash {
+    0%   { background-color: transparent; }
+    30%  { background-color: var(--c-rose-ghost); }
+    100% { background-color: var(--c-rose-ghost); }
+  }
+  
+  /* Timer warning — pulsing (last 60s) */
+  @keyframes timerWarning {
+    0%, 100% {
+      color: var(--c-rose);
+      transform: scale(1);
+    }
+    50% {
+      color: var(--c-rose-dim);
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Timer critical — fast blink (last 30s) */
+  @keyframes timerCritical {
+    0%, 100% {
+      opacity: 1;
+      color: var(--c-rose);
+    }
+    50% {
+      opacity: 0.4;
+      color: var(--c-rose-dim);
+    }
+  }
+  
+  /* Timer blink — gentler exam time warning */
+  @keyframes timerBlink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.55; }
+  }
+  
+  
+  /* ============================================================
+     KEYFRAMES — RESULT / SCORE REVEAL
+     Used by resultRenderer.js for post-exam experience.
+     ============================================================ */
+  
+  /* Score number reveal — scale up with bounce */
+  @keyframes scoreReveal {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.15);
+      opacity: 1;
+    }
+    80% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Result card cascade — staggered entrance */
+  @keyframes resultCardIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* Celebration / confetti burst */
+  @keyframes confettiBurst {
+    0% {
+      transform: translateY(0) rotate(0deg) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-120px) rotate(720deg) scale(0);
+      opacity: 0;
+    }
+  }
+  
+  /* Star rating fill */
+  @keyframes starFill {
+    0% {
+      transform: scale(0) rotate(-180deg);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.2) rotate(10deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  
+  /* Circular progress ring animation (SVG stroke) */
+  @keyframes ringFill {
+    from {
+      stroke-dashoffset: var(--ring-circumference, 283);
+    }
+  }
+  
+  
+  /* ============================================================
+     KEYFRAMES — DASHBOARD SPECIFIC
+     Used by dashboardRenderer.js for card grids and stats.
+     ============================================================ */
+  
+  /* Test card entrance (grid items) */
+  @keyframes cardEnter {
+    from {
+      opacity: 0;
+      transform: translateY(16px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* Stats strip number animation */
+  @keyframes statReveal {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Filter chip active state */
+  @keyframes chipActivate {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(0.95); }
+    100% { transform: scale(1); }
+  }
+  
+  
+  /* ============================================================
+     KEYFRAMES — ONBOARD SPECIFIC
+     Used by onboardRenderer.js for first-launch experience.
+     ============================================================ */
+  
+  /* Logo entrance — float in with bounce */
+  @keyframes logoEnter {
+    0% {
+      transform: scale(0) rotate(-15deg);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.1) rotate(3deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  
+  /* Form fields stagger entrance */
+  @keyframes fieldEnter {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  /* ============================================================
+     KEYFRAMES — PALETTE / SIDEBAR (EXAM)
+     Question palette for navigating exam questions.
+     ============================================================ */
+  
+  /* Palette slide in from bottom (mobile FAB) */
+  @keyframes paletteIn {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Palette slide out */
+  @keyframes paletteOut {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
+  /* Palette button pulse (draw attention to unanswered) */
+  @keyframes paletteBtnPulse {
+    0%, 100% { box-shadow: 0 0 0 0 var(--c-amber-glow); }
+    50%      { box-shadow: 0 0 0 6px transparent; }
+  }
+  
+  
+  /* ============================================================
+     KEYFRAMES — ATTENTION / LOOPING
+     ============================================================ */
+  
+  /* Pulse (loading indicator, live elements) */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.5; }
+  }
+  
+  /* Gentle glow pulse (active elements, CTAs) */
+  @keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 0 0 var(--c-teal-glow); }
+    50%      { box-shadow: 0 0 0 8px transparent; }
+  }
+  
+  /* Error glow pulse */
+  @keyframes glowPulseError {
+    0%, 100% { box-shadow: 0 0 0 0 var(--c-rose-glow); }
+    50%      { box-shadow: 0 0 0 8px transparent; }
+  }
+  
+  /* Success glow pulse */
+  @keyframes glowPulseSuccess {
+    0%, 100% { box-shadow: 0 0 0 0 var(--c-green-glow); }
+    50%      { box-shadow: 0 0 0 8px transparent; }
+  }
+  
+  /* Shimmer / skeleton loading */
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Spin (loading spinner) */
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  
+  /* Bounce (notification badge) */
+  @keyframes bounce {
+    0%, 80%, 100% { transform: translateY(0); }
+    40%           { transform: translateY(-6px); }
+    60%           { transform: translateY(-3px); }
+  }
+  
+  /* Shake (error validation — onboardRenderer.js, form fields) */
+  @keyframes shake {
+    0%, 100%                 { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90%  { transform: translateX(-4px); }
+    20%, 40%, 60%, 80%       { transform: translateX(4px); }
+  }
+  
+  /* Wiggle (draw attention, softer than shake) */
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25%      { transform: rotate(-3deg); }
+    75%      { transform: rotate(3deg); }
+  }
+  
+  /* Breathe (subtle scale for idle states) */
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.02); }
+  }
+  
+  /* Ring pulse (correct/wrong answer feedback outline) */
+  @keyframes ringPulse {
+    0%   { box-shadow: 0 0 0 0 var(--c-teal-glow); }
+    100% { box-shadow: 0 0 0 12px transparent; }
+  }
+  
+  /* Ripple (tap feedback on mobile) */
+  @keyframes ripple {
+    0% {
+      transform: scale(0);
+      opacity: 0.4;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+  
+  
+  /* ============================================================
+     KEYFRAMES — PROGRESS / DATA
+     ============================================================ */
+  
+  /* Progress bar fill (result breakdown — resultRenderer.js) */
+  @keyframes barGrow {
+    from { width: 0; }
+  }
+  
+  /* Vertical bar grow (analytics charts) */
+  @keyframes barGrowUp {
+    from {
+      height: 0;
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Counter number roll up (score reveal — resultRenderer.js) */
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Stagger in (list items appearing sequentially) */
+  @keyframes staggerIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Number counter scale emphasis */
+  @keyframes numberPop {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Percentage text reveal */
+  @keyframes percentReveal {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  
+  /* ============================================================
+     ANIMATION UTILITY CLASSES
+     Apply these classes to elements for pre-built animations.
+     GPU-accelerated via will-change on transform/opacity anims.
+     ============================================================ */
+  
+  /* ── Entrances ── */
+  .anim-fade-in {
+    animation: fadeIn var(--dur-slow) var(--ease-default) both;
+    will-change: opacity;
+  }
+  
+  .anim-fade-out {
+    animation: fadeOut var(--dur-slow) var(--ease-default) both;
+    will-change: opacity;
+  }
+  
+  .anim-slide-up {
+    animation: sheetUp var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-slide-down {
+    animation: sheetDown var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-slide-up-subtle {
+    animation: slideUpSubtle var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-slide-down-subtle {
+    animation: slideDownSubtle var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-slide-right {
+    animation: slideInRight var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-slide-left {
+    animation: slideInLeft var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-scale-in {
+    animation: scaleIn var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-scale-out {
+    animation: scaleOut var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-pop-in {
+    animation: popIn var(--dur-slower) var(--ease-bounce) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-pop-out {
+    animation: popOut var(--dur-base) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  /* ── View Transitions ── */
+  .anim-view-enter {
+    animation: viewEnter var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-view-exit {
+    animation: viewExit var(--dur-fast) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  /* ── Modal / Toast ── */
+  .anim-modal-in {
+    animation: modalIn var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-modal-out {
+    animation: modalOut var(--dur-base) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-toast-in {
+    animation: toastIn var(--dur-base) var(--ease-bounce) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-toast-out {
+    animation: toastOut var(--dur-base) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  /* ── Exam Specific ── */
+  .anim-question-enter {
+    animation: questionEnter var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-question-exit {
+    animation: questionExit var(--dur-fast) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-option-select {
+    animation: optionSelect var(--dur-base) var(--ease-default);
+  }
+  
+  .anim-correct-flash {
+    animation: correctFlash var(--dur-slow) var(--ease-default) both;
+  }
+  
+  .anim-wrong-flash {
+    animation: wrongFlash var(--dur-slow) var(--ease-default) both;
+  }
+  
+  .anim-timer-warning {
+    animation: timerWarning 1s var(--ease-default) infinite;
+  }
+  
+  .anim-timer-critical {
+    animation: timerCritical 0.6s var(--ease-default) infinite;
+  }
+  
+  .anim-timer-blink {
+    animation: timerBlink 1s ease-in-out infinite;
+  }
+  
+  /* ── Result Specific ── */
+  .anim-score-reveal {
+    animation: scoreReveal var(--dur-slowest) var(--ease-bounce) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-result-card {
+    animation: resultCardIn var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-star-fill {
+    animation: starFill var(--dur-slower) var(--ease-bounce) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-confetti {
+    animation: confettiBurst 1.2s var(--ease-out) both;
+    will-change: transform, opacity;
+  }
+  
+  /* ── Dashboard Specific ── */
+  .anim-card-enter {
+    animation: cardEnter var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-stat-reveal {
+    animation: statReveal var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-chip-activate {
+    animation: chipActivate var(--dur-fast) var(--ease-default);
+  }
+  
+  /* ── Onboard Specific ── */
+  .anim-logo-enter {
+    animation: logoEnter var(--dur-slowest) var(--ease-bounce) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-field-enter {
+    animation: fieldEnter var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  /* ── Palette ── */
+  .anim-palette-in {
+    animation: paletteIn var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-palette-out {
+    animation: paletteOut var(--dur-base) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-palette-btn-pulse {
+    animation: paletteBtnPulse 2s var(--ease-default) infinite;
+  }
+  
+  /* ── Progress / Data ── */
+  .anim-bar-grow {
+    animation: barGrow var(--dur-slower) var(--ease-default) both;
+  }
+  
+  .anim-bar-grow-up {
+    animation: barGrowUp var(--dur-slower) var(--ease-default) both;
+  }
+  
+  .anim-count-up {
+    animation: countUp var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-stagger-in {
+    animation: staggerIn var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  .anim-number-pop {
+    animation: numberPop var(--dur-base) var(--ease-bounce);
+  }
+  
+  .anim-percent-reveal {
+    animation: percentReveal var(--dur-slow) var(--ease-default) both;
+    will-change: transform, opacity;
+  }
+  
+  /* ── Attention / Looping ── */
+  .anim-pulse {
+    animation: pulse 2s var(--ease-default) infinite;
+  }
+  
+  .anim-glow {
+    animation: glowPulse 2s var(--ease-default) infinite;
+  }
+  
+  .anim-glow-error {
+    animation: glowPulseError 2s var(--ease-default) infinite;
+  }
+  
+  .anim-glow-success {
+    animation: glowPulseSuccess 2s var(--ease-default) infinite;
+  }
+  
+  .anim-spin {
+    animation: spin 1s linear infinite;
+    will-change: transform;
+  }
+  
+  .anim-bounce {
+    animation: bounce 1s var(--ease-default);
+  }
+  
+  .anim-shake {
+    animation: shake 0.5s var(--ease-default);
+  }
+  
+  .anim-wiggle {
+    animation: wiggle 0.6s var(--ease-default);
+  }
+  
+  .anim-breathe {
+    animation: breathe 3s var(--ease-default) infinite;
+  }
+  
+  .anim-ring-pulse {
+    animation: ringPulse 0.6s var(--ease-out) both;
+  }
+  
+  
+  /* ============================================================
+     SKELETON LOADING
+     Apply .skeleton to placeholder elements during data fetch.
+     GPU-accelerated via will-change: background-position.
+     ============================================================ */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--c-raised) 0%,
+      var(--c-border) 50%,
+      var(--c-raised) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease infinite;
+    border-radius: var(--r-sm);
+    color: transparent !important;
+    pointer-events: none;
+    user-select: none;
+    will-change: background-position;
+  }
+  
+  /* Skeleton shape variants */
+  .skeleton-text {
+    height: 14px;
+    width: 80%;
+    margin-bottom: 8px;
+  }
+  
+  .skeleton-text-sm {
+    height: 10px;
+    width: 60%;
+  }
+  
+  .skeleton-circle {
+    border-radius: var(--r-circle);
+  }
+  
+  .skeleton-card {
+    height: 100px;
+    border-radius: var(--r-lg);
+  }
+  
+  
+  /* ============================================================
+     RIPPLE EFFECT — TAP FEEDBACK (MOBILE)
+     Add .ripple-container to tappable elements.
+     JS creates a .ripple-effect child on touch/click.
+     ============================================================ */
+  .ripple-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ripple-effect {
+    position: absolute;
+    border-radius: var(--r-circle);
+    background: var(--c-teal-ghost);
+    animation: ripple 0.6s var(--ease-out) both;
+    pointer-events: none;
+  }
+  
+  
+  /* ============================================================
+     STAGGER DELAYS
+     Apply to children of animated lists/grids.
+     Parent children get .stagger-N for sequential entrance.
+     ============================================================ */
+  .stagger-1  { animation-delay: 0.05s; }
+  .stagger-2  { animation-delay: 0.1s; }
+  .stagger-3  { animation-delay: 0.15s; }
+  .stagger-4  { animation-delay: 0.2s; }
+  .stagger-5  { animation-delay: 0.25s; }
+  .stagger-6  { animation-delay: 0.3s; }
+  .stagger-7  { animation-delay: 0.35s; }
+  .stagger-8  { animation-delay: 0.4s; }
+  .stagger-9  { animation-delay: 0.45s; }
+  .stagger-10 { animation-delay: 0.5s; }
+  .stagger-11 { animation-delay: 0.55s; }
+  .stagger-12 { animation-delay: 0.6s; }
+  
+  
+  /* ============================================================
+     TRANSITION PRESETS
+     Use on elements that need hover/focus/state transitions.
+     Prefer specific-property transitions over `all` for perf.
+     ============================================================ */
+  
+  /* All properties (convenient but less performant) */
+  .transition-fast {
+    transition: all var(--dur-fast) var(--ease-default);
+  }
+  
+  .transition-base {
+    transition: all var(--dur-base) var(--ease-default);
+  }
+  
+  .transition-slow {
+    transition: all var(--dur-slow) var(--ease-default);
+  }
+  
+  /* Specific property transitions (more performant) */
+  .transition-colors {
+    transition: color var(--dur-base) var(--ease-default),
+                background-color var(--dur-base) var(--ease-default),
+                border-color var(--dur-base) var(--ease-default);
+  }
+  
+  .transition-transform {
+    transition: transform var(--dur-base) var(--ease-default);
+  }
+  
+  .transition-opacity {
+    transition: opacity var(--dur-base) var(--ease-default);
+  }
+  
+  .transition-shadow {
+    transition: box-shadow var(--dur-base) var(--ease-default);
+  }
+  
+  /* Combined transform + opacity (view transitions, cards) */
+  .transition-movement {
+    transition: transform var(--dur-base) var(--ease-default),
+                opacity var(--dur-base) var(--ease-default);
+  }
+  
+  /* Combined visual properties (buttons, interactive elements) */
+  .transition-interactive {
+    transition: color var(--dur-fast) var(--ease-default),
+                background-color var(--dur-fast) var(--ease-default),
+                border-color var(--dur-fast) var(--ease-default),
+                box-shadow var(--dur-fast) var(--ease-default),
+                transform var(--dur-fast) var(--ease-default);
+  }
+  
+  /* Layout transitions (width, height, spacing) */
+  .transition-layout {
+    transition: width var(--dur-slow) var(--ease-default),
+                height var(--dur-slow) var(--ease-default),
+                padding var(--dur-slow) var(--ease-default),
+                margin var(--dur-slow) var(--ease-default);
+  }
+  
+  
+  /* ============================================================
+     HOVER / ACTIVE STATE HELPERS
+     Touch-safe: hover effects only on pointer devices.
+     Active/press effects work on all devices.
+     ============================================================ */
+  
+  /* Lift on hover (cards, buttons) — desktop only */
+  @media (hover: hover) {
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+  
+    .hover-scale:hover {
+      transform: scale(1.02);
+    }
+  
+    .hover-glow:hover {
+      box-shadow: var(--shadow-glow);
+    }
+  }
+  
+  /* Press down (active/touch state) — all devices */
+  .press-down:active {
+    transform: scale(0.97);
+  }
+  
+  .press-subtle:active {
+    transform: scale(0.99);
+    opacity: 0.85;
+  }

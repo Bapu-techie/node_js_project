@@ -1,0 +1,2477 @@
+/* ============================================================
+   COMPONENTS.CSS — NursePrep Pro v3.0
+   ============================================================
+   Shared, reusable UI component styles used across ALL views.
+
+   LOAD ORDER (index.html):
+     1. tokens.css     ← CSS custom properties (MUST be first)
+     2. reset.css      ← box model, body, html, scrollbar, view system
+     3. components.css ← THIS FILE — all shared components
+     4. animations.css ← keyframes and animation utilities
+     5. views/*.css    ← view-specific styles (scoped to #view-*)
+
+   OWNERSHIP CONTRACT:
+     reset.css     owns: body base, .view, .view.hidden, .hidden,
+                         .sr-only, scrollbar, focus, reduced-motion,
+                         print styles
+     components.css owns: ALL shared component classes (this file)
+     animations.css owns: ALL keyframes, animation utility classes,
+                          reduced-motion animation overrides
+
+   CLASS MAP (matched to index.html + JS renderers):
+
+   TYPOGRAPHY:
+     body             — font-size + line-height override
+
+   BUTTONS:
+     .btn-primary     — primary teal action button
+     .btn-full        — full-width modifier
+     .btn-secondary   — secondary/outline button
+     .btn-ghost       — ghost/text button
+     .btn-submit      — exam submit (danger/rose)
+     .icon-btn        — square icon-only button
+     .loading         — button loading state modifier
+
+   FORM ELEMENTS:
+     .form-group      — label + input + error wrapper
+     .form-label      — <label>
+     .form-input      — <input> / <select>
+     .form-error      — validation error <span>
+     .search-wrap     — search input wrapper
+     .search-input    — search <input>
+     .filter-bar      — filter pills container
+     .filter-pill     — individual filter pill (JS-injected)
+
+   DASHBOARD:
+     .dash-container          — page wrapper
+     .dash-header             — header row
+     .dash-greeting           — greeting text block
+     .dash-header-actions     — header icon buttons
+     .dash-stats-strip        — stats grid
+     .stat-card               — individual stat card
+     .stat-value              — stat number
+     .stat-label              — stat caption
+     .dash-controls           — filter + search + count area
+     .dash-test-count         — test count label
+     .test-grid               — card grid
+     .test-card               — individual test card (JS-injected)
+     .test-card-header        — card top row
+     .test-card-icon          — emoji icon box
+     .test-card-badge         — difficulty/type badge
+     .test-card-title         — card title
+     .test-card-meta          — meta info row
+     .test-card-footer        — card bottom row
+     .test-card-score         — previous score
+     .test-card-action        — "Start →" label
+     .test-card-progress      — mini progress bar track
+     .test-card-progress-fill — mini progress bar fill
+     .dash-history            — history section wrapper
+     .dash-section-title      — section heading
+     .history-table-wrap      — scrollable table wrapper
+     .history-table           — history <table>
+     .status-badge            — pass/fail/pending badge
+
+   EXAM:
+     .exam-layout       — full-height exam wrapper
+     .exam-header       — sticky exam header
+     .exam-title        — exam name
+     .exam-header-right — timer + submit group
+     .exam-timer        — countdown timer
+     .exam-progress-wrap  — progress bar wrapper
+     .exam-progress-bg    — progress track
+     .exam-progress-fill  — progress fill
+     .exam-progress-text  — "3/50" label
+     .exam-body         — main + sidebar flex container
+     .exam-main         — question column
+     .exam-sidebar      — desktop sidebar (hidden on mobile)
+     .sidebar-palette   — question number grid
+     .palette-btn       — individual palette button
+     .question-card     — question container
+     .q-meta            — question metadata row
+     .q-number          — "Q.3" label
+     .q-subject-badge   — subject pill
+     .q-diff-badge      — difficulty pill
+     .q-text            — question stem
+     .q-options         — answer options list
+     .q-option          — single answer option (JS-injected)
+     .q-option-letter   — A/B/C/D letter badge
+     .q-option-text     — option body text
+     .exam-nav          — prev/next/clear/review bar
+     .exam-status-strip — sticky bottom status bar
+     .ss-item           — status strip item
+     .ss-answered       — answered count
+     .ss-unanswered     — unanswered count
+     .ss-review         — review count
+     .palette-fab       — mobile FAB for palette
+     .palette-overlay   — mobile palette backdrop
+     .palette-sheet     — mobile palette bottom sheet
+     .palette-sheet-grid — palette number grid
+
+   RESULT:
+     .result-container  — page wrapper
+     .result-hero       — score hero card
+     .result-stats      — stats grid
+     .result-subjects   — subject breakdown section
+     .result-difficulty — difficulty breakdown section
+     .result-questions  — question review list section
+     .result-actions    — action buttons row
+     .score-display     — large score number
+     .explanation-box   — answer explanation panel
+     .explanation-label — "Explanation" label
+
+   ANALYTICS:
+     .analytics-container  — page wrapper
+     .analytics-header     — header with back button
+     .analytics-title      — page title
+     .analytics-hero       — overall score card
+     .analytics-trend      — trend chart section
+     .analytics-subjects   — subject breakdown
+     .analytics-types      — question type breakdown
+     .analytics-strengths  — strengths/weaknesses
+     .analytics-actions    — action buttons
+
+   PROFILE:
+     .profile-container — page wrapper
+     .profile-header    — header with back button
+     .profile-title     — page title
+     .profile-card      — user info card
+     .profile-settings  — settings section
+     .profile-storage   — storage info section
+     .profile-data      — data management section
+     .profile-queue     — sync queue section
+     .profile-about     — about section
+     .profile-actions   — action buttons
+     .settings-row      — individual settings row
+     .settings-label    — row label
+     .settings-desc     — row description
+     .toggle-switch     — on/off toggle
+     .toggle-slider     — toggle track + thumb
+
+   GENERIC REUSABLES:
+     .section-card      — generic card container
+     .section-title     — generic section heading
+     .section-subtitle  — generic section subtext
+     .badge             — generic pill badge (+ color variants)
+     .progress-bar      — generic progress bar track
+     .progress-fill     — progress fill (+ color variants)
+     .progress-ring     — SVG ring (analytics/result)
+     .progress-ring-bg  — ring track
+     .progress-ring-fill — ring fill
+     .empty-state       — empty content placeholder
+     .empty-state-icon  — large emoji icon
+     .empty-state-title — empty state heading
+     .empty-state-text  — empty state body
+
+   LOADING:
+     .skeleton          — shimmer loading placeholder
+     .skeleton-text     — text-width skeleton
+     .skeleton-text.short — 60% width variant
+     .skeleton-circle   — circle skeleton
+     .skeleton-card     — tall card skeleton
+
+   TOASTS:
+     .toast-container   — fixed toast stack
+     .toast             — individual toast
+     .toast.success/error/warning/info — variants
+     .toast-icon        — toast emoji
+     .toast-message     — toast text
+     .toast-close       — dismiss button
+
+   MODALS:
+     .modal-overlay     — fixed backdrop
+     .modal-card        — dialog card
+     .modal-title       — dialog heading
+     .modal-body        — dialog text
+     .modal-actions     — dialog buttons row
+   ============================================================ */
+
+
+/* ============================================================
+   1. BODY TYPOGRAPHY SUPPLEMENT
+   reset.css sets font-family, bg, color, smoothing, lh-relaxed.
+   We add font-size (missing from reset) and override line-height
+   to lh-normal (1.5) which is correct for a dense app UI.
+   ============================================================ */
+
+   body {
+    font-size: var(--f-body);     /* 15px — reset.css doesn't set this */
+    line-height: var(--lh-normal); /* 1.5 — intentional override of reset's 1.65 */
+  }
+  
+  
+  /* ============================================================
+     2. BUTTON BASE — Shared reset for all button variants
+     ============================================================ */
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost,
+  .btn-submit,
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    font-family: var(--f-sans);
+    border: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation; /* Removes 300ms tap delay on mobile */
+    user-select: none;
+    -webkit-user-select: none;
+    text-decoration: none;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  
+  /* ============================================================
+     3. BUTTON — Primary (.btn-primary)
+     Used in: onboard submit, exam next, result/analytics actions
+     ============================================================ */
+  
+  .btn-primary {
+    height: var(--dim-tap-min);      /* 44px — WCAG touch target */
+    min-height: var(--dim-tap-min);
+    padding: 0 var(--s-6);
+    background: var(--c-teal);
+    color: var(--c-text-inverse);
+    font-size: var(--f-body);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.01em;
+    line-height: 1;
+    border-radius: var(--r-md);
+    transition:
+      background var(--dur-base) var(--ease-default),
+      box-shadow  var(--dur-base) var(--ease-default),
+      transform   var(--dur-fast) var(--ease-default);
+  }
+  
+  /* Hover only on pointer devices — prevents sticky hover on iOS */
+  @media (hover: hover) {
+    .btn-primary:hover {
+      background: var(--c-teal-dim);
+      box-shadow: var(--shadow-teal);
+      transform: translateY(-1px);
+    }
+  }
+  
+  .btn-primary:active {
+    background: var(--c-teal-dark);
+    transform: scale(0.97);
+    box-shadow: none;
+  }
+  
+  .btn-primary:focus-visible {
+    outline: 2px solid var(--c-teal);
+    outline-offset: 2px;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* ── Loading spinner state ── */
+  .btn-primary.loading {
+    pointer-events: none;
+    color: transparent;
+  }
+  
+  .btn-primary.loading::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2.5px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: btn-spin 0.65s linear infinite;
+  }
+  
+  @keyframes btn-spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* ── Full-width modifier ── */
+  .btn-full {
+    width: 100%;
+    margin-top: var(--s-3);
+  }
+  
+  
+  /* ============================================================
+     4. BUTTON — Secondary (.btn-secondary)
+     Used in: exam nav ← Prev, result actions, analytics
+     ============================================================ */
+  
+  .btn-secondary {
+    height: var(--dim-tap-min);
+    min-height: var(--dim-tap-min);
+    padding: 0 var(--s-5);
+    background: var(--c-surface);
+    color: var(--c-text);
+    font-size: var(--f-md);
+    font-weight: var(--fw-semibold);
+    line-height: 1;
+    border-radius: var(--r-md);
+    border: 1.5px solid var(--c-border-hi);
+    transition:
+      background    var(--dur-base) var(--ease-default),
+      border-color  var(--dur-base) var(--ease-default),
+      color         var(--dur-base) var(--ease-default),
+      box-shadow    var(--dur-base) var(--ease-default),
+      transform     var(--dur-fast) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .btn-secondary:hover {
+      background: var(--c-card);
+      border-color: var(--c-teal);
+      color: var(--c-teal);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+  }
+  
+  .btn-secondary:active {
+    background: var(--c-raised);
+    transform: scale(0.97);
+    box-shadow: none;
+  }
+  
+  .btn-secondary:focus-visible {
+    outline: 2px solid var(--c-teal);
+    outline-offset: 2px;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .btn-secondary:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+  }
+  
+  
+  /* ============================================================
+     5. BUTTON — Ghost (.btn-ghost)
+     Used in: exam nav Clear/Review, profile, analytics
+     ============================================================ */
+  
+  .btn-ghost {
+    height: var(--dim-tap-min);
+    min-height: var(--dim-tap-min);
+    padding: 0 var(--s-4);
+    background: transparent;
+    color: var(--c-text-2);
+    font-size: var(--f-md);
+    font-weight: var(--fw-medium);
+    line-height: 1;
+    border-radius: var(--r-md);
+    border: 1.5px solid transparent;
+    transition:
+      background    var(--dur-base) var(--ease-default),
+      color         var(--dur-base) var(--ease-default),
+      border-color  var(--dur-base) var(--ease-default),
+      transform     var(--dur-fast) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .btn-ghost:hover {
+      background: var(--c-card);
+      color: var(--c-text);
+      border-color: var(--c-border);
+    }
+  }
+  
+  .btn-ghost:active {
+    background: var(--c-raised);
+    transform: scale(0.97);
+  }
+  
+  .btn-ghost:focus-visible {
+    outline: 2px solid var(--c-teal);
+    outline-offset: 2px;
+  }
+  
+  .btn-ghost:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  /* Review button toggled state (aria-pressed="true") */
+  .btn-ghost[aria-pressed="true"] {
+    background: var(--c-amber-ghost);
+    color: var(--c-amber);
+    border-color: rgba(217, 119, 6, 0.25);
+    font-weight: var(--fw-semibold);
+  }
+  
+  
+  /* ============================================================
+     6. BUTTON — Submit (.btn-submit)
+     Used in: exam header "Submit exam"
+     ============================================================ */
+  
+  .btn-submit {
+    height: 38px;
+    min-height: 38px;
+    padding: 0 var(--s-5);
+    background: var(--c-rose);
+    color: var(--c-text-inverse);
+    font-size: var(--f-md);
+    font-weight: var(--fw-bold);
+    line-height: 1;
+    border-radius: var(--r-md);
+    transition:
+      background  var(--dur-base) var(--ease-default),
+      box-shadow  var(--dur-base) var(--ease-default),
+      transform   var(--dur-fast) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .btn-submit:hover {
+      background: var(--c-rose-dim);
+      box-shadow: var(--shadow-rose);
+      transform: translateY(-1px);
+    }
+  }
+  
+  .btn-submit:active {
+    background: var(--c-rose-dark);
+    transform: scale(0.97);
+    box-shadow: none;
+  }
+  
+  .btn-submit:focus-visible {
+    outline: 2px solid var(--c-rose);
+    outline-offset: 2px;
+  }
+  
+  .btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  
+  /* ============================================================
+     7. BUTTON — Icon (.icon-btn)
+     Used in: dash-header analytics/profile, back buttons
+     ============================================================ */
+  
+  .icon-btn {
+    width: var(--dim-tap-min);
+    height: var(--dim-tap-min);
+    min-width: var(--dim-tap-min);
+    min-height: var(--dim-tap-min);
+    padding: 0;
+    background: var(--c-card);
+    color: var(--c-text-2);
+    font-size: var(--f-lg);
+    line-height: 1;
+    border-radius: var(--r-md);
+    border: 1.5px solid var(--c-border);
+    flex-shrink: 0;
+    transition:
+      background    var(--dur-base) var(--ease-default),
+      border-color  var(--dur-base) var(--ease-default),
+      color         var(--dur-base) var(--ease-default),
+      box-shadow    var(--dur-base) var(--ease-default),
+      transform     var(--dur-fast) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .icon-btn:hover {
+      background: var(--c-raised);
+      border-color: var(--c-border-hi);
+      color: var(--c-text);
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+  }
+  
+  .icon-btn:active {
+    background: var(--c-raised);
+    transform: scale(0.94);
+    box-shadow: none;
+  }
+  
+  .icon-btn:focus-visible {
+    outline: 2px solid var(--c-teal);
+    outline-offset: 2px;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  
+  /* ============================================================
+     8. FORM ELEMENTS — Shared across views
+     Used in: onboard (name/email), profile edit
+     ============================================================ */
+  
+  /* ── Form Group — wrapper ── */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-1);
+    margin-bottom: var(--s-5);
+  }
+  
+  /* ── Label ── */
+  .form-label {
+    font-size: var(--f-xs);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: var(--lh-normal);
+  }
+  
+  /* ── Input / Select ── */
+  .form-input {
+    width: 100%;
+    height: var(--dim-tap-min);        /* 44px touch target */
+    min-height: var(--dim-tap-min);
+    padding: 0 var(--s-4);
+    background: var(--c-card);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-md);
+    font-family: var(--f-sans);
+    font-size: max(var(--f-body), 16px); /* min 16px prevents iOS auto-zoom */
+    color: var(--c-text);
+    line-height: var(--lh-normal);
+    touch-action: manipulation;
+    transition:
+      border-color  var(--dur-base) var(--ease-default),
+      background    var(--dur-base) var(--ease-default),
+      box-shadow    var(--dur-base) var(--ease-default);
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+  }
+  
+  .form-input::placeholder {
+    color: var(--c-text-3);
+    font-size: var(--f-md);
+  }
+  
+  @media (hover: hover) {
+    .form-input:hover:not(:focus):not(.error):not([aria-invalid="true"]) {
+      border-color: var(--c-border-hi);
+      background: var(--c-raised);
+    }
+  }
+  
+  .form-input:focus {
+    border-color: var(--c-teal);
+    background: var(--c-surface);
+    box-shadow:
+      0 0 0 3px var(--c-teal-ghost),
+      0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Filled (not focused, no error) */
+  .form-input:not(:placeholder-shown):not(:focus):not(.error):not([aria-invalid="true"]) {
+    background: var(--c-surface);
+    border-color: var(--c-border-hi);
+  }
+  
+  /* ── Error state ── */
+  .form-input.error,
+  .form-input[aria-invalid="true"] {
+    border-color: var(--c-rose);
+    background: var(--c-surface);
+    box-shadow: 0 0 0 3px var(--c-rose-ghost);
+  }
+  
+  /* ── Error message ── */
+  .form-error {
+    display: block;
+    font-size: var(--f-sm);
+    font-weight: var(--fw-medium);
+    color: var(--c-rose);
+    min-height: 1.2em;
+    line-height: 1.3;
+    visibility: hidden;
+  }
+  
+  .form-error:not(:empty) {
+    visibility: visible;
+    animation: error-shake 0.28s var(--ease-bounce);
+  }
+  
+  @keyframes error-shake {
+    0%, 100% { transform: translateX(0); }
+    25%      { transform: translateX(-5px); }
+    75%      { transform: translateX(5px); }
+  }
+  
+  
+  /* ============================================================
+     9. SEARCH INPUT — Dashboard
+     ============================================================ */
+  
+  .search-wrap {
+    position: relative;
+    width: 100%;
+  }
+  
+  .search-input {
+    width: 100%;
+    height: var(--dim-tap-min);
+    min-height: var(--dim-tap-min);
+    padding: 0 var(--s-4);
+    background: var(--c-card);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-md);
+    font-family: var(--f-sans);
+    font-size: max(var(--f-body), 16px); /* Prevents iOS auto-zoom */
+    color: var(--c-text);
+    line-height: var(--lh-normal);
+    touch-action: manipulation;
+    transition:
+      border-color  var(--dur-base) var(--ease-default),
+      background    var(--dur-base) var(--ease-default),
+      box-shadow    var(--dur-base) var(--ease-default);
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+  }
+  
+  .search-input::placeholder {
+    color: var(--c-text-3);
+    font-size: var(--f-md);
+  }
+  
+  @media (hover: hover) {
+    .search-input:hover:not(:focus) {
+      border-color: var(--c-border-hi);
+      background: var(--c-raised);
+    }
+  }
+  
+  .search-input:focus {
+    border-color: var(--c-teal);
+    background: var(--c-surface);
+    box-shadow:
+      0 0 0 3px var(--c-teal-ghost),
+      0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Native clear button (type="search") */
+  .search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E") center/contain no-repeat;
+    cursor: pointer;
+  }
+  
+  
+  /* ============================================================
+     10. FILTER BAR — Dashboard
+     Horizontally scrollable pill row, populated by JS
+     ============================================================ */
+  
+  .filter-bar {
+    display: flex;
+    gap: var(--s-2);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: var(--s-1) 0;
+    flex-shrink: 0;
+  }
+  
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Filter pill (injected by JS) */
+  .filter-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-1);
+    height: 36px;
+    min-height: 36px;
+    padding: 0 var(--s-4);
+    background: var(--c-card);
+    color: var(--c-text-2);
+    font-family: var(--f-sans);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-semibold);
+    border-radius: var(--r-pill);
+    border: 1.5px solid var(--c-border);
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition:
+      background    var(--dur-base) var(--ease-default),
+      color         var(--dur-base) var(--ease-default),
+      border-color  var(--dur-base) var(--ease-default),
+      box-shadow    var(--dur-base) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .filter-pill:hover {
+      background: var(--c-raised);
+      border-color: var(--c-border-hi);
+      color: var(--c-text);
+    }
+  }
+  
+  .filter-pill.active,
+  .filter-pill[aria-pressed="true"] {
+    background: var(--c-teal);
+    color: var(--c-text-inverse);
+    border-color: var(--c-teal);
+    box-shadow: var(--shadow-teal);
+    font-weight: var(--fw-bold);
+  }
+  
+  @media (hover: hover) {
+    .filter-pill.active:hover,
+    .filter-pill[aria-pressed="true"]:hover {
+      background: var(--c-teal-dim);
+    }
+  }
+  
+  
+  /* ============================================================
+     11. DASHBOARD — Container & Header
+     ============================================================ */
+  
+  .dash-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--dim-max-width);
+    margin: 0 auto;
+    /* Standard padding + safe area insets for notch/home bar */
+    padding: var(--s-5) var(--s-4);
+    padding-top: max(var(--s-5), calc(env(safe-area-inset-top, 0px) + var(--s-4)));
+    padding-bottom: max(var(--s-16), calc(env(safe-area-inset-bottom, 0px) + var(--s-14)));
+    gap: var(--s-6);
+  }
+  
+  .dash-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-4);
+    min-height: var(--dim-header-h);
+  }
+  
+  .dash-greeting {
+    flex: 1;
+    min-width: 0; /* Prevents flex child from overflowing */
+  }
+  
+  .dash-greeting h2,
+  .dash-greeting .greeting-name {
+    font-size: var(--f-2xl);
+    font-weight: var(--fw-extrabold);
+    color: var(--c-text);
+    line-height: var(--lh-tight);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .dash-greeting p,
+  .dash-greeting .greeting-sub {
+    font-size: var(--f-md);
+    color: var(--c-text-2);
+    margin-top: var(--s-1);
+  }
+  
+  .dash-header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    flex-shrink: 0;
+  }
+  
+  
+  /* ============================================================
+     12. DASHBOARD — Stats Strip
+     ============================================================ */
+  
+  .dash-stats-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-3);
+    width: 100%;
+  }
+  
+  /* Expand to 4 columns on tablet+ */
+  @media (min-width: 600px) {
+    .dash-stats-strip {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-1);
+    padding: var(--s-4) var(--s-3);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+    text-align: center;
+    min-height: 80px;
+  }
+  
+  .stat-value {
+    font-size: var(--f-xl);
+    font-weight: var(--fw-extrabold);
+    color: var(--c-teal);
+    line-height: 1;
+  }
+  
+  .stat-label {
+    font-size: var(--f-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--c-text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  
+  
+  /* ============================================================
+     13. DASHBOARD — Controls (filter + search + count)
+     ============================================================ */
+  
+  .dash-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    width: 100%;
+  }
+  
+  .dash-test-count {
+    font-size: var(--f-sm);
+    font-weight: var(--fw-medium);
+    color: var(--c-text-3);
+    padding: 0 var(--s-1);
+  }
+  
+  
+  /* ============================================================
+     14. TEST GRID — Dashboard card grid
+     ============================================================ */
+  
+  .test-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+    width: 100%;
+  }
+  
+  /* 2 columns on tablet */
+  @media (min-width: 600px) {
+    .test-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--s-5);
+    }
+  }
+  
+  /* 3 columns on desktop */
+  @media (min-width: 1024px) {
+    .test-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* ── Test Card (injected by dashboardRenderer.js) ── */
+  .test-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    padding: var(--s-5);
+    background: var(--c-surface);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-lg);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    position: relative;
+    overflow: hidden;
+    transition:
+      border-color  var(--dur-base) var(--ease-default),
+      box-shadow    var(--dur-base) var(--ease-default),
+      transform     var(--dur-fast) var(--ease-default),
+      background    var(--dur-base) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .test-card:hover {
+      border-color: var(--c-teal);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+  }
+  
+  .test-card:active {
+    transform: scale(0.98);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .test-card:focus-visible {
+    outline: 2px solid var(--c-teal);
+    outline-offset: 2px;
+  }
+  
+  .test-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--s-3);
+  }
+  
+  .test-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background: var(--c-teal-ghost);
+    border-radius: var(--r-md);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  
+  .test-card-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    font-size: var(--f-xs);
+    font-weight: var(--fw-semibold);
+    border-radius: var(--r-pill);
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+  
+  .test-card-title {
+    font-size: var(--f-body);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    line-height: var(--lh-snug);
+    margin: 0;
+  }
+  
+  .test-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+    font-size: var(--f-sm);
+    color: var(--c-text-2);
+  }
+  
+  .test-card-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  
+  .test-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    padding-top: var(--s-3);
+    border-top: 1px solid var(--c-border);
+  }
+  
+  .test-card-score {
+    font-size: var(--f-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--c-text-2);
+  }
+  
+  .test-card-action {
+    font-size: var(--f-sm);
+    font-weight: var(--fw-bold);
+    color: var(--c-teal);
+  }
+  
+  .test-card-progress {
+    width: 100%;
+    height: 4px;
+    background: var(--c-card);
+    border-radius: var(--r-pill);
+    overflow: hidden;
+  }
+  
+  .test-card-progress-fill {
+    height: 100%;
+    background: var(--c-teal);
+    border-radius: var(--r-pill);
+    transition: width var(--dur-slow) var(--ease-out);
+  }
+  
+  
+  /* ============================================================
+     15. DASHBOARD — History Section
+     ============================================================ */
+  
+  .dash-history {
+    width: 100%;
+  }
+  
+  .dash-section-title {
+    font-size: var(--f-lg);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    margin-bottom: var(--s-4);
+    line-height: var(--lh-tight);
+  }
+  
+  .history-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+    background: var(--c-surface);
+  }
+  
+  .history-table {
+    width: 100%;
+    min-width: 540px; /* Ensures all columns are visible before scrolling */
+    border-collapse: collapse;
+    font-size: var(--f-sm);
+  }
+  
+  .history-table thead {
+    background: var(--c-card);
+    border-bottom: 1.5px solid var(--c-border);
+  }
+  
+  .history-table th {
+    padding: var(--s-3) var(--s-4);
+    font-size: var(--f-xs);
+    font-weight: var(--fw-bold);
+    color: var(--c-text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+    white-space: nowrap;
+  }
+  
+  .history-table td {
+    padding: var(--s-3) var(--s-4);
+    color: var(--c-text-2);
+    border-top: 1px solid var(--c-border);
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  
+  .history-table tbody tr {
+    transition: background var(--dur-fast) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .history-table tbody tr:hover {
+      background: var(--c-card);
+    }
+  }
+  
+  .history-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* ── Status Badge — pass / fail / pending ── */
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    font-size: var(--f-xs);
+    font-weight: var(--fw-semibold);
+    border-radius: var(--r-pill);
+    white-space: nowrap;
+  }
+  
+  .status-badge.pass,
+  .status-badge--pass {
+    background: var(--c-green-ghost);
+    color: var(--c-green);
+  }
+  
+  .status-badge.fail,
+  .status-badge--fail {
+    background: var(--c-rose-ghost);
+    color: var(--c-rose);
+  }
+  
+  .status-badge.pending,
+  .status-badge--pending {
+    background: var(--c-amber-ghost);
+    color: var(--c-amber);
+  }
+  
+  
+  /* ============================================================
+     16. EMPTY STATE — No content placeholder
+     ============================================================ */
+  
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-3);
+    padding: var(--s-12) var(--s-6);
+    text-align: center;
+    color: var(--c-text-3);
+  }
+  
+  .empty-state-icon {
+    font-size: 2.5rem;
+    opacity: 0.5;
+  }
+  
+  .empty-state-title {
+    font-size: var(--f-lg);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+  }
+  
+  .empty-state-text {
+    font-size: var(--f-md);
+    font-weight: var(--fw-medium);
+    max-width: 260px;
+    line-height: var(--lh-relaxed);
+  }
+  
+  
+  /* ============================================================
+     17. EXAM — Layout wrapper
+     ============================================================ */
+  
+  .exam-layout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;       /* fallback */
+    min-height: 100dvh;      /* accounts for mobile address bar */
+    background: var(--c-bg);
+  }
+  
+  
+  /* ============================================================
+     18. EXAM — Sticky header
+     ============================================================ */
+  
+  .exam-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    height: var(--dim-header-h);
+    min-height: var(--dim-header-h);
+    padding: 0 var(--s-4);
+    /* Notch-aware top padding */
+    padding-top: env(safe-area-inset-top, 0px);
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-border);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+  }
+  
+  .exam-title {
+    flex: 1;
+    min-width: 0;
+    font-size: var(--f-body);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: var(--lh-tight);
+    margin: 0;
+  }
+  
+  .exam-header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    flex-shrink: 0;
+  }
+  
+  
+  /* ============================================================
+     19. EXAM — Timer
+     ============================================================ */
+  
+  .exam-timer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--s-1) var(--s-3);
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-md);
+    font-family: var(--f-mono);
+    font-size: var(--f-md);
+    font-weight: var(--fw-semibold);
+    color: var(--c-text);
+    white-space: nowrap;
+    min-width: 72px;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+  
+  /* Warning: last 60 seconds */
+  .exam-timer.warning {
+    color: var(--c-amber);
+    border-color: var(--c-amber);
+    background: var(--c-amber-ghost);
+  }
+  
+  /* Danger: last 30 seconds */
+  .exam-timer.danger {
+    color: var(--c-rose);
+    border-color: var(--c-rose);
+    background: var(--c-rose-ghost);
+    animation: timer-pulse 1s ease-in-out infinite;
+  }
+  
+  @keyframes timer-pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.6; }
+  }
+  
+  
+  /* ============================================================
+     20. EXAM — Progress Bar
+     ============================================================ */
+  
+  .exam-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    padding: var(--s-2) var(--s-4);
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-border);
+  }
+  
+  .exam-progress-bg {
+    flex: 1;
+    height: 6px;
+    background: var(--c-card);
+    border-radius: var(--r-pill);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .exam-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--c-teal) 0%, var(--c-blue) 100%);
+    border-radius: var(--r-pill);
+    transition: width var(--dur-slow) var(--ease-out);
+    min-width: 0;
+    width: 0%;
+  }
+  
+  .exam-progress-text {
+    font-size: var(--f-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--c-text-3);
+    white-space: nowrap;
+    min-width: 36px;
+    text-align: right;
+  }
+  
+  
+  /* ============================================================
+     21. EXAM — Body (main question area + sidebar)
+     ============================================================ */
+  
+  .exam-body {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    max-width: var(--dim-exam-max);
+    margin: 0 auto;
+    padding: var(--s-4);
+    gap: var(--s-5);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .exam-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-5);
+    min-width: 0;
+  }
+  
+  /* Sidebar: hidden on mobile, shown on desktop */
+  .exam-sidebar {
+    display: none;
+  }
+  
+  @media (min-width: 1024px) {
+    .exam-sidebar {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 var(--dim-sidebar-w);
+      gap: var(--s-4);
+    }
+  
+    .exam-body {
+      max-width: calc(var(--dim-exam-max) + var(--dim-sidebar-w) + var(--s-5));
+    }
+  }
+  
+  
+  /* ============================================================
+     22. EXAM — Question Palette (desktop sidebar)
+     ============================================================ */
+  
+  .sidebar-palette {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--s-2);
+    padding: var(--s-4);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+  }
+  
+  .palette-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    background: var(--c-card);
+    color: var(--c-text-2);
+    font-family: var(--f-sans);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-semibold);
+    border-radius: var(--r-sm);
+    border: 1.5px solid var(--c-border);
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      background    var(--dur-fast) var(--ease-default),
+      border-color  var(--dur-fast) var(--ease-default),
+      color         var(--dur-fast) var(--ease-default),
+      box-shadow    var(--dur-fast) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .palette-btn:hover {
+      background: var(--c-raised);
+      border-color: var(--c-border-hi);
+    }
+  }
+  
+  /* Current question */
+  .palette-btn.current {
+    border-color: var(--c-teal);
+    box-shadow: 0 0 0 2px var(--c-teal-ghost);
+    color: var(--c-teal);
+    font-weight: var(--fw-bold);
+  }
+  
+  /* Answered */
+  .palette-btn.answered {
+    background: var(--c-green-ghost);
+    border-color: var(--c-green);
+    color: var(--c-green);
+  }
+  
+  /* Marked for review */
+  .palette-btn.review {
+    background: var(--c-amber-ghost);
+    border-color: var(--c-amber);
+    color: var(--c-amber);
+  }
+  
+  /* Answered AND marked for review */
+  .palette-btn.answered.review {
+    background: linear-gradient(135deg, var(--c-green-ghost), var(--c-amber-ghost));
+    border-color: var(--c-amber);
+  }
+  
+  
+  /* ============================================================
+     23. EXAM — Question Card
+     ============================================================ */
+  
+  .question-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-5);
+    padding: var(--s-5);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  /* Tighter on small screens */
+  @media (max-width: 599px) {
+    .question-card {
+      padding: var(--s-4);
+      border-radius: var(--r-md);
+      box-shadow: none; /* Reduces visual noise on small screens */
+    }
+  }
+  
+  /* ── Question meta row ── */
+  .q-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    flex-wrap: wrap;
+  }
+  
+  .q-number {
+    font-size: var(--f-sm);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    white-space: nowrap;
+  }
+  
+  .q-subject-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    font-size: var(--f-xs);
+    font-weight: var(--fw-semibold);
+    background: var(--c-blue-ghost);
+    color: var(--c-blue);
+    border-radius: var(--r-pill);
+    white-space: nowrap;
+  }
+  
+  .q-diff-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    font-size: var(--f-xs);
+    font-weight: var(--fw-semibold);
+    border-radius: var(--r-pill);
+    white-space: nowrap;
+  }
+  
+  .q-diff-badge.easy,
+  .q-diff-badge[data-diff="easy"] {
+    background: var(--c-green-ghost);
+    color: var(--c-green);
+  }
+  
+  .q-diff-badge.medium,
+  .q-diff-badge[data-diff="medium"] {
+    background: var(--c-amber-ghost);
+    color: var(--c-amber);
+  }
+  
+  .q-diff-badge.hard,
+  .q-diff-badge[data-diff="hard"] {
+    background: var(--c-rose-ghost);
+    color: var(--c-rose);
+  }
+  
+  /* ── Question stem ── */
+  .q-text {
+    font-size: var(--f-body);
+    font-weight: var(--fw-medium);
+    color: var(--c-text);
+    line-height: var(--lh-relaxed);
+    margin: 0;
+    word-break: break-word;
+  }
+  
+  /* Slightly larger on tablet/desktop */
+  @media (min-width: 768px) {
+    .q-text {
+      font-size: var(--f-lg);
+    }
+  }
+  
+  /* ── Answer options ── */
+  .q-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+  
+  /* Individual option (injected by examRenderer.js) */
+  .q-option {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s-3);
+    padding: var(--s-3) var(--s-4);
+    background: var(--c-card);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-md);
+    cursor: pointer;
+    min-height: var(--dim-tap-min); /* 44px WCAG touch target */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    transition:
+      background    var(--dur-base) var(--ease-default),
+      border-color  var(--dur-base) var(--ease-default),
+      box-shadow    var(--dur-base) var(--ease-default),
+      transform     var(--dur-fast) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .q-option:hover {
+      background: var(--c-raised);
+      border-color: var(--c-border-hi);
+    }
+  }
+  
+  .q-option:active {
+    transform: scale(0.99);
+  }
+  
+  /* Selected */
+  .q-option.selected,
+  .q-option[aria-checked="true"] {
+    background: var(--c-teal-ghost);
+    border-color: var(--c-teal);
+    box-shadow: 0 0 0 2px var(--c-teal-ghost);
+  }
+  
+  /* Result review — correct */
+  .q-option.correct {
+    background: var(--c-green-ghost);
+    border-color: var(--c-green);
+    box-shadow: 0 0 0 2px var(--c-green-ghost);
+  }
+  
+  /* Result review — wrong selection */
+  .q-option.incorrect {
+    background: var(--c-rose-ghost);
+    border-color: var(--c-rose);
+    box-shadow: 0 0 0 2px var(--c-rose-ghost);
+  }
+  
+  /* ── Letter badge (A / B / C / D) ── */
+  .q-option-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    background: var(--c-surface);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-sm);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-bold);
+    color: var(--c-text-2);
+    flex-shrink: 0;
+    transition:
+      background    var(--dur-fast) var(--ease-default),
+      border-color  var(--dur-fast) var(--ease-default),
+      color         var(--dur-fast) var(--ease-default);
+  }
+  
+  .q-option.selected .q-option-letter,
+  .q-option[aria-checked="true"] .q-option-letter {
+    background: var(--c-teal);
+    border-color: var(--c-teal);
+    color: var(--c-text-inverse);
+  }
+  
+  .q-option.correct .q-option-letter {
+    background: var(--c-green);
+    border-color: var(--c-green);
+    color: var(--c-text-inverse);
+  }
+  
+  .q-option.incorrect .q-option-letter {
+    background: var(--c-rose);
+    border-color: var(--c-rose);
+    color: var(--c-text-inverse);
+  }
+  
+  /* ── Option text ── */
+  .q-option-text {
+    font-size: var(--f-md);
+    color: var(--c-text);
+    line-height: var(--lh-relaxed);
+    padding-top: 3px; /* Vertically aligns with letter badge */
+    word-break: break-word;
+    flex: 1;
+  }
+  
+  
+  /* ============================================================
+     24. EXAM — Navigation Bar (Prev / Clear / Review / Next)
+     ============================================================ */
+  
+  .exam-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* 2×2 grid on mobile — each button gets equal space */
+  @media (max-width: 599px) {
+    .exam-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s-2);
+    }
+  
+    .exam-nav .btn-primary,
+    .exam-nav .btn-secondary,
+    .exam-nav .btn-ghost {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  
+  /* ============================================================
+     25. EXAM — Status Strip (sticky bottom bar)
+     ============================================================ */
+  
+  .exam-status-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-5);
+    padding: var(--s-3) var(--s-4);
+    /* Home bar safe area on iPhone */
+    padding-bottom: max(var(--s-3), env(safe-area-inset-bottom, 0px));
+    background: var(--c-surface);
+    border-top: 1px solid var(--c-border);
+    position: sticky;
+    bottom: 0;
+    z-index: var(--z-sticky);
+  }
+  
+  .ss-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-1);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--c-text-2);
+    white-space: nowrap;
+  }
+  
+  .ss-answered  { color: var(--c-green); }
+  .ss-unanswered { color: var(--c-text-3); }
+  .ss-review    { color: var(--c-amber); }
+  
+  
+  /* ============================================================
+     26. PALETTE FAB — Mobile floating action button
+     ============================================================ */
+  
+  .palette-fab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background: var(--c-teal);
+    color: var(--c-text-inverse);
+    font-size: 1.2rem;
+    border-radius: var(--r-circle);
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-teal);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-left: auto;
+    transition:
+      background  var(--dur-base) var(--ease-default),
+      transform   var(--dur-fast) var(--ease-default),
+      box-shadow  var(--dur-base) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .palette-fab:hover {
+      background: var(--c-teal-dim);
+      transform: scale(1.05);
+    }
+  }
+  
+  .palette-fab:active {
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+  
+  /* Hidden on desktop (sidebar takes over) */
+  @media (min-width: 1024px) {
+    .palette-fab {
+      display: none;
+    }
+  }
+  
+  
+  /* ============================================================
+     27. MOBILE PALETTE OVERLAY + BOTTOM SHEET
+     Injected into DOM by paletteManager.js
+     ============================================================ */
+  
+  .palette-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--c-overlay);
+    z-index: var(--z-overlay);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--dur-slow) var(--ease-default);
+  }
+  
+  .palette-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .palette-sheet {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--c-surface);
+    border-radius: var(--r-2xl) var(--r-2xl) 0 0;
+    padding: var(--s-6);
+    /* Home bar safe area */
+    padding-bottom: max(var(--s-8), calc(env(safe-area-inset-bottom, 0px) + var(--s-6)));
+    z-index: var(--z-modal);
+    transform: translateY(100%);
+    transition: transform var(--dur-slower) var(--ease-out);
+    max-height: 70vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain; /* Prevents scroll from escaping to page */
+  }
+  
+  .palette-sheet.active {
+    transform: translateY(0);
+  }
+  
+  /* Drag handle */
+  .palette-sheet::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 4px;
+    background: var(--c-border-hi);
+    border-radius: var(--r-pill);
+    margin: 0 auto var(--s-5);
+    opacity: 0.55;
+  }
+  
+  .palette-sheet-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--s-2);
+  }
+  
+  /* 5 columns on very small phones */
+  @media (max-width: 380px) {
+    .palette-sheet-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  
+  
+  /* ============================================================
+     28. RESULT — Page layout + sections
+     ============================================================ */
+  
+  .result-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--dim-max-width);
+    margin: 0 auto;
+    padding: var(--s-5) var(--s-4);
+    padding-top: max(var(--s-5), calc(env(safe-area-inset-top, 0px) + var(--s-4)));
+    padding-bottom: max(var(--s-10), calc(env(safe-area-inset-bottom, 0px) + var(--s-8)));
+    gap: var(--s-6);
+  }
+  
+  .result-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--s-4);
+    padding: var(--s-8) var(--s-4);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .result-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s-3);
+  }
+  
+  @media (min-width: 600px) {
+    .result-stats {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .result-subjects,
+  .result-difficulty,
+  .result-questions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-4);
+    padding: var(--s-5);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+  }
+  
+  .result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    padding: var(--s-4) 0;
+  }
+  
+  @media (min-width: 600px) {
+    .result-actions {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  
+  
+  /* ============================================================
+     29. SCORE DISPLAY — Large score number in result hero
+     ============================================================ */
+  
+  .score-display {
+    font-size: var(--f-score);       /* clamp(2.5rem, 10vw, 3.5rem) */
+    font-weight: var(--fw-extrabold);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  
+  .score-display.excellent { color: var(--c-green); }
+  .score-display.good      { color: var(--c-teal); }
+  .score-display.average   { color: var(--c-amber); }
+  .score-display.poor      { color: var(--c-rose); }
+  
+  
+  /* ============================================================
+     30. EXPLANATION BOX — Answer explanation in result review
+     ============================================================ */
+  
+  .explanation-box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    padding: var(--s-4);
+    background: var(--c-blue-ghost);
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    border-radius: var(--r-md);
+    font-size: var(--f-md);
+    color: var(--c-text-2);
+    line-height: var(--lh-relaxed);
+  }
+  
+  .explanation-label {
+    font-size: var(--f-xs);
+    font-weight: var(--fw-bold);
+    color: var(--c-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  
+  /* ============================================================
+     31. ANALYTICS — Page layout + sections
+     ============================================================ */
+  
+  .analytics-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--dim-max-width);
+    margin: 0 auto;
+    padding: var(--s-5) var(--s-4);
+    padding-top: max(var(--s-5), calc(env(safe-area-inset-top, 0px) + var(--s-4)));
+    padding-bottom: max(var(--s-10), calc(env(safe-area-inset-bottom, 0px) + var(--s-8)));
+    gap: var(--s-6);
+  }
+  
+  .analytics-header {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    min-height: var(--dim-header-h);
+  }
+  
+  .analytics-title {
+    font-size: var(--f-xl);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    line-height: var(--lh-tight);
+    margin: 0;
+  }
+  
+  .analytics-hero,
+  .analytics-trend,
+  .analytics-subjects,
+  .analytics-types,
+  .analytics-strengths {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-4);
+    padding: var(--s-5);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+  }
+  
+  .analytics-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    padding: var(--s-4) 0;
+  }
+  
+  @media (min-width: 600px) {
+    .analytics-actions {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  
+  
+  /* ============================================================
+     32. PROFILE — Page layout + sections
+     ============================================================ */
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: var(--dim-max-width);
+    margin: 0 auto;
+    padding: var(--s-5) var(--s-4);
+    padding-top: max(var(--s-5), calc(env(safe-area-inset-top, 0px) + var(--s-4)));
+    padding-bottom: max(var(--s-10), calc(env(safe-area-inset-bottom, 0px) + var(--s-8)));
+    gap: var(--s-6);
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    min-height: var(--dim-header-h);
+  }
+  
+  .profile-title {
+    font-size: var(--f-xl);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    line-height: var(--lh-tight);
+    margin: 0;
+  }
+  
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s-4);
+    padding: var(--s-6);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-xl);
+    text-align: center;
+  }
+  
+  .profile-settings,
+  .profile-storage,
+  .profile-data,
+  .profile-queue,
+  .profile-about {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    padding: var(--s-5);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+  }
+  
+  .profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    padding: var(--s-4) 0;
+  }
+  
+  
+  /* ============================================================
+     33. SETTINGS ROW — Profile toggles and options
+     ============================================================ */
+  
+  .settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-3);
+    padding: var(--s-3) 0;
+    border-bottom: 1px solid var(--c-border);
+  }
+  
+  .settings-row:last-child {
+    border-bottom: none;
+  }
+  
+  .settings-label {
+    font-size: var(--f-md);
+    font-weight: var(--fw-medium);
+    color: var(--c-text);
+  }
+  
+  .settings-desc {
+    font-size: var(--f-sm);
+    color: var(--c-text-3);
+    margin-top: var(--s-1);
+  }
+  
+  /* ── Toggle Switch ── */
+  .toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+  
+  /* Visually hidden checkbox */
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    inset: 0;
+    background: var(--c-raised);
+    border-radius: var(--r-pill);
+    cursor: pointer;
+    transition: background var(--dur-base) var(--ease-default);
+  }
+  
+  /* Thumb circle */
+  .toggle-slider::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 3px;
+    bottom: 3px;
+    background: var(--c-surface);
+    border-radius: var(--r-circle);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--dur-base) var(--ease-bounce);
+  }
+  
+  .toggle-switch input:checked + .toggle-slider {
+    background: var(--c-teal);
+  }
+  
+  .toggle-switch input:checked + .toggle-slider::before {
+    transform: translateX(20px);
+  }
+  
+  .toggle-switch input:focus-visible + .toggle-slider {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  
+  /* ============================================================
+     34. GENERIC REUSABLE COMPONENTS
+     ============================================================ */
+  
+  /* ── Section Card ── */
+  .section-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    padding: var(--s-5);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+  }
+  
+  .section-title {
+    font-size: var(--f-lg);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    line-height: var(--lh-tight);
+    margin: 0;
+  }
+  
+  .section-subtitle {
+    font-size: var(--f-md);
+    color: var(--c-text-2);
+    line-height: var(--lh-relaxed);
+  }
+  
+  /* ── Generic Pill Badge ── */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 8px;
+    font-size: var(--f-xs);
+    font-weight: var(--fw-semibold);
+    border-radius: var(--r-pill);
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+  
+  /* Color variants */
+  .badge.teal   { background: var(--c-teal-ghost);   color: var(--c-teal); }
+  .badge.green  { background: var(--c-green-ghost);  color: var(--c-green); }
+  .badge.amber  { background: var(--c-amber-ghost);  color: var(--c-amber); }
+  .badge.rose   { background: var(--c-rose-ghost);   color: var(--c-rose); }
+  .badge.blue   { background: var(--c-blue-ghost);   color: var(--c-blue); }
+  .badge.purple { background: var(--c-purple-ghost); color: var(--c-purple); }
+  
+  /* ── Generic Progress Bar ── */
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--c-card);
+    border-radius: var(--r-pill);
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    border-radius: var(--r-pill);
+    background: var(--c-teal);
+    transition: width var(--dur-slow) var(--ease-out);
+  }
+  
+  /* Color variants */
+  .progress-fill.green  { background: var(--c-green); }
+  .progress-fill.amber  { background: var(--c-amber); }
+  .progress-fill.rose   { background: var(--c-rose); }
+  .progress-fill.blue   { background: var(--c-blue); }
+  .progress-fill.purple { background: var(--c-purple); }
+  
+  /* ── SVG Progress Ring (analytics/result) ── */
+  .progress-ring {
+    transform: rotate(-90deg);
+  }
+  
+  .progress-ring-bg {
+    fill: none;
+    stroke: var(--c-card);
+  }
+  
+  .progress-ring-fill {
+    fill: none;
+    stroke: var(--c-teal);
+    stroke-linecap: round;
+    transition: stroke-dashoffset var(--dur-slowest) var(--ease-out);
+  }
+  
+  
+  /* ============================================================
+     35. LOADING SKELETON — Shimmer placeholder
+     NOTE: animations.css also defines .skeleton (with shimmer
+     keyframe + will-change). This definition handles the shape
+     and the gradient. animations.css adds the animation.
+     No conflict — they compose correctly.
+     ============================================================ */
+  
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--c-card) 25%,
+      var(--c-raised) 50%,
+      var(--c-card) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+    border-radius: var(--r-md);
+  }
+  
+  @keyframes skeleton-shimmer {
+    from { background-position: 200% 0; }
+    to   { background-position: -200% 0; }
+  }
+  
+  /* ── Shape variants ── */
+  .skeleton-text {
+    height: 14px;
+    width: 100%;
+    margin-bottom: var(--s-2);
+  }
+  
+  .skeleton-text.short {
+    width: 60%;
+  }
+  
+  .skeleton-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--r-circle);
+  }
+  
+  .skeleton-card {
+    height: 120px;
+    width: 100%;
+  }
+  
+  
+  /* ============================================================
+     36. TOAST NOTIFICATIONS — injected by toastManager.js
+     ============================================================ */
+  
+  .toast-container {
+    position: fixed;
+    top: max(var(--s-4), calc(env(safe-area-inset-top, 0px) + var(--s-2)));
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: var(--z-toast);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s-2);
+    pointer-events: none;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 var(--s-4);
+  }
+  
+  .toast {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    padding: var(--s-3) var(--s-5);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-lg);
+    font-size: var(--f-md);
+    font-weight: var(--fw-medium);
+    color: var(--c-text);
+    pointer-events: auto;
+    animation: toast-in 0.3s var(--ease-bounce) both;
+    max-width: 100%;
+    word-break: break-word;
+  }
+  
+  /* Left-border color variants */
+  .toast.success { border-left: 4px solid var(--c-green); }
+  .toast.error   { border-left: 4px solid var(--c-rose); }
+  .toast.warning { border-left: 4px solid var(--c-amber); }
+  .toast.info    { border-left: 4px solid var(--c-blue); }
+  
+  /* Exit animation class (added by toastManager.js) */
+  .toast.exiting,
+  .toast.toast-exit {
+    animation: toast-out 0.25s var(--ease-in) both;
+  }
+  
+  .toast-icon {
+    font-size: var(--f-lg);
+    flex-shrink: 0;
+  }
+  
+  .toast-message {
+    flex: 1;
+    line-height: var(--lh-snug);
+  }
+  
+  .toast-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    color: var(--c-text-3);
+    cursor: pointer;
+    border-radius: var(--r-sm);
+    font-size: var(--f-lg);
+    flex-shrink: 0;
+    transition: background var(--dur-fast) var(--ease-default);
+  }
+  
+  @media (hover: hover) {
+    .toast-close:hover {
+      background: var(--c-card);
+      color: var(--c-text);
+    }
+  }
+  
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(-16px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @keyframes toast-out {
+    to {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.95);
+    }
+  }
+  
+  
+  /* ============================================================
+     37. MODAL / CONFIRM DIALOG — injected by JS
+     ============================================================ */
+  
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--c-overlay);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: var(--z-overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--s-6);
+    animation: modal-fade-in 0.2s var(--ease-out) both;
+  }
+  
+  .modal-card {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-xl);
+    padding: var(--s-8) var(--s-6);
+    width: 100%;
+    max-width: var(--dim-modal-max);
+    box-shadow: var(--shadow-xl);
+    animation: modal-scale-in 0.25s var(--ease-bounce) both;
+    text-align: center;
+    position: relative;
+    z-index: var(--z-modal);
+  }
+  
+  .modal-title {
+    font-size: var(--f-xl);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    margin-bottom: var(--s-3);
+  }
+  
+  .modal-body {
+    font-size: var(--f-md);
+    color: var(--c-text-2);
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--s-6);
+  }
+  
+  .modal-actions {
+    display: flex;
+    gap: var(--s-3);
+    justify-content: center;
+  }
+  
+  @keyframes modal-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes modal-scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* ── Mobile bottom-sheet modal variant ── */
+  @media (max-width: 599px) {
+    .modal-overlay {
+      align-items: flex-end;
+      padding: 0;
+    }
+  
+    .modal-card {
+      border-radius: var(--r-2xl) var(--r-2xl) 0 0;
+      padding: var(--s-8) var(--s-5);
+      /* Home bar safe area */
+      padding-bottom: max(var(--s-8), calc(env(safe-area-inset-bottom, 0px) + var(--s-6)));
+      max-width: 100%;
+      animation: modal-slide-up 0.35s var(--ease-out) both;
+    }
+  
+    .modal-actions {
+      flex-direction: column;
+    }
+  
+    .modal-actions .btn-primary,
+    .modal-actions .btn-secondary,
+    .modal-actions .btn-ghost {
+      width: 100%;
+    }
+  
+    @keyframes modal-slide-up {
+      from { opacity: 0; transform: translateY(100%); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  }

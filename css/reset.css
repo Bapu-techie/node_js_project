@@ -1,0 +1,397 @@
+/* ============================================================
+   CSS RESET & GLOBAL UTILITIES
+   NursePrep Pro v3.0
+
+   IMPORTANT: tokens.css MUST be loaded before this file.
+   All var(--*) references depend on tokens.css being parsed first.
+
+   Contents:
+   - Box model reset
+   - HTML / body base styles
+   - Element resets (button, input, img, etc.)
+   - Custom scrollbar
+   - Selection & focus styles
+   - View system (.view / .view.hidden)
+   - Utility classes
+   - Reduced motion support
+   - Print styles
+   ============================================================ */
+
+
+/* ─── BOX MODEL RESET ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ─── HTML ─── */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* NOTE: Do NOT set height:100% here.
+     body uses min-height:100dvh which handles
+     mobile viewport correctly without conflicts. */
+}
+
+
+/* ─── BODY ─── */
+body {
+  font-family: var(--f-sans);
+  background: var(--c-bg);
+  color: var(--c-text);
+  min-height: 100vh;       /* fallback for old browsers */
+  min-height: 100dvh;      /* modern: accounts for mobile address bar */
+  line-height: var(--lh-relaxed);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Smooth theme transitions */
+  transition:
+    background-color var(--dur-slow) var(--ease-default),
+    color var(--dur-slow) var(--ease-default);
+}
+
+
+/* ─── ELEMENT RESETS ─── */
+button {
+  font-family: var(--f-sans);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--f-sans);
+  font-size: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  /* block removes mysterious inline gap below images */
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--c-text);
+}
+
+p {
+  line-height: var(--lh-relaxed);
+}
+
+/* ─── CUSTOM SCROLLBAR — Webkit (Chrome, Safari, Edge) ─── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-border-hi);
+  border-radius: var(--r-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-text-3);
+}
+
+/* Firefox scrollbar — applied to html only (not every element) */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-border-hi) transparent;
+}
+
+
+/* ─── TEXT SELECTION ─── */
+::selection {
+  background: var(--c-teal-ghost);
+  color: var(--c-teal);
+}
+
+
+/* ─── FOCUS STYLES ─── */
+
+/* Keyboard navigation focus ring */
+:focus-visible {
+  outline: 2px solid var(--c-border-focus);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+
+/* Remove focus ring for mouse/touch clicks */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* ============================================================
+   VIEW SYSTEM
+   Controls which screen is visible at any time.
+
+   HOW IT WORKS:
+   - All views start with class="view hidden" in HTML
+   - nav.js removes .hidden to show a view
+   - nav.js adds .hidden to hide a view
+   - Only one view is visible at a time
+
+   IMPORTANT: .hidden uses !important to override everything.
+   nav.js must remove .hidden class — do NOT use .active class.
+   ============================================================ */
+
+.view {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  width: 100%;
+  /* Hidden by default — nav.js removes this class to show */
+}
+
+/* When nav.js adds .hidden — the view disappears */
+.view.hidden {
+  display: none !important;
+  /* Also hidden from screen readers and keyboard via inert
+     which nav.js adds/removes alongside .hidden */
+}
+
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+/* ── Visibility ── */
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  /* Visible to screen readers, invisible visually */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+
+/* ── Typography ── */
+.mono         { font-family: var(--f-mono); }
+
+.fw-light     { font-weight: var(--fw-light); }
+.fw-regular   { font-weight: var(--fw-regular); }
+.fw-medium    { font-weight: var(--fw-medium); }
+.fw-semibold  { font-weight: var(--fw-semibold); }
+.fw-bold      { font-weight: var(--fw-bold); }
+.fw-extrabold { font-weight: var(--fw-extrabold); }
+
+.t-display {
+  font-size: var(--f-3xl);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+}
+.t-title {
+  font-size: var(--f-xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+}
+.t-body {
+  font-size: var(--f-body);
+  line-height: var(--lh-relaxed);
+}
+.t-sm  { font-size: var(--f-base); }
+.t-xs  { font-size: var(--f-sm); }
+
+.text-center    { text-align: center; }
+.text-left      { text-align: left; }
+.text-right     { text-align: right; }
+.text-nowrap    { white-space: nowrap; }
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ── Color utilities ── */
+.c-teal     { color: var(--c-teal); }
+.c-teal-dim { color: var(--c-teal-dim); }
+.c-blue     { color: var(--c-blue); }
+.c-amber    { color: var(--c-amber); }
+.c-rose     { color: var(--c-rose); }
+.c-green    { color: var(--c-green); }
+.c-purple   { color: var(--c-purple); }
+.c-violet   { color: var(--c-violet); }
+.c-muted    { color: var(--c-text-2); }
+.c-dim      { color: var(--c-text-3); }
+
+
+/* ── Flex utilities ── */
+.flex          { display: flex; }
+.flex-col      { display: flex; flex-direction: column; }
+.flex-center   { display: flex; align-items: center; justify-content: center; }
+.flex-between  { display: flex; align-items: center; justify-content: space-between; }
+.flex-wrap     { flex-wrap: wrap; }
+.flex-1        { flex: 1; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+.gap-1 { gap: var(--s-1); }
+.gap-2 { gap: var(--s-2); }
+.gap-3 { gap: var(--s-3); }
+.gap-4 { gap: var(--s-4); }
+.gap-5 { gap: var(--s-5); }
+.gap-6 { gap: var(--s-6); }
+
+
+/* ── Spacing utilities ── */
+/* Names now match token numbers correctly */
+.mt-0  { margin-top: 0; }
+.mt-1  { margin-top: var(--s-1); }
+.mt-2  { margin-top: var(--s-2); }
+.mt-3  { margin-top: var(--s-3); }
+.mt-4  { margin-top: var(--s-4); }
+.mt-6  { margin-top: var(--s-6); }
+.mt-8  { margin-top: var(--s-8); }
+
+.mb-0  { margin-bottom: 0; }
+.mb-1  { margin-bottom: var(--s-1); }
+.mb-2  { margin-bottom: var(--s-2); }
+.mb-3  { margin-bottom: var(--s-3); }
+.mb-4  { margin-bottom: var(--s-4); }
+.mb-6  { margin-bottom: var(--s-6); }
+.mb-8  { margin-bottom: var(--s-8); }
+
+.ml-auto { margin-left: auto; }
+.mr-auto { margin-right: auto; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+
+/* ── Border utilities ── */
+.border     { border: 1px solid var(--c-border); }
+.border-hi  { border: 1px solid var(--c-border-hi); }
+.rounded-sm { border-radius: var(--r-sm); }
+.rounded-md { border-radius: var(--r-md); }
+.rounded-lg { border-radius: var(--r-lg); }
+.rounded-xl { border-radius: var(--r-xl); }
+.rounded-pill { border-radius: var(--r-pill); }
+
+
+/* ── Background utilities ── */
+.bg-surface { background: var(--c-surface); }
+.bg-card    { background: var(--c-card); }
+.bg-raised  { background: var(--c-raised); }
+
+
+/* ============================================================
+   REDUCED MOTION
+   Respects user's OS "Reduce Motion" accessibility setting.
+   Disables all animations and transitions.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ============================================================
+   PRINT STYLES
+   Cleans up the page for printing.
+   Only active view prints. Navigation and modals hidden.
+   ============================================================ */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  /* Hide all inactive views */
+  .view.hidden {
+    display: none !important;
+  }
+
+  /* Hide all navigation and interactive elements */
+  .dash-header,
+  .dash-controls,
+  .exam-header,
+  .exam-progress-wrap,
+  .exam-status-strip,
+  .exam-nav,
+  .exam-sidebar,
+  .result-actions,
+  .analytics-header,
+  .profile-header,
+  .toast,
+  .modal-overlay,
+  .palette-fab,
+  .palette-toggle-btn,
+  .filter-bar,
+  .search-wrap,
+  [data-no-print] {
+    display: none !important;
+  }
+
+  /* Ensure content is readable */
+  .question-card,
+  .result-container,
+  .history-table {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
+
+.onboard-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s-14) var(--s-6) var(--s-8);
+  text-align: center;
+  display: none;
+}

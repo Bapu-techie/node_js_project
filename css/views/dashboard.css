@@ -1,0 +1,1143 @@
+/* ============================================================
+   DASHBOARD VIEW STYLES
+   NursePrep Pro v3.0
+
+   Fully matched to:
+   - index.html (#view-dashboard section)
+   - dashboardRenderer.js (dynamically generated HTML)
+
+   Mobile-first. Uses design tokens from tokens.css exclusively.
+   ============================================================ */
+
+/* ============================================================
+   VIEW CONTAINER
+   ============================================================ */
+   #view-dashboard {
+    background: var(--c-bg);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ============================================================
+     DASH CONTAINER — main scrollable content wrapper
+     ============================================================ */
+  .dash-container {
+    flex: 1;
+    width: 100%;
+    max-width: var(--dim-max-width);
+    margin: 0 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 0 100px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ============================================================
+     STICKY HEADER
+     HTML: <header class="dash-header">
+             <div class="dash-greeting">
+               <span class="dash-greeting-text" id="dash-greeting">...</span>
+             </div>
+             <div class="dash-header-actions">
+               <button class="icon-btn" id="btn-analytics">📈</button>
+               <button class="icon-btn" id="btn-profile">👤</button>
+             </div>
+           </header>
+     ============================================================ */
+  .dash-header {
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-border);
+    padding: 0 var(--s-4);
+    height: var(--dim-header-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    flex-shrink: 0;
+    gap: var(--s-3);
+  }
+  
+  /* ── Greeting (left side of header) ── */
+  .dash-greeting {
+    display: flex;
+    align-items: center;
+    gap: var(--s-1);
+    font-size: var(--f-md);
+    font-weight: var(--fw-medium);
+    color: var(--c-text);
+    line-height: var(--lh-snug);
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+  }
+  
+  .dash-greeting-text {
+    color: var(--c-text-2);
+    font-weight: var(--fw-regular);
+  }
+  
+  .dash-greeting strong {
+    color: var(--c-teal);
+    font-weight: var(--fw-bold);
+  }
+  
+  /* ── Header right actions ── */
+  .dash-header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    flex-shrink: 0;
+  }
+  
+  /* ── Icon buttons (analytics, profile) ── */
+  .icon-btn {
+    width: var(--dim-tap-min);
+    height: var(--dim-tap-min);
+    min-width: var(--dim-tap-min);
+    min-height: var(--dim-tap-min);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--c-card);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-md);
+    font-size: 1.15rem;
+    color: var(--c-text);
+    cursor: pointer;
+    transition:
+      border-color var(--dur-base) var(--ease-default),
+      background var(--dur-base) var(--ease-default),
+      transform var(--dur-fast) var(--ease-default);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  
+  .icon-btn:hover {
+    border-color: var(--c-border-hi);
+    background: var(--c-raised);
+  }
+  
+  .icon-btn:active {
+    transform: scale(0.93);
+    border-color: var(--c-teal);
+  }
+  
+  .icon-btn:focus-visible {
+    outline: 2px solid var(--c-teal);
+    outline-offset: 2px;
+  }
+  
+  /* ============================================================
+     STATS STRIP — 4 stat chips in a 2×2 grid (mobile), 4×1 (tablet+)
+     HTML: <div class="dash-stats-strip" id="dash-stats-strip">
+     JS renders: <div class="stat-chip">
+                    <span class="stat-chip-val">42</span>
+                    <span class="stat-chip-label">COMPLETED</span>
+                  </div>  ×4
+     ============================================================ */
+  .dash-stats-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s-3);
+    padding: var(--s-4) var(--s-4) 0;
+    margin: 0;
+  }
+  
+  .stat-chip {
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-lg);
+    padding: var(--s-4) var(--s-3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: var(--s-1);
+    transition:
+      border-color var(--dur-base) var(--ease-default),
+      box-shadow var(--dur-base) var(--ease-default);
+  }
+  
+  .stat-chip:hover {
+    border-color: var(--c-border-hi);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .stat-chip-val {
+    font-family: var(--f-mono);
+    font-size: var(--f-xl);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    line-height: 1;
+  }
+  
+  .stat-chip-label {
+    font-size: var(--f-xs);
+    font-weight: var(--fw-medium);
+    color: var(--c-text-3);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  
+  /* ============================================================
+     CONTROLS — filter bar + search input + test count
+     HTML: <div class="dash-controls">
+             <div class="filter-bar" id="dash-filter-bar">...</div>
+             <div class="search-wrap">
+               <input class="search-input" id="dash-search" ... />
+             </div>
+             <span class="dash-test-count" id="dash-test-count">...</span>
+           </div>
+     ============================================================ */
+  .dash-controls {
+    padding: var(--s-4) var(--s-4) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+  
+  /* ── Filter bar (horizontally scrollable) ── */
+  .filter-bar {
+    display: flex;
+    gap: var(--s-2);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: var(--s-1);
+  }
+  
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* ── Filter pills ── */
+  .filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-1);
+    padding: var(--s-2) var(--s-3);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-semibold);
+    font-family: var(--f-sans);
+    color: var(--c-text-2);
+    background: var(--c-card);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-pill);
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-height: var(--dim-tap-min);
+    transition:
+      background var(--dur-base) var(--ease-default),
+      border-color var(--dur-base) var(--ease-default),
+      color var(--dur-base) var(--ease-default),
+      box-shadow var(--dur-base) var(--ease-default);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  
+  .filter-pill:hover {
+    border-color: var(--c-border-hi);
+    background: var(--c-raised);
+  }
+  
+  .filter-pill:active {
+    transform: scale(0.96);
+  }
+  
+  .filter-pill.active {
+    background: var(--c-teal);
+    border-color: var(--c-teal);
+    color: var(--c-text-inverse);
+    box-shadow: var(--shadow-teal);
+  }
+  
+  .filter-pill.active:hover {
+    background: var(--c-teal-dim);
+    border-color: var(--c-teal-dim);
+  }
+  
+  .filter-pill:focus-visible {
+    outline: 2px solid var(--c-teal);
+    outline-offset: 2px;
+  }
+  
+  .filter-icon {
+    font-size: var(--f-md);
+    line-height: 1;
+  }
+  
+  /* ── Search wrap + input ── */
+  .search-wrap {
+    position: relative;
+    width: 100%;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: var(--s-3) var(--s-4);
+    font-size: var(--f-md);
+    font-family: var(--f-sans);
+    color: var(--c-text);
+    background: var(--c-card);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-md);
+    min-height: var(--dim-tap-min);
+    transition:
+      border-color var(--dur-base) var(--ease-default),
+      box-shadow var(--dur-base) var(--ease-default);
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .search-input::placeholder {
+    color: var(--c-text-3);
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: var(--c-teal);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Remove default search cancel button styling */
+  .search-input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+  }
+  
+  /* ── Test count label ── */
+  .dash-test-count {
+    font-size: var(--f-sm);
+    font-weight: var(--fw-medium);
+    color: var(--c-text-3);
+    padding-left: var(--s-1);
+  }
+  
+  /* ============================================================
+     TEST GRID — card container
+     HTML: <div class="test-grid" id="dash-test-grid">
+     JS renders test cards or empty state inside
+     ============================================================ */
+  .test-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--s-4);
+    padding: var(--s-4);
+  }
+  
+  /* ============================================================
+     TEST CARD — individual test card
+     JS renders: <div class="test-card" tabindex="0" role="button">
+                   <div class="tc-header">
+                     <span class="tc-badge badge-teal">📝 Practice</span>
+                     <span class="tc-neg">−0.25</span>
+                   </div>
+                   <h3 class="tc-title">Test Name</h3>
+                   <p class="tc-subject">Subject</p>
+                   <p class="tc-desc">Description...</p>
+                   <div class="tc-meta">
+                     <span class="tc-meta-item">📋 50 Qs</span>
+                     <span class="tc-meta-item">⏱️ 60 min</span>
+                   </div>
+                   <div class="tc-prev">
+                     <span class="tc-prev-badge">85%</span>
+                     <span class="tc-prev-count">Attempted 3×</span>
+                   </div>
+                   <button class="tc-start-btn btn-primary">▶️ Start Test</button>
+                 </div>
+     ============================================================ */
+  .test-card {
+    background: var(--c-card);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-xl);
+    padding: var(--s-5);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2);
+    transition:
+      border-color var(--dur-base) var(--ease-default),
+      box-shadow var(--dur-base) var(--ease-default),
+      transform var(--dur-fast) var(--ease-default);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Top gradient accent line */
+  .test-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--c-teal), var(--c-blue));
+    opacity: 0;
+    transition: opacity var(--dur-base) var(--ease-default);
+  }
+  
+  .test-card:hover {
+    border-color: var(--c-border-hi);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .test-card:hover::before {
+    opacity: 0.6;
+  }
+  
+  .test-card:active {
+    transform: scale(0.985);
+    border-color: var(--c-teal);
+  }
+  
+  .test-card:active::before {
+    opacity: 1;
+  }
+  
+  .test-card:focus-visible {
+    border-color: var(--c-teal);
+    box-shadow: var(--shadow-glow);
+    outline: none;
+  }
+  
+  .test-card:focus-visible::before {
+    opacity: 1;
+  }
+  
+  /* ── Card header — badge + negative marking ── */
+  .tc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--s-2);
+    flex-wrap: wrap;
+  }
+  
+  /* ── Type badge ── */
+  .tc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--s-1);
+    padding: 3px var(--s-3);
+    border-radius: var(--r-pill);
+    font-size: var(--f-xs);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+  
+  /* Badge color variants — from ExamConstants.getTestTypeInfo() */
+  .badge-teal {
+    background: var(--c-teal-ghost);
+    color: var(--c-teal);
+    border: 1px solid var(--c-teal-ghost);
+  }
+  
+  .badge-blue {
+    background: var(--c-blue-ghost);
+    color: var(--c-blue);
+    border: 1px solid var(--c-blue-ghost);
+  }
+  
+  .badge-purple {
+    background: var(--c-purple-ghost);
+    color: var(--c-purple);
+    border: 1px solid var(--c-purple-ghost);
+  }
+  
+  .badge-amber {
+    background: var(--c-amber-ghost);
+    color: var(--c-amber);
+    border: 1px solid var(--c-amber-ghost);
+  }
+  
+  .badge-rose {
+    background: var(--c-rose-ghost);
+    color: var(--c-rose);
+    border: 1px solid var(--c-rose-ghost);
+  }
+  
+  .badge-green {
+    background: var(--c-green-ghost);
+    color: var(--c-green);
+    border: 1px solid var(--c-green-ghost);
+  }
+  
+  /* ── Negative marking indicator ── */
+  .tc-neg {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px var(--s-2);
+    border-radius: var(--r-sm);
+    background: var(--c-rose-ghost);
+    color: var(--c-rose);
+    font-size: var(--f-xs);
+    font-weight: var(--fw-bold);
+    font-family: var(--f-mono);
+    white-space: nowrap;
+  }
+  
+  /* ── Card title ── */
+  .tc-title {
+    font-size: var(--f-body);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    line-height: var(--lh-snug);
+    margin: 0;
+  }
+  
+  /* ── Card subject ── */
+  .tc-subject {
+    font-size: var(--f-sm);
+    font-weight: var(--fw-medium);
+    color: var(--c-teal);
+    margin: 0;
+  }
+  
+  /* ── Card description ── */
+  .tc-desc {
+    font-size: var(--f-sm);
+    color: var(--c-text-3);
+    line-height: var(--lh-relaxed);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* ── Card meta row (questions + time) ── */
+  .tc-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    flex-wrap: wrap;
+    margin-top: var(--s-1);
+  }
+  
+  .tc-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: var(--f-sm);
+    color: var(--c-text-2);
+    white-space: nowrap;
+  }
+  
+  /* ── Previous attempt info ── */
+  .tc-prev {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    flex-wrap: wrap;
+    margin-top: var(--s-1);
+    padding-top: var(--s-3);
+    border-top: 1px dashed var(--c-border);
+  }
+  
+  .tc-prev-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px var(--s-2);
+    border-radius: var(--r-sm);
+    background: var(--c-green-ghost);
+    color: var(--c-green);
+    font-size: var(--f-xs);
+    font-weight: var(--fw-bold);
+    font-family: var(--f-mono);
+  }
+  
+  .tc-prev-count {
+    font-size: var(--f-xs);
+    color: var(--c-text-3);
+    font-weight: var(--fw-medium);
+  }
+  
+  /* ── Start test button ── */
+  .tc-start-btn {
+    margin-top: var(--s-3);
+    width: 100%;
+    min-height: var(--dim-tap-min);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    padding: var(--s-3) var(--s-4);
+    font-size: var(--f-md);
+    font-weight: var(--fw-bold);
+    font-family: var(--f-sans);
+    color: var(--c-text-inverse);
+    background: linear-gradient(135deg, var(--c-teal), var(--c-teal-dim));
+    border: none;
+    border-radius: var(--r-md);
+    cursor: pointer;
+    transition:
+      background var(--dur-base) var(--ease-default),
+      transform var(--dur-fast) var(--ease-default),
+      box-shadow var(--dur-base) var(--ease-default);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .tc-start-btn:hover {
+    background: linear-gradient(135deg, var(--c-teal-dim), var(--c-teal-dark));
+    box-shadow: var(--shadow-teal);
+  }
+  
+  .tc-start-btn:active {
+    transform: scale(0.97);
+  }
+  
+  .tc-start-btn:focus-visible {
+    outline: 2px solid var(--c-teal);
+    outline-offset: 2px;
+  }
+  
+  /* ============================================================
+     btn-primary — shared button style (may also exist in
+     components.css; safe fallback here for .tc-start-btn)
+     ============================================================ */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    padding: var(--s-3) var(--s-5);
+    font-size: var(--f-md);
+    font-weight: var(--fw-bold);
+    font-family: var(--f-sans);
+    color: var(--c-text-inverse);
+    background: linear-gradient(135deg, var(--c-teal), var(--c-teal-dim));
+    border: none;
+    border-radius: var(--r-md);
+    cursor: pointer;
+    min-height: var(--dim-tap-min);
+    transition:
+      background var(--dur-base) var(--ease-default),
+      transform var(--dur-fast) var(--ease-default),
+      box-shadow var(--dur-base) var(--ease-default);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, var(--c-teal-dim), var(--c-teal-dark));
+    box-shadow: var(--shadow-teal);
+  }
+  
+  .btn-primary:active {
+    transform: scale(0.97);
+  }
+  
+  .btn-primary:focus-visible {
+    outline: 2px solid var(--c-teal);
+    outline-offset: 2px;
+  }
+  
+  /* ============================================================
+     EMPTY STATE — when no tests match filter/search
+     JS renders: <div class="empty-state">
+                   <p class="empty-icon">🔍</p>
+                   <p class="empty-text">No tests match your criteria</p>
+                 </div>
+     ============================================================ */
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--s-12) var(--s-6);
+    grid-column: 1 / -1; /* span full grid width */
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
+    margin-bottom: var(--s-3);
+    opacity: 0.6;
+  }
+  
+  .empty-text {
+    font-size: var(--f-md);
+    color: var(--c-text-3);
+    font-weight: var(--fw-medium);
+  }
+  
+  /* ============================================================
+     HISTORY SECTION
+     HTML: <section class="dash-history">
+             <h2 class="dash-section-title">📋 Recent Attempts</h2>
+             <div class="history-table-wrap" role="region"
+                  aria-label="Recent test history" tabindex="0">
+               <table class="history-table">
+                 <thead>
+                   <tr><th>Date</th><th>Test</th><th>Score</th>
+                       <th>Acc</th><th>Time</th><th>Mode</th></tr>
+                 </thead>
+                 <tbody id="dash-history-table">
+                   JS renders rows or empty state
+                 </tbody>
+               </table>
+             </div>
+           </section>
+     ============================================================ */
+  .dash-history {
+    padding: 0 var(--s-4);
+    margin-top: var(--s-4);
+  }
+  
+  .dash-section-title {
+    font-size: var(--f-lg);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    margin-bottom: var(--s-3);
+    line-height: var(--lh-snug);
+  }
+  
+  /* ── History table wrapper ── */
+  .history-table-wrap {
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+  }
+  
+  /* Scrollable region for horizontal overflow on mobile */
+  .history-table-wrap[role="region"] {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* ── History table ── */
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 520px; /* ensures columns don't crush on mobile */
+  }
+  
+  .history-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .history-table th {
+    padding: var(--s-3) var(--s-4);
+    font-size: var(--f-xs);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--c-text-3);
+    text-align: left;
+    background: var(--c-raised);
+    border-bottom: 1px solid var(--c-border);
+    white-space: nowrap;
+  }
+  
+  .history-table td {
+    padding: var(--s-3) var(--s-4);
+    font-size: var(--f-sm);
+    color: var(--c-text-2);
+    border-bottom: 1px solid var(--c-border);
+    white-space: nowrap;
+  }
+  
+  .history-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .history-table tbody tr:hover td {
+    background: var(--c-teal-ghost);
+  }
+  
+  /* ── History cell classes from dashboardRenderer.js ── */
+  .hist-date {
+    color: var(--c-text-3);
+    font-size: var(--f-xs);
+  }
+  
+  .hist-title {
+    color: var(--c-text);
+    font-weight: var(--fw-semibold);
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .hist-score {
+    font-family: var(--f-mono);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+  }
+  
+  .hist-acc {
+    font-family: var(--f-mono);
+    font-weight: var(--fw-semibold);
+  }
+  
+  .hist-time {
+    color: var(--c-text-3);
+  }
+  
+  .hist-method {
+    text-align: center;
+    font-size: var(--f-md);
+  }
+  
+  /* ── Score color classes from ExamConstants.getScoreClass() ── */
+  .score-excellent {
+    color: var(--c-green) !important;
+  }
+  
+  .score-good {
+    color: var(--c-teal) !important;
+  }
+  
+  .score-average {
+    color: var(--c-amber) !important;
+  }
+  
+  .score-poor {
+    color: var(--c-rose) !important;
+  }
+  
+  /* ── Empty history row ── */
+  .history-empty td {
+    text-align: center;
+    padding: var(--s-10) var(--s-4);
+    color: var(--c-text-3);
+    font-size: var(--f-md);
+    font-weight: var(--fw-medium);
+  }
+  
+  /* ============================================================
+     RESPONSIVE — SMALL PHONES (≤360px)
+     Extra tight spacing for very small screens
+     ============================================================ */
+  @media (max-width: 360px) {
+    .dash-header {
+      padding: 0 var(--s-3);
+    }
+  
+    .dash-stats-strip {
+      padding: var(--s-3) var(--s-3) 0;
+      gap: var(--s-2);
+    }
+  
+    .stat-chip {
+      padding: var(--s-3) var(--s-2);
+    }
+  
+    .stat-chip-val {
+      font-size: var(--f-lg);
+    }
+  
+    .dash-controls {
+      padding: var(--s-3) var(--s-3) 0;
+    }
+  
+    .test-grid {
+      padding: var(--s-3);
+      gap: var(--s-3);
+    }
+  
+    .test-card {
+      padding: var(--s-4);
+    }
+  
+    .dash-history {
+      padding: 0 var(--s-3);
+    }
+  
+    .filter-pill {
+      padding: var(--s-1) var(--s-3);
+      font-size: var(--f-xs);
+      min-height: 36px;
+    }
+  
+    .dash-greeting {
+      font-size: var(--f-sm);
+    }
+  }
+  
+  /* ============================================================
+     RESPONSIVE — MEDIUM PHONES (≥480px)
+     Stats expand to 4 columns
+     ============================================================ */
+  @media (min-width: 480px) {
+    .dash-stats-strip {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    .stat-chip-val {
+      font-size: var(--f-2xl);
+    }
+  
+    .dash-greeting {
+      font-size: var(--f-body);
+    }
+  }
+  
+  /* ============================================================
+     RESPONSIVE — LARGE PHONES / SMALL TABLETS (≥600px)
+     Controls become row layout, test grid goes 2-column
+     ============================================================ */
+  @media (min-width: 600px) {
+    .dash-header {
+      padding: 0 var(--s-6);
+    }
+  
+    .dash-stats-strip {
+      padding: var(--s-4) var(--s-6) 0;
+    }
+  
+    .dash-controls {
+      padding: var(--s-4) var(--s-6) 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  
+    .filter-bar {
+      flex: 1;
+      min-width: 0;
+    }
+  
+    .search-wrap {
+      width: auto;
+      min-width: 200px;
+      max-width: 280px;
+    }
+  
+    .dash-test-count {
+      width: 100%;
+      order: 3;
+    }
+  
+    .test-grid {
+      padding: var(--s-4) var(--s-6);
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--s-4);
+    }
+  
+    .dash-history {
+      padding: 0 var(--s-6);
+    }
+  }
+  
+  /* ============================================================
+     RESPONSIVE — TABLET (≥768px)
+     Constrain max-width, larger spacing
+     ============================================================ */
+  @media (min-width: 768px) {
+    .dash-container {
+      max-width: var(--dim-max-width);
+      padding-bottom: 80px;
+    }
+  
+    .dash-header {
+      padding: 0 var(--s-8);
+    }
+  
+    .dash-stats-strip {
+      padding: var(--s-5) var(--s-8) 0;
+    }
+  
+    .dash-controls {
+      padding: var(--s-5) var(--s-8) 0;
+    }
+  
+    .test-grid {
+      padding: var(--s-5) var(--s-8);
+      gap: var(--s-5);
+    }
+  
+    .dash-history {
+      padding: 0 var(--s-8);
+    }
+  
+    .stat-chip {
+      padding: var(--s-5) var(--s-4);
+    }
+  
+    .history-table th,
+    .history-table td {
+      padding: var(--s-4) var(--s-6);
+      font-size: var(--f-base);
+    }
+  }
+  
+  /* ============================================================
+     RESPONSIVE — DESKTOP (≥1024px)
+     ============================================================ */
+  @media (min-width: 1024px) {
+    .dash-container {
+      max-width: 960px;
+    }
+  
+    .test-card {
+      padding: var(--s-6);
+    }
+  
+    .tc-title {
+      font-size: var(--f-lg);
+    }
+  
+    .dash-greeting {
+      font-size: var(--f-lg);
+    }
+  
+    .search-wrap {
+      max-width: 300px;
+    }
+  }
+  
+  /* ============================================================
+     RESPONSIVE — LARGE DESKTOP (≥1280px)
+     Test grid becomes 3-column
+     ============================================================ */
+  @media (min-width: 1280px) {
+    .dash-container {
+      max-width: 1100px;
+    }
+  
+    .test-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* ============================================================
+     SAFE AREA INSETS — notch devices (iPhone X+)
+     ============================================================ */
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .dash-container {
+      padding-bottom: calc(100px + env(safe-area-inset-bottom));
+    }
+  
+    .dash-header {
+      padding-left: max(var(--s-4), env(safe-area-inset-left));
+      padding-right: max(var(--s-4), env(safe-area-inset-right));
+    }
+  }
+  
+  /* ============================================================
+     TOUCH DEVICE OPTIMIZATIONS
+     Remove hover effects that feel "sticky" on touch
+     ============================================================ */
+  @media (hover: none) and (pointer: coarse) {
+    .test-card:hover {
+      border-color: var(--c-border);
+      box-shadow: none;
+    }
+  
+    .test-card:hover::before {
+      opacity: 0;
+    }
+  
+    .filter-pill:hover {
+      border-color: var(--c-border);
+      background: var(--c-card);
+    }
+  
+    .filter-pill.active:hover {
+      background: var(--c-teal);
+      border-color: var(--c-teal);
+    }
+  
+    .icon-btn:hover {
+      border-color: var(--c-border);
+      background: var(--c-card);
+    }
+  
+    .stat-chip:hover {
+      border-color: var(--c-border);
+      box-shadow: none;
+    }
+  
+    /* Keep active states for tap feedback */
+    .test-card:active {
+      border-color: var(--c-teal);
+      transform: scale(0.985);
+    }
+  
+    .test-card:active::before {
+      opacity: 1;
+    }
+  }
+  
+  /* ============================================================
+     ACCESSIBILITY — Reduced Motion
+     ============================================================ */
+  @media (prefers-reduced-motion: reduce) {
+    .test-card,
+    .test-card::before,
+    .filter-pill,
+    .icon-btn,
+    .tc-start-btn,
+    .btn-primary,
+    .stat-chip,
+    .search-input {
+      transition: none !important;
+    }
+  
+    .test-card:active {
+      transform: none;
+    }
+  
+    .filter-pill:active {
+      transform: none;
+    }
+  
+    .tc-start-btn:active {
+      transform: none;
+    }
+  }
+  
+  /* ============================================================
+     DARK THEME ADJUSTMENTS (scoped to dashboard)
+     Ensures card surfaces use proper dark tokens
+     ============================================================ */
+  [data-theme="dark"] .test-card {
+    background: var(--c-card);
+  }
+  
+  [data-theme="dark"] .stat-chip {
+    background: var(--c-card);
+  }
+  
+  [data-theme="dark"] .history-table-wrap {
+    background: var(--c-card);
+  }
+  
+  [data-theme="dark"] .tc-start-btn {
+    background: linear-gradient(135deg, var(--c-teal), var(--c-teal-dark));
+  }
+  
+  [data-theme="dark"] .search-input {
+    background: var(--c-card);
+    color: var(--c-text);
+  }
+  
+  [data-theme="dark"] .filter-pill {
+    background: var(--c-card);
+    color: var(--c-text-2);
+  }
+  
+  [data-theme="dark"] .filter-pill.active {
+    background: var(--c-teal);
+    color: var(--c-text-inverse);
+  }

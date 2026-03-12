@@ -1,0 +1,450 @@
+/* ============================================================
+   ONBOARDING VIEW STYLES
+   NursePrep Pro v3.0 — Light Theme
+
+   The first screen users see.
+
+   LAYOUT:
+   Mobile  → Hero on top, form card slides up from bottom
+   Tablet  → Hero on top, form card centered (floating card)
+   Desktop → Hero on left, form card on right (side by side)
+
+   CLASS NAMES — Matches index.html exactly:
+   .onboard-container   → outer wrapper div
+   .onboard-hero        → top hero section
+   .onboard-logo        → logo emoji/icon (span)
+   .onboard-title       → app name h1
+   .onboard-tagline     → subtitle paragraph
+   .onboard-form        → the <form> element
+   .onboard-footer      → bottom privacy note paragraph
+
+   IMPORTANT: These class names match what is in index.html.
+   Do NOT rename without updating index.html too.
+   ============================================================ */
+
+
+/* ============================================================
+   VIEW CONTAINER
+   ============================================================ */
+   #view-onboard {
+    background: var(--c-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Full-page background gradient — very subtle on light theme */
+  #view-onboard::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 0%, var(--c-teal-ghost) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, var(--c-blue-ghost) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  
+  /* ============================================================
+     OUTER CONTAINER
+     Centers content and constrains max width
+     ============================================================ */
+  .onboard-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  /* ============================================================
+     HERO SECTION
+     Logo + title + tagline area
+     ============================================================ */
+  .onboard-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--s-14) var(--s-6) var(--s-8);
+    text-align: center;
+  }
+  
+  /* ── Logo (emoji span in index.html) ── */
+  .onboard-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--c-teal), var(--c-blue));
+    border-radius: var(--r-xl);
+    font-size: 2.2rem;
+    margin-bottom: var(--s-6);
+    box-shadow: var(--shadow-teal);
+    /* Removes text cursor on emoji */
+    user-select: none;
+    -webkit-user-select: none;
+    /* Makes span behave like a div */
+    display: inline-flex;
+  }
+  
+  /* ── App Title ── */
+  .onboard-title {
+    font-size: var(--f-3xl);
+    font-weight: var(--fw-extrabold);
+    color: var(--c-text);
+    line-height: var(--lh-tight);
+    margin-bottom: var(--s-2);
+    /* Teal accent on the word "Pro" is handled via JS innerHTML
+       if needed, or keep as plain text */
+  }
+  
+  /* ── Tagline ── */
+  .onboard-tagline {
+    color: var(--c-text-2);
+    font-size: var(--f-body);
+    line-height: var(--lh-relaxed);
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  
+  /* ============================================================
+     FORM SECTION
+     The bottom card containing name + email + submit
+     ============================================================ */
+  .onboard-form {
+    background: var(--c-surface);
+    border-top: 1px solid var(--c-border);
+    border-radius: var(--r-2xl) var(--r-2xl) 0 0;
+    padding: var(--s-8) var(--s-6);
+    /* Safe area for iOS home indicator */
+    padding-bottom: max(var(--s-8), calc(env(safe-area-inset-bottom, 0px) + var(--s-6)));
+    width: 100%;
+    box-shadow: var(--shadow-lg);
+  
+    /* Handle bar decoration (CSS only, no extra HTML needed) */
+    position: relative;
+  }
+  
+  /* Handle bar at top of form card */
+  .onboard-form::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: var(--c-border-hi);
+    border-radius: var(--r-pill);
+    margin: 0 auto var(--s-6);
+  }
+  
+  
+  /* ============================================================
+     FORM ELEMENTS
+     Input groups, labels, inputs, errors
+     ============================================================ */
+  
+  /* ── Form group wrapper ── */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-1);
+    margin-bottom: var(--s-4);
+  }
+  
+  /* ── Label ── */
+  .form-label {
+    font-size: var(--f-md);
+    font-weight: var(--fw-semibold);
+    color: var(--c-text);
+  }
+  
+  /* ── Input field ── */
+  .form-input {
+    width: 100%;
+    height: var(--dim-tap-min);
+    padding: 0 var(--s-4);
+    background: var(--c-card);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-md);
+    font-size: var(--f-body);
+    color: var(--c-text);
+    transition:
+      border-color var(--dur-base) var(--ease-default),
+      box-shadow var(--dur-base) var(--ease-default),
+      background var(--dur-base) var(--ease-default);
+    /* Remove default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+  }
+  
+  .form-input::placeholder {
+    color: var(--c-text-3);
+  }
+  
+  /* Hover state */
+  .form-input:hover:not(:focus) {
+    border-color: var(--c-border-hi);
+    background: var(--c-raised);
+  }
+  
+  /* Focus state */
+  .form-input:focus {
+    border-color: var(--c-teal);
+    background: var(--c-surface);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Error state */
+  .form-input.error {
+    border-color: var(--c-rose);
+    box-shadow: var(--shadow-rose);
+  }
+  
+  /* ── Error message ── */
+  .form-error {
+    font-size: var(--f-sm);
+    color: var(--c-rose);
+    font-weight: var(--fw-medium);
+    min-height: 1em;
+    /* Always takes space to prevent layout shift */
+    display: block;
+  }
+  
+  
+  /* ============================================================
+     BUTTONS
+     Primary button used on onboard form
+     ============================================================ */
+  
+  /* Primary button */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    height: var(--dim-tap-min);
+    padding: 0 var(--s-6);
+    background: var(--c-teal);
+    color: var(--c-text-inverse);
+    font-size: var(--f-body);
+    font-weight: var(--fw-bold);
+    border-radius: var(--r-md);
+    border: none;
+    cursor: pointer;
+    transition:
+      background var(--dur-base) var(--ease-default),
+      box-shadow var(--dur-base) var(--ease-default),
+      transform var(--dur-fast) var(--ease-default);
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .btn-primary:hover {
+    background: var(--c-teal-dim);
+    box-shadow: var(--shadow-teal);
+  }
+  
+  .btn-primary:active {
+    background: var(--c-teal-dark);
+    transform: scale(0.98);
+    box-shadow: none;
+  }
+  
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* Full width modifier */
+  .btn-full {
+    width: 100%;
+    margin-top: var(--s-2);
+  }
+  
+  
+  /* ============================================================
+     FOOTER NOTE
+     "Your data is stored locally" text
+     ============================================================ */
+  .onboard-footer {
+    font-size: var(--f-sm);
+    color: var(--c-text-3);
+    text-align: center;
+    margin-top: var(--s-4);
+    line-height: var(--lh-relaxed);
+  }
+  
+  .onboard-footer a {
+    color: var(--c-teal);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  
+  
+  /* ============================================================
+     TABLET LAYOUT (≥600px)
+     Form card floats as a centered modal-style card
+     ============================================================ */
+  @media (min-width: 600px) {
+    #view-onboard {
+      justify-content: center;
+      align-items: center;
+      padding: var(--s-8);
+      gap: var(--s-6);
+    }
+  
+    .onboard-container {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--s-6);
+      width: 100%;
+      max-width: 460px;
+    }
+  
+    .onboard-hero {
+      flex: 0 0 auto;
+      padding: var(--s-6) var(--s-6) 0;
+      width: 100%;
+    }
+  
+    /* Form card becomes a floating card */
+    .onboard-form {
+      border-radius: var(--r-xl);
+      border: 1px solid var(--c-border-hi);
+      padding: var(--s-8) var(--s-8);
+      width: 100%;
+      /* Remove iOS sheet handle on desktop */
+    }
+  
+    /* Hide the handle bar on tablet+ */
+    .onboard-form::before {
+      display: none;
+    }
+  
+    /* Logo slightly larger */
+    .onboard-logo {
+      width: 88px;
+      height: 88px;
+      font-size: 2.4rem;
+    }
+  }
+  
+  
+  /* ============================================================
+     DESKTOP LAYOUT (≥1024px)
+     Side-by-side: hero on left, form on right
+     ============================================================ */
+  @media (min-width: 1024px) {
+    #view-onboard {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: var(--s-14) var(--s-12);
+      gap: 0;
+    }
+  
+    .onboard-container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: var(--s-16);
+      max-width: 960px;
+      width: 100%;
+    }
+  
+    /* Hero takes left half */
+    .onboard-hero {
+      flex: 0 0 420px;
+      padding: 0;
+      text-align: left;
+      align-items: flex-start;
+    }
+  
+    .onboard-tagline {
+      margin: 0;
+      max-width: 340px;
+    }
+  
+    /* Form takes right half */
+    .onboard-form {
+      flex: 0 0 400px;
+      padding: var(--s-10) var(--s-10);
+      box-shadow: var(--shadow-xl);
+    }
+  
+    /* Larger logo on desktop */
+    .onboard-logo {
+      width: 96px;
+      height: 96px;
+      font-size: 2.6rem;
+      border-radius: var(--r-2xl);
+    }
+  
+    /* Bigger title on desktop */
+    .onboard-title {
+      font-size: var(--f-3xl);
+    }
+  }
+  
+  
+  /* ============================================================
+     DARK THEME OVERRIDES
+     When data-theme="dark" is set on <html>
+     or OS prefers dark mode
+     ============================================================ */
+  @media (prefers-color-scheme: dark) {
+    #view-onboard:not([data-theme="light"]) {
+      /* Background gradient stays same, just colors change via tokens */
+    }
+  
+    .onboard-form {
+      border-top-color: var(--c-border);
+      box-shadow: var(--shadow-lg);
+    }
+  
+    .form-input {
+      background: var(--c-card);
+      border-color: var(--c-border);
+    }
+  
+    .form-input:hover:not(:focus) {
+      background: var(--c-raised);
+      border-color: var(--c-border-hi);
+    }
+  
+    .form-input:focus {
+      background: var(--c-surface);
+    }
+  }
+  
+  [data-theme="dark"] .onboard-form {
+    border-top-color: var(--c-border);
+  }
+  
+  [data-theme="dark"] .form-input {
+    background: var(--c-card);
+    border-color: var(--c-border);
+  }
+  
+  [data-theme="dark"] .form-input:hover:not(:focus) {
+    background: var(--c-raised);
+    border-color: var(--c-border-hi);
+  }
+  
+  [data-theme="dark"] .form-input:focus {
+    background: var(--c-surface);
+  }

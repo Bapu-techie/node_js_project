@@ -1,0 +1,1367 @@
+/* ============================================================
+   EXAM VIEW STYLES — exam.css
+   NursePrep Pro v3.0
+
+   Fully matched to index.html classes & examRenderer.js
+   Mobile-first, fully responsive for phone test-taking.
+   Uses design tokens from tokens.css exclusively.
+
+   Class coverage:
+   - Layout:    .exam-layout, .exam-body, .exam-main
+   - Header:    .exam-header, .exam-title, .exam-header-right,
+                .exam-timer (.warning, .critical), .btn-submit
+   - Progress:  .exam-progress-wrap, .exam-progress-bg,
+                .exam-progress-fill, .exam-progress-text
+   - Question:  .question-card, .q-meta, .q-number,
+                .q-subject-badge, .q-diff-badge (.diff-easy,
+                .diff-medium, .diff-hard), .q-text
+   - Options:   .q-options, .option-btn (.selected),
+                .opt-label, .opt-text
+   - Nav:       .exam-nav, .btn-secondary, .btn-ghost (.active),
+                .btn-primary, .btn-submit-last
+   - Sidebar:   .exam-sidebar, .sidebar-palette
+   - Status:    .exam-status-strip, .ss-item, .ss-answered,
+                .ss-unanswered, .ss-review
+   - FAB:       .palette-fab
+   - Palette:   .palette-grid, .pal-btn (.current, .answered,
+                .review), .palette-summary, .pal-stat,
+                .pal-stat-dot
+   - Modal:     .modal-overlay (.modal-enter, .modal-exit),
+                .modal-sheet, .submit-modal, .modal-header,
+                .modal-title, .modal-close-btn, .modal-body,
+                .submit-stats, .submit-stat, .submit-warn,
+                .modal-footer, .btn-danger
+   ============================================================ */
+
+
+/* ============================================================
+   1. VIEW CONTAINER
+   ============================================================ */
+   #view-exam {
+    background: var(--c-bg);
+    height: 100dvh;
+    height: 100vh; /* fallback for older browsers */
+    overflow: hidden;
+  }
+  
+  
+  /* ============================================================
+     2. EXAM LAYOUT — full-height flex column
+     ============================================================ */
+  .exam-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  
+  /* ============================================================
+     3. EXAM HEADER (sticky top bar)
+     ============================================================ */
+  .exam-header {
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-border);
+    padding: 0 var(--s-4);
+    height: var(--dim-header-h);
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    flex-shrink: 0;
+    z-index: var(--z-sticky);
+  }
+  
+  @media (min-width: 768px) {
+    .exam-header {
+      padding: 0 var(--s-7);
+      gap: var(--s-5);
+    }
+  }
+  
+  /* ── Exam title ── */
+  .exam-title {
+    flex: 1;
+    min-width: 0;
+    font-size: var(--f-body);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    line-height: var(--lh-snug);
+  }
+  
+  /* ── Header right section (timer + submit) ── */
+  .exam-header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    flex-shrink: 0;
+  }
+  
+  /* ── Timer pill ── */
+  .exam-timer {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--c-raised);
+    border: 1.5px solid var(--c-border-hi);
+    border-radius: var(--r-pill);
+    padding: 5px 12px;
+    font-family: var(--f-mono);
+    font-size: var(--f-md);
+    font-weight: var(--fw-semibold);
+    color: var(--c-text);
+    flex-shrink: 0;
+    transition: all var(--dur-base) var(--ease-default);
+    white-space: nowrap;
+  }
+  
+  @media (min-width: 768px) {
+    .exam-timer {
+      padding: 5px 14px;
+      font-size: var(--f-md);
+      gap: 6px;
+    }
+  }
+  
+  /* Timer warning state (set by JS when time is running low) */
+  .exam-timer.warning {
+    border-color: var(--c-amber);
+    color: var(--c-amber);
+    background: var(--c-amber-ghost);
+  }
+  
+  /* Timer critical state (set by JS when time is almost up) */
+  .exam-timer.critical {
+    border-color: var(--c-rose);
+    color: var(--c-rose);
+    background: var(--c-rose-ghost);
+    animation: timerBlink 0.5s var(--ease-default) infinite;
+  }
+  
+  @keyframes timerBlink {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.4; }
+  }
+  
+  /* ── Submit button in header ── */
+  .btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
+    border-radius: var(--r-md);
+    background: var(--c-teal);
+    color: var(--c-text-inverse);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-bold);
+    border: none;
+    cursor: pointer;
+    min-height: 36px;
+    white-space: nowrap;
+    transition: all var(--dur-base) var(--ease-default);
+    font-family: inherit;
+  }
+  
+  .btn-submit:hover {
+    background: var(--c-teal-dim);
+  }
+  
+  .btn-submit:active {
+    transform: scale(0.97);
+  }
+  
+  @media (min-width: 768px) {
+    .btn-submit {
+      padding: 7px 18px;
+      font-size: var(--f-base);
+    }
+  }
+  
+  
+  /* ============================================================
+     4. PROGRESS BAR (below header)
+     ============================================================ */
+  .exam-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    padding: 0 var(--s-4);
+    background: var(--c-surface);
+    flex-shrink: 0;
+    min-height: 24px;
+    border-bottom: 1px solid var(--c-border);
+  }
+  
+  @media (min-width: 768px) {
+    .exam-progress-wrap {
+      padding: 0 var(--s-7);
+      min-height: 28px;
+    }
+  }
+  
+  .exam-progress-bg {
+    flex: 1;
+    height: 4px;
+    background: var(--c-raised);
+    border-radius: var(--r-pill);
+    overflow: hidden;
+  }
+  
+  .exam-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--c-teal), var(--c-blue));
+    border-radius: var(--r-pill);
+    transition: width var(--dur-slow) var(--ease-default);
+    min-width: 0;
+  }
+  
+  .exam-progress-text {
+    font-size: var(--f-xs);
+    font-family: var(--f-mono);
+    font-weight: var(--fw-semibold);
+    color: var(--c-text-3);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .exam-progress-text {
+      font-size: var(--f-sm);
+    }
+  }
+  
+  
+  /* ============================================================
+     5. EXAM BODY — contains exam-main + exam-sidebar
+     ============================================================ */
+  .exam-body {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    min-height: 0;
+  }
+  
+  /* ── Exam main (scrollable question area + nav) ── */
+  .exam-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+  }
+  
+  
+  /* ============================================================
+     6. QUESTION CARD — scrollable question content
+     ============================================================ */
+  .question-card {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--s-5) var(--s-4);
+    padding-bottom: var(--s-8);
+    scroll-behavior: smooth;
+  }
+  
+  @media (min-width: 768px) {
+    .question-card {
+      padding: var(--s-8) var(--s-10);
+      max-width: var(--dim-exam-max);
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .question-card {
+      padding: var(--s-10) var(--s-14);
+    }
+  }
+  
+  
+  /* ============================================================
+     7. QUESTION META ROW
+     ============================================================ */
+  .q-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+    flex-wrap: wrap;
+    margin-bottom: var(--s-5);
+  }
+  
+  @media (min-width: 768px) {
+    .q-meta {
+      margin-bottom: var(--s-7);
+    }
+  }
+  
+  /* Question number */
+  .q-number {
+    font-size: var(--f-md);
+    font-weight: var(--fw-bold);
+    color: var(--c-teal);
+    font-family: var(--f-mono);
+    white-space: nowrap;
+  }
+  
+  /* Subject badge */
+  .q-subject-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: var(--r-pill);
+    font-size: var(--f-xs);
+    font-weight: var(--fw-medium);
+    color: var(--c-text-2);
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    white-space: nowrap;
+  }
+  
+  /* Difficulty badge */
+  .q-diff-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: var(--r-pill);
+    font-size: var(--f-xs);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+  
+  /* Difficulty variant classes (set by JS via ExamConstants.getDifficultyInfo) */
+  .diff-easy,
+  .q-diff-badge.diff-easy {
+    background: var(--c-green-ghost);
+    color: var(--c-green);
+  }
+  
+  .diff-medium,
+  .q-diff-badge.diff-medium {
+    background: var(--c-amber-ghost);
+    color: var(--c-amber);
+  }
+  
+  .diff-hard,
+  .q-diff-badge.diff-hard {
+    background: var(--c-rose-ghost);
+    color: var(--c-rose);
+  }
+  
+  
+  /* ============================================================
+     8. QUESTION TEXT
+     ============================================================ */
+  .q-text {
+    font-size: var(--f-lg);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-loose);
+    color: var(--c-text);
+    margin: 0 0 var(--s-7);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  @media (min-width: 768px) {
+    .q-text {
+      font-size: var(--f-xl);
+      margin-bottom: var(--s-9);
+    }
+  }
+  
+  
+  /* ============================================================
+     9. OPTIONS — rendered by examRenderer.js
+     Container: .q-options
+     Each option: button.option-btn (.selected)
+     Children: span.opt-label, span.opt-text
+     ============================================================ */
+  .q-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+  
+  @media (min-width: 768px) {
+    .q-options {
+      gap: var(--s-4);
+    }
+  }
+  
+  /* ── Individual option button ── */
+  .option-btn {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--s-4);
+    width: 100%;
+    background: var(--c-card);
+    border: 1.5px solid var(--c-border);
+    border-radius: var(--r-lg);
+    padding: var(--s-4) var(--s-5);
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--c-text);
+    min-height: var(--dim-tap-min);
+    transition:
+      background var(--dur-base) var(--ease-default),
+      border-color var(--dur-base) var(--ease-default),
+      transform var(--dur-fast) var(--ease-default),
+      box-shadow var(--dur-base) var(--ease-default);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  @media (min-width: 768px) {
+    .option-btn {
+      padding: var(--s-5) var(--s-6);
+      gap: var(--s-5);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .option-btn {
+      padding: var(--s-6) var(--s-8);
+    }
+  }
+  
+  .option-btn:hover {
+    border-color: var(--c-border-hi);
+    background: var(--c-raised);
+  }
+  
+  .option-btn:active {
+    transform: scale(0.985);
+  }
+  
+  /* Focus for keyboard navigation */
+  .option-btn:focus-visible {
+    border-color: var(--c-teal);
+    outline: none;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Selected state (JS adds .selected class) */
+  .option-btn.selected {
+    background: var(--c-teal-ghost);
+    border-color: var(--c-teal);
+    box-shadow: 0 0 0 1px var(--c-teal-ghost);
+  }
+  
+  .option-btn.selected .opt-label {
+    background: var(--c-teal);
+    color: var(--c-text-inverse);
+    border-color: var(--c-teal);
+  }
+  
+  /* Option label (A, B, C, D) */
+  .opt-label {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: var(--r-sm);
+    background: var(--c-raised);
+    border: 1.5px solid var(--c-border-hi);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--f-sm);
+    font-weight: var(--fw-bold);
+    color: var(--c-text-2);
+    flex-shrink: 0;
+    transition: all var(--dur-base) var(--ease-default);
+    line-height: 1;
+  }
+  
+  @media (min-width: 768px) {
+    .opt-label {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      font-size: var(--f-base);
+    }
+  }
+  
+  /* Option text */
+  .opt-text {
+    font-size: var(--f-body);
+    line-height: var(--lh-relaxed);
+    padding-top: 4px;
+    color: var(--c-text);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  @media (min-width: 768px) {
+    .opt-text {
+      font-size: var(--f-body);
+    }
+  }
+  
+  
+  /* ============================================================
+     10. EXAM NAVIGATION BAR — nav.exam-nav
+     Contains: prev (btn-secondary), clear (btn-ghost),
+     review (btn-ghost), next (btn-primary)
+     ============================================================ */
+  .exam-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--s-2);
+    padding: var(--s-3) var(--s-4);
+    background: var(--c-surface);
+    border-top: 1px solid var(--c-border);
+    flex-shrink: 0;
+    z-index: var(--z-sticky);
+  }
+  
+  @media (min-width: 768px) {
+    .exam-nav {
+      padding: var(--s-4) var(--s-7);
+      max-width: var(--dim-exam-max);
+      margin: 0 auto;
+      width: 100%;
+      gap: var(--s-3);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .exam-nav {
+      padding: var(--s-5) var(--s-14);
+    }
+  }
+  
+  /* ── btn-secondary (Prev button) ── */
+  .exam-nav .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: var(--r-md);
+    background: var(--c-raised);
+    border: 1.5px solid var(--c-border);
+    color: var(--c-text-2);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+    min-height: var(--dim-tap-min);
+    white-space: nowrap;
+    transition: all var(--dur-base) var(--ease-default);
+    font-family: inherit;
+  }
+  
+  .exam-nav .btn-secondary:hover {
+    background: var(--c-border);
+    border-color: var(--c-border-hi);
+    color: var(--c-text);
+  }
+  
+  .exam-nav .btn-secondary:disabled {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  
+  /* ── btn-ghost (Clear + Review buttons) ── */
+  .exam-nav .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: var(--r-md);
+    background: transparent;
+    border: 1.5px solid transparent;
+    color: var(--c-text-3);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+    min-height: var(--dim-tap-min);
+    white-space: nowrap;
+    transition: all var(--dur-base) var(--ease-default);
+    font-family: inherit;
+  }
+  
+  .exam-nav .btn-ghost:hover {
+    background: var(--c-card);
+    color: var(--c-text-2);
+    border-color: var(--c-border);
+  }
+  
+  /* Review button active/marked state (JS adds .active class) */
+  .exam-nav .btn-ghost.active {
+    background: var(--c-amber-ghost);
+    border-color: var(--c-amber);
+    color: var(--c-amber);
+    font-weight: var(--fw-semibold);
+  }
+  
+  /* ── btn-primary (Next button) ── */
+  .exam-nav .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    border-radius: var(--r-md);
+    background: var(--c-teal);
+    border: none;
+    color: var(--c-text-inverse);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    min-height: var(--dim-tap-min);
+    margin-left: auto;
+    white-space: nowrap;
+    transition: all var(--dur-base) var(--ease-default);
+    font-family: inherit;
+  }
+  
+  .exam-nav .btn-primary:hover {
+    background: var(--c-teal-dim);
+  }
+  
+  .exam-nav .btn-primary:active {
+    transform: scale(0.97);
+  }
+  
+  /* Submit-last state on Next button (JS adds .btn-submit-last on last question) */
+  .exam-nav .btn-primary.btn-submit-last {
+    background: var(--c-rose);
+  }
+  
+  .exam-nav .btn-primary.btn-submit-last:hover {
+    background: var(--c-rose-dim);
+  }
+  
+  /* On very small screens, tighten up nav buttons */
+  @media (max-width: 374px) {
+    .exam-nav .btn-ghost {
+      padding: 8px 6px;
+      font-size: var(--f-xs);
+    }
+    .exam-nav .btn-secondary {
+      padding: 8px 8px;
+      font-size: var(--f-xs);
+    }
+    .exam-nav .btn-primary {
+      padding: 8px 10px;
+      font-size: var(--f-xs);
+    }
+  }
+  
+  
+  /* ============================================================
+     11. EXAM SIDEBAR — aside.exam-sidebar (desktop palette)
+     Hidden on mobile, shown on desktop
+     ============================================================ */
+  .exam-sidebar {
+    display: none;
+  }
+  
+  .sidebar-palette {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-5);
+  }
+  
+  @media (min-width: 768px) {
+    .exam-body {
+      flex-direction: row;
+    }
+  
+    .exam-sidebar {
+      display: flex;
+      flex-direction: column;
+      width: var(--dim-sidebar-w);
+      min-width: var(--dim-sidebar-w);
+      background: var(--c-surface);
+      border-left: 1px solid var(--c-border);
+      overflow-y: auto;
+      padding: var(--s-7);
+      flex-shrink: 0;
+    }
+  }
+  
+  /* Sidebar sub-elements (rendered by PaletteManager) */
+  .sidebar-title {
+    font-size: var(--f-md);
+    font-weight: var(--fw-bold);
+    margin-bottom: var(--s-5);
+    color: var(--c-text-2);
+  }
+  
+  .sidebar-stats {
+    display: flex;
+    gap: var(--s-4);
+    margin-bottom: var(--s-6);
+    font-size: var(--f-sm);
+    flex-wrap: wrap;
+  }
+  
+  .sidebar-stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .sidebar-actions {
+    margin-top: auto;
+    padding-top: var(--s-6);
+    border-top: 1px solid var(--c-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+  
+  
+  /* ============================================================
+     12. EXAM STATUS STRIP — div.exam-status-strip
+     Mobile only: shows answered/unanswered/review counts
+     ============================================================ */
+  .exam-status-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-5);
+    padding: 6px var(--s-4);
+    background: var(--c-card);
+    border-top: 1px solid var(--c-border);
+    flex-shrink: 0;
+    font-size: var(--f-sm);
+    position: relative;
+    z-index: var(--z-sticky);
+  }
+  
+  @media (min-width: 768px) {
+    .exam-status-strip {
+      display: none;
+    }
+  }
+  
+  .ss-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--c-text-2);
+    font-family: var(--f-mono);
+    font-weight: var(--fw-medium);
+    font-size: var(--f-sm);
+    white-space: nowrap;
+  }
+  
+  .ss-answered {
+    color: var(--c-green);
+  }
+  
+  .ss-unanswered {
+    color: var(--c-text-3);
+  }
+  
+  .ss-review {
+    color: var(--c-amber);
+  }
+  
+  /* Status strip dot indicators */
+  .ss-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--r-circle);
+    flex-shrink: 0;
+  }
+  
+  .ss-dot-ans  { background: var(--c-green); }
+  .ss-dot-unans { background: var(--c-text-3); }
+  .ss-dot-rev  { background: var(--c-amber); }
+  
+  .ss-count {
+    font-family: var(--f-mono);
+    font-weight: var(--fw-semibold);
+  }
+  
+  .ss-label {
+    color: var(--c-text-3);
+  }
+  
+  
+  /* ============================================================
+     13. PALETTE FAB — Mobile floating action button
+     ============================================================ */
+  .palette-fab {
+    position: absolute;
+    right: var(--s-4);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--r-circle);
+    background: var(--c-blue);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all var(--dur-base) var(--ease-default);
+    z-index: var(--z-sticky);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .palette-fab:hover {
+    background: var(--c-blue-dim);
+  }
+  
+  .palette-fab:active {
+    transform: translateY(-50%) scale(0.92);
+  }
+  
+  @media (min-width: 768px) {
+    .palette-fab {
+      display: none;
+    }
+  }
+  
+  
+  /* ============================================================
+     14. PALETTE GRID (shared between sidebar + modal)
+     ============================================================ */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+  }
+  
+  @media (min-width: 768px) {
+    .palette-grid {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+  }
+  
+  .pal-btn {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--r-sm);
+    background: var(--c-raised);
+    border: 1.5px solid var(--c-border);
+    color: var(--c-text-2);
+    font-size: var(--f-sm);
+    font-weight: var(--fw-medium);
+    font-family: var(--f-mono);
+    cursor: pointer;
+    transition: all var(--dur-fast) var(--ease-default);
+    -webkit-tap-highlight-color: transparent;
+    min-height: 36px;
+    padding: 0;
+  }
+  
+  .pal-btn:hover {
+    border-color: var(--c-border-hi);
+  }
+  
+  .pal-btn:active {
+    transform: scale(0.93);
+  }
+  
+  .pal-btn.current {
+    background: var(--c-blue-ghost);
+    border-color: var(--c-blue);
+    color: var(--c-blue);
+    font-weight: var(--fw-bold);
+    box-shadow: 0 0 0 2px var(--c-blue-ghost);
+  }
+  
+  .pal-btn.answered {
+    background: var(--c-green-ghost);
+    border-color: var(--c-green);
+    color: var(--c-green);
+  }
+  
+  .pal-btn.review {
+    background: var(--c-amber-ghost);
+    border-color: var(--c-amber);
+    color: var(--c-amber);
+  }
+  
+  /* Both answered AND review */
+  .pal-btn.answered.review {
+    background: var(--c-amber-ghost);
+    border-color: var(--c-amber);
+    color: var(--c-amber);
+  }
+  
+  /* ── Palette summary row ── */
+  .palette-summary {
+    display: flex;
+    gap: var(--s-5);
+    margin-bottom: var(--s-5);
+    flex-wrap: wrap;
+  }
+  
+  .pal-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: var(--f-sm);
+    color: var(--c-text-2);
+  }
+  
+  .pal-stat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--r-circle);
+    flex-shrink: 0;
+  }
+  
+  
+  /* ============================================================
+     15. SUBMIT CONFIRMATION MODAL
+     Generated dynamically by examRenderer.js
+     ============================================================ */
+  
+  /* ── Modal overlay backdrop ── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--c-overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    padding: var(--s-4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity var(--dur-slow) var(--ease-default);
+  }
+  
+  /* Modal enter animation */
+  .modal-overlay.modal-enter {
+    opacity: 1;
+  }
+  
+  .modal-overlay.modal-enter .modal-sheet {
+    transform: translateY(0) scale(1);
+  }
+  
+  /* Modal exit animation */
+  .modal-overlay.modal-exit {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .modal-overlay.modal-exit .modal-sheet {
+    transform: translateY(20px) scale(0.97);
+  }
+  
+  /* ── Modal sheet (card) ── */
+  .modal-sheet {
+    background: var(--c-surface);
+    border-radius: var(--r-xl);
+    width: 100%;
+    max-width: var(--dim-modal-max);
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-xl);
+    transform: translateY(20px) scale(0.97);
+    transition: transform var(--dur-slow) var(--ease-bounce);
+  }
+  
+  .submit-modal {
+    /* Inherits from .modal-sheet — add overrides here if needed */
+  }
+  
+  /* ── Modal header ── */
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--s-6) var(--s-7);
+    border-bottom: 1px solid var(--c-border);
+  }
+  
+  .modal-title {
+    font-size: var(--f-xl);
+    font-weight: var(--fw-bold);
+    color: var(--c-text);
+    margin: 0;
+  }
+  
+  .modal-close-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--r-circle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--c-raised);
+    border: none;
+    color: var(--c-text-2);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all var(--dur-base) var(--ease-default);
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  
+  .modal-close-btn:hover {
+    background: var(--c-border);
+    color: var(--c-text);
+  }
+  
+  /* ── Modal body ── */
+  .modal-body {
+    padding: var(--s-6) var(--s-7);
+  }
+  
+  .modal-body h4 {
+    font-size: var(--f-md);
+    font-weight: var(--fw-semibold);
+    color: var(--c-text-2);
+    margin: 0 0 var(--s-5);
+  }
+  
+  /* Submit stats grid */
+  .submit-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-3);
+    margin-bottom: var(--s-5);
+  }
+  
+  .submit-stat {
+    padding: var(--s-3) var(--s-4);
+    background: var(--c-card);
+    border-radius: var(--r-md);
+    font-size: var(--f-sm);
+    color: var(--c-text-2);
+  }
+  
+  .submit-stat strong {
+    color: var(--c-text);
+    font-weight: var(--fw-bold);
+  }
+  
+  /* Submit warnings */
+  .submit-warn {
+    padding: var(--s-3) var(--s-4);
+    background: var(--c-amber-ghost);
+    border-radius: var(--r-md);
+    border-left: 3px solid var(--c-amber);
+    font-size: var(--f-sm);
+    color: var(--c-amber);
+    margin: var(--s-3) 0 0;
+  }
+  
+  .submit-warn strong {
+    font-weight: var(--fw-bold);
+  }
+  
+  /* ── Modal footer ── */
+  .modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--s-3);
+    padding: var(--s-5) var(--s-7);
+    border-top: 1px solid var(--c-border);
+  }
+  
+  /* Modal footer buttons */
+  .modal-footer .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: var(--r-md);
+    background: var(--c-raised);
+    border: 1.5px solid var(--c-border);
+    color: var(--c-text-2);
+    font-size: var(--f-md);
+    font-weight: var(--fw-semibold);
+    cursor: pointer;
+    min-height: var(--dim-tap-min);
+    transition: all var(--dur-base) var(--ease-default);
+    font-family: inherit;
+  }
+  
+  .modal-footer .btn-secondary:hover {
+    background: var(--c-border);
+    color: var(--c-text);
+  }
+  
+  .modal-footer .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    border-radius: var(--r-md);
+    background: var(--c-teal);
+    border: none;
+    color: var(--c-text-inverse);
+    font-size: var(--f-md);
+    font-weight: var(--fw-bold);
+    cursor: pointer;
+    min-height: var(--dim-tap-min);
+    transition: all var(--dur-base) var(--ease-default);
+    font-family: inherit;
+  }
+  
+  .modal-footer .btn-primary:hover {
+    background: var(--c-teal-dim);
+  }
+  
+  /* Danger variant for submit confirm button */
+  .modal-footer .btn-primary.btn-danger,
+  .modal-footer .btn-danger {
+    background: var(--c-rose);
+  }
+  
+  .modal-footer .btn-primary.btn-danger:hover,
+  .modal-footer .btn-danger:hover {
+    background: var(--c-rose-dim);
+  }
+  
+  
+  /* ============================================================
+     16. MOBILE-SPECIFIC REFINEMENTS (≤480px)
+     ============================================================ */
+  @media (max-width: 480px) {
+    .exam-header {
+      padding: 0 var(--s-3);
+      gap: var(--s-2);
+    }
+  
+    .exam-title {
+      font-size: var(--f-sm);
+    }
+  
+    .exam-timer {
+      padding: 4px 8px;
+      font-size: var(--f-sm);
+    }
+  
+    .btn-submit {
+      padding: 5px 10px;
+      font-size: var(--f-xs);
+    }
+  
+    .exam-progress-wrap {
+      padding: 0 var(--s-3);
+    }
+  
+    .question-card {
+      padding: var(--s-4) var(--s-3);
+    }
+  
+    .q-meta {
+      gap: var(--s-2);
+      margin-bottom: var(--s-4);
+    }
+  
+    .q-number {
+      font-size: var(--f-sm);
+    }
+  
+    .q-text {
+      font-size: var(--f-body);
+      margin-bottom: var(--s-5);
+    }
+  
+    .option-btn {
+      padding: var(--s-3) var(--s-4);
+      gap: var(--s-3);
+      border-radius: var(--r-md);
+    }
+  
+    .opt-label {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      font-size: var(--f-xs);
+    }
+  
+    .opt-text {
+      font-size: var(--f-md);
+      padding-top: 3px;
+    }
+  
+    .exam-nav {
+      padding: var(--s-2) var(--s-3);
+      gap: var(--s-1);
+    }
+  
+    .exam-nav .btn-secondary,
+    .exam-nav .btn-ghost,
+    .exam-nav .btn-primary {
+      padding: 6px 10px;
+      font-size: var(--f-xs);
+      min-height: 38px;
+    }
+  
+    .exam-status-strip {
+      padding: 5px var(--s-3);
+      gap: var(--s-3);
+      font-size: var(--f-xs);
+    }
+  
+    .palette-fab {
+      width: 36px;
+      height: 36px;
+      font-size: 0.9rem;
+    }
+  
+    /* Modal adjustments for mobile */
+    .modal-overlay {
+      align-items: flex-end;
+      padding: 0;
+    }
+  
+    .modal-sheet {
+      border-radius: var(--r-xl) var(--r-xl) 0 0;
+      max-height: 85vh;
+    }
+  
+    .modal-overlay.modal-enter .modal-sheet {
+      transform: translateY(0);
+    }
+  
+    .modal-overlay.modal-exit .modal-sheet {
+      transform: translateY(100%);
+    }
+  
+    .modal-sheet {
+      transform: translateY(100%);
+    }
+  
+    .modal-header {
+      padding: var(--s-4);
+    }
+  
+    .modal-body {
+      padding: var(--s-4);
+    }
+  
+    .modal-footer {
+      padding: var(--s-4);
+      flex-direction: column;
+    }
+  
+    .modal-footer .btn-secondary,
+    .modal-footer .btn-primary {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .submit-stats {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
+  /* ============================================================
+     17. SAFE AREA SUPPORT (notched phones)
+     ============================================================ */
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .exam-status-strip {
+      padding-bottom: calc(6px + env(safe-area-inset-bottom));
+    }
+  
+    .exam-nav {
+      padding-bottom: calc(var(--s-3) + env(safe-area-inset-bottom));
+    }
+  
+    .modal-footer {
+      padding-bottom: calc(var(--s-5) + env(safe-area-inset-bottom));
+    }
+  }
+  
+  
+  /* ============================================================
+     18. LANDSCAPE MOBILE (short viewport)
+     ============================================================ */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .exam-header {
+      height: 44px;
+    }
+  
+    .exam-progress-wrap {
+      min-height: 18px;
+    }
+  
+    .question-card {
+      padding: var(--s-3) var(--s-4);
+    }
+  
+    .q-meta {
+      margin-bottom: var(--s-3);
+    }
+  
+    .q-text {
+      font-size: var(--f-md);
+      margin-bottom: var(--s-4);
+    }
+  
+    .q-options {
+      gap: var(--s-2);
+    }
+  
+    .option-btn {
+      padding: var(--s-2) var(--s-3);
+      min-height: 36px;
+    }
+  
+    .exam-nav {
+      padding: var(--s-2) var(--s-3);
+    }
+  
+    .exam-status-strip {
+      padding: 3px var(--s-3);
+    }
+  }
+  
+  
+  /* ============================================================
+     19. ACCESSIBILITY — Reduced motion
+     ============================================================ */
+  @media (prefers-reduced-motion: reduce) {
+    .exam-progress-fill {
+      transition: none;
+    }
+  
+    .option-btn {
+      transition: none;
+    }
+  
+    .exam-timer.critical {
+      animation: none;
+    }
+  
+    .modal-overlay,
+    .modal-sheet {
+      transition: none;
+    }
+  
+    .pal-btn {
+      transition: none;
+    }
+  }
+  
+  
+  /* ============================================================
+     20. PRINT — hide exam during print
+     ============================================================ */
+  @media print {
+    #view-exam {
+      display: none !important;
+    }
+  }
