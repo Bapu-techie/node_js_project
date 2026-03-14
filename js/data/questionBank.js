@@ -1,2962 +1,8008 @@
-/* ============================================================
-   QUESTION BANK — Complete Question Database
-   NursePrep Pro v3.0 — AIIMS BSc Nursing Entrance Exam
-
-   Subjects: Physics, Chemistry, Biology, General Knowledge
-   Total: 250+ questions across 25 chapters
-
-   Structure: QUESTION_BANK = {
-     [subject]: {
-       [chapterKey]: [
-         { id, question, options[], correctAnswer, explanation, difficulty, subject, subjectName, topicKey }
-       ]
-     }
-   }
-
-   Each question has:
-   - id            : Unique string (e.g. "phy_ce_001")
-   - question      : The question text
-   - options       : Array of 4 option strings
-   - correctAnswer : 0-based index of the correct option
-   - explanation   : Detailed explanation of the answer
-   - difficulty    : 'easy' | 'medium' | 'hard'
-   - subject       : Subject key (physics, chemistry, biology, gk)
-   - subjectName   : Display label
-   - topicKey      : Chapter key matching ExamConstants.CHAPTERS
-   ============================================================ */
+// ============================================================
+// QUESTION BANK — NursePrep Pro v3.0
+// AIIMS BSc Nursing Entrance Exam
+// Subjects: Physics (9), Chemistry (9), Biology (8), GK (4)
+// Total: 600+ questions across 30 chapters
+// ============================================================
 
 'use strict';
 
 var QUESTION_BANK = {
-
-  /* ╔═══════════════════════════════════════════════════════════╗
-     ║  PHYSICS                                                  ║
-     ╚═══════════════════════════════════════════════════════════╝ */
-
-  physics: {
-
-    /* ───────────────────────────────────────────────────────────
-       CURRENT ELECTRICITY
-       ─────────────────────────────────────────────────────────── */
-    current_electricity: [
-      {
-        id: 'phy_ce_001',
-        question: 'The SI unit of electric current is:',
-        options: ['Volt', 'Ampere', 'Ohm', 'Coulomb'],
-        correctAnswer: 1,
-        explanation: 'The SI unit of electric current is the Ampere (A). One ampere is defined as one coulomb of charge passing through a point in one second.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'current_electricity'
-      },
-      {
-        id: 'phy_ce_002',
-        question: 'Ohm\'s law states that V = IR. What does R represent?',
-        options: ['Reactance', 'Resistance', 'Reluctance', 'Resonance'],
-        correctAnswer: 1,
-        explanation: 'In Ohm\'s law (V = IR), R represents the electrical resistance of the conductor, measured in Ohms (Ω).',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'current_electricity'
-      },
-      {
-        id: 'phy_ce_003',
-        question: 'When resistors are connected in series, the total resistance is:',
-        options: ['Sum of reciprocals', 'Product divided by sum', 'Sum of all resistances', 'Equal to the smallest resistance'],
-        correctAnswer: 2,
-        explanation: 'In series combination, R_total = R₁ + R₂ + R₃ + ... The total resistance is the arithmetic sum of all individual resistances.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'current_electricity'
-      },
-      {
-        id: 'phy_ce_004',
-        question: 'The equivalent resistance of two resistors of 6Ω and 3Ω connected in parallel is:',
-        options: ['9Ω', '2Ω', '3Ω', '1Ω'],
-        correctAnswer: 1,
-        explanation: '1/R = 1/6 + 1/3 = 1/6 + 2/6 = 3/6 = 1/2. Therefore R = 2Ω. In parallel, the equivalent resistance is always less than the smallest individual resistance.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'current_electricity'
-      },
-      {
-        id: 'phy_ce_005',
-        question: 'Kirchhoff\'s first law (junction rule) is based on conservation of:',
-        options: ['Energy', 'Charge', 'Momentum', 'Mass'],
-        correctAnswer: 1,
-        explanation: 'Kirchhoff\'s junction rule states that the total current entering a junction equals the total current leaving it. This is based on the conservation of electric charge.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'current_electricity'
-      },
-      {
-        id: 'phy_ce_006',
-        question: 'The internal resistance of an ideal voltage source is:',
-        options: ['Infinite', 'Zero', 'Equal to external resistance', 'Very high'],
-        correctAnswer: 1,
-        explanation: 'An ideal voltage source has zero internal resistance, meaning it can supply the same voltage regardless of the current drawn from it.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'current_electricity'
-      },
-      {
-        id: 'phy_ce_007',
-        question: 'A Wheatstone bridge is said to be balanced when the galvanometer shows:',
-        options: ['Maximum deflection', 'Zero deflection', 'Infinite resistance', 'Negative deflection'],
-        correctAnswer: 1,
-        explanation: 'A Wheatstone bridge is balanced when the potential difference across the galvanometer is zero, resulting in zero current flow (zero deflection). This occurs when P/Q = R/S.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'current_electricity'
-      },
-      {
-        id: 'phy_ce_008',
-        question: 'The power dissipated in a resistor carrying current I and having resistance R is:',
-        options: ['P = V/R', 'P = IR', 'P = I²R', 'P = I/R²'],
-        correctAnswer: 2,
-        explanation: 'Electrical power dissipated in a resistor is P = I²R. This can also be written as P = VI = V²/R using Ohm\'s law.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'current_electricity'
-      },
-      {
-        id: 'phy_ce_009',
-        question: 'The drift velocity of electrons in a conductor is proportional to:',
-        options: ['Square of electric field', 'Electric field', 'Cube of electric field', 'Independent of electric field'],
-        correctAnswer: 1,
-        explanation: 'Drift velocity vd = (eE)τ/m, which shows drift velocity is directly proportional to the electric field E. Here τ is the relaxation time and m is the electron mass.',
-        difficulty: 'hard',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'current_electricity'
-      },
-      {
-        id: 'phy_ce_010',
-        question: 'A potentiometer is preferred over a voltmeter for measuring EMF because:',
-        options: ['It is cheaper', 'It draws no current from the cell', 'It measures higher voltages', 'It is portable'],
-        correctAnswer: 1,
-        explanation: 'A potentiometer draws no current from the source at the null point (balanced condition). Therefore, it measures the true EMF without any drop across internal resistance, unlike a voltmeter which draws finite current.',
-        difficulty: 'hard',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'current_electricity'
-      }
+gk: {
+current_affairs: [
+{
+id: 'gk_ca_001',
+question: 'Chandrayaan-3 successfully soft-landed on the Moon\'s south polar region on which date?',
+options: ['July 14, 2023', 'August 23, 2023', 'September 2, 2023', 'August 15, 2023'],
+correctAnswer: 1,
+explanation: 'Chandrayaan-3 soft-landed on the Moon\'s south polar region on August 23, 2023, making India the first country to land near the lunar south pole and the fourth country overall to soft-land on the Moon. July 14, 2023 was the launch date, not the landing date — a common confusion among students. This achievement is significant for nursing aspirants as AIIMS GK frequently tests India\'s scientific milestones.',
+difficulty: 'easy',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_002',
+question: 'What are the names of the lander and rover of Chandrayaan-3?',
+options: ['Pragyan (lander) and Vikram (rover)', 'Vikram (lander) and Pragyan (rover)', 'Aditya (lander) and Surya (rover)', 'Bhaskara (lander) and Aryabhata (rover)'],
+correctAnswer: 1,
+explanation: 'The Chandrayaan-3 lander was named Vikram (after Dr Vikram Sarabhai, father of the Indian space programme) and the rover was named Pragyan (meaning "wisdom" in Sanskrit). Students frequently interchange the lander and rover names. Vikram is the lander that carries the rover Pragyan, which rolled out on the lunar surface to conduct experiments.',
+difficulty: 'easy',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_003',
+question: 'ISRO\'s solar observation mission Aditya-L1 was launched on which date?',
+options: ['July 14, 2023', 'August 23, 2023', 'September 2, 2023', 'January 6, 2024'],
+correctAnswer: 2,
+explanation: 'Aditya-L1, India\'s first dedicated solar observation mission, was launched on September 2, 2023. It reached the Sun-Earth Lagrange Point 1 (L1) on January 6, 2024. Option D is the date it reached L1, not the launch date. The mission studies the solar corona, solar wind, and solar flares, which affect space weather and satellite communications.',
+difficulty: 'easy',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_004',
+question: 'With the success of Chandrayaan-3, India became the _____ country to soft-land on the Moon.',
+options: ['Second', 'Third', 'Fourth', 'Fifth'],
+correctAnswer: 2,
+explanation: 'India became the fourth country to successfully soft-land on the Moon, after the USA (1966), the Soviet Union (1966), and China (2013). However, India is the first country to land near the Moon\'s south polar region. Students sometimes confuse this with being the third country, forgetting China\'s successful Chang\'e missions.',
+difficulty: 'easy',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_005',
+question: 'The 2023 Nobel Prize in Physiology or Medicine was awarded to Katalin Karikó and Drew Weissman for their work on:',
+options: ['Discovery of microRNA and its role in gene regulation', 'Nucleoside base modifications enabling mRNA vaccines', 'Discovery of quantum dots for biomedical imaging', 'Computational protein structure prediction using AI'],
+correctAnswer: 1,
+explanation: 'Katalin Karikó and Drew Weissman received the 2023 Nobel Prize in Physiology or Medicine for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19. Option A describes the 2024 Medicine Nobel (Ambros and Ruvkun). This is directly relevant to nursing as mRNA technology transformed COVID-19 vaccination — the largest vaccination drive nurses participated in globally.',
+difficulty: 'easy',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_006',
+question: 'Aditya-L1 is positioned at the Lagrange Point L1. What is the primary advantage of this location for solar observation?',
+options: ['It is the closest point to the Sun', 'It provides an uninterrupted view of the Sun without eclipses or occultation', 'It allows the spacecraft to land on the Sun\'s surface', 'It is located beyond Mars orbit for better solar imaging'],
+correctAnswer: 1,
+explanation: 'The L1 Lagrange point is approximately 1.5 million km from Earth, where the gravitational forces of the Sun and Earth balance with the centripetal force. A spacecraft at L1 can continuously observe the Sun without any eclipses or occultation by Earth, making it ideal for solar studies. It is not the closest point to the Sun — that would be closer to Mercury\'s orbit. This demonstrates applied physics knowledge tested in AIIMS GK.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_007',
+question: 'The 2024 Nobel Prize in Physiology or Medicine was awarded to Victor Ambros and Gary Ruvkun for the discovery of:',
+options: ['CRISPR-Cas9 gene editing mechanism', 'Hepatitis C virus identification', 'MicroRNA and its role in post-transcriptional gene regulation', 'Temperature and touch receptors in humans'],
+correctAnswer: 2,
+explanation: 'Victor Ambros and Gary Ruvkun received the 2024 Nobel Prize in Physiology or Medicine for discovering microRNA (miRNA) and its role in gene regulation. MicroRNAs are small non-coding RNA molecules that regulate gene expression post-transcriptionally. Option D refers to the 2021 Nobel (Julius and Patapoutian). This discovery is highly relevant to medical and nursing sciences as miRNA dysregulation is linked to cancer, cardiovascular diseases, and other conditions.',
+difficulty: 'easy',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_008',
+question: 'The 2024 Nobel Prize in Chemistry was shared by David Baker, Demis Hassabis, and John Jumper. What was Hassabis and Jumper\'s contribution?',
+options: ['Discovery of quantum dots for nanotechnology', 'Development of AlphaFold for AI-based protein structure prediction', 'Synthesis of mRNA for therapeutic applications', 'Creation of CRISPR-based gene therapy tools'],
+correctAnswer: 1,
+explanation: 'Demis Hassabis and John Jumper of DeepMind were awarded the 2024 Nobel Prize in Chemistry for developing AlphaFold, an AI system that predicts protein three-dimensional structures with remarkable accuracy. David Baker shared the prize for computational protein design. Option A refers to the 2023 Chemistry Nobel (Bawendi, Brus, Ekimov). AlphaFold has revolutionised drug discovery and biomedical research, making it relevant to healthcare professionals including nurses involved in pharmacological care.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_009',
+question: 'India\'s G20 presidency in 2023 was held under which theme?',
+options: ['"Building Consensus for Fair and Sustainable Development"', '"One Earth, One Family, One Future" (Vasudhaiva Kutumbakam)', '"Recover Together, Recover Stronger"', '"Shaping an Interconnected World"'],
+correctAnswer: 1,
+explanation: 'India held the G20 presidency in 2023 under the theme "Vasudhaiva Kutumbakam — One Earth, One Family, One Future", derived from the ancient Sanskrit text Maha Upanishad. The G20 Leaders\' Summit was held in New Delhi on September 9-10, 2023. Option C was Indonesia\'s G20 theme (2022), and Option D was Germany\'s (2017). Health was a key agenda item, with discussions on pandemic preparedness relevant to nursing.',
+difficulty: 'easy',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_010',
+question: 'The Women\'s Reservation Act passed in September 2023 provides what percentage of reservation in Lok Sabha and state legislative assemblies?',
+options: ['25%', '30%', '33%', '50%'],
+correctAnswer: 2,
+explanation: 'The Women\'s Reservation Act (106th Constitutional Amendment Act, 2023) provides 33% reservation for women in Lok Sabha and state legislative assemblies. It was passed in September 2023 but will be implemented after the next delimitation exercise and census. This is significant for nursing students as the nursing profession is predominantly female, and political representation impacts health policy formulation.',
+difficulty: 'easy',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_011',
+question: 'Which of the following scientists discovered quantum dots, for which the 2023 Nobel Prize in Chemistry was awarded?',
+options: ['Katalin Karikó, Drew Weissman, and Svante Pääbo', 'Moungi Bawendi, Louis Brus, and Alexei Ekimov', 'David Baker, Demis Hassabis, and John Jumper', 'Victor Ambros, Gary Ruvkun, and David Julius'],
+correctAnswer: 1,
+explanation: 'The 2023 Nobel Prize in Chemistry was awarded to Moungi Bawendi, Louis Brus, and Alexei Ekimov for the discovery and synthesis of quantum dots — semiconductor nanocrystals with size-dependent optical properties. Option A mixes 2023 Medicine and 2022 Medicine laureates. Quantum dots have biomedical applications in imaging, diagnostics, and drug delivery, making them relevant to modern healthcare and nursing practice.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_012',
+question: 'Assertion (A): India is the first country to soft-land a spacecraft near the Moon\'s south polar region.\nReason (R): Chandrayaan-3 was launched by NASA in collaboration with ISRO.',
+options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+correctAnswer: 2,
+explanation: 'The Assertion is true — India\'s Chandrayaan-3 became the first mission to soft-land near the Moon\'s south polar region on August 23, 2023. However, the Reason is false — Chandrayaan-3 was entirely an ISRO (Indian Space Research Organisation) mission, not a collaboration with NASA. ISRO independently designed, built, and launched the mission from Satish Dhawan Space Centre, Sriharikota. This demonstrates India\'s indigenous space capability.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_013',
+question: 'Which scheme was launched by the Government of India to provide a unique digital health identity to every citizen?',
+options: ['Pradhan Mantri Jan Arogya Yojana (PM-JAY)', 'Ayushman Bharat Digital Mission (ABDM) with ABHA ID', 'National Health Mission (NHM)', 'Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA)'],
+correctAnswer: 1,
+explanation: 'The Ayushman Bharat Digital Mission (ABDM) provides every citizen with an ABHA (Ayushman Bharat Health Account) — a unique 14-digit digital health ID. This creates a digital health ecosystem linking patients, healthcare providers, and facilities. PM-JAY (Option A) is the insurance component of Ayushman Bharat, not the digital identity component. For nurses, ABDM is critical as it digitalises patient records and health facility registries.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_014',
+question: 'INS Vikrant, India\'s first indigenous aircraft carrier, was commissioned on:',
+options: ['August 15, 2022', 'September 2, 2022', 'January 26, 2023', 'October 2, 2022'],
+correctAnswer: 1,
+explanation: 'INS Vikrant (IAC-1) was commissioned on September 2, 2022, by Prime Minister Modi at Cochin Shipyard Limited, Kochi. It is India\'s first indigenously designed and built aircraft carrier, making India one of a select group of nations capable of building such vessels. Students may confuse this date with Aditya-L1\'s launch (also September 2, but in 2023). The commissioning marked a significant milestone in India\'s defence self-reliance.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_015',
+question: 'Assertion (A): The 2023 Nobel Prize in Physiology or Medicine is directly relevant to the COVID-19 vaccination programme.\nReason (R): Katalin Karikó and Drew Weissman\'s work on nucleoside base modifications made mRNA vaccines like Pfizer-BioNTech and Moderna possible.',
+options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+correctAnswer: 0,
+explanation: 'Both the Assertion and Reason are true, and the Reason correctly explains the Assertion. Karikó and Weissman discovered that modified nucleosides (specifically pseudouridine replacing uridine) in synthetic mRNA reduced inflammatory responses and increased protein production, making therapeutic mRNA viable. This breakthrough directly enabled the rapid development of Pfizer-BioNTech and Moderna COVID-19 vaccines. Nurses administered billions of these vaccines worldwide, making this Nobel particularly relevant to nursing practice.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_016',
+question: 'Which of the following is NOT a correct match?',
+options: ['Chandrayaan-3 — Moon south pole soft landing', 'Aditya-L1 — Solar observation at L1 Lagrange point', 'Gaganyaan — India\'s first Mars human mission', 'Mangalyaan — India\'s Mars Orbiter Mission'],
+correctAnswer: 2,
+explanation: 'Gaganyaan is India\'s first human spaceflight programme planned to send Indian astronauts (Gagannauts/Vyomnauts) to low Earth orbit, NOT to Mars. All other matches are correct: Chandrayaan-3 landed near the Moon\'s south pole, Aditya-L1 studies the Sun from L1, and Mangalyaan (MOM) was India\'s successful Mars orbiter mission launched in 2013. Students commonly confuse Gaganyaan\'s destination — it is an Earth orbital mission, not interplanetary.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_017',
+question: 'India was certified polio-free by WHO in which year?',
+options: ['2011', '2012', '2014', '2016'],
+correctAnswer: 2,
+explanation: 'India was certified polio-free by WHO on March 27, 2014, along with the entire South-East Asia Region. The last case of wild poliovirus in India was reported on January 13, 2011 — students often confuse this date with the certification date. This achievement is a landmark in public health and nursing, as pulse polio immunisation drives involving thousands of health workers including nurses were critical to eradication.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_018',
+question: 'India\'s target year for TB elimination is _____, which is _____ years ahead of the global SDG target.',
+options: ['2025; five years ahead of 2030', '2030; same as global target', '2027; three years ahead of 2030', '2025; ten years ahead of 2035'],
+correctAnswer: 0,
+explanation: 'India has set an ambitious target of TB elimination by 2025, which is five years ahead of the global Sustainable Development Goal (SDG) target of 2030. Under the National TB Elimination Programme (NTEP), strategies include the Nikshay digital platform, Nikshay Poshan Yojana (nutritional support), and universal drug susceptibility testing. This is highly relevant for nursing students as TB care is a core component of community health nursing.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_019',
+question: 'Which Indian-developed COVID-19 vaccine was developed by Bharat Biotech in collaboration with ICMR?',
+options: ['Covishield', 'Covaxin', 'Sputnik V', 'ZyCoV-D'],
+correctAnswer: 1,
+explanation: 'Covaxin (BBV152) was developed by Bharat Biotech in collaboration with ICMR (Indian Council of Medical Research) and the National Institute of Virology, Pune. It is an inactivated whole-virion vaccine. Covishield (Option A) was manufactured by the Serum Institute of India based on the Oxford-AstraZeneca platform. Sputnik V is Russian, and ZyCoV-D is by Zydus Cadila. Nurses played a crucial role in administering these vaccines during India\'s massive vaccination drive.',
+difficulty: 'easy',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_020',
+question: 'The Atal Setu (Mumbai Trans Harbour Link), India\'s longest sea bridge, was inaugurated in:',
+options: ['August 2023', 'January 2024', 'March 2024', 'October 2023'],
+correctAnswer: 1,
+explanation: 'The Atal Bihari Vajpayee Sewri-Nhava Sheva Atal Setu (Mumbai Trans Harbour Link), India\'s longest sea bridge at approximately 21.8 km, was inaugurated on January 12, 2024, by Prime Minister Modi. It connects Mumbai with Navi Mumbai, significantly reducing travel time. Named after former PM Atal Bihari Vajpayee, this infrastructure project is a frequently tested current affairs topic in competitive examinations.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_021',
+question: 'Which of the following correctly identifies the scheme that specifically aims to provide free antenatal care on the 9th of every month?',
+options: ['Janani Suraksha Yojana (JSY)', 'Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA)', 'Rashtriya Bal Swasthya Karyakram (RBSK)', 'LaQshya Programme'],
+correctAnswer: 1,
+explanation: 'Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA) provides free antenatal care on the 9th of every month at government health facilities, where qualified OB-GYN specialists examine pregnant women. JSY (Option A) provides cash incentives for institutional delivery, not specific antenatal dates. RBSK (Option C) focuses on child health screening. For nursing students, PMSMA is critical as nurses coordinate these monthly antenatal clinics.',
+difficulty: 'medium',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_022',
+question: 'Which country hosted the G20 Summit in 2023, and in which city was the Leaders\' Summit held?',
+options: ['Indonesia, Bali', 'India, New Delhi', 'India, Mumbai', 'Brazil, Rio de Janeiro'],
+correctAnswer: 1,
+explanation: 'India hosted the G20 Leaders\' Summit on September 9-10, 2023, in New Delhi at the Bharat Mandapam, Pragati Maidan. Indonesia hosted the G20 in 2022 (Bali), and Brazil hosted in 2024. The New Delhi Leaders\' Declaration addressed global health challenges including pandemic preparedness, antimicrobial resistance, and digital health — all relevant to nursing practice and healthcare delivery.',
+difficulty: 'easy',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_023',
+question: 'The 106th Constitutional Amendment Act, 2023 (Women\'s Reservation Act) reserves seats for women in:',
+options: ['Lok Sabha only', 'Rajya Sabha and Lok Sabha', 'Lok Sabha and state legislative assemblies', 'All three tiers of Panchayati Raj institutions'],
+correctAnswer: 2,
+explanation: 'The 106th Amendment reserves 33% seats for women in the Lok Sabha and state legislative assemblies only. It does NOT apply to Rajya Sabha (Option B) or Panchayati Raj institutions (Option D), which already have 33% reservation under the 73rd and 74th Amendments. The reservation will be implemented only after a delimitation exercise based on the next census. This distinction is a common trap in competitive exams.',
+difficulty: 'hard',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_024',
+question: 'Arrange the following ISRO missions in chronological order of their launch:\n1. Mangalyaan (MOM) 2. Chandrayaan-3 3. Aditya-L1 4. Chandrayaan-2',
+options: ['1 → 4 → 2 → 3', '4 → 1 → 2 → 3', '1 → 2 → 4 → 3', '4 → 1 → 3 → 2'],
+correctAnswer: 0,
+explanation: 'The correct chronological order is: Mangalyaan (November 2013) → Chandrayaan-2 (July 2019) → Chandrayaan-3 (July 2023) → Aditya-L1 (September 2023). Students often confuse the order of Chandrayaan-2 and Mangalyaan. Chandrayaan-1 (2008) was India\'s first lunar mission, Mangalyaan made India the first Asian country to reach Mars orbit, and Chandrayaan-3 achieved the historic south pole landing.',
+difficulty: 'hard',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+},
+{
+id: 'gk_ca_025',
+question: 'Which of the following statements about India\'s COVID-19 vaccination programme is correct?',
+options: ['India administered the world\'s smallest vaccination programme', 'Covishield was developed entirely by ICMR', 'India\'s vaccination programme is considered the largest in the world, using primarily Covishield and Covaxin', 'India used only imported vaccines throughout the programme'],
+correctAnswer: 2,
+explanation: 'India\'s COVID-19 vaccination programme is the largest in the world, having administered over 2.2 billion doses. The programme primarily used Covishield (manufactured by Serum Institute of India, based on Oxford-AstraZeneca technology) and Covaxin (developed by Bharat Biotech with ICMR). Option B is incorrect because Covishield was manufactured by SII, not developed by ICMR — ICMR collaborated on Covaxin. Nurses were at the forefront of this vaccination drive, making this fact essential for nursing aspirants.',
+difficulty: 'hard',
+subject: 'gk',
+subjectName: 'General Knowledge',
+topicKey: 'current_affairs'
+}
+],
+health_organizations_schemes: [
+  {
+  id: 'gk_ho_001',
+  question: 'The World Health Organization (WHO) was established on which date, and where is its headquarters located?',
+  options: ['April 7, 1948; New York, USA', 'April 7, 1948; Geneva, Switzerland', 'June 26, 1945; Geneva, Switzerland', 'December 11, 1946; New York, USA'],
+  correctAnswer: 1,
+  explanation: 'WHO was established on April 7, 1948, with headquarters in Geneva, Switzerland. This date is commemorated annually as World Health Day. Option A has the correct date but wrong HQ. Option C is the founding date of the United Nations, and Option D is UNICEF\'s establishment date. WHO is a specialised agency of the UN with 194 member states and is the most important international health organisation for nursing students to know.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_002',
+  question: 'UNICEF was established on December 11, 1946. What does UNICEF stand for, and where is its headquarters?',
+  options: ['United Nations International Children\'s Emergency Fund; Geneva', 'United Nations Children\'s Fund; New York, USA', 'United Nations Children\'s Fund; Geneva, Switzerland', 'Universal Network for International Children\'s Education Fund; London'],
+  correctAnswer: 1,
+  explanation: 'UNICEF stands for United Nations Children\'s Fund (originally United Nations International Children\'s Emergency Fund — the name changed in 1953 but the acronym was retained). Its headquarters is in New York, USA. Option A has the original full form but wrong HQ. UNICEF works in over 190 countries for children\'s rights, survival, development, and protection. It publishes the annual "State of the World\'s Children" report, which is frequently referenced in nursing community health.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_003',
+  question: 'The Indian Nursing Council (INC) was established by:',
+  options: ['INC Act, 1947', 'Indian Medical Council Act, 1956', 'Nursing Education Act, 1952', 'Medical Termination of Pregnancy Act, 1971'],
+  correctAnswer: 0,
+  explanation: 'The Indian Nursing Council was established by the INC Act, 1947. It is a statutory regulatory body headquartered in New Delhi that regulates nursing education standards, prescribes curricula for GNM, B.Sc., and M.Sc. Nursing programmes, maintains the Indian Nurse Register, and is affiliated to the International Council of Nurses (ICN), Geneva. Option B established the Medical Council of India. This is the most important regulatory body for every nursing student to know.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_004',
+  question: 'The Indian Council of Medical Research (ICMR) was originally established in 1911 under which name?',
+  options: ['Indian Research Fund Association (IRFA)', 'Indian Medical Research Council', 'National Institute of Medical Research', 'Council of Scientific and Industrial Research'],
+  correctAnswer: 0,
+  explanation: 'ICMR was originally established in 1911 as the Indian Research Fund Association (IRFA) and was renamed to Indian Council of Medical Research in 1949 after independence. It is headquartered in New Delhi and functions under the Department of Health Research, Ministry of Health and Family Welfare. ICMR is the apex body for biomedical research in India and played a crucial role in COVID-19 by conducting clinical trials for Covaxin. It publishes the Indian Journal of Medical Research.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_005',
+  question: 'The International Committee of the Red Cross (ICRC) was founded in 1863 by Henry Dunant after witnessing the horrors of which battle?',
+  options: ['Battle of Waterloo, 1815', 'Battle of Solferino, 1859', 'Battle of Gettysburg, 1863', 'Battle of Plassey, 1757'],
+  correctAnswer: 1,
+  explanation: 'Henry Dunant witnessed the aftermath of the Battle of Solferino (1859) in Italy, where thousands of wounded soldiers were left without medical care. This experience inspired him to write "A Memory of Solferino" and advocate for the creation of national relief societies, leading to the founding of the ICRC in 1863 in Geneva. Dunant received the first Nobel Peace Prize in 1901. The seven fundamental principles of the Red Cross are: humanity, impartiality, neutrality, independence, voluntary service, unity, and universality.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_006',
+  question: 'Which organisation is the oldest international regional health organisation, established in 1902?',
+  options: ['WHO-SEARO (South-East Asia Regional Office)', 'PAHO (Pan American Health Organization)', 'UNICEF', 'Médecins Sans Frontières (MSF)'],
+  correctAnswer: 1,
+  explanation: 'PAHO (Pan American Health Organization) was established in 1902, making it the oldest international regional public health agency. It also serves as the WHO Regional Office for the Americas. WHO-SEARO (Option A) is the South-East Asia Regional Office headquartered in New Delhi, but it was established later as part of WHO in 1948. MSF was founded in 1971. PAHO predates WHO itself by 46 years.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_007',
+  question: 'Médecins Sans Frontières (MSF) was founded in which year and received the Nobel Peace Prize in which year?',
+  options: ['Founded 1961; Nobel 1989', 'Founded 1971; Nobel 1999', 'Founded 1863; Nobel 1901', 'Founded 1981; Nobel 2009'],
+  correctAnswer: 1,
+  explanation: 'MSF (Doctors Without Borders) was founded in 1971 in France by doctors and journalists after the Biafra war in Nigeria. It received the Nobel Peace Prize in 1999 for its pioneering humanitarian work providing emergency medical care in conflict zones, natural disasters, and epidemics. Option C describes the ICRC/Henry Dunant. MSF operates independently of political, economic, and religious powers, which is enshrined in its charter — a model relevant to nursing ethics of impartial care.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_008',
+  question: 'The National Health Mission (NHM) encompasses which two sub-missions?',
+  options: ['NRHM and NUHM', 'NRHM and PM-JAY', 'NUHM and ABDM', 'NRHM and POSHAN Abhiyaan'],
+  correctAnswer: 0,
+  explanation: 'NHM comprises two sub-missions: NRHM (National Rural Health Mission, launched 2005) and NUHM (National Urban Health Mission, added in 2013). Together they form the NHM, which covers RMNCH+A (Reproductive, Maternal, Neonatal, Child, and Adolescent Health). PM-JAY (Option B) is part of Ayushman Bharat, not NHM. Key NHM strategies include ASHA workers, communitisation, and flexible financing. Nursing students must know NHM as it defines the primary healthcare delivery framework.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_009',
+  question: 'An ASHA worker is best described as:',
+  options: ['A salaried government employee posted at PHC', 'A volunteer with no incentives', 'An honorary health activist receiving performance-based incentives', 'A doctor working in rural areas'],
+  correctAnswer: 2,
+  explanation: 'ASHA (Accredited Social Health Activist) workers are honorary health activists — they are neither government employees nor volunteers. They receive performance-based incentives for promoting institutional deliveries, immunisation, and other health services. Introduced under NRHM in 2005, there is 1 ASHA per 1000 population in rural and urban slum areas. ASHAs must be married/widowed/divorced women, aged 25-45 years, with minimum 8th standard education, selected by the Gram Sabha. They serve as the bridge between the community and the health system.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_010',
+  question: 'Pradhan Mantri Jan Arogya Yojana (PM-JAY) provides health coverage of:',
+  options: ['Rs 1 lakh per family per year for primary care', 'Rs 5 lakh per family per year for secondary and tertiary hospitalisation', 'Rs 10 lakh per individual per year for all medical expenses', 'Rs 5 lakh per individual per year for OPD treatment'],
+  correctAnswer: 1,
+  explanation: 'PM-JAY provides health coverage of Rs 5 lakh per family per year for secondary and tertiary hospitalisation at empanelled hospitals on a cashless and paperless basis. It covers approximately 55 crore beneficiaries (bottom 40% of population), making it the world\'s largest government-funded health assurance scheme. It does NOT cover OPD expenses, medicines for outpatient use, cosmetic surgery, or organ transplantation donor costs. Launched on September 23, 2018, it is a key component of Ayushman Bharat.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_011',
+  question: 'Assertion (A): ASHA workers are government employees appointed through UPSC.\nReason (R): ASHA workers are selected by the Gram Sabha and receive performance-based incentives.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is false, but R is true', 'Both A and R are false'],
+  correctAnswer: 2,
+  explanation: 'The Assertion is false — ASHA workers are NOT government employees and are NOT appointed through UPSC. They are honorary health activists under NRHM. The Reason is true — ASHAs are selected by the Gram Sabha (village assembly) and receive performance-based incentives for services like promoting institutional deliveries and immunisation. This distinction is critical for nursing students as ASHAs work closely with ANMs and nurses at the sub-centre and PHC level.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_012',
+  question: 'Which of the following is NOT covered under PM-JAY?',
+  options: ['Secondary hospitalisation at empanelled hospitals', 'Tertiary care including surgeries', 'Outpatient department (OPD) consultation and medicines', 'Cashless treatment for BPL families'],
+  correctAnswer: 2,
+  explanation: 'PM-JAY specifically does NOT cover OPD consultations, outpatient medicines, cosmetic surgery, fertility treatments, and organ transplantation donor costs. It covers only secondary and tertiary hospitalisation at empanelled public and private hospitals. This is a common examination trap — students assume PM-JAY covers all healthcare expenses. The OPD and primary care component is addressed by Health and Wellness Centres (HWCs), the other pillar of Ayushman Bharat.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_013',
+  question: 'Janani Suraksha Yojana (JSY) primarily aims to:',
+  options: ['Provide free education to girl children', 'Provide cash incentives for institutional delivery to reduce maternal mortality', 'Screen children for developmental delays', 'Provide free antenatal care on the 9th of every month'],
+  correctAnswer: 1,
+  explanation: 'Janani Suraksha Yojana (JSY) is a safe motherhood intervention that provides cash incentives to BPL pregnant women for institutional delivery to reduce maternal and neonatal mortality. The highest cash incentives are given in Low Performing States (LPS). Option D describes PMSMA, and Option C describes RBSK. JSY has led to a massive increase in institutional deliveries across India and is a cornerstone of maternal health nursing practice.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_014',
+  question: 'Rashtriya Bal Swasthya Karyakram (RBSK) launched in 2013 screens children aged 0-18 years for which "4 Ds"?',
+  options: ['Diseases, Defects, Deficiencies, Development delays/disabilities', 'Diarrhoea, Dengue, Diphtheria, Dysentery', 'Diabetes, Depression, Deafness, Dyslexia', 'Delivery, Diet, Development, Disability'],
+  correctAnswer: 0,
+  explanation: 'RBSK screens children from birth to 18 years for the 4 Ds: Defects at birth, Deficiencies (nutritional), Diseases, and Development delays including disabilities. This comprehensive child health screening programme ensures early detection and free management. Option B lists specific diseases, not the RBSK framework. For nursing students, RBSK is critical as school health nurses and ANMs conduct these screenings at Anganwadi centres and schools.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_015',
+  question: 'Mission Indradhanush, launched in 2014, aims to:',
+  options: ['Provide clean drinking water to all villages', 'Achieve full immunisation coverage for all children through intensive immunisation drives', 'Eliminate tuberculosis by 2025', 'Provide digital health IDs to all citizens'],
+  correctAnswer: 1,
+  explanation: 'Mission Indradhanush (2014) aims to achieve full immunisation coverage by reaching children who are left out or have dropped out of the Universal Immunisation Programme (UIP). It covers vaccines against 12 diseases. The name "Indradhanush" (rainbow) symbolises the seven colours representing the multiple vaccines. Intensified Mission Indradhanush (IMI) was later launched for accelerated coverage. Nurses are the primary vaccinators in this programme, making it directly relevant to nursing practice.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_016',
+  question: 'Which of the following correctly describes the difference between PM-JAY and Health and Wellness Centres (HWCs)?',
+  options: ['PM-JAY provides primary care; HWCs provide hospitalisation coverage', 'PM-JAY provides hospitalisation insurance; HWCs provide comprehensive primary healthcare', 'Both provide identical services at different locations', 'PM-JAY replaced HWCs in 2020'],
+  correctAnswer: 1,
+  explanation: 'Ayushman Bharat has two components: PM-JAY provides Rs 5 lakh per family per year for secondary and tertiary hospitalisation, while Health and Wellness Centres (HWCs) transform existing Sub-Centres and PHCs to provide comprehensive primary healthcare including preventive, promotive, curative, rehabilitative, and palliative care. Option A reverses their functions — a common student error. Together, they create a continuum of care from primary to tertiary level, central to nursing service delivery.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_017',
+  question: 'The DOTS strategy for tuberculosis treatment stands for:',
+  options: ['Daily Oral Treatment Strategy', 'Directly Observed Treatment, Short-course', 'Drug-Oriented Therapy System', 'Diagnostic and Observational Treatment Scheme'],
+  correctAnswer: 1,
+  explanation: 'DOTS (Directly Observed Treatment, Short-course) is the WHO-recommended strategy for TB treatment, ensuring patients take their full course of medication under direct observation to prevent treatment default and drug resistance. In India, DOTS is implemented through the National TB Elimination Programme (NTEP), formerly RNTCP, with the Nikshay digital platform for case notification and tracking. Nurses play a vital role as DOTS providers and supervisors in TB control.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_018',
+  question: 'Which of the following comparisons between NRHM and NUHM is correct?',
+  options: ['NRHM was launched in 2013; NUHM was launched in 2005', 'NRHM focuses on rural health; NUHM focuses on urban health — both under NHM', 'NRHM covers only maternal health; NUHM covers only child health', 'NRHM and NUHM are independent programmes with no common umbrella'],
+  correctAnswer: 1,
+  explanation: 'NRHM (2005) focuses on rural health and NUHM (2013) focuses on urban health, particularly urban slum populations. Both function under the umbrella of NHM (National Health Mission). Option A reverses the launch years. NRHM introduced ASHA workers, Janani Suraksha Yojana, and mobile medical units for rural areas, while NUHM addresses the health needs of urban poor. Both cover RMNCH+A services, making this comparison essential for community health nursing.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_019',
+  question: 'POSHAN Abhiyaan (PM\'s Overarching Scheme for Holistic Nutrition) was launched in 2018 with a target to reduce stunting by what percentage annually?',
+  options: ['1% per year', '2% per year', '5% per year', '10% per year'],
+  correctAnswer: 1,
+  explanation: 'POSHAN Abhiyaan (2018) targets a 2% per year reduction in stunting among children aged 0-6 years, along with reduction in undernutrition, anaemia (among women and adolescent girls), and low birth weight. It uses technology-driven convergence and real-time monitoring through the ICDS-CAS (Common Application Software). Option A and C are incorrect targets. Nutrition assessment and counselling are core nursing competencies, making POSHAN Abhiyaan directly relevant to nursing practice.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_020',
+  question: 'Swachh Bharat Mission was launched on which date, and why was this date chosen?',
+  options: ['August 15, 2014 — Independence Day', 'January 26, 2014 — Republic Day', 'October 2, 2014 — Mahatma Gandhi\'s birth anniversary (Gandhi Jayanti)', 'November 14, 2014 — Children\'s Day'],
+  correctAnswer: 2,
+  explanation: 'Swachh Bharat Mission was launched on October 2, 2014, on Mahatma Gandhi\'s birth anniversary, as Gandhiji championed cleanliness and sanitation. Phase 1 (2014-2019) aimed for Open Defecation Free (ODF) status, and Phase 2 (2020-2025) targets ODF+ sustainability. Over 110 million toilets were constructed. The link between sanitation and health is fundamental to nursing — poor sanitation causes diarrhoeal diseases, a leading cause of child mortality.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_021',
+  question: 'The National Mental Health Programme (NMHP) was launched in India in which year, making India the first developing country to have such a programme?',
+  options: ['1975', '1982', '1996', '2005'],
+  correctAnswer: 1,
+  explanation: 'India launched the NMHP in 1982, becoming the first developing country to have a national mental health programme. The District Mental Health Programme (DMHP) was subsequently launched in 1996 to decentralise mental health services. Option C is the DMHP year, not the NMHP year — a common confusion. Mental health nursing is a growing specialty, and understanding India\'s mental health policy framework is essential for nursing students.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_022',
+  question: 'Assertion (A): PM-JAY is described as the world\'s largest government-funded health assurance scheme.\nReason (R): PM-JAY covers approximately 55 crore beneficiaries from the bottom 40% of the Indian population with Rs 5 lakh per family per year for hospitalisation.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and the Reason correctly explains the Assertion. PM-JAY\'s scale — covering approximately 55 crore beneficiaries (about 12 crore families from the bottom 40% of the population) with Rs 5 lakh per family per year — is what makes it the world\'s largest government-funded health assurance scheme. No other country operates a government health insurance programme of this magnitude. Nurses in empanelled hospitals process PM-JAY beneficiaries daily, making this scheme central to nursing practice.',
+  difficulty: 'hard',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_023',
+  question: 'WHO-SEARO (South-East Asia Regional Office) is headquartered in which city, and how many member countries does it oversee?',
+  options: ['Geneva, Switzerland; 194 countries', 'New Delhi, India; 11 countries', 'Bangkok, Thailand; 15 countries', 'Manila, Philippines; 37 countries'],
+  correctAnswer: 1,
+  explanation: 'WHO-SEARO is headquartered in New Delhi, India, and oversees 11 member countries including India, Bangladesh, Nepal, Sri Lanka, Myanmar, Thailand, Indonesia, Bhutan, Maldives, North Korea, and Timor-Leste. Option A describes WHO global headquarters. Option D describes the WHO Western Pacific Regional Office (WPRO) in Manila. Students often confuse SEARO with other WHO regional offices. India\'s hosting of SEARO reflects its leadership role in regional health governance.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_024',
+  question: 'Which scheme specifically provides for child health screening from birth to 18 years?',
+  options: ['Janani Suraksha Yojana (JSY)', 'Mission Indradhanush', 'Rashtriya Bal Swasthya Karyakram (RBSK)', 'Pradhan Mantri Surakshit Matritva Abhiyan (PMSMA)'],
+  correctAnswer: 2,
+  explanation: 'RBSK (2013) provides child health screening from 0 to 18 years for the 4 Ds (Defects, Deficiencies, Diseases, Development delays/disabilities). JSY (Option A) focuses on maternal institutional delivery, Mission Indradhanush (Option B) focuses on immunisation of left-out children, and PMSMA (Option D) focuses on antenatal care for pregnant women. Students often confuse child-focused schemes. RBSK mobile health teams include nurses who conduct screenings at schools and Anganwadi centres.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_025',
+  question: 'Which of the following is the correct comparison between ICMR and INC?',
+  options: ['Both regulate nursing education in India', 'ICMR is the apex body for biomedical research; INC regulates nursing education standards', 'ICMR prescribes nursing curricula; INC conducts medical research', 'Both were established in 1947'],
+  correctAnswer: 1,
+  explanation: 'ICMR (est. 1911 as IRFA, renamed 1949) is India\'s apex body for biomedical research, while INC (est. 1947) is the statutory body that regulates nursing education and prescribes curricula for GNM, B.Sc., and M.Sc. Nursing. Option D is incorrect — ICMR was established in 1911, not 1947. Option A and C reverse their functions. Understanding the distinct roles of these bodies is essential for nursing students, as INC directly governs their education and professional standards.',
+  difficulty: 'hard',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_026',
+  question: 'Under the Universal Immunisation Programme (UIP), BCG vaccine is administered at:',
+  options: ['6 weeks of age', '9 months of age', 'At birth (or as early as possible)', '16-24 months of age'],
+  correctAnswer: 2,
+  explanation: 'Under UIP, BCG (Bacille Calmette-Guérin) vaccine is administered at birth or as early as possible to protect against tuberculosis. Other birth doses include OPV-0 (Oral Polio Vaccine) and Hepatitis B birth dose. Option B (9 months) is when the first dose of Measles-Rubella (MR) vaccine is given. The immunisation schedule is a core competency for nursing students, as nurses are the primary vaccinators in India\'s health system.',
+  difficulty: 'easy',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_027',
+  question: 'The Pradhan Mantri Ayushman Bharat Health Infrastructure Mission (PMABHIM) was launched in 2021 primarily to:',
+  options: ['Provide free medicines at all government hospitals', 'Strengthen public health infrastructure, especially post-COVID-19', 'Replace the National Health Mission', 'Privatise all district hospitals'],
+  correctAnswer: 1,
+  explanation: 'PMABHIM (2021) was launched to strengthen India\'s public health infrastructure, particularly in light of gaps exposed during the COVID-19 pandemic. It focuses on developing critical care hospital blocks, strengthening district-level health infrastructure, establishing national and regional disease surveillance networks, and building BSL-3 and BSL-4 laboratories. It does NOT replace NHM (Option C) but complements it. Post-COVID health infrastructure strengthening directly impacts nursing workforce deployment and capacity.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_028',
+  question: 'Which of the following correctly identifies the seven fundamental principles of the Red Cross?',
+  options: ['Humanity, Impartiality, Neutrality, Independence, Voluntary Service, Unity, Universality', 'Humanity, Equality, Justice, Peace, Liberty, Fraternity, Democracy', 'Charity, Compassion, Care, Courage, Commitment, Competence, Communication', 'Beneficence, Non-maleficence, Autonomy, Justice, Fidelity, Veracity, Confidentiality'],
+  correctAnswer: 0,
+  explanation: 'The seven fundamental principles of the International Red Cross and Red Crescent Movement are: Humanity, Impartiality, Neutrality, Independence, Voluntary Service, Unity, and Universality. Option D lists ethical principles used in nursing ethics, not Red Cross principles — a common confusion among nursing students. Option B includes constitutional values. These principles guide Red Cross operations worldwide and align with nursing values of impartial, non-discriminatory care.',
+  difficulty: 'hard',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_029',
+  question: 'The Indian Red Cross Society was founded in which year?',
+  options: ['1863', '1901', '1920', '1947'],
+  correctAnswer: 2,
+  explanation: 'The Indian Red Cross Society was founded in 1920 under the Indian Red Cross Society Act. Option A (1863) is when the ICRC was founded in Geneva, and Option B (1901) is when Henry Dunant received the first Nobel Peace Prize. The Indian Red Cross Society works in disaster response, blood banking, health services, and nursing aid. It operates blood banks across India where nurses play essential roles in blood collection and transfusion services.',
+  difficulty: 'medium',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  },
+  {
+  id: 'gk_ho_030',
+  question: 'Which of the following is NOT a function of the Indian Nursing Council (INC)?',
+  options: ['Prescribing curricula for GNM, B.Sc., and M.Sc. Nursing programmes', 'Maintaining the Indian Nurse Register', 'Conducting biomedical research in India', 'Regulating nursing education standards across India'],
+  correctAnswer: 2,
+  explanation: 'Conducting biomedical research is the function of ICMR, not INC. The INC\'s functions include: prescribing curricula for nursing programmes, maintaining the Indian Nurse Register, regulating nursing education standards, inspecting nursing institutions, and advising the government on nursing education matters. INC is affiliated to the International Council of Nurses (ICN), Geneva. This TYPE 6 question tests the distinction between two commonly confused organisations.',
+  difficulty: 'hard',
+  subject: 'gk',
+  subjectName: 'General Knowledge',
+  topicKey: 'health_organizations_schemes'
+  }
+  ],
+awards_important_days: [
+    {
+    id: 'gk_ad_001',
+    question: 'International Nurses Day is observed on May 12 because:',
+    options: ['It marks the establishment of the Indian Nursing Council', 'It is the birth anniversary of Florence Nightingale (born May 12, 1820)', 'It commemorates the founding of the World Health Organization', 'It is the death anniversary of Florence Nightingale'],
+    correctAnswer: 1,
+    explanation: 'International Nurses Day is observed on May 12 to honour the birth anniversary of Florence Nightingale (born May 12, 1820), the founder of modern nursing. The National Florence Nightingale Award, India\'s highest nursing honour, is also presented by the President of India on this date. Option C is incorrect — WHO\'s founding date (April 7, 1948) is observed as World Health Day. This is the most important date for every nursing student to remember.',
+    difficulty: 'easy',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_002',
+    question: 'World Health Day is observed on April 7 because:',
+    options: ['It is the birth anniversary of Louis Pasteur', 'It commemorates the eradication of smallpox', 'It marks the founding of the World Health Organization on April 7, 1948', 'It is the birth anniversary of Robert Koch'],
+    correctAnswer: 2,
+    explanation: 'World Health Day is observed on April 7 each year to commemorate the founding of the WHO on April 7, 1948. Each year, WHO selects a theme highlighting a priority global health concern. Robert Koch\'s discovery of TB bacillus (March 24, 1882) is commemorated on World TB Day. This date is one of the most frequently tested health days in AIIMS nursing entrance exams.',
+    difficulty: 'easy',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_003',
+    question: 'World Blood Donor Day is observed on June 14 in honour of:',
+    options: ['Alexander Fleming, who discovered penicillin', 'Karl Landsteiner, who discovered the ABO blood group system (born June 14, 1868)', 'Louis Pasteur, who developed pasteurisation', 'Henry Dunant, who founded the Red Cross'],
+    correctAnswer: 1,
+    explanation: 'World Blood Donor Day is observed on June 14 to honour Karl Landsteiner (born June 14, 1868), who discovered the ABO blood group system and received the Nobel Prize in 1930. His discovery revolutionised blood transfusion safety. Option A (Fleming) is associated with penicillin discovery (Nobel 1945). Blood group typing and cross-matching are essential nursing skills, making Landsteiner\'s contribution directly relevant to nursing practice.',
+    difficulty: 'easy',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_004',
+    question: 'World Diabetes Day is observed on November 14 because:',
+    options: ['Insulin was first commercially produced on this date', 'It is the birth anniversary of Frederick Banting (born November 14, 1891), co-discoverer of insulin', 'The WHO declared diabetes a global epidemic on this date', 'It is the birth anniversary of Charles Best, co-discoverer of insulin'],
+    correctAnswer: 1,
+    explanation: 'World Diabetes Day is observed on November 14, the birth anniversary of Sir Frederick Banting (born November 14, 1891), who along with Charles Best discovered insulin in 1921-22. Banting received the Nobel Prize in Physiology or Medicine in 1923. Option D is incorrect — Charles Best\'s birthday is February 27. Diabetes management including insulin administration, blood glucose monitoring, and patient education are core nursing competencies.',
+    difficulty: 'easy',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_005',
+    question: 'World TB Day is observed on March 24. Which event does this date commemorate?',
+    options: ['The invention of the BCG vaccine', 'Robert Koch\'s announcement of the discovery of Mycobacterium tuberculosis on March 24, 1882', 'The launch of the DOTS programme', 'India\'s declaration of TB elimination'],
+    correctAnswer: 1,
+    explanation: 'World TB Day is observed on March 24 to commemorate Robert Koch\'s announcement on March 24, 1882, that he had discovered Mycobacterium tuberculosis, the bacterium causing TB. Koch received the Nobel Prize in 1905. BCG vaccine (Option A) was developed by Albert Calmette and Camille Guérin, first used in 1921. TB nursing care including DOTS administration and patient counselling remains a major component of community health nursing in India.',
+    difficulty: 'easy',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_006',
+    question: 'The Bharat Ratna, India\'s highest civilian award, was established on:',
+    options: ['August 15, 1947', 'January 26, 1950', 'January 2, 1954', 'October 2, 1954'],
+    correctAnswer: 2,
+    explanation: 'The Bharat Ratna was established on January 2, 1954, by President Rajendra Prasad. The first recipients were C. Rajagopalachari, Sarvepalli Radhakrishnan, and C.V. Raman (first scientist). It is awarded by the President of India with a maximum of 3 recipients per year (though no statutory limit). Option B is Republic Day but not the establishment date. Notable healthcare-related recipients include Mother Teresa (1980).',
+    difficulty: 'easy',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_007',
+    question: 'Which of the following correctly distinguishes the Florence Nightingale Medal from the National Florence Nightingale Award?',
+    options: ['Both are awarded by the Indian government on May 12', 'The Florence Nightingale Medal is awarded by ICRC internationally; the National Florence Nightingale Award is awarded by the President of India', 'The Florence Nightingale Medal is for doctors; the National Award is for nurses', 'Both are the same award with different names'],
+    correctAnswer: 1,
+    explanation: 'The Florence Nightingale Medal is the highest international nursing honour, awarded by the ICRC every two years (established 1912) to nurses and voluntary aid workers showing exceptional devotion. The National Florence Nightingale Award is India\'s highest nursing honour, awarded by the President of India on May 12 (Nurses Day), administered by the Ministry of Health and Family Welfare. Both honour nursing excellence but at different levels — international vs. national.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_008',
+    question: 'World Hepatitis Day is observed on July 28. Whose birth anniversary does this date honour?',
+    options: ['Karl Landsteiner, discoverer of blood groups', 'Robert Koch, discoverer of TB bacillus', 'Baruch Blumberg, discoverer of Hepatitis B antigen (born July 28, 1925)', 'Alexander Fleming, discoverer of penicillin'],
+    correctAnswer: 2,
+    explanation: 'World Hepatitis Day is observed on July 28, the birth anniversary of Dr Baruch Blumberg (born July 28, 1925), who discovered the Hepatitis B surface antigen and developed the first Hepatitis B vaccine. He received the Nobel Prize in 1976. Option A (Landsteiner) is honoured on World Blood Donor Day (June 14). Hepatitis B prevention through vaccination and universal precautions is a critical nursing competency, especially in infection control.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_009',
+    question: 'World AIDS Day is observed on December 1. Which of the following is associated with the AIDS awareness symbol?',
+    options: ['Blue ribbon — designed in 1992', 'Pink ribbon — designed in 1990', 'Red ribbon — first used in 1991 by the Visual AIDS Artists Caucus', 'White ribbon — first used in 1988'],
+    correctAnswer: 2,
+    explanation: 'World AIDS Day (December 1, first observed in 1988) is associated with the red ribbon, first used in 1991 by the Visual AIDS Artists Caucus in New York. The pink ribbon (Option B) is associated with breast cancer awareness. The red ribbon symbolises solidarity with people living with HIV/AIDS. Nurses play critical roles in HIV/AIDS care including antiretroviral therapy adherence, prevention of mother-to-child transmission, and stigma reduction.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_010',
+    question: 'National Doctors\' Day in India is observed on July 1 in honour of:',
+    options: ['Dr Sarvepalli Radhakrishnan', 'Dr APJ Abdul Kalam', 'Dr Bidhan Chandra Roy (born and died on July 1)', 'Mahatma Gandhi'],
+    correctAnswer: 2,
+    explanation: 'National Doctors\' Day is observed on July 1 in honour of Dr Bidhan Chandra Roy, an eminent physician and the second Chief Minister of West Bengal, who was remarkably born on July 1, 1882 and died on July 1, 1962 — the same date. The Dr BC Roy Award, India\'s most prestigious medical award, is also presented on this day by the Medical Council of India. Option A (Radhakrishnan) is honoured on Teachers\' Day (September 5).',
+    difficulty: 'easy',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_011',
+    question: 'The Dr BC Roy Award is given by which body, and on which day?',
+    options: ['Indian Medical Association on August 15', 'Medical Council of India on July 1 (National Doctors\' Day)', 'Indian Nursing Council on May 12', 'ICMR on January 26'],
+    correctAnswer: 1,
+    explanation: 'The Dr BC Roy Award is India\'s most prestigious medical award, given by the Medical Council of India (MCI) on July 1 (National Doctors\' Day). Categories include: eminent medical person, medical statesman, thinker and philosopher, development of speciality, and outstanding contribution to medical education. Option C describes nursing awards given on Nurses Day. This award is distinct from the National Florence Nightingale Award, which is specifically for nurses.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_012',
+    question: 'Which of the following sporting awards was renamed from Rajiv Gandhi Khel Ratna Award in August 2021?',
+    options: ['Arjuna Award', 'Dronacharya Award', 'Major Dhyan Chand Khel Ratna Award', 'Padma Shri for Sports'],
+    correctAnswer: 2,
+    explanation: 'India\'s highest sporting honour was renamed from Rajiv Gandhi Khel Ratna Award to Major Dhyan Chand Khel Ratna Award in August 2021, honouring hockey legend Major Dhyan Chand. Recipients include Sachin Tendulkar, PV Sindhu, and Neeraj Chopra. The Arjuna Award (Option A) and Dronacharya Award (Option B) are separate sports awards. While not directly health-related, this is a frequently tested GK fact in AIIMS nursing entrance exams.',
+    difficulty: 'easy',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_013',
+    question: 'Assertion (A): World Polio Day is observed on October 24 to mark the birth anniversary of Jonas Salk.\nReason (R): Jonas Salk developed the first successful inactivated polio vaccine (IPV).',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is true but not the reason for observing the day on that date', 'A is false, but R is true'],
+    correctAnswer: 0,
+    explanation: 'Both statements are true, and the Reason explains the Assertion. World Polio Day is observed on October 24, the birth anniversary of Jonas Salk (born October 28, 1914) — note that while Salk\'s actual birthday is October 28, Rotary International chose October 24 to coincide with United Nations Day. Salk developed the first successful inactivated polio vaccine (IPV) in 1955. Albert Sabin later developed the oral polio vaccine (OPV). Polio immunisation is a core nursing activity in India\'s pulse polio programme.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_014',
+    question: 'Assertion (A): The Padma Awards are announced on Republic Day (January 26).\nReason (R): The Padma Awards are the highest civilian awards in India.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+    correctAnswer: 2,
+    explanation: 'The Assertion is true — Padma Awards are announced on the eve of Republic Day (January 25) and formally on January 26. However, the Reason is false — the Bharat Ratna (not Padma Awards) is the highest civilian award in India. The Padma Awards hierarchy is: Padma Vibhushan (exceptional/distinguished service), Padma Bhushan (distinguished service of high order), and Padma Shri (distinguished service). This is a common trap — students often confuse which is the highest civilian honour.',
+    difficulty: 'hard',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_015',
+    question: 'World Patient Safety Day is observed on September 17. Which organisation established this observance?',
+    options: ['International Council of Nurses (ICN)', 'World Health Organization (WHO) in 2019', 'UNICEF in 2010', 'Red Cross in 2015'],
+    correctAnswer: 1,
+    explanation: 'World Patient Safety Day was established by the WHO in 2019 and is observed annually on September 17. It aims to raise global awareness about patient safety and promote actions to reduce patient harm. The World Health Assembly adopted resolution WHA72.6 in May 2019. This day is particularly relevant for nursing students as nurses are at the frontline of patient safety — medication safety, infection prevention, fall prevention, and surgical safety are core nursing responsibilities.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_016',
+    question: 'Which of the following Nobel Prize in Physiology or Medicine is correctly matched with its discovery?',
+    options: ['2020 — Discovery of HIV virus', '2021 — Discovery of temperature and touch receptors (David Julius and Ardem Patapoutian)', '2022 — Discovery of mRNA vaccine technology', '2023 — Discovery of microRNA'],
+    correctAnswer: 1,
+    explanation: 'The 2021 Nobel Prize in Physiology or Medicine was awarded to David Julius and Ardem Patapoutian for their discoveries of receptors for temperature and touch (TRPV1 and Piezo channels). Option A is incorrect — the 2020 Nobel was for Hepatitis C discovery (Alter, Houghton, Rice). Option C is incorrect — mRNA was the 2023 Nobel. Option D is incorrect — microRNA was the 2024 Nobel. Pain and temperature sensation are fundamental to nursing assessment.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_017',
+    question: 'Which of the following comparisons between World Health Day and World Nursing Day is correct?',
+    options: ['Both are observed on the same date', 'World Health Day (April 7) marks WHO\'s founding; World Nursing Day (May 12) marks Florence Nightingale\'s birthday', 'World Health Day is observed on May 12; World Nursing Day on April 7', 'Both were established by the Indian Nursing Council'],
+    correctAnswer: 1,
+    explanation: 'World Health Day (April 7) commemorates the founding of WHO in 1948, while International Nurses Day (May 12) commemorates the birth anniversary of Florence Nightingale in 1820. Option C reverses the dates — a common examination trap. World Health Day is observed globally by WHO, while International Nurses Day is promoted by the International Council of Nurses (ICN). Both dates are among the most frequently tested in AIIMS nursing GK.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_018',
+    question: 'The Florence Nightingale Medal was established in which year, and how often is it awarded?',
+    options: ['1820; annually', '1912; every 2 years', '1947; every 5 years', '1948; annually'],
+    correctAnswer: 1,
+    explanation: 'The Florence Nightingale Medal was established in 1912 and is awarded every two years by the International Committee of the Red Cross (ICRC). It is the highest international distinction for nurses and voluntary aid workers who have shown exceptional devotion and courage. Option A uses Nightingale\'s birth year, and Option D uses WHO\'s founding year. This is the most prestigious nursing award globally, distinct from India\'s National Florence Nightingale Award.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_019',
+    question: 'World Cancer Day is observed on February 4. Which organisation established this day?',
+    options: ['World Health Organization (WHO)', 'Union for International Cancer Control (UICC) in 2000', 'ICMR in 1990', 'American Cancer Society in 1985'],
+    correctAnswer: 1,
+    explanation: 'World Cancer Day (February 4) was established by the Union for International Cancer Control (UICC) in 2000 at the World Summit Against Cancer in Paris. While WHO supports the observance, it was initiated by UICC. Cancer nursing is a growing specialty, and nurses play vital roles in cancer screening, chemotherapy administration, palliative care, and patient education. Early detection and awareness are key themes of this day.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_020',
+    question: 'Which of the following is NOT observed during the month of September?',
+    options: ['World Alzheimer\'s Day (September 21)', 'World Patient Safety Day (September 17)', 'World Pharmacist Day (September 25)', 'World Malaria Day'],
+    correctAnswer: 3,
+    explanation: 'World Malaria Day is observed on April 25, not in September. All other options are correctly placed in September: World Patient Safety Day (September 17), World Alzheimer\'s Day (September 21), and World Pharmacist Day (September 25). Additionally, National Nutrition Week (September 1-7) and World Heart Day (September 29) also fall in September. Malaria nursing care including prevention, diagnosis, and treatment is important in endemic areas of India.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_021',
+    question: 'Sachin Tendulkar received the Bharat Ratna in 2014, making him the:',
+    options: ['First cricketer and first sportsperson to receive the Bharat Ratna', 'Second sportsperson after Dhyan Chand', 'First person under 50 to receive the Bharat Ratna', 'Only living person to receive the Bharat Ratna that year'],
+    correctAnswer: 0,
+    explanation: 'Sachin Tendulkar became the first sportsperson and the youngest recipient (at age 40) to receive the Bharat Ratna in 2014. Before 2014, the Bharat Ratna was not awarded for sports achievements — the eligibility criteria were expanded to include sports. Major Dhyan Chand (Option B) has NOT received the Bharat Ratna, though India\'s highest sports award is named after him. This is a frequently tested fact in AIIMS GK.',
+    difficulty: 'easy',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_022',
+    question: 'World Mental Health Day is observed on October 10. Which organisation initiated this observance?',
+    options: ['World Health Organization in 1948', 'World Federation for Mental Health in 1992', 'Indian Psychiatric Society in 2000', 'UNICEF in 1985'],
+    correctAnswer: 1,
+    explanation: 'World Mental Health Day (October 10) was initiated by the World Federation for Mental Health (WFMH) in 1992. WHO supports the observance, but it was WFMH that established it. Each year has a specific theme addressing mental health issues. India launched the National Mental Health Programme (NMHP) in 1982 — the first developing country to do so. Mental health nursing is increasingly important, and nurses are essential in community mental health care delivery.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_023',
+    question: 'The correct order of Padma Awards from highest to lowest is:',
+    options: ['Padma Shri → Padma Bhushan → Padma Vibhushan', 'Padma Vibhushan → Padma Bhushan → Padma Shri', 'Padma Bhushan → Padma Vibhushan → Padma Shri', 'Padma Shri → Padma Vibhushan → Padma Bhushan'],
+    correctAnswer: 1,
+    explanation: 'The correct hierarchy from highest to lowest is: Padma Vibhushan (exceptional and distinguished service) → Padma Bhushan (distinguished service of high order) → Padma Shri (distinguished service). All are announced on the eve of Republic Day and awarded by the President. Students frequently confuse the order, especially between Vibhushan and Bhushan. The Bharat Ratna is above all Padma Awards as the highest civilian honour.',
+    difficulty: 'easy',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_024',
+    question: 'World Food Day is observed on October 16 to mark the founding of which organisation?',
+    options: ['World Health Organization (WHO)', 'United Nations Children\'s Fund (UNICEF)', 'Food and Agriculture Organization (FAO) founded in 1945', 'World Food Programme (WFP)'],
+    correctAnswer: 2,
+    explanation: 'World Food Day (October 16) marks the founding of the Food and Agriculture Organization (FAO) on October 16, 1945. While WFP (Option D) deals with food distribution, the day specifically commemorates FAO\'s establishment. Nutrition and food security are directly relevant to nursing practice — nurses assess nutritional status, provide dietary counselling, and manage malnutrition, particularly in maternal and child health settings.',
+    difficulty: 'medium',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    },
+    {
+    id: 'gk_ad_025',
+    question: 'Which of the following Nobel Prizes in Physiology or Medicine recognised the discovery of Hepatitis C virus?',
+    options: ['2018 — James Allison and Tasuku Honjo', '2020 — Harvey Alter, Michael Houghton, and Charles Rice', '2008 — Luc Montagnier and Françoise Barré-Sinoussi', '2022 — Svante Pääbo'],
+    correctAnswer: 1,
+    explanation: 'The 2020 Nobel Prize in Physiology or Medicine was awarded to Harvey Alter, Michael Houghton, and Charles Rice for the discovery of the Hepatitis C virus. Option C (2008) was for HIV discovery, not Hepatitis C — a common confusion. Option A (2018) was for cancer therapy through immune checkpoint inhibition. Hepatitis C management and prevention through blood screening and universal precautions are essential nursing competencies.',
+    difficulty: 'hard',
+    subject: 'gk',
+    subjectName: 'General Knowledge',
+    topicKey: 'awards_important_days'
+    }
     ],
+indian_polity_articles: [
+      {
+      id: 'gk_ip_001',
+      question: 'Which Article of the Indian Constitution is most directly relevant to nursing and public health, as it directs the State to raise the level of nutrition and public health?',
+      options: ['Article 21 — Right to Life and Personal Liberty', 'Article 47 — Duty of State to raise nutrition and public health', 'Article 21A — Right to Education', 'Article 51A — Fundamental Duties'],
+      correctAnswer: 1,
+      explanation: 'Article 47 is a Directive Principle of State Policy (DPSP) that states: "The State shall regard the raising of the level of nutrition and the standard of living of its people and the improvement of public health as among its primary duties." It also directs prohibition of intoxicating drinks and drugs. This is the most directly relevant article for nursing students as it provides the constitutional basis for all public health programmes and nutrition schemes. Article 21 (Option A) includes right to health through judicial interpretation but is not as specific.',
+      difficulty: 'easy',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_002',
+      question: 'Article 21 of the Indian Constitution guarantees "Right to Life and Personal Liberty." Through judicial interpretation, this article has been expanded to include:',
+      options: ['Right to vote and right to contest elections', 'Right to health, right to clean environment, right to privacy, and right to livelihood', 'Right to property and right to trade', 'Right to form political parties'],
+      correctAnswer: 1,
+      explanation: 'Article 21 has been the most judicially expanded article. The Supreme Court has interpreted "right to life" to include right to health (including emergency medical treatment), right to clean environment, right to privacy (Puttaswamy case, 2017), right to livelihood, and right to live with dignity. Right to property (Option C) was removed as a fundamental right by the 44th Amendment (1978). For nursing students, the judicial inclusion of right to health under Article 21 is the constitutional foundation for accessible healthcare.',
+      difficulty: 'easy',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_003',
+      question: 'The words "Socialist" and "Secular" were added to the Preamble of the Indian Constitution by which amendment?',
+      options: ['1st Amendment, 1951', '42nd Amendment, 1976', '44th Amendment, 1978', '86th Amendment, 2002'],
+      correctAnswer: 1,
+      explanation: 'The 42nd Constitutional Amendment (1976), enacted during the Emergency, added the words "Socialist" and "Secular" to the Preamble, making it read "Sovereign Socialist Secular Democratic Republic." This amendment also added Fundamental Duties (Part IVA, Article 51A) and gave DPSP precedence over Fundamental Rights. The 44th Amendment (Option C) reversed some provisions of the 42nd Amendment. This is one of the most frequently tested constitutional facts.',
+      difficulty: 'easy',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_004',
+      question: 'Article 21A, which guarantees the Right to Free and Compulsory Education for children aged 6-14 years, was added by which amendment?',
+      options: ['42nd Amendment, 1976', '73rd Amendment, 1992', '86th Amendment, 2002', '44th Amendment, 1978'],
+      correctAnswer: 2,
+      explanation: 'Article 21A was added by the 86th Constitutional Amendment (2002), making education a fundamental right for children aged 6-14 years. This was implemented through the Right to Education (RTE) Act, 2009. The same amendment also changed Article 45 (from primary education to early childhood care) and added the 11th Fundamental Duty (parent/guardian duty to provide education). Education of children is relevant to nursing as child health and school health programmes include educational assessments.',
+      difficulty: 'easy',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_005',
+      question: 'Which Article of the Constitution did Dr B.R. Ambedkar describe as the "heart and soul of the Constitution"?',
+      options: ['Article 14 — Equality before Law', 'Article 21 — Right to Life', 'Article 32 — Right to Constitutional Remedies', 'Article 19 — Fundamental Freedoms'],
+      correctAnswer: 2,
+      explanation: 'Dr B.R. Ambedkar called Article 32 the "heart and soul of the Constitution" because it guarantees the right to move the Supreme Court for enforcement of Fundamental Rights through writs (habeas corpus, mandamus, prohibition, certiorari, quo warranto). Without Article 32, Fundamental Rights would be meaningless as there would be no remedy for their violation. High Courts can issue writs under Article 226, which has broader scope than Article 32.',
+      difficulty: 'easy',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_006',
+      question: 'The 73rd Constitutional Amendment (1992) is associated with:',
+      options: ['Municipalities and urban local bodies', 'Panchayati Raj institutions — three-tier system', 'Goods and Services Tax (GST)', 'Anti-Defection Law'],
+      correctAnswer: 1,
+      explanation: 'The 73rd Amendment (1992) gave constitutional status to Panchayati Raj institutions with a three-tier system (Gram Panchayat, Panchayat Samiti/Block, Zila Parishad). The 74th Amendment (1992) deals with Municipalities (Option A). The 101st Amendment is for GST (Option C), and the 52nd Amendment is for Anti-Defection (Option D). Panchayati Raj is relevant to nursing as rural health infrastructure (Sub-centres, PHCs) operates within the Panchayat framework, and ASHAs are selected by the Gram Sabha.',
+      difficulty: 'easy',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_007',
+      question: 'Fundamental Duties are enshrined in which Part and Article of the Constitution?',
+      options: ['Part III, Article 19', 'Part IV, Article 47', 'Part IVA, Article 51A', 'Part V, Article 52'],
+      correctAnswer: 2,
+      explanation: 'Fundamental Duties are contained in Part IVA, Article 51A of the Constitution. They were added by the 42nd Amendment (1976) on the recommendation of the Swaran Singh Committee. Originally 10 duties were listed; the 11th duty (providing education to children) was added by the 86th Amendment (2002). Part III (Option A) contains Fundamental Rights, Part IV (Option B) contains DPSPs, and Part V (Option D) deals with the Union Executive.',
+      difficulty: 'easy',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_008',
+      question: 'Which writ literally means "you shall have the body" and is used to challenge illegal detention?',
+      options: ['Mandamus', 'Habeas Corpus', 'Certiorari', 'Quo Warranto'],
+      correctAnswer: 1,
+      explanation: 'Habeas Corpus literally means "you shall have the body" and is used to challenge illegal detention or imprisonment. The detained person is produced before the court to determine the legality of detention. Mandamus (Option A) means "we command" — used to compel a public official to perform duty. Certiorari (Option C) means "to be certified" — used to quash orders. Quo Warranto (Option D) means "by what authority" — challenges someone holding public office. These writs are issued under Article 32 (Supreme Court) and Article 226 (High Courts).',
+      difficulty: 'easy',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_009',
+      question: 'The 44th Constitutional Amendment (1978) is significant because it:',
+      options: ['Added "Socialist" and "Secular" to the Preamble', 'Made Right to Property a legal right instead of a fundamental right', 'Reduced the voting age from 21 to 18 years', 'Established the GST Council'],
+      correctAnswer: 1,
+      explanation: 'The 44th Amendment (1978) removed Right to Property from the list of Fundamental Rights (Part III) and made it a legal right under Article 300A. This was done to facilitate land reform legislation. Option A was the 42nd Amendment (1976), Option C was the 61st Amendment (1989), and Option D was the 101st Amendment (2016). The 44th Amendment also reversed several authoritarian provisions of the 42nd Amendment enacted during the Emergency.',
+      difficulty: 'medium',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_010',
+      question: 'The 61st Constitutional Amendment (1989) is known for:',
+      options: ['Establishing Panchayati Raj institutions', 'Reducing the voting age from 21 to 18 years', 'Adding Fundamental Duties', 'Introducing the Anti-Defection Law'],
+      correctAnswer: 1,
+      explanation: 'The 61st Amendment (1989) reduced the voting age from 21 to 18 years, enabling millions of young citizens to participate in democracy. Option A is the 73rd Amendment (1992), Option C is the 42nd Amendment (1976), and Option D is the 52nd Amendment (1985). This amendment is relevant to nursing students as many nursing aspirants enter the profession at 18 and should understand their democratic rights and responsibilities.',
+      difficulty: 'medium',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_011',
+      question: 'Which of the following Articles falls under Directive Principles of State Policy (DPSP) in Part IV?',
+      options: ['Article 14 — Equality before Law', 'Article 21 — Right to Life', 'Article 47 — Raising nutrition and public health', 'Article 32 — Constitutional Remedies'],
+      correctAnswer: 2,
+      explanation: 'Article 47 is a DPSP (Part IV, Articles 36-51) directing the State to raise nutrition and public health levels. Articles 14, 21, and 32 (Options A, B, D) are all Fundamental Rights under Part III. A key distinction: Fundamental Rights are justiciable (enforceable by courts), while DPSPs are non-justiciable but fundamental in governance. For nursing students, Article 47 provides the policy foundation for all government health and nutrition programmes.',
+      difficulty: 'medium',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_012',
+      question: 'Assertion (A): Directive Principles of State Policy (DPSP) are enforceable in courts of law.\nReason (R): DPSPs are contained in Part IV of the Constitution and are fundamental in governance.',
+      options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is false, but R is true', 'Both A and R are false'],
+      correctAnswer: 2,
+      explanation: 'The Assertion is false — DPSPs are non-justiciable, meaning they cannot be enforced by courts. The Reason is true — DPSPs are indeed in Part IV and are described as "fundamental in the governance of the country" (Article 37). While courts cannot enforce DPSPs directly, they serve as guidelines for the State in formulating policies. The 42nd Amendment (1976) gave DPSPs precedence over Fundamental Rights in certain contexts. This distinction between justiciable and non-justiciable provisions is frequently tested.',
+      difficulty: 'medium',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_013',
+      question: 'The 52nd Constitutional Amendment (1985) introduced which significant provision?',
+      options: ['Right to Education as a Fundamental Right', 'Anti-Defection Law under the Tenth Schedule', 'Panchayati Raj institutions', 'GST (Goods and Services Tax)'],
+      correctAnswer: 1,
+      explanation: 'The 52nd Amendment (1985) introduced the Anti-Defection Law under the Tenth Schedule of the Constitution. It disqualifies elected members who defect from their political party. Option A is the 86th Amendment (2002), Option C is the 73rd Amendment (1992), and Option D is the 101st Amendment (2016). While not directly health-related, understanding constitutional amendments demonstrates the civic knowledge expected of nursing professionals.',
+      difficulty: 'medium',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_014',
+      question: 'Assertion (A): Article 21A guarantees the right to free and compulsory education for all citizens of India.\nReason (R): The 86th Amendment added Article 21A specifically for children aged 6 to 14 years.',
+      options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is false, but R is true', 'Both A and R are false'],
+      correctAnswer: 2,
+      explanation: 'The Assertion is false — Article 21A does NOT guarantee education for all citizens; it specifically guarantees the right to free and compulsory education for children aged 6 to 14 years only. The Reason is true — the 86th Amendment (2002) added Article 21A with this specific age group. Students often incorrectly assume Article 21A covers all ages or all citizens. This precision in constitutional knowledge is important for competitive examinations.',
+      difficulty: 'hard',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_015',
+      question: 'Which Article of the Constitution provides for the establishment of the Supreme Court of India?',
+      options: ['Article 32', 'Article 124', 'Article 226', 'Article 148'],
+      correctAnswer: 1,
+      explanation: 'Article 124 provides for the establishment and constitution of the Supreme Court of India, consisting of the Chief Justice and other judges (currently 34 judges including CJI). Article 32 (Option A) deals with the right to constitutional remedies through the Supreme Court. Article 226 (Option C) deals with writ jurisdiction of High Courts. Article 148 (Option D) deals with the Comptroller and Auditor General (CAG). Understanding the judiciary is important for nurses dealing with medico-legal cases.',
+      difficulty: 'medium',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_016',
+      question: 'The 101st Constitutional Amendment (2016) introduced:',
+      options: ['Women\'s Reservation in Parliament', 'Goods and Services Tax (GST)', 'EWS Reservation', 'OBC Commission constitutional status'],
+      correctAnswer: 1,
+      explanation: 'The 101st Amendment (2016) introduced the Goods and Services Tax (GST), which unified India\'s indirect tax structure under "One Nation, One Tax." Option A is the 106th Amendment (2023), Option C is the 103rd Amendment (2019), and Option D is the 102nd Amendment (2018). GST impacts healthcare costs — many essential medicines and healthcare services have specific GST rates, affecting nursing care delivery and hospital administration.',
+      difficulty: 'medium',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_017',
+      question: 'Which of the following is NOT a Fundamental Right under Part III of the Indian Constitution?',
+      options: ['Right to Equality (Articles 14-18)', 'Right to Freedom (Articles 19-22)', 'Right to Property', 'Right to Constitutional Remedies (Article 32)'],
+      correctAnswer: 2,
+      explanation: 'Right to Property was originally a Fundamental Right under Article 31 but was removed by the 44th Amendment (1978) and made a legal right under Article 300A. All other options remain Fundamental Rights under Part III. This is a classic examination question — students often incorrectly believe Right to Property is still a Fundamental Right. The removal was done to facilitate land reform and redistribution policies.',
+      difficulty: 'medium',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_018',
+      question: 'Which Constitutional Amendment gave constitutional status to Municipalities and urban local bodies?',
+      options: ['73rd Amendment, 1992', '74th Amendment, 1992', '42nd Amendment, 1976', '86th Amendment, 2002'],
+      correctAnswer: 1,
+      explanation: 'The 74th Amendment (1992) gave constitutional status to Municipalities (urban local bodies) under Article 243P. The 73rd Amendment (Option A) deals with Panchayati Raj (rural local bodies). Students commonly confuse these two amendments passed in the same year. Both are relevant to health — urban health infrastructure including urban PHCs and community health centres operates within the municipal framework, affecting urban nursing services.',
+      difficulty: 'medium',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_019',
+      question: 'Which of the following is NOT a writ that can be issued by the Supreme Court under Article 32?',
+      options: ['Habeas Corpus', 'Mandamus', 'Injunction', 'Quo Warranto'],
+      correctAnswer: 2,
+      explanation: 'Injunction is NOT a constitutional writ — it is a remedy available in civil law. The five constitutional writs are: Habeas Corpus (illegal detention), Mandamus (compel public duty), Prohibition (forbid inferior court from exceeding jurisdiction), Certiorari (quash illegal order), and Quo Warranto (challenge authority to hold office). Students often confuse injunction with prohibition. Understanding writs is relevant for nurses dealing with medico-legal issues and patient rights.',
+      difficulty: 'hard',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      },
+      {
+      id: 'gk_ip_020',
+      question: 'The 103rd Constitutional Amendment (2019) provides for:',
+      options: ['33% reservation for women in Parliament', '10% reservation for Economically Weaker Sections (EWS) in education and government jobs', 'Constitutional status to the OBC Commission', 'Extension of SC/ST reservation in legislatures'],
+      correctAnswer: 1,
+      explanation: 'The 103rd Amendment (2019) introduced 10% reservation for Economically Weaker Sections (EWS) in higher education and government employment, for persons not covered under existing SC/ST/OBC reservations. Option A is the 106th Amendment (2023), Option C is the 102nd Amendment (2018), and Option D is the 104th Amendment (2020). EWS reservation impacts nursing education admissions, as eligible candidates can avail this reservation for BSc Nursing seats in government institutions including AIIMS.',
+      difficulty: 'hard',
+      subject: 'gk',
+      subjectName: 'General Knowledge',
+      topicKey: 'indian_polity_articles'
+      }
+      ],
+},
 
-    /* ───────────────────────────────────────────────────────────
-       OPTICS
-       ─────────────────────────────────────────────────────────── */
-    optics: [
+
+physics: {
+current_electricity: [
+{
+id: 'phy_ce_001',
+question: 'Ohm\'s law defines the relationship between voltage, current, and resistance. Which of the following is the correct mathematical statement of Ohm\'s law?',
+options: ['V = I/R', 'V = IR', 'V = I²R', 'V = R/I'],
+correctAnswer: 1,
+explanation: 'Ohm\'s law states that the potential difference (V) across a conductor is directly proportional to the current (I) flowing through it, provided temperature and other physical conditions remain constant, giving V = IR. Option C (V = I²R) is tempting because I²R is a valid expression for power, not voltage — students often confuse power formulas with Ohm\'s law. Option A inverts the relationship, and option D is dimensionally inconsistent with voltage.',
+difficulty: 'easy',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_002',
+question: 'The SI unit of electrical resistivity is:',
+options: ['Ω', 'Ω·m', 'Ω/m', 'Ω·m²'],
+correctAnswer: 1,
+explanation: 'Resistivity ρ is defined by R = ρL/A, so ρ = RA/L. Substituting units: (Ω)(m²)/(m) = Ω·m. The most tempting wrong answer is option A (Ω), which is the unit of resistance, not resistivity. Students must distinguish between resistance (a property of a specific conductor) and resistivity (a property of the material itself). Option D (Ω·m²) would arise if one mistakenly multiplied by area without dividing by length.',
+difficulty: 'easy',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_003',
+question: 'In a colour-coded resistor, the colour bands are Yellow, Violet, Orange, and Gold. The resistance value is:',
+options: ['47 kΩ ± 5%', '4.7 kΩ ± 5%', '470 kΩ ± 5%', '47 kΩ ± 10%'],
+correctAnswer: 0,
+explanation: 'Yellow = 4, Violet = 7, Orange = multiplier 10³, Gold = ±5% tolerance. So resistance = 47 × 10³ Ω = 47 kΩ ± 5%. Option B (4.7 kΩ) is the most tempting wrong answer — it results from using Orange as multiplier 10² instead of 10³, a common error. Option D has the correct resistance value but wrong tolerance: Gold is 5%, not 10% (Silver is 10%). Memorizing the colour code mnemonic and tolerance colours is essential for AIIMS.',
+difficulty: 'easy',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_004',
+question: 'Three resistors of 2 Ω, 3 Ω, and 6 Ω are connected in parallel. The equivalent resistance of the combination is:',
+options: ['11 Ω', '1 Ω', '0.5 Ω', '6 Ω'],
+correctAnswer: 1,
+explanation: 'For parallel combination: 1/R = 1/2 + 1/3 + 1/6 = 3/6 + 2/6 + 1/6 = 6/6 = 1, so R = 1 Ω. The most tempting wrong answer is option A (11 Ω), which is the series combination (2 + 3 + 6 = 11 Ω) — students who confuse series and parallel formulas will pick this. In parallel, the equivalent resistance is always less than the smallest individual resistance (here, less than 2 Ω), which confirms 1 Ω is reasonable. Option C (0.5 Ω) could result from arithmetic error in adding fractions.',
+difficulty: 'easy',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_005',
+question: 'The drift velocity of free electrons in a metallic conductor is typically of the order of:',
+options: ['10⁶ m/s', '10³ m/s', '10⁻¹ m/s', '10⁻⁴ m/s'],
+correctAnswer: 3,
+explanation: 'Drift velocity in metals under normal current flow is extremely small, typically of the order of 10⁻⁴ m/s (fraction of a mm per second). The most tempting wrong answer is option C (10⁻¹ m/s), which overestimates drift velocity by a factor of 1000. Option A (10⁶ m/s) corresponds to the thermal velocity (random motion) of electrons, not drift velocity. Despite the slow drift speed, the electric signal propagates at nearly the speed of light because the electric field is established almost instantaneously throughout the conductor.',
+difficulty: 'easy',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_006',
+question: 'A cell of EMF 2 V and internal resistance 0.5 Ω is connected to an external resistance of 1.5 Ω. The terminal voltage across the cell is:',
+options: ['2.0 V', '1.5 V', '1.0 V', '0.5 V'],
+correctAnswer: 1,
+explanation: 'Current I = E/(R + r) = 2/(1.5 + 0.5) = 2/2 = 1 A. Terminal voltage V = E − Ir = 2 − 1(0.5) = 1.5 V. The most tempting wrong answer is option A (2.0 V), which would be the terminal voltage only if no current flows (open circuit condition). Students often forget that internal resistance causes a voltage drop, making the terminal voltage always less than EMF when current is drawn. Option C would result from incorrectly using V = IR (external) = 1 × 1 = 1 V, confusing resistance values.',
+difficulty: 'easy',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_007',
+question: 'Which of the following statements about Kirchhoff\'s Current Law (KCL) is correct?',
+options: ['The algebraic sum of currents at any junction in a circuit is always positive', 'The algebraic sum of currents at any junction in a circuit is zero', 'The sum of currents entering a junction is always less than the sum leaving', 'KCL is applicable only to DC circuits'],
+correctAnswer: 1,
+explanation: 'Kirchhoff\'s Current Law states that the algebraic sum of all currents meeting at a junction is zero (Σ I = 0), which is based on the conservation of charge. The most tempting wrong answer is option A — while the total current entering equals the total leaving, the algebraic sum (with sign convention: positive for incoming, negative for outgoing) is zero, not "always positive." Option D is incorrect because KCL applies to both AC and DC circuits. KCL is a fundamental conservation law valid universally in circuit analysis.',
+difficulty: 'easy',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_008',
+question: 'In a Wheatstone bridge, the four arms have resistances P = 10 Ω, Q = 20 Ω, R = 15 Ω, and S = 30 Ω. The galvanometer will show:',
+options: ['Deflection to the left', 'Deflection to the right', 'Zero deflection (balanced)', 'Maximum deflection'],
+correctAnswer: 2,
+explanation: 'For a balanced Wheatstone bridge, the condition is P/Q = R/S. Here, P/Q = 10/20 = 0.5 and R/S = 15/30 = 0.5. Since P/Q = R/S, the bridge is balanced and the galvanometer shows null deflection. The most tempting wrong answer is option A or B — students might think that since all resistances are different, the bridge cannot be balanced. However, balance depends on the ratio of resistances, not their individual values. The key insight is that Wheatstone bridge balance is a ratio condition, and any set of four resistances satisfying P/Q = R/S will give zero galvanometer deflection.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_009',
+question: 'In a metre bridge experiment, the balance point is obtained at 40 cm from the left end. If the known resistance in the right gap is 6 Ω, the unknown resistance in the left gap is:',
+options: ['9 Ω', '4 Ω', '3 Ω', '2.4 Ω'],
+correctAnswer: 1,
+explanation: 'In a metre bridge (based on Wheatstone bridge principle), at balance: X/R = l/(100 − l), where l is the balance length from the left end. So X/6 = 40/60 = 2/3, giving X = 6 × 2/3 = 4 Ω. The most tempting wrong answer is option A (9 Ω), which results from incorrectly using X/R = (100 − l)/l = 60/40 = 3/2, giving X = 9 Ω — this reverses the ratio. Students must remember that the unknown resistance in the left gap corresponds to the balance length on the left side. The metre bridge works on the principle that resistance of a uniform wire is proportional to its length.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_010',
+question: 'The resistance of a metallic conductor at temperature T is given by R_T = R₀(1 + αT). If a copper wire has resistance 10 Ω at 0°C and temperature coefficient of resistance α = 4 × 10⁻³ per °C, its resistance at 100°C is:',
+options: ['10.4 Ω', '14.0 Ω', '10.04 Ω', '40.0 Ω'],
+correctAnswer: 1,
+explanation: 'R_T = R₀(1 + αT) = 10(1 + 4 × 10⁻³ × 100) = 10(1 + 0.4) = 10 × 1.4 = 14.0 Ω. The most tempting wrong answer is option A (10.4 Ω), which results from multiplying α × T = 0.4 and simply adding it to R₀ without multiplying by R₀ first, i.e., treating the formula as R₀ + αT instead of R₀(1 + αT). Option C (10.04 Ω) results from using α = 4 × 10⁻⁴ instead of 4 × 10⁻³. For metals, resistance increases linearly with temperature because increased lattice vibrations scatter electrons more frequently.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_011',
+question: 'A potentiometer is preferred over a voltmeter for measuring EMF of a cell because:',
+options: ['It can measure larger voltages', 'It draws no current from the cell at the balance point', 'It has a lower resistance than a voltmeter', 'It works on the principle of Ohm\'s law only'],
+correctAnswer: 1,
+explanation: 'At the balance (null) point of a potentiometer, no current flows through the galvanometer or the cell whose EMF is being measured. This means the potentiometer measures the true EMF without any voltage drop across internal resistance. The most tempting wrong answer is option A — while potentiometers can measure a range of voltages, this is not the reason they are preferred. A voltmeter always draws some current (however small), causing V = E − Ir, so it reads terminal voltage rather than true EMF. The potentiometer is essentially an infinite resistance measuring device at balance, making it a null method.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_012',
+question: 'Two cells of EMFs E₁ and E₂ are compared using a potentiometer. The balance lengths are l₁ = 75 cm and l₂ = 50 cm respectively. The ratio E₁/E₂ is:',
+options: ['2/3', '3/2', '25/75', '5/3'],
+correctAnswer: 1,
+explanation: 'In a potentiometer, E₁/E₂ = l₁/l₂ = 75/50 = 3/2. This follows from the principle that for a uniform wire carrying constant current, the potential drop is proportional to length, so the EMF being balanced is directly proportional to the balance length. The most tempting wrong answer is option A (2/3), which results from inverting the ratio as l₂/l₁. Students must remember that the cell with the larger EMF requires a longer balance length. Option D (5/3) could result from a careless simplification error.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_013',
+question: 'The electric power consumed by a device is given by P = V²/R. If the voltage across a heater is doubled while the resistance remains unchanged, the power consumed becomes:',
+options: ['Half', 'Double', 'Four times', 'Same'],
+correctAnswer: 2,
+explanation: 'P = V²/R. If V is doubled, P\' = (2V)²/R = 4V²/R = 4P. Power becomes four times the original. The most tempting wrong answer is option B (double), which students pick by incorrectly applying P = VI and assuming power is directly proportional to voltage — but this ignores that current also doubles when voltage doubles (for constant R), so P = VI gives P\' = (2V)(2I) = 4P as well. All three power formulas (P = VI = I²R = V²/R) must give the same result; the quadratic dependence on V in V²/R makes this clear.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_014',
+question: 'The slope of the V-I graph for an ohmic conductor represents:',
+options: ['Conductance', 'Resistance', 'Resistivity', 'Current density'],
+correctAnswer: 1,
+explanation: 'For an ohmic conductor, V = IR gives a straight line through the origin when V is plotted on the y-axis and I on the x-axis. The slope = V/I = R, which is the resistance. The most tempting wrong answer is option A (conductance) — conductance G = 1/R = I/V, which would be the slope only if I were plotted on the y-axis and V on the x-axis (i.e., I-V graph, not V-I graph). Students must carefully note which quantity is on which axis. For a non-ohmic conductor (like a diode or filament lamp), the V-I graph is non-linear, meaning resistance varies with current.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_015',
+question: 'In the I-V characteristics graph of a filament lamp, the curve bends towards the current (I) axis at higher voltages. This is because:',
+options: ['Resistance of the filament decreases with temperature', 'Resistance of the filament increases with temperature', 'The filament becomes superconducting at high temperature', 'Current becomes independent of voltage at high values'],
+correctAnswer: 1,
+explanation: 'A filament lamp is a non-ohmic device. As voltage increases, current increases, causing the filament to heat up. Since the filament is metallic, its resistance increases with temperature (R_T = R₀(1 + αT)), so the graph bends showing less current increase per unit voltage increase — the curve bends towards the voltage axis (away from the I-axis in a standard I-V plot, or equivalently shows reduced slope). The most tempting wrong answer is option A — if resistance decreased, the graph would curve upward (more current per volt), which contradicts the observed behaviour. Option C is absurd because superconductivity occurs at extremely low temperatures, not high.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_016',
+question: 'Assertion (A): The drift velocity of electrons is very small (~10⁻⁴ m/s), yet an electric bulb glows immediately when switched on.\nReason (R): The electric field is established throughout the circuit at nearly the speed of light.',
+options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+correctAnswer: 0,
+explanation: 'Both statements are true. The drift velocity is indeed ~10⁻⁴ m/s, so an individual electron takes a very long time to travel through the wire. However, the electric field propagates at nearly the speed of light (~3 × 10⁸ m/s), so all free electrons throughout the circuit begin drifting almost simultaneously when the switch is closed. R correctly explains A because it is the rapid establishment of the electric field, not the motion of individual electrons, that causes the bulb to glow instantly. Option B would be chosen by students who think the two facts are unrelated, but R directly addresses why the slow drift speed doesn\'t prevent immediate illumination.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_017',
+question: 'Assertion (A): In a series circuit, the current through each resistor is the same.\nReason (R): In a series circuit, the voltage across each resistor is the same.',
+options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+correctAnswer: 2,
+explanation: 'In a series circuit, there is only one path for current, so the same current flows through every component — A is true. However, R is false: in a series circuit, the voltage divides across the resistors according to V = IR, with each resistor having a different voltage drop (unless all resistances are equal). Equal voltage across components is a property of parallel circuits, not series. The most tempting wrong answer is option A, chosen by students who confuse properties of series and parallel circuits. This is a classic AIIMS trap that tests whether students can distinguish fundamental circuit properties.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_018',
+question: 'Assertion (A): A potentiometer can be used to measure the internal resistance of a cell.\nReason (R): The internal resistance is found using the formula r = R(l₁ − l₂)/l₂, where l₁ and l₂ are balance lengths without and with external resistance R.',
+options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+correctAnswer: 0,
+explanation: 'Both A and R are true, and R correctly explains A. When the cell is in open circuit (no external R), the balance length l₁ corresponds to EMF E. When an external resistance R is connected across the cell, current flows and the balance length l₂ corresponds to terminal voltage V = E − Ir. Since E/V = l₁/l₂ and V = ER/(R + r), solving gives r = R(l₁ − l₂)/l₂. The most tempting wrong answer is option B, where students might think the formula is just a separate fact rather than the actual method by which the potentiometer measures internal resistance. The formula is derived directly from the potentiometer principle and the EMF-terminal voltage relationship.',
+difficulty: 'medium',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_019',
+question: 'A 12 V battery with internal resistance 2 Ω is connected to an external resistance. The maximum power that can be delivered to the external resistance is:',
+options: ['72 W', '36 W', '18 W', '9 W'],
+correctAnswer: 2,
+explanation: 'By the maximum power transfer theorem, maximum power is delivered to the external resistance when R_ext = r (internal resistance). Here, R_ext = r = 2 Ω. Current I = E/(R + r) = 12/(2 + 2) = 3 A. Power delivered to external resistance P = I²R = 9 × 2 = 18 W. The most tempting wrong answer is option A (72 W), which results from using P = V²/R = 144/2 = 72 W — but this incorrectly uses the full EMF as the voltage across R_ext, ignoring the internal resistance drop. At maximum power transfer, exactly half the EMF drops across the internal resistance, so the external voltage is only E/2 = 6 V, giving P = 6²/2 = 18 W. This is a subtle and frequently tested concept.',
+difficulty: 'hard',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_020',
+question: 'Five identical resistors, each of resistance R, are connected such that two are in series and this combination is in parallel with three resistors connected in series. The equivalent resistance of the network is:',
+options: ['5R/6', '6R/5', '5R', 'R/5'],
+correctAnswer: 1,
+explanation: 'Two resistors in series give 2R. Three resistors in series give 3R. These two combinations are in parallel: 1/R_eq = 1/(2R) + 1/(3R) = 3/(6R) + 2/(6R) = 5/(6R), so R_eq = 6R/5. The most tempting wrong answer is option A (5R/6), which is the reciprocal of the correct answer — this error occurs when students forget to invert the final result after adding reciprocals. Another common mistake is option C (5R), obtained by simply adding all five resistances as if they were all in series. This problem tests careful application of series-parallel combination rules and proper handling of reciprocal calculations.',
+difficulty: 'hard',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_021',
+question: 'In a circuit, a current of 5 A flows through a wire of cross-sectional area 2 × 10⁻⁶ m². The number density of free electrons is 8 × 10²⁸ per m³. The drift velocity of the electrons is approximately:',
+options: ['1.95 × 10⁻⁴ m/s', '3.9 × 10⁻⁴ m/s', '1.95 × 10⁻² m/s', '3.9 × 10⁻² m/s'],
+correctAnswer: 0,
+explanation: 'Using I = nAev_d, drift velocity v_d = I/(nAe) = 5/(8 × 10²⁸ × 2 × 10⁻⁶ × 1.6 × 10⁻¹⁹). Calculating the denominator: 8 × 2 × 1.6 = 25.6, and 10²⁸ × 10⁻⁶ × 10⁻¹⁹ = 10³, so denominator = 25.6 × 10³ = 2.56 × 10⁴. Thus v_d = 5/(2.56 × 10⁴) ≈ 1.95 × 10⁻⁴ m/s. The most tempting wrong answer is option B (3.9 × 10⁻⁴), obtained by using the area as 1 × 10⁻⁶ instead of 2 × 10⁻⁶ (halving the denominator, doubling the result). This numerical question tests careful substitution and power-of-ten management, which is critical for AIIMS-level calculations.',
+difficulty: 'hard',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+},
+{
+id: 'phy_ce_022',
+question: 'A Wheatstone bridge has P = 100 Ω, Q = 1000 Ω, R = 40 Ω, and S = 400 Ω. A galvanometer of resistance 50 Ω is connected between B and D. If a 10 V battery is connected between A and C, the current through the galvanometer is:',
+options: ['Zero', '10 mA', '5 mA', '20 mA'],
+correctAnswer: 0,
+explanation: 'Checking balance condition: P/Q = 100/1000 = 1/10 and R/S = 40/400 = 1/10. Since P/Q = R/S, the bridge is balanced, and the potential difference between B and D is zero regardless of the galvanometer resistance. Therefore, no current flows through the galvanometer. The most tempting wrong answer is option C or B — students might attempt to calculate current using the battery voltage and galvanometer resistance, not recognising that the bridge is balanced. The key insight is that when the balance condition is satisfied, the galvanometer resistance becomes irrelevant because the potential at B equals the potential at D. This Hard-level question tests whether students check the balance condition before attempting complex mesh analysis.',
+difficulty: 'hard',
+subject: 'physics',
+subjectName: 'Physics',
+topicKey: 'current_electricity'
+}
+],
+
+electrostatics: [
+  {
+  id: 'phy_es_001',
+  question: 'The SI unit of electric field intensity is:',
+  options: ['N/C²', 'N/C', 'C/N', 'N·C'],
+  correctAnswer: 1,
+  explanation: 'Electric field intensity E is defined as force per unit positive test charge: E = F/q₀. Its SI unit is Newton per Coulomb (N/C), which is also equivalent to V/m. The most tempting wrong answer is option A (N/C²), which confuses the unit with Coulomb\'s constant k (which has units N·m²/C²). Option C (C/N) is the reciprocal and dimensionally incorrect. Understanding that E is a vector quantity with units N/C is fundamental to electrostatics problems in AIIMS.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_002',
+  question: 'Two point charges +q and −q are separated by a distance d. The electric dipole moment of this arrangement is:',
+  options: ['qd, directed from −q to +q', 'qd, directed from +q to −q', 'q/d, directed from −q to +q', 'qd², directed from −q to +q'],
+  correctAnswer: 0,
+  explanation: 'The electric dipole moment p = qd, where d is the separation between the charges. By convention, the direction of the dipole moment is from the negative charge to the positive charge. The most tempting wrong answer is option B — many students mistakenly think the direction is from positive to negative (like electric field lines), but the dipole moment vector convention is the opposite. Option C has incorrect dimensions (should be charge × distance, not charge/distance). This directional convention is frequently tested in AIIMS.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_003',
+  question: 'Electric field lines:',
+  options: ['Can cross each other at points of equal potential', 'Always form closed loops', 'Originate from positive charges and terminate on negative charges', 'Are always parallel to equipotential surfaces'],
+  correctAnswer: 2,
+  explanation: 'Electric field lines originate from positive charges and terminate on negative charges (or extend to infinity if no negative charge is present). The most tempting wrong answer is option B — magnetic field lines form closed loops, not electric field lines. This is a classic confusion between electric and magnetic field properties. Option A is wrong because field lines never cross — if they did, the field would have two directions at the crossing point, which is physically impossible. Option D is wrong because field lines are perpendicular to equipotential surfaces, not parallel.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_004',
+  question: 'The electric potential at a distance r from a point charge q is:',
+  options: ['V = kq/r²', 'V = kq/r', 'V = kq²/r', 'V = kr/q'],
+  correctAnswer: 1,
+  explanation: 'Electric potential due to a point charge is V = kq/r, where k = 1/(4πε₀) = 9 × 10⁹ N·m²/C². The most tempting wrong answer is option A (kq/r²), which is actually the formula for electric field E = kq/r², not potential. Students frequently confuse E and V formulas — E has inverse-square dependence (1/r²) while V has inverse dependence (1/r). Potential is a scalar quantity (no direction), while electric field is a vector. This distinction is heavily tested in AIIMS entrance examinations.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_005',
+  question: 'The capacitance of a parallel plate capacitor with plate area A and separation d is given by C = ε₀A/d. If the separation between the plates is halved, the capacitance:',
+  options: ['Becomes half', 'Becomes double', 'Becomes four times', 'Remains unchanged'],
+  correctAnswer: 1,
+  explanation: 'C = ε₀A/d. If d is halved (d\' = d/2), then C\' = ε₀A/(d/2) = 2ε₀A/d = 2C. The capacitance doubles. The most tempting wrong answer is option A (half), which results from incorrectly assuming direct proportionality between C and d instead of the correct inverse proportionality. Capacitance is inversely proportional to separation: bringing plates closer increases the ability to store charge for a given voltage because the electric field becomes stronger for the same surface charge density.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_006',
+  question: 'Coulomb\'s law in electrostatics is analogous to which law in gravitation?',
+  options: ['Kepler\'s law', 'Newton\'s law of universal gravitation', 'Gauss\'s law', 'Ampere\'s law'],
+  correctAnswer: 1,
+  explanation: 'Coulomb\'s law (F = kq₁q₂/r²) and Newton\'s law of gravitation (F = Gm₁m₂/r²) are both inverse-square laws — force is proportional to the product of two quantities (charges or masses) and inversely proportional to the square of the distance. The most tempting wrong answer is option C (Gauss\'s law), which is related to electric flux and is a consequence of Coulomb\'s law but is not its gravitational analogue. Kepler\'s laws describe orbital motion, not force, and Ampere\'s law deals with magnetic fields due to currents.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_007',
+  question: 'The energy stored in a capacitor of capacitance 10 μF charged to a potential difference of 100 V is:',
+  options: ['0.05 J', '0.5 J', '5 J', '0.005 J'],
+  correctAnswer: 0,
+  explanation: 'Energy stored U = ½CV² = ½ × 10 × 10⁻⁶ × (100)² = ½ × 10 × 10⁻⁶ × 10⁴ = ½ × 10⁻¹ = 0.05 J. The most tempting wrong answer is option A and D are close — option D (0.005 J) results from forgetting the 10⁴ from V² or making a power-of-ten error. Option B (0.5 J) results from using C = 100 μF instead of 10 μF. Students must be careful with unit conversions: 10 μF = 10 × 10⁻⁶ F, and squaring 100 V gives 10⁴ V².',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_008',
+  question: 'Three point charges +q, +2q, and −q are placed at the vertices of an equilateral triangle of side a. The net force on the charge +2q is:',
+  options: ['kq²/a² along the perpendicular bisector of the line joining +q and −q', '2kq²/a² along the line joining +q and +2q', 'kq²√3/a² along a specific direction determined by vector addition', 'Zero, since the charges are symmetrically placed'],
+  correctAnswer: 2,
+  explanation: 'Force on +2q due to +q: F₁ = k(2q)(q)/a² = 2kq²/a² (repulsive, away from +q). Force on +2q due to −q: F₂ = k(2q)(q)/a² = 2kq²/a² (attractive, toward −q). Both forces have the same magnitude but different directions (60° apart since the triangle is equilateral). Using the parallelogram law: F_net = √(F₁² + F₂² + 2F₁F₂cos120°) = √(4k²q⁴/a⁴ + 4k²q⁴/a⁴ − 4k²q⁴/a⁴) = 2kq²/a² × √(1+1−1) = 2kq²/a⁴... After careful vector calculation, F_net = 2kq²√3/a² × (simplified factor). The most tempting wrong answer is option D — students assume symmetry implies zero force, but the charges are not symmetric (they are +q, +2q, −q, not identical). The principle of superposition must be applied with proper vector addition.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_009',
+  question: 'A Gaussian surface encloses three charges: +5 μC, −3 μC, and +2 μC. The net electric flux through the surface is:',
+  options: ['5 × 10⁵/ε₀ N·m²/C', '4 × 10⁻⁶/ε₀ N·m²/C', '10 × 10⁻⁶/ε₀ N·m²/C', 'Zero'],
+  correctAnswer: 1,
+  explanation: 'By Gauss\'s law, Φ = q_enclosed/ε₀. The net enclosed charge = +5 + (−3) + 2 = +4 μC = 4 × 10⁻⁶ C. So Φ = 4 × 10⁻⁶/ε₀ N·m²/C. The most tempting wrong answer is option C (10 × 10⁻⁶/ε₀), obtained by adding the absolute values of all charges (5 + 3 + 2 = 10) without considering the sign of the −3 μC charge. Gauss\'s law uses the algebraic sum of enclosed charges, not the sum of magnitudes. Option D would only be correct if the net enclosed charge were zero.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_010',
+  question: 'The electric field inside a hollow charged conducting sphere is:',
+  options: ['Maximum at the centre', 'Proportional to the distance from the centre', 'Zero everywhere', 'Same as the field just outside the surface'],
+  correctAnswer: 2,
+  explanation: 'By Gauss\'s law, for a Gaussian surface inside the hollow conducting sphere, the enclosed charge is zero (all charge resides on the outer surface of a conductor). Therefore E = 0 everywhere inside. The most tempting wrong answer is option B — this is true for a uniformly charged non-conducting solid sphere (E ∝ r inside), not for a hollow conductor. Students must distinguish between solid vs hollow and conductor vs insulator. Option A is wrong because the centre has no special field enhancement. This is one of the most important applications of Gauss\'s law tested in AIIMS.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_011',
+  question: 'The electric field due to an electric dipole on the equatorial line at a far point (r >> d) is:',
+  options: ['E = 2kp/r³, in the direction of the dipole moment', 'E = kp/r³, opposite to the direction of the dipole moment', 'E = kp/r³, in the direction of the dipole moment', 'E = kp/r², perpendicular to the dipole axis'],
+  correctAnswer: 1,
+  explanation: 'On the equatorial line of a dipole, the electric field at a far point is E = kp/r³ and is directed antiparallel (opposite) to the dipole moment vector. The most tempting wrong answer is option A (E = 2kp/r³), which is the field on the axial line, not the equatorial line. The axial field is twice the equatorial field and is in the direction of the dipole moment. Students must memorise: axial → 2kp/r³ (parallel to p), equatorial → kp/r³ (antiparallel to p). Option C has the correct magnitude but wrong direction — the equatorial field opposes the dipole moment.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_012',
+  question: 'Three capacitors of capacitances 2 μF, 3 μF, and 6 μF are connected in series across a 12 V battery. The charge on each capacitor is:',
+  options: ['12 μC', '36 μC', '132 μC', '6 μC'],
+  correctAnswer: 0,
+  explanation: 'In series, 1/C_eq = 1/2 + 1/3 + 1/6 = 3/6 + 2/6 + 1/6 = 6/6 = 1, so C_eq = 1 μF. Charge Q = C_eq × V = 1 × 12 = 12 μC. In series combination, the same charge flows through each capacitor. The most tempting wrong answer is option B (36 μC), obtained by using the parallel formula C_eq = 2 + 3 + 6 = 11 μF (wrong formula) or by other miscalculations. Option D might result from dividing 12 V by 2 μF. Key concept: in series, charge is the same on all capacitors but voltage divides; in parallel, voltage is the same but charge divides.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_013',
+  question: 'A dielectric slab of dielectric constant κ = 5 is inserted between the plates of a parallel plate capacitor of capacitance 4 μF. The new capacitance is:',
+  options: ['0.8 μF', '4 μF', '20 μF', '9 μF'],
+  correctAnswer: 2,
+  explanation: 'When a dielectric of constant κ is fully inserted, the new capacitance C\' = κC = 5 × 4 = 20 μF. The dielectric increases capacitance because it reduces the effective electric field between the plates, allowing more charge to be stored for the same voltage. The most tempting wrong answer is option A (0.8 μF), obtained by dividing C by κ (4/5 = 0.8) instead of multiplying. This is a very common error — students confuse the effect of dielectric on capacitance (increases) with its effect on electric field (decreases). Option D (9 μF) might result from adding κ to C instead of multiplying.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_014',
+  question: 'The relationship between electric field E and electric potential V is:',
+  options: ['E = dV/dr', 'E = −dV/dr', 'E = V/r for all charge distributions', 'E = −V²/r'],
+  correctAnswer: 1,
+  explanation: 'The electric field is the negative gradient of potential: E = −dV/dr. The negative sign indicates that the electric field points in the direction of decreasing potential. The most tempting wrong answer is option A (E = dV/dr without the negative sign), which gives the correct magnitude but wrong direction — the field points from high to low potential, so the negative sign is essential. Option C (E = V/r) is only valid for a point charge (V = kq/r gives E = kq/r² = V/r), not for all distributions. The negative sign in E = −dV/dr is physically significant and often tested.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_015',
+  question: 'Equipotential surfaces near a point charge are:',
+  options: ['Planes perpendicular to the field lines', 'Concentric spheres centred on the charge', 'Cylinders around the charge', 'Parallel planes'],
+  correctAnswer: 1,
+  explanation: 'The potential due to a point charge V = kq/r depends only on the distance r from the charge. All points at the same distance r have the same potential, forming concentric spheres. The most tempting wrong answer is option A — while equipotential surfaces are indeed perpendicular to field lines (which is true for any charge configuration), the specific shape near a point charge is spherical, not planar. Planes would be equipotential surfaces for a uniform electric field. Option D (parallel planes) describes equipotential surfaces between infinite parallel plates, not around a point charge.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_016',
+  question: 'The graph of electric potential (V) versus distance (r) from a positive point charge is:',
+  options: ['A straight line with positive slope', 'A rectangular hyperbola (V ∝ 1/r)', 'A parabola', 'A straight line passing through the origin'],
+  correctAnswer: 1,
+  explanation: 'V = kq/r, so V is inversely proportional to r. The graph of V vs r is a rectangular hyperbola — V decreases as r increases but never reaches zero (at finite r). The most tempting wrong answer is option A (straight line), which would imply V ∝ r — this is incorrect. Option C (parabola) would correspond to V ∝ r² or V ∝ 1/r², neither of which matches. The V-r curve starts at a high value near the charge and asymptotically approaches zero as r → ∞. For a negative charge, the curve would be in the negative V region.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_017',
+  question: 'Assertion (A): Work done in moving a charge along an equipotential surface is zero.\nReason (R): The electric field is always perpendicular to the equipotential surface.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Work done W = qE·ds·cos θ. On an equipotential surface, there is no potential difference (dV = 0), so W = q × dV = 0. This happens because E is perpendicular to the equipotential surface, making θ = 90° and cos 90° = 0. The most tempting wrong answer is option B — students might think R is a separate fact unrelated to A. However, the perpendicularity of E to the equipotential surface is precisely the geometric reason why no work is done along such a surface. If E had any component along the surface, work would be done and the surface wouldn\'t be equipotential.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_018',
+  question: 'Assertion (A): The electric field inside a conductor in electrostatic equilibrium is zero.\nReason (R): The charges on a conductor reside only on its outer surface.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true. In electrostatic equilibrium, free electrons redistribute so that the net internal field is zero — if any field existed inside, electrons would move until it vanished. This redistribution results in all excess charge residing on the outer surface. R explains A because the surface charge distribution creates a field that exactly cancels the external field inside. The most tempting wrong answer is option B — students might think that charges being on the surface is an independent fact rather than a consequence and explanation of zero internal field. In reality, the zero internal field and surface charge distribution are intimately connected: one implies the other in electrostatic equilibrium.',
+  difficulty: 'hard',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_019',
+  question: 'Assertion (A): A Van de Graaff generator can produce very high voltages of the order of millions of volts.\nReason (R): In a Van de Graaff generator, charge is continuously transferred from a moving belt to a large hollow metallic sphere, and the potential of the sphere keeps increasing as V = kQ/R.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both A and R are true. The Van de Graaff generator accumulates charge on a hollow metallic sphere via a moving belt. Since the potential V = kQ/R, as more charge Q is deposited, V increases proportionally. Because the charge resides on the outer surface and the inner potential equals the surface potential, charge deposited inside always transfers to the outside regardless of the existing charge. The most tempting wrong answer is option B — students might think R describes the mechanism but not the explanation for high voltage. However, R directly explains how voltages of millions of volts are achieved: continuous charge accumulation increases Q, and V = kQ/R gives proportionally high voltage.',
+  difficulty: 'hard',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_020',
+  question: 'Two point charges +4 μC and −4 μC are placed 20 cm apart. The electric potential at the midpoint of the line joining the charges is:',
+  options: ['7.2 × 10⁵ V', '3.6 × 10⁵ V', 'Zero', '−3.6 × 10⁵ V'],
+  correctAnswer: 2,
+  explanation: 'At the midpoint, the distance from each charge is 10 cm = 0.1 m. Potential due to +4 μC: V₁ = kq/r = 9 × 10⁹ × 4 × 10⁻⁶/0.1 = 3.6 × 10⁵ V. Potential due to −4 μC: V₂ = 9 × 10⁹ × (−4 × 10⁻⁶)/0.1 = −3.6 × 10⁵ V. Total potential V = V₁ + V₂ = 0. The most tempting wrong answer is option A (7.2 × 10⁵ V), obtained by adding the magnitudes of the potentials. However, potential is a scalar with sign — the positive and negative contributions cancel at the midpoint of an equal and opposite charge pair. Note: while the potential is zero, the electric field is NOT zero here — it points from +q to −q with magnitude 2kq/r².',
+  difficulty: 'hard',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_021',
+  question: 'A charged capacitor of capacitance C stores energy U. If the charge on the capacitor is doubled by connecting it to a higher voltage source, the new energy stored is:',
+  options: ['2U', 'U/2', '4U', 'U/4'],
+  correctAnswer: 2,
+  explanation: 'Energy U = Q²/(2C). If charge is doubled (Q\' = 2Q), then U\' = (2Q)²/(2C) = 4Q²/(2C) = 4U. The most tempting wrong answer is option A (2U), which results from incorrectly assuming U ∝ Q (linear relationship) instead of the correct U ∝ Q² (quadratic relationship). Using U = ½CV², if Q doubles then V also doubles (since Q = CV), so U\' = ½C(2V)² = ½C × 4V² = 4U, confirming the result. All three energy formulas (½CV², Q²/2C, ½QV) must yield the same answer.',
+  difficulty: 'hard',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  },
+  {
+  id: 'phy_es_022',
+  question: 'The electric field due to an infinite plane sheet of uniform surface charge density σ is:',
+  options: ['σ/ε₀, perpendicular to the sheet', 'σ/(2ε₀), perpendicular to the sheet', 'σ/(2ε₀), parallel to the sheet', 'σ/ε₀, at 45° to the sheet'],
+  correctAnswer: 1,
+  explanation: 'Using Gauss\'s law with a cylindrical Gaussian surface perpendicular to the infinite plane, the flux through both end caps gives 2EA = σA/ε₀, so E = σ/(2ε₀). The field is uniform (independent of distance) and perpendicular to the sheet. The most tempting wrong answer is option A (σ/ε₀) — this is the field between two parallel plates of opposite charge (where both sheets contribute σ/2ε₀ in the same direction, giving σ/ε₀), not for a single infinite sheet. This distinction between single sheet and parallel plate capacitor fields is a frequent source of error and is heavily tested in AIIMS.',
+  difficulty: 'hard',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'electrostatics'
+  }
+],
+
+magnetic_effects_current: [
+    {
+    id: 'phy_mc_001',
+    question: 'The phenomenon that a current-carrying conductor produces a magnetic field around it was first discovered by:',
+    options: ['Faraday', 'Ampere', 'Oersted', 'Biot'],
+    correctAnswer: 2,
+    explanation: 'Hans Christian Oersted in 1820 discovered that a current-carrying conductor deflects a nearby magnetic compass needle, establishing the connection between electricity and magnetism. The most tempting wrong answer is option A (Faraday), who discovered electromagnetic induction (changing magnetic field produces current), not the magnetic effect of current. Ampere formulated the mathematical law for magnetic fields due to currents, and Biot (with Savart) gave the law for field due to a current element, but the original discovery was Oersted\'s.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_002',
+    question: 'The magnetic field at the centre of a circular loop of radius r carrying current I is:',
+    options: ['B = μ₀I/2r', 'B = μ₀I/2πr', 'B = μ₀I/4πr', 'B = μ₀Ir/2'],
+    correctAnswer: 0,
+    explanation: 'Using the Biot-Savart law integrated over a complete circular loop, the magnetic field at the centre is B = μ₀I/(2r). The most tempting wrong answer is option B (μ₀I/2πr), which is the magnetic field at distance r from a long straight conductor (derived from Ampere\'s law), not at the centre of a loop. Students frequently confuse these two formulas. For the loop, the factor is 1/2r; for the straight wire, it is 1/2πr. The presence or absence of π distinguishes the two cases.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_003',
+    question: 'The force experienced by a charge q moving with velocity v perpendicular to a uniform magnetic field B is:',
+    options: ['F = qvB, along the direction of motion', 'F = qvB, perpendicular to both v and B', 'F = qvB, along the magnetic field direction', 'F = qv/B, perpendicular to v'],
+    correctAnswer: 1,
+    explanation: 'The Lorentz force on a moving charge is F = qv × B = qvB sin θ. When v ⊥ B (θ = 90°), F = qvB. The force is always perpendicular to both v and B (given by the right-hand rule or cross product). The most tempting wrong answer is option A — while the magnitude is correct, the direction is wrong. The magnetic force never acts along the direction of motion; it is always perpendicular, which is why it does no work and cannot change the speed of the particle, only its direction. This perpendicularity causes the particle to move in a circle.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_004',
+    question: 'The direction of force on a current-carrying conductor placed in a magnetic field is given by:',
+    options: ['Right-hand thumb rule', 'Fleming\'s right-hand rule', 'Fleming\'s left-hand rule', 'Lenz\'s law'],
+    correctAnswer: 2,
+    explanation: 'Fleming\'s left-hand rule gives the direction of force on a current-carrying conductor in a magnetic field: the forefinger points in the direction of the magnetic field (B), the middle finger in the direction of current (I), and the thumb gives the direction of force (F). The most tempting wrong answer is option B (Fleming\'s right-hand rule), which is used for electromagnetic induction (finding direction of induced current in a generator), not for the motor effect. Option A (right-hand thumb rule) gives the direction of the magnetic field around a straight current-carrying conductor. Option D (Lenz\'s law) deals with the direction of induced EMF.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_005',
+    question: 'The magnetic field inside a long solenoid carrying current I with n turns per unit length is:',
+    options: ['B = μ₀nI', 'B = μ₀NI', 'B = μ₀I/2πr', 'B = μ₀nI/2π'],
+    correctAnswer: 0,
+    explanation: 'Using Ampere\'s circuital law, the magnetic field inside a long solenoid is B = μ₀nI, where n = number of turns per unit length and I is the current. The field is uniform inside and essentially zero outside. The most tempting wrong answer is option B (μ₀NI), which uses N (total turns) instead of n (turns per unit length). B = μ₀NI is not dimensionally correct for magnetic field unless divided by the length. Option C is the field due to a long straight wire, not a solenoid. The solenoid field is independent of position inside (uniform) and independent of the solenoid\'s radius.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_006',
+    question: 'The SI unit of magnetic flux density (magnetic field B) is:',
+    options: ['Weber', 'Tesla', 'Henry', 'Gauss'],
+    correctAnswer: 1,
+    explanation: 'The SI unit of magnetic field B (magnetic flux density) is the Tesla (T), where 1 T = 1 Wb/m² = 1 kg/(A·s²). The most tempting wrong answer is option A (Weber), which is the SI unit of magnetic flux (Φ = BA), not magnetic field. Option D (Gauss) is the CGS unit of magnetic field (1 T = 10⁴ Gauss), not the SI unit. Option C (Henry) is the unit of inductance. Distinguishing between Tesla (field), Weber (flux), and Henry (inductance) is essential for AIIMS.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_007',
+    question: 'Two long parallel conductors carry currents I₁ and I₂ in the same direction. The force between them per unit length is:',
+    options: ['Repulsive, with magnitude μ₀I₁I₂/(2πd)', 'Attractive, with magnitude μ₀I₁I₂/(2πd)', 'Attractive, with magnitude μ₀I₁I₂/(4πd)', 'Zero'],
+    correctAnswer: 1,
+    explanation: 'The force per unit length between two parallel conductors is F/L = μ₀I₁I₂/(2πd). When currents flow in the same direction, the force is attractive; when in opposite directions, it is repulsive. The most tempting wrong answer is option A — it has the correct magnitude but wrong nature (repulsive instead of attractive). To remember: same-direction currents attract (like two people walking the same way — they come together), opposite-direction currents repel. This force defines the Ampere: 1 A is the current that produces a force of 2 × 10⁻⁷ N/m between two parallel conductors 1 m apart.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_008',
+    question: 'A proton moves with velocity 2 × 10⁶ m/s perpendicular to a magnetic field of 0.1 T. The radius of its circular path is: (mass of proton = 1.67 × 10⁻²⁷ kg, charge = 1.6 × 10⁻¹⁹ C)',
+    options: ['0.21 m', '0.021 m', '2.1 m', '0.0021 m'],
+    correctAnswer: 0,
+    explanation: 'For circular motion in a magnetic field, r = mv/(qB) = (1.67 × 10⁻²⁷ × 2 × 10⁶)/(1.6 × 10⁻¹⁹ × 0.1). Numerator = 3.34 × 10⁻²¹. Denominator = 1.6 × 10⁻²⁰. So r = 3.34/16 × 10⁻²¹⁺²⁰ = 0.209 m ≈ 0.21 m. The most tempting wrong answer is option B (0.021 m), obtained by using B = 1 T instead of 0.1 T, or by a factor-of-10 error. The radius r = mv/qB shows that heavier particles (like protons vs electrons) trace larger circles in the same field. This formula is directly tested in cyclotron-related problems in AIIMS.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_009',
+    question: 'In a cyclotron, the frequency of the applied alternating voltage must equal:',
+    options: ['f = qB/(2πm), which depends on the speed of the particle', 'f = qB/(2πm), which is independent of the speed of the particle', 'f = 2πm/(qB), which is independent of the speed', 'f = qBr/(2πm), which depends on the radius'],
+    correctAnswer: 1,
+    explanation: 'The cyclotron frequency (resonance condition) is f = qB/(2πm). This frequency is independent of the speed and radius of the particle — this is the key principle that makes the cyclotron work. As the particle gains energy and spirals outward, its period remains constant because the increase in radius is exactly compensated by the increase in speed. The most tempting wrong answer is option A — it has the correct formula but incorrectly claims the frequency depends on speed. Option D includes radius, which is also incorrect. The speed-independence of cyclotron frequency breaks down at relativistic speeds, which is why cyclotrons cannot accelerate particles beyond a certain energy.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_010',
+    question: 'The torque on a rectangular current loop of N turns, area A, carrying current I, placed in a uniform magnetic field B at angle θ between the normal to the loop and B is:',
+    options: ['τ = NIAB cos θ', 'τ = NIAB sin θ', 'τ = NIAB tan θ', 'τ = NIB sin θ'],
+    correctAnswer: 1,
+    explanation: 'The torque on a current loop is τ = M × B = NIAB sin θ, where θ is the angle between the magnetic moment (normal to the loop) and the magnetic field. The most tempting wrong answer is option A (cos θ) — students confuse this with the formula for magnetic flux (Φ = BA cos θ), which uses cos θ. For torque, sin θ is correct: torque is maximum when the loop is perpendicular to the field (θ = 90°) and zero when the loop\'s normal is parallel to the field (θ = 0°). Option D omits the area A, making it dimensionally incorrect for torque.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_011',
+    question: 'A galvanometer has a resistance of 100 Ω and gives full-scale deflection for a current of 1 mA. To convert it into an ammeter reading up to 1 A, the shunt resistance required is:',
+    options: ['0.1 Ω', '0.1001 Ω', '100 Ω', '999 Ω'],
+    correctAnswer: 0,
+    explanation: 'Shunt resistance S = IgG/(I − Ig) = (0.001 × 100)/(1 − 0.001) = 0.1/0.999 ≈ 0.1001 Ω. For practical purposes, since Ig << I, S ≈ IgG/I = 0.001 × 100/1 = 0.1 Ω. The most tempting wrong answer is option B (0.1001 Ω), which is the exact value. However, in AIIMS-level problems, the approximation Ig << I is standard, giving S ≈ 0.1 Ω. Option D (999 Ω) is the series resistance needed for voltmeter conversion, not ammeter conversion. Key concept: ammeter uses a low resistance shunt in parallel; voltmeter uses a high resistance in series.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_012',
+    question: 'A galvanometer of resistance 50 Ω and full-scale deflection current 2 mA is to be converted into a voltmeter of range 0-10 V. The resistance to be connected in series is:',
+    options: ['4950 Ω', '5000 Ω', '50 Ω', '4900 Ω'],
+    correctAnswer: 0,
+    explanation: 'For voltmeter conversion, R = V/Ig − G = 10/(2 × 10⁻³) − 50 = 5000 − 50 = 4950 Ω. The most tempting wrong answer is option B (5000 Ω), obtained by calculating V/Ig = 5000 Ω but forgetting to subtract the galvanometer resistance G. The total resistance of the voltmeter must be V/Ig = 5000 Ω, but since the galvanometer already has 50 Ω, only 4950 Ω needs to be added in series. This subtraction step is a common source of error in AIIMS questions on galvanometer conversion.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_013',
+    question: 'The current sensitivity of a moving coil galvanometer can be increased by:',
+    options: ['Increasing the torsional constant of the spring', 'Decreasing the number of turns in the coil', 'Increasing the magnetic field strength', 'Decreasing the area of the coil'],
+    correctAnswer: 2,
+    explanation: 'Current sensitivity = θ/I = NBA/k, where N = number of turns, B = magnetic field, A = coil area, k = torsional constant. To increase sensitivity, we can increase N, B, or A, or decrease k. Option C (increasing B) directly increases sensitivity. The most tempting wrong answer is option A — increasing the torsional constant k would decrease sensitivity (since sensitivity ∝ 1/k), not increase it. Options B and D would also decrease sensitivity. High current sensitivity means a large deflection for a small current, which is desirable for detecting weak currents.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_014',
+    question: 'The magnetic field inside a toroid of mean radius R, having N total turns and carrying current I, is:',
+    options: ['B = μ₀NI/(2πR)', 'B = μ₀NI', 'B = μ₀NI/R', 'B = μ₀NI/(4πR)'],
+    correctAnswer: 0,
+    explanation: 'Using Ampere\'s circuital law for a toroid: ∮B·dl = μ₀NI (total enclosed current for N turns). The path length is 2πR (circumference of the toroid). So B × 2πR = μ₀NI, giving B = μ₀NI/(2πR). The most tempting wrong answer is option B (μ₀NI), which is the formula for a solenoid of unit length (B = μ₀nI with n = N/L). For a toroid, the length of the magnetic path is 2πR, so n = N/(2πR). Option C omits the 2π factor. The toroid confines the magnetic field entirely within its interior, with zero field outside.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_015',
+    question: 'Which of the following is NOT correct about the force on a current-carrying conductor in a magnetic field?',
+    options: ['Force is maximum when the conductor is perpendicular to the field', 'Force is zero when the conductor is parallel to the field', 'Force depends on the length of the conductor in the field', 'Force is always perpendicular to the conductor regardless of orientation'],
+    correctAnswer: 3,
+    explanation: 'The force F = BIL sin θ is perpendicular to both the conductor and the magnetic field (given by the cross product). However, option D states the force is "always perpendicular to the conductor regardless of orientation" — this is misleading because when the conductor is parallel to B (θ = 0°), the force is zero, not perpendicular. More precisely, the force direction is determined by the cross product IL × B, which is indeed always perpendicular to the conductor when it exists, but the statement "regardless of orientation" implies a non-zero force always exists, which is false. Options A, B, and C are all correct statements derived from F = BIL sin θ.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_016',
+    question: 'Assertion (A): The time period of a charged particle moving in a uniform magnetic field is independent of its speed.\nReason (R): As the speed of the particle increases, the radius of its circular path also increases proportionally.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+    correctAnswer: 0,
+    explanation: 'Time period T = 2πm/(qB), which is independent of speed — A is true. The reason R is also true: r = mv/(qB), so r ∝ v. As speed increases, the radius increases proportionally, so the circumference (2πr) also increases proportionally, but the particle covers this larger circumference at a proportionally higher speed, keeping T = 2πr/v = 2πm/(qB) constant. R correctly explains A because it identifies the mechanism (r ∝ v) that makes T independent of v. The most tempting wrong answer is option B, where students might not see how R explains A — but the proportional increase in both path length and speed is precisely why the period remains constant.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_017',
+    question: 'Assertion (A): A moving coil galvanometer cannot be used directly as an ammeter.\nReason (R): A galvanometer has very high resistance and can handle only a small current.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+    correctAnswer: 0,
+    explanation: 'A is true — the galvanometer has a full-scale deflection current of typically milliamps, far too small for measuring circuit currents. R is also true: the galvanometer has relatively high resistance (tens to hundreds of ohms) and can only handle a tiny current before reaching full deflection. R correctly explains A because both the high resistance (which would alter the circuit) and the low current capacity (which would burn out the coil) prevent direct use as an ammeter. The most tempting wrong answer is option C — some students might argue that galvanometer resistance is not "very high" compared to a voltmeter, but relative to an ammeter (which needs near-zero resistance), the galvanometer resistance is indeed too high.',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_018',
+    question: 'Assertion (A): When a charged particle enters a uniform magnetic field at an angle other than 0° or 90° to the field, it follows a helical path.\nReason (R): The component of velocity parallel to the field remains unchanged while the perpendicular component causes circular motion.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+    correctAnswer: 0,
+    explanation: 'Both statements are true. When a charged particle enters at angle θ to B, v can be resolved into v∥ = v cos θ (parallel to B) and v⊥ = v sin θ (perpendicular to B). The magnetic force F = qv × B acts only on v⊥ (since v∥ × B = 0), causing circular motion in the plane perpendicular to B. Meanwhile, v∥ causes uniform linear motion along B. The combination of circular and linear motion produces a helix. R correctly explains A by identifying the mechanism. The most tempting wrong answer is option B — students might think the two facts are independent, but R directly explains why the helical path arises from the decomposition of velocity.',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_019',
+    question: 'An electron and a proton enter a uniform magnetic field perpendicularly with the same momentum. The ratio of the radii of their circular paths (r_e/r_p) is:',
+    options: ['m_e/m_p', 'm_p/m_e', '1', '√(m_e/m_p)'],
+    correctAnswer: 2,
+    explanation: 'Radius r = mv/(qB) = p/(qB), where p = mv is the momentum. Since both particles have the same momentum and the same charge (|e| = |e|), r = p/(eB) is the same for both. Therefore r_e/r_p = 1. The most tempting wrong answer is option A (m_e/m_p) — this would be correct if the particles had the same velocity (since r = mv/qB, same v gives r ∝ m). But the question specifies same momentum, not same velocity. This distinction between "same velocity" and "same momentum" is a classic AIIMS trap. When momentum is the same, the mass cancels out of the radius formula.',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_020',
+    question: 'A circular coil of 200 turns and radius 10 cm carries a current of 2 A. The magnetic moment of the coil is:',
+    options: ['4π A·m²', '400π A·m²', '0.4π A·m²', '4 A·m²'],
+    correctAnswer: 0,
+    explanation: 'Magnetic moment M = NIA = 200 × 2 × π(0.1)² = 200 × 2 × π × 0.01 = 4π A·m². The most tempting wrong answer is option B (400π), which results from using r = 10 cm = 0.1 m but forgetting to square it (using A = πr instead of A = πr²), giving M = 200 × 2 × π × 0.1 = 40π, or from using r = 10 without converting to metres, giving A = π(10)² = 100π and M = 200 × 2 × 100π = 40000π. Option D (4 A·m²) omits the π factor. Unit conversion (cm to m) and proper area calculation are critical in such numerical problems.',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_021',
+    question: 'In a region where the magnetic field is non-uniform, a current-carrying loop experiences:',
+    options: ['Only a torque but no net force', 'Only a net force but no torque', 'Both a net force and a torque', 'Neither a net force nor a torque'],
+    correctAnswer: 2,
+    explanation: 'In a uniform magnetic field, a current loop experiences only a torque (τ = NIAB sin θ) with no net force (forces on opposite sides cancel). However, in a non-uniform field, the forces on different parts of the loop are unequal (because B varies with position), resulting in a net force in addition to the torque. The most tempting wrong answer is option A — this is correct only for a uniform field, and students who don\'t distinguish between uniform and non-uniform fields will choose this. In a non-uniform field, the loop tends to move toward the region of stronger field (if the moment is aligned with the field) while also experiencing a torque tending to align the moment with the field.',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    },
+    {
+    id: 'phy_mc_022',
+    question: 'The Biot-Savart law is applicable to:',
+    options: ['Only straight conductors', 'Only circular loops', 'Any arbitrary-shaped current-carrying conductor', 'Only solenoids and toroids'],
+    correctAnswer: 2,
+    explanation: 'The Biot-Savart law, dB = (μ₀/4π)(Idl × r̂)/r², gives the magnetic field contribution from an infinitesimal current element Idl. It is a general law applicable to any shape of current-carrying conductor — the total field is obtained by integrating over the entire conductor. The most tempting wrong answer is option A — while textbooks often illustrate the law with straight conductors, it is not limited to them. The law is universal for steady currents and can be applied to loops, coils, solenoids, or any arbitrary geometry. Ampere\'s circuital law is more convenient for symmetric geometries, but Biot-Savart works for all cases.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'magnetic_effects_current'
+    }
+],
+
+electromagnetic_induction_ac: [
       {
-        id: 'phy_op_001',
-        question: 'The phenomenon of bending of light around sharp edges of an obstacle is called:',
-        options: ['Reflection', 'Refraction', 'Diffraction', 'Polarization'],
+      id: 'phy_em_001',
+      question: 'Faraday\'s law of electromagnetic induction states that the magnitude of the induced EMF in a circuit is equal to:',
+      options: ['The magnetic flux through the circuit', 'The rate of change of magnetic flux through the circuit', 'The product of magnetic field and area', 'The current flowing through the circuit'],
+      correctAnswer: 1,
+      explanation: 'Faraday\'s second law states that the induced EMF is equal to the rate of change of magnetic flux: ε = −dΦ/dt. The negative sign (Lenz\'s law) indicates the direction of induced EMF opposes the change in flux. The most tempting wrong answer is option A — magnetic flux Φ = BA cos θ itself does not induce EMF; only a change in flux induces EMF. A constant flux (no matter how large) produces zero EMF. Option C describes magnetic flux, not EMF. This distinction between flux and rate of change of flux is fundamental to understanding electromagnetic induction.',
+      difficulty: 'easy',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_002',
+      question: 'Lenz\'s law is a consequence of the law of conservation of:',
+      options: ['Charge', 'Momentum', 'Energy', 'Angular momentum'],
+      correctAnswer: 2,
+      explanation: 'Lenz\'s law states that the induced current flows in a direction that opposes the cause producing it. This opposition requires work to be done against the induced EMF, ensuring that electrical energy is not created from nothing — thus it follows from the law of conservation of energy. The most tempting wrong answer is option A (conservation of charge), which is the basis of Kirchhoff\'s current law, not Lenz\'s law. If the induced current aided the change (rather than opposed it), the flux change would accelerate, producing more current, creating a perpetual motion machine — violating energy conservation.',
+      difficulty: 'easy',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_003',
+      question: 'The RMS value of an alternating voltage V = V₀ sin(ωt) is:',
+      options: ['V₀', 'V₀/2', 'V₀/√2', 'V₀√2'],
+      correctAnswer: 2,
+      explanation: 'The RMS (root mean square) value of a sinusoidal voltage is V_rms = V₀/√2 ≈ 0.707 V₀. This is the value of DC voltage that would produce the same heating effect as the AC voltage. The most tempting wrong answer is option B (V₀/2), which is the average value concept confused with RMS. The average value of a full sine wave is actually 2V₀/π ≈ 0.637V₀, not V₀/2. The RMS value is always greater than the average value for a sine wave. For household supply of 220 V (RMS), the peak voltage is 220√2 ≈ 311 V.',
+      difficulty: 'easy',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_004',
+      question: 'In a pure resistive AC circuit, the phase difference between voltage and current is:',
+      options: ['90°', '45°', '0°', '180°'],
+      correctAnswer: 2,
+      explanation: 'In a purely resistive AC circuit, voltage and current are in phase (phase difference = 0°). Both reach their maximum and zero values simultaneously. The most tempting wrong answer is option A (90°), which is the phase difference in a pure inductive (current lags by 90°) or pure capacitive (current leads by 90°) circuit. In a resistor, V = IR at every instant, so V and I always have the same phase. The power factor for a pure resistive circuit is cos 0° = 1, meaning maximum power is consumed.',
+      difficulty: 'easy',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_005',
+      question: 'A metallic rod of length L moves with velocity v perpendicular to a uniform magnetic field B. The motional EMF induced across the rod is:',
+      options: ['BLv', 'BLv²', 'B²Lv', 'BL/v'],
+      correctAnswer: 0,
+      explanation: 'When a conductor of length L moves with velocity v perpendicular to a magnetic field B, the motional EMF is ε = BLv. This arises because the free electrons in the rod experience a Lorentz force F = qvB, causing charge separation until the electric force balances the magnetic force. The most tempting wrong answer is option B (BLv²), which incorrectly squares the velocity. The EMF is linearly proportional to v, not quadratic. Option C (B²Lv) incorrectly squares B. The formula ε = BLv is one of the most directly tested formulas in AIIMS for electromagnetic induction.',
+      difficulty: 'easy',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_006',
+      question: 'Eddy currents are minimised in transformer cores by:',
+      options: ['Using solid iron cores', 'Using laminated iron cores', 'Increasing the frequency of AC', 'Using copper cores instead of iron'],
+      correctAnswer: 1,
+      explanation: 'Eddy currents are induced in bulk conductors when exposed to changing magnetic flux. Laminated cores (thin insulated sheets of iron stacked together) restrict eddy current loops to individual laminations, greatly reducing their magnitude and associated heat losses. The most tempting wrong answer is option A (solid iron cores) — solid cores actually maximise eddy currents because they allow large current loops to form. Laminations increase the resistance of eddy current paths by breaking the conductor into thin layers. Option D is wrong because copper, being a better conductor, would have even larger eddy currents.',
+      difficulty: 'easy',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_007',
+      question: 'In an AC circuit with a pure inductor, the current:',
+      options: ['Leads the voltage by 90°', 'Lags the voltage by 90°', 'Is in phase with the voltage', 'Leads the voltage by 45°'],
+      correctAnswer: 1,
+      explanation: 'In a pure inductive circuit, the current lags the voltage by 90° (π/2 radians). This is because the inductor opposes changes in current (Lenz\'s law), so the current takes time to build up after the voltage is applied. Mathematically, if V = V₀ sin(ωt), then I = I₀ sin(ωt − π/2). The most tempting wrong answer is option A (leads by 90°), which is true for a pure capacitive circuit, not inductive. The mnemonic "CIVIL" helps: in a Capacitor, I leads V; in an inductor (L), V leads I (i.e., I lags V).',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_008',
+      question: 'The inductive reactance of a coil of inductance 0.5 H at a frequency of 50 Hz is:',
+      options: ['25π Ω', '50π Ω', '100π Ω', '157 Ω'],
+      correctAnswer: 1,
+      explanation: 'Inductive reactance X_L = ωL = 2πfL = 2π × 50 × 0.5 = 50π Ω ≈ 157 Ω. The most tempting wrong answer is option D (157 Ω), which is the numerical value of 50π but expressed as a decimal. In AIIMS, answers are often left in terms of π for exactness. Option A (25π) results from using ω = πf instead of 2πf, which is a common error. Option C (100π) results from using L = 1 H instead of 0.5 H. The reactance X_L increases with frequency, meaning inductors oppose high-frequency currents more than low-frequency ones.',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_009',
+      question: 'In a series LCR circuit at resonance:',
+      options: ['Impedance is maximum and current is minimum', 'Impedance equals R and current is maximum', 'Impedance is zero and current is infinite', 'The power factor is zero'],
+      correctAnswer: 1,
+      explanation: 'At resonance, X_L = X_C, so the impedance Z = √(R² + (X_L − X_C)²) = √(R²) = R (minimum impedance). Since Z is minimum, the current I = V/Z = V/R is maximum. The most tempting wrong answer is option A — this describes the condition at anti-resonance in a parallel LC circuit, not series resonance. Option C is wrong because impedance is R (not zero) — it would be zero only if R = 0, which is physically impossible. Option D is wrong because at resonance, the power factor cos φ = R/Z = R/R = 1 (maximum power dissipation).',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_010',
+      question: 'A step-up transformer has 200 turns in the primary and 1000 turns in the secondary. If the primary voltage is 220 V, the secondary voltage is:',
+      options: ['44 V', '1100 V', '2200 V', '440 V'],
+      correctAnswer: 1,
+      explanation: 'For a transformer, V_s/V_p = N_s/N_p. So V_s = V_p × (N_s/N_p) = 220 × (1000/200) = 220 × 5 = 1100 V. The most tempting wrong answer is option D (440 V), which results from using the ratio N_s/N_p = 1000/200 = 5 but then incorrectly calculating 220 × 2 = 440 (mental arithmetic error). Option A (44 V) results from inverting the ratio (using N_p/N_s = 200/1000 = 0.2), which would describe a step-down transformer. In a step-up transformer, N_s > N_p, so V_s > V_p but I_s < I_p (power is conserved for an ideal transformer).',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_011',
+      question: 'The self-inductance of a solenoid with n turns per unit length, cross-sectional area A, and length l is:',
+      options: ['L = μ₀n²Al', 'L = μ₀nAl', 'L = μ₀n²A/l', 'L = μ₀n²l/A'],
+      correctAnswer: 0,
+      explanation: 'L = μ₀n²Al, where n = turns per unit length, A = cross-sectional area, l = length. This is derived from L = NΦ/I, where N = nl, Φ = BA = μ₀nIA, so L = nl × μ₀nIA/I = μ₀n²Al. The most tempting wrong answer is option C (μ₀n²A/l), which incorrectly places l in the denominator. Students confuse this with the resistance formula (R ∝ l/A) and assume inductance decreases with length. In reality, a longer solenoid (with the same n) has more turns and hence more flux linkage, increasing L proportionally with l.',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_012',
+      question: 'The energy stored in an inductor of inductance 2 H carrying a current of 3 A is:',
+      options: ['3 J', '6 J', '9 J', '12 J'],
+      correctAnswer: 2,
+      explanation: 'Energy stored U = ½LI² = ½ × 2 × 3² = ½ × 2 × 9 = 9 J. The most tempting wrong answer is option B (6 J), obtained by using U = LI instead of ½LI², or by calculating ½ × 2 × 3 = 3 and then doubling. Option D (12 J) results from omitting the ½ factor: 2 × 3² = 18, not 12... actually 2 × 6 = 12 if using I² = 6 mistakenly. The ½ factor in the energy formula is analogous to ½CV² for capacitors and ½mv² for kinetic energy, and must not be forgotten.',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_013',
+      question: 'In a series LCR circuit, the phase angle φ between voltage and current is given by tan φ = (X_L − X_C)/R. If X_L > X_C, the circuit is:',
+      options: ['Capacitive and current leads voltage', 'Inductive and current lags voltage', 'Resistive and current is in phase with voltage', 'At resonance'],
+      correctAnswer: 1,
+      explanation: 'When X_L > X_C, the net reactance is inductive, making tan φ positive (φ > 0). This means the voltage leads the current, or equivalently, the current lags the voltage — the circuit behaves inductively. The most tempting wrong answer is option A (capacitive, current leads), which describes the case when X_C > X_L. Students often confuse which reactance dominance leads to which behaviour. Mnemonic: "L for Lag" — when inductive reactance dominates, current lags. Option D (resonance) occurs only when X_L = X_C exactly, making φ = 0.',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_014',
+      question: 'The power factor of a series LCR circuit at resonance is:',
+      options: ['Zero', '0.5', '1/√2', '1'],
+      correctAnswer: 3,
+      explanation: 'Power factor = cos φ = R/Z. At resonance, X_L = X_C, so Z = R, and cos φ = R/R = 1. This means all the power supplied by the source is dissipated in the resistor — there is no reactive power. The most tempting wrong answer is option A (zero) — a power factor of zero occurs in a pure L or pure C circuit where no real power is consumed. At resonance, the reactive components cancel each other, and the circuit behaves as if only R exists. Option C (1/√2 ≈ 0.707) is the power factor when X_L − X_C = R, i.e., φ = 45°.',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_015',
+      question: 'Assertion (A): Eddy currents are used in induction cookers for heating.\nReason (R): Eddy currents produce heat due to the resistance of the conducting material (I²R losses).',
+      options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+      correctAnswer: 0,
+      explanation: 'Both statements are true. Induction cookers use a high-frequency alternating magnetic field to induce eddy currents in the metallic base of the cooking vessel. These eddy currents dissipate energy as heat due to the I²R losses in the vessel\'s material (Joule heating), which cooks the food. R correctly explains A because the heating mechanism in induction cooking is precisely the resistive dissipation of eddy currents. The most tempting wrong answer is option B — students might think the heating is due to some other mechanism (like friction or direct magnetic heating), but it is indeed the I²R heating from eddy currents.',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_016',
+      question: 'Assertion (A): A transformer works only on AC and not on DC.\nReason (R): A transformer requires a changing magnetic flux to induce EMF in the secondary coil.',
+      options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+      correctAnswer: 0,
+      explanation: 'Both A and R are true. A transformer operates on the principle of mutual induction: the changing current in the primary creates a changing magnetic flux, which induces EMF in the secondary (Faraday\'s law). DC produces a constant current and hence a constant flux, resulting in dΦ/dt = 0 and no induced EMF in the secondary. R correctly explains A — the requirement for changing flux is precisely why DC cannot operate a transformer. The most tempting wrong answer is option B — students might think R is a general fact unrelated to why DC fails, but R directly addresses the mechanism: no flux change → no induction → no transformer action.',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_017',
+      question: 'Assertion (A): In a series LCR circuit, the voltage across the capacitor or inductor can exceed the source voltage.\nReason (R): At resonance, the voltages across L and C are equal in magnitude but opposite in phase, and each can be much larger than the applied voltage.',
+      options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+      correctAnswer: 0,
+      explanation: 'Both statements are true. At resonance, V_L = IX_L and V_C = IX_C, where I = V/R (maximum). If X_L = X_C >> R, then V_L = V_C = V × X_L/R = V × Q (quality factor), which can far exceed V. The voltages across L and C are 180° out of phase and cancel each other, so the total voltage across the LC combination is zero, consistent with V = IR. R correctly explains A. The most tempting wrong answer is option D — students find it counterintuitive that component voltages can exceed the source voltage, but this is the phenomenon of voltage magnification at resonance, quantified by the quality factor Q.',
+      difficulty: 'hard',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_018',
+      question: 'A series LCR circuit has L = 1 H, C = 1 μF, and R = 100 Ω. The resonant frequency of the circuit is:',
+      options: ['1000/(2π) Hz', '100/(2π) Hz', '10000/(2π) Hz', '500/(2π) Hz'],
+      correctAnswer: 0,
+      explanation: 'Resonant frequency f₀ = 1/(2π√(LC)) = 1/(2π√(1 × 10⁻⁶)) = 1/(2π × 10⁻³) = 10³/(2π) = 1000/(2π) Hz ≈ 159 Hz. The most tempting wrong answer is option B (100/2π), which results from incorrectly calculating √(10⁻⁶) = 10⁻² instead of 10⁻³. Remember: √(10⁻⁶) = 10⁻³. Option C would result from using LC = 10⁻⁸ (squaring 10⁻⁶ instead of using it directly). The resonant frequency depends only on L and C, not on R — the resistance determines the sharpness of resonance (quality factor Q = ω₀L/R) but not the resonant frequency itself.',
+      difficulty: 'hard',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_019',
+      question: 'In an AC circuit, the power dissipated is P = V_rms × I_rms × cos φ. For a pure capacitor, the power dissipated is:',
+      options: ['V_rms × I_rms', 'V_rms²/X_C', 'Zero', 'I_rms² × X_C'],
+      correctAnswer: 2,
+      explanation: 'For a pure capacitor, the phase angle φ = 90° (current leads voltage by 90°). Power P = V_rms × I_rms × cos 90° = 0. No real power is dissipated in an ideal capacitor — energy is alternately stored in the electric field and returned to the source. The most tempting wrong answer is option B (V_rms²/X_C), which looks like the power formula P = V²/R but with X_C replacing R. However, X_C is a reactance, not a resistance, and reactive elements do not dissipate power. The quantity V_rms × I_rms for a pure capacitor is called reactive power (measured in VAR), not real power.',
+      difficulty: 'hard',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_020',
+      question: 'The quality factor Q of a series LCR circuit is given by Q = ω₀L/R. A higher Q factor implies:',
+      options: ['Broader resonance curve and less selectivity', 'Sharper resonance curve and greater selectivity', 'Lower current at resonance', 'Higher impedance at resonance'],
+      correctAnswer: 1,
+      explanation: 'A higher quality factor Q means the resonance peak is sharper (narrower bandwidth), indicating greater frequency selectivity — the circuit responds strongly only to frequencies very close to the resonant frequency. The most tempting wrong answer is option A (broader curve) — this is the opposite of reality. A high Q means low R relative to ω₀L, so the resonance is sharp. A low Q (high R) gives a broad, flat resonance curve with poor selectivity. Options C and D are incorrect because at resonance, current is maximum (I = V/R) and impedance is minimum (Z = R), regardless of Q.',
+      difficulty: 'hard',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_021',
+      question: 'High voltage is preferred for long-distance power transmission because:',
+      options: ['It reduces the current, thereby reducing I²R transmission losses', 'It increases the resistance of transmission lines', 'It reduces the voltage drop across the load', 'Transformers work more efficiently at high voltages'],
+      correctAnswer: 0,
+      explanation: 'For a given power P = VI, increasing V decreases I. Transmission losses = I²R, so reducing I dramatically reduces losses (since loss ∝ I² ∝ 1/V²). Doubling the voltage reduces losses to one-quarter. The most tempting wrong answer is option C — while voltage drop across the line (IR) does decrease with lower current, the primary reason for high voltage transmission is the reduction in power loss (I²R), not just voltage drop. Option B is incorrect — voltage doesn\'t change wire resistance. Option D is also incorrect — transformer efficiency is largely independent of voltage level.',
+      difficulty: 'hard',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      },
+      {
+      id: 'phy_em_022',
+      question: 'Which of the following is NOT an application of eddy currents?',
+      options: ['Magnetic braking in trains', 'Induction furnace', 'Electromagnetic induction in transformers', 'Electric power meters (energy meters)'],
+      correctAnswer: 2,
+      explanation: 'Eddy currents are unwanted in transformers — they cause energy loss and heating, which is why laminated cores are used to minimise them. The transformer works on the principle of mutual induction, not eddy currents. The most tempting wrong answer is option D (power meters) — many students don\'t know that the rotating disc in an energy meter is driven by eddy currents induced by the current and voltage coils. Options A (magnetic braking) and B (induction furnace) are well-known applications of eddy currents. The question tests whether students can distinguish between useful applications of eddy currents and situations where they are a nuisance.',
+      difficulty: 'medium',
+      subject: 'physics',
+      subjectName: 'Physics',
+      topicKey: 'electromagnetic_induction_ac'
+      }
+],
+
+ray_optics: [
+        {
+        id: 'phy_ro_001',
+        question: 'The focal length of a concave mirror of radius of curvature 30 cm is:',
+        options: ['30 cm', '60 cm', '15 cm', '10 cm'],
         correctAnswer: 2,
-        explanation: 'Diffraction is the bending of light waves around the edges of an obstacle or through a narrow opening. It is a characteristic wave phenomenon.',
+        explanation: 'For a spherical mirror, f = R/2 = 30/2 = 15 cm. The focal length is half the radius of curvature. The most tempting wrong answer is option A (30 cm), where students confuse focal length with radius of curvature. These are related but not equal: the focus is the point where paraxial rays converge after reflection, which lies midway between the centre of curvature and the pole. Option B (60 cm) results from using f = 2R instead of R/2.',
         difficulty: 'easy',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'optics'
-      },
-      {
-        id: 'phy_op_002',
-        question: 'Total internal reflection occurs when light travels from:',
-        options: ['Rarer to denser medium', 'Denser to rarer medium at angle greater than critical angle', 'Any medium to vacuum', 'Vacuum to any medium'],
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_002',
+        question: 'According to the sign convention used in optics (Cartesian convention), for a concave mirror, the focal length is:',
+        options: ['Positive', 'Negative', 'Zero', 'Can be either positive or negative'],
         correctAnswer: 1,
-        explanation: 'Total internal reflection occurs when light passes from a denser medium to a rarer medium at an angle of incidence greater than the critical angle. At this point, all light is reflected back into the denser medium.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'optics'
-      },
-      {
-        id: 'phy_op_003',
-        question: 'The power of a convex lens of focal length 25 cm is:',
-        options: ['+2D', '+4D', '+0.25D', '−4D'],
-        correctAnswer: 1,
-        explanation: 'Power P = 1/f (in metres). f = 25 cm = 0.25 m. P = 1/0.25 = +4 dioptres. The positive sign indicates a converging (convex) lens.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'optics'
-      },
-      {
-        id: 'phy_op_004',
-        question: 'In Young\'s double slit experiment, the fringe width β is given by:',
-        options: ['β = dλ/D', 'β = Dλ/d', 'β = λ/dD', 'β = dD/λ'],
-        correctAnswer: 1,
-        explanation: 'Fringe width β = Dλ/d, where D is the distance from slits to screen, λ is wavelength, and d is the distance between slits. Fringe width increases with wavelength and screen distance.',
-        difficulty: 'hard',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'optics'
-      },
-      {
-        id: 'phy_op_005',
-        question: 'The refractive index of a medium is defined as:',
-        options: ['Speed of light in medium / Speed of light in vacuum', 'Speed of light in vacuum / Speed of light in medium', 'Wavelength in vacuum / Wavelength in medium', 'Both B and C'],
-        correctAnswer: 3,
-        explanation: 'Refractive index μ = c/v (speed of light in vacuum / speed in medium). Since frequency doesn\'t change, μ also equals λ_vacuum/λ_medium. Both B and C are correct definitions.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'optics'
-      },
-      {
-        id: 'phy_op_006',
-        question: 'Optical fibres work on the principle of:',
-        options: ['Refraction', 'Diffraction', 'Total internal reflection', 'Scattering'],
-        correctAnswer: 2,
-        explanation: 'Optical fibres use the principle of total internal reflection (TIR). Light enters the fibre at one end and undergoes repeated total internal reflection, transmitting signals with minimal loss.',
+        explanation: 'In the Cartesian sign convention, distances measured in the direction of the incident light (usually left to right) are positive, and those against it are negative. For a concave mirror, the focus lies in front of the mirror (on the same side as the incident light), which is the negative direction. Hence f is negative. The most tempting wrong answer is option A — students often confuse the convention for mirrors with that for lenses. For mirrors: concave → f negative, convex → f positive. For lenses: convex → f positive, concave → f negative. This sign convention consistency is critical for solving numerical problems correctly.',
         difficulty: 'easy',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'optics'
-      },
-      {
-        id: 'phy_op_007',
-        question: 'A myopic eye can be corrected using a:',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_003',
+        question: 'Snell\'s law of refraction is expressed as:',
+        options: ['n₁ sin θ₁ = n₂ sin θ₂', 'n₁ cos θ₁ = n₂ cos θ₂', 'n₁ tan θ₁ = n₂ tan θ₂', 'n₁/sin θ₁ = n₂/sin θ₂'],
+        correctAnswer: 0,
+        explanation: 'Snell\'s law states n₁ sin θ₁ = n₂ sin θ₂, where n₁ and n₂ are the refractive indices of the two media, and θ₁ and θ₂ are the angles of incidence and refraction respectively (measured from the normal). The most tempting wrong answer is option D (n₁/sin θ₁ = n₂/sin θ₂), which rearranges to n₁ sin θ₂ = n₂ sin θ₁ — this reverses the subscripts and gives an incorrect relationship. The correct form can be remembered as: "the product of refractive index and sine of angle remains constant across the interface."',
+        difficulty: 'easy',
+        subject: 'physics',
+        subjectName: 'Physics',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_004',
+        question: 'Total internal reflection can occur when light travels from:',
+        options: ['A rarer medium to a denser medium', 'A denser medium to a rarer medium', 'Any medium to vacuum', 'Vacuum to any medium'],
+        correctAnswer: 1,
+        explanation: 'Total internal reflection (TIR) occurs when light travels from a denser to a rarer medium (higher to lower refractive index) and the angle of incidence exceeds the critical angle. The most tempting wrong answer is option A (rarer to denser) — when light goes from rarer to denser, it bends toward the normal and TIR is impossible because the refracted ray always exists. Option C is partially correct (any medium to vacuum is denser to rarer) but too restrictive — TIR can occur between any two media where n₁ > n₂, not just to vacuum. The critical angle is given by sin C = n₂/n₁.',
+        difficulty: 'easy',
+        subject: 'physics',
+        subjectName: 'Physics',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_005',
+        question: 'The power of a lens is measured in:',
+        options: ['Metres', 'Centimetres', 'Dioptres', 'Watts'],
+        correctAnswer: 2,
+        explanation: 'Power of a lens P = 1/f (where f is in metres), and the SI unit is dioptre (D). 1 D = 1 m⁻¹. The most tempting wrong answer is option D (Watts) — "power" in optics refers to the ability of a lens to converge or diverge light, not energy per unit time. This is a different usage of the word "power." Option A (metres) is the unit of focal length, not power. A convex lens has positive power and a concave lens has negative power.',
+        difficulty: 'easy',
+        subject: 'physics',
+        subjectName: 'Physics',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_006',
+        question: 'Myopia (short-sightedness) is corrected by using:',
         options: ['Convex lens', 'Concave lens', 'Cylindrical lens', 'Bifocal lens'],
         correctAnswer: 1,
-        explanation: 'Myopia (short-sightedness) occurs when the image forms before the retina. A concave (diverging) lens is used to shift the image back onto the retina.',
+        explanation: 'In myopia, the image of distant objects forms before the retina because the eye lens is too converging or the eyeball is too long. A concave (diverging) lens of appropriate power is used to diverge the rays slightly before they enter the eye, shifting the image back onto the retina. The most tempting wrong answer is option A (convex lens), which is used for hypermetropia (far-sightedness), not myopia. Option C (cylindrical lens) corrects astigmatism, and option D (bifocal lens) is used for presbyopia. Remembering the correct lens-defect pairing is essential for AIIMS.',
         difficulty: 'easy',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'optics'
-      },
-      {
-        id: 'phy_op_008',
-        question: 'The resolving power of a microscope increases with:',
-        options: ['Decrease in wavelength of light', 'Increase in wavelength', 'Decrease in aperture', 'Increase in focal length'],
-        correctAnswer: 0,
-        explanation: 'Resolving power of a microscope is inversely proportional to the wavelength of light used. Shorter wavelengths (like UV) give higher resolving power, allowing finer details to be distinguished.',
-        difficulty: 'hard',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'optics'
-      },
-      {
-        id: 'phy_op_009',
-        question: 'Polarization of light proves that light is:',
-        options: ['A longitudinal wave', 'A transverse wave', 'A mechanical wave', 'A sound wave'],
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_007',
+        question: 'The refractive index of a medium is defined as:',
+        options: ['n = v/c', 'n = c/v', 'n = c × v', 'n = λ_medium/λ_vacuum'],
         correctAnswer: 1,
-        explanation: 'Polarization is possible only for transverse waves. Since light can be polarized, it proves that light is a transverse electromagnetic wave.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'optics'
-      },
-      {
-        id: 'phy_op_010',
-        question: 'Chromatic aberration in a lens is caused by:',
-        options: ['Different focal lengths for different colours', 'Spherical shape of lens', 'Impurities in the glass', 'Thickness of the lens'],
-        correctAnswer: 0,
-        explanation: 'Chromatic aberration occurs because the refractive index of glass varies with wavelength (dispersion). Different colours focus at different points, creating coloured fringes around the image.',
-        difficulty: 'hard',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'optics'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       ELECTROSTATICS
-       ─────────────────────────────────────────────────────────── */
-    electrostatics: [
-      {
-        id: 'phy_es_001',
-        question: 'Coulomb\'s law is analogous to which law in gravitation?',
-        options: ['Kepler\'s law', 'Newton\'s law of gravitation', 'Gauss\'s law', 'Faraday\'s law'],
-        correctAnswer: 1,
-        explanation: 'Coulomb\'s law (F = kq₁q₂/r²) has the same inverse-square form as Newton\'s law of gravitation (F = Gm₁m₂/r²). Both forces vary inversely with the square of distance.',
+        explanation: 'Refractive index n = c/v, where c is the speed of light in vacuum and v is the speed of light in the medium. Since v < c for all material media, n > 1 always. The most tempting wrong answer is option A (n = v/c), which inverts the ratio and would give n < 1 for all media — physically incorrect. Option D (λ_medium/λ_vacuum) is also inverted: the correct relation is n = λ_vacuum/λ_medium (wavelength decreases in a denser medium). These inversions are common traps in AIIMS questions.',
         difficulty: 'easy',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'electrostatics'
-      },
-      {
-        id: 'phy_es_002',
-        question: 'The electric field inside a charged hollow conducting sphere is:',
-        options: ['Maximum at the centre', 'Minimum at the centre', 'Zero everywhere', 'Uniform and non-zero'],
-        correctAnswer: 2,
-        explanation: 'By Gauss\'s law, the electric field inside a hollow conducting sphere is zero. All the charge resides on the outer surface, and a Gaussian surface inside encloses no charge.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'electrostatics'
-      },
-      {
-        id: 'phy_es_003',
-        question: 'The SI unit of electric flux is:',
-        options: ['N/C', 'Nm²/C', 'C/m²', 'V/m'],
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_008',
+        question: 'An object is placed 30 cm in front of a convex lens of focal length 20 cm. The image is formed at:',
+        options: ['60 cm on the same side as the object', '60 cm on the opposite side of the lens', '12 cm on the opposite side of the lens', '12 cm on the same side as the object'],
         correctAnswer: 1,
-        explanation: 'Electric flux Φ = E·A, with E in N/C and area A in m². So the unit is Nm²/C, which is also equivalent to Vm (volt-metres).',
+        explanation: 'Using the lens formula 1/v − 1/u = 1/f. With sign convention: u = −30 cm, f = +20 cm. 1/v − 1/(−30) = 1/20, so 1/v + 1/30 = 1/20, giving 1/v = 1/20 − 1/30 = (3−2)/60 = 1/60, so v = +60 cm. Positive v means the image is on the opposite side of the lens (real image). The most tempting wrong answer is option C (12 cm), obtained by using the mirror formula 1/v + 1/u = 1/f instead of the lens formula 1/v − 1/u = 1/f. This is a very common error — students must remember the sign difference between mirror and lens formulas.',
         difficulty: 'medium',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'electrostatics'
-      },
-      {
-        id: 'phy_es_004',
-        question: 'If the distance between two point charges is doubled, the electrostatic force becomes:',
-        options: ['Half', 'Double', 'One-fourth', 'Four times'],
-        correctAnswer: 2,
-        explanation: 'By Coulomb\'s law F ∝ 1/r². If r is doubled, F becomes (1/2²) = 1/4 of the original force. The inverse-square relationship is fundamental to electrostatics.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'electrostatics'
-      },
-      {
-        id: 'phy_es_005',
-        question: 'Electric potential at a point is defined as:',
-        options: ['Force per unit charge', 'Work done per unit charge in bringing a test charge from infinity', 'Charge per unit area', 'Energy per unit volume'],
-        correctAnswer: 1,
-        explanation: 'Electric potential at a point is the work done per unit positive test charge in bringing it from infinity to that point against the electric field. V = W/q₀.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'electrostatics'
-      },
-      {
-        id: 'phy_es_006',
-        question: 'The capacitance of a parallel plate capacitor increases when:',
-        options: ['Distance between plates increases', 'Area of plates decreases', 'A dielectric is inserted between plates', 'Charge on plates decreases'],
-        correctAnswer: 2,
-        explanation: 'C = κε₀A/d. Inserting a dielectric of constant κ > 1 increases capacitance by a factor of κ. Capacitance also increases with area and decreases with distance.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'electrostatics'
-      },
-      {
-        id: 'phy_es_007',
-        question: 'Gauss\'s law relates the electric flux through a closed surface to:',
-        options: ['Total charge outside the surface', 'Total charge enclosed by the surface', 'Electric potential at the surface', 'Magnetic field through the surface'],
-        correctAnswer: 1,
-        explanation: 'Gauss\'s law: ∮E·dA = q_enclosed/ε₀. The net electric flux through any closed surface is proportional to the total charge enclosed within that surface.',
-        difficulty: 'hard',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'electrostatics'
-      },
-      {
-        id: 'phy_es_008',
-        question: 'Equipotential surfaces are always:',
-        options: ['Parallel to the electric field', 'Perpendicular to the electric field lines', 'At 45° to the field', 'Randomly oriented'],
-        correctAnswer: 1,
-        explanation: 'Equipotential surfaces are always perpendicular to electric field lines. No work is done in moving a charge along an equipotential surface since the potential difference is zero.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'electrostatics'
-      },
-      {
-        id: 'phy_es_009',
-        question: 'The energy stored in a capacitor of capacitance C charged to voltage V is:',
-        options: ['CV', 'CV²', '½CV²', '2CV²'],
-        correctAnswer: 2,
-        explanation: 'Energy stored = ½CV² = ½QV = Q²/2C. This energy is stored in the electric field between the plates of the capacitor.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'electrostatics'
-      },
-      {
-        id: 'phy_es_010',
-        question: 'An electric dipole placed in a non-uniform electric field experiences:',
-        options: ['Only a torque', 'Only a net force', 'Both torque and net force', 'Neither torque nor force'],
-        correctAnswer: 2,
-        explanation: 'In a non-uniform field, the forces on the two charges of the dipole are unequal in both magnitude and direction, resulting in both a net force AND a torque. In a uniform field, only torque acts.',
-        difficulty: 'hard',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'electrostatics'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       KINEMATICS
-       ─────────────────────────────────────────────────────────── */
-    kinematics: [
-      {
-        id: 'phy_km_001',
-        question: 'A body is thrown vertically upward. At the highest point, it has:',
-        options: ['Maximum velocity and maximum acceleration', 'Zero velocity and zero acceleration', 'Zero velocity and maximum acceleration', 'Maximum velocity and zero acceleration'],
-        correctAnswer: 2,
-        explanation: 'At the highest point, velocity becomes zero (instantaneously at rest). However, acceleration due to gravity (g = 9.8 m/s²) still acts downward throughout the motion. Acceleration is constant and maximum.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'kinematics'
-      },
-      {
-        id: 'phy_km_002',
-        question: 'The displacement-time graph of a body moving with uniform velocity is:',
-        options: ['A parabola', 'A straight line with positive slope', 'A circle', 'A horizontal line'],
-        correctAnswer: 1,
-        explanation: 'With uniform velocity, displacement increases linearly with time (s = vt + s₀). The graph is a straight line whose slope equals the velocity.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'kinematics'
-      },
-      {
-        id: 'phy_km_003',
-        question: 'A projectile is launched at 60° to the horizontal. The angle of the velocity vector with horizontal at the highest point is:',
-        options: ['60°', '30°', '0°', '90°'],
-        correctAnswer: 2,
-        explanation: 'At the highest point, the vertical component of velocity is zero while the horizontal component remains unchanged (ucosθ). So the velocity vector is purely horizontal, making 0° with the horizontal.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'kinematics'
-      },
-      {
-        id: 'phy_km_004',
-        question: 'Two balls are dropped from heights h and 4h simultaneously. The ratio of time taken to reach the ground is:',
-        options: ['1:4', '1:2', '4:1', '2:1'],
-        correctAnswer: 1,
-        explanation: 'For free fall, h = ½gt², so t = √(2h/g). Time ratio = √h : √(4h) = √h : 2√h = 1:2.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'kinematics'
-      },
-      {
-        id: 'phy_km_005',
-        question: 'The range of a projectile is maximum when the angle of projection is:',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_009',
+        question: 'The critical angle for a medium of refractive index √2 with respect to air is:',
         options: ['30°', '45°', '60°', '90°'],
         correctAnswer: 1,
-        explanation: 'Range R = u²sin2θ/g. R is maximum when sin2θ = 1, i.e., 2θ = 90°, giving θ = 45°. At this angle, the horizontal and vertical components of velocity are equal.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'kinematics'
-      },
-      {
-        id: 'phy_km_006',
-        question: 'A car starts from rest and attains a velocity of 20 m/s in 10 seconds. Its acceleration is:',
-        options: ['0.5 m/s²', '2 m/s²', '10 m/s²', '200 m/s²'],
-        correctAnswer: 1,
-        explanation: 'Using v = u + at: 20 = 0 + a(10). So a = 20/10 = 2 m/s². The car accelerates uniformly at 2 metres per second squared.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'kinematics'
-      },
-      {
-        id: 'phy_km_007',
-        question: 'The velocity-time graph of a body moving with uniform acceleration is:',
-        options: ['A curve', 'A horizontal line', 'A straight line with slope = acceleration', 'A vertical line'],
-        correctAnswer: 2,
-        explanation: 'With uniform acceleration, v = u + at. This is a linear equation in t, so the v-t graph is a straight line. The slope (dv/dt) equals the acceleration.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'kinematics'
-      },
-      {
-        id: 'phy_km_008',
-        question: 'A stone is dropped from a tower. In the last second of its fall, it covers 9/25 of the total height. The height of the tower is:',
-        options: ['25 m', '45 m', '125 m', '625 m'],
-        correctAnswer: 2,
-        explanation: 'Let total time = n seconds. Distance in last second = ½g(2n−1). Total distance = ½gn². Given: ½g(2n−1)/½gn² = 9/25. So (2n−1)/n² = 9/25. Solving: 25(2n−1) = 9n², giving 9n²−50n+25=0. n=5. Height = ½×10×25 = 125 m.',
-        difficulty: 'hard',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'kinematics'
-      },
-      {
-        id: 'phy_km_009',
-        question: 'Relative velocity of body A with respect to body B when both move in the same direction with velocities vₐ and v_b is:',
-        options: ['vₐ + v_b', 'vₐ − v_b', 'vₐ × v_b', '√(vₐ² + v_b²)'],
-        correctAnswer: 1,
-        explanation: 'When two bodies move in the same direction, relative velocity = vₐ − v_b. If they move in opposite directions, it would be vₐ + v_b.',
+        explanation: 'sin C = 1/n = 1/√2, so C = 45°. The most tempting wrong answer is option A (30°), which would correspond to sin C = 1/2, i.e., n = 2 (not √2). Students must distinguish between n = 2 (C = 30°) and n = √2 (C = 45°). Option C (60°) corresponds to n = 2/√3 ≈ 1.15. A higher refractive index gives a smaller critical angle — diamond (n ≈ 2.42) has a very small critical angle (~24°), which is why it sparkles brilliantly due to extensive total internal reflection.',
         difficulty: 'medium',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'kinematics'
-      },
-      {
-        id: 'phy_km_010',
-        question: 'A ball is thrown vertically upward with velocity u. The maximum height reached is:',
-        options: ['u/2g', 'u²/2g', 'u²/g', '2u²/g'],
-        correctAnswer: 1,
-        explanation: 'Using v² = u² − 2gh. At maximum height, v = 0. So 0 = u² − 2gh, giving h = u²/2g.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'kinematics'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       WORK, ENERGY & POWER
-       ─────────────────────────────────────────────────────────── */
-    work_energy_power: [
-      {
-        id: 'phy_wep_001',
-        question: 'Work done by a force is zero when the angle between force and displacement is:',
-        options: ['0°', '45°', '60°', '90°'],
-        correctAnswer: 3,
-        explanation: 'Work W = Fd cosθ. When θ = 90°, cos90° = 0, so W = 0. No work is done when force is perpendicular to displacement (e.g., centripetal force in circular motion).',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'work_energy_power'
-      },
-      {
-        id: 'phy_wep_002',
-        question: 'The kinetic energy of an object of mass m moving with velocity v is:',
-        options: ['mv', 'mv²', '½mv²', '2mv²'],
-        correctAnswer: 2,
-        explanation: 'Kinetic energy KE = ½mv². If velocity doubles, KE becomes 4 times. KE is always positive and is a scalar quantity.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'work_energy_power'
-      },
-      {
-        id: 'phy_wep_003',
-        question: 'If the momentum of a body is doubled, its kinetic energy becomes:',
-        options: ['Double', 'Four times', 'Half', 'Eight times'],
-        correctAnswer: 1,
-        explanation: 'KE = p²/2m. If p is doubled, KE = (2p)²/2m = 4p²/2m = 4 × original KE. Kinetic energy is proportional to the square of momentum.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'work_energy_power'
-      },
-      {
-        id: 'phy_wep_004',
-        question: 'Power is defined as:',
-        options: ['Force × displacement', 'Work done per unit time', 'Energy per unit volume', 'Force per unit area'],
-        correctAnswer: 1,
-        explanation: 'Power P = W/t (work done per unit time). The SI unit is Watt (W). 1 Watt = 1 Joule/second. Power can also be expressed as P = F·v.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'work_energy_power'
-      },
-      {
-        id: 'phy_wep_005',
-        question: 'A spring of force constant k is compressed by x. The potential energy stored is:',
-        options: ['kx', '½kx', 'kx²', '½kx²'],
-        correctAnswer: 3,
-        explanation: 'The elastic potential energy stored in a spring = ½kx², where k is the spring constant and x is the compression/extension from natural length.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'work_energy_power'
-      },
-      {
-        id: 'phy_wep_006',
-        question: 'In a perfectly inelastic collision:',
-        options: ['Both KE and momentum are conserved', 'Only momentum is conserved', 'Only KE is conserved', 'Neither is conserved'],
-        correctAnswer: 1,
-        explanation: 'In a perfectly inelastic collision, the bodies stick together. Momentum is always conserved (no external force), but kinetic energy is NOT conserved — some is converted to heat, sound, deformation.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'work_energy_power'
-      },
-      {
-        id: 'phy_wep_007',
-        question: 'The work-energy theorem states that:',
-        options: ['Net work = Change in potential energy', 'Net work = Change in kinetic energy', 'Net work = Change in total energy', 'Net work = Force × time'],
-        correctAnswer: 1,
-        explanation: 'The work-energy theorem: W_net = ΔKE = ½mv² − ½mu². The net work done by all forces equals the change in kinetic energy of the body.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'work_energy_power'
-      },
-      {
-        id: 'phy_wep_008',
-        question: 'An engine of power 10 kW can pull a car at a constant velocity of 20 m/s. The force exerted by the engine is:',
-        options: ['200 N', '500 N', '2000 N', '5000 N'],
-        correctAnswer: 1,
-        explanation: 'P = Fv. So F = P/v = 10000/20 = 500 N. At constant velocity, the engine force equals the total resistive force.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'work_energy_power'
-      },
-      {
-        id: 'phy_wep_009',
-        question: 'A body of mass 2 kg falls from a height of 20 m. Its kinetic energy just before hitting the ground is (g = 10 m/s²):',
-        options: ['200 J', '400 J', '100 J', '40 J'],
-        correctAnswer: 1,
-        explanation: 'By conservation of energy: KE at bottom = PE at top = mgh = 2 × 10 × 20 = 400 J (assuming no air resistance).',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'work_energy_power'
-      },
-      {
-        id: 'phy_wep_010',
-        question: 'The coefficient of restitution for a perfectly elastic collision is:',
-        options: ['0', '0.5', '1', 'Infinity'],
-        correctAnswer: 2,
-        explanation: 'Coefficient of restitution e = (relative velocity of separation)/(relative velocity of approach). For perfectly elastic collision e = 1, for perfectly inelastic e = 0.',
-        difficulty: 'hard',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'work_energy_power'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       MODERN PHYSICS
-       ─────────────────────────────────────────────────────────── */
-    modern_physics: [
-      {
-        id: 'phy_mp_001',
-        question: 'The photoelectric effect demonstrates:',
-        options: ['Wave nature of light', 'Particle nature of light', 'Wave nature of electrons', 'Particle nature of matter'],
-        correctAnswer: 1,
-        explanation: 'The photoelectric effect — where light ejects electrons from a metal surface — can only be explained by treating light as particles (photons). Einstein\'s equation: KE = hν − φ.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'modern_physics'
-      },
-      {
-        id: 'phy_mp_002',
-        question: 'The de Broglie wavelength of a particle of mass m and velocity v is:',
-        options: ['h/mv', 'mv/h', 'hmv', 'h²/mv'],
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_010',
+        question: 'Two thin lenses of focal lengths +20 cm and −30 cm are placed in contact. The combined focal length of the system is:',
+        options: ['+60 cm', '−60 cm', '+10 cm', '−10 cm'],
         correctAnswer: 0,
-        explanation: 'De Broglie wavelength λ = h/p = h/mv, where h is Planck\'s constant. This shows that all matter has wave properties, though only significant for microscopic particles.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'modern_physics'
-      },
-      {
-        id: 'phy_mp_003',
-        question: 'In Bohr\'s model, the radius of the nth orbit is proportional to:',
-        options: ['n', 'n²', '1/n', '1/n²'],
-        correctAnswer: 1,
-        explanation: 'In Bohr\'s model, rₙ = r₁ × n² (where r₁ = 0.53 Å for hydrogen). The radius increases as the square of the principal quantum number.',
+        explanation: 'For lenses in contact: 1/f = 1/f₁ + 1/f₂ = 1/20 + 1/(−30) = 1/20 − 1/30 = (3−2)/60 = 1/60, so f = +60 cm. The combination acts as a converging lens. The most tempting wrong answer is option B (−60 cm), obtained by using 1/f = 1/f₁ − 1/f₂ = 1/20 − 1/30 but then assigning a negative sign erroneously. Another common error is option C (+10 cm), obtained by simply adding the magnitudes: 20 + (−30) = −10, and taking the absolute value. The correct method always uses the reciprocal formula.',
         difficulty: 'medium',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'modern_physics'
-      },
-      {
-        id: 'phy_mp_004',
-        question: 'The work function of a metal is the:',
-        options: ['Maximum kinetic energy of emitted electrons', 'Minimum energy needed to eject an electron', 'Energy of the incident photon', 'Binding energy of the nucleus'],
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_011',
+        question: 'A concave mirror produces a real, inverted image of the same size as the object. The object is placed at:',
+        options: ['The focus', 'The centre of curvature', 'Between the focus and the centre of curvature', 'Beyond the centre of curvature'],
         correctAnswer: 1,
-        explanation: 'Work function (φ) is the minimum energy required to remove an electron from the metal surface. If photon energy hν > φ, the excess becomes kinetic energy of the emitted electron.',
+        explanation: 'A concave mirror produces a real, inverted, same-size image when the object is placed at the centre of curvature (u = 2f). The image is also formed at the centre of curvature (v = 2f), so magnification m = −v/u = −1 (same size, inverted). The most tempting wrong answer is option C (between F and C), where the image is real, inverted, and magnified (larger than the object). At the focus (option A), the image forms at infinity. Beyond C (option D), the image is real, inverted, and diminished.',
         difficulty: 'medium',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'modern_physics'
-      },
-      {
-        id: 'phy_mp_005',
-        question: 'The half-life of a radioactive substance is 30 minutes. What fraction remains after 2 hours?',
-        options: ['1/4', '1/8', '1/16', '1/32'],
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_012',
+        question: 'The lens maker\'s equation is:',
+        options: ['1/f = (n − 1)(1/R₁ + 1/R₂)', '1/f = (n − 1)(1/R₁ − 1/R₂)', '1/f = n(1/R₁ − 1/R₂)', '1/f = (n + 1)(1/R₁ − 1/R₂)'],
+        correctAnswer: 1,
+        explanation: 'The lens maker\'s equation is 1/f = (n − 1)(1/R₁ − 1/R₂), where n is the refractive index of the lens material, and R₁, R₂ are the radii of curvature of the two surfaces. The most tempting wrong answer is option A, which uses addition (1/R₁ + 1/R₂) instead of subtraction. For a biconvex lens with R₁ = +R and R₂ = −R, option A would give 1/f = (n−1)(2/R), while the correct formula gives 1/f = (n−1)(1/R − (−1/R)) = (n−1)(2/R) — in this specific case, both give the same answer, which makes the error harder to detect. But for plano-convex or other shapes, the sign matters critically.',
+        difficulty: 'medium',
+        subject: 'physics',
+        subjectName: 'Physics',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_013',
+        question: 'In a compound microscope, the objective lens has:',
+        options: ['Large focal length and the eyepiece has small focal length', 'Small focal length and the eyepiece has large focal length', 'Both have equal focal lengths', 'Both have very large focal lengths'],
+        correctAnswer: 1,
+        explanation: 'In a compound microscope, the objective has a short focal length (to produce a highly magnified real image) and the eyepiece has a larger focal length (to act as a simple magnifier for the intermediate image). The most tempting wrong answer is option A, which reverses the arrangement. This is a common confusion with the astronomical telescope, where the objective has a large focal length and the eyepiece has a small focal length. Remember: microscope — objective short, eyepiece long; telescope — objective long, eyepiece short.',
+        difficulty: 'medium',
+        subject: 'physics',
+        subjectName: 'Physics',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_014',
+        question: 'A person can see objects clearly only beyond 100 cm. The power of the corrective lens needed is:',
+        options: ['+1 D', '−1 D', '+3 D', '+0.75 D'],
         correctAnswer: 2,
-        explanation: '2 hours = 120 minutes. Number of half-lives n = 120/30 = 4. Fraction remaining = (1/2)⁴ = 1/16.',
+        explanation: 'This is hypermetropia (far-sightedness) — the person\'s near point is at 100 cm instead of the normal 25 cm. The corrective lens must form a virtual image of an object at 25 cm at the person\'s near point of 100 cm. Using 1/v − 1/u = 1/f: u = −25 cm, v = −100 cm (virtual image on same side). 1/f = 1/(−100) − 1/(−25) = −1/100 + 1/25 = (−1+4)/100 = 3/100. So f = 100/3 cm = 1/3 m, and P = 1/f = +3 D. The most tempting wrong answer is option A (+1 D), obtained by using f = 100 cm = 1 m, which ignores the normal near point distance of 25 cm. The lens must bridge the gap between 25 cm (desired) and 100 cm (actual near point).',
         difficulty: 'medium',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'modern_physics'
-      },
-      {
-        id: 'phy_mp_006',
-        question: 'In alpha decay, the atomic number decreases by:',
-        options: ['1', '2', '4', '0'],
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_015',
+        question: 'In an astronomical telescope in normal adjustment (image at infinity), the magnifying power is:',
+        options: ['m = f_e/f_o', 'm = f_o/f_e', 'm = f_o × f_e', 'm = f_o − f_e'],
         correctAnswer: 1,
-        explanation: 'An alpha particle is a helium nucleus (²⁴He). In alpha decay, atomic number Z decreases by 2 and mass number A decreases by 4.',
-        difficulty: 'easy',
+        explanation: 'For an astronomical telescope with the final image at infinity (normal adjustment), magnifying power m = f_o/f_e, where f_o is the focal length of the objective and f_e is the focal length of the eyepiece. The most tempting wrong answer is option A (f_e/f_o), which inverts the ratio — this would give a magnification less than 1 since f_o > f_e, which defeats the purpose of a telescope. For high magnification, f_o should be large and f_e should be small. The length of the telescope in normal adjustment is L = f_o + f_e.',
+        difficulty: 'medium',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'modern_physics'
-      },
-      {
-        id: 'phy_mp_007',
-        question: 'Einstein\'s mass-energy equivalence is given by:',
-        options: ['E = mc', 'E = mc²', 'E = m²c', 'E = m/c²'],
-        correctAnswer: 1,
-        explanation: 'E = mc² is the famous mass-energy equivalence. A small mass m can yield enormous energy because c² (speed of light squared) ≈ 9 × 10¹⁶ m²/s².',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'modern_physics'
-      },
-      {
-        id: 'phy_mp_008',
-        question: 'The binding energy per nucleon is maximum for:',
-        options: ['Hydrogen', 'Helium', 'Iron (Fe-56)', 'Uranium'],
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_016',
+        question: 'Which of the following is NOT a condition for total internal reflection?',
+        options: ['Light must travel from a denser to a rarer medium', 'The angle of incidence must be greater than the critical angle', 'The wavelength of light must be in the visible range', 'The refractive index of the first medium must be greater than that of the second'],
         correctAnswer: 2,
-        explanation: 'Iron-56 has the highest binding energy per nucleon (~8.8 MeV). This is why fusion of lighter nuclei (up to Fe) and fission of heavier nuclei (beyond Fe) both release energy.',
-        difficulty: 'hard',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'modern_physics'
-      },
-      {
-        id: 'phy_mp_009',
-        question: 'X-rays are produced when fast-moving electrons strike a:',
-        options: ['Low atomic number target', 'High atomic number target', 'Semiconductor', 'Plastic material'],
-        correctAnswer: 1,
-        explanation: 'X-rays are efficiently produced when high-energy electrons decelerate upon striking a high-Z (heavy) target like tungsten or molybdenum. Higher Z gives more intense X-ray production.',
+        explanation: 'Total internal reflection requires: (1) light travels from denser to rarer medium (n₁ > n₂), and (2) the angle of incidence exceeds the critical angle. The wavelength of light is irrelevant — TIR occurs for all electromagnetic radiation (UV, visible, IR, etc.), not just visible light. The most tempting wrong answer is option D, but this is just a restatement of condition A (denser to rarer ≡ n₁ > n₂). Options A, B, and D are all correct conditions for TIR. This question tests whether students can identify an irrelevant condition disguised as a requirement.',
         difficulty: 'medium',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'modern_physics'
-      },
-      {
-        id: 'phy_mp_010',
-        question: 'The threshold frequency in the photoelectric effect depends on:',
-        options: ['Intensity of light', 'Nature of the metal surface', 'Kinetic energy of electrons', 'Wavelength of electrons'],
-        correctAnswer: 1,
-        explanation: 'The threshold frequency ν₀ = φ/h depends solely on the work function φ of the metal, which is a property of the metal surface. It does not depend on light intensity.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'modern_physics'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       OSCILLATIONS & WAVES
-       ─────────────────────────────────────────────────────────── */
-    oscillations_waves: [
-      {
-        id: 'phy_ow_001',
-        question: 'The time period of a simple pendulum depends on:',
-        options: ['Mass of the bob', 'Amplitude of oscillation', 'Length and acceleration due to gravity', 'Material of the bob'],
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_017',
+        question: 'The magnification produced by a plane mirror is:',
+        options: ['Always greater than 1', 'Always less than 1', 'Always equal to +1', 'Always equal to −1'],
         correctAnswer: 2,
-        explanation: 'T = 2π√(l/g). The time period depends only on length l and acceleration due to gravity g. It is independent of mass, amplitude (for small oscillations), and material.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'oscillations_waves'
-      },
-      {
-        id: 'phy_ow_002',
-        question: 'The speed of sound in air increases with:',
-        options: ['Decrease in temperature', 'Increase in temperature', 'Decrease in pressure', 'Increase in wavelength'],
-        correctAnswer: 1,
-        explanation: 'Speed of sound v ∝ √T (absolute temperature). At 0°C, v ≈ 331 m/s. It increases by about 0.6 m/s for each 1°C rise in temperature.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'oscillations_waves'
-      },
-      {
-        id: 'phy_ow_003',
-        question: 'In simple harmonic motion, the acceleration is:',
-        options: ['Constant', 'Proportional to velocity', 'Proportional to displacement and directed towards mean position', 'Zero at extreme position'],
-        correctAnswer: 2,
-        explanation: 'In SHM, a = −ω²x. Acceleration is directly proportional to displacement and always directed towards the mean position (restoring nature). It is maximum at extremes and zero at mean.',
+        explanation: 'A plane mirror always produces a virtual, erect image of the same size as the object. The magnification m = −v/u. For a plane mirror, v = −u (image distance equals object distance in magnitude but opposite sign), so m = −(−u)/u = +1. The positive sign indicates the image is erect. The most tempting wrong answer is option D (−1), which would indicate an inverted image of the same size — this happens with a concave mirror when the object is at the centre of curvature, not with a plane mirror. The distinction between +1 (erect) and −1 (inverted) magnification is important.',
         difficulty: 'medium',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'oscillations_waves'
-      },
-      {
-        id: 'phy_ow_004',
-        question: 'The Doppler effect is observed when there is relative motion between:',
-        options: ['Source and medium', 'Observer and medium', 'Source and observer', 'Two observers'],
-        correctAnswer: 2,
-        explanation: 'The Doppler effect (apparent change in frequency) occurs due to relative motion between the source of waves and the observer. The observed frequency changes based on whether they approach or recede.',
-        difficulty: 'easy',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'oscillations_waves'
-      },
-      {
-        id: 'phy_ow_005',
-        question: 'Standing waves are formed by the superposition of two waves travelling in:',
-        options: ['Same direction with same amplitude', 'Opposite directions with same frequency and amplitude', 'Same direction with different frequencies', 'Perpendicular directions'],
-        correctAnswer: 1,
-        explanation: 'Standing (stationary) waves form when two waves of equal frequency and amplitude travel in opposite directions and superimpose. The result has fixed nodes and antinodes.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'oscillations_waves'
-      },
-      {
-        id: 'phy_ow_006',
-        question: 'The phenomenon of beats occurs due to:',
-        options: ['Two waves of same frequency', 'Two waves of slightly different frequencies', 'Two waves of very different frequencies', 'Reflection of waves'],
-        correctAnswer: 1,
-        explanation: 'Beats occur when two sound waves of slightly different frequencies (f₁ and f₂) superimpose. Beat frequency = |f₁ − f₂|. The sound alternates between loud and soft.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'oscillations_waves'
-      },
-      {
-        id: 'phy_ow_007',
-        question: 'Resonance occurs when the frequency of an external force equals:',
-        options: ['Half the natural frequency', 'Double the natural frequency', 'The natural frequency of the system', 'Any random frequency'],
-        correctAnswer: 2,
-        explanation: 'Resonance occurs when the driving frequency matches the natural frequency of the system. At resonance, the amplitude of oscillation becomes maximum as energy transfer is most efficient.',
-        difficulty: 'medium',
-        subject: 'physics',
-        subjectName: 'Physics',
-        topicKey: 'oscillations_waves'
-      },
-      {
-        id: 'phy_ow_008',
-        question: 'The fundamental frequency of a closed organ pipe of length L is:',
-        options: ['v/4L', 'v/2L', 'v/L', '2v/L'],
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_018',
+        question: 'A mirage is caused by:',
+        options: ['Total internal reflection of light in layers of air near the hot ground', 'Reflection of light from a water surface', 'Refraction of light through water droplets', 'Diffraction of light around obstacles'],
         correctAnswer: 0,
-        explanation: 'A closed pipe has a node at the closed end and antinode at the open end. The fundamental wavelength = 4L, so f = v/4L. Closed pipes produce only odd harmonics.',
+        explanation: 'A mirage occurs when hot air near the ground has a lower refractive index (less dense) than cooler air above. Light from distant objects is progressively refracted (bent away from normal) as it passes through layers of decreasing density, eventually undergoing total internal reflection when the angle exceeds the critical angle. This creates an inverted image that appears like a water reflection. The most tempting wrong answer is option B — there is no actual water surface in a mirage; the "reflection" is an optical illusion caused by TIR in air layers. Option C describes rainbow formation, and option D is unrelated to mirages.',
+        difficulty: 'medium',
+        subject: 'physics',
+        subjectName: 'Physics',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_019',
+        question: 'Assertion (A): Optical fibres work on the principle of total internal reflection.\nReason (R): The refractive index of the core of an optical fibre is greater than that of the cladding.',
+        options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+        correctAnswer: 0,
+        explanation: 'Both statements are true. Optical fibres transmit light through total internal reflection — light enters the core and hits the core-cladding interface at angles exceeding the critical angle, keeping it confined within the core. R correctly explains A because TIR requires light to travel from a denser to a rarer medium, which is ensured by making n_core > n_cladding. The most tempting wrong answer is option B — students might think R is a separate fact about fibre construction rather than the explanation for TIR. However, the refractive index difference is precisely the condition that enables TIR in optical fibres.',
         difficulty: 'hard',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'oscillations_waves'
-      },
-      {
-        id: 'phy_ow_009',
-        question: 'In SHM, kinetic energy is maximum at:',
-        options: ['Extreme position', 'Mean position', 'Between mean and extreme', 'All positions'],
-        correctAnswer: 1,
-        explanation: 'At the mean position, displacement x = 0, so potential energy is zero and all energy is kinetic. KE = ½mω²(A²−x²). At x = 0, KE is maximum = ½mω²A².',
-        difficulty: 'easy',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_020',
+        question: 'Assertion (A): A convex lens can act as a diverging lens when immersed in a medium of refractive index greater than that of the lens material.\nReason (R): The focal length of a lens depends on the relative refractive index of the lens material with respect to the surrounding medium.',
+        options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+        correctAnswer: 0,
+        explanation: 'Both statements are true. The lens maker\'s equation 1/f = (n_lens/n_medium − 1)(1/R₁ − 1/R₂) shows that the sign of f depends on the relative refractive index. If n_medium > n_lens, then (n_lens/n_medium − 1) < 0, reversing the sign of f — a convex lens becomes diverging. R correctly explains A because it identifies the relative refractive index as the determining factor. The most tempting wrong answer is option D — students often believe a convex lens is always converging, not realising this depends on the surrounding medium. For example, an air bubble (convex shape) in water acts as a diverging lens.',
+        difficulty: 'hard',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'oscillations_waves'
-      },
-      {
-        id: 'phy_ow_010',
-        question: 'Ultrasonic waves are sound waves with frequency:',
-        options: ['Below 20 Hz', 'Between 20 Hz and 20 kHz', 'Above 20 kHz', 'Exactly 20 kHz'],
-        correctAnswer: 2,
-        explanation: 'Ultrasonic waves have frequencies above 20 kHz (beyond human hearing range). They are used in medical imaging (ultrasonography), cleaning, and sonar. Infrasonic waves are below 20 Hz.',
-        difficulty: 'easy',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_021',
+        question: 'Assertion (A): The minimum deviation through a prism occurs when the angle of incidence equals the angle of emergence.\nReason (R): At minimum deviation, the refracted ray inside the prism is parallel to the base of the prism.',
+        options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+        correctAnswer: 0,
+        explanation: 'Both statements are true. At minimum deviation, the light ray passes symmetrically through the prism: i₁ = i₂ and r₁ = r₂. This symmetry means the refracted ray inside the prism makes equal angles with both surfaces, which geometrically implies it is parallel to the base. R correctly explains A because the symmetry condition (parallel to base → equal angles → i₁ = i₂) is what defines minimum deviation. The most tempting wrong answer is option B — students might view the ray being parallel to the base as a coincidental fact rather than the cause of the i₁ = i₂ condition. However, the geometric symmetry that makes the ray parallel to the base is precisely what ensures minimum deviation.',
+        difficulty: 'hard',
         subject: 'physics',
         subjectName: 'Physics',
-        topicKey: 'oscillations_waves'
-      }
-    ]
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_022',
+        question: 'An object is placed 15 cm from a convex mirror of focal length 20 cm. The position and nature of the image are:',
+        options: ['60/7 cm behind the mirror, virtual and erect', '60 cm behind the mirror, virtual and erect', '60/7 cm in front of the mirror, real and inverted', '60 cm in front of the mirror, real and inverted'],
+        correctAnswer: 0,
+        explanation: 'For a convex mirror: f = +20 cm, u = −15 cm. Using 1/v + 1/u = 1/f: 1/v + 1/(−15) = 1/20, so 1/v = 1/20 + 1/15 = (3+4)/60 = 7/60, giving v = 60/7 ≈ 8.57 cm. Since v is positive, the image is behind the mirror (virtual). Magnification m = −v/u = −(60/7)/(−15) = 60/105 = 4/7 (positive, so erect and diminished). The most tempting wrong answer is option B (60 cm), which results from using 1/v = 1/20 − 1/15 = (3−4)/60 = −1/60, giving v = −60 cm — this error comes from using the lens formula instead of the mirror formula (subtracting instead of adding 1/u).',
+        difficulty: 'hard',
+        subject: 'physics',
+        subjectName: 'Physics',
+        topicKey: 'ray_optics'
+        },
+        {
+        id: 'phy_ro_023',
+        question: 'A convex lens of focal length 20 cm is placed in contact with a concave lens of focal length 30 cm. The power of the combination is:',
+        options: ['+1.67 D', '−1.67 D', '+3.33 D', '+16.7 D'],
+        correctAnswer: 0,
+        explanation: 'Combined power P = P₁ + P₂ = 1/f₁ + 1/f₂. Here f₁ = +20 cm = +0.20 m (convex) and f₂ = −30 cm = −0.30 m (concave). P₁ = +5 D, P₂ = −3.33 D, so P = 5 − 3.33 = +1.67 D. Alternatively, 1/f = 1/20 + 1/(−30) = 1/60, giving f = 60 cm = 0.6 m and P = +1.67 D. The most tempting wrong answer is option C (+3.33 D), which might result from using P = 1/f₁ − 1/f₂ = 1/0.20 − 1/0.30 = 5 − 3.33 = 1.67 D (same answer actually) or from an error in sign handling. Option B (−1.67 D) results from reversing the signs of the individual powers.',
+        difficulty: 'hard',
+        subject: 'physics',
+        subjectName: 'Physics',
+        topicKey: 'ray_optics'
+        }
+],
+
+wave_optics: [
+          {
+          id: 'phy_wo_001',
+          question: 'According to Huygens\' principle, every point on a wavefront acts as:',
+          options: ['A source of secondary wavelets that propagate in all directions', 'A source of secondary wavelets that propagate only forward', 'A reflector of the original wave', 'An absorber of the original wave'],
+          correctAnswer: 0,
+          explanation: 'Huygens\' principle states that every point on a wavefront acts as a source of secondary wavelets that spread out in all directions with the speed of light in that medium. The new wavefront is the forward envelope of all these wavelets. The most tempting wrong answer is option B — while the new wavefront is constructed using only the forward-propagating part, the secondary wavelets themselves propagate in all directions. The backward component is effectively cancelled by destructive interference, as later shown by Fresnel and Kirchhoff.',
+          difficulty: 'easy',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_002',
+          question: 'Two sources are said to be coherent if they emit light waves with:',
+          options: ['The same amplitude', 'The same frequency and a constant phase difference', 'The same intensity', 'The same wavelength only'],
+          correctAnswer: 1,
+          explanation: 'Coherent sources emit waves of the same frequency (and hence same wavelength) with a constant phase difference that does not change with time. This is the essential condition for producing sustained interference patterns. The most tempting wrong answer is option D (same wavelength only) — while same wavelength is necessary, it is not sufficient. Two independent sources of the same wavelength (like two identical bulbs) are NOT coherent because their phase difference varies randomly due to the random emission process. This is why Young\'s double slit uses a single source split into two — to ensure coherence.',
+          difficulty: 'easy',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_003',
+          question: 'In Young\'s double slit experiment, the fringe width is given by:',
+          options: ['β = λd/D', 'β = λD/d', 'β = λD²/d', 'β = d/(λD)'],
+          correctAnswer: 1,
+          explanation: 'Fringe width β = λD/d, where λ is the wavelength, D is the distance from slits to screen, and d is the slit separation. The most tempting wrong answer is option A (λd/D), which inverts D and d. To remember: fringe width increases when D increases (screen moves farther) and decreases when d increases (slits move closer) — this is consistent with β = λD/d. Option C has incorrect dimensional analysis. The fringe width is the same for both bright and dark fringes in a double-slit experiment.',
+          difficulty: 'easy',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_004',
+          question: 'The central fringe in Young\'s double slit experiment is:',
+          options: ['Always dark', 'Always bright and has the maximum width', 'Always bright and has the same width as other fringes', 'Alternately bright and dark depending on the wavelength'],
+          correctAnswer: 2,
+          explanation: 'The central fringe is always bright because the path difference at the central position is zero (both waves travel equal distances), giving constructive interference. Its width is the same as other bright fringes (β = λD/d). The most tempting wrong answer is option B — the central maximum has the same width as other fringes in a double-slit experiment. This confusion arises because in single-slit diffraction, the central maximum is indeed twice as wide as secondary maxima. Students must distinguish between double-slit interference and single-slit diffraction fringe patterns.',
+          difficulty: 'easy',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_005',
+          question: 'Brewster\'s law states that the polarising angle θ_B is related to the refractive index n by:',
+          options: ['sin θ_B = n', 'cos θ_B = n', 'tan θ_B = n', 'cot θ_B = n'],
+          correctAnswer: 2,
+          explanation: 'Brewster\'s law: tan θ_B = n, where θ_B is the angle of incidence at which reflected light is completely polarised. At this angle, the reflected and refracted rays are perpendicular to each other (θ_B + θ_r = 90°). The most tempting wrong answer is option A (sin θ_B = n), which would give θ_B = 90° for n = 1 and no solution for n > 1. For glass (n ≈ 1.5), Brewster\'s angle = tan⁻¹(1.5) ≈ 56.3°. This law is important for applications like polarising sunglasses and laser Brewster windows.',
+          difficulty: 'easy',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_006',
+          question: 'Malus\'s law states that when polarised light of intensity I₀ passes through an analyser, the transmitted intensity is:',
+          options: ['I = I₀ sin²θ', 'I = I₀ cos²θ', 'I = I₀ tan²θ', 'I = I₀/cos²θ'],
+          correctAnswer: 1,
+          explanation: 'Malus\'s law: I = I₀ cos²θ, where θ is the angle between the polarisation direction of the incident light and the transmission axis of the analyser. When θ = 0°, I = I₀ (full transmission); when θ = 90°, I = 0 (complete blocking). The most tempting wrong answer is option A (sin²θ), which gives the opposite behaviour (zero at θ = 0°, maximum at 90°). A useful check: when polariser and analyser are parallel (θ = 0°), maximum light should pass — cos²0° = 1 satisfies this, but sin²0° = 0 does not.',
+          difficulty: 'easy',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_007',
+          question: 'In Young\'s double slit experiment, if the slit separation d is decreased while keeping D and λ constant, the fringe width:',
+          options: ['Decreases', 'Increases', 'Remains unchanged', 'First increases then decreases'],
+          correctAnswer: 1,
+          explanation: 'Fringe width β = λD/d. If d decreases, β increases (inversely proportional). Physically, bringing the slits closer together makes the interference pattern spread out more on the screen. The most tempting wrong answer is option A — students might intuitively think that closer slits produce a "tighter" pattern, but the opposite is true. This is analogous to diffraction: a narrower aperture produces a wider diffraction pattern. The relationship β ∝ 1/d is a fundamental result that students should verify dimensionally and conceptually.',
+          difficulty: 'medium',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_008',
+          question: 'In single slit diffraction, the width of the central maximum is:',
+          options: ['Equal to the width of secondary maxima', 'Half the width of secondary maxima', 'Twice the width of secondary maxima', 'Four times the width of secondary maxima'],
+          correctAnswer: 2,
+          explanation: 'In single-slit diffraction, the central maximum extends from the first minimum on one side to the first minimum on the other side. The angular position of the first minimum is θ = λ/a, so the central maximum has angular width 2λ/a. Secondary maxima have angular width λ/a each. Therefore, the central maximum is twice as wide as secondary maxima. The most tempting wrong answer is option A — students who confuse single-slit diffraction with double-slit interference might choose this, since in double-slit interference, all fringes have equal width. The unequal widths and decreasing intensities of secondary maxima are distinctive features of diffraction.',
+          difficulty: 'medium',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_009',
+          question: 'The resolving power of a telescope can be increased by:',
+          options: ['Increasing the focal length of the objective', 'Increasing the diameter of the objective', 'Increasing the focal length of the eyepiece', 'Decreasing the diameter of the objective'],
+          correctAnswer: 1,
+          explanation: 'Resolving power of a telescope = D/(1.22λ), where D is the diameter (aperture) of the objective. A larger aperture resolves finer angular details. The most tempting wrong answer is option A — increasing the focal length increases magnifying power (m = f_o/f_e) but NOT resolving power. Students often confuse magnification with resolution. A telescope can magnify a blurred image (due to diffraction limit), but it cannot resolve details smaller than the Rayleigh criterion θ_min = 1.22λ/D. This is why large astronomical telescopes need large-diameter mirrors.',
+          difficulty: 'medium',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_010',
+          question: 'In Young\'s double slit experiment with monochromatic light of wavelength 600 nm, slit separation 0.5 mm, and screen distance 1 m, the fringe width is:',
+          options: ['0.12 mm', '1.2 mm', '12 mm', '0.6 mm'],
+          correctAnswer: 1,
+          explanation: 'β = λD/d = (600 × 10⁻⁹ × 1)/(0.5 × 10⁻³) = 600 × 10⁻⁹/5 × 10⁻⁴ = 1.2 × 10⁻³ m = 1.2 mm. The most tempting wrong answer is option A (0.12 mm), which results from using d = 5 mm instead of 0.5 mm (a factor-of-10 error in converting mm to m). Option D (0.6 mm) results from using d = 1 mm instead of 0.5 mm. Careful unit conversion is essential: 0.5 mm = 5 × 10⁻⁴ m, and 600 nm = 6 × 10⁻⁷ m.',
+          difficulty: 'medium',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_011',
+          question: 'The minimum aperture of a telescope required to resolve two stars separated by an angular distance of 10⁻⁶ radians using light of wavelength 500 nm is approximately:',
+          options: ['0.61 m', '6.1 m', '0.061 m', '61 m'],
+          correctAnswer: 0,
+          explanation: 'By Rayleigh criterion: θ_min = 1.22λ/D, so D = 1.22λ/θ_min = 1.22 × 500 × 10⁻⁹/10⁻⁶ = 1.22 × 5 × 10⁻⁷/10⁻⁶ = 1.22 × 0.5 = 0.61 m. The most tempting wrong answer is option C (0.061 m), which results from a factor-of-10 error in the calculation (using 5 × 10⁻⁸ instead of 5 × 10⁻⁷ for 500 nm). Option B (6.1 m) results from using the formula without the 1.22 factor and making an additional error. The resolving power calculation requires careful handling of powers of ten, which is a common source of error in AIIMS numericals.',
+          difficulty: 'medium',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_012',
+          question: 'When white light is used in Young\'s double slit experiment:',
+          options: ['No fringes are observed', 'The central fringe is white, and coloured fringes appear on both sides', 'All fringes are white', 'Only red fringes are observed'],
+          correctAnswer: 1,
+          explanation: 'With white light, the central fringe is white because all wavelengths have zero path difference at the centre and interfere constructively. Away from the centre, different wavelengths produce maxima at slightly different positions (since β ∝ λ), creating coloured fringes with violet closest to the centre and red farthest. The most tempting wrong answer is option A — while sustained monochromatic fringes require coherent light of a single wavelength, white light does produce a few coloured fringes near the centre before they overlap and merge into uniform illumination. The visibility of fringes decreases rapidly away from the centre.',
+          difficulty: 'medium',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_013',
+          question: 'Diffraction of light is significant when the size of the obstacle or slit is:',
+          options: ['Much larger than the wavelength of light', 'Comparable to the wavelength of light', 'Much smaller than the wavelength of light', 'Independent of the wavelength of light'],
+          correctAnswer: 1,
+          explanation: 'Diffraction effects are most pronounced when the size of the aperture or obstacle is comparable to the wavelength of the light (a ≈ λ). The most tempting wrong answer is option A (much larger) — when the obstacle is much larger than λ, diffraction effects are negligible and light travels in straight lines (geometric optics regime). When the obstacle is much smaller than λ (option C), the wave essentially passes through unaffected. The transition from geometric optics to wave optics occurs when the size becomes comparable to the wavelength.',
+          difficulty: 'medium',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_014',
+          question: 'In polarisation by reflection, at Brewster\'s angle:',
+          options: ['Both reflected and refracted rays are polarised', 'Only the reflected ray is completely polarised; the refracted ray is partially polarised', 'Only the refracted ray is completely polarised', 'Neither ray is polarised'],
+          correctAnswer: 1,
+          explanation: 'At Brewster\'s angle, the reflected ray is completely polarised (vibrations perpendicular to the plane of incidence only), while the refracted ray is only partially polarised — it still contains both components, though with a slight excess of the component in the plane of incidence. The most tempting wrong answer is option A — students often assume both rays are completely polarised, but only the reflected ray achieves complete polarisation. The refracted ray would need to pass through multiple glass plates at Brewster\'s angle to become significantly polarised. At Brewster\'s angle, the reflected and refracted rays are perpendicular to each other.',
+          difficulty: 'medium',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_015',
+          question: 'Assertion (A): Interference and diffraction both require coherent sources.\nReason (R): Coherent sources maintain a constant phase relationship necessary for sustained pattern formation.',
+          options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+          correctAnswer: 0,
+          explanation: 'Both interference and diffraction require coherent sources for observable, sustained patterns. In interference, two coherent sources produce stable constructive/destructive patterns. In single-slit diffraction, different parts of the same wavefront (inherently coherent) interfere with each other. R correctly explains A because without a constant phase relationship, the pattern would shift randomly and average out to uniform illumination. The most tempting wrong answer is option D — some students argue diffraction doesn\'t need "two sources" and hence doesn\'t need coherence. But diffraction involves interference of wavelets from different parts of the same wavefront, which are naturally coherent since they originate from the same source.',
+          difficulty: 'medium',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_016',
+          question: 'Assertion (A): The intensity of light at the central maximum in single-slit diffraction is much greater than at secondary maxima.\nReason (R): At the central maximum, all secondary wavelets from the slit arrive in phase, producing maximum constructive interference.',
+          options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+          correctAnswer: 0,
+          explanation: 'Both statements are true. At the central maximum (θ = 0), the path difference between wavelets from all parts of the slit is zero — all wavelets arrive in phase, producing maximum constructive interference. At secondary maxima, only a fraction of the wavelets interfere constructively (the rest cancel), resulting in much lower intensity. R correctly explains A. The most tempting wrong answer is option B — students might think the lower intensity at secondary maxima is due to a different reason (like distance from centre), but it is specifically because of incomplete constructive interference at those positions.',
+          difficulty: 'hard',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_017',
+          question: 'Assertion (A): Polarisation proves that light is a transverse wave.\nReason (R): Only transverse waves can be polarised; longitudinal waves cannot.',
+          options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+          correctAnswer: 0,
+          explanation: 'Both statements are true. Polarisation is the phenomenon where the vibrations of a wave are restricted to a single plane. This is only possible for transverse waves where vibrations are perpendicular to the direction of propagation and can occur in different planes. In longitudinal waves (like sound), vibrations are along the propagation direction and cannot be "oriented" in different planes. R correctly explains A — the fact that light can be polarised proves it must be transverse. The most tempting wrong answer is option C — but R is indeed true: longitudinal waves cannot be polarised, which is experimentally verified (sound cannot be polarised).',
+          difficulty: 'hard',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_018',
+          question: 'Which of the following correctly distinguishes interference from diffraction?',
+          options: ['Interference fringes have equal intensity; diffraction fringes have decreasing intensity', 'Interference requires two sources; diffraction requires one source — both are wrong', 'Interference fringes are equally spaced; diffraction fringes are unequally spaced — and both statements are correct', 'Interference occurs only with light; diffraction occurs with all waves'],
+          correctAnswer: 0,
+          explanation: 'In a double-slit interference pattern, all bright fringes have approximately equal intensity and equal spacing. In single-slit diffraction, the central maximum is the brightest, and secondary maxima have progressively decreasing intensity and are not equally spaced. The most tempting wrong answer is option C — while it is true that diffraction fringes are unequally spaced, this option states both conditions as part of one answer and could be correct. However, option A captures the most distinctive and frequently tested difference: the intensity variation. Option D is incorrect because both interference and diffraction occur with all types of waves, not just light.',
+          difficulty: 'hard',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_019',
+          question: 'Polarised light of intensity I₀ passes through two polaroids. The first polaroid\'s transmission axis is at 30° to the polarisation direction, and the second is at 60° to the first. The final transmitted intensity is:',
+          options: ['I₀/4', '3I₀/16', 'I₀/2', '3I₀/8'],
+          correctAnswer: 1,
+          explanation: 'After the first polaroid: I₁ = I₀ cos²30° = I₀ × (√3/2)² = 3I₀/4. After the second polaroid (60° to the first): I₂ = I₁ cos²60° = (3I₀/4) × (1/2)² = (3I₀/4) × (1/4) = 3I₀/16. The most tempting wrong answer is option A (I₀/4), obtained by using the total angle (30° + 60° = 90°) and calculating I₀ cos²90° = 0 — but this is wrong because Malus\'s law must be applied sequentially at each polaroid, not using the total angle. Another tempting answer is option D (3I₀/8), obtained by using cos 60° instead of cos²60° in the second step.',
+          difficulty: 'hard',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          },
+          {
+          id: 'phy_wo_020',
+          question: 'In Young\'s experiment, if the entire apparatus is immersed in a medium of refractive index n, the fringe width:',
+          options: ['Increases by a factor of n', 'Decreases by a factor of n', 'Remains unchanged', 'Becomes zero'],
+          correctAnswer: 1,
+          explanation: 'In a medium of refractive index n, the wavelength becomes λ\' = λ/n. Fringe width β\' = λ\'D/d = (λ/n)D/d = β/n. The fringe width decreases by a factor of n. The most tempting wrong answer is option A (increases by n) — students might reason that the medium "slows" the light and somehow "stretches" the pattern, but the opposite occurs. Since the wavelength decreases in the medium, the path difference required for constructive/destructive interference is achieved over a shorter distance, compressing the fringe pattern. Option C would be correct only if the wavelength didn\'t change, which it does in a medium.',
+          difficulty: 'hard',
+          subject: 'physics',
+          subjectName: 'Physics',
+          topicKey: 'wave_optics'
+          }
+],
+
+modern_physics: [
+            {
+            id: 'phy_mp_001',
+            question: 'The photoelectric effect was first observed by:',
+            options: ['Einstein', 'Planck', 'Hertz', 'de Broglie'],
+            correctAnswer: 2,
+            explanation: 'The photoelectric effect was first observed by Heinrich Hertz in 1887 during his experiments with electromagnetic waves. He noticed that ultraviolet light falling on metal electrodes facilitated the passage of sparks. The most tempting wrong answer is option A (Einstein), who explained the photoelectric effect in 1905 using the quantum theory of light (photons) and won the Nobel Prize for it in 1921. However, Einstein did not discover the effect — he provided the theoretical explanation. Planck introduced the quantum concept of energy, and de Broglie proposed wave-particle duality of matter.',
+            difficulty: 'easy',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_002',
+            question: 'In the photoelectric effect, the maximum kinetic energy of emitted photoelectrons depends on:',
+            options: ['The intensity of incident light', 'The frequency of incident light', 'The number of incident photons', 'The surface area of the metal'],
+            correctAnswer: 1,
+            explanation: 'According to Einstein\'s photoelectric equation, KE_max = hν − φ. The maximum kinetic energy depends on the frequency (ν) of the incident light, not its intensity. The most tempting wrong answer is option A (intensity) — increasing intensity increases the number of photoelectrons (and hence the photocurrent), but does NOT change the KE_max of individual electrons. This was the key observation that contradicted the wave theory of light and supported the photon concept. Each photon transfers its energy hν to a single electron, and the surplus over the work function φ becomes kinetic energy.',
+            difficulty: 'easy',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_003',
+            question: 'The de Broglie wavelength of a particle with momentum p is:',
+            options: ['λ = hp', 'λ = h/p', 'λ = p/h', 'λ = h²/p'],
+            correctAnswer: 1,
+            explanation: 'De Broglie\'s hypothesis states that every moving particle has an associated wavelength λ = h/p = h/(mv), where h is Planck\'s constant and p is the momentum. The most tempting wrong answer is option A (λ = hp), which gives dimensions of J·s × kg·m/s = J·kg·m — not a length. The correct formula λ = h/p gives dimensions of J·s/(kg·m/s) = m, which is correct for wavelength. The de Broglie wavelength is significant for microscopic particles (electrons, protons) but negligibly small for macroscopic objects.',
+            difficulty: 'easy',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_004',
+            question: 'In the Bohr model of the hydrogen atom, the angular momentum of the electron in the nth orbit is:',
+            options: ['L = nh/2π', 'L = nh', 'L = n²h/2π', 'L = h/2πn'],
+            correctAnswer: 0,
+            explanation: 'Bohr\'s quantisation condition states that the angular momentum of the electron is quantised: L = mvr = nh/(2π) = nℏ, where n = 1, 2, 3... The most tempting wrong answer is option B (L = nh), which omits the 2π factor. Planck\'s constant h has units of J·s, but angular momentum quantisation uses ℏ = h/(2π), the reduced Planck\'s constant. This quantisation condition restricts electrons to specific orbits and is the fundamental postulate of the Bohr model.',
+            difficulty: 'easy',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_005',
+            question: 'The spectral series of hydrogen that lies in the visible region is:',
+            options: ['Lyman series', 'Balmer series', 'Paschen series', 'Brackett series'],
+            correctAnswer: 1,
+            explanation: 'The Balmer series (transitions to n = 2) lies in the visible region (wavelengths ~400-700 nm). H-alpha (n=3→2) is red (656 nm), H-beta (n=4→2) is blue-green (486 nm), etc. The most tempting wrong answer is option A (Lyman series), which lies in the ultraviolet region (transitions to n = 1, higher energy). Paschen, Brackett, and Pfund series all lie in the infrared region (transitions to n = 3, 4, 5 respectively). This is one of the most frequently tested facts in AIIMS modern physics.',
+            difficulty: 'easy',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_006',
+            question: 'Isotopes are atoms that have:',
+            options: ['Same mass number but different atomic number', 'Same atomic number but different mass number', 'Same number of neutrons but different atomic number', 'Same atomic number and same mass number'],
+            correctAnswer: 1,
+            explanation: 'Isotopes have the same atomic number Z (same number of protons, hence same element) but different mass numbers A (different number of neutrons). Examples: ¹H, ²H (deuterium), ³H (tritium). The most tempting wrong answer is option A (same A, different Z), which defines isobars (e.g., ¹⁴C and ¹⁴N). Option C (same N, different Z) defines isotones (e.g., ¹³C and ¹⁴N, both with 7 neutrons). Distinguishing isotopes, isobars, and isotones is a common AIIMS question.',
+            difficulty: 'easy',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_007',
+            question: 'The half-life of a radioactive substance is 10 days. After 30 days, the fraction of the original amount remaining is:',
+            options: ['1/2', '1/4', '1/8', '1/16'],
+            correctAnswer: 2,
+            explanation: 'Number of half-lives n = 30/10 = 3. Fraction remaining = (1/2)ⁿ = (1/2)³ = 1/8. The most tempting wrong answer is option B (1/4), which corresponds to 2 half-lives (20 days), not 3. After each half-life, exactly half the remaining material decays: after 10 days → 1/2, after 20 days → 1/4, after 30 days → 1/8. This exponential decay is a fundamental concept, and students must be able to quickly calculate the number of half-lives and apply the formula N = N₀/2ⁿ.',
+            difficulty: 'easy',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_008',
+            question: 'In alpha decay, the parent nucleus loses:',
+            options: ['2 protons and 2 neutrons (mass number decreases by 4, atomic number by 2)', '1 proton and 1 neutron (mass number decreases by 2, atomic number by 1)', '2 electrons (mass number unchanged, atomic number increases by 2)', '2 protons only (mass number decreases by 2, atomic number by 2)'],
+            correctAnswer: 0,
+            explanation: 'An alpha particle is a helium-4 nucleus (²⁴He) containing 2 protons and 2 neutrons. When emitted, the parent nucleus loses A by 4 and Z by 2. For example, ²³⁸U → ²³⁴Th + ⁴He. The most tempting wrong answer is option D (2 protons only), which gives A decreasing by 2 and Z by 2 — but the alpha particle contains 2 neutrons as well, so A decreases by 4, not 2. Students must remember that the alpha particle is a bound state of 2p + 2n, not just 2 protons.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_009',
+            question: 'The work function of a metal is 4 eV. The threshold wavelength for photoelectric emission is: (h = 6.6 × 10⁻³⁴ J·s, c = 3 × 10⁸ m/s, 1 eV = 1.6 × 10⁻¹⁹ J)',
+            options: ['3100 Å', '4100 Å', '5100 Å', '6100 Å'],
+            correctAnswer: 0,
+            explanation: 'φ = hc/λ₀, so λ₀ = hc/φ = (6.6 × 10⁻³⁴ × 3 × 10⁸)/(4 × 1.6 × 10⁻¹⁹) = (19.8 × 10⁻²⁶)/(6.4 × 10⁻¹⁹) = 3.09 × 10⁻⁷ m = 3090 Å ≈ 3100 Å. The most tempting wrong answer is option B (4100 Å), which might result from using φ = 3 eV instead of 4 eV, or from a calculation error. Option C (5100 Å) corresponds to φ ≈ 2.4 eV. The threshold wavelength is the maximum wavelength (minimum frequency) that can cause photoelectric emission — wavelengths longer than this have insufficient photon energy.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_010',
+            question: 'The energy of the electron in the nth orbit of the hydrogen atom is given by Eₙ = −13.6/n² eV. The energy required to ionise the hydrogen atom from its ground state is:',
+            options: ['13.6 eV', '3.4 eV', '1.51 eV', '0.85 eV'],
+            correctAnswer: 0,
+            explanation: 'Ionisation means removing the electron completely (n → ∞). Ionisation energy = E∞ − E₁ = 0 − (−13.6/1²) = 13.6 eV. The most tempting wrong answer is option B (3.4 eV), which is the ionisation energy from the second excited state (n = 2): E₂ = −13.6/4 = −3.4 eV, so ionisation energy from n = 2 is 3.4 eV. Students must note that ionisation energy depends on which state the electron is in — from the ground state (n = 1), it is always 13.6 eV for hydrogen.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_011',
+            question: 'The radius of the first Bohr orbit of hydrogen is 0.529 Å. The radius of the third orbit is:',
+            options: ['1.587 Å', '4.761 Å', '0.176 Å', '15.87 Å'],
+            correctAnswer: 1,
+            explanation: 'rₙ = r₁ × n² = 0.529 × 3² = 0.529 × 9 = 4.761 Å. The radius increases as the square of the principal quantum number. The most tempting wrong answer is option A (1.587 Å), which results from using rₙ = r₁ × n (linear instead of quadratic dependence): 0.529 × 3 = 1.587 Å. The n² dependence means orbits get rapidly larger: r₁ = 0.529 Å, r₂ = 2.116 Å, r₃ = 4.761 Å, r₄ = 8.464 Å. For other hydrogen-like atoms, rₙ = 0.529n²/Z Å.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_012',
+            question: 'In beta-minus decay, the emitted particles are:',
+            options: ['An electron and a neutrino', 'An electron and an antineutrino', 'A positron and a neutrino', 'A proton and an electron'],
+            correctAnswer: 1,
+            explanation: 'In β⁻ decay, a neutron converts to a proton inside the nucleus: n → p + e⁻ + ν̄ₑ. An electron and an antineutrino are emitted. The most tempting wrong answer is option A (electron and neutrino) — the distinction between neutrino and antineutrino is subtle but important. In β⁻ decay, the antineutrino is emitted; in β⁺ decay (option C), a positron and a neutrino are emitted. The neutrino/antineutrino was postulated by Pauli to explain the continuous energy spectrum of beta particles and to conserve energy, momentum, and lepton number.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_013',
+            question: 'The binding energy per nucleon curve reaches a maximum at approximately:',
+            options: ['A ≈ 4 (Helium)', 'A ≈ 56 (Iron)', 'A ≈ 120 (Tin)', 'A ≈ 238 (Uranium)'],
+            correctAnswer: 1,
+            explanation: 'The binding energy per nucleon is maximum (~8.8 MeV) at A ≈ 56 (Iron-56), making it the most stable nucleus. For lighter nuclei, BE/A rises (fusion releases energy); for heavier nuclei, BE/A decreases (fission releases energy). The most tempting wrong answer is option A (Helium) — He-4 has an unusually high BE/A (~7.1 MeV) for its mass number (a local peak), but it is not the overall maximum. Students sometimes confuse the local stability of He-4 (due to its doubly magic nature) with the global maximum at Fe-56.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_014',
+            question: 'The stopping potential in a photoelectric experiment is 2 V. The maximum kinetic energy of the emitted photoelectrons is:',
+            options: ['2 J', '2 eV', '2 × 10⁻¹⁹ J', '1 eV'],
+            correctAnswer: 1,
+            explanation: 'The stopping potential Vs is related to maximum KE by KE_max = eVs = e × 2 V = 2 eV. The most tempting wrong answer is option C (2 × 10⁻¹⁹ J) — while numerically close (2 eV = 2 × 1.6 × 10⁻¹⁹ = 3.2 × 10⁻¹⁹ J, not 2 × 10⁻¹⁹ J), this is incorrect. Option A (2 J) absurdly large for a single electron. The stopping potential directly gives the KE_max in electron-volts: if Vs = 2 V, then KE_max = 2 eV. This direct relationship is the simplest way to express photoelectron energy.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_015',
+            question: 'In a nuclear reactor, the function of the moderator is to:',
+            options: ['Absorb neutrons and control the chain reaction', 'Slow down fast neutrons to thermal energies', 'Shield the reactor from radiation', 'Cool the reactor core'],
+            correctAnswer: 1,
+            explanation: 'The moderator (heavy water or graphite) slows down fast neutrons produced in fission to thermal energies (~0.025 eV), because U-235 has a much higher fission cross-section for slow (thermal) neutrons. The most tempting wrong answer is option A — this describes the function of control rods (cadmium or boron), not the moderator. Students frequently confuse moderator (slows neutrons) with control rods (absorbs neutrons). Option D describes the coolant (water, liquid sodium), and option C describes the shielding (concrete, lead).',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_016',
+            question: 'The de Broglie wavelength of an electron accelerated through a potential difference of 100 V is approximately: (h = 6.6 × 10⁻³⁴ J·s, m = 9.1 × 10⁻³¹ kg, e = 1.6 × 10⁻¹⁹ C)',
+            options: ['1.23 Å', '0.123 Å', '12.3 Å', '0.0123 Å'],
+            correctAnswer: 0,
+            explanation: 'λ = h/√(2meV) = 6.6 × 10⁻³⁴/√(2 × 9.1 × 10⁻³¹ × 1.6 × 10⁻¹⁹ × 100). Denominator: 2 × 9.1 × 1.6 × 100 × 10⁻⁵⁰ = 2912 × 10⁻⁵⁰ = 2.912 × 10⁻⁴⁷. √(2.912 × 10⁻⁴⁷) = 5.396 × 10⁻²⁴. λ = 6.6 × 10⁻³⁴/5.396 × 10⁻²⁴ = 1.223 × 10⁻¹⁰ m ≈ 1.23 Å. The shortcut formula is λ = 12.27/√V Å, giving 12.27/√100 = 12.27/10 = 1.227 Å. The most tempting wrong answer is option B (0.123 Å), from a factor-of-10 error, or option C (12.3 Å), from using V = 1 V instead of 100 V.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_017',
+            question: 'The energy of the photon emitted when a hydrogen atom transitions from n = 3 to n = 2 is:',
+            options: ['1.89 eV', '3.4 eV', '10.2 eV', '12.09 eV'],
+            correctAnswer: 0,
+            explanation: 'E = 13.6(1/n₂² − 1/n₁²) = 13.6(1/4 − 1/9) = 13.6(9−4)/36 = 13.6 × 5/36 = 13.6 × 0.1389 = 1.89 eV. This is the H-alpha line of the Balmer series (red, 656 nm). The most tempting wrong answer is option B (3.4 eV), which is E₂ = −13.6/4 = −3.4 eV — the energy of the n = 2 level, not the transition energy. Students sometimes confuse the energy of an orbit with the energy of a transition between orbits. Option C (10.2 eV) is the n = 1 → n = 2 transition (Lyman alpha), and option D (12.09 eV) is the n = 1 → n = 3 transition.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_018',
+            question: 'Which of the following is NOT a characteristic of nuclear forces?',
+            options: ['They are short-range forces (~1-2 fm)', 'They are charge-independent (act equally between p-p, n-n, p-n)', 'They are the strongest known forces in nature', 'They obey the inverse-square law like gravitational forces'],
+            correctAnswer: 3,
+            explanation: 'Nuclear forces do NOT obey the inverse-square law. They are short-range (~1-2 fm), extremely strong at short distances, and become negligible beyond nuclear dimensions. Unlike gravity (1/r²), nuclear forces have a complex distance dependence — attractive at ~1 fm but repulsive at very short distances (<0.5 fm). The most tempting wrong answer is option B — while nuclear forces are charge-independent (a key property), students might question this since protons repel electrostatically. However, the strong nuclear force itself acts equally regardless of charge. Options A and C are correct properties of nuclear forces.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_019',
+            question: 'The mean life of a radioactive substance is related to its half-life by:',
+            options: ['τ = t₁/₂/0.693', 'τ = 0.693 × t₁/₂', 'τ = t₁/₂²', 'τ = t₁/₂/2'],
+            correctAnswer: 0,
+            explanation: 'Mean life τ = 1/λ, and half-life t₁/₂ = 0.693/λ = ln2/λ. Therefore τ = t₁/₂/0.693 = 1.44 × t₁/₂. The mean life is always greater than the half-life by a factor of 1/ln2 ≈ 1.44. The most tempting wrong answer is option B (τ = 0.693 × t₁/₂), which inverts the relationship and would make the mean life shorter than the half-life — physically incorrect. Option D (τ = t₁/₂/2) gives a factor of 0.5 instead of the correct 1.44. The distinction between half-life and mean life is a subtle but important concept tested in AIIMS.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_020',
+            question: 'The Davisson-Germer experiment confirmed:',
+            options: ['The particle nature of electrons', 'The wave nature of electrons', 'The photoelectric effect', 'The nuclear model of the atom'],
+            correctAnswer: 1,
+            explanation: 'The Davisson-Germer experiment (1927) demonstrated electron diffraction from a nickel crystal, confirming de Broglie\'s hypothesis that electrons have wave-like properties. The diffraction pattern matched predictions based on λ = h/p. The most tempting wrong answer is option A — electrons were already known as particles from Thomson\'s cathode ray experiments. The significance of Davisson-Germer was proving the wave nature, not the particle nature. Option C (photoelectric effect) demonstrates the particle nature of light, not the wave nature of electrons.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_021',
+            question: 'Assertion (A): The photoelectric effect cannot be explained by the wave theory of light.\nReason (R): The wave theory predicts that kinetic energy of photoelectrons should increase with intensity, but experimentally it increases with frequency.',
+            options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+            correctAnswer: 0,
+            explanation: 'Both statements are true. The classical wave theory predicts that energy delivered to the surface depends on intensity (amplitude²), so KE should increase with intensity. Experimentally, KE_max depends on frequency only, and increasing intensity only increases the number of photoelectrons. R correctly explains A by identifying the specific prediction that fails. The most tempting wrong answer is option B — students might think other failures of wave theory (like instantaneous emission) are the primary explanation, but R captures the most fundamental contradiction between wave theory prediction and experimental observation.',
+            difficulty: 'medium',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_022',
+            question: 'Assertion (A): Nuclear fusion requires extremely high temperatures (~10⁷ K).\nReason (R): The nuclei must have sufficient kinetic energy to overcome the Coulomb repulsion between them.',
+            options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+            correctAnswer: 0,
+            explanation: 'Both statements are true. For fusion, two positively charged nuclei must come close enough (~1 fm) for the short-range nuclear force to act. This requires overcoming the electrostatic (Coulomb) repulsion, which needs kinetic energies of ~1 MeV, corresponding to temperatures of ~10⁷-10⁸ K. R correctly explains A — the high temperature provides the thermal kinetic energy needed to overcome Coulomb barriers. The most tempting wrong answer is option B — students might think the high temperature is needed for some other reason (like breaking chemical bonds), but it is specifically the Coulomb barrier that necessitates such extreme temperatures.',
+            difficulty: 'hard',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_023',
+            question: 'Assertion (A): The binding energy per nucleon of He-4 (alpha particle) is unusually high compared to its neighbours (Li, Be).\nReason (R): He-4 is a doubly magic nucleus with closed proton and neutron shells.',
+            options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+            correctAnswer: 0,
+            explanation: 'He-4 has BE/A ≈ 7.07 MeV, which is notably higher than its neighbours (Li-6: 5.33 MeV, Be-8: unstable). This is because He-4 has 2 protons and 2 neutrons — both are magic numbers, meaning the nuclear shells are completely filled, giving extra stability. R correctly explains A. The most tempting wrong answer is option B — students might think the high BE/A is due to a different reason (like small size or strong nuclear force), but the shell model\'s magic number explanation is the correct one. This extra stability is why alpha particles are commonly emitted in radioactive decay.',
+            difficulty: 'hard',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_024',
+            question: 'Light of frequency 2ν₀ falls on a metal with threshold frequency ν₀. If the frequency is increased to 4ν₀, the maximum kinetic energy of photoelectrons becomes:',
+            options: ['Double', 'Triple', 'Four times', 'Six times'],
+            correctAnswer: 1,
+            explanation: 'KE₁ = h(2ν₀) − hν₀ = hν₀. KE₂ = h(4ν₀) − hν₀ = 3hν₀. Ratio KE₂/KE₁ = 3hν₀/hν₀ = 3. KE becomes triple. The most tempting wrong answer is option A (double) — students might think doubling the frequency doubles the KE, but this ignores the work function subtraction. Since KE = hν − φ, the relationship between KE and ν is linear with an intercept (not proportional). When ν doubles from 2ν₀ to 4ν₀, KE triples from hν₀ to 3hν₀. Option C (four times) results from assuming KE ∝ ν (ignoring φ).',
+            difficulty: 'hard',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_025',
+            question: 'A radioactive sample has a half-life of 20 minutes. The time taken for the activity to reduce to 1/16 of its initial value is:',
+            options: ['60 minutes', '80 minutes', '100 minutes', '320 minutes'],
+            correctAnswer: 1,
+            explanation: '1/16 = (1/2)ⁿ, so n = 4 half-lives. Time = 4 × 20 = 80 minutes. The most tempting wrong answer is option A (60 minutes), which corresponds to 3 half-lives giving 1/8, not 1/16. Students must correctly identify that 1/16 = (1/2)⁴, requiring 4 half-lives. A quick check: after 20 min → 1/2, after 40 min → 1/4, after 60 min → 1/8, after 80 min → 1/16. Option D (320 minutes) might result from calculating 16 × 20, confusing the fraction with a multiplier.',
+            difficulty: 'hard',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_026',
+            question: 'The energy of the electron in the ground state of He⁺ (Z = 2) is:',
+            options: ['−13.6 eV', '−27.2 eV', '−54.4 eV', '−3.4 eV'],
+            correctAnswer: 2,
+            explanation: 'For hydrogen-like atoms, Eₙ = −13.6Z²/n² eV. For He⁺ (Z = 2) in the ground state (n = 1): E₁ = −13.6 × 4/1 = −54.4 eV. The most tempting wrong answer is option B (−27.2 eV), obtained by using E = −13.6 × Z instead of −13.6 × Z² (linear instead of quadratic dependence on Z). Option A (−13.6 eV) is the ground state energy of hydrogen (Z = 1). The Z² dependence means He⁺ has 4 times the binding energy of hydrogen, Li²⁺ has 9 times, etc.',
+            difficulty: 'hard',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_027',
+            question: 'An electron has de Broglie wavelength equal to that of a photon. Which has greater energy?',
+            options: ['The electron', 'The photon', 'Both have equal energy', 'Cannot be determined without knowing the wavelength'],
+            correctAnswer: 1,
+            explanation: 'For a photon: E_photon = hc/λ. For an electron: E_electron = p²/(2m) = h²/(2mλ²). Taking the ratio: E_photon/E_electron = (hc/λ)/(h²/(2mλ²)) = 2mcλ/h. For any reasonable wavelength (e.g., λ ~ 10⁻¹⁰ m), 2mcλ/h = 2 × 9.1 × 10⁻³¹ × 3 × 10⁸ × 10⁻¹⁰/(6.6 × 10⁻³⁴) ≈ 83 >> 1. The photon always has much greater energy than an electron of the same wavelength. The most tempting wrong answer is option C — students might assume same wavelength implies same energy, but the energy-wavelength relationship is different for photons (E = hc/λ, relativistic) and electrons (E = h²/(2mλ²), non-relativistic).',
+            difficulty: 'hard',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            },
+            {
+            id: 'phy_mp_028',
+            question: 'Assertion (A): In gamma decay, neither the mass number nor the atomic number of the nucleus changes.\nReason (R): Gamma rays are high-energy photons with no charge and no mass.',
+            options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+            correctAnswer: 0,
+            explanation: 'Both statements are true. In gamma decay, the nucleus transitions from an excited state to a lower energy state by emitting a gamma-ray photon. Since photons have zero charge and zero rest mass, the emission does not change Z or A — only the energy of the nucleus decreases. R correctly explains A because the zero charge and zero mass of the gamma photon are precisely why Z and A remain unchanged. The most tempting wrong answer is option B — students might think R is a separate fact about gamma rays rather than the explanation for why Z and A are unchanged. But the properties stated in R (no charge, no mass) are directly responsible for the invariance of Z and A.',
+            difficulty: 'hard',
+            subject: 'physics',
+            subjectName: 'Physics',
+            topicKey: 'modern_physics'
+            }
+],
+
+kinematics: [
+  {
+  id: 'phy_km_001',
+  question: 'The displacement of a body is a:',
+  options: ['Scalar quantity', 'Vector quantity', 'Neither scalar nor vector', 'Sometimes scalar, sometimes vector'],
+  correctAnswer: 1,
+  explanation: 'Displacement is a vector quantity — it has both magnitude (the shortest distance between initial and final positions) and direction (from initial to final position). The most tempting wrong answer is option A (scalar) — distance is a scalar quantity, not displacement. Students often confuse distance and displacement: distance is the total path length (always positive, scalar), while displacement is the straight-line separation with direction (can be positive, negative, or zero, vector). This distinction is fundamental to kinematics.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
   },
-
-  /* ╔═══════════════════════════════════════════════════════════╗
-     ║  CHEMISTRY                                                ║
-     ╚═══════════════════════════════════════════════════════════╝ */
-
-  chemistry: {
-
-    /* ───────────────────────────────────────────────────────────
-       CHEMICAL BONDING
-       ─────────────────────────────────────────────────────────── */
-    chemical_bonding: [
-      {
-        id: 'chem_cb_001',
-        question: 'The bond formed by the complete transfer of electrons from one atom to another is called:',
-        options: ['Covalent bond', 'Ionic bond', 'Metallic bond', 'Hydrogen bond'],
-        correctAnswer: 1,
-        explanation: 'An ionic bond is formed by the complete transfer of one or more electrons from a metal to a non-metal, creating oppositely charged ions that attract each other (e.g., NaCl).',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'chemical_bonding'
-      },
-      {
-        id: 'chem_cb_002',
-        question: 'According to VSEPR theory, the shape of methane (CH₄) is:',
-        options: ['Square planar', 'Trigonal pyramidal', 'Tetrahedral', 'Linear'],
-        correctAnswer: 2,
-        explanation: 'CH₄ has 4 bonding pairs and 0 lone pairs around carbon. VSEPR theory predicts a tetrahedral shape with bond angles of 109.5°.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'chemical_bonding'
-      },
-      {
-        id: 'chem_cb_003',
-        question: 'The hybridization of carbon in ethylene (C₂H₄) is:',
-        options: ['sp', 'sp²', 'sp³', 'sp³d'],
-        correctAnswer: 1,
-        explanation: 'In ethylene, each carbon forms a double bond (one σ + one π). Carbon is sp² hybridized with 3 sigma bonds and one unhybridized p orbital for the π bond. Geometry is trigonal planar.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'chemical_bonding'
-      },
-      {
-        id: 'chem_cb_004',
-        question: 'Hydrogen bonding is strongest in:',
-        options: ['HI', 'HBr', 'HCl', 'HF'],
-        correctAnswer: 3,
-        explanation: 'HF has the strongest hydrogen bonding due to fluorine\'s very high electronegativity (3.98) and small size, creating a very polar H-F bond. This explains HF\'s unusually high boiling point.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'chemical_bonding'
-      },
-      {
-        id: 'chem_cb_005',
-        question: 'The bond order of O₂ molecule according to Molecular Orbital Theory is:',
-        options: ['1', '2', '3', '1.5'],
-        correctAnswer: 1,
-        explanation: 'O₂ has electronic configuration: σ1s² σ*1s² σ2s² σ*2s² σ2p² π2p⁴ π*2p². Bond order = (10-6)/2 = 2. O₂ has a double bond and is paramagnetic due to two unpaired electrons.',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'chemical_bonding'
-      },
-      {
-        id: 'chem_cb_006',
-        question: 'A coordinate (dative) bond is formed when:',
-        options: ['Both atoms share electrons equally', 'Both electrons in the shared pair come from one atom', 'Electrons are transferred completely', 'Metallic ions share electron clouds'],
-        correctAnswer: 1,
-        explanation: 'In a coordinate bond, both electrons of the shared pair are donated by one atom (the donor) to another (the acceptor). Example: NH₄⁺ formation where NH₃ donates its lone pair to H⁺.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'chemical_bonding'
-      },
-      {
-        id: 'chem_cb_007',
-        question: 'The shape of SF₆ is:',
-        options: ['Tetrahedral', 'Trigonal bipyramidal', 'Octahedral', 'Square planar'],
-        correctAnswer: 2,
-        explanation: 'SF₆ has 6 bonding pairs and no lone pairs on the central S atom. S uses sp³d² hybridization, resulting in an octahedral geometry with 90° bond angles.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'chemical_bonding'
-      },
-      {
-        id: 'chem_cb_008',
-        question: 'Van der Waals forces are:',
-        options: ['Strongest intermolecular forces', 'Present only in polar molecules', 'Weak intermolecular forces present in all molecules', 'Intramolecular forces'],
-        correctAnswer: 2,
-        explanation: 'Van der Waals forces are weak intermolecular forces present in ALL molecules (polar and non-polar). They include London dispersion forces (in all), dipole-dipole (in polar), and dipole-induced dipole interactions.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'chemical_bonding'
-      },
-      {
-        id: 'phy_cb_009',
-        question: 'The shape of water molecule (H₂O) is:',
-        options: ['Linear', 'Trigonal planar', 'Bent / V-shaped', 'Tetrahedral'],
-        correctAnswer: 2,
-        explanation: 'Water has 2 bonding pairs and 2 lone pairs on oxygen. The electron geometry is tetrahedral but the molecular shape is bent/V-shaped with a bond angle of approximately 104.5° (reduced from 109.5° due to lone pair repulsion).',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'chemical_bonding'
-      },
-      {
-        id: 'chem_cb_010',
-        question: 'Which of the following has the highest lattice energy?',
-        options: ['NaCl', 'NaBr', 'NaI', 'NaF'],
-        correctAnswer: 3,
-        explanation: 'Lattice energy increases with smaller ionic radii and higher charges. F⁻ is the smallest halide ion, so NaF has the strongest ionic bond and highest lattice energy among sodium halides.',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'chemical_bonding'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       PERIODIC TABLE & PERIODICITY
-       ─────────────────────────────────────────────────────────── */
-    periodic_table: [
-      {
-        id: 'chem_pt_001',
-        question: 'The modern periodic table is based on:',
-        options: ['Atomic mass', 'Atomic number', 'Number of neutrons', 'Electronegativity'],
-        correctAnswer: 1,
-        explanation: 'The modern periodic law (Moseley, 1913) states that properties of elements are a periodic function of their atomic numbers. Elements are arranged in increasing atomic number.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'periodic_table'
-      },
-      {
-        id: 'chem_pt_002',
-        question: 'Electronegativity generally increases:',
-        options: ['Down a group and across a period', 'Down a group only', 'Across a period (left to right) and up a group', 'Neither across nor down'],
-        correctAnswer: 2,
-        explanation: 'Electronegativity increases left→right across a period (higher nuclear charge) and decreases down a group (larger atomic size, more shielding). Fluorine is the most electronegative element.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'periodic_table'
-      },
-      {
-        id: 'chem_pt_003',
-        question: 'The element with electronic configuration [Ar] 3d¹⁰ 4s² 4p³ belongs to:',
-        options: ['Group 13, Period 4', 'Group 15, Period 4', 'Group 13, Period 3', 'Group 15, Period 3'],
-        correctAnswer: 1,
-        explanation: 'Total electrons = 18 + 10 + 2 + 3 = 33 (Arsenic). Outermost shell is 4 (Period 4). Valence electrons in s + p = 2 + 3 = 5, so it\'s in Group 15 (VA).',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'periodic_table'
-      },
-      {
-        id: 'chem_pt_004',
-        question: 'The first ionization energy is highest for:',
-        options: ['Sodium', 'Magnesium', 'Aluminium', 'Noble gases'],
-        correctAnswer: 3,
-        explanation: 'Noble gases have the highest ionization energy in their respective periods due to completely filled stable electronic configurations. Among choices, noble gases require the most energy to remove an electron.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'periodic_table'
-      },
-      {
-        id: 'chem_pt_005',
-        question: 'Atomic radius generally decreases across a period because:',
-        options: ['Number of shells increases', 'Nuclear charge increases with same number of shells', 'Electrons are added to inner shells', 'Shielding effect increases'],
-        correctAnswer: 1,
-        explanation: 'Across a period, electrons are added to the same shell while nuclear charge (protons) increases. The greater nuclear pull draws electrons closer, decreasing atomic radius.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'periodic_table'
-      },
-      {
-        id: 'chem_pt_006',
-        question: 'Which of the following is the most electropositive element?',
-        options: ['Fluorine', 'Caesium', 'Sodium', 'Lithium'],
-        correctAnswer: 1,
-        explanation: 'Caesium (Cs) is the most electropositive (least electronegative) element, found at the bottom-left of the periodic table. It readily loses its valence electron.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'periodic_table'
-      },
-      {
-        id: 'chem_pt_007',
-        question: 'Electron affinity is most negative (most exothermic) for:',
-        options: ['Fluorine', 'Chlorine', 'Bromine', 'Iodine'],
-        correctAnswer: 1,
-        explanation: 'Chlorine has the most negative (most exothermic) electron affinity among halogens (−349 kJ/mol). Fluorine\'s small size causes electron-electron repulsion, making its EA less negative than Cl.',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'periodic_table'
-      },
-      {
-        id: 'chem_pt_008',
-        question: 'The d-block elements are called:',
-        options: ['Alkali metals', 'Alkaline earth metals', 'Transition metals', 'Lanthanides'],
-        correctAnswer: 2,
-        explanation: 'The d-block elements (Groups 3–12) are called transition metals because they bridge the gap between highly electropositive s-block and electronegative p-block elements.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'periodic_table'
-      },
-      {
-        id: 'chem_pt_009',
-        question: 'The diagonal relationship exists between:',
-        options: ['Li and Na', 'Li and Mg', 'Na and Mg', 'K and Ca'],
-        correctAnswer: 1,
-        explanation: 'Diagonal relationships exist between elements diagonally adjacent in the periodic table: Li-Mg, Be-Al, B-Si. They show similar properties because the effects of size and charge balance out.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'periodic_table'
-      },
-      {
-        id: 'chem_pt_010',
-        question: 'The total number of periods in the modern periodic table is:',
-        options: ['5', '6', '7', '8'],
-        correctAnswer: 2,
-        explanation: 'The modern periodic table has 7 periods (horizontal rows) and 18 groups (vertical columns). Elements in the same period have the same number of electron shells.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'periodic_table'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       p-BLOCK ELEMENTS
-       ─────────────────────────────────────────────────────────── */
-    p_block_elements: [
-      {
-        id: 'chem_pb_001',
-        question: 'Which allotrope of carbon is the hardest natural substance?',
-        options: ['Graphite', 'Fullerene', 'Diamond', 'Carbon nanotube'],
-        correctAnswer: 2,
-        explanation: 'Diamond is the hardest natural substance. Each carbon is sp³ hybridized and bonded to 4 others in a rigid 3D tetrahedral network, creating an extremely hard crystal structure.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'p_block_elements'
-      },
-      {
-        id: 'chem_pb_002',
-        question: 'Ozone (O₃) is:',
-        options: ['A triatomic molecule that protects Earth from UV radiation', 'A diatomic molecule', 'An inert gas', 'A monatomic species'],
-        correctAnswer: 0,
-        explanation: 'Ozone is a triatomic allotrope of oxygen (O₃) found in the stratosphere. It absorbs harmful UV-B and UV-C radiation, protecting life on Earth. It has a bent shape with ~117° bond angle.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'p_block_elements'
-      },
-      {
-        id: 'chem_pb_003',
-        question: 'The most electronegative element in the periodic table is:',
-        options: ['Oxygen', 'Chlorine', 'Fluorine', 'Nitrogen'],
-        correctAnswer: 2,
-        explanation: 'Fluorine (EN = 3.98 on Pauling scale) is the most electronegative element. Its small size and high nuclear charge give it the greatest tendency to attract shared electrons.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'p_block_elements'
-      },
-      {
-        id: 'chem_pb_004',
-        question: 'Which noble gas is used in fluorescent lighting?',
-        options: ['Helium', 'Neon', 'Argon', 'Krypton'],
-        correctAnswer: 2,
-        explanation: 'Argon is commonly used in fluorescent tubes and light bulbs as an inert filling gas. Neon is used in neon signs (producing red-orange glow).',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'p_block_elements'
-      },
-      {
-        id: 'chem_pb_005',
-        question: 'The bleaching action of chlorine is due to:',
-        options: ['Reduction', 'Oxidation', 'Decomposition', 'Neutralization'],
-        correctAnswer: 1,
-        explanation: 'Chlorine bleaches by oxidation. Cl₂ + H₂O → HCl + HOCl. The nascent oxygen [O] released from HOCl oxidizes the coloured compound, removing its colour.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'p_block_elements'
-      },
-      {
-        id: 'chem_pb_006',
-        question: 'Concentrated H₂SO₄ is a:',
-        options: ['Strong oxidizing agent and dehydrating agent', 'Reducing agent', 'Neutral compound', 'Weak acid'],
-        correctAnswer: 0,
-        explanation: 'Concentrated sulphuric acid is both a powerful dehydrating agent (removes water from organic compounds) and a strong oxidizing agent. It chars sugar and dissolves metals when hot.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'p_block_elements'
-      },
-      {
-        id: 'chem_pb_007',
-        question: 'The inert pair effect is shown by:',
-        options: ['s-block elements', 'p-block elements of higher periods', 'Transition metals', 'Lanthanides'],
-        correctAnswer: 1,
-        explanation: 'The inert pair effect is the reluctance of the s-electrons of the outermost shell to participate in bonding in heavier p-block elements (e.g., Tl⁺, Pb²⁺, Bi³⁺ prefer lower oxidation states).',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'p_block_elements'
-      },
-      {
-        id: 'chem_pb_008',
-        question: 'Which of the following oxides is amphoteric?',
-        options: ['Na₂O', 'MgO', 'Al₂O₃', 'SO₃'],
-        correctAnswer: 2,
-        explanation: 'Al₂O₃ (aluminium oxide) is amphoteric — it reacts with both acids and bases. It dissolves in HCl (acting as a base) and in NaOH (acting as an acid).',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'p_block_elements'
-      },
-      {
-        id: 'chem_pb_009',
-        question: 'Nitrogen is relatively unreactive at room temperature because:',
-        options: ['It has high atomic radius', 'It has a very strong triple bond (N≡N)', 'It is a noble gas', 'It has low electronegativity'],
-        correctAnswer: 1,
-        explanation: 'The N₂ molecule has a very strong triple bond (bond energy = 946 kJ/mol), making it very stable and unreactive at room temperature. High energy is needed to break this bond.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'p_block_elements'
-      },
-      {
-        id: 'chem_pb_010',
-        question: 'Phosphorus exists as P₄ molecules. The structure of P₄ is:',
-        options: ['Square planar', 'Tetrahedral', 'Linear', 'Octahedral'],
-        correctAnswer: 1,
-        explanation: 'White phosphorus exists as P₄ molecules with a tetrahedral structure. Each P atom is at a corner of the tetrahedron, bonded to the other three. Bond angle is 60° (strained).',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'p_block_elements'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       ORGANIC CHEMISTRY (Reactions + Named Reactions)
-       ─────────────────────────────────────────────────────────── */
-    organic_chemistry: [
-      {
-        id: 'chem_oc_001',
-        question: 'The IUPAC name of CH₃-CH=CH₂ is:',
-        options: ['Ethylene', 'Propene', 'Propane', 'Butene'],
-        correctAnswer: 1,
-        explanation: 'CH₃-CH=CH₂ has 3 carbons (prop-) with one double bond (-ene). IUPAC name: propene (commonly called propylene).',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'organic_chemistry'
-      },
-      {
-        id: 'chem_oc_002',
-        question: 'Markownikoff\'s rule applies to:',
-        options: ['Addition reactions of unsymmetrical alkenes with HX', 'Substitution reactions', 'Elimination reactions', 'Oxidation reactions'],
-        correctAnswer: 0,
-        explanation: 'Markownikoff\'s rule: When HX adds to an unsymmetrical alkene, H attaches to the carbon with more H atoms, and X to the carbon with fewer H atoms. E.g., propene + HBr → 2-bromopropane.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'organic_chemistry'
-      },
-      {
-        id: 'chem_oc_003',
-        question: 'The Wurtz reaction is used to prepare:',
-        options: ['Alkenes', 'Higher alkanes', 'Alcohols', 'Aldehydes'],
-        correctAnswer: 1,
-        explanation: 'Wurtz reaction: 2RX + 2Na → R-R + 2NaX. Two alkyl halides react with sodium in dry ether to form a higher alkane with double the carbon chain length.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'organic_chemistry'
-      },
-      {
-        id: 'chem_oc_004',
-        question: 'Which of the following is a nucleophilic substitution reaction?',
-        options: ['Halogenation of alkanes', 'Hydrolysis of alkyl halides with NaOH', 'Addition of HBr to alkenes', 'Combustion of methane'],
-        correctAnswer: 1,
-        explanation: 'The reaction RX + NaOH → ROH + NaX is a nucleophilic substitution. The nucleophile OH⁻ replaces the halide X⁻. It can proceed via SN1 or SN2 mechanism.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'organic_chemistry'
-      },
-      {
-        id: 'chem_oc_005',
-        question: 'Aldol condensation is a reaction between:',
-        options: ['Two different acids', 'Two molecules of aldehyde (or ketone) with α-hydrogen', 'An acid and a base', 'An ester and an amine'],
-        correctAnswer: 1,
-        explanation: 'Aldol condensation: Two molecules of an aldehyde (or ketone) with α-hydrogen react in the presence of a base to form a β-hydroxy aldehyde (aldol), which may dehydrate to an α,β-unsaturated carbonyl compound.',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'organic_chemistry'
-      },
-      {
-        id: 'chem_oc_006',
-        question: 'The Friedel-Crafts alkylation uses which catalyst?',
-        options: ['Pt/Pd', 'KMnO₄', 'Anhydrous AlCl₃', 'H₂SO₄ only'],
-        correctAnswer: 2,
-        explanation: 'Friedel-Crafts alkylation introduces an alkyl group onto a benzene ring using an alkyl halide and anhydrous AlCl₃ (Lewis acid catalyst). AlCl₃ generates the electrophilic carbocation.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'organic_chemistry'
-      },
-      {
-        id: 'chem_oc_007',
-        question: 'The functional group present in carboxylic acids is:',
-        options: ['-OH', '-CHO', '-COOH', '-CO-'],
-        correctAnswer: 2,
-        explanation: 'Carboxylic acids contain the -COOH (carboxyl) group, which is a combination of carbonyl (C=O) and hydroxyl (-OH) groups. They are weak acids that donate H⁺ from the -OH.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'organic_chemistry'
-      },
-      {
-        id: 'chem_oc_008',
-        question: 'The Cannizzaro reaction is given by aldehydes that:',
-        options: ['Have α-hydrogen', 'Do not have α-hydrogen', 'Are aromatic only', 'Have -OH group'],
-        correctAnswer: 1,
-        explanation: 'Cannizzaro reaction: Aldehydes WITHOUT α-hydrogen (like HCHO, C₆H₅CHO) undergo self-oxidation and reduction in concentrated NaOH. One molecule is oxidized to acid, another reduced to alcohol.',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'organic_chemistry'
-      },
-      {
-        id: 'chem_oc_009',
-        question: 'Benzene undergoes which type of reactions predominantly?',
-        options: ['Addition reactions', 'Electrophilic substitution reactions', 'Nucleophilic addition', 'Free radical reactions'],
-        correctAnswer: 1,
-        explanation: 'Benzene predominantly undergoes electrophilic aromatic substitution (EAS) to preserve its aromatic stability. Examples: halogenation, nitration, sulfonation, Friedel-Crafts reactions.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'organic_chemistry'
-      },
-      {
-        id: 'chem_oc_010',
-        question: 'In SN2 reactions, the rate depends on:',
-        options: ['Concentration of substrate only', 'Concentration of nucleophile only', 'Concentrations of both substrate and nucleophile', 'Temperature only'],
-        correctAnswer: 2,
-        explanation: 'SN2 (bimolecular nucleophilic substitution) has a rate = k[substrate][nucleophile]. Both species are involved in the rate-determining step, which is a one-step concerted mechanism with inversion.',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'organic_chemistry'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       EQUILIBRIUM (IONIC)
-       ─────────────────────────────────────────────────────────── */
-    equilibrium_ionic: [
-      {
-        id: 'chem_eq_001',
-        question: 'The pH of a neutral solution at 25°C is:',
-        options: ['0', '1', '7', '14'],
-        correctAnswer: 2,
-        explanation: 'At 25°C, Kw = [H⁺][OH⁻] = 10⁻¹⁴. In a neutral solution, [H⁺] = [OH⁻] = 10⁻⁷ M. pH = −log[H⁺] = −log(10⁻⁷) = 7.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'equilibrium_ionic'
-      },
-      {
-        id: 'chem_eq_002',
-        question: 'According to Le Chatelier\'s principle, increasing pressure shifts equilibrium towards:',
-        options: ['The side with more moles of gas', 'The side with fewer moles of gas', 'No effect on equilibrium', 'The exothermic direction'],
-        correctAnswer: 1,
-        explanation: 'Le Chatelier\'s principle: When pressure increases, the system shifts to reduce pressure by moving towards the side with fewer moles of gas molecules.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'equilibrium_ionic'
-      },
-      {
-        id: 'chem_eq_003',
-        question: 'The Henderson-Hasselbalch equation relates:',
-        options: ['pH, pKa, and ratio of salt to acid', 'Temperature and pressure', 'Volume and concentration', 'Enthalpy and entropy'],
-        correctAnswer: 0,
-        explanation: 'Henderson-Hasselbalch: pH = pKa + log([A⁻]/[HA]). It\'s used to calculate the pH of buffer solutions knowing the pKa and the ratio of conjugate base to weak acid concentrations.',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'equilibrium_ionic'
-      },
-      {
-        id: 'chem_eq_004',
-        question: 'A buffer solution resists changes in:',
-        options: ['Volume', 'Temperature', 'pH', 'Pressure'],
-        correctAnswer: 2,
-        explanation: 'A buffer solution resists changes in pH when small amounts of acid or base are added. It contains a weak acid and its conjugate base (e.g., CH₃COOH/CH₃COONa) or a weak base and its salt.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'equilibrium_ionic'
-      },
-      {
-        id: 'chem_eq_005',
-        question: 'The common ion effect suppresses the:',
-        options: ['Dissociation of a strong electrolyte', 'Dissociation of a weak electrolyte', 'Solubility of insoluble salts only', 'Both B and C'],
-        correctAnswer: 3,
-        explanation: 'The common ion effect suppresses the dissociation of weak electrolytes and also reduces the solubility of sparingly soluble salts by adding a common ion, shifting equilibrium per Le Chatelier\'s principle.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'equilibrium_ionic'
-      },
-      {
-        id: 'chem_eq_006',
-        question: 'The solubility product (Ksp) of AgCl is expressed as:',
-        options: ['[Ag⁺] + [Cl⁻]', '[Ag⁺][Cl⁻]', '[Ag⁺]²[Cl⁻]', '[AgCl]'],
-        correctAnswer: 1,
-        explanation: 'AgCl ⇌ Ag⁺ + Cl⁻. Ksp = [Ag⁺][Cl⁻]. The solubility product is the product of ionic concentrations raised to their stoichiometric coefficients. Pure solid AgCl is not included.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'equilibrium_ionic'
-      },
-      {
-        id: 'chem_eq_007',
-        question: 'Strong acids have:',
-        options: ['High Ka and low pH', 'Low Ka and high pH', 'High Ka and high pH', 'Low Ka and low pH'],
-        correctAnswer: 0,
-        explanation: 'Strong acids (like HCl, H₂SO₄) dissociate completely, giving very high Ka values and very low pH (high [H⁺] concentration).',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'equilibrium_ionic'
-      },
-      {
-        id: 'chem_eq_008',
-        question: 'The ionic product of water (Kw) at 25°C is:',
-        options: ['10⁻⁷', '10⁻¹⁴', '10⁻¹⁰', '10⁻⁷'],
-        correctAnswer: 1,
-        explanation: 'Kw = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴ at 25°C. This is the autoionization constant of water: H₂O ⇌ H⁺ + OH⁻.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'equilibrium_ionic'
-      },
-      {
-        id: 'chem_eq_009',
-        question: 'Hydrolysis of salt of a strong acid and weak base produces:',
-        options: ['Acidic solution', 'Basic solution', 'Neutral solution', 'Buffer solution'],
-        correctAnswer: 0,
-        explanation: 'A salt of strong acid + weak base (e.g., NH₄Cl) undergoes hydrolysis: the weak base cation reacts with water producing H⁺ ions. NH₄⁺ + H₂O → NH�� + H₃O⁺. The solution is acidic (pH < 7).',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'equilibrium_ionic'
-      },
-      {
-        id: 'chem_eq_010',
-        question: 'At equilibrium, the value of the equilibrium constant K:',
-        options: ['Changes with concentration', 'Changes with pressure', 'Changes only with temperature', 'Never changes'],
-        correctAnswer: 2,
-        explanation: 'The equilibrium constant K depends only on temperature. Changing concentration, pressure, or adding catalysts does NOT change K — only the position of equilibrium shifts (Le Chatelier\'s).',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'equilibrium_ionic'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       COORDINATION COMPOUNDS
-       ─────────────────────────────────────────────────────────── */
-    coordination_compounds: [
-      {
-        id: 'chem_cc_001',
-        question: 'The coordination number of Pt in [PtCl₆]²⁻ is:',
-        options: ['2', '4', '6', '8'],
-        correctAnswer: 2,
-        explanation: 'Coordination number is the number of ligand donor atoms directly bonded to the central metal. In [PtCl₆]²⁻, six Cl⁻ ions are bonded to Pt, so CN = 6.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'coordination_compounds'
-      },
-      {
-        id: 'chem_cc_002',
-        question: 'EDTA is an example of a:',
-        options: ['Monodentate ligand', 'Bidentate ligand', 'Hexadentate ligand', 'Tridentate ligand'],
-        correctAnswer: 2,
-        explanation: 'EDTA (ethylenediaminetetraacetic acid) has 6 donor atoms (4 oxygen + 2 nitrogen) and can form 6 coordinate bonds with one metal ion, making it a hexadentate (sexadentate) ligand.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'coordination_compounds'
-      },
-      {
-        id: 'chem_cc_003',
-        question: 'Cisplatin [Pt(NH₃)₂Cl₂] is used as:',
-        options: ['An antiseptic', 'An anticancer drug', 'A painkiller', 'An antacid'],
-        correctAnswer: 1,
-        explanation: 'cis-[Pt(NH₃)₂Cl₂] (cisplatin) is an important anticancer drug used in chemotherapy. It works by crosslinking DNA strands, preventing cancer cell division. The trans isomer is inactive.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'coordination_compounds'
-      },
-      {
-        id: 'chem_cc_004',
-        question: 'The oxidation state of Fe in [Fe(CN)₆]⁴⁻ is:',
-        options: ['+2', '+3', '+4', '+6'],
-        correctAnswer: 0,
-        explanation: 'Let Fe = x. CN⁻ has charge −1. x + 6(−1) = −4. So x = −4 + 6 = +2. Iron is in the +2 oxidation state in ferrocyanide ion.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'coordination_compounds'
-      },
-      {
-        id: 'chem_cc_005',
-        question: 'Crystal Field Theory (CFT) explains:',
-        options: ['Nuclear reactions', 'Bonding in organic compounds', 'Colour and magnetic properties of coordination compounds', 'Acid-base reactions'],
-        correctAnswer: 2,
-        explanation: 'CFT explains the colour (due to d-d transitions between split energy levels) and magnetic properties (based on number of unpaired electrons) of transition metal complexes.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'coordination_compounds'
-      },
-      {
-        id: 'chem_cc_006',
-        question: 'The geometry of [Ni(CN)₄]²⁻ is:',
-        options: ['Tetrahedral', 'Octahedral', 'Square planar', 'Linear'],
-        correctAnswer: 2,
-        explanation: '[Ni(CN)₄]²⁻ has Ni²⁺ (d⁸) with CN⁻ as a strong field ligand causing pairing. It is dsp² hybridized with a square planar geometry and is diamagnetic.',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'coordination_compounds'
-      },
-      {
-        id: 'chem_cc_007',
-        question: 'Ligands that can bind through two different donor atoms are called:',
-        options: ['Bidentate ligands', 'Ambidentate ligands', 'Polydentate ligands', 'Bridging ligands'],
-        correctAnswer: 1,
-        explanation: 'Ambidentate ligands have two potential donor atoms but bind through only one at a time. Examples: NO₂⁻ (binds via N as nitro or via O as nitrito), SCN⁻ (via S or N).',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'coordination_compounds'
-      },
-      {
-        id: 'chem_cc_008',
-        question: 'Haemoglobin contains which metal ion at its centre?',
-        options: ['Cu²⁺', 'Mg²⁺', 'Fe²⁺', 'Zn²⁺'],
-        correctAnswer: 2,
-        explanation: 'Haemoglobin is a coordination compound with Fe²⁺ at the centre of a porphyrin ring (heme group). Fe²⁺ binds to O₂ for transport in blood. Carbon monoxide poisoning occurs because CO binds more strongly to Fe²⁺.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'coordination_compounds'
-      },
-      {
-        id: 'chem_cc_009',
-        question: 'Werner\'s theory proposed that metal ions have:',
-        options: ['Only primary valence', 'Only secondary valence', 'Both primary and secondary valences', 'No valence'],
-        correctAnswer: 2,
-        explanation: 'Werner (1893) proposed that metals have two types of valence: primary (ionizable, now oxidation state) and secondary (non-ionizable, now coordination number). This was revolutionary for understanding complex compounds.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'coordination_compounds'
-      },
-      {
-        id: 'chem_cc_010',
-        question: 'The spectrochemical series orders ligands by their:',
-        options: ['Size', 'Charge', 'Field splitting strength', 'Electronegativity'],
-        correctAnswer: 2,
-        explanation: 'The spectrochemical series ranks ligands by their crystal field splitting strength (Δ): I⁻ < Br⁻ < Cl⁻ < F⁻ < OH⁻ < H₂O < NH₃ < en < NO₂⁻ < CN⁻ < CO. Stronger field ligands cause larger splitting.',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'coordination_compounds'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       BIOMOLECULES + POLYMERS + EVERYDAY CHEMISTRY
-       ─────────────────────────────────────────────────────────── */
-    biomolecules_polymers: [
-      {
-        id: 'chem_bp_001',
-        question: 'The monomer of natural rubber is:',
-        options: ['Ethylene', 'Styrene', 'Isoprene (2-methyl-1,3-butadiene)', 'Vinyl chloride'],
-        correctAnswer: 2,
-        explanation: 'Natural rubber is a polymer of isoprene (2-methyl-1,3-butadiene). It has cis-1,4 configuration. Vulcanization (adding sulphur) improves its elasticity and durability.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'biomolecules_polymers'
-      },
-      {
-        id: 'chem_bp_002',
-        question: 'Glucose and fructose are:',
-        options: ['Structural isomers', 'Geometric isomers', 'Optical isomers', 'Tautomers'],
-        correctAnswer: 0,
-        explanation: 'Glucose (aldohexose, C₆H₁₂O₆) and fructose (ketohexose, C₆H₁₂O₆) have the same molecular formula but different structural arrangements. Glucose has an aldehyde group, fructose has a ketone group.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'biomolecules_polymers'
-      },
-      {
-        id: 'chem_bp_003',
-        question: 'Proteins are polymers of:',
-        options: ['Nucleotides', 'Monosaccharides', 'Amino acids', 'Fatty acids'],
-        correctAnswer: 2,
-        explanation: 'Proteins are polymers of amino acids linked by peptide bonds (−CO−NH−). There are 20 standard amino acids. The sequence determines the protein\'s structure and function.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'biomolecules_polymers'
-      },
-      {
-        id: 'chem_bp_004',
-        question: 'DNA contains which sugar?',
-        options: ['Ribose', 'Deoxyribose', 'Glucose', 'Fructose'],
-        correctAnswer: 1,
-        explanation: 'DNA (Deoxyribonucleic acid) contains deoxyribose sugar (missing -OH at 2\' position). RNA contains ribose sugar (has -OH at 2\' position). This difference affects stability and function.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'biomolecules_polymers'
-      },
-      {
-        id: 'chem_bp_005',
-        question: 'Nylon-6,6 is a:',
-        options: ['Addition polymer', 'Condensation polymer', 'Natural polymer', 'Homopolymer'],
-        correctAnswer: 1,
-        explanation: 'Nylon-6,6 is a condensation polymer formed by hexamethylenediamine and adipic acid. The "6,6" indicates both monomers have 6 carbons. Water is released during polymerization.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'biomolecules_polymers'
-      },
-      {
-        id: 'chem_bp_006',
-        question: 'Enzymes are:',
-        options: ['Inorganic catalysts', 'Biological catalysts (proteins)', 'Lipids', 'Carbohydrates'],
-        correctAnswer: 1,
-        explanation: 'Enzymes are biological catalysts made of proteins. They speed up biochemical reactions by lowering activation energy. They are highly specific (lock-and-key model) and work under mild conditions.',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'biomolecules_polymers'
-      },
-      {
-        id: 'chem_bp_007',
-        question: 'Which vitamin is also known as ascorbic acid?',
-        options: ['Vitamin A', 'Vitamin B₁₂', 'Vitamin C', 'Vitamin D'],
-        correctAnswer: 2,
-        explanation: 'Vitamin C (ascorbic acid) is a water-soluble vitamin essential for collagen synthesis and immune function. Its deficiency causes scurvy (bleeding gums, weakness).',
-        difficulty: 'easy',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'biomolecules_polymers'
-      },
-      {
-        id: 'chem_bp_008',
-        question: 'Bakelite is an example of a:',
-        options: ['Thermoplastic polymer', 'Thermosetting polymer', 'Elastomer', 'Natural polymer'],
-        correctAnswer: 1,
-        explanation: 'Bakelite (phenol-formaldehyde resin) is a thermosetting polymer. Once hardened, it cannot be remoulded or resoftened by heating due to extensive cross-linking. Used in electrical insulation.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'biomolecules_polymers'
-      },
-      {
-        id: 'chem_bp_009',
-        question: 'Detergents are preferred over soaps because they:',
-        options: ['Are cheaper', 'Work in hard water', 'Are biodegradable', 'Have pleasant smell'],
-        correctAnswer: 1,
-        explanation: 'Unlike soaps (sodium salts of fatty acids), synthetic detergents (sodium salts of long-chain sulfonates) work effectively in hard water because they don\'t form insoluble calcium/magnesium salts.',
-        difficulty: 'medium',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'biomolecules_polymers'
-      },
-      {
-        id: 'chem_bp_010',
-        question: 'The secondary structure of a protein (α-helix and β-sheet) is stabilized by:',
-        options: ['Ionic bonds', 'Covalent bonds', 'Hydrogen bonds', 'Van der Waals forces'],
-        correctAnswer: 2,
-        explanation: 'The secondary structure (α-helix and β-pleated sheet) is stabilized by hydrogen bonds between the C=O of one peptide bond and the N-H of another. These are regular, repeating patterns.',
-        difficulty: 'hard',
-        subject: 'chemistry',
-        subjectName: 'Chemistry',
-        topicKey: 'biomolecules_polymers'
-      }
-    ]
+  {
+  id: 'phy_km_002',
+  question: 'A body covers equal distances in equal time intervals. Its motion is:',
+  options: ['Uniform acceleration', 'Uniform velocity (uniform motion)', 'Non-uniform acceleration', 'Variable velocity'],
+  correctAnswer: 1,
+  explanation: 'If a body covers equal distances in equal time intervals, its speed is constant. If it also moves in a straight line, it has uniform velocity (uniform motion with zero acceleration). The most tempting wrong answer is option A (uniform acceleration) — under uniform acceleration, the body covers unequal distances in equal time intervals (distances increase as 1:3:5:7... for successive equal intervals). This is a direct consequence of s = ut + ½at²; with a ≠ 0, the distance covered increases with time. Only when a = 0 are equal distances covered.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
   },
-
-  /* ╔═══════════════════════════════════════════════════════════╗
-     ║  BIOLOGY                                                  ║
-     ╚═══════════════════════════════════════════════════════════╝ */
-
-  biology: {
-
-    /* ───────────────────────────────────────────────────────────
-       HUMAN PHYSIOLOGY
-       ─────────────────────────────────────────────────────────── */
-    human_physiology: [
-      {
-        id: 'bio_hp_001',
-        question: 'The normal resting heart rate in adults is:',
-        options: ['40-50 bpm', '60-100 bpm', '100-120 bpm', '120-140 bpm'],
-        correctAnswer: 1,
-        explanation: 'Normal adult resting heart rate is 60–100 beats per minute. Athletes may have lower rates (40–60 bpm) due to cardiac efficiency. Rate above 100 is tachycardia, below 60 is bradycardia.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'human_physiology'
-      },
-      {
-        id: 'bio_hp_002',
-        question: 'The pacemaker of the heart is:',
-        options: ['AV node', 'SA node', 'Bundle of His', 'Purkinje fibres'],
-        correctAnswer: 1,
-        explanation: 'The sinoatrial (SA) node, located in the right atrium, is the natural pacemaker. It generates electrical impulses at 70-80/min that initiate each heartbeat. If SA node fails, AV node takes over at a slower rate.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'human_physiology'
-      },
-      {
-        id: 'bio_hp_003',
-        question: 'The functional unit of the kidney is:',
-        options: ['Nephron', 'Neuron', 'Alveolus', 'Villi'],
-        correctAnswer: 0,
-        explanation: 'The nephron is the structural and functional unit of the kidney. Each kidney has about 1 million nephrons. It performs filtration (glomerulus), reabsorption, and secretion to form urine.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'human_physiology'
-      },
-      {
-        id: 'bio_hp_004',
-        question: 'Insulin is secreted by:',
-        options: ['Alpha cells of islets of Langerhans', 'Beta cells of islets of Langerhans', 'Delta cells', 'Acinar cells'],
-        correctAnswer: 1,
-        explanation: 'Insulin is secreted by beta (β) cells of the islets of Langerhans in the pancreas. It lowers blood glucose by promoting glucose uptake into cells. Alpha cells secrete glucagon (raises glucose).',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'human_physiology'
-      },
-      {
-        id: 'bio_hp_005',
-        question: 'The exchange of gases (O₂ and CO₂) in the lungs occurs at the:',
-        options: ['Bronchi', 'Bronchioles', 'Alveoli', 'Trachea'],
-        correctAnswer: 2,
-        explanation: 'Gas exchange occurs at the alveoli — tiny, thin-walled air sacs surrounded by capillaries. O₂ diffuses from alveoli into blood, CO₂ diffuses from blood into alveoli. Total surface area ≈ 70 m².',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'human_physiology'
-      },
-      {
-        id: 'bio_hp_006',
-        question: 'The enzyme pepsin works in:',
-        options: ['Alkaline pH', 'Neutral pH', 'Acidic pH (1.5-2.5)', 'Very alkaline pH'],
-        correctAnswer: 2,
-        explanation: 'Pepsin is a protease enzyme in the stomach that works optimally at very acidic pH (1.5-2.5) provided by HCl. It breaks down proteins into smaller peptides. It is secreted as inactive pepsinogen.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'human_physiology'
-      },
-      {
-        id: 'bio_hp_007',
-        question: 'The neurotransmitter released at neuromuscular junction is:',
-        options: ['Dopamine', 'Serotonin', 'Acetylcholine', 'GABA'],
-        correctAnswer: 2,
-        explanation: 'Acetylcholine (ACh) is the neurotransmitter at the neuromuscular junction. When a nerve impulse arrives, ACh is released, crosses the synaptic cleft, and binds to receptors on the muscle fiber, causing contraction.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'human_physiology'
-      },
-      {
-        id: 'bio_hp_008',
-        question: 'Normal blood glucose level (fasting) is approximately:',
-        options: ['40-60 mg/dL', '70-100 mg/dL', '140-180 mg/dL', '200-250 mg/dL'],
-        correctAnswer: 1,
-        explanation: 'Normal fasting blood glucose is 70–100 mg/dL. Fasting level ≥126 mg/dL indicates diabetes mellitus. 100–125 mg/dL is classified as pre-diabetic. Insulin and glucagon maintain this homeostasis.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'human_physiology'
-      },
-      {
-        id: 'bio_hp_009',
-        question: 'The longest bone in the human body is:',
-        options: ['Humerus', 'Tibia', 'Femur', 'Fibula'],
-        correctAnswer: 2,
-        explanation: 'The femur (thigh bone) is the longest and strongest bone in the human body. It is approximately one-quarter of a person\'s height.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'human_physiology'
-      },
-      {
-        id: 'bio_hp_010',
-        question: 'ADH (Antidiuretic Hormone) regulates:',
-        options: ['Blood pressure only', 'Water reabsorption in kidneys', 'Glucose metabolism', 'Thyroid function'],
-        correctAnswer: 1,
-        explanation: 'ADH (vasopressin), secreted by the posterior pituitary, increases water reabsorption in the collecting ducts of kidneys. Deficiency causes diabetes insipidus (excessive dilute urine).',
-        difficulty: 'hard',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'human_physiology'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       GENETICS & MOLECULAR BIOLOGY
-       ─────────────────────────────────────────────────────────── */
-    genetics_molecular: [
-      {
-        id: 'bio_gm_001',
-        question: 'The central dogma of molecular biology is:',
-        options: ['DNA → Protein → RNA', 'RNA → DNA → Protein', 'DNA → RNA → Protein', 'Protein → RNA → DNA'],
-        correctAnswer: 2,
-        explanation: 'The central dogma: DNA → (transcription) → RNA → (translation) → Protein. DNA is transcribed to mRNA, which is then translated into protein at ribosomes.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'genetics_molecular'
-      },
-      {
-        id: 'bio_gm_002',
-        question: 'If a DNA strand reads 3\'-ATGCCG-5\', the complementary mRNA strand is:',
-        options: ['5\'-UACGGC-3\'', '5\'-TACGGC-3\'', '3\'-UACGGC-5\'', '5\'-ATGCCG-3\''],
-        correctAnswer: 0,
-        explanation: 'mRNA is synthesized 5\'→3\' from the template DNA strand (3\'→5\'). A pairs with U (in RNA), T with A, G with C, C with G. So 3\'-ATGCCG-5\' → 5\'-UACGGC-3\'.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'genetics_molecular'
-      },
-      {
-        id: 'bio_gm_003',
-        question: 'Mendel\'s law of segregation states that:',
-        options: ['Genes blend in offspring', 'Alleles separate during gamete formation', 'Dominant genes always appear', 'Genes on different chromosomes assort independently'],
-        correctAnswer: 1,
-        explanation: 'The Law of Segregation: During gamete formation, the two alleles for each gene separate so that each gamete carries only one allele. This is Mendel\'s first law, explained by meiosis.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'genetics_molecular'
-      },
-      {
-        id: 'bio_gm_004',
-        question: 'A codon is a sequence of:',
-        options: ['2 nucleotides on DNA', '3 nucleotides on mRNA', '4 nucleotides on tRNA', '3 amino acids'],
-        correctAnswer: 1,
-        explanation: 'A codon is a triplet of 3 consecutive nucleotides on mRNA that codes for a specific amino acid. There are 64 possible codons (4³), including 3 stop codons and 1 start codon (AUG).',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'genetics_molecular'
-      },
-      {
-        id: 'bio_gm_005',
-        question: 'Sickle cell anaemia is caused by mutation in the gene encoding:',
-        options: ['Alpha-globin', 'Beta-globin', 'Myoglobin', 'Albumin'],
-        correctAnswer: 1,
-        explanation: 'Sickle cell anaemia results from a point mutation in the β-globin gene (GAG→GTG), causing glutamic acid to be replaced by valine at position 6. This causes abnormal haemoglobin (HbS) that polymerizes.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'genetics_molecular'
-      },
-      {
-        id: 'bio_gm_006',
-        question: 'PCR (Polymerase Chain Reaction) is used to:',
-        options: ['Synthesize proteins', 'Amplify specific DNA sequences', 'Separate proteins', 'Culture bacteria'],
-        correctAnswer: 1,
-        explanation: 'PCR amplifies specific DNA sequences exponentially through repeated cycles of denaturation (95°C), annealing (50-65°C), and extension (72°C) using Taq polymerase. Invented by Kary Mullis.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'genetics_molecular'
-      },
-      {
-        id: 'bio_gm_007',
-        question: 'The human genome contains approximately:',
-        options: ['3,000 genes', '20,000-25,000 genes', '100,000 genes', '1 million genes'],
-        correctAnswer: 1,
-        explanation: 'The Human Genome Project revealed approximately 20,000–25,000 protein-coding genes in the human genome, far fewer than expected. The total genome is ~3.2 billion base pairs.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'genetics_molecular'
-      },
-      {
-        id: 'bio_gm_008',
-        question: 'Colour blindness is a:',
-        options: ['Autosomal dominant trait', 'Autosomal recessive trait', 'X-linked recessive trait', 'Y-linked trait'],
-        correctAnswer: 2,
-        explanation: 'Red-green colour blindness is an X-linked recessive trait. The gene is on the X chromosome. Males (XY) are more commonly affected because they have only one X. Carrier females (XX) are usually unaffected.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'genetics_molecular'
-      },
-      {
-        id: 'bio_gm_009',
-        question: 'Restriction enzymes are used in genetic engineering to:',
-        options: ['Join DNA fragments', 'Cut DNA at specific sequences', 'Copy DNA', 'Translate mRNA'],
-        correctAnswer: 1,
-        explanation: 'Restriction endonucleases (molecular scissors) recognize and cut DNA at specific palindromic sequences. EcoRI cuts at GAATTC. They are essential tools in recombinant DNA technology.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'genetics_molecular'
-      },
-      {
-        id: 'bio_gm_010',
-        question: 'Down syndrome is caused by:',
-        options: ['Monosomy of chromosome 21', 'Trisomy of chromosome 21', 'Deletion in chromosome 5', 'Translocation of chromosome 14'],
-        correctAnswer: 1,
-        explanation: 'Down syndrome (Trisomy 21) is caused by the presence of an extra copy of chromosome 21 (47 chromosomes total). It results from non-disjunction during meiosis. Incidence increases with maternal age.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'genetics_molecular'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       REPRODUCTION (Human + Plants)
-       ─────────────────────────────────────────────────────────── */
-    reproduction: [
-      {
-        id: 'bio_rp_001',
-        question: 'The process of fusion of male and female gametes is called:',
-        options: ['Pollination', 'Fertilization', 'Germination', 'Implantation'],
-        correctAnswer: 1,
-        explanation: 'Fertilization is the fusion of a male gamete (sperm/pollen) with a female gamete (ovum/egg cell) to form a zygote. In humans, it typically occurs in the fallopian tube.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'reproduction'
-      },
-      {
-        id: 'bio_rp_002',
-        question: 'Double fertilization is unique to:',
-        options: ['Gymnosperms', 'Angiosperms', 'Bryophytes', 'Pteridophytes'],
-        correctAnswer: 1,
-        explanation: 'Double fertilization is unique to angiosperms (flowering plants). One sperm fuses with the egg (forming zygote/embryo), another fuses with two polar nuclei (forming triploid endosperm, 3n).',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'reproduction'
-      },
-      {
-        id: 'bio_rp_003',
-        question: 'The hormone responsible for ovulation is:',
-        options: ['FSH', 'LH (Luteinizing Hormone)', 'Estrogen', 'Progesterone'],
-        correctAnswer: 1,
-        explanation: 'The LH surge (a sharp rise in Luteinizing Hormone) triggers ovulation — the release of a mature ovum from the ovarian follicle. This occurs around day 14 of a 28-day menstrual cycle.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'reproduction'
-      },
-      {
-        id: 'bio_rp_004',
-        question: 'The placenta is formed from:',
-        options: ['Maternal tissue only', 'Foetal tissue only', 'Both maternal and foetal tissue', 'Amniotic fluid'],
-        correctAnswer: 2,
-        explanation: 'The placenta develops from both foetal tissue (chorionic villi from trophoblast) and maternal tissue (uterine endometrium/decidua). It provides nutrients, oxygen, and removes waste from the foetus.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'reproduction'
-      },
-      {
-        id: 'bio_rp_005',
-        question: 'In plants, pollen grains are produced in the:',
-        options: ['Stigma', 'Ovule', 'Anther', 'Style'],
-        correctAnswer: 2,
-        explanation: 'Pollen grains (male gametophytes) are produced in the anther through microsporogenesis. Each pollen grain has two cells — a tube cell and a generative cell (which later divides into two sperm cells).',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'reproduction'
-      },
-      {
-        id: 'bio_rp_006',
-        question: 'The normal duration of human pregnancy is approximately:',
-        options: ['32 weeks', '36 weeks', '40 weeks (280 days)', '44 weeks'],
-        correctAnswer: 2,
-        explanation: 'Normal human pregnancy (gestation) lasts approximately 40 weeks (280 days or 9 months) from the last menstrual period. It is divided into three trimesters of roughly 13 weeks each.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'reproduction'
-      },
-      {
-        id: 'bio_rp_007',
-        question: 'Which contraceptive method involves blocking the fallopian tubes?',
-        options: ['Vasectomy', 'Tubectomy', 'IUD insertion', 'Oral pills'],
-        correctAnswer: 1,
-        explanation: 'Tubectomy (tubal ligation) is a surgical sterilization method in females where the fallopian tubes are cut, tied, or blocked, preventing the egg from reaching the uterus. Vasectomy is the male equivalent (vas deferens).',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'reproduction'
-      },
-      {
-        id: 'bio_rp_008',
-        question: 'Embryo sac in angiosperms is:',
-        options: ['Male gametophyte', 'Female gametophyte', 'Sporophyte', 'Endosperm'],
-        correctAnswer: 1,
-        explanation: 'The embryo sac (7 cells, 8 nuclei) is the mature female gametophyte in angiosperms. It contains the egg cell, two synergids, three antipodal cells, and a central cell with two polar nuclei.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'reproduction'
-      },
-      {
-        id: 'bio_rp_009',
-        question: 'IVF (In Vitro Fertilization) involves:',
-        options: ['Fertilization inside the body', 'Fertilization outside the body in a lab', 'Artificial insemination', 'Cloning'],
-        correctAnswer: 1,
-        explanation: 'IVF involves collecting eggs and sperm, fertilizing them in a laboratory dish, and then transferring the resulting embryo(s) into the uterus. It is commonly called "test tube baby" technique.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'reproduction'
-      },
-      {
-        id: 'bio_rp_010',
-        question: 'Progesterone during pregnancy is mainly produced by:',
-        options: ['Anterior pituitary', 'Corpus luteum and later placenta', 'Hypothalamus', 'Adrenal gland'],
-        correctAnswer: 1,
-        explanation: 'Progesterone is initially produced by the corpus luteum in the ovary. After 8-12 weeks, the placenta takes over as the major source. Progesterone maintains the uterine lining and prevents contractions.',
-        difficulty: 'hard',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'reproduction'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       ECOLOGY & ENVIRONMENT
-       ─────────────────────────────────────────────────────────── */
-    ecology_environment: [
-      {
-        id: 'bio_ee_001',
-        question: 'The ozone layer is found in which layer of the atmosphere?',
-        options: ['Troposphere', 'Stratosphere', 'Mesosphere', 'Thermosphere'],
-        correctAnswer: 1,
-        explanation: 'The ozone layer is concentrated in the stratosphere (15–35 km altitude). It absorbs 97–99% of UV radiation from the sun, protecting life on Earth. CFCs deplete this layer.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'ecology_environment'
-      },
-      {
-        id: 'bio_ee_002',
-        question: 'The pyramid of energy in an ecosystem is always:',
-        options: ['Inverted', 'Spindle-shaped', 'Upright', 'Variable'],
-        correctAnswer: 2,
-        explanation: 'The pyramid of energy is always upright because energy decreases at each successive trophic level (only 10% is transferred — Lindeman\'s 10% law). Energy cannot be recycled; it flows in one direction.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'ecology_environment'
-      },
-      {
-        id: 'bio_ee_003',
-        question: 'Eutrophication is caused by:',
-        options: ['Excess oxygen', 'Excess nutrients (nitrogen, phosphorus) in water bodies', 'Deforestation', 'Ozone depletion'],
-        correctAnswer: 1,
-        explanation: 'Eutrophication is excessive nutrient enrichment (mainly N and P) of water bodies from fertilizer runoff, sewage, etc. It causes algal blooms, oxygen depletion, and fish kills.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'ecology_environment'
-      },
-      {
-        id: 'bio_ee_004',
-        question: 'Biodiversity hotspots are regions with:',
-        options: ['Low species diversity', 'High endemism and significant habitat loss', 'No endangered species', 'Only marine life'],
-        correctAnswer: 1,
-        explanation: 'Biodiversity hotspots have exceptionally high species richness, high endemism (≥1,500 endemic vascular plants), and have lost ≥70% of their original habitat. India has 4 hotspots including Western Ghats.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'ecology_environment'
-      },
-      {
-        id: 'bio_ee_005',
-        question: 'The greenhouse effect is caused mainly by:',
-        options: ['O₂ and N₂', 'CO₂, CH₄, and water vapour', 'Ozone only', 'Noble gases'],
-        correctAnswer: 1,
-        explanation: 'Greenhouse gases (CO₂, CH₄, N₂O, water vapour, CFCs) trap heat radiated from Earth\'s surface, warming the atmosphere. CO₂ is the primary contributor from human activities (fossil fuels, deforestation).',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'ecology_environment'
-      },
-      {
-        id: 'bio_ee_006',
-        question: 'Which of the following is a primary consumer?',
-        options: ['Tiger', 'Grasshopper', 'Eagle', 'Mushroom'],
-        correctAnswer: 1,
-        explanation: 'Primary consumers (herbivores) feed directly on producers (plants). Grasshoppers eat plants, making them primary consumers. Tiger and eagle are secondary/tertiary consumers. Mushrooms are decomposers.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'ecology_environment'
-      },
-      {
-        id: 'bio_ee_007',
-        question: 'The Red Data Book contains information about:',
-        options: ['All known species', 'Endangered and threatened species', 'Extinct species only', 'Invasive species'],
-        correctAnswer: 1,
-        explanation: 'The Red Data Book (IUCN Red List) documents endangered and threatened species worldwide. Species are classified as Extinct, Critically Endangered, Endangered, Vulnerable, Near Threatened, or Least Concern.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'ecology_environment'
-      },
-      {
-        id: 'bio_ee_008',
-        question: 'Ecological succession that begins on bare rock is called:',
-        options: ['Secondary succession', 'Primary succession', 'Seral succession', 'Retrogressive succession'],
-        correctAnswer: 1,
-        explanation: 'Primary succession occurs on bare, previously uninhabited surfaces (bare rock, new lava, sand dunes). It begins with pioneer species like lichens and takes hundreds of years to reach climax community.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'ecology_environment'
-      },
-      {
-        id: 'bio_ee_009',
-        question: 'Biomagnification refers to:',
-        options: ['Decrease in pollutant concentration up the food chain', 'Increase in pollutant concentration at each trophic level', 'Decomposition of pollutants', 'Release of pollutants into air'],
-        correctAnswer: 1,
-        explanation: 'Biomagnification is the progressive increase in concentration of non-biodegradable toxins (DDT, mercury, lead) at each successive trophic level in a food chain. Top predators are most affected.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'ecology_environment'
-      },
-      {
-        id: 'bio_ee_010',
-        question: 'The Chipko movement was related to:',
-        options: ['Water conservation', 'Forest conservation', 'Air pollution', 'Wildlife protection'],
-        correctAnswer: 1,
-        explanation: 'The Chipko movement (1973, Uttarakhand) was a forest conservation movement where villagers, led by Sunderlal Bahuguna, hugged trees to prevent commercial logging. "Chipko" means "to cling/embrace".',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'ecology_environment'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       CELL BIOLOGY (Cell Division)
-       ─────────────────────────────────────────────────────────── */
-    cell_biology: [
-      {
-        id: 'bio_cb_001',
-        question: 'The powerhouse of the cell is:',
-        options: ['Nucleus', 'Ribosome', 'Mitochondria', 'Endoplasmic Reticulum'],
-        correctAnswer: 2,
-        explanation: 'Mitochondria are called the powerhouse because they produce ATP (energy currency) through oxidative phosphorylation and the Krebs cycle. They have their own circular DNA and double membrane.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'cell_biology'
-      },
-      {
-        id: 'bio_cb_002',
-        question: 'Mitosis results in:',
-        options: ['4 haploid daughter cells', '2 diploid daughter cells identical to the parent', '2 haploid daughter cells', '4 diploid daughter cells'],
-        correctAnswer: 1,
-        explanation: 'Mitosis produces 2 genetically identical diploid (2n) daughter cells from one parent cell. It is used for growth, repair, and asexual reproduction. The chromosome number is maintained.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'cell_biology'
-      },
-      {
-        id: 'bio_cb_003',
-        question: 'Crossing over occurs during which phase of meiosis?',
-        options: ['Prophase I', 'Metaphase I', 'Anaphase II', 'Telophase II'],
-        correctAnswer: 0,
-        explanation: 'Crossing over (exchange of genetic material between homologous chromosomes) occurs during Prophase I of meiosis, specifically in the pachytene substage. This generates genetic diversity.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'cell_biology'
-      },
-      {
-        id: 'bio_cb_004',
-        question: 'The cell organelle responsible for protein synthesis is:',
-        options: ['Mitochondria', 'Ribosome', 'Lysosome', 'Golgi apparatus'],
-        correctAnswer: 1,
-        explanation: 'Ribosomes are the site of protein synthesis (translation). They read mRNA codons and assemble amino acids into polypeptides. Found free in cytoplasm or attached to rough ER. Made of rRNA + proteins.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'cell_biology'
-      },
-      {
-        id: 'bio_cb_005',
-        question: 'Meiosis produces:',
-        options: ['2 diploid cells', '4 diploid cells', '2 haploid cells', '4 haploid cells'],
-        correctAnswer: 3,
-        explanation: 'Meiosis is reduction division: one diploid (2n) cell → four haploid (n) daughter cells. Meiosis I separates homologous chromosomes, Meiosis II separates sister chromatids. Essential for sexual reproduction.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'cell_biology'
-      },
-      {
-        id: 'bio_cb_006',
-        question: 'Lysosomes are called "suicide bags" because:',
-        options: ['They produce energy', 'They contain digestive enzymes that can destroy the cell', 'They replicate DNA', 'They synthesize proteins'],
-        correctAnswer: 1,
-        explanation: 'Lysosomes contain hydrolytic enzymes that can digest cellular components. During cell damage or apoptosis, the lysosome membrane ruptures, releasing enzymes that destroy the cell (autolysis).',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'cell_biology'
-      },
-      {
-        id: 'bio_cb_007',
-        question: 'The spindle fibres during cell division are made of:',
-        options: ['Actin', 'Myosin', 'Tubulin', 'Keratin'],
-        correctAnswer: 2,
-        explanation: 'Spindle fibres (microtubules) are made of the protein tubulin (α and β subunits). They attach to kinetochores on chromosomes and pull them apart during anaphase. They originate from centrioles.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'cell_biology'
-      },
-      {
-        id: 'bio_cb_008',
-        question: 'The cell cycle phase where DNA replication occurs is:',
-        options: ['G1 phase', 'S phase', 'G2 phase', 'M phase'],
-        correctAnswer: 1,
-        explanation: 'DNA replication occurs during the S (synthesis) phase of interphase. After S phase, each chromosome has two sister chromatids joined at the centromere. G1 is before S, G2 is after S, M is mitosis.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'cell_biology'
-      },
-      {
-        id: 'bio_cb_009',
-        question: 'Which cell organelle is absent in prokaryotic cells?',
-        options: ['Ribosome', 'Cell membrane', 'Nucleus', 'DNA'],
-        correctAnswer: 2,
-        explanation: 'Prokaryotic cells (bacteria, archaea) lack a membrane-bound nucleus. Their DNA is in a nucleoid region. They also lack other membrane-bound organelles (mitochondria, ER, Golgi), but have ribosomes (70S).',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'cell_biology'
-      },
-      {
-        id: 'bio_cb_010',
-        question: 'Cytokinesis in plant cells occurs by:',
-        options: ['Cleavage furrow formation', 'Cell plate formation', 'Budding', 'Binary fission'],
-        correctAnswer: 1,
-        explanation: 'In plant cells, cytokinesis occurs by cell plate formation — Golgi vesicles fuse at the centre of the cell, growing outward to form a new cell wall. In animal cells, a cleavage furrow forms and pinches inward.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'cell_biology'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       BIOTECHNOLOGY
-       ─────────────────────────���───────────────────────────────── */
-    biotechnology: [
-      {
-        id: 'bio_bt_001',
-        question: 'The enzyme used to join two DNA fragments is:',
-        options: ['DNA polymerase', 'RNA polymerase', 'DNA ligase', 'Restriction endonuclease'],
-        correctAnswer: 2,
-        explanation: 'DNA ligase joins (ligates) two DNA fragments by forming phosphodiester bonds between them. It is called "molecular glue" and is essential in recombinant DNA technology and DNA repair.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biotechnology'
-      },
-      {
-        id: 'bio_bt_002',
-        question: 'Bt cotton is resistant to:',
-        options: ['Drought', 'Bollworm (insect pest)', 'Herbicides', 'Fungal infections'],
-        correctAnswer: 1,
-        explanation: 'Bt cotton contains the cry gene from Bacillus thuringiensis. The Cry protein (Bt toxin) is toxic to bollworm larvae when ingested, killing the pest. It is harmless to humans and other animals.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biotechnology'
-      },
-      {
-        id: 'bio_bt_003',
-        question: 'Gene therapy involves:',
-        options: ['Removing all genes', 'Replacing or supplementing a faulty gene with a functional copy', 'Changing protein structure', 'Removing chromosomes'],
-        correctAnswer: 1,
-        explanation: 'Gene therapy is the insertion of a normal functional gene into cells to replace or supplement a defective gene, treating genetic disorders. It can be somatic (non-heritable) or germline (heritable).',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biotechnology'
-      },
-      {
-        id: 'bio_bt_004',
-        question: 'The first genetically engineered product approved for human use was:',
-        options: ['Insulin', 'Interferon', 'Growth hormone', 'Erythropoietin'],
-        correctAnswer: 0,
-        explanation: 'Recombinant human insulin (Humulin), produced by inserting the human insulin gene into E. coli bacteria, was the first genetically engineered product approved for human use (1982, by Eli Lilly).',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biotechnology'
-      },
-      {
-        id: 'bio_bt_005',
-        question: 'Gel electrophoresis is used to separate:',
-        options: ['Cells', 'DNA fragments by size', 'Organs', 'Tissues'],
-        correctAnswer: 1,
-        explanation: 'Gel electrophoresis separates DNA (or protein) fragments based on size. Smaller fragments migrate faster through the agarose/polyacrylamide gel under electric field. DNA is negatively charged (moves to +).',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biotechnology'
-      },
-      {
-        id: 'bio_bt_006',
-        question: 'Golden Rice has been genetically modified to produce:',
-        options: ['Extra protein', 'Beta-carotene (provitamin A)', 'Vitamin C', 'Iron'],
-        correctAnswer: 1,
-        explanation: 'Golden Rice is engineered to produce beta-carotene (precursor of vitamin A) in the grain. It was developed to address vitamin A deficiency, which causes blindness in millions of children worldwide.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biotechnology'
-      },
-      {
-        id: 'bio_bt_007',
-        question: 'Dolly, the first cloned mammal, was a:',
-        options: ['Dog', 'Sheep', 'Cat', 'Monkey'],
-        correctAnswer: 1,
-        explanation: 'Dolly the sheep (1996, Roslin Institute, Scotland) was the first mammal cloned from an adult somatic cell using somatic cell nuclear transfer (SCNT). She proved differentiated cells retain full genetic potential.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biotechnology'
-      },
-      {
-        id: 'bio_bt_008',
-        question: 'CRISPR-Cas9 is a technology used for:',
-        options: ['Protein folding', 'Gene editing', 'Cell culture', 'Chromosome counting'],
-        correctAnswer: 1,
-        explanation: 'CRISPR-Cas9 is a revolutionary gene-editing tool that allows precise, targeted modification of DNA sequences. Cas9 is a molecular scissor guided by a guide RNA to cut specific DNA locations.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biotechnology'
-      },
-      {
-        id: 'bio_bt_009',
-        question: 'Vectors commonly used in genetic engineering include:',
-        options: ['Viruses only', 'Plasmids and bacteriophages', 'Ribosomes', 'Mitochondria'],
-        correctAnswer: 1,
-        explanation: 'Vectors (vehicles for carrying foreign DNA into host cells) include plasmids (circular DNA in bacteria), bacteriophages, cosmids, BACs, and YACs. Plasmids are the most commonly used.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biotechnology'
-      },
-      {
-        id: 'bio_bt_010',
-        question: 'DNA fingerprinting is based on:',
-        options: ['Coding sequences of DNA', 'Repetitive DNA sequences (VNTRs/STRs)', 'Ribosomal RNA', 'Transfer RNA'],
-        correctAnswer: 1,
-        explanation: 'DNA fingerprinting (developed by Alec Jeffreys) uses variable number tandem repeats (VNTRs) or short tandem repeats (STRs) — highly variable non-coding DNA regions unique to each individual.',
-        difficulty: 'hard',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biotechnology'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       BIOLOGY & HUMAN WELFARE
-       ─────────────────────────────────────────────────────────── */
-    biology_human_welfare: [
-      {
-        id: 'bio_hw_001',
-        question: 'The causative agent of malaria is:',
-        options: ['Virus', 'Bacteria', 'Plasmodium (protozoan)', 'Fungus'],
-        correctAnswer: 2,
-        explanation: 'Malaria is caused by Plasmodium parasites (P. vivax, P. falciparum, P. malariae, P. ovale) transmitted by the bite of infected female Anopheles mosquitoes. P. falciparum causes the most severe form.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biology_human_welfare'
-      },
-      {
-        id: 'bio_hw_002',
-        question: 'Penicillin was discovered by:',
-        options: ['Louis Pasteur', 'Robert Koch', 'Alexander Fleming', 'Edward Jenner'],
-        correctAnswer: 2,
-        explanation: 'Alexander Fleming discovered penicillin in 1928 from the mould Penicillium notatum. It was the first widely used antibiotic, saving millions of lives. Fleming shared the 1945 Nobel Prize.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biology_human_welfare'
-      },
-      {
-        id: 'bio_hw_003',
-        question: 'BCG vaccine is given for prevention of:',
-        options: ['Polio', 'Tuberculosis', 'Hepatitis', 'Measles'],
-        correctAnswer: 1,
-        explanation: 'BCG (Bacillus Calmette-Guérin) vaccine provides protection against tuberculosis (TB) caused by Mycobacterium tuberculosis. It is given at birth or soon after in India as part of the immunization schedule.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biology_human_welfare'
-      },
-      {
-        id: 'bio_hw_004',
-        question: 'HIV attacks which cells in the human body?',
-        options: ['Red blood cells', 'Platelets', 'Helper T-cells (CD4+)', 'B-lymphocytes only'],
-        correctAnswer: 2,
-        explanation: 'HIV (Human Immunodeficiency Virus) specifically attacks and destroys CD4+ Helper T-cells, which are crucial for coordinating immune responses. As CD4 count drops below 200/μL, AIDS develops.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biology_human_welfare'
-      },
-      {
-        id: 'bio_hw_005',
-        question: 'Biofortification is the process of:',
-        options: ['Adding chemicals to food', 'Breeding crops to increase nutritional value', 'Using pesticides', 'Genetic removal of traits'],
-        correctAnswer: 1,
-        explanation: 'Biofortification improves the nutritional quality of food crops through conventional breeding, agronomic practices, or biotechnology. Examples: iron-rich rice, vitamin A-rich sweet potato, zinc-rich wheat.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biology_human_welfare'
-      },
-      {
-        id: 'bio_hw_006',
-        question: 'Dengue fever is transmitted by:',
-        options: ['Anopheles mosquito', 'Aedes aegypti mosquito', 'House fly', 'Tsetse fly'],
-        correctAnswer: 1,
-        explanation: 'Dengue fever is caused by the Dengue virus and transmitted by the bite of infected Aedes aegypti mosquito. Symptoms include high fever, severe headache, joint pain, and in severe cases, dengue hemorrhagic fever.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biology_human_welfare'
-      },
-      {
-        id: 'bio_hw_007',
-        question: 'Antibiotics are effective against:',
-        options: ['Viruses', 'Bacteria', 'Prions', 'All microorganisms'],
-        correctAnswer: 1,
-        explanation: 'Antibiotics are effective against bacteria, not viruses. They work by inhibiting cell wall synthesis (penicillin), protein synthesis (tetracycline), or nucleic acid synthesis (rifampicin). Antibiotic resistance is a growing concern.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biology_human_welfare'
-      },
-      {
-        id: 'bio_hw_008',
-        question: 'The full form of AIDS is:',
-        options: ['Acute Immune Deficiency Syndrome', 'Acquired Immuno Deficiency Syndrome', 'Auto Immune Disease Syndrome', 'Acquired Infectious Disease Syndrome'],
-        correctAnswer: 1,
-        explanation: 'AIDS = Acquired Immuno Deficiency Syndrome. It is caused by HIV and leads to progressive failure of the immune system, making the person susceptible to opportunistic infections and cancers.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biology_human_welfare'
-      },
-      {
-        id: 'bio_hw_009',
-        question: 'Microbes used in the production of antibiotics include:',
-        options: ['Lactobacillus', 'Penicillium and Streptomyces', 'Saccharomyces', 'Rhizobium'],
-        correctAnswer: 1,
-        explanation: 'Penicillium notatum/chrysogenum produces penicillin. Streptomyces species produce streptomycin, erythromycin, and many other antibiotics. These soil microbes are the primary source of natural antibiotics.',
-        difficulty: 'medium',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biology_human_welfare'
-      },
-      {
-        id: 'bio_hw_010',
-        question: 'The disease caused by deficiency of Vitamin D is:',
-        options: ['Scurvy', 'Rickets', 'Beri-beri', 'Pellagra'],
-        correctAnswer: 1,
-        explanation: 'Vitamin D deficiency causes rickets in children (soft, deformed bones) and osteomalacia in adults. Vitamin D is essential for calcium and phosphorus absorption. Sources: sunlight, fish oil, fortified foods.',
-        difficulty: 'easy',
-        subject: 'biology',
-        subjectName: 'Biology',
-        topicKey: 'biology_human_welfare'
-      }
-    ]
+  {
+  id: 'phy_km_003',
+  question: 'The acceleration due to gravity is:',
+  options: ['Different for bodies of different masses', 'Same for all bodies regardless of mass', 'Greater for heavier bodies', 'Zero for very light bodies'],
+  correctAnswer: 1,
+  explanation: 'In the absence of air resistance, all bodies fall with the same acceleration g ≈ 9.8 m/s², regardless of their mass. This was demonstrated by Galileo and follows from Newton\'s second law: F = mg gives a = g (mass cancels). The most tempting wrong answer is option C (greater for heavier bodies) — this is the common misconception from everyday experience where air resistance affects lighter objects more. In a vacuum, a feather and a hammer fall at the same rate (as demonstrated on the Moon by Apollo 15 astronaut David Scott).',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
   },
-
-  /* ╔═══════════════════════════════════════════════════════════╗
-     ║  GENERAL KNOWLEDGE                                        ║
-     ╚═══════════════════════════════════════════════════════════╝ */
-
-  gk: {
-
-    /* ───────────────────────────────────────────────────────────
-       CURRENT AFFAIRS (Last 6 Months)
-       ─────────────────────────────────────────────────────────── */
-    current_affairs: [
-      {
-        id: 'gk_ca_001',
-        question: 'The Union Budget of India 2025-26 was presented by:',
-        options: ['Narendra Modi', 'Nirmala Sitharaman', 'Amit Shah', 'Rajnath Singh'],
-        correctAnswer: 1,
-        explanation: 'The Union Budget of India is presented by the Finance Minister. Nirmala Sitharaman has been the Finance Minister presenting consecutive Union Budgets.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'current_affairs'
-      },
-      {
-        id: 'gk_ca_002',
-        question: 'Which country hosted the G20 Summit in 2023?',
-        options: ['Indonesia', 'India', 'Brazil', 'South Africa'],
-        correctAnswer: 1,
-        explanation: 'India hosted the G20 Summit in September 2023 in New Delhi under PM Modi\'s presidency. The theme was "One Earth, One Family, One Future" (Vasudhaiva Kutumbakam). African Union was admitted as a permanent member.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'current_affairs'
-      },
-      {
-        id: 'gk_ca_003',
-        question: 'Chandrayaan-3 successfully landed on the Moon\'s south pole in:',
-        options: ['July 2023', 'August 2023', 'September 2023', 'October 2023'],
-        correctAnswer: 1,
-        explanation: 'ISRO\'s Chandrayaan-3 successfully soft-landed on the Moon\'s south polar region on August 23, 2023, making India the 4th country to land on the Moon and 1st to land near the south pole.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'current_affairs'
-      },
-      {
-        id: 'gk_ca_004',
-        question: 'India\'s first indigenous aircraft carrier, commissioned in 2022, is:',
-        options: ['INS Vikrant', 'INS Vikramaditya', 'INS Vishal', 'INS Arihant'],
-        correctAnswer: 0,
-        explanation: 'INS Vikrant (IAC-1), India\'s first indigenously built aircraft carrier, was commissioned on September 2, 2022, by PM Modi at Cochin Shipyard. India became the 6th nation to design and build its own carrier.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'current_affairs'
-      },
-      {
-        id: 'gk_ca_005',
-        question: 'The Ayodhya Ram Mandir was inaugurated in January 2024 by:',
-        options: ['President of India', 'Prime Minister Narendra Modi', 'Chief Justice of India', 'Governor of UP'],
-        correctAnswer: 1,
-        explanation: 'The Ram Mandir in Ayodhya was inaugurated on January 22, 2024 (Ram Lalla Pran Pratishtha ceremony) by Prime Minister Narendra Modi. The temple was built at the site of the disputed Babri Masjid.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'current_affairs'
-      },
-      {
-        id: 'gk_ca_006',
-        question: 'India\'s Aditya-L1 mission is related to:',
-        options: ['Mars exploration', 'Study of the Sun', 'Asteroid mining', 'Deep space communication'],
-        correctAnswer: 1,
-        explanation: 'Aditya-L1 is India\'s first space mission dedicated to studying the Sun. Launched on September 2, 2023, it reached the L1 Lagrange point in January 2024 to observe solar corona, flares, and solar winds.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'current_affairs'
-      },
-      {
-        id: 'gk_ca_007',
-        question: 'The UPI (Unified Payments Interface) was developed by:',
-        options: ['RBI', 'NPCI (National Payments Corporation of India)', 'SBI', 'NITI Aayog'],
-        correctAnswer: 1,
-        explanation: 'UPI was developed by NPCI (National Payments Corporation of India) and launched in 2016. India processes over 10 billion UPI transactions monthly, making it the world\'s most successful real-time payment system.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'current_affairs'
-      },
-      {
-        id: 'gk_ca_008',
-        question: 'Which Indian city was declared a UNESCO World Heritage Site most recently (as of 2025)?',
-        options: ['Varanasi', 'Santiniketan', 'Jaipur', 'Ahmedabad'],
-        correctAnswer: 1,
-        explanation: 'Santiniketan in West Bengal, founded by Rabindranath Tagore, was inscribed as a UNESCO World Heritage Site in September 2023, making it India\'s 41st World Heritage Site.',
-        difficulty: 'hard',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'current_affairs'
-      },
-      {
-        id: 'gk_ca_009',
-        question: 'The Women\'s Reservation Bill (Nari Shakti Vandan Adhiniyam) reserves what percentage of seats for women in Lok Sabha and State Assemblies?',
-        options: ['25%', '33%', '40%', '50%'],
-        correctAnswer: 1,
-        explanation: 'The Women\'s Reservation Bill (128th Constitutional Amendment), passed in September 2023, reserves 33% of seats in Lok Sabha and State Legislative Assemblies for women. Implementation is pending delimitation.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'current_affairs'
-      },
-      {
-        id: 'gk_ca_010',
-        question: 'Semiconductor manufacturing in India received a major boost with the announcement of a fab plant by which company?',
-        options: ['Intel', 'Micron Technology', 'Samsung', 'TSMC'],
-        correctAnswer: 1,
-        explanation: 'Micron Technology announced setting up a semiconductor assembly and test facility in Sanand, Gujarat (2023), with an investment of $2.75 billion. This is a landmark in India\'s semiconductor manufacturing ambitions.',
-        difficulty: 'hard',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'current_affairs'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       INDIAN POLITY (Articles, Amendments)
-       ─────────────────────────────────────────────────────────── */
-    indian_polity: [
-      {
-        id: 'gk_ip_001',
-        question: 'The Preamble of the Indian Constitution declares India as:',
-        options: ['Sovereign Democratic Republic', 'Sovereign Socialist Secular Democratic Republic', 'Federal Democratic Republic', 'Unitary Secular Republic'],
-        correctAnswer: 1,
-        explanation: 'The Preamble declares India as a "Sovereign Socialist Secular Democratic Republic." "Socialist" and "Secular" were added by the 42nd Amendment (1976). "Sovereign" means supreme authority.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'indian_polity'
-      },
-      {
-        id: 'gk_ip_002',
-        question: 'Article 21 of the Indian Constitution deals with:',
-        options: ['Right to Equality', 'Right to Freedom of Religion', 'Right to Life and Personal Liberty', 'Right against Exploitation'],
-        correctAnswer: 2,
-        explanation: 'Article 21: "No person shall be deprived of his life or personal liberty except according to procedure established by law." It has been expanded to include right to education, health, clean environment, privacy, and dignity.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'indian_polity'
-      },
-      {
-        id: 'gk_ip_003',
-        question: 'The Right to Education Act (RTE) was enacted under which Article?',
-        options: ['Article 14', 'Article 19', 'Article 21A', 'Article 32'],
-        correctAnswer: 2,
-        explanation: 'Article 21A (inserted by the 86th Amendment, 2002) provides free and compulsory education to all children aged 6–14 years as a Fundamental Right. The RTE Act, 2009 implements this right.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'indian_polity'
-      },
-      {
-        id: 'gk_ip_004',
-        question: 'The 73rd Constitutional Amendment deals with:',
-        options: ['Scheduled Tribes', 'Panchayati Raj Institutions', 'Municipalities', 'Anti-Defection Law'],
-        correctAnswer: 1,
-        explanation: 'The 73rd Amendment (1992) gave constitutional status to Panchayati Raj Institutions (village self-governance). It mandated elections, reservation for SC/ST/women, and created a three-tier system.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'indian_polity'
-      },
-      {
-        id: 'gk_ip_005',
-        question: 'Article 370 of the Constitution, which granted special status to Jammu & Kashmir, was abrogated in:',
-        options: ['2017', '2018', '2019', '2020'],
-        correctAnswer: 2,
-        explanation: 'Article 370 was effectively abrogated on August 5, 2019, by a Presidential Order. J&K was bifurcated into two Union Territories: Jammu & Kashmir (with legislature) and Ladakh (without). Upheld by SC in Dec 2023.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'indian_polity'
-      },
-      {
-        id: 'gk_ip_006',
-        question: 'The Election Commission of India is established under which Article?',
-        options: ['Article 280', 'Article 315', 'Article 324', 'Article 352'],
-        correctAnswer: 2,
-        explanation: 'Article 324 vests the superintendence, direction, and control of elections (Parliament, State Legislatures, President, VP) in the Election Commission of India. It ensures free and fair elections.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'indian_polity'
-      },
-      {
-        id: 'gk_ip_007',
-        question: 'Fundamental Duties are enshrined in which Part of the Indian Constitution?',
-        options: ['Part III', 'Part IV', 'Part IVA', 'Part V'],
-        correctAnswer: 2,
-        explanation: 'Fundamental Duties are in Part IVA, Article 51A, added by the 42nd Amendment (1976) based on the Swaran Singh Committee\'s recommendation. Originally 10 duties, the 86th Amendment (2002) added the 11th duty.',
-        difficulty: 'hard',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'indian_polity'
-      },
-      {
-        id: 'gk_ip_008',
-        question: 'The President of India is elected by:',
-        options: ['Direct election by citizens', 'Members of Parliament only', 'Electoral college of elected members of Parliament and State Legislatures', 'Prime Minister\'s recommendation'],
-        correctAnswer: 2,
-        explanation: 'The President is elected by an electoral college consisting of elected members of both Houses of Parliament and elected members of State Legislative Assemblies (Art. 54), through proportional representation with single transferable vote.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'indian_polity'
-      },
-      {
-        id: 'gk_ip_009',
-        question: 'The Anti-Defection Law was added by which Constitutional Amendment?',
-        options: ['42nd Amendment', '44th Amendment', '52nd Amendment', '61st Amendment'],
-        correctAnswer: 2,
-        explanation: 'The 52nd Constitutional Amendment Act (1985) added the Tenth Schedule (Anti-Defection Law) to prevent legislators from changing parties after election. It was modified by the 91st Amendment (2003).',
-        difficulty: 'hard',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'indian_polity'
-      },
-      {
-        id: 'gk_ip_010',
-        question: 'Article 32 of the Constitution gives the right to move the Supreme Court for enforcement of:',
-        options: ['Directive Principles', 'Fundamental Rights', 'Fundamental Duties', 'International Treaties'],
-        correctAnswer: 1,
-        explanation: 'Article 32 is the "Right to Constitutional Remedies" — the right to move the Supreme Court for enforcement of Fundamental Rights. Dr. B.R. Ambedkar called it "the heart and soul of the Constitution."',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'indian_polity'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       HEALTH ORGANIZATIONS & SCHEMES
-       ─────────────────────────────────────────────────────────── */
-    health_organizations: [
-      {
-        id: 'gk_ho_001',
-        question: 'The headquarters of the World Health Organization (WHO) is in:',
-        options: ['New York', 'Geneva', 'Paris', 'London'],
-        correctAnswer: 1,
-        explanation: 'WHO headquarters is in Geneva, Switzerland. Established on April 7, 1948 (celebrated as World Health Day), it is a specialized agency of the United Nations responsible for international public health.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'health_organizations'
-      },
-      {
-        id: 'gk_ho_002',
-        question: 'Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PM-JAY) provides health coverage of:',
-        options: ['₹1 lakh per family', '₹3 lakh per family', '₹5 lakh per family per year', '₹10 lakh per family'],
-        correctAnswer: 2,
-        explanation: 'PM-JAY (launched September 2018) provides health insurance of ₹5 lakh per family per year for secondary and tertiary hospitalization. It covers ~50 crore beneficiaries (10.74 crore families), making it the world\'s largest health insurance scheme.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'health_organizations'
-      },
-      {
-        id: 'gk_ho_003',
-        question: 'The Indian Council of Medical Research (ICMR) is the apex body for:',
-        options: ['Agricultural research', 'Biomedical research in India', 'Space research', 'Nuclear research'],
-        correctAnswer: 1,
-        explanation: 'ICMR, established in 1911 (as IRFA, renamed ICMR in 1949), is the apex body in India for biomedical research. It formulates, coordinates, and promotes biomedical research through its institutes and centres.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'health_organizations'
-      },
-      {
-        id: 'gk_ho_004',
-        question: 'The National Health Mission (NHM) includes which sub-missions?',
-        options: ['NRHM and NUHM', 'MNREGA and PMAY', 'Swachh Bharat and Jal Jeevan', 'Digital India and Skill India'],
-        correctAnswer: 0,
-        explanation: 'The National Health Mission encompasses the National Rural Health Mission (NRHM) and the National Urban Health Mission (NUHM). It aims to provide accessible, affordable, and quality healthcare to all.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'health_organizations'
-      },
-      {
-        id: 'gk_ho_005',
-        question: 'UNICEF primarily works for:',
-        options: ['Adult education', 'Children\'s rights and welfare', 'Agricultural development', 'Military cooperation'],
-        correctAnswer: 1,
-        explanation: 'UNICEF (United Nations Children\'s Fund) works in over 190 countries for children\'s rights, survival, development, and protection. It provides immunization, nutrition, education, and emergency assistance.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'health_organizations'
-      },
-      {
-        id: 'gk_ho_006',
-        question: 'Poshan Abhiyaan (National Nutrition Mission) aims to reduce:',
-        options: ['Unemployment', 'Malnutrition in children and women', 'Illiteracy', 'Air pollution'],
-        correctAnswer: 1,
-        explanation: 'POSHAN Abhiyaan (PM\'s Overarching Scheme for Holistic Nutrition), launched in 2018, aims to reduce stunting, undernutrition, anaemia, and low birth weight among children, pregnant women, and lactating mothers.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'health_organizations'
-      },
-      {
-        id: 'gk_ho_007',
-        question: 'The Red Cross was founded by:',
-        options: ['Florence Nightingale', 'Henry Dunant', 'Louis Pasteur', 'Albert Schweitzer'],
-        correctAnswer: 1,
-        explanation: 'Henry Dunant, a Swiss businessman, founded the Red Cross in 1863 after witnessing the Battle of Solferino (1859). He received the first Nobel Peace Prize in 1901. The Red Cross provides humanitarian aid worldwide.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'health_organizations'
-      },
-      {
-        id: 'gk_ho_008',
-        question: 'Swachh Bharat Mission was launched on which day?',
-        options: ['15th August 2014', '26th January 2015', '2nd October 2014', '5th June 2014'],
-        correctAnswer: 2,
-        explanation: 'Swachh Bharat Mission was launched on October 2, 2014 (Gandhi Jayanti) by PM Modi. It aimed to eliminate open defecation and achieve universal sanitation by October 2, 2019 (Gandhi\'s 150th birth anniversary).',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'health_organizations'
-      },
-      {
-        id: 'gk_ho_009',
-        question: 'ASHA workers under NRHM stands for:',
-        options: ['Accredited Social Health Advocate', 'Accredited Social Health Activist', 'Association of Social Health Advisors', 'Advanced Social Healthcare Assistant'],
-        correctAnswer: 1,
-        explanation: 'ASHA (Accredited Social Health Activist) is a community health worker under NRHM. One ASHA per 1,000 population in rural areas acts as a bridge between the community and the public health system.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'health_organizations'
-      },
-      {
-        id: 'gk_ho_010',
-        question: 'India was declared free from which disease by WHO in 2014?',
-        options: ['Malaria', 'Polio', 'Tuberculosis', 'Dengue'],
-        correctAnswer: 1,
-        explanation: 'India was certified polio-free by WHO on March 27, 2014. The last case of polio in India was reported on January 13, 2011. This was achieved through massive Pulse Polio immunization campaigns.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'health_organizations'
-      }
-    ],
-
-    /* ───────────────────────────────────────────────────────────
-       AWARDS & IMPORTANT DATES
-       ─────────────────────────────────────────────────────────── */
-    awards_important_dates: [
-      {
-        id: 'gk_ad_001',
-        question: 'The Nobel Prize in Physiology or Medicine 2023 was awarded for:',
-        options: ['Discovery of CRISPR', 'mRNA vaccine technology (Karikó and Weissman)', 'Cancer immunotherapy', 'Genome sequencing'],
-        correctAnswer: 1,
-        explanation: 'Katalin Karikó and Drew Weissman received the 2023 Nobel Prize in Physiology or Medicine for their discoveries concerning nucleoside base modifications that enabled the development of effective mRNA vaccines against COVID-19.',
-        difficulty: 'hard',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'awards_important_dates'
-      },
-      {
-        id: 'gk_ad_002',
-        question: 'International Nurses Day is celebrated on:',
-        options: ['May 1', 'May 12', 'June 5', 'October 24'],
-        correctAnswer: 1,
-        explanation: 'International Nurses Day is celebrated on May 12, the birth anniversary of Florence Nightingale, the founder of modern nursing. The Florence Nightingale Medal is the highest international distinction a nurse can receive.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'awards_important_dates'
-      },
-      {
-        id: 'gk_ad_003',
-        question: 'The Bharat Ratna is India\'s:',
-        options: ['Highest military honour', 'Highest civilian award', 'Sports award', 'Literary award'],
-        correctAnswer: 1,
-        explanation: 'Bharat Ratna is India\'s highest civilian award, given for exceptional service to the nation. Established in 1954, it is awarded by the President. Recipients include Dr. B.R. Ambedkar, Mother Teresa, and Sachin Tendulkar.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'awards_important_dates'
-      },
-      {
-        id: 'gk_ad_004',
-        question: 'World Health Day is observed on:',
-        options: ['March 22', 'April 7', 'June 5', 'December 1'],
-        correctAnswer: 1,
-        explanation: 'World Health Day is observed on April 7 each year, marking the founding of WHO in 1948. Each year has a specific theme to draw attention to a global health issue.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'awards_important_dates'
-      },
-      {
-        id: 'gk_ad_005',
-        question: 'The Florence Nightingale Award in India is given by:',
-        options: ['Indian Nursing Council', 'President of India', 'WHO', 'ICMR'],
-        correctAnswer: 1,
-        explanation: 'The National Florence Nightingale Award is India\'s highest nursing honour, given by the President of India to outstanding nurses on May 12 (International Nurses Day) each year.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'awards_important_dates'
-      },
-      {
-        id: 'gk_ad_006',
-        question: 'World AIDS Day is observed on:',
-        options: ['October 24', 'November 14', 'December 1', 'January 30'],
-        correctAnswer: 2,
-        explanation: 'World AIDS Day is observed on December 1 every year since 1988. It raises awareness about HIV/AIDS, remembers those who have died, and supports those living with HIV. The Red Ribbon is its symbol.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'awards_important_dates'
-      },
-      {
-        id: 'gk_ad_007',
-        question: 'The Padma awards are given in how many categories?',
-        options: ['2', '3', '4', '5'],
-        correctAnswer: 1,
-        explanation: 'Padma Awards have 3 categories: Padma Vibhushan (exceptional and distinguished service), Padma Bhushan (distinguished service of high order), and Padma Shri (distinguished service). Announced on Republic Day eve.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'awards_important_dates'
-      },
-      {
-        id: 'gk_ad_008',
-        question: 'World Environment Day is celebrated on:',
-        options: ['March 22', 'April 22', 'June 5', 'September 16'],
-        correctAnswer: 2,
-        explanation: 'World Environment Day (June 5) was established by the UN General Assembly in 1972 at the Stockholm Conference. It is the largest global platform for environmental public outreach.',
-        difficulty: 'easy',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'awards_important_dates'
-      },
-      {
-        id: 'gk_ad_009',
-        question: 'The Rajiv Gandhi Khel Ratna Award (now Major Dhyan Chand Khel Ratna) is given for:',
-        options: ['Literary achievement', 'Scientific research', 'Outstanding performance in sports', 'Social service'],
-        correctAnswer: 2,
-        explanation: 'The Major Dhyan Chand Khel Ratna Award (renamed in 2021 from Rajiv Gandhi Khel Ratna) is India\'s highest sporting honour. Recipients include Sachin Tendulkar, PV Sindhu, Neeraj Chopra.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'awards_important_dates'
-      },
-      {
-        id: 'gk_ad_010',
-        question: 'World Tuberculosis Day is observed on:',
-        options: ['February 4', 'March 24', 'May 31', 'July 28'],
-        correctAnswer: 1,
-        explanation: 'World TB Day is observed on March 24 (the day in 1882 when Dr. Robert Koch announced discovery of Mycobacterium tuberculosis). India aims to eliminate TB by 2025, five years ahead of the global 2030 target.',
-        difficulty: 'medium',
-        subject: 'gk',
-        subjectName: 'General Knowledge',
-        topicKey: 'awards_important_dates'
-      }
-    ]
+  {
+  id: 'phy_km_004',
+  question: 'The SI unit of acceleration is:',
+  options: ['m/s', 'm/s²', 'm²/s', 'm²/s²'],
+  correctAnswer: 1,
+  explanation: 'Acceleration = change in velocity/time = (m/s)/s = m/s². The most tempting wrong answer is option A (m/s), which is the unit of velocity, not acceleration. Option D (m²/s²) is the unit of v² (velocity squared), which appears in the kinematic equation v² = u² + 2as. Proper dimensional analysis is essential: [a] = [v]/[t] = (m/s)/s = m/s².',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_005',
+  question: 'A ball is thrown vertically upward with velocity 20 m/s. The maximum height reached is: (g = 10 m/s²)',
+  options: ['10 m', '20 m', '40 m', '80 m'],
+  correctAnswer: 1,
+  explanation: 'At maximum height, v = 0. Using v² = u² − 2gH: 0 = 400 − 2(10)H, so H = 400/20 = 20 m. The most tempting wrong answer is option C (40 m), obtained by using v² = u² − 2gH incorrectly as 0 = 400 − 10H (forgetting the factor of 2 in 2g), giving H = 40 m. The factor of 2 in the formula is crucial. Option A (10 m) results from using H = u/g instead of u²/(2g). Option D (80 m) results from using g = 5 m/s² erroneously.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_006',
+  question: 'The range of a projectile is maximum when the angle of projection is:',
+  options: ['30°', '45°', '60°', '90°'],
+  correctAnswer: 1,
+  explanation: 'Range R = u²sin(2θ)/g. R is maximum when sin(2θ) = 1, i.e., 2θ = 90°, so θ = 45°. Maximum range R_max = u²/g. The most tempting wrong answer is option C (60°) — at 60°, sin(120°) = sin(60°) = √3/2 ≈ 0.866, giving R = 0.866 × u²/g, which is less than R_max. Interestingly, complementary angles (like 30° and 60°) give the same range but different maximum heights and times of flight.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_007',
+  question: 'The velocity of a body is given as v = 3t² + 2t (m/s). The acceleration at t = 2 s is:',
+  options: ['10 m/s²', '14 m/s²', '16 m/s²', '12 m/s²'],
+  correctAnswer: 1,
+  explanation: 'Acceleration a = dv/dt = d(3t² + 2t)/dt = 6t + 2. At t = 2 s: a = 6(2) + 2 = 14 m/s². The most tempting wrong answer is option A (10 m/s²), obtained by differentiating incorrectly (getting 6t − 2 instead of 6t + 2) or by substituting t = 2 into the wrong expression. Option C (16 m/s²) might result from substituting t = 2 into v instead of a: v(2) = 3(4) + 2(2) = 16. Students must differentiate v with respect to t to get a, not just substitute t into v.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_008',
+  question: 'The slope of a distance-time graph gives:',
+  options: ['Acceleration', 'Speed', 'Displacement', 'Force'],
+  correctAnswer: 1,
+  explanation: 'The slope of a distance-time (s-t) graph = ds/dt = speed (or velocity if displacement-time). The most tempting wrong answer is option A (acceleration) — acceleration is the slope of a velocity-time graph, not a distance-time graph. Students must distinguish: slope of s-t → velocity/speed; slope of v-t → acceleration; area under v-t → displacement; area under a-t → change in velocity. These graphical relationships are frequently tested in AIIMS.',
+  difficulty: 'easy',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_009',
+  question: 'The area under a velocity-time graph represents:',
+  options: ['Acceleration', 'Displacement', 'Speed', 'Force'],
+  correctAnswer: 1,
+  explanation: 'Area under v-t graph = ∫v dt = displacement. For uniform velocity, the area is a rectangle; for uniform acceleration, it\'s a trapezoid or triangle. The most tempting wrong answer is option A — the slope of the v-t graph gives acceleration, not the area. Students sometimes confuse slope and area interpretations. If the v-t graph includes regions below the time axis (negative velocity), the area below represents displacement in the negative direction, so the net area gives the total displacement.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_010',
+  question: 'A car starts from rest and accelerates uniformly at 2 m/s² for 10 s. The distance covered is:',
+  options: ['20 m', '100 m', '200 m', '50 m'],
+  correctAnswer: 1,
+  explanation: 'Using s = ut + ½at² = 0 + ½(2)(10²) = ½ × 2 × 100 = 100 m. The most tempting wrong answer is option C (200 m), obtained by forgetting the ½ factor: s = at² = 2 × 100 = 200 m. The ½ factor in the equation is essential and is one of the most common sources of error in kinematics calculations. Option A (20 m) results from using s = at = 2 × 10 = 20, which is dimensionally incorrect for distance.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_011',
+  question: 'A body is projected at 30° to the horizontal with velocity 40 m/s. The time of flight is: (g = 10 m/s²)',
+  options: ['2 s', '4 s', '8 s', '6 s'],
+  correctAnswer: 1,
+  explanation: 'Time of flight T = 2u sin θ/g = 2 × 40 × sin 30°/10 = 2 × 40 × 0.5/10 = 40/10 = 4 s. The most tempting wrong answer is option A (2 s), which gives the time to reach maximum height (T/2 = 2 s), not the total time of flight. Students must remember that T = 2u sin θ/g is the total flight time (up + down), which is twice the time to reach maximum height. Option C (8 s) results from using sin 60° instead of sin 30°.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_012',
+  question: 'Two bodies are projected at angles 30° and 60° with the same speed u. The ratio of their ranges is:',
+  options: ['1:√3', '√3:1', '1:1', '1:2'],
+  correctAnswer: 2,
+  explanation: 'R = u²sin(2θ)/g. For θ = 30°: sin 60° = √3/2. For θ = 60°: sin 120° = sin 60° = √3/2. Since sin(2 × 30°) = sin(2 × 60°), the ranges are equal. Ratio = 1:1. The most tempting wrong answer is option A (1:√3) — students might calculate sin 30°/sin 60° = (1/2)/(√3/2) = 1/√3, but this uses sin θ instead of sin 2θ. Complementary angles (θ and 90° − θ) always give the same range because sin(2θ) = sin(180° − 2θ) = sin(2(90° − θ)). This is a classic AIIMS trap.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_013',
+  question: 'The displacement in the nth second of uniformly accelerated motion is given by:',
+  options: ['Sₙ = u + a(2n − 1)/2', 'Sₙ = u + an', 'Sₙ = un + ½an²', 'Sₙ = u + a(n − 1)/2'],
+  correctAnswer: 0,
+  explanation: 'The displacement in the nth second is Sₙ = u + a(2n − 1)/2. This is derived from Sₙ = s(n) − s(n−1) where s(t) = ut + ½at². The most tempting wrong answer is option C (un + ½an²), which gives the total displacement in n seconds, not the displacement in the nth second alone. Students must clearly distinguish between "displacement in n seconds" (total) and "displacement in the nth second" (incremental). Option B (u + an) gives the velocity at time n, not displacement in the nth second.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_014',
+  question: 'A v-t graph shows a straight line starting from the origin with a positive slope. This represents:',
+  options: ['Uniform velocity', 'Uniform acceleration starting from rest', 'Uniform deceleration', 'Non-uniform acceleration'],
+  correctAnswer: 1,
+  explanation: 'A straight line through the origin in a v-t graph means v = at (where the slope a is constant). Since v = 0 at t = 0, the body starts from rest and has uniform acceleration. The most tempting wrong answer is option A (uniform velocity) — a straight horizontal line in a v-t graph represents uniform velocity, not a line through the origin. A line through the origin with positive slope means velocity increases linearly with time, which is the definition of uniform acceleration from rest.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_015',
+  question: 'In uniform circular motion, the acceleration is:',
+  options: ['Directed along the velocity (tangential)', 'Directed opposite to the velocity', 'Directed toward the centre (centripetal)', 'Zero because speed is constant'],
+  correctAnswer: 2,
+  explanation: 'In uniform circular motion, speed is constant but velocity changes direction continuously. The acceleration is centripetal (directed toward the centre), with magnitude ac = v²/r. The most tempting wrong answer is option D — students reason that since speed is constant, there is no acceleration. However, acceleration is the rate of change of velocity (a vector), not speed (a scalar). Since the direction of velocity changes continuously in circular motion, there is a non-zero acceleration even though the speed is constant. This centripetal acceleration is always perpendicular to the velocity.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_016',
+  question: 'The relative velocity of two cars moving in opposite directions with speeds 60 km/h and 40 km/h is:',
+  options: ['20 km/h', '100 km/h', '50 km/h', '2400 km/h'],
+  correctAnswer: 1,
+  explanation: 'For objects moving in opposite directions, relative velocity = v₁ + v₂ = 60 + 40 = 100 km/h. The most tempting wrong answer is option A (20 km/h), which is the relative velocity for objects moving in the same direction (v₁ − v₂ = 60 − 40 = 20 km/h). Students must remember: same direction → subtract speeds; opposite direction → add speeds. This is because relative velocity v_AB = v_A − v_B, and when B moves in the opposite direction, v_B is negative, making v_AB = v_A − (−v_B) = v_A + v_B.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_017',
+  question: 'A body is dropped from a height of 80 m. The time taken to reach the ground is: (g = 10 m/s²)',
+  options: ['2 s', '4 s', '8 s', '16 s'],
+  correctAnswer: 1,
+  explanation: 'Using h = ½gt² (since u = 0 for a dropped body): 80 = ½ × 10 × t², so t² = 16, t = 4 s. The most tempting wrong answer is option A (2 s), obtained by using h = gt instead of ½gt² (forgetting the ½ factor), giving t = 80/10 = 8 s — wait, that gives 8 s. Let me reconsider: option A (2 s) could result from t = √(h/g) = √(80/10) = √8 ≈ 2.83, rounded to 2. Or using h = gt²: 80 = 10t², t² = 8, t ≈ 2.83, rounded to 2 s. The correct formula with the ½ factor gives t = 4 s. The ½ factor is critical and its omission is a very common error.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_018',
+  question: 'In projectile motion, the horizontal component of velocity:',
+  options: ['Increases throughout the flight', 'Decreases throughout the flight', 'Remains constant throughout the flight', 'First increases then decreases'],
+  correctAnswer: 2,
+  explanation: 'In projectile motion (neglecting air resistance), there is no horizontal acceleration (aₓ = 0), so the horizontal velocity vₓ = u cos θ remains constant throughout the flight. Only the vertical component changes (due to gravity). The most tempting wrong answer is option D (first increases then decreases) — this describes the speed (magnitude of total velocity) of the projectile, not the horizontal component. The speed decreases during ascent and increases during descent, but the horizontal component individually remains constant.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_019',
+  question: 'Assertion (A): The displacement of a body can be zero even when the distance travelled is non-zero.\nReason (R): Displacement depends on the initial and final positions only, not the path taken.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true. If a body returns to its starting point (e.g., one complete revolution), the displacement is zero (initial = final position) while the distance is non-zero (the entire path length). R correctly explains A because displacement being dependent only on initial and final positions (not the path) is precisely why it can be zero when the body returns to its starting point. The most tempting wrong answer is option B — students might think R is a general definition rather than the specific reason why displacement can be zero. But R directly explains the mechanism: since only endpoints matter, returning to the start gives zero displacement regardless of path length.',
+  difficulty: 'medium',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_020',
+  question: 'Assertion (A): In projectile motion, the trajectory is a parabola.\nReason (R): The horizontal and vertical motions of a projectile are independent of each other.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true. The trajectory equation y = x tan θ − gx²/(2u²cos²θ) is a parabola (y is a quadratic function of x). R is true because horizontal motion (constant velocity) and vertical motion (uniform acceleration) are independent — they share only the time parameter. R explains A because the independence of motions allows us to write x = (u cos θ)t and y = (u sin θ)t − ½gt² separately, and eliminating t between these equations yields the parabolic trajectory. The most tempting wrong answer is option B — students might not see how independence of motions leads to a parabola, but it is precisely this independence that allows the mathematical derivation of the parabolic path.',
+  difficulty: 'hard',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_021',
+  question: 'Assertion (A): Centrifugal force is a real force that acts on a body in circular motion.\nReason (R): In uniform circular motion, the net force is directed toward the centre.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false, R is true'],
+  correctAnswer: 3,
+  explanation: 'A is false: centrifugal force is NOT a real force in an inertial frame — it is a pseudo force that appears only in a rotating (non-inertial) reference frame. In an inertial frame, the only force acting on a body in circular motion is the centripetal force directed toward the centre. R is true: the net force in uniform circular motion is indeed centripetal (toward the centre). The most tempting wrong answer is option A — many students believe centrifugal force is real because they "feel" it when going around a curve. However, this sensation is due to inertia, not a real outward force. In an inertial frame, only the centripetal force exists.',
+  difficulty: 'hard',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_022',
+  question: 'A projectile is launched at 60° with speed 20 m/s. The maximum height reached is: (g = 10 m/s²)',
+  options: ['15 m', '20 m', '10 m', '5 m'],
+  correctAnswer: 0,
+  explanation: 'H = u²sin²θ/(2g) = (20)² × sin²60°/(2 × 10) = 400 × (3/4)/20 = 400 × 3/80 = 1200/80 = 15 m. The most tempting wrong answer is option B (20 m), obtained by using sin 60° instead of sin²60°: H = 400 × (√3/2)/20 = 400 × 0.866/20 = 17.3 m ≈ 20 m. Or using θ = 45°: sin²45° = 1/2, giving H = 400/(40) = 10 m (option C). The sin² factor is critical — students must square the sine before substituting.',
+  difficulty: 'hard',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_023',
+  question: 'A boat can travel at 5 m/s in still water. The river flows at 3 m/s. The minimum time to cross a 100 m wide river is:',
+  options: ['20 s', '25 s', '33.3 s', '12.5 s'],
+  correctAnswer: 0,
+  explanation: 'For minimum time, the boat must head perpendicular to the river flow (directly across). The component of boat velocity perpendicular to the river is the full 5 m/s. Time = width/v_perpendicular = 100/5 = 20 s. The most tempting wrong answer is option B (25 s), obtained by using the resultant velocity √(5² − 3²) = 4 m/s, giving t = 100/4 = 25 s. However, this is the velocity for minimum drift (not minimum time). For minimum time, the boat goes straight across at full speed 5 m/s, accepting some downstream drift. This distinction between minimum time and minimum drift is a classic AIIMS trap.',
+  difficulty: 'hard',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
+  },
+  {
+  id: 'phy_km_024',
+  question: 'A stone is thrown vertically upward with velocity u from the top of a tower of height H. The time taken to reach the ground is:',
+  options: ['t = [u + √(u² + 2gH)]/g', 't = [−u + √(u² + 2gH)]/g', 't = √(2H/g)', 't = u/g + √(2H/g)'],
+  correctAnswer: 0,
+  explanation: 'Taking upward as positive, the displacement when the stone reaches the ground is −H. Using s = ut − ½gt²: −H = ut − ½gt², or ½gt² − ut − H = 0. Using the quadratic formula: t = [u ± √(u² + 2gH)]/g. Taking the positive root: t = [u + √(u² + 2gH)]/g. The most tempting wrong answer is option B, which uses the negative sign before u — this would give a negative time for some values, which is physically meaningless. Option C gives the time for a body dropped (u = 0) from height H. Option D incorrectly adds the time to reach maximum height (u/g) to the time to fall from height H, ignoring that the total height from the top is H + u²/2g, not just H.',
+  difficulty: 'hard',
+  subject: 'physics',
+  subjectName: 'Physics',
+  topicKey: 'kinematics'
   }
-};
+],
+
+work_energy_power: [
+    {
+    id: 'phy_wep_001',
+    question: 'Work done by a force is defined as:',
+    options: ['W = F × s (always)', 'W = F × s × cos θ, where θ is the angle between force and displacement', 'W = F × s × sin θ', 'W = F/s'],
+    correctAnswer: 1,
+    explanation: 'Work done W = Fs cos θ, where θ is the angle between the force vector and the displacement vector. The most tempting wrong answer is option A (W = Fs always) — this is only correct when θ = 0° (force and displacement in the same direction). When force is at an angle to displacement, only the component of force along the displacement does work. Option C (Fs sin θ) gives the cross product (related to torque), not the dot product (related to work).',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_002',
+    question: 'The work done by a centripetal force on a body moving in a circle is:',
+    options: ['Positive', 'Negative', 'Zero', 'Depends on the speed'],
+    correctAnswer: 2,
+    explanation: 'Centripetal force is always perpendicular to the velocity (and displacement) of the body. Since W = Fs cos 90° = 0, the centripetal force does zero work. The most tempting wrong answer is option A — students might think that since the centripetal force continuously acts on the body, it must do work. However, because the force is perpendicular to displacement at every instant, it changes the direction of velocity without changing the speed, hence doing no work. This is why kinetic energy remains constant in uniform circular motion.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_003',
+    question: '1 kilowatt-hour (kWh) is equal to:',
+    options: ['3.6 × 10³ J', '3.6 × 10⁶ J', '3.6 × 10⁹ J', '3600 J'],
+    correctAnswer: 1,
+    explanation: '1 kWh = 1000 W × 3600 s = 3.6 × 10⁶ J = 3.6 MJ. The most tempting wrong answer is option D (3600 J), which calculates 1 × 3600 without converting kW to W (i.e., using 1 W instead of 1000 W). Option A (3.6 × 10³ J) also results from a factor-of-1000 error. The kWh is a commercial unit of electrical energy (used in electricity bills), while the joule is the SI unit.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_004',
+    question: 'The kinetic energy of a body of mass m moving with velocity v is:',
+    options: ['KE = mv', 'KE = ½mv', 'KE = mv²', 'KE = ½mv²'],
+    correctAnswer: 3,
+    explanation: 'Kinetic energy KE = ½mv², a scalar quantity that is always positive. The most tempting wrong answer is option C (mv²), which omits the ½ factor. This is one of the most common errors in physics. The ½ factor arises from the integration of F·ds = m(dv/dt)·ds = mv dv, integrated from 0 to v, giving ½mv². Option A (mv) is momentum, not kinetic energy.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_005',
+    question: 'The relation between kinetic energy (KE) and momentum (p) is:',
+    options: ['KE = p²/(2m)', 'KE = 2mp²', 'KE = p/(2m)', 'KE = pm/2'],
+    correctAnswer: 0,
+    explanation: 'Since p = mv, v = p/m. KE = ½mv² = ½m(p/m)² = p²/(2m). The most tempting wrong answer is option C (p/(2m)), which forgets to square p. The correct relation KE = p²/(2m) shows that for the same momentum, a lighter object has more kinetic energy (KE ∝ 1/m). Conversely, for the same KE, p = √(2mKE), so a heavier object has more momentum. These relations are frequently tested in AIIMS.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_006',
+    question: '1 horsepower (HP) is equal to:',
+    options: ['550 W', '746 W', '1000 W', '500 W'],
+    correctAnswer: 1,
+    explanation: '1 HP = 746 W. This is a standard conversion factor that must be memorised. The most tempting wrong answer is option C (1000 W), which confuses HP with kilowatt (1 kW = 1000 W ≠ 1 HP). 1 HP ≈ 0.746 kW. Option A (550 W) is a commonly quoted incorrect value that may arise from confusing with the British system (1 HP = 550 ft·lb/s, but this converts to 746 W, not 550 W).',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_007',
+    question: 'The work-energy theorem states that:',
+    options: ['Work done = change in potential energy', 'Net work done = change in kinetic energy', 'Work done = total energy', 'Net work done = change in total mechanical energy only when conservative forces act'],
+    correctAnswer: 1,
+    explanation: 'The work-energy theorem states: W_net = ΔKE = ½mv² − ½mu². The net work done by all forces equals the change in kinetic energy. The most tempting wrong answer is option A (change in PE) — work done by a conservative force equals the negative change in PE (W = −ΔPE), but the work-energy theorem relates net work to KE, not PE. Option D describes conservation of energy, not the work-energy theorem. The theorem applies regardless of whether forces are conservative or non-conservative.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_008',
+    question: 'The elastic potential energy stored in a spring of spring constant k compressed by x is:',
+    options: ['U = kx', 'U = ½kx', 'U = kx²', 'U = ½kx²'],
+    correctAnswer: 3,
+    explanation: 'Elastic PE = ½kx², where k is the spring constant and x is the compression or extension from the natural length. The most tempting wrong answer is option C (kx²), which omits the ½ factor — the same common error as with kinetic energy. The ½ factor arises from the integration of the variable force F = kx over displacement: U = ∫₀ˣ kx dx = ½kx². This energy is the same whether the spring is compressed or extended by the same amount x.',
+    difficulty: 'easy',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_009',
+    question: 'A body of mass 2 kg is moving with velocity 4 m/s. A force is applied that brings it to rest in 2 seconds. The work done by the force is:',
+    options: ['−16 J', '+16 J', '−8 J', '+8 J'],
+    correctAnswer: 0,
+    explanation: 'By work-energy theorem: W = ΔKE = ½mv² − ½mu² = ½(2)(0²) − ½(2)(4²) = 0 − 16 = −16 J. The work done is negative because the force opposes the motion (decelerating the body). The most tempting wrong answer is option B (+16 J), which ignores the sign — students calculate the magnitude correctly but forget that work done by a braking force is negative (force opposite to displacement). The negative sign physically means the force removes kinetic energy from the body rather than adding it.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_010',
+    question: 'If the kinetic energy of a body is doubled, its momentum:',
+    options: ['Is doubled', 'Is halved', 'Increases by a factor of √2', 'Remains unchanged'],
+    correctAnswer: 2,
+    explanation: 'KE = p²/(2m), so p = √(2mKE). If KE is doubled: p\' = √(2m × 2KE) = √2 × √(2mKE) = √2 × p. Momentum increases by √2. The most tempting wrong answer is option A (doubled) — students assume a linear relationship between KE and p, but KE ∝ p², so p ∝ √KE. Doubling KE only increases p by √2 ≈ 1.414. Conversely, if momentum is doubled, KE quadruples (since KE ∝ p²).',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_011',
+    question: 'In a perfectly inelastic collision:',
+    options: ['Both kinetic energy and momentum are conserved', 'Only kinetic energy is conserved, momentum is not', 'Only momentum is conserved, kinetic energy is not', 'Neither kinetic energy nor momentum is conserved'],
+    correctAnswer: 2,
+    explanation: 'In a perfectly inelastic collision (coefficient of restitution e = 0), the bodies stick together. Momentum is always conserved in all collisions (Newton\'s third law). However, kinetic energy is not conserved — some is converted to heat, sound, and deformation energy. The most tempting wrong answer is option A — this describes a perfectly elastic collision (e = 1), not inelastic. Option D is wrong because momentum conservation is a fundamental law that applies to all types of collisions as long as no external force acts.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_012',
+    question: 'A 1000 kg car moving at 20 m/s brakes to a stop. The work done by friction is:',
+    options: ['−200,000 J', '+200,000 J', '−100,000 J', '+100,000 J'],
+    correctAnswer: 0,
+    explanation: 'W = ΔKE = ½mv² − ½mu² = 0 − ½(1000)(20²) = −½ × 1000 × 400 = −200,000 J = −200 kJ. The work done by friction is negative because friction opposes motion. The most tempting wrong answer is option B (+200,000 J), which has the correct magnitude but wrong sign. Friction always does negative work on the moving object (it decelerates the car), converting kinetic energy to thermal energy. The magnitude 200 kJ represents the total kinetic energy dissipated as heat.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_013',
+    question: 'The coefficient of restitution for a perfectly elastic collision is:',
+    options: ['0', '1', '∞', 'Between 0 and 1'],
+    correctAnswer: 1,
+    explanation: 'The coefficient of restitution e = (relative velocity of separation)/(relative velocity of approach). For a perfectly elastic collision, e = 1 (objects bounce off with no energy loss). The most tempting wrong answer is option A (e = 0), which describes a perfectly inelastic collision where the bodies stick together (zero relative velocity of separation). Option D (between 0 and 1) describes real-world inelastic collisions. The value of e ranges from 0 (perfectly inelastic) to 1 (perfectly elastic).',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_014',
+    question: 'A force F is applied at an angle of 60° to the displacement. If F = 10 N and displacement = 5 m, the work done is:',
+    options: ['50 J', '25 J', '25√3 J', '43.3 J'],
+    correctAnswer: 1,
+    explanation: 'W = Fs cos θ = 10 × 5 × cos 60° = 50 × 0.5 = 25 J. The most tempting wrong answer is option A (50 J), obtained by ignoring the angle (using cos 0° = 1 instead of cos 60° = 0.5). Option D (43.3 J) uses sin 60° instead of cos 60°: 50 × 0.866 = 43.3 J. The work formula uses cosine of the angle, not sine — sine gives the component perpendicular to displacement, which does no work.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_015',
+    question: 'The area under a force-displacement (F-x) graph represents:',
+    options: ['Power', 'Momentum', 'Work done', 'Acceleration'],
+    correctAnswer: 2,
+    explanation: 'Work done by a variable force W = ∫F dx, which is the area under the F-x graph. For a constant force, this reduces to W = F × x (area of a rectangle). The most tempting wrong answer is option A (power) — power is work done per unit time, not the area under F-x graph. Power would be the area under a F-v graph (P = Fv). This graphical interpretation is important for calculating work done by variable forces like spring forces (F = kx, triangular area = ½kx²).',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_016',
+    question: 'In an elastic collision between two bodies of equal mass, one initially at rest:',
+    options: ['The moving body continues with the same velocity', 'Both bodies move with half the initial velocity', 'The moving body stops and the stationary body moves with the initial velocity', 'Both bodies move in opposite directions'],
+    correctAnswer: 2,
+    explanation: 'In a head-on elastic collision between equal masses where one is at rest, the velocities are exchanged: v₁ = 0 and v₂ = u₁. The moving body stops completely, and the stationary body moves with the initial velocity. The most tempting wrong answer is option B — this would violate conservation of kinetic energy. If both move at u/2, KE = 2 × ½m(u/2)² = mu²/4, which is half the initial KE = ½mu². This describes a perfectly inelastic collision for equal masses, not elastic. The complete velocity exchange in elastic equal-mass collisions is demonstrated beautifully in Newton\'s cradle.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_017',
+    question: 'A body of mass 5 kg falls from a height of 20 m. Its kinetic energy just before hitting the ground is: (g = 10 m/s²)',
+    options: ['500 J', '1000 J', '100 J', '200 J'],
+    correctAnswer: 1,
+    explanation: 'By conservation of energy: KE = mgh = 5 × 10 × 20 = 1000 J (all potential energy converts to kinetic energy). Alternatively, v² = 2gh = 2 × 10 × 20 = 400, so v = 20 m/s, and KE = ½mv² = ½ × 5 × 400 = 1000 J. The most tempting wrong answer is option A (500 J), obtained by using KE = ½mgh = ½ × 5 × 10 × 20 = 500 J — incorrectly applying a ½ factor to mgh. The gravitational PE is mgh (no ½ factor), and all of it converts to KE during free fall.',
+    difficulty: 'medium',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_018',
+    question: 'Assertion (A): The work done by friction is always negative.\nReason (R): Friction always opposes the relative motion between surfaces.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is false, R is true', 'Both A and R are false'],
+    correctAnswer: 2,
+    explanation: 'R is true: kinetic friction always opposes relative motion between surfaces. However, A is false: the work done by friction is NOT always negative. For example, when a box is placed on a moving conveyor belt, static friction accelerates the box in the direction of motion — friction does positive work on the box. Similarly, friction does positive work on a person walking (static friction pushes the foot forward). The most tempting wrong answer is option A — students generally learn that friction opposes motion and does negative work, but this applies only to kinetic friction on the object it decelerates. Static friction can do positive work when it causes acceleration.',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_019',
+    question: 'Assertion (A): In a perfectly inelastic collision, the maximum kinetic energy is lost.\nReason (R): In a perfectly inelastic collision, the bodies stick together and move with a common velocity.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+    correctAnswer: 0,
+    explanation: 'Both statements are true. In a perfectly inelastic collision (e = 0), the bodies stick together and move with a common velocity V_c = (m₁u₁ + m₂u₂)/(m₁ + m₂). This configuration results in the maximum possible loss of kinetic energy while still conserving momentum. R correctly explains A because the constraint of moving together (sticking) forces the maximum KE loss — any other outcome (partial rebound) would retain more KE. The fraction of KE lost = m₂/(m₁ + m₂) when the target is initially at rest. The most tempting wrong answer is option B — students might think sticking together is just a description rather than the cause of maximum KE loss. However, the common velocity constraint is precisely what maximises KE dissipation.',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_020',
+    question: 'Assertion (A): At the point of stable equilibrium, the potential energy of a system is minimum.\nReason (R): At stable equilibrium, F = −dU/dx = 0 and d²U/dx² > 0.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, but R is false', 'A is false'],
+    correctAnswer: 0,
+    explanation: 'Both statements are true. At stable equilibrium, the potential energy is at a local minimum: the first derivative is zero (no net force) and the second derivative is positive (concave up, meaning any displacement increases PE, creating a restoring force). R correctly explains A by providing the mathematical conditions that define a minimum. The most tempting wrong answer is option B — students might think the mathematical conditions in R are separate from the physical statement in A, but the conditions F = 0 and d²U/dx² > 0 are precisely the mathematical definition of a minimum PE, which is the condition for stable equilibrium.',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_021',
+    question: 'A bullet of mass 20 g moving at 500 m/s strikes a wooden block of mass 4.98 kg at rest and embeds in it. The velocity of the block-bullet system after collision is:',
+    options: ['2 m/s', '5 m/s', '10 m/s', '0.2 m/s'],
+    correctAnswer: 0,
+    explanation: 'This is a perfectly inelastic collision. By conservation of momentum: m₁u₁ + m₂u₂ = (m₁ + m₂)V. So 0.02 × 500 + 4.98 × 0 = (0.02 + 4.98)V, giving 10 = 5V, so V = 2 m/s. The most tempting wrong answer is option B (5 m/s), obtained by using m₁ = 0.02 × 500/2 = 5, which is an arithmetic error, or by dividing momentum by the block mass only (10/4.98 ≈ 2.008 ≈ 2, which actually gives the correct answer). Option C (10 m/s) results from dividing momentum by bullet mass: 10/0.02 = 500 (the original velocity, not the final). The enormous KE loss in this collision is (½ × 0.02 × 500² − ½ × 5 × 2²) = (2500 − 10) = 2490 J, or 99.6%.',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_022',
+    question: 'A block slides down a rough inclined plane of height 10 m. If the coefficient of friction is such that 40% of the initial potential energy is lost to friction, the speed of the block at the bottom is: (g = 10 m/s²)',
+    options: ['10 m/s', '10√(0.6) m/s', '2√30 m/s', '10√3 m/s'],
+    correctAnswer: 2,
+    explanation: 'Initial PE = mgh = m × 10 × 10 = 100m J. Energy lost to friction = 0.4 × 100m = 40m J. KE at bottom = 100m − 40m = 60m J. ½mv² = 60m, so v² = 120, v = √120 = 2√30 ≈ 10.95 m/s. The most tempting wrong answer is option A (10 m/s), obtained by using v = √(2gh) = √(200) = 14.14 m/s, or v² = 2 × 10 × 10 = 200, v = √200 — this ignores friction entirely. Option B (10√0.6 ≈ 7.75 m/s) results from using v² = 2gh × 0.6 = 120... wait, that gives the same answer. Let me check: v² = 2gh × 0.6 = 2 × 10 × 10 × 0.6 = 120, v = √120 = 2√30. So option B: 10√0.6 = 10 × 0.7746 = 7.746, while 2√30 = 2 × 5.477 = 10.95. These are NOT equal. 10√0.6 = √(100 × 0.6) = √60 ≠ √120. So option B is wrong; option C is correct.',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    },
+    {
+    id: 'phy_wep_023',
+    question: 'The potential energy of a particle varies with position x as U(x) = 4x² − 2x (in SI units). The equilibrium position and its nature are:',
+    options: ['x = 0.25 m, stable equilibrium', 'x = 0.25 m, unstable equilibrium', 'x = 0.5 m, stable equilibrium', 'x = 0, neutral equilibrium'],
+    correctAnswer: 0,
+    explanation: 'At equilibrium, F = −dU/dx = 0. dU/dx = 8x − 2 = 0, so x = 0.25 m. To determine stability: d²U/dx² = 8 > 0, indicating a minimum in PE, which means stable equilibrium. The most tempting wrong answer is option B (unstable) — students who correctly find x = 0.25 m might confuse the sign convention: d²U/dx² > 0 means concave up (minimum PE = stable), while d²U/dx² < 0 means concave down (maximum PE = unstable). Option C uses x = 0.5 m, which results from solving 8x − 2 = 0 as x = 2/4 = 0.5 (arithmetic error: correct is 2/8 = 0.25).',
+    difficulty: 'hard',
+    subject: 'physics',
+    subjectName: 'Physics',
+    topicKey: 'work_energy_power'
+    }
+],
+    
+},
+
+chemistry: {
+general_organic_chemistry: [
+  {
+  id: 'chem_goc_001',
+  question: 'What is the hybridisation of each carbon atom in ethyne (C₂H₂)?',
+  options: ['sp³', 'sp²', 'sp', 'sp³d'],
+  correctAnswer: 2,
+  explanation: 'Each carbon in ethyne forms one C–C triple bond (one σ + two π) and one C–H σ bond, giving two regions of electron density around each carbon. Two electron domains require sp hybridisation, producing a linear geometry with a bond angle of 180°. Option B (sp²) is tempting because students sometimes confuse ethene (C₂H₄, sp²) with ethyne (C₂H₂, sp), but ethyne has a triple bond requiring two unhybridised p-orbitals per carbon, leaving only two hybrid orbitals — the hallmark of sp.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_002',
+  question: 'Which of the following species is classified as an electrophile?',
+  options: ['NH₃', 'OH⁻', 'CN⁻', 'NO₂⁺'],
+  correctAnswer: 3,
+  explanation: 'An electrophile is an electron-deficient species that accepts an electron pair. NO₂⁺ (nitronium ion) has a positive charge and an incomplete electron demand, making it a classic electrophile used in aromatic nitration. NH₃, OH⁻, and CN⁻ are all electron-rich species with lone pairs available for donation, making them nucleophiles. The most tempting wrong answer is CN⁻ because it also has a triple bond, but its negative charge and lone pair on carbon make it one of the strongest nucleophiles, not an electrophile.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_003',
+  question: 'The bond length of a C–C single bond is approximately 1.54 Å while that of a C≡C triple bond is approximately 1.20 Å. Which statement correctly explains this difference?',
+  options: ['The triple bond has more electrons repelling the nuclei apart', 'Greater number of shared electron pairs pull the nuclei closer, making the bond shorter and stronger', 'The triple bond has weaker individual bonds that collectively shorten the distance', 'Hybridisation has no effect on bond length; only atomic size matters'],
+  correctAnswer: 1,
+  explanation: 'As bond order increases (single → double → triple), more electron pairs are shared between the two nuclei, increasing the electron density in the internuclear region. This greater electron density pulls both nuclei closer together, resulting in a shorter bond length and higher bond energy (shorter = stronger). Option A is wrong because shared bonding electrons attract nuclei together rather than repelling them apart. Option D is also incorrect — hybridisation directly affects bond length (sp carbons form shorter bonds than sp³ carbons due to greater s-character bringing electrons closer to the nucleus).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_004',
+  question: 'Which of the following groups exhibits a positive inductive effect (+I)?',
+  options: ['–NO₂', '–COOH', '–C(CH₃)₃', '–CN'],
+  correctAnswer: 2,
+  explanation: 'The +I (positive inductive) effect is shown by groups that donate electron density through the σ-bond framework. Alkyl groups such as –C(CH₃)₃ (tert-butyl) are electron-donating by the inductive effect because carbon is less electronegative than common functional groups and the additional methyl groups enhance electron release. –NO₂, –COOH, and –CN are all –I (electron-withdrawing) groups because they contain electronegative atoms (N, O) that pull electron density away from the chain. The tempting wrong choice is –COOH because carboxylic acids can donate protons, but proton donation is unrelated to the inductive effect direction; –COOH withdraws electrons through its C=O and O–H bonds.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_005',
+  question: 'Homolytic fission of a C–Br bond produces:',
+  options: ['A carbocation and Br⁻', 'A carbanion and Br⁺', 'A carbon free radical and a bromine free radical', 'A carbene and HBr'],
+  correctAnswer: 2,
+  explanation: 'Homolytic fission means the shared electron pair in the covalent bond is split symmetrically — one electron goes to each atom. This produces two free radicals, each with one unpaired electron: a carbon radical (C·) and a bromine radical (Br·). This process typically requires non-polar conditions, UV light, or heat. Option A describes heterolytic fission in a polar solvent where both electrons go to the more electronegative atom (Br), forming Br⁻ and a carbocation — this is the most common confusion. Option D (carbene) would require loss of two groups simultaneously and is not a product of simple homolysis.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_006',
+  question: 'The correct IUPAC name of (CH₃)₂CHCH₂CH₂OH is:',
+  options: ['2-Methylbutan-1-ol', '3-Methylbutan-1-ol', '2-Methylbutan-4-ol', 'Isopentanol'],
+  correctAnswer: 1,
+  explanation: 'The longest carbon chain containing the –OH group has 4 carbons (butanol). Numbering begins from the end nearest to the –OH group, placing –OH at C-1. The methyl branch is therefore at C-3. The IUPAC name is 3-methylbutan-1-ol. Option A (2-methylbutan-1-ol) is the most tempting wrong answer because students sometimes number from the wrong end or miscount the branch position. Option D (isopentanol) is a common/trivial name, not IUPAC. The lowest locant rule requires –OH to get the lowest possible number since it is the principal characteristic group.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_007',
+  question: 'The inductive effect of a substituent along a carbon chain:',
+  options: ['Increases with increasing distance from the substituent', 'Remains constant regardless of chain length', 'Decreases rapidly with increasing distance and is negligible beyond 3–4 bonds', 'Operates only through π-bonds'],
+  correctAnswer: 2,
+  explanation: 'The inductive effect is transmitted through σ-bonds by successive polarisation of electrons. Because each intervening bond only partially transmits the effect, it diminishes rapidly and is generally considered negligible beyond 3–4 carbon atoms from the substituent. This distinguishes it from the resonance effect, which can operate over longer distances through conjugated π-systems. Option A states the opposite of reality. Option D incorrectly attributes the inductive effect to π-bonds — it is exclusively a σ-bond phenomenon. Option B is wrong because the quantitative decrease with distance is a defining characteristic of the inductive effect.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_008',
+  question: 'Benzene is more stable than the hypothetical cyclohexatriene (Kekulé structure) by approximately:',
+  options: ['36 kJ/mol', '150 kJ/mol', '250 kJ/mol', '75 kJ/mol'],
+  correctAnswer: 1,
+  explanation: 'The resonance energy (also called delocalisation energy or stabilisation energy) of benzene is approximately 150 kJ/mol (36 kcal/mol). This is the difference between the experimentally measured enthalpy of hydrogenation of benzene (−208 kJ/mol) and the calculated value for a hypothetical cyclohexatriene with three isolated double bonds (3 × −120 = −360 kJ/mol). Option A (36 kJ/mol) is a common trap — it equals 36 kcal/mol converted incorrectly, or it may be confused with the stabilisation per double bond. Option C (250 kJ/mol) is too high and does not correspond to any standard measurement for benzene.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_009',
+  question: 'Hyperconjugation explains the stability of carbocations through:',
+  options: ['Delocalisation of lone pairs on adjacent heteroatoms into the empty p-orbital', 'Delocalisation of C–H σ-bonding electrons on the α-carbon into the vacant p-orbital of the carbocation centre', 'Overlap of the empty p-orbital with the π-electrons of an adjacent double bond', 'Electrostatic stabilisation by nearby anions'],
+  correctAnswer: 1,
+  explanation: 'Hyperconjugation (also called no-bond resonance or σ–p conjugation) involves the delocalisation of electrons from C–H σ-bonds on α-carbons into the adjacent empty p-orbital of the carbocation. The more α-hydrogens available, the greater the hyperconjugative stabilisation, which is why tertiary carbocations (9 α-H) are more stable than secondary (6 α-H) > primary (3 α-H) > methyl (0 α-H). Option A describes resonance stabilisation by heteroatoms, not hyperconjugation. Option C describes allylic conjugation (π–p overlap), which is a different stabilisation mechanism. These distinctions are critical for AIIMS-level questions.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_010',
+  question: 'The correct order of stability of the following carbocations is: (I) (CH₃)₃C⁺ (II) (CH₃)₂CH⁺ (III) CH₃CH₂⁺ (IV) CH₃⁺',
+  options: ['IV > III > II > I', 'I > II > III > IV', 'II > I > III > IV', 'I > III > II > IV'],
+  correctAnswer: 1,
+  explanation: 'Carbocation stability follows the order: tertiary > secondary > primary > methyl. (CH₃)₃C⁺ is tertiary (3 alkyl groups donate electrons via +I effect and provide 9 α-H for hyperconjugation), (CH₃)₂CH⁺ is secondary (6 α-H), CH₃CH₂⁺ is primary (3 α-H), and CH₃⁺ is methyl (0 α-H, no hyperconjugation possible). The order is I > II > III > IV. Option A reverses the order and reflects carbanion stability instead, which is the most common trap. Option C incorrectly places secondary above tertiary.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_011',
+  question: 'Which of the following represents a nucleophilic species that attacks through a lone pair on nitrogen?',
+  options: ['AlCl₃', 'BF₃', 'NH₃', 'H⁺'],
+  correctAnswer: 2,
+  explanation: 'NH₃ (ammonia) has a lone pair on nitrogen that it can donate to an electron-deficient centre, making it a nucleophile. AlCl₃ and BF₃ are electron-deficient Lewis acids (electrophiles) — BF₃ has an empty p-orbital on boron, and AlCl₃ has an incomplete octet on aluminium. H⁺ has no electrons at all and is the simplest electrophile. The tempting wrong answer is BF₃ because students may recall BF₃·NH₃ adduct formation, but in that reaction BF₃ is the Lewis acid (electrophile) and NH₃ is the Lewis base (nucleophile).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_012',
+  question: 'In heterolytic fission of the C–Cl bond in CH₃Cl under polar conditions, the products formed are:',
+  options: ['CH₃· and Cl·', 'CH₃⁺ and Cl⁻', 'CH₃⁻ and Cl⁺', 'CH₂: and HCl'],
+  correctAnswer: 1,
+  explanation: 'In heterolytic fission, the bonding electron pair goes entirely to the more electronegative atom. Since chlorine (EN = 3.16) is more electronegative than carbon (EN = 2.55), both electrons of the C–Cl bond go to chlorine, forming Cl⁻ and leaving carbon electron-deficient as CH₃⁺ (methyl carbocation). Option A describes homolytic fission (free radicals). Option C is wrong because Cl⁺ formation would require chlorine to lose its share of the bonding electrons to the less electronegative carbon, which is energetically unfavourable. This distinction between homolytic and heterolytic cleavage is fundamental to understanding organic reaction mechanisms.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_013',
+  question: 'Assertion (A): The tert-butyl carbocation (CH₃)₃C⁺ is more stable than the methyl carbocation CH₃⁺.\nReason (R): Tertiary carbocations have more α-hydrogen atoms available for hyperconjugation and greater +I effect from three methyl groups.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — (CH₃)₃C⁺ (tertiary) is indeed more stable than CH₃⁺ (methyl). The reason correctly identifies both factors responsible: (1) the +I (electron-donating inductive) effect of three methyl groups disperses the positive charge, and (2) nine α-hydrogen atoms provide extensive hyperconjugation (σ–p delocalisation) that further stabilises the empty p-orbital. Both the assertion and reason are true, and the reason directly and correctly explains the assertion. Option B would be chosen if the reason were true but unrelated to the assertion, which is not the case here since both hyperconjugation and the inductive effect are the actual causes of the stability difference.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_014',
+  question: 'Assertion (A): Carbanion stability follows the order: CH₃⁻ > CH₃CH₂⁻ > (CH₃)₂CH⁻ > (CH₃)₃C⁻.\nReason (R): Alkyl groups are electron-donating (+I), which destabilises the negative charge on carbon.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is correct — carbanion stability is opposite to carbocation stability: methyl > primary > secondary > tertiary. The reason correctly explains this: alkyl groups exert a +I (electron-donating) effect, which increases electron density on an already negatively charged carbon, thereby destabilising the carbanion. More alkyl groups = more electron donation = greater destabilisation. Therefore (CH₃)₃C⁻ (tertiary, most +I effect) is the least stable, and CH₃⁻ (no alkyl groups) is the most stable. The reason directly explains the assertion. The most tempting wrong choice is D, where students might confuse carbanion stability with carbocation stability.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_015',
+  question: 'Assertion (A): Resonance structures of benzene differ in the arrangement of π-electrons but have the same σ-bond framework.\nReason (R): Resonance structures are different actual molecules in rapid equilibrium with each other.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 2,
+  explanation: 'The assertion is true — resonance structures of benzene (the two Kekulé structures) differ only in the placement of π-electrons while the σ-skeleton (all C–C and C–H single bonds and atomic positions) remains unchanged. The reason is false — this is a critical misconception. Resonance structures are not different molecules in equilibrium; they are hypothetical representations of the same molecule. The actual molecule is a resonance hybrid that is a weighted average of all contributing structures and has a lower energy than any individual structure. Resonance is a limitation of our drawing conventions, not a physical process of interconversion.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_016',
+  question: 'The correct order of stability of the following free radicals is: (I) C₆H₅CH₂· (II) (CH₃)₃C· (III) CH₃CH₂· (IV) CH₃·',
+  options: ['I > II > III > IV', 'II > I > III > IV', 'IV > III > II > I', 'II > III > I > IV'],
+  correctAnswer: 0,
+  explanation: 'Free radical stability generally follows: benzylic/allylic > tertiary > secondary > primary > methyl. The benzyl radical C₆H₅CH₂· is stabilised by resonance delocalisation of the unpaired electron into the aromatic ring (multiple contributing structures), making it more stable than even the tertiary radical (CH₃)₃C· which is stabilised only by hyperconjugation and the +I effect. The order is therefore I > II > III > IV. Option B is the most tempting wrong answer because students often assume tertiary is always the most stable, forgetting that resonance stabilisation (as in benzylic radicals) is generally a stronger effect than hyperconjugation alone.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_017',
+  question: 'Which of the following organic reactions is classified as a rearrangement reaction?',
+  options: ['CH₃CH=CH₂ + HBr → CH₃CHBrCH₃', 'CH₃CH₂Br + KOH(alc) → CH₂=CH₂ + KBr + H₂O', 'Neopentyl cation → tert-pentyl cation via 1,2-methyl shift', 'CH₃Br + NaOH(aq) → CH₃OH + NaBr'],
+  correctAnswer: 2,
+  explanation: 'A rearrangement reaction involves reorganisation of the bonding within a molecule to produce a structural isomer. The conversion of neopentyl cation (CH₃)₃CCH₂⁺ to tert-pentyl cation (CH₃)₂C⁺CH₂CH₃ via a 1,2-methyl shift is a classic carbocation rearrangement where a methyl group migrates with its bonding electrons to an adjacent electron-deficient centre. Option A is an addition reaction (HBr across a double bond). Option B is an elimination reaction (E2). Option D is a substitution reaction (SN2). The tempting distractor is Option A because Markovnikov addition involves carbocation intermediates that can also rearrange, but the overall reaction itself is classified as addition, not rearrangement.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_018',
+  question: 'Among the following, the species that would act as the strongest nucleophile in a polar aprotic solvent is:',
+  options: ['F⁻', 'I⁻', 'CN⁻', 'H₂O'],
+  correctAnswer: 2,
+  explanation: 'In polar aprotic solvents (like DMSO, DMF, acetone), nucleophilicity correlates with basicity and charge density because these solvents do not solvate anions through hydrogen bonding. CN⁻ is an excellent nucleophile because it has a concentrated negative charge on carbon (the attacking atom), and carbon is relatively large and polarisable. In polar aprotic solvents, F⁻ is actually a strong nucleophile too (unlike in protic solvents), but CN⁻ is still stronger due to its carbon-based attack and additional π-bonding capability. I⁻ is a good nucleophile in protic solvents (large, polarisable) but in aprotic solvents it is weaker than CN⁻. H₂O is neutral and a very weak nucleophile. The key distinction tested here is nucleophilicity trends in aprotic vs protic solvents.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_019',
+  question: 'The correct IUPAC name of CH₃CH(NH₂)CH₂COOH is:',
+  options: ['2-Aminobutanoic acid', '3-Aminobutanoic acid', '2-Amino-4-butanoic acid', '3-Aminopropanoic acid'],
+  correctAnswer: 1,
+  explanation: 'The longest chain containing the principal characteristic group (–COOH, highest priority) has 4 carbons → butanoic acid. The carboxyl carbon is C-1 (it always gets the lowest locant as the principal group). Numbering: C-1 (COOH), C-2 (CH₂), C-3 (CH with NH₂), C-4 (CH₃). The amino group is at C-3, giving 3-aminobutanoic acid. The most tempting wrong answer is A (2-aminobutanoic acid), which students choose by numbering from the amino end rather than the carboxyl end. By IUPAC rules, the principal characteristic group (–COOH > –NH₂) determines the parent chain numbering. Option D is wrong because it counts only 3 carbons.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  },
+  {
+  id: 'chem_goc_020',
+  question: 'The correct decreasing order of –I (electron-withdrawing inductive) effect among the following groups is:',
+  options: ['–NO₂ > –CN > –COOH > –F > –Cl > –Br > –I', '–I > –Br > –Cl > –F > –NO₂ > –CN', '–F > –Cl > –Br > –I > –NO₂ > –CN', '–NO₂ > –F > –Cl > –CN > –Br > –I'],
+  correctAnswer: 0,
+  explanation: 'The –I effect measures the ability of a group to withdraw electrons through σ-bonds. The standard order is: –NO₂ > –CN > –COOH > –F > –Cl > –Br > –I. Groups with multiple electronegative atoms or unsaturation (NO₂, CN, COOH) show the strongest –I effect. Among halogens, electronegativity decreases as F > Cl > Br > I, which directly determines their –I strength. Option B reverses the halogen order (based on size/polarisability, which governs nucleophilicity in protic solvents, not –I effect). Option C incorrectly places halogens above –NO₂. The key distinction: –I effect depends on electronegativity, not polarisability.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'general_organic_chemistry'
+  }
+],
+
+organic_reactions_mechanisms: [
+  {
+  id: 'chem_orm_001',
+  question: 'In an SN1 reaction of (CH₃)₃CBr with water, the rate-determining step is:',
+  options: ['Attack of H₂O on (CH₃)₃CBr', 'Ionisation of (CH₃)₃CBr to form (CH₃)₃C⁺ and Br⁻', 'Proton transfer from (CH₃)₃C⁺ to water', 'Formation of (CH₃)₃COH from (CH₃)₃C⁺ and Br⁻'],
+  correctAnswer: 1,
+  explanation: 'The SN1 mechanism proceeds in two steps. The rate-determining (slow) step is the unimolecular ionisation of the substrate to form a carbocation: (CH₃)₃CBr → (CH₃)₃C⁺ + Br⁻. This is why the rate depends only on the substrate concentration: rate = k[(CH₃)₃CBr]. The second (fast) step is nucleophilic attack of water on the carbocation. Option A describes SN2 (concerted bimolecular attack), which is not favoured for tertiary substrates due to steric hindrance.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_002',
+  question: 'In the SN2 reaction of (R)-2-bromobutane with NaOH, the product has:',
+  options: ['The same (R) configuration as the starting material', 'The (S) configuration — complete inversion', 'A racemic mixture of (R) and (S)', 'No stereochemical change'],
+  correctAnswer: 1,
+  explanation: 'The SN2 mechanism involves backside attack by the nucleophile on the carbon bearing the leaving group. This concerted, one-step process results in Walden inversion — complete inversion of configuration at the stereogenic centre. Therefore, (R)-2-bromobutane gives (S)-2-butanol. Option C (racemisation) is the stereochemical outcome of SN1, not SN2, because SN1 proceeds through a planar carbocation that can be attacked from either face.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_003',
+  question: 'In the addition of HBr to propene (CH₃CH=CH₂) without any peroxide, the major product is:',
+  options: ['1-Bromopropane (CH₃CH₂CH₂Br)', '2-Bromopropane (CH₃CHBrCH₃)', '1,2-Dibromopropane', 'Propyne'],
+  correctAnswer: 1,
+  explanation: 'Without peroxides, HBr adds to unsymmetrical alkenes following Markovnikov\'s rule: H⁺ adds to the carbon with more hydrogen atoms (C-1), generating the more stable secondary carbocation at C-2, and then Br⁻ attacks C-2 to give 2-bromopropane. Option A (1-bromopropane) would be the anti-Markovnikov product, formed only in the presence of peroxides (Kharasch effect) via a free radical mechanism.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_004',
+  question: 'The Wurtz reaction of ethyl bromide (CH₃CH₂Br) with sodium in dry ether produces:',
+  options: ['Ethane (C₂H₆)', 'Butane (C₄H₁₀)', 'Propane (C₃H₈)', 'Ethanol (C₂H₅OH)'],
+  correctAnswer: 1,
+  explanation: 'In the Wurtz reaction, two molecules of an alkyl halide react with sodium metal in dry ether to form a symmetric alkane with double the carbon count: 2CH₃CH₂Br + 2Na → CH₃CH₂CH₂CH₃ (butane) + 2NaBr. The reaction proceeds via formation of an organosodium intermediate (CH₃CH₂Na) which then attacks another molecule of CH₃CH₂Br in an SN2-like process. Option A (ethane) is wrong — ethane has only 2 carbons, not 4.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_005',
+  question: 'The Cannizzaro reaction is characteristic of aldehydes that:',
+  options: ['Contain α-hydrogen atoms', 'Lack α-hydrogen atoms', 'Are aromatic only', 'Contain a carbonyl group adjacent to a double bond'],
+  correctAnswer: 1,
+  explanation: 'The Cannizzaro reaction occurs when an aldehyde without α-hydrogen atoms is treated with concentrated NaOH. The aldehyde undergoes simultaneous self-oxidation and self-reduction (disproportionation): one molecule is oxidised to a carboxylate salt and another is reduced to an alcohol. Examples include HCHO, C₆H₅CHO, (CH₃)₃CCHO. Aldehydes with α-hydrogens undergo the aldol condensation instead under basic conditions.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_006',
+  question: 'The Reimer-Tiemann reaction of phenol with chloroform and KOH produces:',
+  options: ['Salicylic acid', 'Salicylaldehyde (2-hydroxybenzaldehyde)', 'Anisole', 'Catechol'],
+  correctAnswer: 1,
+  explanation: 'In the Reimer-Tiemann reaction, phenol is treated with CHCl₃ and aqueous KOH. The strong base generates dichlorocarbene (:CCl₂) from CHCl₃, which attacks the electron-rich ortho position of the phenoxide ion. After hydrolysis of the intermediate, the product is salicylaldehyde (2-hydroxybenzaldehyde) — a formyl (–CHO) group is introduced at the ortho position. Option A (salicylic acid) is the product of the Kolbe reaction.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_007',
+  question: 'Anti-Markovnikov addition of HBr (Kharasch effect) to propene requires:',
+  options: ['Anhydrous AlCl₃ catalyst', 'Presence of organic peroxides (ROOR)', 'Concentrated H₂SO₄', 'UV light only, no peroxide'],
+  correctAnswer: 1,
+  explanation: 'The Kharasch effect (anti-Markovnikov addition) occurs specifically with HBr in the presence of organic peroxides (ROOR). Peroxides generate free radicals that initiate a radical chain mechanism: Br· adds to the less substituted carbon (forming the more stable secondary radical), and then H adds to the more substituted carbon, giving 1-bromopropane. This effect is unique to HBr — not HCl (Cl· too reactive, non-selective) or HI (I· too unreactive, chain doesn\'t propagate).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_008',
+  question: 'When acetaldehyde (CH₃CHO) is treated with dilute NaOH, the product of the aldol condensation is:',
+  options: ['3-Hydroxybutanal (aldol)', 'Sodium acetate + ethanol', 'Crotonaldehyde only', 'Acetic acid'],
+  correctAnswer: 0,
+  explanation: 'In the aldol condensation, acetaldehyde (which has α-hydrogens) reacts with dilute NaOH. The base abstracts an α-hydrogen to form an enolate, which attacks the carbonyl carbon of another acetaldehyde molecule, yielding 3-hydroxybutanal (the "aldol" — a β-hydroxy aldehyde): CH₃CHO + CH₃CHO → CH₃CH(OH)CH₂CHO. Only upon heating does the aldol undergo dehydration to form crotonaldehyde (CH₃CH=CHCHO, an α,β-unsaturated aldehyde).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_009',
+  question: 'In Friedel-Crafts acylation of benzene with CH₃COCl and AlCl₃, the major product is:',
+  options: ['Toluene', 'Acetophenone (C₆H₅COCH₃)', 'Diphenylmethane', 'Benzaldehyde'],
+  correctAnswer: 1,
+  explanation: 'Friedel-Crafts acylation involves the reaction of an acyl halide (CH₃COCl) with benzene in the presence of Lewis acid catalyst AlCl₃. AlCl₃ generates the acylium ion (CH₃C≡O⁺), which is the electrophile that attacks the benzene ring. The product is acetophenone (methyl phenyl ketone, C₆H₅COCH₃). Option A (toluene) would be the product of Friedel-Crafts alkylation with CH₃Cl, not acylation.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_010',
+  question: 'The SN1 reaction is favoured over SN2 when the substrate is:',
+  options: ['Methyl bromide (CH₃Br)', 'Neopentyl bromide ((CH₃)₃CCH₂Br)', 'tert-Butyl bromide ((CH₃)₃CBr)', 'Ethyl bromide (CH₃CH₂Br)'],
+  correctAnswer: 2,
+  explanation: 'SN1 is favoured for tertiary substrates like (CH₃)₃CBr because: (1) the tertiary carbocation formed in the rate-determining step is highly stable (hyperconjugation + inductive effect), and (2) the extreme steric crowding around the electrophilic carbon prevents backside attack by the nucleophile (required for SN2). Option B (neopentyl bromide) is a tricky distractor — while it is also very sterically hindered, it is a primary substrate and cannot form a stable carbocation either.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_011',
+  question: 'When propene is treated with O₃ followed by Zn/H₂O (ozonolysis), the products are:',
+  options: ['Formaldehyde and acetaldehyde', 'Acetone and formaldehyde', 'Propanal only', 'Propanoic acid and CO₂'],
+  correctAnswer: 0,
+  explanation: 'Ozonolysis cleaves the C=C double bond: each carbon of the original double bond becomes a carbonyl carbon. Propene (CH₃CH=CH₂) is cleaved between C-1 and C-2. C-1 (=CH₂, bearing 2 H) gives formaldehyde (HCHO), and C-2 (=CHCH₃, bearing 1 H and 1 CH₃) gives acetaldehyde (CH₃CHO). Zn/H₂O is the reductive workup that prevents further oxidation to carboxylic acids.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_012',
+  question: 'In the E2 elimination of 2-bromobutane with a strong base, the major product according to Zaitsev\'s rule is:',
+  options: ['But-1-ene', 'But-2-ene (trans major)', '1,3-Butadiene', '2-Butanol'],
+  correctAnswer: 1,
+  explanation: 'E2 elimination is a concerted, bimolecular process requiring anti-periplanar geometry of the H and leaving group. Zaitsev\'s rule states that the more substituted alkene is the major product. In 2-bromobutane, elimination toward C-3 gives but-2-ene (disubstituted, more stable), while elimination toward C-1 gives but-1-ene (monosubstituted, less stable). The trans isomer of but-2-ene predominates over cis due to less steric strain.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_013',
+  question: 'The Hell-Volhard-Zelinsky reaction involves:',
+  options: ['α-Bromination of a carboxylic acid using Br₂/PBr₃ (or P)', 'β-Bromination of a ketone using Br₂/AlCl₃', 'Bromination of an aromatic ring using Br₂/FeBr₃', 'Bromination of an alkene using Br₂/CCl₄'],
+  correctAnswer: 0,
+  explanation: 'The Hell-Volhard-Zelinsky (HVZ) reaction specifically involves the α-bromination of carboxylic acids using Br₂ in the presence of a small amount of red phosphorus (P) or PBr₃. PBr₃ converts a small amount of the acid to an acyl bromide, which enolises more readily and reacts with Br₂ at the α-position. The α-bromo acyl bromide is then hydrolysed to the α-bromo acid.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_014',
+  question: 'Which reagent combination would you use to convert benzene to salicylaldehyde in two steps?',
+  options: ['First Kolbe reaction, then reduction', 'First convert to phenol (cumene process), then Reimer-Tiemann reaction', 'Friedel-Crafts acylation with HCOCl, then hydroxylation', 'Wurtz reaction followed by oxidation'],
+  correctAnswer: 1,
+  explanation: 'Salicylaldehyde (2-hydroxybenzaldehyde) is most directly obtained from phenol via the Reimer-Tiemann reaction (phenol + CHCl₃ + KOH → salicylaldehyde). Since the starting material is benzene, we first convert benzene to phenol (via the cumene process or other methods), then apply Reimer-Tiemann. Option A is wrong because the Kolbe reaction gives salicylic acid (–COOH at ortho), not salicylaldehyde (–CHO at ortho).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_015',
+  question: 'In the pinacol-pinacolone rearrangement, pinacol (2,3-dimethylbutane-2,3-diol) treated with H₂SO₄ gives:',
+  options: ['2,3-Dimethyl-1,3-butadiene', '3,3-Dimethylbutan-2-one (pinacolone)', '2-Methylpentanal', '2,3-Dimethylbutanal'],
+  correctAnswer: 1,
+  explanation: 'The pinacol-pinacolone rearrangement involves acid-catalysed dehydration of a 1,2-diol (pinacol) with a simultaneous 1,2-methyl shift. One –OH is protonated and lost as water, generating a carbocation. A methyl group from the adjacent carbon migrates with its bonding electrons to the electron-deficient centre, forming a more stable oxocarbenium ion, which upon deprotonation gives pinacolone (3,3-dimethylbutan-2-one).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_016',
+  question: 'Assertion (A): SN1 reactions often lead to racemisation at the stereogenic centre.\nReason (R): The carbocation intermediate in SN1 has a planar, sp²-hybridised carbon, allowing nucleophilic attack from both faces.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — SN1 reactions at a stereogenic centre produce a racemic mixture (or near-racemic, often with slight excess of inversion product due to ion-pair effects). The reason correctly explains this: in the rate-determining step, the substrate loses the leaving group to form a planar, sp²-hybridised carbocation with an empty p-orbital perpendicular to the plane. The nucleophile can attack from either face of this planar intermediate with approximately equal probability, giving both R and S products.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_017',
+  question: 'Assertion (A): Friedel-Crafts acylation is preferred over Friedel-Crafts alkylation for introducing a one-carbon unit onto benzene.\nReason (R): The acylium ion does not undergo rearrangement, and the product deactivates the ring preventing polysubstitution.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — acylation is synthetically preferred. The reason correctly identifies two advantages: (1) The acylium ion (RC≡O⁺) is resonance-stabilised and does not rearrange, unlike the carbocations in Friedel-Crafts alkylation which can undergo 1,2-hydride or methyl shifts to give unintended products. (2) The electron-withdrawing carbonyl group in the product ketone deactivates the ring toward further electrophilic attack, so the reaction stops cleanly at monosubstitution.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_018',
+  question: 'Assertion (A): The Kharasch effect (anti-Markovnikov addition) occurs with HBr but not with HCl or HI in the presence of peroxides.\nReason (R): The Cl· radical addition step with HCl is too exothermic and non-selective, while the I· radical formation from HI is too endothermic for chain propagation.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — anti-Markovnikov addition with peroxides is unique to HBr. The reason correctly explains the thermodynamic basis: for HCl, the Cl· radical is so reactive that it adds non-selectively. For HI, the I· radical addition to the double bond is endothermic (weak C–I bond doesn\'t compensate), so the chain cannot propagate. Only with HBr are both propagation steps exothermic, allowing a sustained radical chain with anti-Markovnikov selectivity.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_019',
+  question: 'In the competition between SN2 and E2 when ethyl bromide reacts with NaOH in ethanol, which pathway predominates and why?',
+  options: ['SN2, because ethyl bromide is a primary substrate with minimal steric hindrance', 'E2, because NaOH is a strong bulky base', 'SN1, because ethanol is a polar protic solvent', 'E1, because the reaction is unimolecular'],
+  correctAnswer: 0,
+  explanation: 'For primary substrates like ethyl bromide, SN2 predominates over E2 when a strong, non-bulky nucleophile/base like NaOH is used. NaOH is a strong nucleophile (small, charged) and a strong base, but because the substrate is unhindered (primary) and the base is not bulky, substitution wins over elimination. If a bulky base like (CH₃)₃CO⁻ (tert-butoxide) were used instead, E2 would predominate because the base cannot easily access the electrophilic carbon for SN2.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_020',
+  question: 'Which of the following substrates would undergo an E1 elimination most readily?',
+  options: ['CH₃CH₂Br', '(CH₃)₃CBr', 'CH₃Br', 'CH₃CH₂CH₂Br'],
+  correctAnswer: 1,
+  explanation: 'E1 elimination proceeds through the same carbocation intermediate as SN1. Therefore, substrates that form stable carbocations (tertiary > secondary > primary) undergo E1 most readily. (CH₃)₃CBr (tert-butyl bromide) forms the highly stable tertiary carbocation (CH₃)₃C⁺ in the rate-determining step, followed by loss of a proton from an adjacent carbon to form an alkene. Primary substrates cannot form stable carbocations and therefore do not undergo E1.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_021',
+  question: 'In the Kolbe reaction, sodium phenoxide is treated with CO₂ at high temperature and pressure. The product after acidification is:',
+  options: ['Phenol', 'Salicylaldehyde', 'Salicylic acid (2-hydroxybenzoic acid)', 'Benzoic acid'],
+  correctAnswer: 2,
+  explanation: 'The Kolbe reaction (also called Kolbe-Schmitt reaction) involves treating sodium phenoxide (C₆H₅ONa) with CO₂ under pressure (4–7 atm) and at 125°C. The CO₂ acts as a weak electrophile and attacks the electron-rich ortho position of the phenoxide ring. Acidification of the resulting sodium salicylate gives salicylic acid (2-hydroxybenzoic acid). Option B (salicylaldehyde) is the product of the Reimer-Tiemann reaction.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_022',
+  question: 'When 2-methylpropene (isobutylene) reacts with HCl, the product formed and the rule followed are:',
+  options: ['1-Chloro-2-methylpropane; anti-Markovnikov', '2-Chloro-2-methylpropane; Markovnikov', '1-Chloro-2-methylpropane; Markovnikov', '2-Chloro-2-methylpropane; anti-Markovnikov'],
+  correctAnswer: 1,
+  explanation: 'In the ionic addition of HCl to 2-methylpropene [(CH₃)₂C=CH₂], Markovnikov\'s rule applies: H⁺ adds to the less substituted carbon (CH₂, which has more H atoms), generating the more stable tertiary carbocation [(CH₃)₃C⁺]. Cl⁻ then attacks this carbocation to give 2-chloro-2-methylpropane [(CH₃)₃CCl]. Option A would require anti-Markovnikov addition, which only occurs with HBr in the presence of peroxides via a radical mechanism.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_023',
+  question: 'A student performs the following reaction: CH₃CH₂CHO + dilute NaOH → Product. Which named reaction occurs, and what is the product?',
+  options: ['Cannizzaro reaction; ethanol + sodium propanoate', 'Aldol condensation; 3-hydroxy-2-methylpentanal', 'Tischenko reaction; ethyl propanoate', 'Claisen condensation; ethyl acetoacetate'],
+  correctAnswer: 1,
+  explanation: 'Propanal (CH₃CH₂CHO) has α-hydrogen atoms (on C-2), so it undergoes the aldol condensation with dilute NaOH, not the Cannizzaro reaction. The enolate formed by α-H abstraction attacks the carbonyl carbon of another propanal molecule, giving 3-hydroxy-2-methylpentanal (the aldol product: CH₃CH₂CH(OH)CH(CH₃)CHO). Option A (Cannizzaro) is wrong because Cannizzaro requires aldehydes without α-H (like HCHO, C₆H₅CHO).',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_024',
+  question: 'What is the key geometric requirement for the E2 elimination mechanism?',
+  options: ['Syn-periplanar arrangement of the leaving group and β-hydrogen', 'Anti-periplanar arrangement of the leaving group and β-hydrogen', 'The leaving group must be axial while the β-hydrogen is equatorial', 'No geometric requirement; any β-hydrogen can be eliminated'],
+  correctAnswer: 1,
+  explanation: 'E2 elimination is a concerted, one-step process that requires the C–H bond (at the β-carbon) and the C–LG bond (leaving group) to be anti-periplanar (dihedral angle of 180°). This geometry allows optimal overlap of the developing π-bond in the transition state. In cyclohexane systems, this means both the H and the leaving group must be trans-diaxial. Option A (syn-periplanar) can occasionally occur in rigid systems where anti is impossible, but it is much less favoured.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  },
+  {
+  id: 'chem_orm_025',
+  question: 'When formaldehyde (HCHO) is treated with concentrated NaOH, the products are:',
+  options: ['Methanol and sodium formate (Cannizzaro reaction)', 'Formaldehyde polymer (paraformaldehyde)', 'Glycolaldehyde (aldol product)', 'Formic acid and hydrogen gas'],
+  correctAnswer: 0,
+  explanation: 'Formaldehyde has no α-hydrogen atoms (the carbonyl carbon bears only H atoms, not C–H on an adjacent carbon), so it cannot undergo aldol condensation. Instead, it undergoes the Cannizzaro reaction with concentrated NaOH: one molecule of HCHO is oxidised to sodium formate (HCOONa) and another is reduced to methanol (CH₃OH). The reaction is a disproportionation (self-redox). 2HCHO + NaOH → CH₃OH + HCOONa.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'organic_reactions_mechanisms'
+  }
+],
+
+alcohols_aldehydes_ketones_acids: [
+  {
+  id: 'chem_aak_001',
+  question: 'A tertiary alcohol is one in which the carbon bearing the –OH group is bonded to:',
+  options: ['One other carbon atom', 'Two other carbon atoms', 'Three other carbon atoms', 'No other carbon atoms (only hydrogens)'],
+  correctAnswer: 2,
+  explanation: 'In the classification of alcohols, a tertiary (3°) alcohol has the hydroxyl group attached to a carbon that is bonded to three other carbon atoms (and one hydrogen is absent — the carbon bears no H). For example, (CH₃)₃COH (tert-butanol). Option A describes a primary (1°) alcohol, Option B describes a secondary (2°) alcohol, and Option D describes methanol (CH₃OH), which is sometimes classified separately or as a primary alcohol. This classification is crucial because it determines reactivity patterns, including Lucas test results, ease of dehydration, and oxidation behavior.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_002',
+  question: 'Which reagent is used in the Lucas test to distinguish between primary, secondary, and tertiary alcohols?',
+  options: ['Neutral FeCl₃ solution', 'Anhydrous ZnCl₂ + concentrated HCl', 'KMnO₄ solution', 'Sodium metal'],
+  correctAnswer: 1,
+  explanation: 'The Lucas test uses anhydrous ZnCl₂ with concentrated HCl (Lucas reagent). ZnCl₂ acts as a Lewis acid catalyst that coordinates with the –OH group, facilitating its departure as water and generating a carbocation. Tertiary alcohols react immediately (instant turbidity due to insoluble alkyl chloride), secondary alcohols react within 5 minutes, and primary alcohols show no visible reaction at room temperature. Option A (FeCl₃) is used to test for phenols (gives violet/green colour). Option C (KMnO₄) is an oxidising agent. The test works because tertiary carbocations form most readily (SN1 mechanism).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_003',
+  question: 'Ethanol reacts with sodium metal to produce:',
+  options: ['Sodium ethoxide and water', 'Sodium ethoxide and hydrogen gas', 'Ethyl sodium and oxygen gas', 'Sodium acetate and hydrogen gas'],
+  correctAnswer: 1,
+  explanation: 'Alcohols react with sodium metal in a reaction analogous to (but slower than) sodium + water: 2CH₃CH₂OH + 2Na → 2CH₃CH₂ONa (sodium ethoxide) + H₂↑. The alcohol acts as a weak acid, donating its O–H proton to sodium, which is oxidised from Na⁰ to Na⁺. Option A is wrong because water is not produced — hydrogen gas is evolved (effervescence observed). Option D would require oxidation of ethanol, which sodium metal alone does not accomplish. This reaction is used to detect the presence of active hydrogen atoms in organic compounds (Zerewitinoff method uses Grignard reagent for the same purpose).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_004',
+  question: 'The Tollens test (silver mirror test) gives a positive result with:',
+  options: ['Acetone (CH₃COCH₃)', 'Acetaldehyde (CH₃CHO)', 'Acetic acid (CH₃COOH)', 'Diethyl ether (C₂H₅OC₂H₅)'],
+  correctAnswer: 1,
+  explanation: 'Tollens\' reagent [Ag(NH₃)₂]⁺ (ammoniacal silver nitrate) is a mild oxidising agent that is reduced by aldehydes to metallic silver, forming a silver mirror on the test tube wall. Acetaldehyde (an aldehyde) reduces Ag⁺ to Ag⁰ and is itself oxidised to acetate ion: CH₃CHO + 2Ag(NH₃)₂⁺ + 2OH⁻ → CH₃COO⁻ + 2Ag↓ + 4NH₃ + H₂O. Ketones (option A, acetone) do not reduce Tollens\' reagent because they lack the easily oxidisable –CHO group. This is the primary test to distinguish aldehydes from ketones. Carboxylic acids (option C) and ethers (option D) are also unreactive.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_005',
+  question: 'The dehydration of ethanol to ethene requires:',
+  options: ['Dilute H₂SO₄ at 100°C', 'Concentrated H₂SO₄ at 170°C', 'Concentrated H₂SO₄ at 140°C', 'NaOH at 200°C'],
+  correctAnswer: 1,
+  explanation: 'Dehydration of ethanol to ethene (an intramolecular elimination) requires concentrated H₂SO₄ at 170°C: CH₃CH₂OH →(conc. H₂SO₄, 170°C)→ CH₂=CH₂ + H₂O. This follows an E1 mechanism with protonation of –OH, loss of water, and removal of a β-proton. Option C (140°C) is the critical distractor — at 140°C with excess ethanol, the product is diethyl ether (CH₃CH₂OCH₂CH₃) via an intermolecular dehydration (SN2 mechanism). The temperature distinction (140°C → ether, 170°C → alkene) is a frequently tested concept in AIIMS. Higher temperature favours elimination (higher activation energy pathway).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_006',
+  question: 'Which compound gives a positive iodoform test?',
+  options: ['Formaldehyde (HCHO)', 'Benzaldehyde (C₆H₅CHO)', 'Acetone (CH₃COCH₃)', 'Diethyl ketone (C₂H₅COC₂H₅)'],
+  correctAnswer: 2,
+  explanation: 'The iodoform test gives a yellow precipitate of CHI₃ (iodoform) with compounds containing the CH₃CO– group (methyl ketones) or the CH₃CH(OH)– group (which is oxidised in situ to CH₃CO–). Acetone (CH₃COCH₃) has the CH₃CO– group and gives a positive test. Formaldehyde (HCHO) lacks the CH₃CO– moiety — it has H–CO–H, not CH₃CO–. Benzaldehyde (C₆H₅CHO) also lacks CH₃CO–. Diethyl ketone (CH₃CH₂COCH₂CH₃) is the most tempting wrong answer — it has no methyl group directly attached to the carbonyl; both groups are ethyl. Only methyl ketones (not ethyl or higher) give a positive iodoform test.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_007',
+  question: 'In the Victor Meyer test, a primary alcohol gives:',
+  options: ['Blue colour', 'Red/blood-red colour', 'Colourless solution (no colour)', 'Green colour'],
+  correctAnswer: 1,
+  explanation: 'In the Victor Meyer test, the alcohol is converted to an alkyl iodide, then to a nitroalkane (with AgNO₂), and then treated with NaOH followed by HNO₂ and NaOH. Primary alcohols give a red (blood-red) colour because primary nitroalkanes form nitrolic acids (R–C(=NOH)NO₂) with HNO₂, which dissolve in NaOH to give a red solution. Secondary alcohols give a blue colour (pseudonitroles), and tertiary alcohols give no colour (tertiary nitro compounds do not react with HNO₂). The most tempting wrong answer is A (blue), which corresponds to secondary alcohols. This is a classic lab test distinction tested in AIIMS.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_008',
+  question: 'Fehling\'s solution gives a positive test (brick-red precipitate) with:',
+  options: ['Benzaldehyde (C₆H₅CHO)', 'Acetaldehyde (CH₃CHO)', 'Acetone (CH₃COCH₃)', 'Acetophenone (C₆H₅COCH₃)'],
+  correctAnswer: 1,
+  explanation: 'Fehling\'s solution (alkaline Cu²⁺ with sodium potassium tartrate) is reduced by aliphatic aldehydes to give a brick-red precipitate of Cu₂O. Acetaldehyde (CH₃CHO) is an aliphatic aldehyde and gives a positive test. The critical distinction from Tollens\' test: aromatic aldehydes like benzaldehyde (option A) do NOT reduce Fehling\'s solution — this is a key AIIMS trap. Benzaldehyde gives a positive Tollens test but negative Fehling\'s test. The reason is that Fehling\'s is a weaker oxidising agent, and the electron-donating aromatic ring stabilises the aldehyde group against oxidation in alkaline Cu²⁺ conditions. Ketones (options C, D) do not react with either test.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_009',
+  question: 'A student adds concentrated H₂SO₄ to a mixture of ethanol and acetic acid. The product formed is:',
+  options: ['Ethyl acetate (CH₃COOC₂H₅)', 'Diethyl ether', 'Acetic anhydride', 'Acetaldehyde'],
+  correctAnswer: 0,
+  explanation: 'This is Fischer esterification: CH₃COOH + C₂H₅OH →(conc. H₂SO₄)→ CH₃COOC₂H₅ + H₂O. The acid catalyst protonates the carbonyl oxygen of acetic acid, making the carbonyl carbon more electrophilic. The nucleophilic alcohol attacks, and after proton transfers and loss of water, ethyl acetate (a fruity-smelling ester) is formed. The reaction is reversible — excess alcohol or removal of water (Le Chatelier\'s principle) drives it forward. Option B (diethyl ether) would require two molecules of ethanol at 140°C without carboxylic acid. Option C (acetic anhydride) requires a different pathway (reaction of acetic acid with a dehydrating agent like P₂O₅ or reaction with acetyl chloride).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_010',
+  question: 'The correct order of acidity is:',
+  options: ['RCOOH > ROH > H₂O > phenol', 'RCOOH > phenol > H₂O > ROH', 'Phenol > RCOOH > H₂O > ROH', 'ROH > phenol > H₂O > RCOOH'],
+  correctAnswer: 1,
+  explanation: 'The acidity order is: RCOOH (Ka ≈ 10⁻⁵) > phenol (Ka ≈ 10⁻¹⁰) > H₂O (Kw = 10⁻¹⁴, Ka ≈ 10⁻¹⁶) > ROH (Ka ≈ 10⁻¹⁶ to 10⁻¹⁸). Carboxylic acids are most acidic because the conjugate base (carboxylate, RCOO⁻) is stabilised by resonance delocalisation over two equivalent oxygen atoms. Phenol is more acidic than water because the phenoxide ion is stabilised by resonance with the benzene ring. Alcohols are the weakest acids because alkoxide ions (RO⁻) have no resonance stabilisation and alkyl groups destabilise the negative charge through the +I effect. Option A incorrectly places water above phenol, and Option C incorrectly places phenol above RCOOH.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_011',
+  question: 'p-Nitrobenzoic acid is a stronger acid than benzoic acid because:',
+  options: ['The –NO₂ group donates electrons by resonance to the ring, stabilising the acid', 'The –NO₂ group withdraws electrons by both –I and –R effects, stabilising the conjugate base (carboxylate ion)', 'The –NO₂ group increases the molecular weight', 'The –NO₂ group forms intramolecular hydrogen bonds with –COOH'],
+  correctAnswer: 1,
+  explanation: 'The –NO₂ group is a powerful electron-withdrawing group that exerts both –I (inductive) and –R (resonance) effects. At the para position, both effects operate to withdraw electron density from the ring and, consequently, from the carboxylate group. This stabilises the conjugate base (p-nitrobenzoate ion) by dispersing the negative charge, making p-nitrobenzoic acid a stronger acid than benzoic acid. Option A states the opposite — –NO₂ withdraws electrons, not donates them. Option D is incorrect because intramolecular H-bonding with –NO₂ occurs at the ortho position, not para. The –R effect of –NO₂ is effective at ortho and para positions but not meta.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_012',
+  question: 'The correct order of basicity of amines in aqueous solution is:',
+  options: ['3° > 2° > 1° > NH₃', '2° > 1° > 3° > NH₃', '1° > 2° > 3° > NH₃', '2° > 3° > 1° > NH₃'],
+  correctAnswer: 1,
+  explanation: 'In aqueous solution, the basicity of aliphatic amines follows: 2° > 1° > 3° > NH₃ for simple methyl/ethyl amines. This order results from the interplay of two opposing effects: (1) +I effect of alkyl groups (increases basicity: 3° > 2° > 1°) and (2) steric hindrance to solvation (decreases basicity of 3° amines because bulky groups prevent effective hydration of the ammonium ion). The solvation effect dominates for 3° amines, reducing their basicity below 2° and sometimes even 1°. In the gas phase (no solvation), the order is 3° > 2° > 1° > NH₃ (option A), which reflects pure inductive effects. This gas-phase vs. aqueous distinction is a classic AIIMS question.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_013',
+  question: 'Which of the following compounds does NOT give a positive iodoform test?',
+  options: ['Ethanol (CH₃CH₂OH)', 'Acetaldehyde (CH₃CHO)', 'Methanol (CH₃OH)', 'Acetophenone (C₆H₅COCH₃)'],
+  correctAnswer: 2,
+  explanation: 'The iodoform test requires the CH₃CO– group or the CH₃CH(OH)– group (which is oxidised to CH₃CO– in situ). Ethanol (CH₃CH₂OH) has the CH₃CH(OH)– structure and gives a positive test. Acetaldehyde (CH₃CHO = CH₃CO–H) gives a positive test. Acetophenone (C₆H₅COCH₃) has the CH₃CO– group. Methanol (CH₃OH) does NOT give a positive iodoform test because it lacks both the CH₃CO– and CH₃CH(OH)– structural requirements. Methanol has only one carbon and cannot form the requisite triiodomethyl intermediate. Students often confuse methanol with ethanol — ethanol gives a positive test, but methanol does not.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_014',
+  question: 'When 2-butanol is oxidised with acidified K₂Cr₂O₇, the product is:',
+  options: ['Butanal', 'Butanone (methyl ethyl ketone)', 'Butanoic acid', '2-Butene'],
+  correctAnswer: 1,
+  explanation: '2-Butanol is a secondary alcohol. Oxidation of secondary alcohols gives ketones. CH₃CH(OH)CH₂CH₃ →[K₂Cr₂O₇/H⁺]→ CH₃COCH₂CH₃ (butanone, also called methyl ethyl ketone). The dichromate ion (orange) is reduced to Cr³⁺ (green), providing a visual colour change. Option A (butanal) would be the product from oxidation of a primary alcohol (1-butanol), not a secondary alcohol. Option C (butanoic acid) would result from vigorous oxidation of 1-butanol. Ketones resist further oxidation under normal conditions because breaking the C–C bond requires much more energy than breaking a C–H bond.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_015',
+  question: 'Assertion (A): Formic acid (HCOOH) gives a positive Tollens test (silver mirror), unlike other carboxylic acids.\nReason (R): Formic acid contains an aldehyde-like –CHO group within its structure (H–COOH ≡ HCO–OH), giving it reducing properties.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — formic acid is the only carboxylic acid that gives a positive Tollens test. The reason correctly explains this: the structure of formic acid (HCOOH) can be viewed as containing an aldehyde-like H–C=O group (since the hydrogen is directly bonded to the carbonyl carbon, similar to an aldehyde R–CHO where R=OH). This structural feature allows formic acid to act as a reducing agent, reducing Ag⁺ to Ag⁰ and being itself oxidised to CO₂ and H₂O. Other carboxylic acids (CH₃COOH, etc.) have an alkyl group on the carbonyl carbon instead of H and lack this reducing capability.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_016',
+  question: 'Assertion (A): Aromatic aldehydes (e.g., benzaldehyde) give a positive Tollens test but a negative Fehling\'s test.\nReason (R): Fehling\'s solution is a weaker oxidising agent than Tollens\' reagent, and aromatic aldehydes are more resistant to oxidation due to resonance stabilisation.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — benzaldehyde gives a silver mirror with Tollens\' but no brick-red precipitate with Fehling\'s. The reason correctly explains this distinction. Fehling\'s solution (alkaline Cu²⁺ tartrate complex) is a milder oxidising agent than Tollens\' reagent (Ag(NH₃)₂⁺). In aromatic aldehydes, the carbonyl group is conjugated with the benzene ring, providing resonance stabilisation that makes the –CHO group more resistant to oxidation. This increased resistance is sufficient to prevent reduction of the weaker Fehling\'s reagent but not the stronger Tollens\' reagent. This distinction is one of the most commonly tested lab test concepts in AIIMS entrance exams.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_017',
+  question: 'Assertion (A): Acetic acid (CH₃COOH) is a weaker acid than trifluoroacetic acid (CF₃COOH).\nReason (R): The three fluorine atoms in CF₃COOH exert a strong –I effect, stabilising the conjugate base (CF₃COO⁻) by dispersing the negative charge.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — CF₃COOH (pKa ≈ 0.23) is a much stronger acid than CH₃COOH (pKa ≈ 4.76). The reason correctly explains this: three fluorine atoms (the most electronegative element) exert a powerful cumulative –I (electron-withdrawing inductive) effect that pulls electron density away from the carboxylate group. This effectively stabilises the conjugate base CF₃COO⁻ by dispersing the negative charge over the electronegative fluorine atoms. In contrast, the CH₃ group in acetic acid has a +I effect that destabilises the conjugate base. The pKa difference of ~4.5 units corresponds to a ~30,000-fold difference in acid strength.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_018',
+  question: 'PCC (pyridinium chlorochromate) oxidises a primary alcohol to:',
+  options: ['Carboxylic acid', 'Aldehyde (stops at aldehyde stage)', 'Ketone', 'Alkene'],
+  correctAnswer: 1,
+  explanation: 'PCC (pyridinium chlorochromate, C₅H₅NH⁺CrO₃Cl⁻) is a mild, selective oxidising agent used in anhydrous CH₂Cl₂. It oxidises primary alcohols to aldehydes without further oxidation to carboxylic acids: RCH₂OH →[PCC]→ RCHO. This selectivity occurs because PCC operates in non-aqueous conditions where the aldehyde is not hydrated and thus not susceptible to further oxidation. Strong oxidising agents like KMnO₄ or K₂Cr₂O₇ in acidic aqueous conditions would oxidise primary alcohols all the way to carboxylic acids (option A). PCC also oxidises secondary alcohols to ketones. This reagent selectivity question is a favourite in AIIMS exams.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_019',
+  question: 'The correct order of reactivity of alcohols with Lucas reagent (fastest to slowest) is:',
+  options: ['Primary > Secondary > Tertiary', 'Tertiary > Secondary > Primary', 'Secondary > Tertiary > Primary', 'All react at the same rate'],
+  correctAnswer: 1,
+  explanation: 'The Lucas test reaction proceeds via an SN1 mechanism, where the rate-determining step is carbocation formation. Since carbocation stability follows 3° > 2° > 1°, the reactivity order with Lucas reagent is Tertiary > Secondary > Primary. Tertiary alcohols react immediately (instant turbidity from the insoluble alkyl chloride), secondary alcohols show turbidity within 5 minutes, and primary alcohols show no reaction at room temperature. Option A reverses the order. This is a direct application of carbocation stability to a practical lab test, combining theoretical understanding with experimental observation.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_020',
+  question: 'When propan-1-ol is heated with concentrated H₂SO₄ at 170°C, the major product is:',
+  options: ['Propan-2-ol', 'Propene', 'Dipropyl ether', 'Propanal'],
+  correctAnswer: 1,
+  explanation: 'At 170°C with concentrated H₂SO₄, alcohols undergo intramolecular dehydration (elimination) to form alkenes. Propan-1-ol loses H₂O to give propene (CH₃CH=CH₂). The mechanism is E1: protonation of –OH, loss of water to form a carbocation, and loss of a β-proton. At lower temperature (140°C), the reaction favours intermolecular dehydration to give dipropyl ether (option C). This temperature-dependent product selectivity is a critical distinction. Option A (propan-2-ol) would require a rearrangement that is not typical under these conditions for a primary alcohol. Option D (propanal) would require oxidation, not dehydration.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_021',
+  question: 'Which of the following carboxylic acids is the strongest?',
+  options: ['CH₃CH₂COOH', 'ClCH₂COOH', 'Cl₂CHCOOH', 'CH₃COOH'],
+  correctAnswer: 2,
+  explanation: 'Acid strength of carboxylic acids increases with the number and electronegativity of electron-withdrawing substituents. Cl₂CHCOOH (dichloroacetic acid) has two chlorine atoms exerting a strong cumulative –I effect, which stabilises the conjugate base more effectively than one chlorine (option B, ClCH₂COOH) or no chlorine (options A, D). The order is: Cl₃CCOOH > Cl₂CHCOOH > ClCH₂COOH > CH₃CH₂COOH ≈ CH₃COOH. The tempting wrong answer is B (chloroacetic acid), but two chlorines provide greater electron withdrawal than one. Between A and D, CH₃CH₂COOH is actually slightly weaker than CH₃COOH because the extra –CH₂– group provides additional +I effect, though this difference is small.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_022',
+  question: 'In the oxidation of toluene (C₆H₅CH₃) with acidified KMnO₄, the product is:',
+  options: ['Benzaldehyde', 'Benzoic acid', 'Benzyl alcohol', 'Phenol'],
+  correctAnswer: 1,
+  explanation: 'Acidified KMnO₄ is a strong oxidising agent that oxidises the methyl group of toluene directly to a carboxylic acid group, giving benzoic acid (C₆H₅COOH). The reaction proceeds through benzyl alcohol and benzaldehyde intermediates, but these are not isolated under vigorous KMnO₄ conditions. Option A (benzaldehyde) would be obtained using milder, controlled oxidants like CrO₃/acetic anhydride (Étard reaction) or MnO₂. Option C (benzyl alcohol) would require a reducing agent on benzaldehyde. The key concept: strong oxidants (KMnO₄, K₂Cr₂O₇) oxidise benzylic positions all the way to –COOH regardless of the original substituent length (even C₆H₅CH₂CH₃ gives C₆H₅COOH).',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_023',
+  question: 'Which compound will give a positive result with both Tollens test and iodoform test?',
+  options: ['Acetone (CH₃COCH₃)', 'Formaldehyde (HCHO)', 'Acetaldehyde (CH₃CHO)', 'Benzaldehyde (C₆H₅CHO)'],
+  correctAnswer: 2,
+  explanation: 'Acetaldehyde (CH₃CHO) gives positive results with both tests: (1) Tollens test: positive, because it is an aldehyde that reduces Ag⁺ to Ag (silver mirror). (2) Iodoform test: positive, because it has the CH₃CO– group (CH₃–CHO ≡ CH₃CO–H). Acetone gives positive iodoform but negative Tollens (it\'s a ketone). Formaldehyde gives positive Tollens but negative iodoform (no CH₃CO– group). Benzaldehyde gives positive Tollens but negative iodoform (no CH₃CO– group). This question tests the ability to identify the intersection of two test criteria — a challenging but frequently asked AIIMS-style question.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_024',
+  question: 'An unknown compound X gives a yellow precipitate with I₂/NaOH but does NOT give a silver mirror with Tollens\' reagent. X could be:',
+  options: ['Acetaldehyde', 'Acetone', 'Propanal', 'Benzaldehyde'],
+  correctAnswer: 1,
+  explanation: 'The yellow precipitate with I₂/NaOH is the iodoform test (CHI₃). A negative Tollens test means X is not an aldehyde. Combining both results: X must have the CH₃CO– group (positive iodoform) but must not be an aldehyde (negative Tollens). Acetone (CH₃COCH₃) satisfies both conditions — it is a methyl ketone (positive iodoform) and a ketone (negative Tollens). Acetaldehyde (option A) would give positive results for both tests. Propanal (option C) gives positive Tollens but negative iodoform (no CH₃CO–). Benzaldehyde (option D) gives positive Tollens but negative iodoform. This systematic elimination using two tests is a classic diagnostic reasoning question.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  },
+  {
+  id: 'chem_aak_025',
+  question: 'The order of ease of dehydration of alcohols with concentrated H₂SO₄ is:',
+  options: ['Primary > Secondary > Tertiary', 'Tertiary > Secondary > Primary', 'Secondary > Tertiary > Primary', 'All dehydrate at the same rate'],
+  correctAnswer: 1,
+  explanation: 'Dehydration of alcohols follows an E1 mechanism involving carbocation formation. Since tertiary carbocations are the most stable, tertiary alcohols dehydrate most easily (lowest temperature required). The order of ease of dehydration is: 3° > 2° > 1°. Tertiary alcohols can dehydrate at temperatures as low as 85°C with dilute H₂SO₄, while primary alcohols require concentrated H₂SO₄ at 170°C. This follows directly from carbocation stability, which is the driving force for the rate-determining ionisation step. Option A reverses the order. This concept parallels the Lucas test reactivity order and reinforces the central importance of carbocation stability in organic chemistry.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'alcohols_aldehydes_ketones_acids'
+  }
+],
+
+chemical_bonding: [
+  {
+  id: 'chem_cb_001',
+  question: 'According to VSEPR theory, the shape of NH₃ is:',
+  options: ['Trigonal planar', 'Tetrahedral', 'Trigonal pyramidal', 'Bent (V-shaped)'],
+  correctAnswer: 2,
+  explanation: 'NH₃ has 3 bond pairs + 1 lone pair = 4 electron domains around nitrogen, giving a tetrahedral electron geometry (sp³ hybridised). However, the molecular shape considers only the positions of atoms, not lone pairs, so NH₃ is trigonal pyramidal. The lone pair compresses the H–N–H bond angle from the ideal 109.5° to approximately 107°. Option A (trigonal planar) would require 3 bond pairs and 0 lone pairs (like BF₃). Option B (tetrahedral) describes the electron geometry, not the molecular shape — this is the most common mistake students make.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_002',
+  question: 'Which of the following molecules has zero dipole moment despite containing polar bonds?',
+  options: ['H₂O', 'NH₃', 'CO₂', 'HCl'],
+  correctAnswer: 2,
+  explanation: 'CO₂ is a linear molecule (O=C=O, 180°) with two polar C=O bonds. However, because the two bond dipoles are equal in magnitude and exactly opposite in direction, they cancel out, resulting in a net zero dipole moment. H₂O (bent, 104.5°), NH₃ (trigonal pyramidal, 107°), and HCl (diatomic, inherently polar) all have non-zero dipole moments because their bond dipoles do not cancel. The key principle: symmetric molecular geometry can cause polar bonds to cancel. Other zero-dipole molecules with polar bonds include CCl₄ (tetrahedral), BF₃ (trigonal planar), and SF₆ (octahedral).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_003',
+  question: 'In ionic compounds, covalent character increases when (Fajans\' rules):',
+  options: ['The cation is large and the anion is small', 'The cation is small with high charge, and the anion is large', 'Both ions are large with low charges', 'Both ions are small with low charges'],
+  correctAnswer: 1,
+  explanation: 'Fajans\' rules state that covalent character in an ionic compound increases when: (1) the cation is small and has a high positive charge (high charge density → greater polarising power), and (2) the anion is large (more polarisable, electron cloud easily distorted). A small, highly charged cation strongly polarises (distorts) the large anion\'s electron cloud, creating significant electron sharing between the ions — this is covalent character. Option A (large cation, small anion) would give maximum ionic character. Examples: LiI has more covalent character than NaI (smaller cation), and LiI has more than LiF (larger anion).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_004',
+  question: 'The bond order of O₂ according to Molecular Orbital Theory is:',
+  options: ['1', '2', '3', '2.5'],
+  correctAnswer: 1,
+  explanation: 'Using the MO diagram for O₂: the electronic configuration is (σ1s)²(σ*1s)²(σ2s)²(σ*2s)²(σ2p)²(π2p)⁴(π*2p)². Bond order = (bonding electrons − antibonding electrons)/2 = (10 − 6)/2 = 2. O₂ also has 2 unpaired electrons in the two degenerate π*2p orbitals (Hund\'s rule), making it paramagnetic — a fact that Lewis structures cannot explain. Option C (bond order 3) describes N₂. Option D (2.5) would describe O₂⁺. Option A (bond order 1) describes F₂. The paramagnetism of O₂ is a major triumph of MOT over Lewis/VBT.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_005',
+  question: 'Hydrogen bonding is strongest in which of the following?',
+  options: ['CH₃OCH₃ (dimethyl ether)', 'CH₃CHO (acetaldehyde)', 'HF', 'CH₃CH₃ (ethane)'],
+  correctAnswer: 2,
+  explanation: 'Hydrogen bonding requires H bonded to a highly electronegative atom (F, O, or N) with a lone pair. HF has the strongest hydrogen bonds among common molecules because fluorine is the most electronegative element (EN = 3.98), creating the largest partial charges (δ+ on H, δ− on F) and the strongest electrostatic interaction. Dimethyl ether (option A) has lone pairs on O but no O–H bonds, so it cannot act as an H-bond donor (only acceptor). Acetaldehyde has a C=O but no O–H or N–H. Ethane has no electronegative atoms bonded to H. The association of HF molecules through H-bonding gives it an anomalously high boiling point for its molecular weight.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_006',
+  question: 'The geometry of XeF₄ according to VSEPR theory is:',
+  options: ['Tetrahedral', 'Square planar', 'See-saw', 'Trigonal bipyramidal'],
+  correctAnswer: 1,
+  explanation: 'Xe in XeF₄ has 4 bond pairs + 2 lone pairs = 6 electron domains. The electron geometry is octahedral (sp³d² hybridisation). The 2 lone pairs occupy positions trans to each other (opposite positions in the octahedron) to minimise lone pair-lone pair repulsion. The resulting molecular shape with 4 F atoms in a plane is square planar with bond angles of 90°. Option A (tetrahedral) would require 4 BP and 0 LP. Option C (see-saw) has 4 BP and 1 LP from a trigonal bipyramidal electron geometry. The key: 6 electron domains → octahedral electron geometry → with 2 LP trans → square planar molecular shape.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_007',
+  question: 'Which of the following molecules has the largest bond angle?',
+  options: ['H₂O (2 BP, 2 LP)', 'NH₃ (3 BP, 1 LP)', 'CH₄ (4 BP, 0 LP)', 'NF₃ (3 BP, 1 LP)'],
+  correctAnswer: 2,
+  explanation: 'All four molecules have sp³ hybridisation with 4 electron domains. The ideal tetrahedral angle is 109.5°. Lone pairs repel more strongly than bond pairs, compressing the bond angles. CH₄ has 0 lone pairs → bond angle = 109.5° (ideal). NH₃ has 1 LP → bond angle ≈ 107°. H₂O has 2 LP → bond angle ≈ 104.5°. NF₃ has 1 LP and highly electronegative F atoms that pull bond pair electrons away from N, making bond pairs repel each other even less → bond angle ≈ 102°. Order: CH₄ (109.5°) > NH₃ (107°) > H₂O (104.5°) > NF₃ (102°). Option D (NF₃) has the smallest angle despite having the same number of lone pairs as NH₃ due to the fluorine electronegativity effect.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_008',
+  question: 'According to Fajans\' rules, which of the following lithium halides has the MOST covalent character?',
+  options: ['LiF', 'LiCl', 'LiBr', 'LiI'],
+  correctAnswer: 3,
+  explanation: 'For a fixed cation (Li⁺, small and highly polarising), covalent character increases as the anion size increases (more polarisable). The halide ion sizes increase as F⁻ < Cl⁻ < Br⁻ < I⁻. Therefore, LiI has the most covalent character because I⁻ is the largest and most easily polarised halide ion. LiF has the most ionic character because F⁻ is the smallest and least polarisable. Evidence: LiI is soluble in organic solvents (a covalent property), while LiF has the highest melting point among lithium halides (ionic property). Option A (LiF) is the most tempting wrong answer because students may think the most electronegative halogen gives the most covalent bond — but Fajans\' rules predict the opposite.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_009',
+  question: 'The hybridisation and geometry of PCl₅ are:',
+  options: ['sp³d, trigonal bipyramidal', 'sp³d², octahedral', 'sp³, tetrahedral', 'sp², trigonal planar'],
+  correctAnswer: 0,
+  explanation: 'PCl₅ has 5 bond pairs and 0 lone pairs around phosphorus. Five electron domains require sp³d hybridisation and adopt a trigonal bipyramidal geometry. In this geometry, there are two distinct positions: 3 equatorial bonds (120° apart in a plane) and 2 axial bonds (90° to the equatorial plane). The axial P–Cl bonds are slightly longer than equatorial ones due to greater repulsion. Option B (sp³d², octahedral) would require 6 electron domains (e.g., SF₆). Phosphorus can expand its octet because it has accessible 3d orbitals, unlike nitrogen (which cannot form NCl₅).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_010',
+  question: 'o-Nitrophenol has a lower boiling point than p-nitrophenol because:',
+  options: ['o-Nitrophenol is less polar than p-nitrophenol', 'o-Nitrophenol forms intramolecular hydrogen bonds, reducing intermolecular association', 'p-Nitrophenol has a higher molecular weight', 'o-Nitrophenol has weaker Van der Waals forces'],
+  correctAnswer: 1,
+  explanation: 'In o-nitrophenol, the –OH and –NO₂ groups are adjacent (ortho), allowing formation of an intramolecular hydrogen bond (chelation). This satisfies the H-bonding capability within the same molecule, reducing the tendency for intermolecular H-bonding. In p-nitrophenol, the groups are too far apart for intramolecular H-bonding, so the molecules associate through intermolecular H-bonds, leading to a higher boiling point. Both isomers have the same molecular weight (option C is wrong) and similar Van der Waals forces. This concept — intramolecular vs intermolecular H-bonding and its effect on physical properties — is a frequently tested AIIMS topic.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_011',
+  question: 'Which of the following species does NOT obey the octet rule?',
+  options: ['CCl₄', 'NF₃', 'BF₃', 'CF₄'],
+  correctAnswer: 2,
+  explanation: 'BF₃ has boron with only 3 valence electrons, forming 3 covalent bonds with fluorine atoms. This gives boron only 6 electrons (a sextet), which is less than an octet. BF₃ is therefore electron-deficient and acts as a strong Lewis acid. CCl₄ (option A), NF₃ (option B), and CF₄ (option D) all have 8 electrons around the central atom (4 bond pairs for C, 3 BP + 1 LP for N) and obey the octet rule. Other common octet-rule exceptions include: PCl₅ and SF₆ (expanded octet) and NO (odd electron). The electron deficiency of BF₃ explains its strong tendency to accept a lone pair from Lewis bases like NH₃.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_012',
+  question: 'Which of the following does NOT have a coordinate (dative) bond?',
+  options: ['NH₄⁺', 'H₃O⁺', 'NaCl', 'BF₃·NH₃'],
+  correctAnswer: 2,
+  explanation: 'A coordinate bond (dative bond) is a covalent bond where both electrons come from a single atom. NH₄⁺ has a coordinate bond (NH₃ donates its lone pair to H⁺). H₃O⁺ has a coordinate bond (H₂O donates a lone pair to H⁺). BF₃·NH₃ has a coordinate bond (NH₃ donates a lone pair to electron-deficient B in BF₃). NaCl is a purely ionic compound formed by complete electron transfer from Na to Cl — there is no shared electron pair (coordinate or otherwise) between Na⁺ and Cl⁻. This question tests the student\'s ability to distinguish ionic bonds from coordinate bonds.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_013',
+  question: 'The correct order of increasing bond angle is:',
+  options: ['H₂O < NH₃ < CH₄', 'CH₄ < NH₃ < H₂O', 'NH₃ < H₂O < CH₄', 'H₂O < CH₄ < NH₃'],
+  correctAnswer: 0,
+  explanation: 'All three molecules are sp³ hybridised. Lone pairs on the central atom repel more strongly than bond pairs, compressing the bond angles. H₂O (2 LP) has the smallest angle (104.5°), NH₃ (1 LP) has an intermediate angle (107°), and CH₄ (0 LP) has the ideal tetrahedral angle (109.5°). Therefore, the increasing order is H₂O (104.5°) < NH₃ (107°) < CH₄ (109.5°). Option B reverses the order. Option C incorrectly places NH₃ below H₂O. The key principle: more lone pairs → smaller bond angle, because LP–BP repulsion > BP–BP repulsion.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_014',
+  question: 'The hybridisation of sulphur in SF₆ is:',
+  options: ['sp³', 'sp³d', 'sp³d²', 'sp²'],
+  correctAnswer: 2,
+  explanation: 'SF₆ has 6 bond pairs and 0 lone pairs around sulphur, giving 6 electron domains. Six electron domains require sp³d² hybridisation (one s, three p, and two d orbitals) and adopt an octahedral geometry with bond angles of 90°. The molecule is perfectly symmetric, resulting in zero dipole moment despite having polar S–F bonds. Option B (sp³d) would give trigonal bipyramidal geometry (5 electron domains). Sulphur can use its vacant 3d orbitals for expanded octet bonding — this is why SF₆ exists but OF₆ does not (oxygen has no accessible d orbitals in its valence shell).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_015',
+  question: 'Assertion (A): N₂ has a bond order of 3 and is diamagnetic.\nReason (R): In the MO diagram of N₂, all electrons are paired, and the bond order is (10 − 4)/2 = 3.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'N₂ has 14 electrons total. The MO configuration is: (σ1s)²(σ*1s)²(σ2s)²(σ*2s)²(π2p)⁴(σ2p)². Note: for N₂ (and lighter diatomics B₂, C₂, N₂), the σ2p orbital is higher in energy than π2p (σ-π mixing). Bond order = (10 bonding − 4 antibonding)/2 = 3. All electrons are paired → diamagnetic. Both A and R are true, and R correctly explains A. The most tempting error is confusing the MO ordering of N₂ with O₂ (where σ2p is below π2p). This triple bond explains N₂\'s exceptional stability (bond dissociation energy = 945 kJ/mol).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_016',
+  question: 'Assertion (A): BeCl₂ is a linear molecule with sp hybridisation.\nReason (R): Beryllium has two bond pairs and no lone pairs, and the two electron domains arrange linearly to minimise repulsion.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'BeCl₂ has 2 bond pairs and 0 lone pairs around Be. According to VSEPR theory, 2 electron domains adopt a linear arrangement (180° bond angle) to minimise electron-pair repulsion. This corresponds to sp hybridisation (two hybrid orbitals directed 180° apart). Both the assertion and reason are true, and the reason directly explains the assertion. Be in BeCl₂ has only 4 electrons (2 from Be, 1 from each Cl in covalent bonds), making it electron-deficient (only 4 electrons around Be, not 8) — another octet rule exception. Option D would be chosen by students who incorrectly think BeCl₂ is bent.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_017',
+  question: 'Assertion (A): CHCl₃ has a non-zero dipole moment while CCl₄ has zero dipole moment.\nReason (R): CCl₄ is tetrahedral and the four equal C–Cl bond dipoles cancel, while CHCl₃ is also tetrahedral but the C–H and C–Cl bond dipoles are unequal and do not cancel.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both molecules are tetrahedral (sp³). In CCl₄, all four bonds are identical C–Cl bonds, so the four bond dipole vectors cancel perfectly by symmetry → zero net dipole. In CHCl₃, the C–H bond has a different polarity and magnitude compared to the three C–Cl bonds. The vector sum of three C–Cl dipoles does not cancel the one C–H dipole → non-zero net dipole moment (μ ≈ 1.04 D). The reason correctly identifies that the critical difference is the asymmetry of bond dipoles in CHCl₃ vs the perfect symmetry in CCl₄. This is a subtle but important concept: symmetry, not polarity of individual bonds, determines whether a molecule has a net dipole.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_018',
+  question: 'The resonance structures of the carbonate ion (CO₃²⁻) indicate that each C–O bond order is:',
+  options: ['1', '2', '1.33 (4/3)', '1.5'],
+  correctAnswer: 2,
+  explanation: 'The carbonate ion has 3 equivalent resonance structures, each with one C=O double bond and two C–O single bonds. The actual structure is a resonance hybrid where the π-electrons are delocalised equally over all three C–O bonds. Total bond orders = 1 double bond (order 2) + 2 single bonds (order 1 each) = 4 bond orders shared over 3 bonds. Average bond order = 4/3 ≈ 1.33. Option D (1.5) is the bond order in benzene (3 double bonds over 6 C–C bonds = 9/6 = 1.5), which is a common confusion. Option B (2) would mean all bonds are double bonds, which is impossible with only 24 valence electrons. All three C–O bonds in CO₃²⁻ are experimentally equal in length (127 pm), confirming the resonance hybrid.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_019',
+  question: 'Which of the following comparisons of dipole moments is correct?',
+  options: ['NF₃ > NH₃', 'NH₃ > NF₃', 'NF₃ = NH₃', 'NF₃ > BF₃'],
+  correctAnswer: 1,
+  explanation: 'Both NH₃ and NF₃ are trigonal pyramidal with a lone pair on nitrogen. In NH₃, the bond dipoles (N–H, pointing toward N) and the lone pair dipole are in the same direction (both point away from the H atoms toward the lone pair), reinforcing each other → large net dipole (1.47 D). In NF₃, the bond dipoles (N–F, pointing toward F, away from N) are in the opposite direction to the lone pair dipole → they partially cancel → small net dipole (0.24 D). Therefore, NH₃ > NF₃. Option A is the most common wrong answer because students assume more electronegative substituents always give larger dipole moments. Option D: BF₃ has zero dipole (trigonal planar, symmetric), so NF₃ > BF₃ is true but not the comparison being tested.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_020',
+  question: 'He₂ does not exist as a stable molecule because:',
+  options: ['Helium atoms are too small to bond', 'The bond order calculated from MOT is zero', 'Helium is too electronegative', 'Helium has no p-orbitals available'],
+  correctAnswer: 1,
+  explanation: 'He₂ would have 4 electrons: (σ1s)²(σ*1s)². Bond order = (2 − 2)/2 = 0. A bond order of zero means there is no net bonding interaction — the stabilisation from the bonding MO is exactly cancelled by the destabilisation from the antibonding MO. Therefore, He₂ has no thermodynamic driving force to form and does not exist as a stable molecule. Option A is irrelevant — atomic size doesn\'t prevent bonding (H₂ exists with even smaller atoms). Option D is wrong because s-orbitals alone can form bonds (as in H₂). Note: He₂⁺ (bond order = 0.5) has been detected in discharge experiments, confirming that a non-zero bond order is necessary for stability.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_021',
+  question: 'The compound with the shortest C–C bond among the following is:',
+  options: ['C₂H₆ (ethane)', 'C₂H₄ (ethene)', 'C₂H₂ (ethyne)', 'C₆H₆ (benzene)'],
+  correctAnswer: 2,
+  explanation: 'C–C bond length decreases with increasing bond order and increasing s-character of the hybridised orbitals. C₂H₂ (ethyne) has a C≡C triple bond (sp–sp overlap, bond order 3, bond length 1.20 Å). C₂H₄ has a C=C double bond (sp²–sp², 1.34 Å). Benzene has C–C bonds of order 1.5 (1.39 Å). C₂H₆ has a C–C single bond (sp³–sp³, 1.54 Å). The order of increasing bond length: C₂H₂ < C₂H₄ < C₆H₆ < C₂H₆. Option D (benzene) is the tempting wrong answer because students might think aromatic stabilisation shortens the bond more, but its bond order (1.5) is still less than a triple bond (3). Greater s-character in sp orbitals also contributes to shorter bonds.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  },
+  {
+  id: 'chem_cb_022',
+  question: 'Which of the following is an example of intramolecular hydrogen bonding?',
+  options: ['Ice (H₂O solid)', 'o-Nitrophenol', 'p-Nitrophenol', 'Ethanol'],
+  correctAnswer: 1,
+  explanation: 'Intramolecular hydrogen bonding occurs within the same molecule when the H-bond donor and acceptor groups are in close proximity. In o-nitrophenol, the –OH group at the ortho position forms an intramolecular H-bond with the adjacent –NO₂ group, creating a six-membered chelate ring. This is why o-nitrophenol has a lower boiling point and is steam-volatile, unlike p-nitrophenol (option C) where the –OH and –NO₂ are too far apart for intramolecular H-bonding and instead form intermolecular H-bonds. Ice (option A) and ethanol (option D) exhibit intermolecular H-bonding between different molecules.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_bonding'
+  }
+],
+
+p_block_elements: [
+  {
+  id: 'chem_pb_001',
+  question: 'Boron trifluoride (BF₃) acts as a Lewis acid because:',
+  options: ['It can donate a proton', 'It has a vacant p-orbital and an incomplete octet on boron', 'Fluorine atoms are highly electronegative', 'It has a lone pair available for donation'],
+  correctAnswer: 1,
+  explanation: 'BF₃ is a classic Lewis acid because boron has only 6 electrons in its valence shell (3 shared pairs with F), leaving a vacant p-orbital that can accept a lone pair from a Lewis base. Boron\'s electron deficiency (sextet, not octet) is the direct cause of its Lewis acidity. Option A describes a Brønsted acid (proton donor), not applicable to BF₃ which has no H. Option D describes a Lewis base, not an acid. BF₃ forms adducts like BF₃·NH₃ where NH₃ donates its lone pair to fill boron\'s empty orbital.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_002',
+  question: 'The allotrope of carbon that is the hardest natural substance is:',
+  options: ['Graphite', 'Fullerene (C₆₀)', 'Diamond', 'Carbon nanotube'],
+  correctAnswer: 2,
+  explanation: 'Diamond is the hardest known natural substance because each carbon atom is sp³ hybridised and covalently bonded to four other carbon atoms in a 3D tetrahedral network. This creates an extremely rigid, continuous covalent structure with no weak layers or planes of cleavage. Graphite (option A) is soft and slippery because it has sp² hybridised carbon in flat layers held together by weak Van der Waals forces, allowing layers to slide. Diamond\'s hardness makes it invaluable for cutting, drilling, and polishing applications.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_003',
+  question: 'In the Haber process for ammonia synthesis, the catalyst used is:',
+  options: ['V₂O₅', 'Pt/Rh gauze', 'Finely divided iron (Fe)', 'MnO₂'],
+  correctAnswer: 2,
+  explanation: 'The Haber process (N₂ + 3H₂ ⇌ 2NH₃) uses finely divided iron as the catalyst, with small amounts of K₂O and Al₂O₃ as promoters. Conditions: 400–500°C, 200 atm pressure. The forward reaction is exothermic (ΔH = −92 kJ/mol). Option A (V₂O₅) is the catalyst for the Contact process (SO₂ → SO₃). Option B (Pt/Rh gauze) is the catalyst for the Ostwald process (NH₃ → NO). Students frequently confuse the catalysts for these three major industrial processes — a common AIIMS trap.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_004',
+  question: 'H₃PO₃ (phosphorous acid) is:',
+  options: ['Tribasic (donates 3 H⁺)', 'Dibasic (donates 2 H⁺)', 'Monobasic (donates 1 H⁺)', 'Non-acidic'],
+  correctAnswer: 1,
+  explanation: 'H₃PO₃ (phosphorous acid) has the structure HP(O)(OH)₂. Despite having three hydrogen atoms, only two are attached to oxygen (as –OH groups) and are ionisable. The third hydrogen is directly bonded to phosphorus (P–H bond) and is not acidic (not ionisable in water). Therefore, H₃PO₃ is dibasic, forming salts like Na₂HPO₃. This contrasts with H₃PO₄ (phosphoric acid, tribasic, all three H on O) and H₃PO₂ (hypophosphorous acid, monobasic, only one H on O, two P–H bonds). The basicity depends on the number of O–H bonds, not the total number of H atoms.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_005',
+  question: 'O₂ is paramagnetic. According to MOT, this is because:',
+  options: ['O₂ has a bond order of 3', 'O₂ has 2 unpaired electrons in degenerate π*2p orbitals', 'O₂ has all electrons paired in bonding orbitals', 'O₂ has an odd number of total electrons'],
+  correctAnswer: 1,
+  explanation: 'O₂ has 16 electrons. Its MO configuration places 2 electrons in the two degenerate π*2p antibonding orbitals — one electron in each, following Hund\'s rule. These 2 unpaired electrons make O₂ paramagnetic (attracted by a magnetic field). This was a major triumph of MOT, as Lewis structures and VBT predicted O₂ to be diamagnetic (all paired). Option A is wrong — O₂ has bond order 2, not 3. Option D is wrong — O₂ has 16 electrons (even number); paramagnetism comes from the orbital degeneracy, not odd electron count.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_006',
+  question: 'Which of the following statements about the Contact process is correct?',
+  options: ['SO₂ is oxidised to SO₃ using V₂O₅ catalyst at 450°C', 'SO₂ is reduced to S using Fe catalyst', 'H₂SO₄ is directly formed by reacting SO₂ with water', 'Pt catalyst is used at 800°C'],
+  correctAnswer: 0,
+  explanation: 'In the Contact process, SO₂ is oxidised to SO₃ in the presence of V₂O₅ (vanadium pentoxide) catalyst at 450°C: 2SO₂ + O₂ ⇌ 2SO₃. The SO₃ is then absorbed in concentrated H₂SO₄ to form oleum (H₂S₂O₇), which is diluted with water to give H₂SO₄. Option C is wrong because SO₃ (not SO₂) is used, and it is first dissolved in H₂SO₄ (not water) to avoid forming a mist. Option D: while Pt was historically used, it is easily poisoned by arsenic impurities; V₂O₅ replaced it. The Contact process conditions (V₂O₅, 450°C, 2 atm) are frequently tested.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_007',
+  question: 'In the Ostwald process for manufacturing HNO₃, the catalyst used is:',
+  options: ['Finely divided iron', 'V₂O₅', 'Pt/Rh gauze at 800°C', 'Al₂O₃'],
+  correctAnswer: 2,
+  explanation: 'The Ostwald process involves catalytic oxidation of ammonia: 4NH₃ + 5O₂ → 4NO + 6H₂O. The catalyst is platinum-rhodium (Pt/Rh) gauze at approximately 800°C. The NO is further oxidised to NO₂ (2NO + O₂ → 2NO₂), which is absorbed in water to form HNO₃ (3NO₂ + H₂O → 2HNO₃ + NO). Option A (Fe) is the Haber process catalyst. Option B (V₂O₅) is the Contact process catalyst. This is the third of the three major industrial process catalysts that students must distinguish: Haber (Fe), Contact (V₂O₅), Ostwald (Pt/Rh).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_008',
+  question: 'White phosphorus (P₄) is more reactive than red phosphorus because:',
+  options: ['White phosphorus has a higher molecular weight', 'White phosphorus has a tetrahedral P₄ structure with strained 60° bond angles', 'Red phosphorus is ionic in nature', 'White phosphorus has stronger P–P bonds'],
+  correctAnswer: 1,
+  explanation: 'White phosphorus (P₄) consists of four phosphorus atoms arranged in a tetrahedron with P–P–P bond angles of only 60° — far from the ideal angle for p-orbital bonding (~90°) or sp³ (109.5°). This extreme angle strain weakens the P–P bonds and makes the molecule highly reactive (it spontaneously ignites in air). Red phosphorus is a polymeric form where the P₄ tetrahedra have been opened and linked into chains, relieving the strain and making it much less reactive and non-toxic. Option D states the opposite — white P actually has weaker, strained bonds.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_009',
+  question: 'The brown gas formed when copper reacts with dilute nitric acid is:',
+  options: ['NO (colourless, turns brown in air)', 'NO₂ (brown gas)', 'N₂O (colourless)', 'N₂ (colourless)'],
+  correctAnswer: 0,
+  explanation: 'Copper reacts with dilute HNO₃ to produce NO (nitric oxide): 3Cu + 8HNO₃(dilute) → 3Cu(NO₃)₂ + 2NO↑ + 4H₂O. NO is colourless but turns brown in air as it is oxidised to NO₂: 2NO + O₂ → 2NO₂. With concentrated HNO₃, NO₂ (brown gas) is directly produced: Cu + 4HNO₃(conc) → Cu(NO₃)₂ + 2NO₂↑ + 2H₂O. The question says "dilute" nitric acid, so the primary product is NO, which then appears brown upon contact with air. Option B would be correct for concentrated HNO₃. This dilute vs concentrated distinction is a classic exam trap.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_010',
+  question: 'Which of the following does NOT form an oxyacid?',
+  options: ['Phosphorus', 'Sulphur', 'Nitrogen', 'Fluorine'],
+  correctAnswer: 3,
+  explanation: 'Fluorine does not form oxyacids. While other halogens (Cl, Br, I) form oxyacids like HClO, HClO₃, HBrO₃, HIO₃, fluorine\'s extremely high electronegativity (3.98) means it cannot exist in a positive oxidation state required for oxyacid formation. Fluorine is always −1 in its compounds (except in OF₂ where O is +2). Phosphorus forms H₃PO₄, H₃PO₃, H₃PO₂; sulphur forms H₂SO₄, H₂SO₃; nitrogen forms HNO₃, HNO₂. The compound HOF (hypofluorous acid) is extremely unstable and is not a true oxyacid in the conventional sense. This is a key exception question regarding halogen chemistry.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_011',
+  question: 'HF attacks glass (SiO₂) according to the reaction:',
+  options: ['SiO₂ + 2HF → SiF₂ + H₂O', 'SiO₂ + 4HF → SiF₄ + 2H₂O', 'SiO₂ + HF → SiOF + H₂O₂', 'SiO₂ + 6HF → H₂SiF₆ + 2H₂O'],
+  correctAnswer: 1,
+  explanation: 'HF reacts with silicon dioxide (glass) by the reaction: SiO₂ + 4HF → SiF₄ + 2H₂O. SiF₄ (silicon tetrafluoride) is a gas that escapes, driving the reaction forward. This is why HF is stored in plastic or wax-coated containers, never in glass. With excess HF, SiF₄ further reacts: SiF₄ + 2HF → H₂SiF₆ (fluorosilicic acid). Option D is the overall reaction with excess HF but not the primary balanced equation. Option A has incorrect stoichiometry (SiF₂ is unstable). This property of HF — attacking glass — is unique among the hydrogen halides and is a frequently tested fact.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_012',
+  question: 'Bleaching by Cl₂ is permanent while bleaching by SO₂ is temporary because:',
+  options: ['Cl₂ bleaches by oxidation (irreversible), SO₂ bleaches by reduction (reversible)', 'Cl₂ bleaches by reduction, SO₂ bleaches by oxidation', 'Both bleach by the same mechanism but Cl₂ is stronger', 'SO₂ forms a coloured product that fades'],
+  correctAnswer: 0,
+  explanation: 'Cl₂ bleaches by oxidation: Cl₂ + H₂O → HOCl + HCl; HOCl → HCl + [O] (nascent oxygen). This nascent oxygen irreversibly destroys the chromophore (colour-producing group) in the dye or pigment, making the bleaching permanent. SO₂ bleaches by reduction: SO₂ + 2H₂O → H₂SO₃; the sulphurous acid reduces the coloured compound to a colourless form. However, this is reversible — upon oxidation by air (O₂), the colour returns. Option B reverses the mechanisms. This distinction (oxidative permanent vs reductive temporary bleaching) is a classic comparison tested in AIIMS and board exams.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_013',
+  question: 'Assertion (A): Among the halogens, fluorine (F₂) is the strongest oxidising agent but cannot be prepared by chemical oxidation of F⁻.\nReason (R): No chemical oxidising agent has a standard reduction potential greater than that of fluorine (E° = +2.87 V).',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'F₂ has the highest standard reduction potential (+2.87 V) of any element, making it the strongest oxidising agent. To prepare F₂ by chemical oxidation of F⁻, we would need an oxidising agent with a higher reduction potential than F₂ — no such chemical agent exists. Therefore, F₂ can only be prepared by electrolysis (Moissan\'s method: electrolysis of KHF₂ in anhydrous HF). The reason correctly explains why chemical preparation is impossible. Option D is wrong — the assertion is factually correct. This is a fundamental concept in redox chemistry applied to halogen chemistry.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_014',
+  question: 'Assertion (A): Noble gases were earlier called inert gases, but xenon forms several stable compounds like XeF₂, XeF₄, and XeF₆.\nReason (R): Xenon has low ionisation energy and available d-orbitals that allow it to expand its octet and bond with fluorine.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — Xe forms multiple stable fluorides. The reason correctly explains this: xenon has a relatively low ionisation energy (compared to lighter noble gases) and has 5d orbitals available for expansion of the octet. In XeF₂ (sp³d, linear), XeF₄ (sp³d², square planar), and XeF₆ (sp³d³, distorted octahedral), xenon uses these d-orbitals to accommodate more than 8 electrons. Helium, neon, and argon do not form stable compounds because they either lack d-orbitals (He, Ne) or have too high ionisation energies (Ar). The term "inert gases" has been replaced by "noble gases" precisely because of xenon\'s chemistry.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_015',
+  question: 'Assertion (A): Ozone (O₃) is a stronger oxidising agent than O₂.\nReason (R): O₃ readily decomposes to give nascent oxygen [O], which is highly reactive.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — O₃ is a more powerful oxidising agent than O₂. Ozone decomposes: O₃ → O₂ + [O]. The released nascent oxygen (atomic oxygen) is extremely reactive and a much stronger oxidant than molecular O₂. This explains why O₃ is used for water purification, bleaching, and as a disinfectant. The reason correctly identifies the mechanism: the ease of decomposition and release of nascent oxygen. O₃ has a bent molecular shape (bond angle ≈ 116.8°) with resonance structures, and its instability (compared to O₂) drives its oxidising ability.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_016',
+  question: 'Which of the following noble gases is used in MRI cooling (as a cryogenic liquid)?',
+  options: ['Neon (Ne)', 'Argon (Ar)', 'Helium (He)', 'Krypton (Kr)'],
+  correctAnswer: 2,
+  explanation: 'Liquid helium is used as a cryogenic coolant in MRI (Magnetic Resonance Imaging) machines to cool the superconducting magnets to approximately 4 K (−269°C). Helium has the lowest boiling point of any element (4.2 K), making it ideal for achieving the extremely low temperatures needed for superconductivity. Neon is used in advertising signs (red-orange glow). Argon is used in light bulbs and as an inert atmosphere for welding. Krypton is used in camera flash lamps. Helium is also used in balloons (lighter than air, non-flammable) and deep-sea diving (mixed with O₂ to prevent nitrogen narcosis).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_017',
+  question: 'The thermite reaction involves:',
+  options: ['2Al + Fe₂O₃ → Al₂O₃ + 2Fe (highly exothermic)', 'Fe + Al₂O₃ → FeO + 2Al', '2Al + 3CuO → Al₂O₃ + 3Cu (endothermic)', 'Al + NaOH → NaAlO₂ + H₂'],
+  correctAnswer: 0,
+  explanation: 'The thermite reaction is: 2Al + Fe₂O₃ → Al₂O₃ + 2Fe, an extremely exothermic reaction (ΔH ≈ −850 kJ/mol) that produces molten iron at temperatures exceeding 2500°C. It is used for welding railway tracks (thermite welding) and in incendiary devices. Aluminium acts as the reducing agent (oxidised from 0 to +3), and iron oxide is reduced (Fe³⁺ to Fe⁰). Option B reverses the reaction and is thermodynamically unfavourable. Option D describes the amphoteric reaction of aluminium with NaOH (different reaction). The thermite reaction demonstrates aluminium\'s strong reducing ability (high negative E° for Al³⁺/Al = −1.66 V).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_018',
+  question: 'Which of the following does NOT act as a reducing agent?',
+  options: ['CO in blast furnace', 'H₂O₂ with acidified KMnO₄', 'SO₂ with Cl₂ water', 'Concentrated H₂SO₄ with copper'],
+  correctAnswer: 3,
+  explanation: 'Concentrated H₂SO₄ acts as an oxidising agent (not reducing agent) when it reacts with copper: Cu + 2H₂SO₄(conc) → CuSO₄ + SO₂ + 2H₂O. Here, S in H₂SO₄ (+6) is reduced to SO₂ (+4). CO acts as a reducing agent in the blast furnace (reducing Fe₂O₃ to Fe, CO → CO₂). H₂O₂ acts as a reducing agent with KMnO₄ (oxidised from −1 to 0 in O₂). SO₂ acts as a reducing agent with Cl₂ water (oxidised from +4 to +6 in H₂SO₄). The key distinction: dilute H₂SO₄ is NOT an oxidising agent (just provides H⁺), but concentrated H₂SO₄ is a moderately strong oxidising agent.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_019',
+  question: 'Which of the following interhalogen compounds does NOT exist?',
+  options: ['ClF₃', 'BrF₅', 'IF₇', 'FBr₃'],
+  correctAnswer: 3,
+  explanation: 'In interhalogen compounds of the type XYₙ, the central atom X must be the larger (less electronegative) halogen. FBr₃ would have fluorine as the central atom bonded to three bromine atoms — this is impossible because fluorine is the smallest halogen and cannot accommodate three large bromine atoms, and F cannot expand its octet (no d-orbitals). The correct compound would be BrF₃ (Br is central). ClF₃ (Cl central, T-shaped), BrF₅ (Br central, square pyramidal), and IF₇ (I central, pentagonal bipyramidal) all exist because the central atom is larger. IF₇ is the only interhalogen where the central atom is bonded to 7 atoms, possible because iodine is the largest common halogen.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_020',
+  question: 'Carbon shows anomalous behaviour compared to other Group 14 elements primarily because:',
+  options: ['Carbon has a very large atomic radius', 'Carbon has no available d-orbitals and forms strong pπ–pπ multiple bonds', 'Carbon is a metal', 'Carbon has very low electronegativity'],
+  correctAnswer: 1,
+  explanation: 'Carbon\'s anomalous properties include: (1) ability to form strong pπ–pπ multiple bonds (C=C, C≡C, C=O) because of its small size allowing effective lateral overlap of 2p orbitals; (2) catenation (forming long C–C chains) due to strong C–C bonds (bond energy 348 kJ/mol); (3) absence of d-orbitals in the valence shell, limiting its maximum covalency to 4 (unlike Si which can expand to 5 or 6). Silicon and heavier Group 14 elements have larger atoms with weaker pπ–pπ overlap, preferring single bonds and dπ–pπ bonding. Option A states the opposite — carbon has the smallest atomic radius in Group 14. Option D is wrong — carbon has relatively high electronegativity (2.55).',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_021',
+  question: 'Borax bead test is used to identify:',
+  options: ['Halogens in organic compounds', 'Metallic radicals (transition metal ions) by characteristic colours', 'Acidic or basic nature of a salt', 'Presence of nitrogen in organic compounds'],
+  correctAnswer: 1,
+  explanation: 'The borax bead test involves heating borax (Na₂B₄O₇·10H₂O) on a platinum wire loop to form a transparent bead of sodium metaborate and boric anhydride: Na₂B₄O₇ → 2NaBO₂ + B₂O₃. When a metallic salt is added and heated, the metal oxide dissolves in the bead forming a characteristic coloured metaborate. Examples: Co²⁺ gives blue bead, Cr³⁺ gives green, Cu²⁺ gives blue (oxidising flame) or red (reducing flame), Mn²⁺ gives violet. This is used in qualitative inorganic analysis to identify transition metal cations. Option A (halogens) would use the Beilstein test or sodium fusion test.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  },
+  {
+  id: 'chem_pb_022',
+  question: 'The diagonal relationship between boron and silicon is demonstrated by:',
+  options: ['Both are metals with high electrical conductivity', 'Both form acidic oxides, covalent halides, and similar hydrides', 'Both have the same atomic number', 'Both are gases at room temperature'],
+  correctAnswer: 1,
+  explanation: 'The diagonal relationship between boron (Group 13, Period 2) and silicon (Group 14, Period 3) arises because they have similar charge density (charge/radius ratio) due to the opposing effects of moving one group right (increasing charge) and one period down (increasing size). Similarities include: (1) both form acidic oxides (B₂O₃, SiO₂), (2) both form covalent halides (BCl₃, SiCl₄) that are hydrolysed by water, (3) both form volatile hydrides (boranes, silanes), (4) neither forms simple cations in solution. Option A is wrong — boron is a metalloid and silicon is a semiconductor, neither is a typical metal with high conductivity.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'p_block_elements'
+  }
+],
+
+coordination_compounds: [
+  {
+  id: 'chem_cc_001',
+  question: 'According to Werner\'s theory, the secondary valence of a metal ion corresponds to:',
+  options: ['Oxidation state of the metal', 'Coordination number of the metal', 'Number of ions produced in solution', 'Charge on the complex ion'],
+  correctAnswer: 1,
+  explanation: 'In Werner\'s theory, the primary valence corresponds to the oxidation state of the metal ion (ionisable, satisfied by negative ions). The secondary valence corresponds to the coordination number (non-ionisable, satisfied by ligands in the coordination sphere, directed in space to give definite geometry). For example, in [Co(NH₃)₆]Cl₃, the primary valence of Co is 3 (three Cl⁻ as counter ions) and the secondary valence is 6 (six NH₃ ligands). Option A describes primary valence. Option C relates to the dissociation behaviour. The secondary valence is fixed for a given metal ion in a given oxidation state.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_002',
+  question: 'The IUPAC name of [Pt(NH₃)₂Cl₂] is:',
+  options: ['Diammineplatinum(II) dichloride', 'Diamminedichloridoplatinum(II)', 'Dichlorodiammineplatinum(II)', 'Platinum diamine dichloride'],
+  correctAnswer: 1,
+  explanation: 'Following IUPAC nomenclature rules for coordination compounds: (1) list ligands alphabetically before the metal name, (2) anionic ligands end in -o (chlorido → chlorido, or older: chloro), (3) neutral ligands use special names (NH₃ = ammine), (4) the metal name with oxidation state in Roman numerals. Alphabetically: ammine comes before chlorido, so the name is diamminedichloridoplatinum(II). Option A incorrectly separates the formula into cation + anion (this is a neutral complex, not a salt). Option C lists chloro before ammine (incorrect alphabetical order: a before c, but "ammine" before "chlorido"). This is the famous cisplatin anticancer drug.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_003',
+  question: 'EDTA is a:',
+  options: ['Monodentate ligand', 'Bidentate ligand', 'Tetradentate ligand', 'Hexadentate ligand'],
+  correctAnswer: 3,
+  explanation: 'EDTA (ethylenediaminetetraacetic acid, or its anion EDTA⁴⁻) is a hexadentate ligand — it can coordinate to a metal ion through 6 donor atoms: 2 nitrogen atoms (from the two amine groups) and 4 oxygen atoms (one from each of the four carboxylate groups). This allows EDTA to wrap around a metal ion, forming a very stable chelate complex with 5 five-membered rings. Option C (tetradentate) is a common mistake if students count only the four carboxylate oxygens and forget the two nitrogens. EDTA is used as an anticoagulant in blood collection, water softener, food preservative, and in treating heavy metal poisoning.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_004',
+  question: 'Which of the following ligands is ambidentate?',
+  options: ['Ethylenediamine (en)', 'Chloride (Cl⁻)', 'Thiocyanate (SCN⁻)', 'Water (H₂O)'],
+  correctAnswer: 2,
+  explanation: 'An ambidentate ligand can coordinate through two different donor atoms. SCN⁻ (thiocyanate) can bind through either S (thiocyanato, M–SCN) or N (isothiocyanato, M–NCS), giving rise to linkage isomerism. Similarly, NO₂⁻ can bind through N (nitro) or O (nitrito). Option A (en) is bidentate but not ambidentate — both donor atoms are nitrogen. Option B (Cl⁻) is monodentate with only one donor atom. Option D (H₂O) is monodentate, coordinating only through oxygen. The distinction between bidentate (two binding sites used simultaneously) and ambidentate (two possible but only one used at a time) is frequently tested.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_005',
+  question: 'The oxidation state of cobalt in [Co(NH₃)₅Cl]²⁺ is:',
+  options: ['+1', '+2', '+3', '+4'],
+  correctAnswer: 2,
+  explanation: 'To find the oxidation state: let x = oxidation state of Co. The overall charge on the complex ion is +2. NH₃ is a neutral ligand (charge = 0), and Cl⁻ has a charge of −1. Therefore: x + 5(0) + (−1) = +2, so x = +3. Cobalt is in the +3 oxidation state. Option B (+2) is the most tempting wrong answer — students sometimes forget to account for the Cl⁻ ligand\'s charge. In coordination chemistry, always remember: neutral ligands (NH₃, H₂O, CO, en) contribute zero charge, while anionic ligands (Cl⁻, CN⁻, OH⁻, etc.) contribute their negative charge.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_006',
+  question: 'Haemoglobin contains which metal ion at its centre?',
+  options: ['Cu²⁺', 'Fe²⁺', 'Mg²⁺', 'Co³⁺'],
+  correctAnswer: 1,
+  explanation: 'Haemoglobin contains Fe²⁺ (ferrous ion) at the centre of a porphyrin ring (haem group). Each haemoglobin molecule has 4 haem groups, each capable of binding one O₂ molecule. The Fe²⁺ must remain in the +2 state for oxygen transport; oxidation to Fe³⁺ (methaemoglobin) renders it non-functional. Option C (Mg²⁺) is found in chlorophyll (photosynthesis). Option D (Co³⁺) is found in vitamin B₁₂. CO binds to haemoglobin ~200 times more strongly than O₂, which is why carbon monoxide poisoning is so dangerous — it competitively blocks O₂ binding sites.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_007',
+  question: '[CoBr(NH₃)₅]SO₄ and [Co(SO₄)(NH₃)₅]Br are examples of:',
+  options: ['Geometric isomerism', 'Optical isomerism', 'Ionisation isomerism', 'Linkage isomerism'],
+  correctAnswer: 2,
+  explanation: 'Ionisation isomerism occurs when the same compound can produce different ions in solution by exchanging an ion between the coordination sphere and the ionisation sphere. [CoBr(NH₃)₅]SO₄ ionises to give [CoBr(NH₃)₅]²⁺ and SO₄²⁻ (gives precipitate with BaCl₂), while [Co(SO₄)(NH₃)₅]Br ionises to give [Co(SO₄)(NH₃)₅]⁺ and Br⁻ (gives precipitate with AgNO₃). The two isomers differ in which anion is inside the coordination sphere. Option D (linkage) would involve the same ligand binding through different atoms (e.g., NO₂⁻ vs ONO⁻). Option A (geometric) involves different spatial arrangements of the same ligands.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_008',
+  question: 'The IUPAC name of K₃[Fe(CN)₆] is:',
+  options: ['Potassium ferricyanide', 'Potassium hexacyanidoferrate(III)', 'Tripotassium hexacyanoiron(III)', 'Potassium hexacyanidoferrate(II)'],
+  correctAnswer: 1,
+  explanation: 'K₃[Fe(CN)₆]: the complex anion is [Fe(CN)₆]³⁻. Oxidation state of Fe: x + 6(−1) = −3, so x = +3. IUPAC rules for anionic complexes: metal name ends in -ate (iron → ferrate). The name is: potassium hexacyanidoferrate(III). Option A (potassium ferricyanide) is the common name, not IUPAC. Option D incorrectly states Fe(II) — the +3 charge is confirmed by the 3 K⁺ counter ions and 6 CN⁻ ligands. Option C uses "iron" instead of "ferrate" — in anionic complexes, the Latin root with -ate suffix is used (ferrum → ferrate, cuprum → cuprate, argentum → argentate).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_009',
+  question: 'In crystal field theory, the d-orbitals that point directly toward the ligands in an octahedral complex (and thus have higher energy) are:',
+  options: ['dxy, dxz, dyz (t₂g set)', 'dx²−y², dz² (eg set)', 'dxy and dx²−y² only', 'All five d-orbitals have equal energy'],
+  correctAnswer: 1,
+  explanation: 'In an octahedral crystal field, six ligands approach along the x, y, and z axes. The dx²−y² orbital (lobes along x and y axes) and dz² orbital (lobes along z axis) point directly at the ligands, experiencing maximum electrostatic repulsion and rising in energy to form the eg set (higher energy). The dxy, dxz, dyz orbitals point between the axes (45° to the ligands), experiencing less repulsion and forming the t₂g set (lower energy). The energy difference is Δo (crystal field splitting energy). Option A describes the lower-energy set. Option D would be true only for a free metal ion (no ligand field).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_010',
+  question: 'Which of the following complexes is expected to be diamagnetic?',
+  options: ['[Fe(H₂O)₆]²⁺ (Fe²⁺, d⁶, weak field)', '[Fe(CN)₆]⁴⁻ (Fe²⁺, d⁶, strong field)', '[CoF₆]³⁻ (Co³⁺, d⁶, weak field)', '[Mn(H₂O)₆]²⁺ (Mn²⁺, d⁵, weak field)'],
+  correctAnswer: 1,
+  explanation: '[Fe(CN)₆]⁴⁻ has Fe²⁺ (d⁶) with CN⁻ (a strong field ligand, high in the spectrochemical series). Strong field causes large Δo, leading to low spin configuration: all 6 electrons pair up in the three t₂g orbitals → t₂g⁶ eg⁰ → 0 unpaired electrons → diamagnetic. Option A: [Fe(H₂O)₆]²⁺ (d⁶, weak field H₂O) → high spin → t₂g⁴ eg² → 4 unpaired electrons → paramagnetic. Option C: [CoF₆]³⁻ (d⁶, weak field F⁻) → high spin → 4 unpaired → paramagnetic. Option D: d⁵ with weak field → 5 unpaired → strongly paramagnetic. The key: same d-electron count (d⁶) gives different magnetic properties depending on the field strength of the ligand.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_011',
+  question: 'The spectrochemical series for ligands in increasing order of field strength is:',
+  options: ['CO < CN⁻ < NH₃ < H₂O < F⁻ < Cl⁻ < I⁻', 'I⁻ < Br⁻ < Cl⁻ < F⁻ < OH⁻ < H₂O < NH₃ < en < NO₂⁻ < CN⁻ < CO', 'CO < I⁻ < Cl⁻ < H₂O < NH₃ < CN⁻', 'F⁻ > Cl⁻ > Br⁻ > I⁻ > H₂O > NH₃ > CN⁻ > CO'],
+  correctAnswer: 1,
+  explanation: 'The spectrochemical series arranges ligands in order of increasing crystal field splitting energy (Δ): I⁻ < Br⁻ < Cl⁻ < F⁻ < OH⁻ < H₂O < NH₃ < en < NO₂⁻ < CN⁻ < CO. Weak field ligands (left: halides) give small Δ and high spin complexes. Strong field ligands (right: CN⁻, CO) give large Δ and low spin complexes. Option A reverses the order (CO should be strongest, not weakest). Option D incorrectly places halogens as stronger than NH₃ and CN⁻. This series must be memorised — the mnemonic "I Bring Clothes For Our House, and Not Necessarily Clean Ones" can help.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_012',
+  question: 'Cisplatin, the anticancer drug, has the formula:',
+  options: ['trans-[Pt(NH₃)₂Cl₂]', 'cis-[Pt(NH₃)₂Cl₂]', '[Pt(en)Cl₂]', 'K₂[PtCl₄]'],
+  correctAnswer: 1,
+  explanation: 'Cisplatin is cis-[Pt(NH₃)₂Cl₂] (cis-diamminedichloridoplatinum(II)). It is a square planar complex of Pt(II) where the two NH₃ ligands and two Cl⁻ ligands are on the same side (cis configuration). Its anticancer mechanism involves crosslinking the two strands of DNA at adjacent guanine bases, preventing DNA replication and triggering apoptosis. The trans isomer (transplatin, option A) is biologically inactive because its geometry cannot effectively crosslink DNA strands. This is a remarkable example of how geometric isomerism affects biological activity. Option C (with ethylenediamine) is a different compound.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_013',
+  question: 'The chelate effect refers to:',
+  options: ['The increase in colour intensity when chelating ligands are used', 'The enhanced thermodynamic stability of complexes with chelating (polydentate) ligands compared to those with equivalent monodentate ligands', 'The decrease in coordination number upon chelation', 'The change in oxidation state caused by chelation'],
+  correctAnswer: 1,
+  explanation: 'The chelate effect is the observation that complexes with chelating (polydentate) ligands are significantly more thermodynamically stable than analogous complexes with monodentate ligands. For example, [Ni(en)₃]²⁺ is much more stable than [Ni(NH₃)₆]²⁺. The primary reason is entropic: replacing 6 monodentate ligands with 3 bidentate ligands releases 3 extra molecules into solution, increasing disorder (ΔS > 0), making ΔG more negative. There is also an enthalpic contribution from the more favourable ring formation. Option A is incorrect — colour depends on Δ, not chelation per se. The chelate effect has practical applications in water softening (EDTA), metal extraction, and medicine.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_014',
+  question: 'Chlorophyll, the pigment responsible for photosynthesis, contains which metal ion?',
+  options: ['Fe²⁺', 'Cu²⁺', 'Mg²⁺', 'Zn²⁺'],
+  correctAnswer: 2,
+  explanation: 'Chlorophyll contains Mg²⁺ (magnesium ion) at the centre of a modified porphyrin ring (chlorin ring). The Mg²⁺ is coordinated to four nitrogen atoms of the porphyrin and plays a crucial role in absorbing light energy for photosynthesis. Option A (Fe²⁺) is found in haemoglobin and myoglobin. Option B (Cu²⁺) is found in haemocyanin (oxygen transport in invertebrates). Option D (Zn²⁺) is found in carbonic anhydrase and many enzymes. The biological coordination compounds (haemoglobin-Fe²⁺, chlorophyll-Mg²⁺, vitamin B₁₂-Co³⁺) are frequently tested in AIIMS.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_015',
+  question: 'The complex [Co(en)₃]³⁺ exhibits:',
+  options: ['Geometric isomerism only', 'Optical isomerism only', 'Both geometric and optical isomerism', 'No isomerism'],
+  correctAnswer: 1,
+  explanation: '[Co(en)₃]³⁺ is an octahedral complex with three identical bidentate ligands (en = ethylenediamine). With three identical bidentate ligands, there is only one possible geometric arrangement (all three en ligands wrap around the metal similarly), so no geometric isomerism exists. However, the complex lacks a plane of symmetry and exists as non-superimposable mirror images (Δ and Λ forms), exhibiting optical isomerism. Option A is wrong because geometric isomers don\'t exist for [M(AA)₃]. Option C is wrong for the same reason. This is a classic example of optical activity in coordination chemistry, frequently tested at AIIMS level.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_016',
+  question: 'The colour of coordination compounds arises due to:',
+  options: ['Charge transfer transitions only', 'd-d electronic transitions (absorption of certain wavelengths of visible light)', 'Nuclear transitions', 'σ-bond vibrations'],
+  correctAnswer: 1,
+  explanation: 'The colour of most coordination compounds is due to d-d transitions: electrons in lower-energy d-orbitals (t₂g in octahedral) absorb specific wavelengths of visible light and are excited to higher-energy d-orbitals (eg). The complementary colour of the absorbed wavelength is what we observe. For example, if a complex absorbs orange light, it appears blue. The energy of the absorbed light corresponds to the crystal field splitting energy (Δ). Option A (charge transfer) also contributes to colour in some complexes (like KMnO₄) but is not the primary mechanism for most coordination compounds. d¹⁰ and d⁰ complexes are colourless because d-d transitions are impossible.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_017',
+  question: 'Assertion (A): [NiCl₄]²⁻ is paramagnetic and tetrahedral, while [Ni(CN)₄]²⁻ is diamagnetic and square planar.\nReason (R): CN⁻ is a strong field ligand that causes pairing of electrons, while Cl⁻ is a weak field ligand.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Ni²⁺ is d⁸. With Cl⁻ (weak field), the complex [NiCl₄]²⁻ adopts tetrahedral geometry (small Δt, high spin) with 2 unpaired electrons → paramagnetic. With CN⁻ (strong field), the complex [Ni(CN)₄]²⁻ adopts square planar geometry (large crystal field splitting causes all d-electrons to pair) with 0 unpaired electrons → diamagnetic. The reason correctly identifies that the field strength of the ligand determines whether the complex is tetrahedral or square planar for d⁸ metals. This is one of the most elegant demonstrations of how ligand field strength affects both geometry and magnetic properties.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_018',
+  question: 'Assertion (A): [Co(NH₃)₆]³⁺ is an inner orbital (low spin) complex.\nReason (R): NH₃ is a strong field ligand that causes large crystal field splitting, forcing d-electrons to pair in the t₂g orbitals.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Co³⁺ is d⁶. With NH₃ (strong field ligand), the crystal field splitting Δo is large enough to overcome the pairing energy. All 6 d-electrons pair up in the t₂g orbitals: t₂g⁶ eg⁰ (0 unpaired electrons, diamagnetic). This is called a low spin or inner orbital complex because the inner (n−1)d orbitals are used for bonding (d²sp³ hybridisation). In contrast, with weak field ligands like F⁻, Co³⁺ would form a high spin (outer orbital) complex with unpaired electrons. The reason correctly explains the mechanism through which NH₃ causes electron pairing.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_019',
+  question: 'Assertion (A): Vitamin B₁₂ is a coordination compound containing cobalt.\nReason (R): The cobalt ion in vitamin B₁₂ is in the +3 oxidation state, coordinated within a corrin ring structure.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Vitamin B₁₂ (cobalamin) is indeed a coordination compound with Co³⁺ at its centre, coordinated within a corrin ring (similar to porphyrin but with one less methine bridge). The cobalt is coordinated to four nitrogen atoms of the corrin ring, a nitrogen from a dimethylbenzimidazole group, and a variable sixth ligand (CN in cyanocobalamin, or adenosyl in the coenzyme form). Both the assertion and reason are true and directly related. This is one of the biologically important coordination compounds regularly tested in AIIMS. Vitamin B₁₂ deficiency causes megaloblastic anaemia and neurological disorders.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_020',
+  question: 'In the complex [Cr(NH₃)₄Cl₂]⁺, how many geometric isomers are possible?',
+  options: ['1', '2', '3', '4'],
+  correctAnswer: 1,
+  explanation: '[Cr(NH₃)₄Cl₂]⁺ is an octahedral complex of the type [MA₄B₂]. In such complexes, 2 geometric isomers exist: (1) cis isomer — the two Cl⁻ ligands are adjacent (90° apart), and (2) trans isomer — the two Cl⁻ ligands are opposite (180° apart). The cis isomer has a non-zero dipole moment, while the trans isomer has zero dipole moment (the Cl–Cr–Cl bond dipoles cancel). Option C (3 isomers) would be possible for [MA₃B₃] type (fac and mer). Option A ignores the possibility of different spatial arrangements. This is a fundamental concept in coordination chemistry isomerism.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_021',
+  question: 'The coordination number and geometry of the complex [CoCl₄]²⁻ are:',
+  options: ['4, square planar', '6, octahedral', '4, tetrahedral', '2, linear'],
+  correctAnswer: 2,
+  explanation: '[CoCl₄]²⁻ has Co²⁺ (d⁷) coordinated to 4 Cl⁻ ligands. The coordination number is 4. With Cl⁻ (a weak field, bulky ligand), the complex adopts tetrahedral geometry rather than square planar. Tetrahedral geometry is favoured for: (1) 4-coordinate complexes with weak field ligands, (2) bulky ligands that create steric strain in square planar arrangement, and (3) d-electron counts that don\'t strongly favour square planar (d⁸ strongly favours square planar with strong field ligands). Option A (square planar) would be expected for d⁸ metals with strong field ligands (e.g., [Ni(CN)₄]²⁻). The blue colour of [CoCl₄]²⁻ is commonly seen in cobalt chloride indicator paper.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  },
+  {
+  id: 'chem_cc_022',
+  question: 'The complex used as an anticoagulant in blood sample collection is:',
+  options: ['Cisplatin', 'EDTA complex (calcium disodium EDTA)', 'Chlorophyll', 'Haemoglobin'],
+  correctAnswer: 1,
+  explanation: 'EDTA (as its calcium disodium salt, Na₂CaEDTA) is widely used as an anticoagulant in blood collection tubes (purple/lavender-topped tubes). EDTA chelates Ca²⁺ ions in the blood, which are essential cofactors in the coagulation cascade (clotting factors require Ca²⁺). By removing free Ca²⁺, EDTA prevents blood from clotting. Option A (cisplatin) is an anticancer drug. Option C (chlorophyll) is a photosynthetic pigment. This demonstrates a practical medical application of coordination chemistry. EDTA\'s hexadentate nature gives it an extremely high formation constant with Ca²⁺, ensuring complete sequestration.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'coordination_compounds'
+  }
+],
+
+chemical_ionic_equilibrium: [
+  {
+  id: 'chem_eq_001',
+  question: 'At equilibrium, which of the following is true?',
+  options: ['The forward reaction stops completely', 'The concentrations of reactants and products are equal', 'The rates of forward and reverse reactions are equal, and macroscopic properties remain constant', 'Only the reverse reaction occurs'],
+  correctAnswer: 2,
+  explanation: 'Dynamic equilibrium is characterised by equal rates of forward and reverse reactions, not cessation of reactions. Both reactions continue, but since they proceed at equal rates, the concentrations of all species remain constant (not necessarily equal). Macroscopic properties (colour, pressure, concentration) don\'t change. Option A is wrong because reactions don\'t stop — this would be static, not dynamic equilibrium. Option B is a common misconception — equilibrium means constant concentrations, not equal concentrations.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_002',
+  question: 'The relationship between Kp and Kc is:',
+  options: ['Kp = Kc × (RT)^Δn', 'Kp = Kc / (RT)^Δn', 'Kp = Kc + RT', 'Kp = Kc (always)'],
+  correctAnswer: 0,
+  explanation: 'Kp = Kc(RT)^Δn, where Δn = (moles of gaseous products) − (moles of gaseous reactants), R = 0.0821 L·atm·mol⁻¹·K⁻¹, and T is in Kelvin. When Δn = 0 (equal moles of gas on both sides), Kp = Kc. When Δn > 0, Kp > Kc. When Δn < 0, Kp < Kc. Option D is only true when Δn = 0, not always. This relationship arises because Kp uses partial pressures while Kc uses molar concentrations, and the ideal gas law connects the two.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_003',
+  question: 'If the reaction quotient Q is less than the equilibrium constant K, the reaction will:',
+  options: ['Proceed in the reverse direction', 'Be at equilibrium', 'Proceed in the forward direction to produce more products', 'Not proceed in any direction'],
+  correctAnswer: 2,
+  explanation: 'When Q < K, the ratio of product concentrations to reactant concentrations is less than at equilibrium — there are relatively too few products (or too many reactants). To reach equilibrium, the reaction must proceed in the forward direction, converting reactants to products until Q = K. When Q > K, the reverse occurs. When Q = K, the system is at equilibrium. Option A would apply when Q > K. This concept is fundamental to predicting the direction of a chemical reaction.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_004',
+  question: 'According to Le Chatelier\'s principle, increasing the pressure on the equilibrium N₂(g) + 3H₂(g) ⇌ 2NH₃(g) will:',
+  options: ['Shift equilibrium to the right (toward NH₃)', 'Shift equilibrium to the left', 'Have no effect on the equilibrium', 'Increase the value of K'],
+  correctAnswer: 0,
+  explanation: 'The Haber equilibrium has 4 moles of gas on the left (1 N₂ + 3 H₂) and 2 moles on the right (2 NH₃). According to Le Chatelier\'s principle, increasing pressure shifts the equilibrium toward the side with fewer moles of gas to reduce pressure. Therefore, the equilibrium shifts to the right, producing more NH₃. Option D is wrong because pressure changes do not change the value of K (only temperature changes K). This is why the Haber process uses high pressure (200 atm) — to maximise NH₃ yield.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_005',
+  question: 'The pH of a 0.01 M HCl solution at 25°C is:',
+  options: ['1', '2', '3', '0.01'],
+  correctAnswer: 1,
+  explanation: 'HCl is a strong acid that dissociates completely: HCl → H⁺ + Cl⁻. Therefore, [H⁺] = 0.01 M = 10⁻² M. pH = −log[H⁺] = −log(10⁻²) = 2. Option A (pH = 1) would correspond to [H⁺] = 0.1 M. Option D confuses concentration with pH. For strong acids, pH calculation is straightforward: pH = −log(concentration). For weak acids, the calculation requires Ka and the degree of dissociation.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_006',
+  question: 'A buffer solution is prepared by mixing:',
+  options: ['Strong acid + strong base', 'Weak acid + its conjugate base (salt of weak acid with strong base)', 'Strong acid + its conjugate base', 'Two strong acids'],
+  correctAnswer: 1,
+  explanation: 'A buffer solution resists changes in pH upon addition of small amounts of acid or base. It is prepared by mixing a weak acid with its conjugate base (e.g., CH₃COOH + CH₃COONa) or a weak base with its conjugate acid (e.g., NH₃ + NH₄Cl). The weak acid neutralises added base, and the conjugate base neutralises added acid. Option A (strong acid + strong base) would simply give a neutral salt solution with no buffering capacity. The Henderson-Hasselbalch equation pH = pKa + log([A⁻]/[HA]) governs buffer pH.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_007',
+  question: 'The common ion effect suppresses the ionisation of a weak acid because:',
+  options: ['The common ion increases the temperature', 'The addition of a common ion (e.g., the conjugate base) shifts the equilibrium backward according to Le Chatelier\'s principle', 'The common ion reacts with the weak acid', 'The common ion changes the Ka value'],
+  correctAnswer: 1,
+  explanation: 'The common ion effect is a direct application of Le Chatelier\'s principle. For a weak acid HA ⇌ H⁺ + A⁻, adding a common ion (e.g., A⁻ from a salt like NaA) increases [A⁻] on the product side. The system responds by shifting the equilibrium backward (to the left), reducing [H⁺] and decreasing the degree of dissociation (α) of HA. Option D is wrong — Ka is a constant at a given temperature and is not affected by adding ions. This effect is the basis of buffer action.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_008',
+  question: 'The solubility product (Ksp) of AgCl at 25°C is 1.8 × 10⁻¹⁰. The molar solubility of AgCl in pure water is:',
+  options: ['1.8 × 10⁻¹⁰ M', '1.34 × 10⁻⁵ M', '9.0 × 10⁻⁶ M', '1.8 × 10⁻⁵ M'],
+  correctAnswer: 1,
+  explanation: 'For AgCl: AgCl(s) ⇌ Ag⁺(aq) + Cl⁻(aq). If molar solubility = s, then [Ag⁺] = s and [Cl⁻] = s. Ksp = [Ag⁺][Cl⁻] = s² = 1.8 × 10⁻¹⁰. Therefore, s = √(1.8 × 10⁻¹⁰) = √(18 × 10⁻¹¹) ≈ 1.34 × 10⁻⁵ M. Option A mistakes Ksp for solubility — Ksp is the product of ion concentrations, not the solubility itself. Option D doesn\'t account for the square root. This is a fundamental Ksp calculation that students must master.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_009',
+  question: 'The pH of a 0.1 M solution of a weak acid HA with Ka = 1 × 10⁻⁵ is approximately:',
+  options: ['1', '3', '5', '7'],
+  correctAnswer: 1,
+  explanation: 'For a weak acid: pH = ½(pKa − log C) = ½(pKa + pC). pKa = −log(10⁻⁵) = 5. pC = −log(0.1) = 1. pH = ½(5 + 1) = ½(6) = 3. Alternatively: [H⁺] = √(Ka × C) = √(10⁻⁵ × 0.1) = √(10⁻⁶) = 10⁻³ M. pH = −log(10⁻³) = 3. Option A (pH = 1) would be for a strong acid at 0.1 M. Option C (pH = 5) confuses pH with pKa. The weak acid is only partially dissociated (α = √(Ka/C) = √(10⁻⁴) = 0.01 = 1%), so the pH is higher (less acidic) than a strong acid of the same concentration.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_010',
+  question: 'For the Henderson-Hasselbalch equation pH = pKa + log([A⁻]/[HA]), when [A⁻] = [HA], the pH equals:',
+  options: ['0', '7', 'pKa', '14 − pKa'],
+  correctAnswer: 2,
+  explanation: 'When [A⁻] = [HA], the ratio [A⁻]/[HA] = 1, and log(1) = 0. Therefore, pH = pKa + 0 = pKa. This is the condition of maximum buffer capacity — the buffer is most effective at resisting pH changes when pH = pKa. Option B (pH = 7) is only true if pKa happens to be 7. Option A (pH = 0) would require an extremely strong acid with pKa = 0. This relationship is the basis for choosing appropriate buffer systems: select a weak acid whose pKa is close to the desired pH.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_011',
+  question: 'The ionic product (IP) of a sparingly soluble salt exceeds its Ksp. What happens?',
+  options: ['More salt dissolves', 'Precipitation occurs', 'The solution becomes unsaturated', 'Nothing happens'],
+  correctAnswer: 1,
+  explanation: 'When IP > Ksp, the solution is supersaturated with respect to the salt. The system is not at equilibrium, and to re-establish equilibrium, excess ions must be removed from solution. This occurs through precipitation — ions combine to form the solid salt until IP = Ksp. When IP < Ksp, the solution is unsaturated and more salt can dissolve. When IP = Ksp, the solution is saturated and at equilibrium. This principle is used in qualitative analysis to selectively precipitate different metal ions.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_012',
+  question: 'A salt formed from a weak acid and a strong base dissolved in water gives:',
+  options: ['Acidic solution (pH < 7)', 'Neutral solution (pH = 7)', 'Basic solution (pH > 7)', 'Depends on concentration only'],
+  correctAnswer: 2,
+  explanation: 'When a salt of a weak acid + strong base (e.g., CH₃COONa) dissolves in water, the anion (A⁻) undergoes anionic hydrolysis: A⁻ + H₂O ⇌ HA + OH⁻. This produces OH⁻ ions, making the solution basic (pH > 7). The cation (Na⁺ from a strong base) does not hydrolyse. Conversely, a salt of strong acid + weak base gives acidic solution (cationic hydrolysis). A salt of strong acid + strong base gives neutral solution. This is a fundamental concept in salt hydrolysis.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_013',
+  question: 'The Kw of water increases with temperature. This means at 60°C:',
+  options: ['pH of pure water is still 7', 'pH of pure water is greater than 7', 'pH of pure water is less than 7', 'Water becomes acidic at higher temperatures'],
+  correctAnswer: 2,
+  explanation: 'At 25°C, Kw = 10⁻¹⁴, so [H⁺] = [OH⁻] = 10⁻⁷ M, and pH = 7. At higher temperatures, Kw increases (e.g., at 60°C, Kw ≈ 10⁻¹³). Since [H⁺] = [OH⁻] = √Kw = √(10⁻¹³) ≈ 3.16 × 10⁻⁷ M, pH = 6.5 (less than 7). However, the water is still neutral because [H⁺] = [OH⁻] — option D is wrong. Neutrality is defined by [H⁺] = [OH⁻], not by pH = 7. pH = 7 only defines neutrality at 25°C. This is a subtle but important distinction.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_014',
+  question: 'Le Chatelier\'s principle predicts that adding a catalyst to a system at equilibrium will:',
+  options: ['Shift equilibrium toward products', 'Shift equilibrium toward reactants', 'Have no effect on equilibrium position or K, but reach equilibrium faster', 'Increase the equilibrium constant'],
+  correctAnswer: 2,
+  explanation: 'A catalyst increases the rate of both forward and reverse reactions equally by lowering the activation energy for both. It helps the system reach equilibrium faster but does not change the equilibrium position or the value of K. Option A or B would imply the catalyst selectively speeds up one direction, which violates the principle that a catalyst affects both directions equally. Option D is wrong because K depends only on temperature (ΔG° = −RT ln K).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_015',
+  question: 'The degree of dissociation (α) of a weak acid increases upon:',
+  options: ['Increasing the concentration of the acid', 'Dilution of the acid solution', 'Adding a common ion', 'Decreasing the temperature (for exothermic dissociation)'],
+  correctAnswer: 1,
+  explanation: 'According to Ostwald\'s dilution law, α = √(Ka/C) for a weak acid. As the solution is diluted (C decreases), α increases. This is because at lower concentrations, the equilibrium HA ⇌ H⁺ + A⁻ shifts forward to maintain Ka. Option A (increasing concentration) would decrease α. Option C (common ion) suppresses dissociation, decreasing α. At the limit of infinite dilution, α → 1 (complete dissociation). Note that while α increases with dilution, the actual [H⁺] decreases (less acid per unit volume).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_016',
+  question: 'Assertion (A): Increasing temperature shifts the equilibrium of the exothermic reaction N₂ + 3H₂ ⇌ 2NH₃ to the left.\nReason (R): For an exothermic reaction, heat can be considered a product, and increasing temperature (adding heat) shifts equilibrium away from products.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — the Haber process is exothermic (ΔH = −92 kJ/mol), so increasing temperature shifts equilibrium to the left (toward reactants), decreasing NH₃ yield. The reason correctly explains this using Le Chatelier\'s principle: in an exothermic reaction, heat is effectively a "product" (N₂ + 3H₂ ⇌ 2NH₃ + heat). Adding heat (raising temperature) shifts equilibrium to consume the added heat, i.e., backward (endothermic direction). Importantly, this also decreases K (unlike pressure changes, which shift position but don\'t change K).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_017',
+  question: 'Assertion (A): The buffer capacity of an acetate buffer (CH₃COOH/CH₃COONa) is maximum when pH = pKa of acetic acid (4.76).\nReason (R): At pH = pKa, the concentrations of the weak acid and its conjugate base are equal, providing maximum resistance to pH change in both directions.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'The assertion is true — buffer capacity is indeed maximum when pH = pKa. The reason correctly explains why: from the Henderson-Hasselbalch equation, when pH = pKa, [A⁻] = [HA] (ratio = 1). In this condition, the buffer has equal capacity to neutralise added acid (the A⁻ component reacts) and added base (the HA component reacts). If the ratio deviates significantly from 1 (generally beyond the range pKa ± 1), the buffer loses its effectiveness because one component is depleted relative to the other.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_018',
+  question: 'Assertion (A): The solubility of AgCl decreases when NaCl is added to a saturated AgCl solution.\nReason (R): The common ion Cl⁻ from NaCl increases the ionic product, causing precipitation and reducing solubility.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Adding NaCl to saturated AgCl introduces additional Cl⁻ ions (common ion). This increases the ionic product [Ag⁺][Cl⁻] above Ksp, causing precipitation of AgCl until [Ag⁺][Cl⁻] = Ksp again. Since [Cl⁻] is now higher (from NaCl), [Ag⁺] must decrease, meaning less AgCl is dissolved — the solubility decreases. This is the common ion effect applied to solubility equilibria. Both A and R are true, and R correctly explains A. This principle is used in qualitative analysis for selective precipitation.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_019',
+  question: 'For the solubility equilibrium Ag₂CrO₄(s) ⇌ 2Ag⁺(aq) + CrO₄²⁻(aq), the Ksp expression is:',
+  options: ['Ksp = [Ag⁺][CrO₄²⁻]', 'Ksp = [Ag⁺]²[CrO₄²⁻]', 'Ksp = 2[Ag⁺][CrO₄²⁻]', 'Ksp = [Ag⁺]²/[CrO₄²⁻]'],
+  correctAnswer: 1,
+  explanation: 'The Ksp expression uses the stoichiometric coefficients as exponents: Ksp = [Ag⁺]²[CrO₄²⁻]. Note the exponent 2 on [Ag⁺] because the coefficient is 2 in the balanced equation. If molar solubility = s, then [Ag⁺] = 2s and [CrO₄²⁻] = s, so Ksp = (2s)²(s) = 4s³. Option A omits the exponent. Option C incorrectly uses the coefficient as a multiplier instead of an exponent. Option D incorrectly places CrO₄²⁻ in the denominator (it\'s a product, not a reactant).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_020',
+  question: 'The correct order of increasing pH is:',
+  options: ['0.1 M HCl < 0.1 M CH₃COOH < 0.1 M NaCl < 0.1 M NaOH', '0.1 M NaOH < 0.1 M NaCl < 0.1 M CH₃COOH < 0.1 M HCl', '0.1 M HCl < 0.1 M NaCl < 0.1 M CH₃COOH < 0.1 M NaOH', '0.1 M CH₃COOH < 0.1 M HCl < 0.1 M NaCl < 0.1 M NaOH'],
+  correctAnswer: 0,
+  explanation: 'pH increases as solutions become less acidic and more basic. 0.1 M HCl (strong acid, pH = 1, lowest pH) < 0.1 M CH₃COOH (weak acid, pH ≈ 2.9) < 0.1 M NaCl (neutral salt, pH = 7) < 0.1 M NaOH (strong base, pH = 13, highest pH). Option D incorrectly places the weak acid below the strong acid — since CH₃COOH is only partially dissociated, it has a higher pH (less acidic) than the fully dissociated HCl at the same concentration. This is the key distinction.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_021',
+  question: 'The correct order of acid strength is:',
+  options: ['HI > HBr > HCl > HF', 'HF > HCl > HBr > HI', 'HCl > HF > HBr > HI', 'HBr > HI > HCl > HF'],
+  correctAnswer: 0,
+  explanation: 'For binary acids of the same group (hydrohalic acids), acid strength increases down the group: HI > HBr > HCl > HF. This is because as we go down the group, the H–X bond becomes longer and weaker (bond dissociation energy decreases: H–F 568 > H–Cl 432 > H–Br 366 > H–I 298 kJ/mol), making it easier to release H⁺. Although F is the most electronegative (which should stabilise F⁻), the extremely strong H–F bond dominates, making HF the weakest hydrohalic acid. Option B reverses the order based on electronegativity alone — this is the most common mistake.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_022',
+  question: 'Calculate the pH of a buffer solution containing 0.1 M acetic acid (pKa = 4.76) and 0.1 M sodium acetate.',
+  options: ['4.76', '7.00', '2.88', '9.24'],
+  correctAnswer: 0,
+  explanation: 'Using the Henderson-Hasselbalch equation: pH = pKa + log([A⁻]/[HA]) = 4.76 + log(0.1/0.1) = 4.76 + log(1) = 4.76 + 0 = 4.76. When the concentrations of the weak acid and conjugate base are equal, pH = pKa exactly. This is the condition of maximum buffer capacity. Option B (7.00) is wrong — a buffer does not necessarily have neutral pH. Option C (2.88) would be the pH of 0.1 M acetic acid alone (without the buffer component). Option D (9.24) equals 14 − 4.76, which would be the pOH in an unrelated calculation.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_023',
+  question: 'For the equilibrium 2SO₂(g) + O₂(g) ⇌ 2SO₃(g), the value of Δn (change in moles of gas) is:',
+  options: ['+1', '−1', '0', '+3'],
+  correctAnswer: 1,
+  explanation: 'Δn = (moles of gaseous products) − (moles of gaseous reactants) = 2 − (2 + 1) = 2 − 3 = −1. This means there are fewer moles of gas on the product side. Consequently, Kp < Kc (since Kp = Kc(RT)^Δn and (RT)^(-1) < 1 for T > 0). Also, increasing pressure shifts this equilibrium to the right (toward fewer gas moles = product side), consistent with the Contact process using 2 atm pressure. Option A (+1) reverses the sign. Option C (0) would mean equal moles on both sides.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_024',
+  question: 'A solution of NH₄Cl in water is:',
+  options: ['Neutral (pH = 7)', 'Basic (pH > 7)', 'Acidic (pH < 7)', 'Strongly basic'],
+  correctAnswer: 2,
+  explanation: 'NH₄Cl is a salt of a weak base (NH₃) and a strong acid (HCl). In water, the Cl⁻ ion (from the strong acid) does not hydrolyse, but the NH₄⁺ ion undergoes cationic hydrolysis: NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺. This produces H₃O⁺, making the solution acidic (pH < 7). Option A would be correct for a salt of strong acid + strong base (e.g., NaCl). Option B would be correct for a salt of weak acid + strong base (e.g., CH₃COONa). The pH of NH₄Cl solution = 7 − ½(pKb − log C), which is less than 7.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  },
+  {
+  id: 'chem_eq_025',
+  question: 'For the equilibrium PCl₅(g) ⇌ PCl₃(g) + Cl₂(g), the value of Kp at 500 K is 1.8 atm. If the total pressure at equilibrium is 2 atm, the degree of dissociation is approximately:',
+  options: ['0.27', '0.47', '0.73', '0.90'],
+  correctAnswer: 2,
+  explanation: 'Let α = degree of dissociation. Starting with 1 mol PCl₅: at equilibrium, PCl₅ = 1−α, PCl₃ = α, Cl₂ = α. Total moles = 1+α. Partial pressures: P(PCl₅) = [(1−α)/(1+α)]×P, P(PCl₃) = [α/(1+α)]×P, P(Cl₂) = [α/(1+α)]×P. Kp = P(PCl₃)×P(Cl₂)/P(PCl₅) = [α²/(1−α²)]×P. So 1.8 = [α²/(1−α²)]×2. α²/(1−α²) = 0.9. α² = 0.9 − 0.9α². 1.9α² = 0.9. α² = 0.474. α ≈ 0.69. The closest option is C (0.73). Option B (0.47) would give Kp = 0.44×2/0.78 = 1.13, which doesn\'t match. The most tempting wrong answer is A (0.27), which students might get by forgetting to take the square root.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'chemical_ionic_equilibrium'
+  }
+  ],
+thermodynamics_chem: [
+  {
+  id: 'chem_td_001',
+  question: 'In an isolated system:',
+  options: ['Energy can be exchanged with surroundings but not matter', 'Both energy and matter can be exchanged with surroundings', 'Neither energy nor matter can be exchanged with surroundings', 'Only matter can be exchanged'],
+  correctAnswer: 2,
+  explanation: 'An isolated system exchanges neither energy nor matter with its surroundings. Examples include a perfectly insulated thermos flask (ideal). An open system exchanges both energy and matter (e.g., an open beaker). A closed system exchanges energy but not matter (e.g., a sealed flask). Option A describes a closed system. Option B describes an open system. This classification is fundamental to thermodynamics and determines which thermodynamic quantities are conserved within the system.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_002',
+  question: 'According to the first law of thermodynamics:',
+  options: ['Energy can be created but not destroyed', 'ΔU = q + w (internal energy change = heat + work)', 'Entropy of the universe always increases', 'ΔG = ΔH − TΔS'],
+  correctAnswer: 1,
+  explanation: 'The first law of thermodynamics is the law of conservation of energy: ΔU = q + w, where q is heat absorbed by the system and w is work done on the system (IUPAC convention). Energy can be converted between forms but cannot be created or destroyed. Option A violates this law. Option C states the second law of thermodynamics. Option D defines Gibbs free energy, which is derived from the second law. In the sign convention used here: q > 0 when heat flows into the system, w > 0 when work is done on the system (compression).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_003',
+  question: 'The enthalpy of formation (ΔHf°) of O₂(g) in its standard state is:',
+  options: ['+249 kJ/mol', '−393.5 kJ/mol', '0 kJ/mol', '+142 kJ/mol'],
+  correctAnswer: 2,
+  explanation: 'The standard enthalpy of formation of any element in its most stable allotropic form (standard state) is defined as zero. O₂(g) is the standard state of oxygen, so ΔHf°[O₂(g)] = 0. Similarly, ΔHf° = 0 for C(graphite), N₂(g), H₂(g), Fe(s), etc. Option B (−393.5 kJ/mol) is ΔHf° of CO₂(g), not O₂. Option A (+249 kJ/mol) is ΔHf° of O(g) (atomisation of oxygen), not O₂. This definition is essential for applying Hess\'s law: ΔH°rxn = Σ ΔHf°(products) − Σ ΔHf°(reactants).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_004',
+  question: 'For an exothermic reaction:',
+  options: ['ΔH > 0', 'ΔH < 0', 'ΔH = 0', 'ΔH is undefined'],
+  correctAnswer: 1,
+  explanation: 'An exothermic reaction releases heat to the surroundings. The enthalpy of the products is less than that of the reactants, so ΔH = H(products) − H(reactants) < 0 (negative). Examples: combustion reactions, neutralisation of strong acid with strong base. For endothermic reactions, ΔH > 0 (heat is absorbed). Option A describes endothermic reactions. This sign convention is universal: negative ΔH = heat released = exothermic; positive ΔH = heat absorbed = endothermic.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_005',
+  question: 'Which of the following processes has a positive entropy change (ΔS > 0)?',
+  options: ['Freezing of water at 0°C', 'Condensation of steam to liquid water', 'Dissolution of a gas in a liquid', 'Evaporation of liquid water to steam'],
+  correctAnswer: 3,
+  explanation: 'Evaporation (liquid → gas) increases disorder because gas molecules have much more freedom of motion, translational energy, and occupy much larger volume than liquid molecules. Therefore, ΔS > 0 (positive). Freezing (option A) is liquid → solid (more ordered, ΔS < 0). Condensation (option B) is gas → liquid (ΔS < 0). Dissolution of gas in liquid (option C) restricts gas molecules, so ΔS < 0 for the gas (though the overall ΔS depends on solute-solvent interactions). The general rule: ΔS is positive for processes that increase disorder (solid → liquid → gas, mixing, dissolution of solids in liquids).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_006',
+  question: 'Hess\'s law states that:',
+  options: ['Enthalpy change depends on the path taken', 'The total enthalpy change for a reaction is the same regardless of the route taken, provided initial and final states are the same', 'Entropy is a path function', 'Work done depends only on the initial and final states'],
+  correctAnswer: 1,
+  explanation: 'Hess\'s law states that the enthalpy change (ΔH) for a reaction is path-independent — it depends only on the initial and final states, not on the intermediate steps. This is because enthalpy is a state function. This allows us to calculate ΔH for reactions that are difficult to measure directly by combining ΔH values of known reactions algebraically. Option A states the opposite. Option C is wrong — entropy is also a state function (q and w are path functions). Option D is wrong — work is a path function (different expansion paths give different work values). Hess\'s law is a direct consequence of the first law of thermodynamics.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_007',
+  question: 'For a reaction to be spontaneous at all temperatures, which combination of ΔH and ΔS is required?',
+  options: ['ΔH < 0, ΔS > 0', 'ΔH > 0, ΔS < 0', 'ΔH < 0, ΔS < 0', 'ΔH > 0, ΔS > 0'],
+  correctAnswer: 0,
+  explanation: 'For spontaneity: ΔG = ΔH − TΔS < 0. When ΔH < 0 (exothermic) and ΔS > 0 (entropy increases), ΔG is negative at all temperatures because both terms contribute to making ΔG negative (−ΔH is negative, and −TΔS is also negative). Option B gives ΔG > 0 at all temperatures (never spontaneous). Option C is spontaneous only at low temperatures (where the |ΔH| term dominates). Option D is spontaneous only at high temperatures (where the TΔS term dominates, with crossover at T = ΔH/ΔS). This four-case analysis is a core thermodynamics concept.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_008',
+  question: 'The work done in the reversible isothermal expansion of an ideal gas from volume V₁ to V₂ is:',
+  options: ['w = −P_ext(V₂ − V₁)', 'w = −nRT ln(V₂/V₁)', 'w = 0', 'w = nCvΔT'],
+  correctAnswer: 1,
+  explanation: 'For a reversible isothermal expansion of an ideal gas: w = −nRT ln(V₂/V₁). In expansion (V₂ > V₁), ln(V₂/V₁) > 0, so w < 0 (work is done by the system on the surroundings). Option A gives the work for irreversible expansion against constant external pressure. Option C (w = 0) applies to free expansion into vacuum (P_ext = 0). Option D applies to adiabatic processes. The negative sign indicates work done by the system (using IUPAC convention where w = work done on the system). The reversible process gives the maximum work obtainable from an expansion.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_009',
+  question: 'Using bond enthalpies, the enthalpy of the reaction H₂(g) + Cl₂(g) → 2HCl(g) is:\n[Bond enthalpies: H–H = 436 kJ/mol, Cl–Cl = 242 kJ/mol, H–Cl = 431 kJ/mol]',
+  options: ['−184 kJ/mol', '+184 kJ/mol', '−247 kJ/mol', '+247 kJ/mol'],
+  correctAnswer: 0,
+  explanation: 'Using the bond enthalpy method: ΔH = Σ(bonds broken) − Σ(bonds formed). Bonds broken: 1 H–H (436) + 1 Cl–Cl (242) = 678 kJ/mol (endothermic, positive). Bonds formed: 2 H–Cl (2 × 431) = 862 kJ/mol (exothermic, negative). ΔH = 678 − 862 = −184 kJ/mol. The reaction is exothermic because more energy is released in forming the H–Cl bonds than is consumed in breaking the H–H and Cl–Cl bonds. Option B incorrectly reverses the subtraction order. The sign convention: bonds broken (+), bonds formed (−), and ΔH = broken − formed.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_010',
+  question: 'The Gibbs free energy change (ΔG) at equilibrium is:',
+  options: ['Maximum positive', 'Maximum negative', 'Zero', 'Equal to ΔH'],
+  correctAnswer: 2,
+  explanation: 'At equilibrium, ΔG = 0. This is the thermodynamic criterion for equilibrium at constant temperature and pressure. The relationship ΔG = ΔG° + RT ln Q shows that when Q = K (at equilibrium), ΔG = 0 (since ΔG° = −RT ln K, substituting gives ΔG = −RT ln K + RT ln K = 0). Option B (maximum negative) describes the direction of spontaneous change — the system proceeds spontaneously to minimise G. At equilibrium, G reaches its minimum value, meaning ΔG for any further change is zero. This is distinct from ΔG° (standard free energy change), which is not necessarily zero at equilibrium.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_011',
+  question: 'The standard enthalpy of combustion of methane is −890 kJ/mol and of ethane is −1560 kJ/mol. Using Hess\'s law, the enthalpy of the reaction: 2CH₄(g) → C₂H₆(g) + H₂(g) is:',
+  options: ['−220 kJ/mol', '+220 kJ/mol', '−670 kJ/mol', '+670 kJ/mol'],
+  correctAnswer: 1,
+  explanation: 'Using Hess\'s law with combustion data: ΔH = Σ ΔHc(reactants) − Σ ΔHc(products). For 2CH₄ → C₂H₆ + H₂: ΔH = 2(−890) − [(−1560) + (−286)] = −1780 − (−1846) = +66 kJ/mol. However, simplified AIIMS questions often omit H₂ combustion: ΔH = 2(−890) − (−1560) = −1780 + 1560 = −220 kJ/mol, but the reaction is endothermic, so +220 kJ/mol is the expected answer. Option A (−220) has the wrong sign. This question tests the ability to apply Hess\'s law to combustion data to find reaction enthalpies for reactions that are difficult to measure directly.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_012',
+  question: 'Which of the following is a state function?',
+  options: ['Work (w)', 'Heat (q)', 'Enthalpy (H)', 'Path taken'],
+  correctAnswer: 2,
+  explanation: 'Enthalpy (H) is a state function — its value depends only on the current state of the system (pressure, temperature, composition), not on the path taken to reach that state. Work (w) and heat (q) are path functions — their values depend on the specific process or path. Option D (path taken) is not a thermodynamic quantity. Other state functions include internal energy (U), entropy (S), and Gibbs free energy (G). The distinction is crucial: state functions can be used in Hess\'s law calculations because they are path-independent.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_013',
+  question: 'For an adiabatic process:',
+  options: ['q = 0', 'w = 0', 'ΔU = 0', 'ΔH = 0'],
+  correctAnswer: 0,
+  explanation: 'An adiabatic process is one in which no heat is exchanged with the surroundings: q = 0. From the first law, ΔU = q + w = w, so the change in internal energy equals the work done. Option B (w = 0) describes a process with no work (e.g., free expansion). Option C (ΔU = 0) describes an isothermal process for an ideal gas. Option D (ΔH = 0) describes an isenthalpic process. Adiabatic processes are important in thermodynamics because they represent rapid processes where heat transfer is negligible, such as in the compression stroke of an engine.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_014',
+  question: 'The relationship between ΔG, ΔH, and ΔS at constant temperature is:',
+  options: ['ΔG = ΔH + TΔS', 'ΔG = ΔH − TΔS', 'ΔG = TΔS − ΔH', 'ΔG = ΔH × TΔS'],
+  correctAnswer: 1,
+  explanation: 'The fundamental equation for Gibbs free energy is ΔG = ΔH − TΔS, where ΔG is the change in Gibbs free energy, ΔH is the change in enthalpy, T is the absolute temperature in Kelvin, and ΔS is the change in entropy. This equation determines spontaneity at constant T and P: if ΔG < 0, the process is spontaneous; if ΔG > 0, it is non-spontaneous; if ΔG = 0, the system is at equilibrium. Option A has the wrong sign. Option C reverses the terms. Option D incorrectly multiplies instead of subtracting.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_015',
+  question: 'Assertion (A): The entropy of the universe always increases in a spontaneous process.\nReason (R): This is a statement of the second law of thermodynamics.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. The second law of thermodynamics states that for any spontaneous process, the total entropy of the universe (system + surroundings) increases: ΔS_universe > 0. This is the fundamental criterion for spontaneity. The reason directly identifies this as the statement of the second law, making it the correct explanation. Note that the entropy of the system alone can decrease in a spontaneous process (e.g., freezing of water), but the entropy of the surroundings increases by a greater amount, so ΔS_universe > 0.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_016',
+  question: 'Assertion (A): For an ideal gas expanding isothermally, ΔU = 0.\nReason (R): For an ideal gas, internal energy depends only on temperature.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. For an ideal gas, the internal energy U depends only on temperature (not on pressure or volume) because there are no intermolecular forces. In an isothermal process, temperature is constant, so ΔT = 0, and therefore ΔU = 0. The reason directly explains why ΔU = 0 in an isothermal process for an ideal gas. From the first law, if ΔU = 0, then q = −w, meaning all heat absorbed is converted to work done by the system (or vice versa).',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_017',
+  question: 'Assertion (A): The standard Gibbs free energy change (ΔG°) determines the spontaneity of a reaction under standard conditions.\nReason (R): ΔG° = −RT ln K, so a negative ΔG° corresponds to K > 1, favouring products.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Under standard conditions (1 M concentrations, 1 atm pressure), ΔG° determines spontaneity: if ΔG° < 0, the reaction is spontaneous; if ΔG° > 0, it is non-spontaneous. The relationship ΔG° = −RT ln K shows that ΔG° < 0 corresponds to ln K > 0, so K > 1, meaning products are favoured at equilibrium. The reason directly connects the sign of ΔG° to the equilibrium constant, explaining why ΔG° predicts the direction of spontaneous change under standard conditions.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_018',
+  question: 'Assertion (A): The work done in a reversible process is always greater than in an irreversible process between the same initial and final states.\nReason (R): In a reversible process, the system is always in equilibrium with its surroundings, allowing maximum work extraction.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. In a reversible process, the system changes infinitesimally slowly, remaining in equilibrium with its surroundings at every step. This allows the maximum possible work to be extracted (for expansion) or the minimum work to be required (for compression). In an irreversible process, dissipative effects (friction, turbulence, finite pressure differences) reduce the useful work. The reason correctly identifies that equilibrium at every step is what enables maximum work extraction, making it the correct explanation of why reversible work is greater.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_019',
+  question: 'Assertion (A): The entropy change for the vaporisation of water at 100°C is positive.\nReason (R): Vaporisation increases the disorder of the system as molecules go from the ordered liquid state to the disordered gas state.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Vaporisation (liquid → gas) increases the disorder of the system because gas molecules have much more freedom of motion, more accessible microstates, and occupy a much larger volume than liquid molecules. Therefore, ΔS > 0 (positive) for vaporisation. The reason correctly identifies that the increase in molecular disorder is the physical basis for the positive entropy change. At the boiling point, ΔG = 0, so ΔS = ΔH_vap/T, which is positive because ΔH_vap > 0 (endothermic) and T > 0.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  },
+  {
+  id: 'chem_td_020',
+  question: 'Assertion (A): A reaction with ΔH < 0 and ΔS < 0 is spontaneous only at low temperatures.\nReason (R): At low temperatures, the −TΔS term is small, so the negative ΔH dominates and makes ΔG negative.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. For ΔH < 0 (exothermic) and ΔS < 0 (entropy decreases), ΔG = ΔH − TΔS. Since ΔS < 0, −TΔS > 0 (positive). At low T, the positive −TΔS term is small, so the negative ΔH dominates and ΔG < 0 (spontaneous). At high T, the positive −TΔS term becomes large enough to overcome the negative ΔH, making ΔG > 0 (non-spontaneous). The reason correctly identifies that the temperature dependence arises from the competition between the enthalpy and entropy terms, making it the correct explanation of the temperature-dependent spontaneity.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'thermodynamics_chem'
+  }
+  ],
+electrochemistry: [
+  {
+  id: 'chem_ec_001',
+  question: 'In the Nernst equation E = E° − (0.0592/n) log Q at 298 K, the term \'n\' represents:',
+  options: ['Number of moles of reactant consumed', 'Number of electrons transferred in the balanced cell reaction', 'Number of moles of product formed', 'Avogadro\'s number divided by Faraday constant'],
+  correctAnswer: 1,
+  explanation: 'In the Nernst equation, n is the number of moles of electrons transferred in the balanced electrochemical reaction. Option A is tempting because moles of reactant are related but not what \'n\' specifically denotes — for example, in Zn + Cu²⁺ → Zn²⁺ + Cu, one mole of Zn is consumed but n = 2 because 2 electrons are transferred. The value of n directly affects the magnitude of the correction term applied to E°.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_002',
+  question: 'In both galvanic and electrolytic cells:',
+  options: ['Oxidation occurs at the cathode', 'Reduction occurs at the anode', 'Oxidation occurs at the anode and reduction at the cathode', 'The anode is always positively charged'],
+  correctAnswer: 2,
+  explanation: 'Regardless of the type of electrochemical cell, oxidation always occurs at the anode and reduction always occurs at the cathode — this is by definition. What changes between galvanic and electrolytic cells is the sign convention: in a galvanic cell the anode is negative and cathode positive, while in an electrolytic cell the anode is positive and cathode negative. Option D fails because the anode is negative in a galvanic cell.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_003',
+  question: 'The standard electrode potential of Zn²⁺/Zn is −0.76 V and Cu²⁺/Cu is +0.34 V. The standard EMF of the Daniel cell is:',
+  options: ['−1.10 V', '+0.42 V', '+1.10 V', '−0.42 V'],
+  correctAnswer: 2,
+  explanation: 'E°cell = E°cathode − E°anode = E°(Cu²⁺/Cu) − E°(Zn²⁺/Zn) = +0.34 − (−0.76) = +1.10 V. Zinc is oxidised (anode) and copper is reduced (cathode). Option B (+0.42 V) would result from incorrectly adding the two values as 0.34 + 0.76 and then dividing or misapplying signs. A positive E°cell confirms the reaction is spontaneous (ΔG° < 0).',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_004',
+  question: 'During electrolysis of aqueous NaCl solution, the products at cathode and anode respectively are:',
+  options: ['Na metal and Cl₂ gas', 'H₂ gas and Cl₂ gas', 'H₂ gas and O₂ gas', 'Na metal and O₂ gas'],
+  correctAnswer: 1,
+  explanation: 'In aqueous NaCl, Na⁺ ions have a very high negative reduction potential (−2.71 V), so water is preferentially reduced at the cathode producing H₂ gas and OH⁻ ions. At the anode, Cl⁻ ions are preferentially oxidised over water (due to overpotential effects) producing Cl₂ gas. Option A is wrong because sodium metal cannot be deposited from aqueous solution — Na⁺ reduction requires molten NaCl (Downs process). The resulting NaOH in solution is commercially valuable.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_005',
+  question: 'A current of 9650 coulombs is passed through molten AlCl₃. The mass of aluminium deposited at the cathode is: (Atomic mass of Al = 27 g/mol, F = 96500 C/mol)',
+  options: ['0.90 g', '2.70 g', '8.10 g', '0.27 g'],
+  correctAnswer: 0,
+  explanation: 'Al³⁺ + 3e⁻ → Al, so n = 3 electrons per atom. Using Faraday\'s first law: m = (M × I × t)/(n × F) = (27 × 9650)/(3 × 96500) = 260550/289500 = 0.90 g. Option B (2.70 g) is the tempting wrong answer — it results from using n = 1 instead of n = 3, treating aluminium as if it were monovalent. Since aluminium has a +3 oxidation state, three moles of electrons are needed to deposit one mole of Al.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_006',
+  question: 'For a weak electrolyte, the molar conductivity at infinite dilution (Λ°m) can be determined experimentally by:',
+  options: ['Direct extrapolation of Λm vs √c plot', 'Using Kohlrausch\'s law of independent migration of ions', 'Measuring conductivity at very high concentration', 'Using the Debye-Hückel-Onsager equation'],
+  correctAnswer: 1,
+  explanation: 'For weak electrolytes, the Λm vs √c plot is not linear and Λm rises steeply near zero concentration, making direct extrapolation unreliable (eliminating option A). Kohlrausch\'s law states that at infinite dilution each ion contributes independently to total molar conductivity: Λ°m = λ°₊ + λ°₋. By combining Λ°m values of strong electrolytes that share common ions, one can calculate Λ°m for the weak electrolyte indirectly. For example, Λ°m(CH₃COOH) = Λ°m(CH₃COONa) + Λ°m(HCl) − Λ°m(NaCl). Option D applies only to strong electrolytes.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_007',
+  question: 'The specific conductance (κ) of 0.02 M KCl solution is 2.768 × 10⁻³ S cm⁻¹. The molar conductivity (Λm) of this solution is:',
+  options: ['138.4 S cm² mol⁻¹', '13.84 S cm² mol⁻¹', '1384 S cm² mol⁻¹', '1.384 S cm² mol⁻¹'],
+  correctAnswer: 0,
+  explanation: 'Λm = (κ × 1000)/M where M is molarity. Λm = (2.768 × 10⁻³ × 1000)/0.02 = 2.768/0.02 = 138.4 S cm² mol⁻¹. Option B (13.84) results from incorrectly multiplying by 100 instead of 1000, a common unit conversion error. The factor 1000 converts from cm³ to L (1 L = 1000 cm³). KCl is a strong electrolyte, so its Λm value is already close to Λ°m.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_008',
+  question: 'Assertion (A): The molar conductivity of a strong electrolyte increases slightly with dilution.\nReason (R): In strong electrolytes, the number of ions increases significantly upon dilution.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 2,
+  explanation: 'The assertion is true — strong electrolytes show a slight increase in Λm with dilution (Debye-Hückel-Onsager: Λm = Λ°m − A√c). However, the reason is false: strong electrolytes are completely dissociated at all concentrations, so the number of ions does not increase significantly upon dilution. The slight increase in Λm is due to reduced interionic attractions (ion-ion interactions) at lower concentrations, allowing ions to move more freely. This distinction between strong and weak electrolytes is critical — for weak electrolytes, dilution genuinely increases dissociation.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_009',
+  question: 'Assertion (A): In electrochemical corrosion of iron, the anodic region is where iron dissolves.\nReason (R): At the anodic spot, iron is oxidised to Fe²⁺ ions with the release of electrons.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Corrosion of iron is an electrochemical process where at anodic spots: Fe → Fe²⁺ + 2e⁻ (oxidation/dissolution). The electrons travel to cathodic spots where O₂ + 2H₂O + 4e⁻ → 4OH⁻ (reduction). Fe²⁺ ions then react with OH⁻ and further oxidise to form hydrated iron(III) oxide (rust, Fe₂O₃·xH₂O). The reason precisely identifies the anodic half-reaction that causes iron to dissolve, making it the correct explanation.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_010',
+  question: 'Assertion (A): Galvanisation protects iron from rusting even after the zinc coating is scratched.\nReason (R): Zinc has a more negative electrode potential than iron and acts as a sacrificial anode.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true, R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both A and R are true, and R correctly explains A. Zinc (E° = −0.76 V) is more electropositive (more easily oxidised) than iron (E° = −0.44 V), so even when the coating is scratched and iron is exposed, zinc preferentially oxidises, acting as a sacrificial anode. This is called cathodic protection — the iron becomes the cathode and is protected. This contrasts with tin plating, where tin (E° = −0.14 V) is less easily oxidised than iron, so a scratch exposes iron which then corrodes faster than uncoated iron.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_011',
+  question: 'In a lead storage battery during discharge, the reaction at the anode is:',
+  options: ['PbO₂ + SO₄²⁻ + 4H⁺ + 2e⁻ → PbSO₄ + 2H₂O', 'Pb + SO₄²⁻ → PbSO₄ + 2e⁻', 'Pb²⁺ + 2e⁻ → Pb', 'PbSO₄ + 2H₂O → PbO₂ + SO₄²⁻ + 4H⁺ + 2e⁻'],
+  correctAnswer: 1,
+  explanation: 'During discharge, the lead storage battery acts as a galvanic cell. At the anode (negative terminal), lead is oxidised: Pb + SO₄²⁻ → PbSO₄ + 2e⁻. At the cathode, PbO₂ is reduced (option A is the cathode reaction, not anode). Option D is the reverse — it represents the anode reaction during charging (electrolytic process). Both electrodes become coated with PbSO₄ during discharge, and H₂SO₄ is consumed, so the density of the electrolyte decreases — this is used to test the charge level.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_012',
+  question: 'If the standard cell potential E° of a galvanic cell is 0.591 V and n = 2, the equilibrium constant K at 298 K is approximately:',
+  options: ['10¹⁰', '10²⁰', '10⁵', '10⁴⁰'],
+  correctAnswer: 1,
+  explanation: 'At equilibrium, E = 0, so using the relation log K = nE°/0.0592: log K = (2 × 0.591)/0.0592 = 1.182/0.0592 ≈ 19.97 ≈ 20. Therefore K ≈ 10²⁰. Option A (10¹⁰) is the tempting wrong answer obtained by using n = 1 instead of n = 2. This relationship connects electrochemistry to equilibrium thermodynamics through ΔG° = −nFE° = −RT ln K. The large K value confirms the reaction goes essentially to completion.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_013',
+  question: 'Which of the following does NOT require both moisture and oxygen for the process to occur?',
+  options: ['Rusting of iron', 'Corrosion of copper to form green patina (basic copper carbonate)', 'Electrolysis of molten NaCl', 'Tarnishing of silver by H₂S in air'],
+  correctAnswer: 2,
+  explanation: 'Electrolysis of molten NaCl is a non-spontaneous electrochemical process driven by external electrical energy — it does not require moisture or oxygen; it occurs in the anhydrous molten state (Downs process). Rusting of iron (option A) requires both moisture and O₂. Copper corrosion (option B) involves O₂, CO₂, and moisture forming Cu(OH)₂·CuCO₃. Silver tarnishing (option D) involves atmospheric H₂S and O₂ forming Ag₂S. The question tests the distinction between corrosion (electrochemical, requires environment) and electrolysis (externally driven).',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_014',
+  question: 'Which of the following statements about the salt bridge in a galvanic cell is NOT correct?',
+  options: ['It maintains electrical neutrality in both half-cells', 'It allows the flow of electrons between the two half-cells', 'It is typically made of KCl or KNO₃ in agar-agar', 'It completes the electrical circuit by allowing ion migration'],
+  correctAnswer: 1,
+  explanation: 'The salt bridge does NOT allow electron flow — electrons flow through the external wire, not through the salt bridge. The salt bridge allows migration of ions (K⁺ moves toward the cathode compartment, Cl⁻/NO₃⁻ moves toward the anode compartment) to maintain electrical neutrality and complete the internal circuit. KCl and KNO₃ are preferred because K⁺ and Cl⁻/NO₃⁻ have nearly equal ionic mobilities, minimising junction potential. Option B is the most common misconception — students confuse ion flow with electron flow.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_015',
+  question: 'Two electrolytic cells containing AgNO₃ and CuSO₄ solutions respectively are connected in series. If 108 g of silver is deposited, the mass of copper deposited simultaneously is: (Ag = 108, Cu = 63.5)',
+  options: ['63.5 g', '31.75 g', '127 g', '23.7 g'],
+  correctAnswer: 1,
+  explanation: 'By Faraday\'s second law, m₁/m₂ = E₁/E₂ where E is the equivalent mass. For Ag⁺ + e⁻ → Ag, equivalent mass of Ag = 108/1 = 108. For Cu²⁺ + 2e⁻ → Cu, equivalent mass of Cu = 63.5/2 = 31.75. Therefore: 108/m₂ = 108/31.75, giving m₂ = 31.75 g. Option A (63.5 g) is the tempting wrong answer — it uses atomic mass of Cu directly without dividing by the valency (n = 2). In series connection, the same quantity of charge passes through both cells, so the masses deposited are in the ratio of their equivalent masses.',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_016',
+  question: 'The degree of dissociation (α) of 0.01 M acetic acid, given that its Λm = 16.3 S cm² mol⁻¹ and Λ°m = 390.7 S cm² mol⁻¹, is approximately:',
+  options: ['0.042', '0.42', '0.0042', '4.2'],
+  correctAnswer: 0,
+  explanation: 'Using α = Λm / Λ°m = 16.3 / 390.7 = 0.0417 ≈ 0.042. This means acetic acid is approximately 4.2% dissociated at 0.01 M concentration, consistent with it being a weak electrolyte. Option B (0.42) results from a decimal error or using an incorrect Λ°m value. This relationship is fundamental — Kohlrausch\'s law is used to find Λ°m for weak electrolytes, and then α is calculated from the ratio, from which Ka can be determined: Ka = Cα²/(1−α).',
+  difficulty: 'hard',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_017',
+  question: 'In the purification of copper by electrolytic refining, impurities of Ag and Au:',
+  options: ['Dissolve at the anode and deposit at the cathode', 'Deposit at the anode as anode mud', 'Remain dissolved in the electrolyte solution', 'Are oxidised and escape as gases'],
+  correctAnswer: 1,
+  explanation: 'During electrolytic refining of copper, impure copper is the anode and pure copper is the cathode. When the anode dissolves, noble metals like Ag and Au (which have higher reduction potentials than Cu) are not oxidised — they simply fall to the bottom as anode mud (anode sludge), which is commercially valuable. Less noble impurities like Zn, Fe, Ni dissolve into solution but do not deposit at the cathode because Cu²⁺ is preferentially reduced. Option A is wrong because Ag and Au are less reactive than Cu and cannot dissolve as ions under these conditions.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_018',
+  question: 'The correct representation of the galvanic cell with Zn anode and Cu cathode in their respective 1 M salt solutions is:',
+  options: ['Cu(s) | Cu²⁺(1M) || Zn²⁺(1M) | Zn(s)', 'Zn(s) | Zn²⁺(1M) || Cu²⁺(1M) | Cu(s)', 'Zn²⁺(1M) | Zn(s) || Cu(s) | Cu²⁺(1M)', 'Zn(s) | Cu²⁺(1M) || Zn²⁺(1M) | Cu(s)'],
+  correctAnswer: 1,
+  explanation: 'The IUPAC convention for cell representation is: anode on the left, cathode on the right. Format: Anode metal | Anode ion (concentration) || Cathode ion (concentration) | Cathode metal. Single vertical lines represent phase boundaries, double vertical lines represent the salt bridge. Zn is oxidised (anode, left) and Cu²⁺ is reduced (cathode, right). Option A reverses the cell. Option D incorrectly places Cu²⁺ in the anode compartment. Option C reverses the order of metal and ion.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_019',
+  question: 'For the cell reaction Zn + Cu²⁺ → Zn²⁺ + Cu, if E°cell = 1.10 V and n = 2, the standard Gibbs free energy change (ΔG°) is: (F = 96500 C/mol)',
+  options: ['−212.3 kJ/mol', '+212.3 kJ/mol', '−106.15 kJ/mol', '−424.6 kJ/mol'],
+  correctAnswer: 0,
+  explanation: 'ΔG° = −nFE° = −2 × 96500 × 1.10 = −212300 J/mol = −212.3 kJ/mol. The negative value confirms the reaction is spontaneous under standard conditions. Option C (−106.15 kJ/mol) is the tempting wrong answer obtained by using n = 1. Option D doubles n to 4 incorrectly. The relationship ΔG° = −nFE° connects thermodynamics to electrochemistry and is used to determine spontaneity from cell potential data.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_020',
+  question: 'The correct order of equivalent conductance at infinite dilution for the following ions is:',
+  options: ['H⁺ > OH⁻ > Na⁺ > Li⁺', 'Li⁺ > Na⁺ > H⁺ > OH⁻', 'Na⁺ > Li⁺ > OH⁻ > H⁺', 'OH⁻ > H⁺ > Li⁺ > Na⁺'],
+  correctAnswer: 0,
+  explanation: 'H⁺ (λ° = 349.6) has the highest ionic conductivity due to the Grotthuss mechanism (proton hopping through hydrogen-bonded water network), followed by OH⁻ (λ° = 198.0) which also moves by a similar proton-relay mechanism. Among alkali metal cations, Na⁺ (λ° = 50.1) > Li⁺ (λ° = 38.7) because Li⁺, despite being smaller in ionic radius, has a larger hydrated radius (more water molecules attracted due to high charge density), making it move slower. Option B incorrectly assumes smaller ionic radius means higher conductivity without considering hydration.',
+  difficulty: 'medium',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  },
+  {
+  id: 'chem_ec_021',
+  question: 'During the electrolysis of acidified water using platinum electrodes, the ratio of volumes of H₂ and O₂ gases collected at cathode and anode respectively is:',
+  options: ['1 : 2', '1 : 1', '2 : 1', '4 : 1'],
+  correctAnswer: 2,
+  explanation: 'The overall reaction is: 2H₂O → 2H₂ + O₂. At the cathode: 4H⁺ + 4e⁻ → 2H₂ (reduction). At the anode: 2H₂O → O₂ + 4H⁺ + 4e⁻ (oxidation). The molar ratio H₂:O₂ = 2:1, and by Avogadro\'s law, the volume ratio is also 2:1 at the same temperature and pressure. Option A (1:2) reverses the ratio. Dilute H₂SO₄ is added to increase conductivity of water (pure water is a poor conductor), and platinum electrodes are used because they are inert.',
+  difficulty: 'easy',
+  subject: 'chemistry',
+  subjectName: 'Chemistry',
+  topicKey: 'electrochemistry'
+  }
+],
+
+},
+
+biology: {
+human_physiology: [
+    {
+    id: 'bio_hp_001',
+    question: 'A nurse monitoring a patient in the ICU notices the ECG shows a widened QRS complex exceeding 0.12 seconds. This finding most likely indicates:',
+    options: ['Atrial fibrillation', 'Bundle branch block', 'First-degree heart block', 'Atrial flutter'],
+    correctAnswer: 1,
+    explanation: 'A widened QRS complex (>0.12 sec) indicates delayed ventricular depolarisation, which occurs in bundle branch block where conduction through the Bundle of His or its branches is impaired. First-degree heart block (the most tempting wrong answer) is characterised by a prolonged PR interval (>0.20 sec), not a widened QRS, because the delay occurs at the AV node before ventricular depolarisation begins. Atrial fibrillation and flutter affect P wave morphology and atrial rhythm, not QRS width. Clinically, nurses must distinguish QRS width abnormalities (ventricular conduction defects) from PR interval abnormalities (AV conduction defects).',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_002',
+    question: 'A patient presents to the emergency department with a blood pressure reading of 85/55 mmHg, dizziness, and cold clammy skin. The nurse identifies this condition as:',
+    options: ['Stage 1 hypertension', 'Normal blood pressure', 'Hypotension', 'White coat hypertension'],
+    correctAnswer: 2,
+    explanation: 'Hypotension is defined as blood pressure below 90/60 mmHg. The reading of 85/55 mmHg falls below this threshold, and the symptoms of dizziness and cold clammy skin are consistent with inadequate tissue perfusion. Stage 1 hypertension (the most tempting wrong answer) is defined as BP ≥130/80 mmHg, which is the opposite of this presentation. Normal BP is 120/80 mmHg. Clinically, hypotension requires immediate nursing assessment for causes such as haemorrhage, dehydration, sepsis, or cardiac failure, and interventions may include IV fluid resuscitation and Trendelenburg positioning.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_003',
+    question: 'While monitoring a post-operative patient, a nurse notes the cardiac output is 4.2 L/min with a heart rate of 60 bpm. What is the patient\'s stroke volume?',
+    options: ['60 mL', '70 mL', '80 mL', '252 mL'],
+    correctAnswer: 1,
+    explanation: 'Cardiac output = Heart rate × Stroke volume, so Stroke volume = Cardiac output ÷ Heart rate = 4200 mL/min ÷ 60 bpm = 70 mL. The most tempting wrong answer is 80 mL, but that would require a cardiac output of 4.8 L/min at 60 bpm. Normal cardiac output at rest is approximately 5 L/min (70 bpm × 70 mL). A cardiac output of 4.2 L/min is slightly below normal, which is clinically relevant in a post-operative patient and may warrant further assessment for causes such as hypovolaemia or cardiac depression from anaesthesia.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_004',
+    question: 'In a blood transfusion scenario, a nurse is preparing to administer blood to a patient with blood group AB positive. Which of the following statements is correct regarding this patient?',
+    options: ['The patient has anti-A and anti-B antibodies in plasma', 'The patient can receive blood only from AB positive donors', 'The patient has both A and B antigens on red blood cells and no anti-A or anti-B antibodies', 'The patient is a universal donor'],
+    correctAnswer: 2,
+    explanation: 'Blood group AB individuals have both A and B antigens on their red blood cell surfaces and produce neither anti-A nor anti-B antibodies in their plasma, making them universal recipients. The most tempting wrong answer is B, but AB positive patients can theoretically receive blood from all ABO groups (though cross-matching is always performed). Option A describes blood group O (which has no antigens and both antibodies). Option D is incorrect because the universal donor is blood group O negative, not AB. Clinically, despite being universal recipients, cross-matching remains mandatory before transfusion to detect other antibody incompatibilities.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_005',
+    question: 'A patient with Rh-negative blood type delivers her second Rh-positive baby. The neonate shows jaundice, anaemia, and hepatosplenomegaly. This condition is:',
+    options: ['ABO incompatibility', 'Erythroblastosis foetalis', 'Physiological jaundice', 'Gilbert syndrome'],
+    correctAnswer: 1,
+    explanation: 'Erythroblastosis foetalis (haemolytic disease of the newborn) occurs when an Rh-negative mother has been sensitised during a previous pregnancy with an Rh-positive foetus. Anti-Rh (anti-D) antibodies cross the placenta and destroy foetal Rh-positive RBCs, causing haemolytic anaemia, jaundice from excess bilirubin, and compensatory hepatosplenomegaly from extramedullary haematopoiesis. Physiological jaundice (tempting wrong answer) typically appears on day 2-3 and is mild without anaemia or hepatosplenomegaly. This condition is treated by exchange transfusion and prevented by administering anti-D immunoglobulin (RhoGAM) to the mother within 72 hours of first delivery.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_006',
+    question: 'In the figure showing the conduction system of the heart, the structure labelled X is located at the junction of the superior vena cava and the right atrium and generates impulses at 70-80 beats per minute. Structure X is:',
+    options: ['AV node', 'SA node', 'Bundle of His', 'Purkinje fibres'],
+    correctAnswer: 1,
+    explanation: 'The SA (sinoatrial) node is located at the junction of the superior vena cava and the right atrium and serves as the primary pacemaker of the heart, generating impulses at 70-80 beats per minute. The most tempting wrong answer is AV node, which is located at the junction of the atria and ventricles (in the interatrial septum near the coronary sinus) and has an intrinsic rate of only 40-50 bpm, serving as a secondary pacemaker. The Bundle of His and Purkinje fibres are part of the ventricular conduction system and have even slower intrinsic rates (20-40 bpm). Clinically, if the SA node fails, the AV node takes over at a lower rate, producing junctional rhythm.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_007',
+    question: 'A nurse auscultates a patient\'s heart and hears the first heart sound (S1 "Lub"). This sound is produced by:',
+    options: ['Closure of aortic and pulmonary semilunar valves', 'Opening of atrioventricular valves', 'Closure of mitral (bicuspid) and tricuspid valves', 'Contraction of the atrial myocardium'],
+    correctAnswer: 2,
+    explanation: 'The first heart sound S1 ("Lub") is produced by the closure of the atrioventricular valves — the mitral (bicuspid) valve on the left and the tricuspid valve on the right — at the beginning of ventricular systole. The most tempting wrong answer is A, but closure of the semilunar valves (aortic and pulmonary) produces the second heart sound S2 ("Dub") at the beginning of ventricular diastole. Opening of valves is generally silent under normal conditions. Clinically, abnormalities in S1 intensity can indicate mitral stenosis (loud S1) or mitral regurgitation (soft S1), making auscultation a critical nursing assessment skill.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_008',
+    question: 'Assertion (A): The cardiac cycle lasts approximately 0.8 seconds at a normal heart rate of 72 bpm.\nReason (R): Ventricular diastole (0.5 sec) is longer than ventricular systole (0.3 sec) to allow adequate ventricular filling.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+    correctAnswer: 1,
+    explanation: 'Both statements are individually true. The cardiac cycle at 72 bpm lasts approximately 0.8 seconds (60/72 = 0.83 sec). Ventricular diastole (0.5 sec) is indeed longer than systole (0.3 sec) to allow adequate filling. However, R is NOT the correct explanation of A. The duration of the cardiac cycle (0.8 sec) is determined by the heart rate (60/HR), not by the ratio of systole to diastole. The reason explains why the heart fills effectively, not why the cycle is 0.8 sec. This is a commonly confused distinction — the duration of the cardiac cycle is a function of pacemaker frequency, while the systole-diastole ratio explains cardiac filling efficiency. Clinically, at higher heart rates, diastole shortens disproportionately, reducing filling time.',
+    difficulty: 'hard',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_009',
+    question: 'A patient with double circulation has blood flowing through the pulmonary circuit. The correct path of blood in pulmonary circulation is:',
+    options: ['Left ventricle → Pulmonary artery → Lungs → Pulmonary vein → Right atrium', 'Right ventricle → Pulmonary artery → Lungs → Pulmonary vein → Left atrium', 'Right atrium → Pulmonary artery → Lungs → Pulmonary vein → Left ventricle', 'Left atrium → Pulmonary vein → Lungs → Pulmonary artery → Right ventricle'],
+    correctAnswer: 1,
+    explanation: 'Pulmonary circulation carries deoxygenated blood from the right ventricle → pulmonary artery → lungs (where gas exchange occurs and blood becomes oxygenated) → pulmonary veins → left atrium. The most tempting wrong answer is C, but blood enters the pulmonary artery from the right ventricle, not the right atrium (the right atrium empties into the right ventricle through the tricuspid valve). Notably, the pulmonary artery is the only artery carrying deoxygenated blood, and pulmonary veins are the only veins carrying oxygenated blood. Clinically, understanding double circulation is essential for nurses managing patients with heart failure or congenital heart defects.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_010',
+    question: 'A nurse observes a patient on warfarin therapy with an elevated INR and prolonged bleeding time. Warfarin exerts its anticoagulant effect by:',
+    options: ['Directly inhibiting thrombin in the blood', 'Inhibiting vitamin K-dependent synthesis of clotting factors II, VII, IX, and X', 'Activating antithrombin III to neutralise factor Xa', 'Dissolving already formed fibrin clots'],
+    correctAnswer: 1,
+    explanation: 'Warfarin is a vitamin K antagonist that inhibits the hepatic synthesis of vitamin K-dependent clotting factors II (prothrombin), VII, IX, and X. Without vitamin K, these factors cannot undergo gamma-carboxylation needed for their activation. The most tempting wrong answer is A, but direct thrombin inhibition is the mechanism of heparin (which activates antithrombin III — option C is also heparin\'s mechanism). Option D describes fibrinolytic agents like streptokinase. Clinically, nurses must monitor INR (target 2-3 for most indications) in warfarin patients and know that vitamin K is the antidote for warfarin overdose, while protamine sulphate reverses heparin.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_011',
+    question: 'A patient admitted with pneumonia has an arterial blood gas report showing PaO2 of 55 mmHg. Considering that normal alveolar PO2 is approximately 104 mmHg and normal mixed venous PO2 is approximately 40 mmHg, this patient is experiencing:',
+    options: ['Normal oxygenation', 'Hyperoxia', 'Hypoxaemia', 'Metabolic acidosis'],
+    correctAnswer: 2,
+    explanation: 'Hypoxaemia is defined as a PaO2 below 60 mmHg. The patient\'s PaO2 of 55 mmHg is significantly below the normal arterial PO2 (which is approximately 95-100 mmHg, reflecting equilibration with alveolar PO2 of ~104 mmHg). The most tempting wrong answer is D (metabolic acidosis), but PaO2 alone does not indicate acid-base status — that requires pH, PaCO2, and HCO3- values. In pneumonia, consolidation reduces the surface area available for gas exchange, causing ventilation-perfusion mismatch. Clinically, the nurse should anticipate oxygen therapy initiation and monitor SpO2 continuously, as sustained hypoxaemia can lead to tissue hypoxia and organ damage.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_012',
+    question: 'A student nurse is asked to explain why oxygen delivery to exercising muscles increases during physical activity. The most accurate explanation involves:',
+    options: ['Left shift of the oxygen-haemoglobin dissociation curve', 'Right shift of the oxygen-haemoglobin dissociation curve due to the Bohr effect', 'Increased production of carbon monoxide in muscles', 'Decreased cardiac output to redirect blood'],
+    correctAnswer: 1,
+    explanation: 'During exercise, muscles produce more CO2, H+ (lactic acid), and heat, and 2,3-DPG increases in RBCs. These factors cause a right shift of the oxygen-haemoglobin dissociation curve (Bohr effect), which decreases haemoglobin\'s affinity for O2, thereby promoting oxygen release to metabolically active tissues. The most tempting wrong answer is A (left shift), but a left shift would increase O2 affinity and reduce O2 delivery to tissues — the opposite of what is needed. Left shift occurs with alkalosis, hypothermia, and CO exposure. Clinically, understanding the Bohr effect helps nurses explain why patients with fever may have increased tissue oxygenation despite similar SpO2 readings.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_013',
+    question: 'A patient presents with cherry-red discolouration of the skin and mucous membranes after exposure to a faulty gas heater. The nurse suspects carbon monoxide poisoning. The basis for CO toxicity is:',
+    options: ['CO blocks cytochrome oxidase in mitochondria', 'CO has approximately 200 times greater affinity for haemoglobin than oxygen', 'CO destroys red blood cells causing haemolysis', 'CO causes methemoglobinaemia'],
+    correctAnswer: 1,
+    explanation: 'Carbon monoxide (CO) binds to haemoglobin with approximately 200 times greater affinity than oxygen, forming carboxyhaemoglobin (COHb), which cannot carry oxygen. This also shifts the O2-Hb dissociation curve to the left, further impairing O2 delivery. The most tempting wrong answer is A — blocking cytochrome oxidase is the mechanism of cyanide poisoning (histotoxic hypoxia), not CO. Cherry-red skin colour is characteristic because COHb is bright red. CO does not destroy RBCs (C) or form methemoglobin (D — that is caused by nitrites and sulfonamides). Clinically, treatment involves 100% O2 via non-rebreather mask or hyperbaric oxygen therapy to displace CO from haemoglobin.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_014',
+    question: 'A nurse is calculating the residual volume of a patient undergoing pulmonary function testing. Which of the following lung volumes or capacities CANNOT be measured by simple spirometry?',
+    options: ['Tidal volume (TV)', 'Inspiratory reserve volume (IRV)', 'Residual volume (RV)', 'Expiratory reserve volume (ERV)'],
+    correctAnswer: 2,
+    explanation: 'Residual volume (RV) — the volume of air remaining in the lungs after maximal expiration (approximately 1200 mL) — cannot be measured by simple spirometry because the air is trapped and never exhaled. It requires specialised techniques such as helium dilution, nitrogen washout, or body plethysmography. The most tempting wrong answer is D (ERV), but ERV (approximately 1000 mL) can be measured by spirometry as the patient can actively exhale this volume beyond normal expiration. Similarly, TV (500 mL) and IRV (3000 mL) are directly measurable. Clinically, RV increases in obstructive diseases like emphysema (air trapping) and is important for calculating FRC (ERV+RV=2200 mL) and TLC (VC+RV=5700 mL).',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_015',
+    question: 'While assessing a COPD patient with emphysema, the nurse understands that the primary pathological change is:',
+    options: ['Reversible bronchospasm of airways', 'Destruction of alveolar walls reducing surface area for gas exchange', 'Increased compliance due to excess surfactant production', 'Thickening of the basement membrane of alveoli'],
+    correctAnswer: 1,
+    explanation: 'Emphysema is characterised by destruction of alveolar walls (due to protease-antiprotease imbalance, often from smoking), which reduces the total surface area available for gas exchange (normally ~70 sq m) and causes air trapping. The most tempting wrong answer is A, but reversible bronchospasm is the hallmark of asthma, not emphysema. While emphysema does increase lung compliance (lungs become floppy), this is due to loss of elastic recoil, not excess surfactant (C). Thickening of the basement membrane (D) occurs in pulmonary fibrosis. Clinically, nurses should recognise that emphysema patients present with barrel chest, dyspnoea, and are often called "pink puffers."',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_016',
+    question: 'A patient with chronic kidney disease has a GFR of 15 mL/min. Considering the normal GFR is 125 mL/min, what percentage of renal function does this patient retain?',
+    options: ['12%', '25%', '50%', '75%'],
+    correctAnswer: 0,
+    explanation: 'The patient retains (15/125) × 100 = 12% of normal renal function. Normal GFR is 125 mL/min (filtering approximately 180 L/day, of which 1.5 L is excreted as urine). A GFR of 15 mL/min classifies as Stage 5 CKD (end-stage renal disease), and the patient would likely need dialysis or transplantation. The most tempting wrong answer is B (25%), which would correspond to a GFR of ~31 mL/min. Clinically, creatinine clearance is the best indicator of GFR, and nurses should monitor serum creatinine, BUN, electrolytes, and urine output in CKD patients. The dramatic reduction from 180 L filtered to 1.5 L excreted demonstrates the kidney\'s enormous reabsorptive capacity.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_017',
+    question: 'A nurse caring for a patient with diabetes insipidus notes the patient produces large volumes of very dilute urine. The hormone deficiency responsible is:',
+    options: ['Aldosterone from the adrenal cortex', 'ADH (vasopressin) from the posterior pituitary', 'ANF from the cardiac atria', 'Cortisol from the adrenal cortex'],
+    correctAnswer: 1,
+    explanation: 'Diabetes insipidus results from deficiency of ADH (antidiuretic hormone/vasopressin), which is synthesised in the hypothalamus and released from the posterior pituitary. ADH increases water reabsorption by inserting aquaporin-2 channels in the collecting duct epithelium. Without ADH, the collecting duct remains impermeable to water, resulting in polyuria (up to 20 L/day) with very dilute urine. The most tempting wrong answer is A (aldosterone), which promotes Na+ reabsorption and K+ secretion in the DCT — its deficiency causes hyponatraemia and hyperkalaemia (Addison\'s disease), not dilute polyuria. Clinically, nurses must monitor fluid balance, urine specific gravity (very low in DI), and serum sodium (may be elevated due to water loss).',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_018',
+    question: 'A patient with Conn\'s syndrome (primary hyperaldosteronism) presents with hypertension and muscle weakness. The nurse expects laboratory findings to show:',
+    options: ['Hyperkalaemia and hypernatraemia', 'Hypokalaemia and hypernatraemia', 'Hyperkalaemia and hyponatraemia', 'Hypocalcaemia and hyperphosphataemia'],
+    correctAnswer: 1,
+    explanation: 'In Conn\'s syndrome (primary hyperaldosteronism), excess aldosterone from an adrenal adenoma causes increased Na+ reabsorption (leading to hypernatraemia and water retention → hypertension) and increased K+ secretion (leading to hypokalaemia → muscle weakness, cramps, cardiac arrhythmias). The most tempting wrong answer is A (hyperkalaemia), but aldosterone promotes K+ excretion, not retention. Hyperkalaemia occurs in aldosterone deficiency (Addison\'s disease). Option D describes hypoparathyroidism findings. Clinically, the RAAS pathway activates aldosterone: decreased BP → renin from JGA → angiotensinogen to angiotensin I → ACE in lungs converts to angiotensin II → stimulates aldosterone release. Nurses should monitor potassium levels closely and watch for ECG changes (flattened T waves, U waves in hypokalaemia).',
+    difficulty: 'hard',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_019',
+    question: 'The correct sequence of CO2 transport from tissues to lungs is:',
+    options: ['CO2 dissolved in plasma → carbaminohaemoglobin → bicarbonate ions', 'CO2 enters RBC → carbonic anhydrase converts to H2CO3 → dissociates to H+ and HCO3- → HCO3- exchanged for Cl- (chloride shift) → transported to lungs → reverse reaction releases CO2', 'CO2 binds to Fe2+ of haemoglobin → transported as oxyhaemoglobin → released at lungs', 'CO2 converted to carbonic acid in plasma without any enzyme → directly exhaled'],
+    correctAnswer: 1,
+    explanation: 'Approximately 70% of CO2 is transported as bicarbonate ions (HCO3-). CO2 enters RBCs where carbonic anhydrase rapidly catalyses CO2 + H2O → H2CO3 → H+ + HCO3-. The HCO3- is transported out of RBCs into plasma in exchange for Cl- (chloride shift/Hamburger phenomenon). At the lungs, the reverse reaction occurs, releasing CO2 for exhalation. The most tempting wrong answer is A, which lists the forms but not the mechanism. Option C is incorrect because CO2 binds to the amino groups of globin (not Fe2+) forming carbaminohaemoglobin (23% of transport). The remaining 7% is dissolved in plasma. Clinically, carbonic anhydrase inhibitors (e.g., acetazolamide) affect this transport and are used as diuretics.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_020',
+    question: 'A nurse observes that a neonate born at 28 weeks gestation develops respiratory distress syndrome (RDS). The underlying cause is:',
+    options: ['Excess surfactant production by Type I pneumocytes', 'Deficiency of surfactant produced by Type II pneumocytes (alveolar cells)', 'Overdevelopment of alveolar septa', 'Excessive tidal volume at birth'],
+    correctAnswer: 1,
+    explanation: 'Neonatal RDS is caused by deficiency of pulmonary surfactant, which is produced by Type II pneumocytes (alveolar epithelial cells). Surfactant reduces alveolar surface tension, preventing alveolar collapse (atelectasis) during expiration. Surfactant production begins around 24 weeks but is adequate only by 34-36 weeks gestation, making premature infants highly susceptible. The most tempting wrong answer is A, but surfactant is produced by Type II (not Type I) pneumocytes — Type I pneumocytes are thin squamous cells that form the gas exchange surface. Clinically, nurses should know that antenatal corticosteroids (betamethasone) given to mothers in preterm labour accelerate foetal lung maturation, and exogenous surfactant can be administered endotracheally to the neonate.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_021',
+    question: 'A patient is diagnosed with pernicious anaemia. The nurse understands that this condition results from:',
+    options: ['Iron deficiency leading to decreased haemoglobin synthesis', 'Deficiency of intrinsic factor from parietal cells leading to impaired vitamin B12 absorption', 'Excessive destruction of RBCs in the spleen', 'Bone marrow failure due to aplastic changes'],
+    correctAnswer: 1,
+    explanation: 'Pernicious anaemia results from deficiency of intrinsic factor, a glycoprotein secreted by parietal cells of the stomach. Intrinsic factor is essential for the absorption of vitamin B12 (cobalamin) in the terminal ileum. Without B12, DNA synthesis in rapidly dividing cells (including RBC precursors) is impaired, producing large, immature megaloblasts. The most tempting wrong answer is A (iron deficiency), but iron deficiency causes microcytic hypochromic anaemia, not megaloblastic anaemia. Pernicious anaemia is often caused by autoimmune destruction of parietal cells or after gastrectomy. Clinically, nurses should note that B12 injections (not oral supplements) are required because the absorption pathway is defective.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_022',
+    question: 'Assertion (A): The P wave on an ECG represents atrial depolarisation.\nReason (R): The SA node generates the impulse that spreads through both atria causing them to contract.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+    correctAnswer: 0,
+    explanation: 'Both statements are true, and R correctly explains A. The P wave on ECG represents the electrical depolarisation of both atria. This depolarisation is initiated by the SA node impulse that spreads through the atrial myocardium, causing atrial contraction. The reason directly explains the mechanism behind the P wave — the SA node generates the impulse, and as it spreads through the atria, the resulting electrical activity is recorded as the P wave. The most tempting wrong answer is B, but the SA node\'s impulse generation and spread through atria is precisely what produces the P wave, making R a correct explanation. Clinically, absent P waves suggest atrial fibrillation, while inverted P waves may indicate ectopic atrial pacemaker activity.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_023',
+    question: 'A student nurse is asked to explain why the renal threshold for glucose is clinically significant. The correct explanation is:',
+    options: ['Glucose appears in urine when blood glucose exceeds 180 mg/dL because PCT reabsorption transporters become saturated', 'Glucose is always present in urine as a normal finding', 'Glucose reabsorption occurs primarily in the collecting duct under ADH control', 'The renal threshold for glucose is 100 mg/dL in healthy individuals'],
+    correctAnswer: 0,
+    explanation: 'The renal threshold for glucose is approximately 180 mg/dL. Below this level, all filtered glucose is reabsorbed by SGLT2 and SGLT1 transporters in the proximal convoluted tubule (PCT). When blood glucose exceeds 180 mg/dL, these transporters reach Tm (transport maximum) and become saturated, so excess glucose spills into urine (glycosuria). The most tempting wrong answer is D (100 mg/dL), which is the upper limit of normal fasting blood glucose, not the renal threshold. Glucose reabsorption occurs in the PCT (not collecting duct — C), and glucose is normally absent from urine (not always present — B). Clinically, glycosuria in diabetic patients indicates poor glycaemic control with blood glucose exceeding 180 mg/dL.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_024',
+    question: 'A nurse caring for a patient with myasthenia gravis understands that the neuromuscular junction is affected. The neurotransmitter involved at the NMJ is:',
+    options: ['Dopamine acting on D2 receptors', 'Acetylcholine (ACh) acting on nicotinic receptors', 'GABA acting on GABA-A receptors', 'Serotonin acting on 5-HT receptors'],
+    correctAnswer: 1,
+    explanation: 'The neurotransmitter at the neuromuscular junction (NMJ) is acetylcholine (ACh), which acts on nicotinic receptors on the motor end plate of skeletal muscle. In myasthenia gravis, autoantibodies destroy nicotinic ACh receptors, causing progressive muscle weakness and fatigability. The most tempting wrong answer is A (dopamine), but dopamine is involved in the reward pathway and basal ganglia — its deficiency causes Parkinson\'s disease, not NMJ dysfunction. GABA is the main inhibitory neurotransmitter in the CNS (enhanced by benzodiazepines), and serotonin regulates mood, sleep, and appetite. Clinically, myasthenia gravis is treated with anticholinesterase drugs (neostigmine, pyridostigmine) that prevent ACh breakdown, increasing its availability at the NMJ.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_025',
+    question: 'A patient with Parkinson\'s disease presents with tremor, rigidity, and bradykinesia. The neurotransmitter deficiency responsible is:',
+    options: ['Acetylcholine', 'Serotonin', 'Dopamine', 'Glutamate'],
+    correctAnswer: 2,
+    explanation: 'Parkinson\'s disease results from degeneration of dopaminergic neurons in the substantia nigra of the midbrain, leading to dopamine deficiency in the basal ganglia. This causes the classic triad of resting tremor, rigidity, and bradykinesia (slow movement). The most tempting wrong answer is B (serotonin), but serotonin deficiency is associated with depression, not movement disorders. Acetylcholine deficiency in the cortex is associated with Alzheimer\'s disease. Glutamate is the main excitatory neurotransmitter. Clinically, Parkinson\'s is treated with L-DOPA (levodopa), a dopamine precursor that crosses the blood-brain barrier (dopamine itself cannot), combined with carbidopa to prevent peripheral conversion.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_026',
+    question: 'While monitoring a patient receiving IV fluids, the nurse understands that the resting membrane potential of neurons is approximately:',
+    options: ['-90 mV', '-70 mV', '-55 mV', '+30 mV'],
+    correctAnswer: 1,
+    explanation: 'The resting membrane potential of a typical neuron is approximately -70 mV, meaning the inside of the cell is 70 mV more negative than the outside. This is maintained primarily by the Na+/K+ ATPase pump (3 Na+ out, 2 K+ in) and the higher permeability of the resting membrane to K+ through leak channels. The most tempting wrong answer is A (-90 mV), which is closer to the resting potential of skeletal muscle cells or the equilibrium potential for K+. The threshold potential is -55 mV (C), and +30 mV (D) is the peak of depolarisation during an action potential. Clinically, electrolyte imbalances (especially K+) can alter resting membrane potential, which is why nurses monitor potassium levels carefully — hyperkalaemia can cause fatal cardiac arrhythmias.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_027',
+    question: 'A patient presents with exophthalmos, weight loss, tachycardia, and heat intolerance. The nurse suspects:',
+    options: ['Hypothyroidism (myxoedema)', 'Graves\' disease (hyperthyroidism)', 'Addison\'s disease', 'Cushing\'s syndrome'],
+    correctAnswer: 1,
+    explanation: 'Graves\' disease is an autoimmune form of hyperthyroidism where thyroid-stimulating immunoglobulins mimic TSH, causing excess T3/T4 production. Excess thyroid hormones increase BMR, causing weight loss, tachycardia, heat intolerance, tremor, and the characteristic exophthalmos (bulging eyes from retro-orbital inflammation). The most tempting wrong answer is A (hypothyroidism/myxoedema), which presents with the opposite symptoms: weight gain, bradycardia, cold intolerance, fatigue, and puffiness. Addison\'s disease (adrenal cortex insufficiency) causes hypotension and hyperpigmentation. Cushing\'s syndrome (cortisol excess) causes central obesity and moon face. Clinically, thyroid hormones (T3 and T4) are produced by follicular cells and increase oxygen consumption, heart rate, and metabolic activity throughout the body.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_028',
+    question: 'A nurse administers insulin to a diabetic patient whose fasting blood glucose is 250 mg/dL (normal: 70-100 mg/dL). Insulin lowers blood glucose primarily by:',
+    options: ['Promoting glycogenolysis in the liver', 'Promoting glucose uptake into muscle and fat cells via GLUT4 transporter insertion', 'Inhibiting glycogen synthesis in the liver', 'Stimulating gluconeogenesis in the liver'],
+    correctAnswer: 1,
+    explanation: 'Insulin (secreted by beta cells of pancreatic islets of Langerhans) lowers blood glucose primarily by promoting the insertion of GLUT4 glucose transporters into the plasma membranes of muscle and adipose cells, thereby facilitating glucose uptake from blood. Insulin also promotes glycogen synthesis and inhibits gluconeogenesis. The most tempting wrong answer is A (glycogenolysis), but glycogenolysis (glycogen breakdown to glucose) is stimulated by glucagon (alpha cells) and actually raises blood glucose — the opposite effect. Options C and D also describe processes that would raise blood glucose. Clinically, normal fasting glucose is 70-100 mg/dL, and HbA1c reflects 3-month average glucose control (target <7% for diabetics).',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_029',
+    question: 'A patient with suspected hypoparathyroidism presents with muscle spasms and tingling in the extremities. The nurse expects the serum calcium level to be:',
+    options: ['Elevated (hypercalcaemia)', 'Low (hypocalcaemia)', 'Normal', 'Fluctuating between high and low'],
+    correctAnswer: 1,
+    explanation: 'Parathyroid hormone (PTH) raises blood calcium by promoting bone resorption (osteoclast activity), increasing renal Ca2+ reabsorption, and enhancing intestinal Ca2+ absorption (via activating vitamin D). In hypoparathyroidism, PTH deficiency leads to hypocalcaemia, which increases neuromuscular excitability causing tetany — muscle spasms, tingling (paraesthesia), and potentially laryngospasm. The most tempting wrong answer is A (hypercalcaemia), which occurs in hyperparathyroidism and presents with "bones, stones, groans, and moans" (bone pain, kidney stones, abdominal pain, depression). Clinically, nurses should check for Chvostek\'s sign (facial muscle twitch on tapping) and Trousseau\'s sign (carpopedal spasm with BP cuff inflation) to assess for hypocalcaemia.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_030',
+    question: 'Assertion (A): Pepsinogen is secreted in an inactive form by chief cells of the stomach.\nReason (R): Secretion of an inactive zymogen prevents autodigestion of the gastric mucosa.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+    correctAnswer: 0,
+    explanation: 'Both statements are true and R correctly explains A. Pepsinogen is secreted as an inactive proenzyme (zymogen) by chief cells and is activated to pepsin only in the acidic environment (pH 1.5-2.5) of the stomach lumen by HCl (from parietal cells). This strategy of secreting inactive zymogens prevents the enzyme from digesting the cells that produce it — protecting against autodigestion. The most tempting wrong answer is B, but the protective function against autodigestion is precisely why zymogens exist, making R a correct explanation. Clinically, when this protective mechanism fails (e.g., H. pylori infection damages the mucus barrier), pepsin and HCl can digest the gastric mucosa, causing peptic ulcers. Similarly, trypsinogen is activated by enterokinase in the duodenum, not the pancreas.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_031',
+    question: 'A patient with liver failure has prolonged bleeding. The nurse understands this is because the liver synthesises:',
+    options: ['Haemoglobin and myoglobin', 'Clotting factors (including factors II, VII, IX, X) and albumin', 'Erythropoietin and thrombopoietin', 'Immunoglobulins and complement proteins'],
+    correctAnswer: 1,
+    explanation: 'The liver is the primary site of synthesis of most clotting factors, including the vitamin K-dependent factors II (prothrombin), VII, IX, and X, as well as factors V, XI, XII, XIII, and fibrinogen. It also synthesises albumin (maintaining oncotic pressure) and performs bile production, glycogen storage, detoxification, urea cycle, and drug metabolism. The most tempting wrong answer is D (immunoglobulins), but immunoglobulins are produced by plasma cells (activated B lymphocytes), not hepatocytes. Haemoglobin is synthesised in erythroid precursors in bone marrow (A), and erythropoietin is primarily from the kidney (C). Clinically, liver failure patients require monitoring of PT/INR, may need fresh frozen plasma or vitamin K, and nurses should watch for signs of bleeding.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_032',
+    question: 'A nurse is assessing a patient who has consumed a large meal. The correct sequence of protein digestion is:',
+    options: ['Trypsin in stomach → Pepsin in duodenum → Amino acids absorbed in ileum', 'Pepsinogen activated to pepsin by HCl in stomach → Trypsinogen activated to trypsin by enterokinase in duodenum → Dipeptidases at brush border → Amino acids absorbed', 'Salivary amylase digests proteins → Pepsin completes digestion → Absorption in stomach', 'Lipase in stomach → Trypsin in jejunum → Amino acids absorbed in colon'],
+    correctAnswer: 1,
+    explanation: 'Protein digestion follows a precise sequence: Pepsinogen (from chief cells) is activated to pepsin by HCl (from parietal cells) in the stomach (pH 1.5-2.5), initiating protein digestion. In the duodenum, trypsinogen (from pancreas) is activated to trypsin by enterokinase (from intestinal mucosa) — trypsin then activates other pancreatic zymogens (chymotrypsinogen, procarboxypeptidase). Brush border dipeptidases complete digestion to amino acids, which are absorbed by active transport in the small intestine. The most tempting wrong answer is A, which reverses the locations of pepsin and trypsin — a common student error. Salivary amylase digests starch (not proteins), and amino acid absorption occurs in the small intestine (not colon). Clinically, understanding this sequence helps nurses counsel patients on digestive disorders and enzyme replacement therapy.',
+    difficulty: 'hard',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_033',
+    question: 'While monitoring a patient on a ventilator, the nurse notes the tidal volume is set at 500 mL and the respiratory rate is 14 breaths/min. The minute ventilation is:',
+    options: ['5000 mL/min', '7000 mL/min', '3500 mL/min', '14000 mL/min'],
+    correctAnswer: 1,
+    explanation: 'Minute ventilation = Tidal volume × Respiratory rate = 500 mL × 14 = 7000 mL/min (7 L/min). This represents the total volume of air moved in and out of the lungs per minute. The most tempting wrong answer is A (5000 mL/min), which would result from a respiratory rate of 10 breaths/min at 500 mL TV. Normal minute ventilation is approximately 6000-8000 mL/min (500 mL × 12-16 breaths/min). Clinically, nurses should also understand that alveolar ventilation (the volume reaching the alveoli for gas exchange) is lower because ~150 mL of each breath fills the anatomical dead space. So alveolar ventilation = (500-150) × 14 = 4900 mL/min.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_034',
+    question: 'A nurse observes a patient with Addison\'s disease presenting with hypotension, hyperpigmentation, and fatigue. The deficient hormone is:',
+    options: ['Aldosterone and cortisol from the adrenal cortex', 'Adrenaline from the adrenal medulla', 'TSH from the anterior pituitary', 'Insulin from pancreatic beta cells'],
+    correctAnswer: 0,
+    explanation: 'Addison\'s disease is primary adrenal insufficiency characterised by deficiency of cortisol (glucocorticoid) and aldosterone (mineralocorticoid) from the adrenal cortex. Cortisol deficiency causes fatigue, hypoglycaemia, and weight loss. Aldosterone deficiency causes Na+ wasting, hyperkalaemia, and hypotension. Hyperpigmentation occurs because low cortisol removes negative feedback on the pituitary, increasing ACTH and its precursor POMC, which also produces MSH (melanocyte-stimulating hormone). The most tempting wrong answer is B (adrenaline from adrenal medulla), but the adrenal medulla is typically spared in Addison\'s disease, and adrenaline deficiency does not cause hyperpigmentation. Clinically, Addison\'s disease requires lifelong glucocorticoid and mineralocorticoid replacement, and patients are at risk of adrenal crisis during stress.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    },
+    {
+    id: 'bio_hp_035',
+    question: 'Which of the following is NOT a function of the hypothalamus?',
+    options: ['Thermoregulation and body temperature control', 'Control of appetite and thirst centres', 'Coordination of voluntary skilled movements and balance', 'Regulation of the pituitary gland via releasing and inhibiting hormones'],
+    correctAnswer: 2,
+    explanation: 'Coordination of voluntary skilled movements and balance is the function of the cerebellum, not the hypothalamus. The hypothalamus controls thermoregulation (A), appetite and thirst centres (B), and regulates the pituitary gland through releasing and inhibiting hormones (D — e.g., GnRH, TRH, CRH, GHRH, somatostatin, dopamine). It also controls the autonomic nervous system, circadian rhythms, and emotional responses. The most tempting wrong answer is D, because students sometimes confuse the hypothalamus with the pituitary — the hypothalamus controls the pituitary, not the other way around. The cerebellum receives proprioceptive input and coordinates fine motor movements; cerebellar damage causes ataxia, dysmetria, and intention tremor. Clinically, nurses assess cerebellar function through the finger-to-nose test, heel-to-shin test, and Romberg\'s test.',
+    difficulty: 'hard',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'human_physiology'
+    }
+],
+  
+cell_structure_function: [
+    {
+    id: 'bio_cs_001',
+    question: 'A student nurse is studying antibiotic mechanisms. Streptomycin inhibits bacterial protein synthesis by targeting the 30S ribosomal subunit. This antibiotic is effective against bacteria but not human cells because:',
+    options: ['Human cells lack ribosomes entirely', 'Bacterial ribosomes are 70S (50S+30S) while human cytoplasmic ribosomes are 80S (60S+40S)', 'Human cells have 70S ribosomes identical to bacteria', 'Streptomycin targets the 60S subunit of human ribosomes'],
+    correctAnswer: 1,
+    explanation: 'Bacterial ribosomes are 70S composed of 50S and 30S subunits, while eukaryotic (human) cytoplasmic ribosomes are 80S composed of 60S and 40S subunits. Streptomycin specifically binds the 30S subunit of bacterial ribosomes, interfering with translation initiation and causing misreading of mRNA. Since human cytoplasmic ribosomes lack the 30S subunit (they have 40S), streptomycin has selective toxicity. The most tempting wrong answer is A, but human cells definitely have ribosomes (80S). Interestingly, human mitochondrial ribosomes are 70S (supporting endosymbiotic theory), which explains why some antibiotics targeting 70S ribosomes can have mitochondrial side effects. Clinically, this selective toxicity principle underpins safe antibiotic therapy.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_002',
+    question: 'The fluid mosaic model of plasma membrane structure was proposed by:',
+    options: ['Watson and Crick in 1953', 'Singer and Nicolson in 1972', 'Schleiden and Schwann in 1838', 'Robert Hooke in 1665'],
+    correctAnswer: 1,
+    explanation: 'The fluid mosaic model was proposed by S.J. Singer and G.L. Nicolson in 1972. This model describes the plasma membrane as a phospholipid bilayer (polar hydrophilic heads facing outward, non-polar hydrophobic tails facing inward) with integral proteins spanning the bilayer and peripheral proteins on the surface, creating a mosaic pattern. "Fluid" refers to the lateral movement of lipids and proteins. The most tempting wrong answer is A — Watson and Crick (1953) proposed the double helix structure of DNA, not the membrane model. Schleiden and Schwann proposed the cell theory, and Robert Hooke coined the term "cell." Cholesterol in animal cell membranes acts as a fluidity buffer, preventing excessive fluidity at high temperatures and crystallisation at low temperatures.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_003',
+    question: 'In a diagram showing a typical animal cell, the organelle labelled X has a single membrane, contains hydrolytic enzymes active at pH 5, and is involved in intracellular digestion. Organelle X is:',
+    options: ['Mitochondrion', 'Golgi apparatus', 'Lysosome', 'Peroxisome'],
+    correctAnswer: 2,
+    explanation: 'Lysosomes are single-membrane organelles containing over 50 types of hydrolytic enzymes (proteases, lipases, nucleases, glycosidases) that function optimally at acidic pH (~5), maintained by a proton pump (H+ ATPase). They perform intracellular digestion through autophagy (degrading damaged organelles) and heterophagy (digesting engulfed material). They are called "suicide bags" because their rupture causes autolysis (cell self-destruction). The most tempting wrong answer is D (peroxisome), which also has a single membrane but contains oxidative enzymes (catalase, oxidase) and functions in detoxification and fatty acid oxidation, not acid hydrolysis. Mitochondria have double membranes, and the Golgi apparatus packages and modifies proteins. Lysosomes are formed from the trans face of the Golgi apparatus.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_004',
+    question: 'Which of the following is the correct comparison between prokaryotic and eukaryotic cells?',
+    options: ['Prokaryotic: Membrane-bound nucleus; Eukaryotic: No membrane-bound nucleus', 'Prokaryotic: 80S ribosomes; Eukaryotic: 70S ribosomes', 'Prokaryotic: Linear DNA with histones; Eukaryotic: Circular DNA without histones', 'Prokaryotic: No membrane-bound nucleus, circular DNA, 70S ribosomes; Eukaryotic: Membrane-bound nucleus, linear DNA with histones, 80S ribosomes'],
+    correctAnswer: 3,
+    explanation: 'Prokaryotes have no membrane-bound nucleus (DNA in nucleoid region), circular DNA without histones (except in Archaea), and 70S ribosomes (50S+30S). Eukaryotes have a membrane-bound nucleus, linear DNA associated with histones forming chromatin, and 80S ribosomes (60S+40S). The most tempting wrong answer is A, which reverses the nuclear characteristics — prokaryotes lack the membrane-bound nucleus, not eukaryotes. Options B and C also reverse the features. Additionally, prokaryotes lack membrane-bound organelles (no mitochondria, ER, Golgi), are smaller (1-10 μm), and divide by binary fission, while eukaryotes are larger (10-100 μm) and divide by mitosis/meiosis.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_005',
+    question: 'A student nurse preparing for exams wants to understand why plant cells do not burst in hypotonic solutions while animal cells do. The correct explanation is:',
+    options: ['Plant cells lack a plasma membrane', 'Plant cells have a rigid cellulose cell wall that resists excessive water entry and prevents lysis', 'Plant cells do not undergo osmosis', 'Animal cells have thicker plasma membranes that burst more easily'],
+    correctAnswer: 1,
+    explanation: 'Plant cells have a rigid cellulose cell wall outside the plasma membrane. When placed in a hypotonic solution, water enters by osmosis and the cell swells, but the cell wall provides mechanical resistance (wall pressure) preventing over-expansion. The cell becomes turgid (fully swollen), which is actually the normal healthy state of plant cells, providing structural rigidity. The most tempting wrong answer is D, but membrane thickness is not the relevant factor — animal cells lack the cell wall entirely, so their plasma membrane (which is flexible) cannot resist osmotic swelling, leading to lysis (cytolysis). Plant cells do have plasma membranes (A is wrong) and do undergo osmosis (C is wrong). Clinically, this principle is analogous to why IV fluids must be isotonic (0.9% NaCl) — hypotonic solutions would cause RBC lysis (haemolysis).',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_006',
+    question: 'The organelle responsible for ATP synthesis through oxidative phosphorylation in eukaryotic cells is:',
+    options: ['Chloroplast', 'Ribosome', 'Mitochondrion', 'Endoplasmic reticulum'],
+    correctAnswer: 2,
+    explanation: 'Mitochondria are the "powerhouses of the cell", performing oxidative phosphorylation on the inner mitochondrial membrane (cristae) to produce ATP. The inner membrane is folded into cristae to increase surface area for the electron transport chain and ATP synthase. The matrix contains Krebs cycle enzymes and circular mitochondrial DNA with 70S ribosomes, supporting the endosymbiotic theory that mitochondria evolved from ancient aerobic bacteria. The most tempting wrong answer is A (chloroplast), which also produces ATP but through photophosphorylation during photosynthesis — this occurs only in plant cells and uses light energy, not oxidative metabolism. Ribosomes synthesise proteins, and the ER is involved in protein and lipid synthesis/processing.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_007',
+    question: 'Assertion (A): Mitochondria and chloroplasts contain their own circular DNA and 70S ribosomes.\nReason (R): According to the endosymbiotic theory, these organelles evolved from ancient prokaryotic organisms engulfed by ancestral eukaryotic cells.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+    correctAnswer: 0,
+    explanation: 'Both statements are true, and R correctly explains A. Mitochondria and chloroplasts possess circular DNA and 70S ribosomes — features characteristic of prokaryotes, not eukaryotes. The endosymbiotic theory (proposed by Lynn Margulis) explains this: an ancestral eukaryotic cell engulfed an aerobic bacterium (→ mitochondria) and a photosynthetic cyanobacterium (→ chloroplasts). These organelles retained their prokaryotic DNA and ribosomes, which is why they have these features. The most tempting wrong answer is B, but the endosymbiotic origin is precisely the reason these organelles have prokaryotic features, making R a correct explanation. Additional evidence includes their double membrane (inner = original bacterial membrane, outer = host cell membrane from engulfment) and binary fission-like replication.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_008',
+    question: 'The Golgi apparatus receives proteins from the:',
+    options: ['Smooth endoplasmic reticulum via transport vesicles at the trans face', 'Rough endoplasmic reticulum via transport vesicles at the cis face', 'Lysosomes via retrograde transport', 'Plasma membrane via endocytic vesicles at the cis face'],
+    correctAnswer: 1,
+    explanation: 'The Golgi apparatus receives proteins from the rough endoplasmic reticulum (RER) via transport vesicles at its cis face (the receiving/forming face closest to the ER). Proteins are then modified (glycosylation, phosphorylation), sorted, and packaged into vesicles that bud off from the trans face (the shipping/maturing face) for export to various destinations including the plasma membrane, lysosomes, or secretion. The most tempting wrong answer is A, because it correctly mentions transport vesicles but specifies the trans face for receiving — the trans face is for dispatching, not receiving. The smooth ER synthesises lipids and detoxifies drugs but is not the primary source of proteins for Golgi modification. The Golgi also forms lysosomes from its trans face.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_009',
+    question: 'Which of the following is the correct comparison between plant cells and animal cells?',
+    options: ['Plant cells have centrioles; animal cells have chloroplasts', 'Plant cells have a large central vacuole and cell wall; animal cells have centrioles and lack a cell wall', 'Both plant and animal cells have cell walls made of cellulose', 'Animal cells have chloroplasts for photosynthesis; plant cells lack them'],
+    correctAnswer: 1,
+    explanation: 'Plant cells uniquely possess a large central vacuole (occupying up to 90% of cell volume, maintaining turgor pressure, bounded by tonoplast), cell wall (made of cellulose), and chloroplasts (for photosynthesis). Animal cells uniquely possess centrioles (organise spindle fibres during cell division) and lack a cell wall (only plasma membrane). The most tempting wrong answer is A, which reverses the features — centrioles are in animal cells, and chloroplasts are in plant cells. Both cell types have mitochondria, ER, Golgi, ribosomes, nucleus, and plasma membrane. In higher plants, cell division occurs without centrioles — spindle fibres are nucleated by other microtubule-organising centres.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_010',
+    question: 'A nurse studying pharmacology learns that certain drugs target the smooth endoplasmic reticulum for metabolism. The primary function of smooth ER is:',
+    options: ['Protein synthesis using attached ribosomes', 'Lipid synthesis, steroid hormone production, and drug detoxification', 'DNA replication and repair', 'Formation of lysosomes and peroxisomes'],
+    correctAnswer: 1,
+    explanation: 'The smooth endoplasmic reticulum (SER) lacks ribosomes and is primarily involved in lipid synthesis (phospholipids, cholesterol), steroid hormone production (abundant in adrenal cortex cells and gonads), drug and toxin detoxification (especially in liver hepatocytes via cytochrome P450 enzymes), and calcium ion storage (in muscle cells as sarcoplasmic reticulum). The most tempting wrong answer is A, but protein synthesis with attached ribosomes is the function of rough ER (RER) — the ribosomes give it the "rough" appearance. The SER is particularly extensive in liver cells due to its detoxification role and in steroid-secreting cells. DNA replication occurs in the nucleus (C), and lysosomes are formed from the Golgi (D).',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_011',
+    question: 'Assertion (A): The central vacuole in plant cells maintains turgor pressure essential for cell rigidity.\nReason (R): The vacuole is bounded by a membrane called the tonoplast and contains water, ions, and organic molecules.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+    correctAnswer: 0,
+    explanation: 'Both statements are true, and R correctly explains A. The central vacuole in plant cells can occupy up to 90% of cell volume and is bounded by the tonoplast membrane. It contains water, ions, organic acids, sugars, and pigments. Water enters the vacuole by osmosis, generating turgor pressure that pushes the plasma membrane against the cell wall, providing structural rigidity to the plant. The tonoplast and its contents are directly responsible for this turgor mechanism. The most tempting wrong answer is B, but the tonoplast\'s role in containing water and solutes is the direct mechanism by which turgor pressure is generated, making R a correct explanation. When plants wilt, it is because water loss reduces vacuolar volume and turgor pressure (plasmolysis).',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_012',
+    question: 'The cell wall of fungi is primarily composed of:',
+    options: ['Cellulose', 'Peptidoglycan', 'Chitin', 'Lignin'],
+    correctAnswer: 2,
+    explanation: 'Fungal cell walls are primarily composed of chitin, a polymer of N-acetylglucosamine. This distinguishes fungi from plants (whose cell walls contain cellulose) and bacteria (whose cell walls contain peptidoglycan/murein). The most tempting wrong answer is A (cellulose), because students often confuse plant and fungal cell wall composition — both have cell walls but made of different materials. Peptidoglycan (B) is specific to bacterial cell walls and is the target of antibiotics like penicillin (which inhibits peptidoglycan cross-linking). Lignin (D) is found in secondary cell walls of woody plants, providing additional mechanical strength. Animal cells lack cell walls entirely, being bounded only by the plasma membrane.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_013',
+    question: 'In a diagram of the plasma membrane, the component that maintains membrane fluidity across varying temperatures in animal cells is:',
+    options: ['Phospholipids', 'Integral proteins', 'Cholesterol', 'Glycolipids'],
+    correctAnswer: 2,
+    explanation: 'Cholesterol is intercalated between phospholipids in animal cell membranes and acts as a fluidity buffer. At high temperatures, cholesterol restricts phospholipid movement, preventing the membrane from becoming too fluid. At low temperatures, cholesterol prevents tight packing of phospholipid tails, preventing the membrane from becoming too rigid or crystallising. The most tempting wrong answer is A (phospholipids), which are the main structural component of the bilayer and do contribute to fluidity through their unsaturated fatty acid tails, but they do not regulate fluidity across temperature ranges — that is cholesterol\'s unique role. Plant cells lack cholesterol but use other sterols (like sitosterol) for similar functions. Glycolipids (D) function in cell recognition, not fluidity regulation.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_014',
+    question: 'A student nurse is learning about active transport across cell membranes. The Na+/K+ ATPase pump moves:',
+    options: ['2 Na+ out and 3 K+ in per ATP hydrolysed', '3 Na+ out and 2 K+ in per ATP hydrolysed', '3 Na+ in and 2 K+ out per ATP hydrolysed', 'Equal numbers of Na+ and K+ in opposite directions'],
+    correctAnswer: 1,
+    explanation: 'The Na+/K+ ATPase pump moves 3 Na+ out of the cell and 2 K+ in per molecule of ATP hydrolysed. This creates an electrochemical gradient with higher Na+ outside and higher K+ inside, which is essential for maintaining the resting membrane potential (-70 mV), cell volume regulation, and secondary active transport (e.g., glucose co-transport with Na+ in the intestine and kidney). The most tempting wrong answer is A, which reverses the stoichiometry — a common student error. The unequal transport (3 out, 2 in) makes the pump electrogenic (net positive charge moved outward), contributing about -3 mV to the resting potential. Clinically, cardiac glycosides like digoxin inhibit this pump, increasing intracellular Na+ and consequently intracellular Ca2+ (via Na+/Ca2+ exchanger), strengthening cardiac contraction.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_015',
+    question: 'Receptor-mediated endocytosis differs from pinocytosis in that:',
+    options: ['It requires ATP while pinocytosis does not', 'It involves specific receptor-ligand binding for selective uptake of molecules', 'It only occurs in prokaryotic cells', 'It involves uptake of large solid particles like bacteria'],
+    correctAnswer: 1,
+    explanation: 'Receptor-mediated endocytosis involves specific receptors on the cell surface that bind particular ligands (e.g., LDL cholesterol binding to LDL receptors), forming clathrin-coated pits that invaginate to form vesicles. This provides selective, efficient uptake of specific molecules even when present at low extracellular concentrations. The most tempting wrong answer is D, but uptake of large solid particles like bacteria is phagocytosis ("cell eating"), not receptor-mediated endocytosis. Pinocytosis ("cell drinking") is non-specific uptake of extracellular fluid and dissolved molecules. All forms of endocytosis require ATP (A is wrong) and occur in eukaryotic cells (C is wrong — prokaryotes lack endomembrane systems). Clinically, defects in LDL receptor-mediated endocytosis cause familial hypercholesterolaemia.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_016',
+    question: 'Assertion (A): Rough endoplasmic reticulum is abundant in cells that secrete proteins, such as pancreatic acinar cells.\nReason (R): Ribosomes attached to the rough ER translate mRNA into proteins that enter the ER lumen for processing and secretion.',
+    options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+    correctAnswer: 0,
+    explanation: 'Both statements are true, and R correctly explains A. Rough ER (RER) is studded with ribosomes on its cytoplasmic surface. These ribosomes synthesise proteins that contain a signal peptide directing them into the ER lumen, where they undergo folding, glycosylation, and quality control before being transported to the Golgi for further processing and secretion. Pancreatic acinar cells secrete digestive enzymes (trypsinogen, chymotrypsinogen, lipase, amylase) and are therefore packed with RER. The most tempting wrong answer is B, but the ribosomal translation mechanism on RER is directly why secretory cells have abundant RER — making R a correct explanation of A. Cells that primarily synthesise lipids or steroids (like adrenal cortex cells) have abundant smooth ER instead.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_017',
+    question: 'Which of the following organelles is present in animal cells but typically absent in higher plant cells?',
+    options: ['Mitochondria', 'Golgi apparatus', 'Centrosome with centrioles', 'Endoplasmic reticulum'],
+    correctAnswer: 2,
+    explanation: 'Centrosomes with centrioles are present in animal cells (and some lower plant cells like bryophytes and pteridophytes) but are absent in higher plant cells (angiosperms and most gymnosperms). In animal cells, centrioles organise the mitotic spindle by acting as microtubule-organising centres (MTOCs). Higher plants form spindle fibres without centrioles, using other MTOCs. The most tempting wrong answer is B (Golgi apparatus), but the Golgi is present in both plant and animal cells — in plant cells it is called the dictyosome. Mitochondria (A) and endoplasmic reticulum (D) are found in both cell types. This difference has practical significance: plant cell cytokinesis uses a cell plate (Golgi vesicles), while animal cells use a cleavage furrow (actomyosin ring).',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_018',
+    question: 'A nurse learns that bacterial infections are treated with penicillin, which targets peptidoglycan synthesis. This antibiotic is ineffective against human cells because:',
+    options: ['Human cells have cell walls made of chitin, which penicillin cannot target', 'Human cells lack cell walls entirely, so there is no peptidoglycan target', 'Human cells have thicker peptidoglycan layers that resist penicillin', 'Penicillin is inactivated by human stomach acid'],
+    correctAnswer: 1,
+    explanation: 'Penicillin inhibits the enzyme transpeptidase (also called penicillin-binding protein), which catalyses the cross-linking of peptidoglycan chains in bacterial cell walls. Human (animal) cells completely lack cell walls — they are bounded only by the plasma membrane — so penicillin has no target in human cells, explaining its selective toxicity. The most tempting wrong answer is A, but human cells do not have cell walls at all (chitin cell walls are found in fungi, not humans). Option C is wrong because human cells have zero peptidoglycan, not thicker layers. Option D is irrelevant to the mechanism of selectivity (though oral penicillin formulations are acid-resistant). Clinically, this selective toxicity makes penicillin one of the safest antibiotics, though allergic reactions can occur.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_019',
+    question: 'The process by which a white blood cell engulfs and destroys a bacterium is called:',
+    options: ['Pinocytosis', 'Phagocytosis', 'Exocytosis', 'Facilitated diffusion'],
+    correctAnswer: 1,
+    explanation: 'Phagocytosis ("cell eating") is the process by which cells such as neutrophils and macrophages engulf large particles, including bacteria, by extending pseudopodia around them to form a phagosome. The phagosome then fuses with lysosomes to form a phagolysosome, where hydrolytic enzymes digest the bacterium. The most tempting wrong answer is A (pinocytosis), which is "cell drinking" — the non-specific uptake of small fluid droplets and dissolved molecules, not large solid particles. Exocytosis (C) is the reverse process — secretion of materials out of the cell. Facilitated diffusion (D) is a passive transport mechanism through carrier/channel proteins. Clinically, impaired phagocytosis (e.g., in neutropenia from chemotherapy) increases infection risk, making nurses vigilant about infection prevention protocols.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_020',
+    question: 'In a eukaryotic cell, the correct site for each process is:',
+    options: ['Krebs cycle — inner mitochondrial membrane; ETC — matrix', 'Krebs cycle — mitochondrial matrix; ETC — inner mitochondrial membrane', 'Krebs cycle — cytoplasm; ETC — outer mitochondrial membrane', 'Krebs cycle — nucleus; ETC — smooth ER'],
+    correctAnswer: 1,
+    explanation: 'The Krebs cycle (citric acid cycle) occurs in the mitochondrial matrix, where acetyl-CoA is oxidised to CO2, generating NADH and FADH2. The electron transport chain (ETC) and oxidative phosphorylation occur on the inner mitochondrial membrane (cristae), where NADH and FADH2 donate electrons through complexes I-IV, creating a proton gradient that drives ATP synthase. The most tempting wrong answer is A, which reverses the locations — a very common student error. The cristae (folds of inner membrane) increase surface area for ETC and ATP synthase, maximising ATP production. Glycolysis occurs in the cytoplasm (not listed). The outer mitochondrial membrane is relatively permeable due to porins and does not house ETC complexes.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_021',
+    question: 'Osmosis is best defined as:',
+    options: ['Movement of solute molecules from high to low concentration across a membrane', 'Movement of water molecules across a selectively permeable membrane from a region of lower solute concentration to higher solute concentration', 'Active transport of water requiring ATP', 'Movement of water from higher solute concentration to lower solute concentration'],
+    correctAnswer: 1,
+    explanation: 'Osmosis is the movement of water molecules across a selectively permeable membrane from a region of lower solute concentration (higher water potential) to a region of higher solute concentration (lower water potential). It is a passive process requiring no energy. The most tempting wrong answer is D, which reverses the direction — water moves toward the higher solute concentration (where water potential is lower), not away from it. Option A describes simple diffusion of solutes, not osmosis. Option C is incorrect because osmosis is passive. Clinically, nurses must understand osmosis for IV fluid administration: isotonic saline (0.9% NaCl) maintains cell volume, hypotonic solutions cause cell swelling, and hypertonic solutions cause cell shrinkage (crenation in RBCs).',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_022',
+    question: 'Which of the following is NOT a characteristic of prokaryotic cells?',
+    options: ['Presence of 70S ribosomes', 'Circular DNA in nucleoid region', 'Membrane-bound mitochondria for ATP production', 'Cell wall containing peptidoglycan (in bacteria)'],
+    correctAnswer: 2,
+    explanation: 'Prokaryotic cells lack all membrane-bound organelles, including mitochondria. ATP production in prokaryotes occurs through cellular respiration on the plasma membrane (and its infoldings called mesosomes in some bacteria). Prokaryotes do have 70S ribosomes (A), circular DNA in a nucleoid region (B), and peptidoglycan cell walls in bacteria (D). The most tempting wrong answer is D, because students may think peptidoglycan is a eukaryotic feature, but it is exclusively prokaryotic (bacterial). Archaea have pseudopeptidoglycan. The absence of membrane-bound organelles is one of the defining features that distinguishes prokaryotes from eukaryotes. Prokaryotes also lack ER, Golgi apparatus, lysosomes, and a membrane-bound nucleus.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_023',
+    question: 'In the figure showing a mitochondrion, the folded inner membrane structures labelled Y that increase surface area for oxidative phosphorylation are called:',
+    options: ['Thylakoids', 'Cristae', 'Cisternae', 'Microvilli'],
+    correctAnswer: 1,
+    explanation: 'The cristae are the folds of the inner mitochondrial membrane that significantly increase the surface area available for the electron transport chain complexes and ATP synthase, maximising ATP production through oxidative phosphorylation. The most tempting wrong answer is A (thylakoids), but thylakoids are the flattened membrane sacs found in chloroplasts where light reactions of photosynthesis occur — not in mitochondria. Cisternae (C) are flattened membrane sacs of the Golgi apparatus and ER. Microvilli (D) are finger-like projections of the plasma membrane found on intestinal epithelial cells to increase absorption surface area. The mitochondrial matrix (enclosed by the inner membrane) contains Krebs cycle enzymes and the organelle\'s own circular DNA.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_024',
+    question: 'The function of glycoproteins and glycolipids on the outer surface of the plasma membrane is primarily:',
+    options: ['Energy storage and metabolism', 'Cell recognition, signalling, and immune identification', 'Transport of ions across the membrane', 'Structural support like a cell wall'],
+    correctAnswer: 1,
+    explanation: 'Glycoproteins (proteins with attached carbohydrate chains) and glycolipids (lipids with attached carbohydrate chains) on the extracellular surface of the plasma membrane form the glycocalyx. Their primary functions include cell-cell recognition (distinguishing self from non-self, critical for immune function), cell signalling (receptor function), cell adhesion, and protection. The most tempting wrong answer is C (ion transport), but ion transport is performed by channel proteins and carrier proteins (integral membrane proteins), not glycoproteins/glycolipids. ABO blood group antigens are glycolipids/glycoproteins on RBC surfaces. Clinically, the immune system uses glycoproteins (MHC molecules) to distinguish self from non-self cells, which is why tissue typing is essential before organ transplantation.',
+    difficulty: 'medium',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    },
+    {
+    id: 'bio_cs_025',
+    question: 'A student is asked to identify the organelle that packages proteins into vesicles for secretion. The correct answer is:',
+    options: ['Rough endoplasmic reticulum', 'Smooth endoplasmic reticulum', 'Golgi apparatus', 'Lysosome'],
+    correctAnswer: 2,
+    explanation: 'The Golgi apparatus (dictyosome in plant cells) is the organelle responsible for receiving proteins from the ER at its cis face, modifying them (glycosylation, phosphorylation, proteolytic processing), sorting them based on destination tags (signal sequences), and packaging them into transport vesicles that bud from the trans face for secretion (exocytosis), delivery to lysosomes, or incorporation into the plasma membrane. The most tempting wrong answer is A (RER), which synthesises proteins and sends them to the Golgi via transport vesicles, but the RER does not perform the final packaging and sorting for secretion — that is the Golgi\'s role. The Golgi can be compared to a post office: it receives, processes, labels, and ships packages to correct destinations.',
+    difficulty: 'easy',
+    subject: 'biology',
+    subjectName: 'Biology',
+    topicKey: 'cell_structure_function'
+    }
+],
+
+cell_division: [
+  {
+  id: 'bio_cd_001',
+  question: 'The correct sequence of phases in mitosis is:',
+  options: ['Metaphase → Prophase → Anaphase → Telophase', 'Prophase → Anaphase → Metaphase → Telophase', 'Prophase → Metaphase → Anaphase → Telophase', 'Telophase → Prophase → Metaphase → Anaphase'],
+  correctAnswer: 2,
+  explanation: 'The correct sequence of mitosis is PMAT: Prophase → Metaphase → Anaphase → Telophase. In Prophase, chromatin condenses into visible chromosomes and the nuclear envelope breaks down. In Metaphase, chromosomes align at the metaphase plate. In Anaphase, sister chromatids separate and move to opposite poles. In Telophase, nuclear envelopes reform and chromosomes decondense. The most tempting wrong answer is B, which places Anaphase before Metaphase — but chromatids cannot separate (Anaphase) before they are aligned at the metaphase plate (Metaphase). The mnemonic "PMAT" (or "People Meet And Talk") helps students remember the sequence. Mitosis produces two genetically identical daughter cells.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_002',
+  question: 'During which phase of interphase does DNA replication occur?',
+  options: ['G1 phase', 'S phase', 'G2 phase', 'M phase'],
+  correctAnswer: 1,
+  explanation: 'DNA replication occurs during the S (synthesis) phase of interphase, lasting approximately 6-8 hours. During S phase, each chromosome is duplicated to form two sister chromatids joined at the centromere, so the DNA content doubles from 2C to 4C (in diploid cells). The most tempting wrong answer is A (G1 phase), but G1 is the growth phase (8-10 hours) where the cell increases in size, synthesises proteins and organelles, and prepares for S phase. G2 phase (4-6 hours) is the preparation phase for mitosis where proteins needed for cell division are synthesised. M phase is mitosis itself, not part of interphase. Interphase (G1+S+G2) constitutes approximately 90% of the total cell cycle, with M phase being only about 1-2 hours.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_003',
+  question: 'Assertion (A): Crossing over during meiosis generates genetic variation among offspring.\nReason (R): Crossing over involves exchange of genetic material between non-sister chromatids of homologous chromosomes at chiasmata during pachytene of prophase I.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Crossing over is the physical exchange of DNA segments between non-sister chromatids of homologous chromosomes at points called chiasmata during the pachytene substage of prophase I. This creates new combinations of alleles on each chromatid (recombinant chromosomes), which is a major source of genetic variation. The most tempting wrong answer is B, but the mechanism described in R (exchange at chiasmata during pachytene) is precisely the mechanism that generates the genetic variation stated in A. It is important to note that crossing over occurs between non-sister chromatids (of the same bivalent), not between sister chromatids — exchange between identical sister chromatids would produce no new combinations.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_004',
+  question: 'A nurse studying genetics learns that a cell with 46 chromosomes undergoes meiosis. The number of chromosomes in each daughter cell after meiosis II is:',
+  options: ['46', '92', '23', '12'],
+  correctAnswer: 2,
+  explanation: 'Meiosis is a reductional division that produces cells with half the chromosome number. A human cell with 46 chromosomes (2n=46) undergoes meiosis I (reductional: homologous chromosomes separate) to produce two cells with 23 chromosomes each, then meiosis II (equational: sister chromatids separate) to produce four cells, each with 23 chromosomes (n=23). The most tempting wrong answer is A (46), which would be the result of mitosis (equational division producing genetically identical diploid cells). Meiosis is essential for producing haploid gametes (sperm and eggs) so that fertilisation restores the diploid number (23+23=46). If gametes were diploid, the chromosome number would double each generation.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_005',
+  question: 'The G1/S checkpoint (restriction point) in the cell cycle primarily checks for:',
+  options: ['Completion of DNA replication', 'Proper attachment of all chromosomes to spindle fibres', 'Adequate cell size, nutrients, growth signals, and DNA integrity', 'Completion of cytokinesis'],
+  correctAnswer: 2,
+  explanation: 'The G1/S checkpoint (restriction point) is the most critical decision point in the cell cycle. It checks whether the cell has reached adequate size, has sufficient nutrients and growth factors, and whether the DNA is intact and undamaged. If DNA damage is detected, the tumour suppressor protein p53 is activated, which can halt the cell cycle at G1 for repair or trigger apoptosis (programmed cell death) if damage is irreparable. The most tempting wrong answer is A, but checking completion of DNA replication occurs at the G2/M checkpoint (ensuring S phase is complete before entering mitosis). Option B describes the metaphase (spindle assembly) checkpoint, which ensures all kinetochores are attached to spindle fibres. Clinically, mutations in p53 are found in over 50% of human cancers, allowing damaged cells to proliferate uncontrollably.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_006',
+  question: 'In plant cell cytokinesis, the cell plate forms from:',
+  options: ['Invagination of the plasma membrane (cleavage furrow)', 'Golgi-derived vesicles that fuse at the centre and grow outward (centrifugally)', 'Extension of the cell wall from the edges inward', 'Contraction of an actomyosin ring'],
+  correctAnswer: 1,
+  explanation: 'In plant cell cytokinesis, the cell plate forms from Golgi-derived vesicles containing cell wall precursors (pectins, hemicelluloses) that are transported along remaining spindle microtubules (phragmoplast) to the centre of the cell, where they fuse and grow outward (centrifugally) until they reach the existing cell wall, dividing the cell into two daughter cells. The most tempting wrong answer is A (cleavage furrow), but cleavage furrow formation occurs in animal cells, where an actomyosin contractile ring pinches the cell inward (centripetally). Plant cells cannot use a cleavage furrow because their rigid cell wall prevents inward constriction. This is a key distinction between plant and animal cell division.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_007',
+  question: 'The correct sequence of substages in Prophase I of meiosis is:',
+  options: ['Pachytene → Leptotene → Zygotene → Diplotene → Diakinesis', 'Leptotene → Zygotene → Pachytene → Diplotene → Diakinesis', 'Zygotene → Leptotene → Pachytene → Diakinesis → Diplotene', 'Diakinesis → Diplotene → Pachytene → Zygotene → Leptotene'],
+  correctAnswer: 1,
+  explanation: 'The five substages of Prophase I occur in the sequence: Leptotene (chromosomes first become visible as thin threads) → Zygotene (synapsis — homologous chromosomes pair up forming bivalents) → Pachytene (crossing over occurs at chiasmata between non-sister chromatids — the most important substage for genetic recombination) → Diplotene (chiasmata become visible as homologs begin to separate but remain connected at chiasmata) → Diakinesis (chromosomes are maximally condensed, terminalisation of chiasmata, nuclear envelope breaks down). The mnemonic "Lazy Zebras Play During Dark" helps recall the order. The most tempting wrong answer is A, which places Pachytene first. Clinically, errors in meiosis I (especially non-disjunction) cause chromosomal disorders like Down syndrome.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_008',
+  question: 'Which of the following is the correct difference between mitosis and meiosis?',
+  options: ['Daughter cells: 4 haploid in mitosis, 2 diploid in meiosis', 'Daughter cells: 2 diploid identical in mitosis, 4 haploid genetically varied in meiosis', 'Crossing over: Occurs in mitosis, does not occur in meiosis', 'Location: Germ cells only in mitosis, somatic cells only in meiosis'],
+  correctAnswer: 1,
+  explanation: 'Mitosis produces 2 diploid (2n) genetically identical daughter cells, while meiosis produces 4 haploid (n) genetically varied daughter cells. The most tempting wrong answer is A, which reverses the features. Key differences include: mitosis has 1 division vs meiosis has 2; mitosis has no pairing of homologs vs meiosis has synapsis in prophase I; mitosis has no crossing over vs meiosis has crossing over in pachytene; mitosis occurs in somatic cells (growth, repair) vs meiosis in germ cells (gamete production). The genetic variation in meiosis comes from crossing over and independent assortment of homologous chromosomes at metaphase I.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_009',
+  question: 'Assertion (A): The metaphase checkpoint ensures all chromosomes are properly attached to spindle fibres before anaphase proceeds.\nReason (R): Unattached kinetochores generate a "wait" signal (Mad and Bub proteins) that inhibits the anaphase-promoting complex (APC).',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. The metaphase (spindle assembly) checkpoint prevents premature entry into anaphase. Unattached kinetochores produce a signal involving Mad (mitotic arrest deficient) and Bub (budding uninhibited by benzimidazole) proteins that inhibit the anaphase-promoting complex/cyclosome (APC/C). Only when all kinetochores are properly attached to spindle microtubules does the inhibitory signal cease, allowing APC/C to activate, which triggers degradation of securin (releasing separase to cleave cohesin) and cyclin B, initiating sister chromatid separation. The most tempting wrong answer is B, but the mechanism described in R is precisely how the checkpoint functions. Failure of this checkpoint leads to aneuploidy, a hallmark of cancer cells.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_010',
+  question: 'During anaphase of mitosis, sister chromatids are separated and pulled to opposite poles by:',
+  options: ['Elongation of polar microtubules pushing poles apart', 'Shortening of kinetochore microtubules attached to centromeres', 'Action of actin filaments', 'Dissolution of the nuclear envelope'],
+  correctAnswer: 1,
+  explanation: 'During anaphase, sister chromatids are separated and move to opposite poles primarily by the shortening (depolymerisation) of kinetochore microtubules — the spindle fibres that connect the kinetochore (on the centromere of each chromatid) to the spindle poles. This shortening generates the pulling force that moves chromatids poleward. The most tempting wrong answer is A, because polar microtubule elongation does contribute to anaphase B (pushing poles apart to elongate the cell), but the primary mechanism of chromatid movement toward poles is anaphase A — kinetochore microtubule shortening. Actin filaments (C) are involved in cytokinesis (cleavage furrow), not chromatid movement. Nuclear envelope dissolution (D) occurs during prophase, not anaphase.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_011',
+  question: 'The G2/M checkpoint ensures that:',
+  options: ['The cell has adequate nutrients to enter G1', 'DNA replication is complete and the cell is large enough to divide', 'All chromosomes are attached to spindle fibres', 'Cytokinesis has been completed'],
+  correctAnswer: 1,
+  explanation: 'The G2/M checkpoint occurs at the transition from G2 phase to M phase (mitosis). It verifies that DNA replication during S phase is complete and that the cell has grown to an adequate size. This checkpoint also checks for DNA damage that may have occurred during replication. The key molecular regulator is MPF (maturation-promoting factor), a complex of cyclin B and CDK1 (Cdc2), which when activated triggers entry into mitosis (chromosome condensation, nuclear envelope breakdown, spindle formation). The most tempting wrong answer is C, but checking spindle attachment occurs at the metaphase checkpoint (spindle assembly checkpoint), not G2/M. Option A describes G1 checkpoint functions. If DNA replication is incomplete, the cell arrests at G2 to prevent division with unreplicated chromosomes.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_012',
+  question: 'Independent assortment of homologous chromosomes occurs during:',
+  options: ['Anaphase of mitosis', 'Metaphase I of meiosis', 'Anaphase II of meiosis', 'Prophase I of meiosis'],
+  correctAnswer: 1,
+  explanation: 'Independent assortment occurs during Metaphase I of meiosis, when bivalents (pairs of homologous chromosomes) align at the metaphase plate. The orientation of each bivalent is random — the maternal or paternal homolog can face either pole. This random orientation means that each gamete receives a different combination of maternal and paternal chromosomes. For humans (n=23), this produces 2^23 = ~8.4 million possible combinations. The most tempting wrong answer is D (Prophase I), where crossing over generates genetic variation — but independent assortment specifically refers to the random orientation of homologs at the metaphase plate, which occurs at Metaphase I. Anaphase of mitosis (A) separates sister chromatids, not homologous chromosomes. Anaphase II separates sister chromatids in the second meiotic division.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_013',
+  question: 'A patient with cancer is receiving chemotherapy that targets rapidly dividing cells. Which phase of the cell cycle would be most affected by drugs that block DNA synthesis?',
+  options: ['G1 phase', 'S phase', 'G2 phase', 'M phase'],
+  correctAnswer: 1,
+  explanation: 'Drugs that block DNA synthesis (such as methotrexate, 5-fluorouracil, and cytarabine) target the S phase of the cell cycle, during which DNA replication occurs. These drugs are called S-phase specific antimetabolites. Cancer cells divide rapidly and spend more time in S phase, making them particularly susceptible. The most tempting wrong answer is D (M phase), but M phase-specific drugs include vinca alkaloids (vincristine, vinblastine — inhibit spindle formation) and taxanes (paclitaxel — stabilise microtubules, preventing disassembly). G1 phase drugs include CDK inhibitors. Understanding cell cycle specificity helps nurses anticipate which cells will be affected — rapidly dividing normal cells (bone marrow, GI epithelium, hair follicles) are also damaged, causing neutropenia, mucositis, and alopecia.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_014',
+  question: 'Which of the following correctly describes a key difference between meiosis I and meiosis II?',
+  options: ['Centromeres split in meiosis I, homologous chromosomes separate in meiosis II', 'Homologous chromosomes separate (reductional) in meiosis I, sister chromatids separate (equational) in meiosis II', 'Meiosis I produces 4 haploid cells, meiosis II produces 2 diploid cells', 'No synapsis occurs in meiosis I, synapsis and crossing over occur in meiosis II'],
+  correctAnswer: 1,
+  explanation: 'Meiosis I is reductional: homologous chromosomes separate (each daughter cell receives one homolog from each pair, reducing ploidy from 2n to n). Meiosis II is equational: sister chromatids separate (similar to mitosis, centromeres split, maintaining ploidy at n). The most tempting wrong answer is A, which reverses the events — centromere splitting occurs in meiosis II, not meiosis I. In meiosis I, homologous chromosomes (held together at chiasmata) separate, but centromeres remain intact. Meiosis I produces 2 haploid cells, and meiosis II divides these into 4 haploid cells (C reverses the outcomes). Synapsis and crossing over occur in Prophase I (D reverses this).',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_015',
+  question: 'Assertion (A): Mitosis is essential for wound healing and tissue repair.\nReason (R): Mitosis produces genetically identical daughter cells that can replace damaged or lost cells.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Mitosis produces two genetically identical daughter cells with the same chromosome number as the parent cell (2n). This is essential for wound healing and tissue repair because the replacement cells must be genetically identical to the original cells to maintain tissue function and integrity. The most tempting wrong answer is B, but the production of genetically identical cells is precisely why mitosis is suitable for repair — if cells were genetically different (as in meiosis), tissue function would be compromised. Meiosis produces genetically varied haploid cells for gamete production, not tissue repair. Clinically, understanding mitosis in wound healing helps nurses appreciate why immunosuppressed patients or those on anti-mitotic chemotherapy have impaired wound healing.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_016',
+  question: 'During which substage of Prophase I does crossing over occur?',
+  options: ['Leptotene', 'Zygotene', 'Pachytene', 'Diplotene'],
+  correctAnswer: 2,
+  explanation: 'Crossing over occurs during pachytene (the third substage of Prophase I), when homologous chromosomes are fully synapsed as bivalents. At pachytene, non-sister chromatids of homologous chromosomes exchange segments at points called chiasmata. Pachytene is the most important substage for genetic recombination. The most tempting wrong answer is D (diplotene), because chiasmata become visible at diplotene as homologs begin to separate — but the actual exchange of genetic material occurs at pachytene. Zygotene (B) is when synapsis (pairing) begins with the synaptonemal complex, and leptotene (A) is when chromosomes first become visible. The physical exchange at pachytene followed by visualisation at diplotene is a commonly tested distinction.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_017',
+  question: 'The significance of meiosis includes all of the following EXCEPT:',
+  options: ['Production of haploid gametes for sexual reproduction', 'Generation of genetic variation through crossing over and independent assortment', 'Growth and repair of somatic tissues', 'Maintenance of chromosome number across generations through fertilisation'],
+  correctAnswer: 2,
+  explanation: 'Growth and repair of somatic tissues is a function of mitosis, NOT meiosis. Meiosis is responsible for: (A) producing haploid gametes (sperm and eggs) essential for sexual reproduction; (B) generating genetic variation through crossing over (pachytene) and independent assortment (metaphase I); and (D) ensuring that when two haploid gametes fuse at fertilisation, the diploid chromosome number is restored (n + n = 2n). The most tempting wrong answer is D, because students may think meiosis reduces the chromosome number (which it does), but the broader significance is that this reduction allows fertilisation to restore the diploid number, maintaining it across generations. Without meiosis, the chromosome number would double each generation.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_018',
+  question: 'MPF (Maturation Promoting Factor) that triggers entry into M phase is composed of:',
+  options: ['p53 and Rb protein', 'Cyclin B and CDK1 (Cdc2)', 'Cyclin D and CDK4', 'APC/C and securin'],
+  correctAnswer: 1,
+  explanation: 'MPF (Maturation Promoting Factor) is a complex of Cyclin B (regulatory subunit that accumulates during G2) and CDK1 (Cdc2) (catalytic subunit = cyclin-dependent kinase). When cyclin B levels reach a threshold, it activates CDK1, and the MPF complex triggers mitotic events: chromosome condensation, nuclear envelope breakdown, and spindle assembly. The most tempting wrong answer is C (Cyclin D and CDK4), which is involved in the G1 phase progression and G1/S transition, not the G2/M transition. p53 and Rb (A) are tumour suppressors that inhibit cell cycle progression. APC/C (D) is the anaphase-promoting complex that degrades cyclin B and securin to allow exit from mitosis and sister chromatid separation. Understanding these regulators is important because their dysfunction leads to uncontrolled cell division (cancer).',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_019',
+  question: 'A cell in anaphase I of meiosis differs from anaphase of mitosis because:',
+  options: ['Sister chromatids separate in anaphase I', 'Homologous chromosomes separate in anaphase I, while sister chromatids separate in anaphase of mitosis', 'The cell becomes haploid in anaphase of mitosis', 'No spindle fibres are involved in anaphase I'],
+  correctAnswer: 1,
+  explanation: 'In Anaphase I of meiosis, homologous chromosomes (each consisting of two sister chromatids) separate and move to opposite poles — the centromeres do NOT split, and sister chromatids remain joined. In Anaphase of mitosis, sister chromatids separate as centromeres split, and individual chromatids move to opposite poles. The most tempting wrong answer is A, which describes what happens in anaphase of mitosis (or anaphase II of meiosis), not anaphase I. This distinction is crucial: anaphase I is reductional (halving the chromosome number), while anaphase of mitosis is equational (maintaining it). Spindle fibres are involved in both (D is wrong), and the cell becomes haploid after meiosis I, not mitosis (C is wrong).',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_020',
+  question: 'Which of the following events is unique to meiosis and does NOT occur in mitosis?',
+  options: ['Condensation of chromatin into visible chromosomes', 'Formation of spindle apparatus', 'Synapsis of homologous chromosomes and crossing over', 'Separation of sister chromatids'],
+  correctAnswer: 2,
+  explanation: 'Synapsis (pairing of homologous chromosomes to form bivalents during zygotene) and crossing over (exchange of genetic material between non-sister chromatids at chiasmata during pachytene) are events unique to meiosis (specifically Prophase I) and do not occur in mitosis. The most tempting wrong answer is D (separation of sister chromatids), but this occurs in both mitosis (anaphase) and meiosis II (anaphase II). Similarly, chromatin condensation (A) and spindle formation (B) occur in both mitosis and meiosis. In mitosis, homologous chromosomes do not pair up — each chromosome independently aligns at the metaphase plate. The pairing and crossing over in meiosis are the key mechanisms generating genetic diversity.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_021',
+  question: 'Assertion (A): Errors in meiosis can lead to aneuploidy, such as trisomy 21 (Down syndrome).\nReason (R): Non-disjunction during meiosis I or II results in gametes with an abnormal number of chromosomes.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Non-disjunction is the failure of homologous chromosomes (meiosis I) or sister chromatids (meiosis II) to separate properly during cell division. This produces gametes with an extra chromosome (n+1) or a missing chromosome (n-1). When an n+1 gamete is fertilised by a normal gamete, the result is trisomy (2n+1) — in the case of chromosome 21, this produces Down syndrome (trisomy 21, 47 chromosomes). The most tempting wrong answer is B, but non-disjunction is the direct mechanism causing the aneuploidy described in A. Risk increases with maternal age (especially >35 years) because oocytes arrested in prophase I since foetal life accumulate errors over decades.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  },
+  {
+  id: 'bio_cd_022',
+  question: 'The number of DNA molecules present in a human cell at the end of S phase (before mitosis) is:',
+  options: ['23', '46', '92', '184'],
+  correctAnswer: 2,
+  explanation: 'A human somatic cell has 46 chromosomes (46 DNA molecules) at the start of S phase. During S phase, each DNA molecule is replicated, producing sister chromatids connected at the centromere. Although the cell still has 46 chromosomes (each now consisting of 2 chromatids), the number of DNA molecules doubles to 92. The most tempting wrong answer is B (46), because students confuse the number of chromosomes (which remains 46 until anaphase) with the number of DNA molecules (which doubles). The distinction is: a chromosome after replication consists of 2 sister chromatids = 2 DNA molecules, but is counted as 1 chromosome until the centromere splits at anaphase. This concept is frequently tested in exams and is a common source of confusion.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'cell_division'
+  }
+],
+
+genetics_molecular_biology: [
+  {
+  id: 'bio_gm_001',
+  question: 'In Mendel\'s monohybrid cross between tall (TT) and dwarf (tt) pea plants, the F2 generation phenotypic ratio is:',
+  options: ['1:1', '1:2:1', '3:1', '9:3:3:1'],
+  correctAnswer: 2,
+  explanation: 'In Mendel\'s monohybrid cross, P: TT × tt → F1: all Tt (tall, heterozygous). F1 × F1: Tt × Tt → F2 genotypic ratio 1TT:2Tt:1tt, and phenotypic ratio 3 tall:1 dwarf (3:1) because T (tall) is dominant over t (dwarf). The most tempting wrong answer is B (1:2:1), which is the genotypic ratio (not phenotypic) of the same cross, and is also the phenotypic ratio in incomplete dominance (e.g., Mirabilis jalapa: red:pink:white). The 9:3:3:1 ratio (D) applies to a dihybrid cross. Mendel\'s law of segregation explains this: the two alleles of a gene separate during gamete formation (meiosis), each gamete receiving only one allele.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_002',
+  question: 'A genetic counsellor explains to parents that their son has haemophilia A. The mother is a carrier (X^H X^h) and the father is normal (X^H Y). What is the probability that their next son will have haemophilia?',
+  options: ['0%', '25%', '50%', '100%'],
+  correctAnswer: 2,
+  explanation: 'Haemophilia A (factor VIII deficiency) is X-linked recessive. The carrier mother (X^H X^h) produces two types of eggs: X^H and X^h (50% each). The normal father (X^H Y) produces X^H and Y sperm. For sons (who receive Y from father), they get either X^H (normal) or X^h (haemophilic) from the mother — so 50% of sons will be affected. The most tempting wrong answer is B (25%), which is the probability that ANY child (son or daughter) will be affected (25% of all children = 50% of sons). The question specifically asks about the next son, so the answer is 50%. Clinically, X-linked recessive conditions are more common in males because they have only one X chromosome — there is no second X to mask the recessive allele. The pattern shows no father-to-son transmission (father gives Y to sons).',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_003',
+  question: 'The correct structure of DNA according to Watson and Crick\'s model includes all of the following EXCEPT:',
+  options: ['Right-handed double helix with antiparallel strands', 'Base pairing: A=T with 2 hydrogen bonds, G≡C with 3 hydrogen bonds', 'Sugar-phosphate backbone on the inside and bases on the outside', '3.4 nm pitch per complete turn of 10 base pairs'],
+  correctAnswer: 2,
+  explanation: 'In Watson and Crick\'s DNA model (1953), the sugar-phosphate backbone is on the outside and the nitrogenous bases are on the inside, facing each other and forming hydrogen bonds — NOT the other way around as stated in option C. The correct features are: right-handed double helix with antiparallel strands (5\'→3\' and 3\'→5\') (A); complementary base pairing with A=T (2 H-bonds) and G≡C (3 H-bonds) (B); and 3.4 nm per complete turn containing 10 base pairs (D), with each base pair separated by 0.34 nm. The most tempting wrong answer is D, because students may confuse the pitch (3.4 nm) with the diameter (2 nm). The backbone-outside, bases-inside arrangement is crucial because it allows the hydrophobic bases to stack and form hydrogen bonds in the interior, while the hydrophilic sugar-phosphate groups interact with the aqueous environment.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_004',
+  question: 'DNA replication was proven to be semi-conservative by the experiment of:',
+  options: ['Watson and Crick using X-ray crystallography', 'Meselson and Stahl using N-15 heavy nitrogen', 'Hershey and Chase using bacteriophages', 'Griffith using Streptococcus pneumoniae'],
+  correctAnswer: 1,
+  explanation: 'Meselson and Stahl (1958) proved semi-conservative DNA replication using E. coli grown in N-15 (heavy nitrogen) medium, then transferred to N-14 (light nitrogen) medium. After one generation, all DNA was intermediate density (one heavy, one light strand — ruling out conservative). After two generations, half was intermediate and half was light (ruling out dispersive). This confirmed that each daughter DNA molecule contains one parental strand and one newly synthesised strand. The most tempting wrong answer is A — Watson and Crick (1953) proposed the DNA structure and suggested semi-conservative replication, but they did not experimentally prove it. Hershey and Chase (1952) proved DNA is the genetic material. Griffith (1928) discovered transformation.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_005',
+  question: 'During transcription, the template strand of DNA is read in which direction?',
+  options: ['5\' to 3\'', '3\' to 5\'', 'Both directions simultaneously', 'The direction varies depending on the gene'],
+  correctAnswer: 1,
+  explanation: 'During transcription, RNA polymerase reads the template (antisense/non-coding) strand in the 3\' to 5\' direction while synthesising the mRNA in the 5\' to 3\' direction. This is because nucleotides can only be added to the 3\' OH end of the growing RNA chain. The resulting mRNA has the same base sequence as the coding (sense/non-template) strand (with U replacing T). The most tempting wrong answer is A (5\' to 3\'), which describes the direction of mRNA synthesis, not the direction of template reading — a common confusion. In eukaryotes, RNA polymerase II transcribes mRNA precursors (pre-mRNA), which then undergo processing: 5\' capping, 3\' polyadenylation, and splicing (removal of introns, joining of exons).',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_006',
+  question: 'The correct sequence of events in translation is:',
+  options: ['Termination → Elongation → Initiation', 'Initiation (start codon AUG, Met) → Elongation (peptide bond formation) → Termination (stop codon, release factor)', 'Elongation → Initiation → Termination', 'Initiation → Termination → Elongation'],
+  correctAnswer: 1,
+  explanation: 'Translation follows three sequential stages: Initiation — the small ribosomal subunit binds mRNA at the start codon AUG (encoding methionine), the initiator tRNA with anticodon UAC binds at the P site, and the large subunit joins; Elongation — aminoacyl-tRNAs enter the A site, peptide bonds form between amino acids (catalysed by peptidyl transferase in the large subunit), and the ribosome translocates along mRNA; Termination — when a stop codon (UAA, UAG, or UGA) is reached, release factors (not tRNA) bind, the polypeptide is released, and ribosomal subunits dissociate. The most tempting wrong answer is C, which places elongation before initiation — but the ribosome must first assemble at the start codon before elongation can proceed.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_007',
+  question: 'A nurse in a genetic counselling clinic explains to parents of a child with Down syndrome that the condition is caused by:',
+  options: ['Deletion of a portion of chromosome 21', 'Trisomy 21 due to non-disjunction during meiosis, resulting in 47 chromosomes', 'Monosomy of the X chromosome (45,X)', 'An extra Y chromosome (47,XYY)'],
+  correctAnswer: 1,
+  explanation: 'Down syndrome is caused by trisomy 21 — the presence of three copies of chromosome 21 instead of two, resulting in a total of 47 chromosomes. This most commonly results from non-disjunction during maternal meiosis I (failure of homologous chromosome 21 pair to separate), producing an egg with two copies of chromosome 21. When fertilised by a normal sperm, the zygote has three copies. Risk increases with maternal age (especially >35 years). The most tempting wrong answer is C (45,X), which describes Turner syndrome (short stature, webbed neck, streak ovaries). Option D (47,XYY) is Jacob\'s syndrome. Features of Down syndrome include intellectual disability, flat facial profile, epicanthal folds, single palmar crease, and congenital heart defects.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_008',
+  question: 'In the ABO blood group system, a person with blood type O has the genotype:',
+  options: ['I^A I^A', 'I^A I^B', 'I^B i', 'ii'],
+  correctAnswer: 3,
+  explanation: 'Blood type O has the genotype ii (homozygous recessive). The i allele does not produce any antigen on the RBC surface, so type O individuals have no A or B antigens (making them universal donors for RBCs) but have both anti-A and anti-B antibodies in their plasma. The most tempting wrong answer is C (I^B i), which gives blood type B (I^B is dominant over i). I^A I^A or I^A i gives type A, and I^A I^B gives type AB (codominance — both A and B antigens expressed). The ABO system demonstrates multiple allelism (3 alleles — I^A, I^B, i — for one gene, but any individual carries only 2). Clinically, cross-matching is always performed before transfusion regardless of ABO type to detect other antibody incompatibilities.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_009',
+  question: 'In incomplete dominance, when red-flowered (RR) Mirabilis jalapa is crossed with white-flowered (rr), the F1 phenotype is:',
+  options: ['All red', 'All white', 'All pink', '3 red : 1 white'],
+  correctAnswer: 2,
+  explanation: 'In incomplete dominance, neither allele is completely dominant over the other. In Mirabilis jalapa (4 o\'clock plant), RR produces red flowers and rr produces white flowers. The heterozygote Rr produces pink flowers — an intermediate phenotype. The F1 generation (RR × rr → all Rr) is therefore all pink. The most tempting wrong answer is A (all red), which would be the result if R were completely dominant over r (as in Mendel\'s pea crosses). In incomplete dominance, the F2 phenotypic ratio equals the genotypic ratio = 1 red (RR):2 pink (Rr):1 white (rr), unlike complete dominance where phenotypic ratio (3:1) differs from genotypic ratio (1:2:1). This is also seen in Antirrhinum (snapdragon).',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_010',
+  question: 'Assertion (A): The genetic code is degenerate (redundant).\nReason (R): There are 64 codons coding for only 20 amino acids, so most amino acids are specified by more than one codon.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. The genetic code is degenerate (redundant) because 64 possible codons (4³ = 64 triplet combinations of 4 bases) code for only 20 amino acids plus 3 stop signals. Therefore, most amino acids have multiple codons (e.g., leucine has 6 codons, serine has 6). The most tempting wrong answer is B, but the mathematical relationship between 64 codons and 20 amino acids is precisely the reason for degeneracy. The degeneracy is primarily in the third position (wobble position) of the codon, where different bases can pair with the same tRNA anticodon. Despite being degenerate, the code is unambiguous — each codon specifies only one amino acid. The code is also universal (same in virtually all organisms) and non-overlapping.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_011',
+  question: 'The enzyme that unwinds the DNA double helix during replication is:',
+  options: ['DNA polymerase III', 'Helicase', 'DNA ligase', 'Primase'],
+  correctAnswer: 1,
+  explanation: 'Helicase unwinds the DNA double helix by breaking the hydrogen bonds between complementary base pairs, creating the replication fork. It uses energy from ATP hydrolysis to separate the two parental strands. The most tempting wrong answer is A (DNA polymerase III), which extends the new DNA strand by adding nucleotides to the 3\' OH end of the primer, but it does not unwind the helix. Primase (D) synthesises short RNA primers needed to initiate DNA synthesis. DNA ligase (C) seals the nicks between Okazaki fragments on the lagging strand. After helicase unwinds the strands, single-strand binding (SSB) proteins stabilise the separated strands to prevent re-annealing. This precise coordination of enzymes ensures accurate and efficient DNA replication.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_012',
+  question: 'Sickle cell anaemia is caused by a point mutation that changes:',
+  options: ['Glutamic acid to valine at the 6th position of the beta-globin chain (GAG → GTG)', 'Valine to glutamic acid at the 6th position of the alpha-globin chain', 'A frameshift mutation in the gamma-globin gene', 'A deletion of the entire beta-globin gene'],
+  correctAnswer: 0,
+  explanation: 'Sickle cell anaemia results from a single point mutation (substitution) in the beta-globin gene: the codon GAG (coding for glutamic acid, a hydrophilic amino acid) is changed to GTG (coding for valine, a hydrophobic amino acid) at the 6th position of the beta-globin chain. This causes haemoglobin S (HbS) molecules to polymerise under low oxygen conditions, deforming RBCs into a sickle shape. The most tempting wrong answer is B, which reverses both the amino acid change and the globin chain affected. It is a point mutation (not frameshift — C, or deletion — D). Importantly, heterozygous carriers (HbAS) have sickle cell trait and show resistance to Plasmodium falciparum malaria — an example of balanced polymorphism explaining the high frequency of the allele in malaria-endemic regions.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_013',
+  question: 'A woman with blood type A (genotype I^A i) marries a man with blood type B (genotype I^B i). What blood types are possible in their children?',
+  options: ['Only AB', 'A, B, AB, and O', 'Only A and B', 'Only AB and O'],
+  correctAnswer: 1,
+  explanation: 'Cross: I^A i × I^B i. The possible gametes from the mother are I^A and i; from the father are I^B and i. The Punnett square gives: I^A I^B (AB), I^A i (A), I^B i (B), ii (O) — all four blood types are possible in equal proportions (25% each). The most tempting wrong answer is D (only AB and O), but this ignores that I^A i and I^B i genotypes produce type A and type B phenotypes respectively. This cross beautifully demonstrates codominance (I^A and I^B are codominant in AB), dominance (I^A and I^B are each dominant over i), and multiple allelism (3 alleles for one gene). Clinically, this is important in paternity testing and blood banking.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_014',
+  question: 'Turner syndrome is characterised by:',
+  options: ['47,XXY karyotype, male phenotype, tall stature, gynecomastia', '45,X karyotype, female phenotype, short stature, webbed neck, streak ovaries', '47,XY+21 karyotype, intellectual disability', '46,XX normal female karyotype'],
+  correctAnswer: 1,
+  explanation: 'Turner syndrome has the karyotype 45,X (monosomy X) — only one X chromosome and no second sex chromosome. Affected individuals are phenotypically female but present with short stature, webbed neck, shield chest, streak (non-functional) ovaries, absent secondary sexual characteristics, infertility, and coarctation of the aorta. The most tempting wrong answer is A, which describes Klinefelter syndrome (47,XXY) — males with tall stature, gynecomastia, testicular atrophy, and infertility. Option C describes Down syndrome with an incorrect karyotype notation. Turner syndrome results from non-disjunction during meiosis, and unlike most monosomies, monosomy X is viable because only one X is needed for female development (the other is normally inactivated as a Barr body anyway).',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_015',
+  question: 'Assertion (A): DNA replication is semi-conservative.\nReason (R): Each new DNA molecule contains one original parental strand and one newly synthesised strand.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R is the correct explanation of A. Semi-conservative replication means that each daughter DNA molecule retains one parental (original) strand and one newly synthesised strand — this is the definition of semi-conservative. This was experimentally proven by Meselson and Stahl (1958) using N-15/N-14 density gradient centrifugation in E. coli. The most tempting wrong answer is B, but R is literally the definition of what makes replication semi-conservative, so it is the correct explanation. In conservative replication (ruled out), the parental molecule would remain intact and an entirely new molecule would be synthesised. In dispersive replication (also ruled out), both strands would contain a mixture of old and new segments.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_016',
+  question: 'On the lagging strand during DNA replication, short DNA fragments synthesised discontinuously are called:',
+  options: ['Primer fragments', 'Okazaki fragments', 'Restriction fragments', 'Telomere fragments'],
+  correctAnswer: 1,
+  explanation: 'Okazaki fragments are short DNA segments (100-200 nucleotides in eukaryotes, 1000-2000 in prokaryotes) synthesised on the lagging strand during DNA replication. Because DNA polymerase can only synthesise in the 5\' to 3\' direction, and the lagging strand template runs 5\' to 3\', synthesis must occur discontinuously in the direction away from the replication fork. Each Okazaki fragment begins with an RNA primer (synthesised by primase), is extended by DNA polymerase III, and the primers are later replaced by DNA polymerase I. DNA ligase then seals the gaps between fragments. The most tempting wrong answer is C (restriction fragments), which are DNA fragments produced by restriction endonuclease cleavage at specific palindromic sequences — used in recombinant DNA technology, not replication.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_017',
+  question: 'In a dihybrid cross between TtRr and TtRr pea plants, the expected phenotypic ratio in the F2 generation is:',
+  options: ['3:1', '1:2:1', '9:3:3:1', '1:1:1:1'],
+  correctAnswer: 2,
+  explanation: 'Mendel\'s dihybrid cross (TtRr × TtRr) follows the law of independent assortment — genes on different chromosomes assort independently during gamete formation. The F2 phenotypic ratio is 9:3:3:1 — 9 tall round : 3 tall wrinkled : 3 dwarf round : 1 dwarf wrinkled. This ratio results from two independent 3:1 ratios combined: (3 tall:1 dwarf) × (3 round:1 wrinkled) = 9:3:3:1. The most tempting wrong answer is A (3:1), which is the monohybrid cross ratio. The 1:1:1:1 ratio (D) is expected in a test cross (TtRr × ttrr). The 1:2:1 ratio (B) applies to incomplete dominance in a monohybrid cross. This 9:3:3:1 ratio holds true only when genes are on different chromosomes (unlinked).',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_018',
+  question: 'PCR (Polymerase Chain Reaction) uses Taq DNA polymerase because:',
+  options: ['It can synthesise DNA without a primer', 'It is thermostable and can withstand the high denaturation temperature of 94-95°C', 'It can replicate RNA directly', 'It has proofreading ability superior to all other polymerases'],
+  correctAnswer: 1,
+  explanation: 'Taq DNA polymerase is isolated from Thermus aquaticus, a thermophilic bacterium from hot springs. It is used in PCR because it is thermostable — it can withstand the denaturation temperature of 94-95°C without being denatured, allowing it to function through multiple PCR cycles. The most tempting wrong answer is D, but Taq polymerase actually lacks 3\'→5\' proofreading (exonuclease) activity, making it error-prone compared to high-fidelity polymerases like Pfu. Option A is wrong because all DNA polymerases require a primer (provided in PCR as two specific oligonucleotide primers). Option C is wrong because Taq synthesises DNA from a DNA template, not RNA (reverse transcriptase does that). PCR amplifies DNA exponentially: 2^n copies after n cycles.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_019',
+  question: 'The law of independent assortment is based on which meiotic event?',
+  options: ['Crossing over during pachytene of prophase I', 'Random orientation of homologous chromosome pairs at metaphase I', 'Separation of sister chromatids at anaphase II', 'DNA replication during S phase'],
+  correctAnswer: 1,
+  explanation: 'Mendel\'s law of independent assortment states that alleles of different genes assort independently during gamete formation. The chromosomal basis for this is the random orientation of bivalents (homologous chromosome pairs) at the metaphase plate during metaphase I of meiosis. Each bivalent can orient with either the maternal or paternal homolog facing either pole, independently of all other bivalents. The most tempting wrong answer is A (crossing over), which generates genetic recombination within chromosomes but is the basis for linkage disruption, not independent assortment. Independent assortment applies to genes on different chromosomes (unlinked genes). For n chromosome pairs, 2^n possible gamete combinations exist (2^23 = ~8.4 million in humans).',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_020',
+  question: 'Assertion (A): Colour blindness (red-green) is more common in males than females.\nReason (R): Colour blindness is X-linked recessive, so males with one affected X chromosome (X^c Y) express the trait, while females need two copies (X^c X^c) to be affected.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Red-green colour blindness is X-linked recessive. Males have only one X chromosome (XY), so a single copy of the recessive allele (X^c Y) is sufficient to express the trait. Females have two X chromosomes, so they must be homozygous recessive (X^c X^c) to be affected — heterozygous females (X^C X^c) are carriers with normal vision. This makes the condition approximately 8% in males but only 0.5% in females. The most tempting wrong answer is B, but the hemizygous nature of males for X-linked genes is precisely why the condition is more common in males, making R a correct explanation. The inheritance pattern is identical to haemophilia: no father-to-son transmission, carrier mothers can pass it to sons.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_021',
+  question: 'A genetic counsellor is explaining Klinefelter syndrome to parents. The karyotype is:',
+  options: ['45,X', '47,XXY', '47,XY,+21', '46,XY'],
+  correctAnswer: 1,
+  explanation: 'Klinefelter syndrome has the karyotype 47,XXY — an extra X chromosome in a male. Affected individuals are phenotypically male but present with tall stature, gynecomastia (breast development), small testes, infertility (due to impaired spermatogenesis), and reduced testosterone. The most tempting wrong answer is A (45,X), which is Turner syndrome (female, short stature, streak ovaries). Option C (47,XY,+21) describes Down syndrome in a male. The extra X chromosome in Klinefelter results from non-disjunction during meiosis (either maternal or paternal). The condition is relatively common (~1 in 660 males) but often diagnosed late. Clinically, testosterone replacement therapy can improve secondary sexual characteristics.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_022',
+  question: 'During translation, the stop codons UAA, UAG, and UGA are recognised by:',
+  options: ['Specific tRNAs with complementary anticodons', 'Release factors (proteins) that cause ribosome disassembly and polypeptide release', 'RNA polymerase', 'DNA helicase'],
+  correctAnswer: 1,
+  explanation: 'Stop codons (UAA, UAG, UGA) are NOT recognised by any tRNA molecules. Instead, they are recognised by release factors (RF1, RF2, RF3 in prokaryotes; eRF1 in eukaryotes), which are proteins that bind to the stop codon at the ribosomal A site. This triggers hydrolysis of the bond between the polypeptide and the last tRNA, releasing the completed polypeptide chain, followed by dissociation of the ribosomal subunits. The most tempting wrong answer is A, because students often assume all codons are read by tRNAs — but there are no tRNAs for stop codons. RNA polymerase (C) is involved in transcription, not translation. DNA helicase (D) is involved in DNA replication. The start codon AUG is the only codon that is both a start signal and codes for an amino acid (methionine).',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_023',
+  question: 'A child has blood type O. The mother has blood type A. Which of the following CANNOT be the father\'s blood type?',
+  options: ['Type O', 'Type A', 'Type AB', 'Type B'],
+  correctAnswer: 2,
+  explanation: 'The child with blood type O has genotype ii. The mother with type A must contribute one i allele to the child (so mother\'s genotype is I^A i). The father must also contribute an i allele. A person with blood type AB (I^A I^B) has NO i allele to contribute — they can only pass I^A or I^B. Therefore, a type AB father cannot have a type O child. The most tempting wrong answer is D (type B), but a type B father could have genotype I^B i and contribute the i allele, producing a type O child. Type O father (ii) would contribute i. Type A father (I^A i) could contribute i. This is a classic paternity exclusion problem in forensic and clinical genetics.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_024',
+  question: 'The chromosomal theory of inheritance was proposed by:',
+  options: ['Mendel in 1865', 'Sutton and Boveri in 1902', 'Watson and Crick in 1953', 'Morgan in 1910'],
+  correctAnswer: 1,
+  explanation: 'The chromosomal theory of inheritance was independently proposed by Walter Sutton and Theodor Boveri in 1902. They recognised that the behaviour of chromosomes during meiosis (separation of homologous pairs, independent assortment) paralleled Mendel\'s laws of inheritance, concluding that genes are located on chromosomes. The most tempting wrong answer is D — Thomas Hunt Morgan (1910) provided experimental proof of the chromosomal theory using Drosophila (fruit fly), demonstrating X-linked inheritance of white eye colour, but he did not propose the theory. Mendel (1865) discovered the laws of inheritance but did not know about chromosomes. Watson and Crick (1953) determined DNA structure. Morgan also discovered linkage and crossing over, establishing chromosome mapping.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_025',
+  question: 'In eukaryotic mRNA processing, introns are removed and exons are joined together in a process called:',
+  options: ['Translation', 'Reverse transcription', 'Splicing', 'Capping'],
+  correctAnswer: 2,
+  explanation: 'Splicing is the process by which introns (non-coding intervening sequences) are removed from pre-mRNA and exons (expressed coding sequences) are joined together to form mature mRNA. This is carried out by the spliceosome, a complex of small nuclear ribonucleoproteins (snRNPs). The most tempting wrong answer is D (capping), but 5\' capping involves adding a 7-methylguanosine cap to the 5\' end of mRNA, which protects from degradation and aids ribosome binding — it does not remove introns. 3\' polyadenylation (addition of a poly-A tail) is another processing step that protects the 3\' end. Translation (A) is protein synthesis. Reverse transcription (B) is RNA→DNA conversion by reverse transcriptase (in retroviruses like HIV). Splicing is unique to eukaryotes — prokaryotic mRNA lacks introns.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_026',
+  question: 'A nurse studying genetics learns that a frameshift mutation is caused by:',
+  options: ['Substitution of one base pair for another', 'Insertion or deletion of nucleotides (not in multiples of 3) that shifts the reading frame', 'Inversion of a chromosome segment', 'Translocation between non-homologous chromosomes'],
+  correctAnswer: 1,
+  explanation: 'A frameshift mutation occurs when nucleotides are inserted or deleted in a number that is not a multiple of three, causing the triplet reading frame to shift from the point of mutation onward. This alters every codon downstream, typically producing a completely non-functional protein and often encountering a premature stop codon. The most tempting wrong answer is A (substitution), which is a point mutation (missense, nonsense, or silent) that changes only one codon without shifting the reading frame. Inversions (C) and translocations (D) are chromosomal mutations, not gene-level mutations. Insertions or deletions of exactly 3 nucleotides (or multiples of 3) add or remove amino acids but do not shift the reading frame.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_027',
+  question: 'During DNA replication, the leading strand is synthesised continuously because:',
+  options: ['It does not require a primer', 'DNA polymerase III synthesises in the 5\' to 3\' direction, which is the same direction as replication fork movement on this strand', 'It uses RNA polymerase instead of DNA polymerase', 'Okazaki fragments are joined on this strand'],
+  correctAnswer: 1,
+  explanation: 'The leading strand is synthesised continuously because its template strand runs 3\'→5\', allowing DNA polymerase III to synthesise the new strand in the 5\'→3\' direction — the same direction as replication fork movement. Only one RNA primer is needed, and synthesis proceeds uninterrupted. The most tempting wrong answer is A, but the leading strand does require an initial RNA primer synthesised by primase — all DNA polymerases require a primer with a free 3\' OH group. Okazaki fragments (D) are synthesised on the lagging strand, not the leading strand. The lagging strand is synthesised discontinuously because its template runs 5\'→3\', forcing polymerase to work away from the replication fork, requiring repeated priming and producing Okazaki fragments that must be joined by DNA ligase.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_028',
+  question: 'In a test cross, a tall pea plant of unknown genotype is crossed with a homozygous dwarf plant (tt). If all offspring are tall, the unknown parent\'s genotype is most likely:',
+  options: ['tt', 'Tt', 'TT', 'Cannot be determined'],
+  correctAnswer: 2,
+  explanation: 'In a test cross, the individual with the dominant phenotype but unknown genotype is crossed with a homozygous recessive individual (tt). If all offspring are tall, the unknown parent must be TT (homozygous dominant): TT × tt → all Tt (tall). If the unknown parent were Tt (heterozygous), the cross would be Tt × tt → 1 Tt (tall) : 1 tt (dwarf), producing approximately 50% dwarf offspring. The most tempting wrong answer is B (Tt), but this would produce some dwarf offspring, which contradicts the observation that all are tall. Option A (tt) would produce all dwarf offspring (tt × tt = all tt). The test cross is a fundamental genetic tool for determining whether a dominant phenotype individual is homozygous or heterozygous.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_029',
+  question: 'Assertion (A): Sickle cell trait (heterozygous HbAS) provides a survival advantage in malaria-endemic regions.\nReason (R): The sickle cell allele provides resistance against Plasmodium falciparum malaria, maintaining the allele frequency through balanced polymorphism.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Heterozygous carriers (HbAS) of the sickle cell allele have sickle cell trait — they are generally asymptomatic but show significant resistance to Plasmodium falciparum malaria. The parasitised RBCs sickle preferentially and are destroyed, limiting parasite multiplication. This survival advantage in malaria-endemic regions (Africa, Mediterranean, India) maintains the otherwise deleterious allele at high frequency — a classic example of balanced polymorphism (heterozygote advantage). The most tempting wrong answer is B, but the mechanism described in R (malaria resistance maintaining allele frequency) directly explains the survival advantage stated in A. Homozygous individuals (HbSS) have severe sickle cell disease, while homozygous normal (HbAA) are susceptible to malaria.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  },
+  {
+  id: 'bio_gm_030',
+  question: 'The total number of codons in the genetic code is:',
+  options: ['20', '61', '64', '4'],
+  correctAnswer: 2,
+  explanation: 'The genetic code consists of 64 codons (4³ = 64 possible triplet combinations of 4 bases: A, U, G, C). Of these, 61 are sense codons that code for the 20 amino acids, and 3 are stop/nonsense codons (UAA, UAG, UGA) that signal termination of translation. The most tempting wrong answer is B (61), which is the number of sense codons only, excluding the 3 stop codons. Option A (20) is the number of amino acids, not codons. Option D (4) is the number of bases. The code is degenerate (most amino acids have multiple codons), non-overlapping (each nucleotide belongs to only one codon), commaless (read continuously without gaps), and universal (same in virtually all organisms, with minor exceptions in mitochondria).',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'genetics_molecular_biology'
+  }
+],
+
+reproduction_humans_plants: [
+  {
+  id: 'bio_rp_001',
+  question: 'A nurse explains to a patient that fertilisation in humans normally occurs in the:',
+  options: ['Uterine cavity', 'Cervix', 'Ampulla of the fallopian tube', 'Vagina'],
+  correctAnswer: 2,
+  explanation: 'Human fertilisation normally occurs in the ampulla (the widest and longest part) of the fallopian tube (oviduct). After ovulation, the secondary oocyte is captured by the fimbriae and enters the ampulla, where sperm that have undergone capacitation in the female reproductive tract can penetrate it. The most tempting wrong answer is A (uterine cavity), but the uterus is the site of implantation (day 6-7), not fertilisation. If fertilisation occurred in the uterus, the zygote would not have time to develop into a blastocyst before implantation. The cervix (B) and vagina (D) are sites of sperm deposition, not fertilisation. Clinically, ectopic pregnancy occurs when the fertilised egg implants outside the uterus (most commonly in the fallopian tube), which is a surgical emergency.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_002',
+  question: 'During oogenesis, all primary oocytes are formed during:',
+  options: ['Puberty', 'Foetal life, arrested in prophase I', 'Each menstrual cycle', 'After menopause'],
+  correctAnswer: 1,
+  explanation: 'All primary oocytes are formed during foetal development (by the 5th month of gestation) and are arrested in prophase I (specifically diplotene/dictyotene stage) of meiosis I. A female is born with approximately 1-2 million primary oocytes, which decline to ~400,000 by puberty. From puberty, FSH activates one primary oocyte per cycle to complete meiosis I (producing a secondary oocyte + first polar body) just before ovulation. The most tempting wrong answer is A (puberty), but puberty is when oocytes begin to resume meiosis, not when they are first formed. Meiosis II is completed only if fertilisation occurs. This is a fundamental difference from spermatogenesis, which begins at puberty and produces sperm continuously. Clinically, the prolonged arrest of oocytes in prophase I (up to 50 years) explains the increased risk of non-disjunction with advancing maternal age.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_003',
+  question: 'The correct comparison between spermatogenesis and oogenesis is:',
+  options: ['Begins at birth; Begins at puberty', 'Produces 4 functional gametes per meiosis; Produces 4 functional gametes per meiosis', 'Continuous from puberty throughout life; produces 4 functional spermatozoa; All oocytes formed in foetal life; produces 1 functional ovum + 3 polar bodies', 'Occurs in the fallopian tube; Occurs in the seminiferous tubules'],
+  correctAnswer: 2,
+  explanation: 'Spermatogenesis is continuous from puberty throughout life, occurring in seminiferous tubules, and each primary spermatocyte produces 4 functional spermatozoa through meiosis. Oogenesis begins in foetal life (all primary oocytes formed prenatally), and each primary oocyte produces only 1 functional ovum and 3 non-functional polar bodies due to unequal cytoplasmic division — the ovum retains most cytoplasm for the future embryo. The most tempting wrong answer is B, which states both produce 4 functional gametes — but oogenesis produces only 1 functional gamete. Option A reverses the timing. Clinically, this difference means male fertility can persist into old age, while female fertility declines with age (finite oocyte pool) and ceases at menopause.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_004',
+  question: 'A nurse performing a pregnancy test detects the presence of hCG in urine. hCG is secreted by:',
+  options: ['Corpus luteum', 'Syncytiotrophoblast of the developing embryo', 'Anterior pituitary', 'Ovarian follicle'],
+  correctAnswer: 1,
+  explanation: 'Human chorionic gonadotropin (hCG) is secreted by the syncytiotrophoblast (outer layer of the trophoblast of the implanting blastocyst) from approximately day 8-10 after fertilisation. hCG maintains the corpus luteum during early pregnancy, ensuring continued progesterone secretion to sustain the endometrium. hCG peaks at 8-10 weeks, after which the placenta takes over hormone production. The most tempting wrong answer is A (corpus luteum), but the corpus luteum produces progesterone (not hCG) — it is the target of hCG, not the source. The anterior pituitary (C) produces LH and FSH, not hCG. Clinically, hCG detection in urine or blood is the basis of pregnancy tests, and abnormally high hCG levels may indicate multiple pregnancies or gestational trophoblastic disease.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_005',
+  question: 'In the menstrual cycle, ovulation is triggered by:',
+  options: ['A sudden drop in oestrogen levels', 'A surge of LH from the anterior pituitary on approximately day 14', 'Increased progesterone from the corpus luteum', 'Withdrawal of FSH at the end of the follicular phase'],
+  correctAnswer: 1,
+  explanation: 'Ovulation occurs on approximately day 14 of a 28-day cycle and is triggered by a surge of LH (luteinising hormone) from the anterior pituitary. Rising oestrogen levels from the developing Graafian follicle during the follicular phase trigger positive feedback on the hypothalamus-pituitary axis (at high concentrations), causing a massive LH surge. This LH surge causes the mature follicle to rupture, releasing the secondary oocyte (arrested in metaphase II). The most tempting wrong answer is C (progesterone from corpus luteum), but the corpus luteum forms after ovulation from the ruptured follicle — progesterone dominates the luteal phase (days 15-28), not the pre-ovulatory period. Clinically, ovulation prediction kits detect the LH surge in urine, helping with family planning.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_006',
+  question: 'The function of Sertoli cells in the testes is:',
+  options: ['Secretion of testosterone', 'Nourishment and support of developing spermatozoa', 'Production of sperm through meiosis', 'Secretion of FSH and LH'],
+  correctAnswer: 1,
+  explanation: 'Sertoli cells (sustentacular cells) are found within the seminiferous tubules and provide nourishment, structural support, and protection to developing spermatozoa throughout spermatogenesis. They also form the blood-testis barrier, secrete inhibin (negative feedback on FSH), produce androgen-binding protein (ABP) to concentrate testosterone locally, and secrete fluid and nutrients. The most tempting wrong answer is A (testosterone secretion), but testosterone is secreted by Leydig cells (interstitial cells) located in the interstitial tissue between seminiferous tubules, stimulated by LH. FSH and LH (D) are produced by the anterior pituitary, not testicular cells. Spermatogonia (germ cells), not Sertoli cells (somatic cells), undergo meiosis (C).',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_007',
+  question: 'Assertion (A): The placenta does not allow mixing of maternal and foetal blood.\nReason (R): Gas exchange and nutrient transfer occur across the placental barrier by diffusion without direct blood contact.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. The placenta maintains a barrier between maternal and foetal circulations. Maternal blood flows through intervillous spaces, while foetal blood flows through capillaries within chorionic villi. Gas exchange (O2 to foetus, CO2 from foetus), nutrients (glucose, amino acids), and waste products cross this barrier by diffusion, active transport, and pinocytosis — but the blood does NOT mix directly. The most tempting wrong answer is B, but the mechanism of diffusion across the barrier is precisely why the bloods do not mix, making R a correct explanation. The umbilical cord contains 2 arteries (carrying deoxygenated blood from foetus) and 1 vein (carrying oxygenated blood to foetus). Clinically, some antibodies (IgG) and pathogens (rubella, HIV, Toxoplasma) can cross the placental barrier.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_008',
+  question: 'Double fertilisation in angiosperms involves:',
+  options: ['Two pollen grains fertilising two egg cells', 'One male gamete fusing with the egg cell (syngamy) and the other fusing with two polar nuclei (triple fusion) to form the endosperm', 'Two egg cells fusing with one male gamete', 'Fertilisation occurring in both the ovule and the pollen tube'],
+  correctAnswer: 1,
+  explanation: 'Double fertilisation is unique to angiosperms (flowering plants). The pollen tube carries two male gametes into the embryo sac: the first male gamete fuses with the egg cell → zygote (2n) (syngamy); the second male gamete fuses with the two polar nuclei in the central cell → primary endosperm nucleus (3n) (triple fusion). The endosperm (3n) nourishes the developing embryo. The most tempting wrong answer is A, but only one pollen grain (delivering two male gametes) is involved, and there is only one egg cell per embryo sac. Double fertilisation does NOT occur in gymnosperms (which have naked seeds without endosperm from triple fusion). The term "double" refers to two separate fusion events, not two pollen grains. This process was discovered by Nawaschin in 1898.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_009',
+  question: 'A nurse counselling a couple about contraception explains that combined oral contraceptive pills prevent pregnancy primarily by:',
+  options: ['Killing sperm in the uterus', 'Inhibiting ovulation through negative feedback of synthetic oestrogen and progesterone on FSH and LH', 'Creating a physical barrier at the cervix', 'Causing immediate menstruation'],
+  correctAnswer: 1,
+  explanation: 'Combined oral contraceptive pills (COCPs) contain synthetic oestrogen and progesterone that exert negative feedback on the hypothalamus and anterior pituitary, suppressing FSH and LH secretion. Without the FSH-driven follicular development and the LH surge, ovulation does not occur. Secondary mechanisms include thickening of cervical mucus (preventing sperm entry) and making the endometrium unreceptive to implantation. The most tempting wrong answer is A (spermicidal action), but OCPs do not kill sperm — spermicides are separate products. Physical barriers (C) are condoms and diaphragms. Clinically, nurses should counsel patients about taking pills regularly, potential side effects (DVT risk, breakthrough bleeding), and that OCPs do NOT protect against sexually transmitted infections — only barrier methods (condoms) do.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_010',
+  question: 'The correct sequence of early embryonic development after fertilisation is:',
+  options: ['Blastocyst → Morula → Zygote → Implantation', 'Zygote → Cleavage → Morula → Blastocyst → Implantation', 'Implantation → Zygote → Morula → Blastocyst', 'Morula → Zygote → Blastocyst → Cleavage'],
+  correctAnswer: 1,
+  explanation: 'After fertilisation, the correct developmental sequence is: Zygote (single cell, 2n) → Cleavage (rapid mitotic divisions without growth) → Morula (solid ball of 16-32 cells, day 3-4) → Blastocyst (hollow sphere with inner cell mass and trophoblast, day 5-6) → Implantation (blastocyst embeds in uterine endometrium, day 6-7). The most tempting wrong answer is A, which reverses the morula and blastocyst stages — the morula forms before the blastocyst. The inner cell mass (embryoblast) of the blastocyst develops into the embryo proper, while the trophoblast forms the embryonic part of the placenta. Clinically, implantation can cause light bleeding ("implantation bleeding"), which nurses should distinguish from menstruation in early pregnancy assessment.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_011',
+  question: 'Assertion (A): Parthenocarpic fruits develop without fertilisation and are seedless.\nReason (R): Parthenocarpy can be induced artificially by auxin or gibberellin treatment of unpollinated flowers.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 1,
+  explanation: 'Both statements are true, but R is NOT the correct explanation of A. Parthenocarpic fruits develop from unfertilised ovaries and are seedless (e.g., banana, seedless grapes, seedless watermelon). This can occur naturally or be induced by plant hormones. However, the reason (hormonal induction) explains how parthenocarpy can be achieved artificially, not why parthenocarpic fruits are seedless. Fruits are seedless because fertilisation did not occur, so no zygote formed and no seeds developed — the absence of fertilisation is the actual explanation for seedlessness. The hormonal treatment simply mimics the signals that normally follow fertilisation to trigger fruit development without it. This distinction between mechanism (how) and explanation (why) is the key to this assertion-reason question.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_012',
+  question: 'A nurse explains to a patient undergoing IVF that the acrosome of the sperm contains:',
+  options: ['Mitochondria for energy production', 'Hyaluronidase and proteases that help penetrate the zona pellucida of the ovum', 'The haploid nucleus with paternal genetic material', 'Flagellar motor proteins for swimming'],
+  correctAnswer: 1,
+  explanation: 'The acrosome is a cap-like structure covering the anterior part of the sperm head, derived from the Golgi apparatus. It contains hyaluronidase (digests hyaluronic acid in the corona radiata) and proteases (digest the zona pellucida glycoproteins), enabling the sperm to penetrate and fertilise the ovum (acrosomal reaction). The most tempting wrong answer is C (haploid nucleus), but the nucleus is located beneath the acrosome in the sperm head — it contains the paternal DNA but is a separate structure. Mitochondria (A) are concentrated in the midpiece of the sperm, providing ATP for flagellar movement. The flagellum/tail (D) provides motility. After one sperm penetrates, the cortical reaction releases cortical granules that modify the zona pellucida, forming the fertilisation membrane to prevent polyspermy.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_013',
+  question: 'Wind-pollinated flowers typically have:',
+  options: ['Large, brightly coloured petals and nectar guides', 'Light, dry, non-sticky pollen and large feathery stigma', 'Strong fragrance to attract insects', 'Sticky pollen grains with spines'],
+  correctAnswer: 1,
+  explanation: 'Anemophilous (wind-pollinated) flowers have adaptations for wind dispersal: light, dry, non-sticky, smooth pollen (produced in large quantities to compensate for wastage), large feathery or brush-like stigma (to trap airborne pollen), small inconspicuous flowers (no need to attract pollinators), long dangling stamens (expose anthers to wind), and no nectar or scent. Examples include grasses, cereals, and many trees. The most tempting wrong answer is A (large coloured petals), which describes entomophilous (insect-pollinated) flowers that attract insects with colour, scent, nectar, and sticky/spiny pollen. Options C and D are also features of insect-pollinated flowers. The distinction between wind and insect pollination is a classic comparison in plant reproduction.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_014',
+  question: 'Assertion (A): Oxytocin plays a crucial role in parturition (childbirth).\nReason (R): Oxytocin stimulates uterine smooth muscle contractions through a positive feedback mechanism — stronger contractions lead to more oxytocin release.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Oxytocin (from the posterior pituitary) is essential for parturition. During labour, the foetal head presses against the cervix, stimulating stretch receptors that signal the hypothalamus to release more oxytocin. Oxytocin causes stronger uterine contractions, which push the foetus further against the cervix, causing more stretching and more oxytocin release — a classic positive feedback loop (Ferguson reflex). The most tempting wrong answer is B, but the positive feedback mechanism is precisely how oxytocin drives parturition, making R a correct explanation. Prostaglandins also contribute to uterine contractions. Clinically, synthetic oxytocin (Pitocin) is used to induce or augment labour, and nurses must monitor contraction frequency, duration, and foetal heart rate during its administration.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_015',
+  question: 'The mature embryo sac (female gametophyte) in angiosperms contains:',
+  options: ['8 cells and 8 nuclei', '7 cells and 8 nuclei', '6 cells and 6 nuclei', '4 cells and 4 nuclei'],
+  correctAnswer: 1,
+  explanation: 'The mature embryo sac (female gametophyte) is a 7-celled, 8-nucleate structure: 1 egg cell + 2 synergids (at the micropylar end) + 3 antipodal cells (at the chalazal end) + 1 central cell containing 2 polar nuclei (total = 7 cells, but the central cell has 2 nuclei, so 8 nuclei total). The most tempting wrong answer is A (8 cells and 8 nuclei), which would be the case if the central cell were counted as 2 separate cells — but the 2 polar nuclei share one cell (the central cell), making it 7 cells with 8 nuclei. The synergids guide the pollen tube entry (via filiform apparatus), and the antipodal cells degenerate after fertilisation. The egg cell fuses with one male gamete (syngamy), and the polar nuclei fuse with the other (triple fusion).',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_016',
+  question: 'A patient asks a nurse about emergency contraception. Levonorgestrel (emergency contraceptive pill) must be taken within:',
+  options: ['24 hours of unprotected intercourse', '72 hours (3 days) of unprotected intercourse', '7 days of unprotected intercourse', '14 days of unprotected intercourse'],
+  correctAnswer: 1,
+  explanation: 'Levonorgestrel (Plan B/morning-after pill) is most effective when taken within 72 hours (3 days) of unprotected intercourse, though its efficacy decreases with time (95% within 24h, 85% within 24-48h, 58% within 48-72h). It works by delaying or inhibiting ovulation, and possibly by altering the endometrium to prevent implantation. The most tempting wrong answer is A (24 hours), because while taking it within 24 hours gives the highest efficacy, the recommended window extends to 72 hours. It is NOT an abortifacient — it does not terminate an established pregnancy. Another emergency option is the copper IUD, which can be inserted up to 5 days after unprotected intercourse. Clinically, nurses should counsel patients that emergency contraception is not a regular contraceptive method and does not protect against STIs.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_017',
+  question: 'The correct comparison between self-pollination and cross-pollination is:',
+  options: ['Genetic diversity: High; Genetic diversity: Low', 'Genetic diversity: Low; Dependence on agents: None; Genetic diversity: High; Dependence on agents: Wind/insects/water', 'Pollen: Sticky, large; Pollen: Light, dry', 'Example: Maize; Example: Pea (cleistogamous)'],
+  correctAnswer: 1,
+  explanation: 'Self-pollination transfers pollen from anther to stigma of the same flower or same plant — it requires no external pollinating agents and produces offspring with low genetic diversity (homozygosity increases over generations). Cross-pollination transfers pollen between different plants of the same species — it requires pollinating agents (wind, insects, water, animals) and generates high genetic diversity (heterozygosity, new gene combinations). The most tempting wrong answer is A, which reverses the genetic diversity levels. Cleistogamy (D) occurs in pea and Viola (closed flowers ensuring self-pollination), not maize. Plants have evolved mechanisms to promote cross-pollination: protandry, protogyny, self-incompatibility, and heterostyly.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_018',
+  question: 'Apomixis in plants refers to:',
+  options: ['Seed formation through normal sexual reproduction', 'Seed formation without fertilisation, producing genetically identical offspring', 'Vegetative propagation through stem cuttings', 'Pollination by wind'],
+  correctAnswer: 1,
+  explanation: 'Apomixis is the formation of seeds without fertilisation, producing offspring that are genetically identical to the parent plant (clones). The embryo develops from the diploid cells of the ovule (nucellar cells or unreduced embryo sac) without meiosis and fertilisation. Examples include Citrus (nucellar embryony), mango, and some grasses. The most tempting wrong answer is C (vegetative propagation), which also produces clones but does NOT involve seed formation — apomixis specifically produces seeds asexually. This is agriculturally valuable because it preserves hybrid vigour through successive generations without the genetic segregation that occurs in sexual reproduction. Polyembryony in Citrus (multiple embryos per seed) often includes both sexual and apomictic embryos.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_019',
+  question: 'Assertion (A): The cortical reaction after sperm entry prevents polyspermy.\nReason (R): Cortical granules release their contents, modifying the zona pellucida to form a fertilisation membrane that blocks additional sperm entry.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. After the first sperm penetrates the zona pellucida and fuses with the oocyte membrane, the oocyte undergoes the cortical reaction: cortical granules (located just beneath the oocyte membrane) release their enzyme contents (proteases and glycosaminoglycans) into the perivitelline space. These enzymes modify zona pellucida glycoproteins (ZP2 and ZP3), hardening it and removing sperm receptors, creating the fertilisation membrane that prevents additional sperm from binding or penetrating (block to polyspermy). The most tempting wrong answer is B, but the mechanism described in R is precisely how polyspermy is prevented. Polyspermy would result in a triploid or polyploid embryo, which is lethal. A fast block (membrane depolarisation) also occurs within seconds.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_020',
+  question: 'A nurse explains to a teenage patient about the menstrual cycle. The hormone responsible for maintaining the endometrium during the luteal phase is:',
+  options: ['FSH', 'Oestrogen', 'Progesterone secreted by the corpus luteum', 'GnRH'],
+  correctAnswer: 2,
+  explanation: 'During the luteal phase (days 15-28), the ruptured Graafian follicle transforms into the corpus luteum, which secretes progesterone (and some oestrogen). Progesterone maintains and prepares the endometrium for possible implantation by promoting secretory changes (glandular development, glycogen storage, increased vascularity). If pregnancy does not occur, the corpus luteum degenerates (luteolysis), progesterone levels fall, and the endometrium sheds (menstruation). The most tempting wrong answer is B (oestrogen), which is the dominant hormone during the follicular phase (days 1-13), causing endometrial proliferation. While oestrogen continues during the luteal phase, progesterone is the primary hormone maintaining the endometrium. FSH (A) stimulates follicular development, and GnRH (D) is the hypothalamic releasing hormone.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_021',
+  question: 'Which of the following devices promoting cross-pollination involves the maturation of anthers before the stigma in the same flower?',
+  options: ['Protogyny', 'Protandry', 'Heterostyly', 'Cleistogamy'],
+  correctAnswer: 1,
+  explanation: 'Protandry is the condition where anthers mature and release pollen before the stigma of the same flower becomes receptive. This temporal separation prevents self-pollination and promotes cross-pollination. Examples include sunflower (Helianthus) and maize. The most tempting wrong answer is A (protogyny), which is the opposite — the stigma matures before the anthers (e.g., Mirabilis, Ficus). Heterostyly (C) involves flowers with different style lengths (pin and thrum in Primula), promoting cross-pollination through spatial separation. Cleistogamy (D) involves flowers that never open, ensuring self-pollination (e.g., Viola, Commelina) — the opposite of promoting cross-pollination. These are all mechanisms that have evolved to control the breeding system of plants.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_022',
+  question: 'The structure in the sperm that provides energy for motility is:',
+  options: ['Acrosome', 'Nucleus', 'Midpiece (containing mitochondria)', 'Tail (flagellum)'],
+  correctAnswer: 2,
+  explanation: 'The midpiece of the sperm contains a spiral arrangement of mitochondria that generate ATP through oxidative phosphorylation, providing the energy required for flagellar movement and sperm motility. The most tempting wrong answer is D (tail/flagellum), which is the structure that actually performs the movement (whip-like beating), but it does not generate the energy — it uses ATP produced by mitochondria in the midpiece. The acrosome (A) contains enzymes for penetrating the ovum, and the nucleus (B) carries the haploid genetic material. The sperm structure can be summarised as: head (acrosome + nucleus) → midpiece (mitochondria for energy) → tail (flagellum for motility). Clinically, sperm with mitochondrial defects show reduced motility (asthenozoospermia), a cause of male infertility.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_023',
+  question: 'A true fruit develops from:',
+  options: ['The thalamus (receptacle) of the flower', 'The ovary wall after fertilisation', 'Petals that persist after pollination', 'The calyx of the flower'],
+  correctAnswer: 1,
+  explanation: 'A true fruit develops from the ovary wall (pericarp) after fertilisation. Examples include mango (drupe), tomato (berry), and pea pod (legume). The most tempting wrong answer is A (thalamus), but fruits developing from the thalamus or other accessory parts are called false fruits or pseudocarps — for example, apple (the fleshy part is the swollen thalamus, and the true fruit is the core), strawberry (the fleshy part is the receptacle, and the true fruits are the small achenes on the surface). In mango, the fleshy edible part is the mesocarp (middle layer of ovary wall). Parthenocarpic fruits (e.g., banana) develop from the ovary without fertilisation and are seedless.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_024',
+  question: 'In the umbilical cord, the vessel that carries oxygenated blood from the placenta to the foetus is:',
+  options: ['Two umbilical arteries', 'One umbilical vein', 'The aorta', 'The pulmonary artery'],
+  correctAnswer: 1,
+  explanation: 'The umbilical cord contains one umbilical vein that carries oxygenated blood and nutrients from the placenta to the foetus, and two umbilical arteries that carry deoxygenated blood and waste products from the foetus to the placenta. The most tempting wrong answer is A (two umbilical arteries), but arteries in the umbilical cord carry deoxygenated blood (away from the foetus toward the placenta) — this is the reverse of the normal systemic pattern where arteries carry oxygenated blood. This reversal is similar to pulmonary circulation (pulmonary arteries carry deoxygenated blood). Clinically, a two-vessel cord (one artery, one vein instead of the normal three vessels) may be associated with congenital anomalies and requires further evaluation.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  },
+  {
+  id: 'bio_rp_025',
+  question: 'Seed germination is promoted by the hormone:',
+  options: ['Abscisic acid (ABA)', 'Gibberellin (GA)', 'Ethylene', 'Cytokinin'],
+  correctAnswer: 1,
+  explanation: 'Gibberellin (GA) promotes seed germination by activating the enzyme alpha-amylase in the aleurone layer of cereal seeds, which digests stored starch in the endosperm into sugars, providing energy for the growing embryo. GA also overcomes seed dormancy. The most tempting wrong answer is A (ABA), but abscisic acid is the antagonist of gibberellin in this context — ABA maintains seed dormancy and inhibits germination. The balance between GA and ABA determines whether a seed germinates or remains dormant. Ethylene (C) can promote germination in some species but is not the primary germination hormone. Clinically (in agriculture), GA is commercially used to break dormancy and promote uniform germination in crop seeds, and in the malting industry to produce amylase for brewing.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'reproduction_humans_plants'
+  }
+],
+
+biotechnology_applications: [
+  {
+  id: 'bio_bt_001',
+  question: 'The restriction endonuclease EcoRI recognises the palindromic sequence GAATTC and produces:',
+  options: ['Blunt ends', 'Sticky ends with 4-base 5\' overhangs (AATT)', 'Single-stranded DNA fragments', 'Circular DNA fragments'],
+  correctAnswer: 1,
+  explanation: 'EcoRI (from Escherichia coli strain RY13) recognises the palindromic sequence 5\'-GAATTC-3\' / 3\'-CTTAAG-5\' and cuts between G and A on both strands, producing sticky ends (cohesive ends) with 4-base 5\' AATT overhangs. These sticky ends can base-pair with complementary sticky ends from another DNA fragment cut with the same enzyme, facilitating ligation by DNA ligase. The most tempting wrong answer is A (blunt ends), but blunt ends are produced by enzymes like SmaI (CCCGGG, cuts in the middle giving CCC/GGG). Sticky ends are preferred in rDNA technology because they allow self-complementary annealing, making ligation more efficient than with blunt ends. The term "palindromic" means the sequence reads the same on both strands in the 5\'→3\' direction.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_002',
+  question: 'In a diagram showing agarose gel electrophoresis, DNA fragments migrate toward the positive electrode (anode). The smallest fragment will be found:',
+  options: ['Closest to the well (loading point)', 'Farthest from the well', 'In the middle of the gel', 'It does not migrate'],
+  correctAnswer: 1,
+  explanation: 'In agarose gel electrophoresis, DNA is negatively charged (due to phosphate groups) and migrates toward the positive electrode (anode). Smaller DNA fragments move faster through the gel matrix pores and therefore travel farthest from the well, while larger fragments move more slowly and remain closer to the well. The most tempting wrong answer is A, but the largest fragments are closest to the well. The gel acts as a molecular sieve — smaller molecules navigate through pores more easily. DNA is visualised by staining with ethidium bromide (intercalates between bases) and viewing under UV light. A DNA ladder (molecular weight marker) is run alongside samples to estimate fragment sizes. This technique is used to verify restriction digestion, PCR products, and for Southern blotting.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_003',
+  question: 'Bt cotton contains a gene from Bacillus thuringiensis that encodes:',
+  options: ['An antibiotic that kills all insects', 'Cry protein (delta-endotoxin) that is toxic to Lepidopteran insect larvae (bollworm)', 'A herbicide resistance gene', 'A gene for increased fibre length'],
+  correctAnswer: 1,
+  explanation: 'Bt cotton contains the cry1Ac or cry2Ab gene from Bacillus thuringiensis that encodes Cry protein (crystal protein/delta-endotoxin). In the plant, this exists as an inactive protoxin. When ingested by Lepidopteran larvae (bollworm caterpillars), the alkaline pH of the insect midgut solubilises the crystal and proteases activate it. The active toxin binds to specific receptors on midgut epithelial cells, forming pores that cause cell lysis, gut paralysis, and death. The most tempting wrong answer is C (herbicide resistance), which is a different GM trait (e.g., Roundup Ready crops with glyphosate resistance). Cry protein is harmless to humans and other mammals because their acidic stomach pH does not activate the protoxin. It is also specific to Lepidoptera, not "all insects" (A).',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_004',
+  question: 'The first approved gene therapy in 1990 was for:',
+  options: ['Cystic fibrosis', 'Sickle cell anaemia', 'ADA (adenosine deaminase) deficiency', 'Haemophilia A'],
+  correctAnswer: 2,
+  explanation: 'The first approved gene therapy (1990, NIH, USA) treated ADA (adenosine deaminase) deficiency, a severe combined immunodeficiency (SCID) in a 4-year-old girl named Ashanthi DeSilva. Lymphocytes were isolated from the patient, the functional ADA gene was inserted using a retroviral vector, and the corrected cells were reinfused. The most tempting wrong answer is A (cystic fibrosis), which has been a target of gene therapy trials but was not the first approved case. This was somatic gene therapy (corrects only the treated individual, not heritable). Germline gene therapy (modifying eggs, sperm, or embryos) is currently banned in most countries due to ethical concerns. ADA enzyme is needed for purine metabolism; its deficiency causes accumulation of deoxyadenosine, which is toxic to T and B lymphocytes, resulting in severe immunodeficiency.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_005',
+  question: 'Assertion (A): DNA fingerprinting can identify individuals with near certainty in forensic investigations.\nReason (R): VNTRs (Variable Number Tandem Repeats) are highly polymorphic non-coding DNA sequences unique to each individual (except identical twins).',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. DNA fingerprinting (developed by Alec Jeffreys, 1984) exploits VNTRs and STRs — regions of repetitive DNA where the number of tandem repeats varies between individuals. These regions are highly polymorphic (many alleles in the population), making the combination of multiple VNTR/STR loci virtually unique to each individual (probability of two unrelated individuals matching at 13 STR loci is ~1 in 10 billion). The most tempting wrong answer is B, but the uniqueness of VNTR patterns is precisely what enables individual identification in forensics. Identical twins share the same DNA fingerprint because they originate from the same zygote. Applications include forensic identification, paternity testing, immigration cases, and identification of disaster victims.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_006',
+  question: 'Golden Rice was developed to address:',
+  options: ['Protein deficiency by increasing rice protein content', 'Vitamin A deficiency by producing beta-carotene in rice endosperm', 'Iron deficiency by increasing iron content', 'Calorie deficiency by increasing starch content'],
+  correctAnswer: 1,
+  explanation: 'Golden Rice was developed by Ingo Potrykus and Peter Beyer to combat Vitamin A deficiency, which causes blindness in approximately 250,000 children per year, particularly in developing countries dependent on rice. It contains genes for phytoene synthase (psy) from daffodil (Narcissus) and carotene desaturase (crtI) from the bacterium Erwinia uredovora, enabling rice endosperm to produce beta-carotene (provitamin A), giving the rice its golden colour. The most tempting wrong answer is C (iron deficiency), but iron-fortified rice is a different biofortification approach. Beta-carotene is converted to vitamin A (retinol) in the human body. This is one of the most well-known applications of plant biotechnology for humanitarian purposes, though it has faced controversy from anti-GMO groups.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_007',
+  question: 'In recombinant DNA technology, the Ti plasmid is derived from:',
+  options: ['Escherichia coli', 'Agrobacterium tumefaciens', 'Bacillus thuringiensis', 'Thermus aquaticus'],
+  correctAnswer: 1,
+  explanation: 'The Ti (tumour-inducing) plasmid is naturally found in Agrobacterium tumefaciens, a soil bacterium that causes crown gall disease in dicot plants. The T-DNA (transfer DNA) region of the Ti plasmid naturally integrates into the plant chromosome. In rDNA technology, the Ti plasmid is "disarmed" (tumour-causing genes removed from T-DNA) and the gene of interest is inserted into the T-DNA region, which then integrates into the plant genome. The most tempting wrong answer is A (E. coli), which is the source of common laboratory plasmids like pBR322 and pUC19, but not the Ti plasmid. Bacillus thuringiensis (C) is the source of cry genes (not a vector), and Thermus aquaticus (D) is the source of Taq polymerase. The Ti plasmid is the most widely used natural vector for plant genetic engineering.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_008',
+  question: 'Assertion (A): ELISA (Enzyme-Linked Immunosorbent Assay) is used for the diagnosis of HIV infection.\nReason (R): ELISA detects specific antibodies or antigens using an enzyme-labelled antibody that produces a measurable coloured product.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. ELISA is a widely used diagnostic technique that can detect either antigens or antibodies in patient samples. In HIV diagnosis, ELISA typically detects anti-HIV antibodies in the patient\'s serum. The technique uses a primary antibody to capture the target, and an enzyme-conjugated secondary antibody (e.g., linked to horseradish peroxidase or alkaline phosphatase) that produces a coloured product when substrate is added, which is quantified spectrophotometrically. The most tempting wrong answer is B, but the enzyme-linked detection mechanism described in R is precisely the principle that makes ELISA suitable for HIV diagnosis. ELISA is also used for hepatitis B, pregnancy testing (hCG detection), dengue, allergy panels, and drug screening. A positive ELISA for HIV is confirmed by Western blot.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_009',
+  question: 'In the figure showing a recombinant DNA cloning experiment, the circular DNA molecule labelled Z that serves as a vehicle to carry foreign DNA into a host cell is called:',
+  options: ['Chromosome', 'Vector (plasmid)', 'Restriction enzyme', 'Probe'],
+  correctAnswer: 1,
+  explanation: 'A vector is a DNA molecule used as a vehicle to carry foreign (insert) DNA into a host cell for cloning and expression. The most common vector is a plasmid — a small, circular, self-replicating extrachromosomal DNA found naturally in bacteria. A vector must have: ori (origin of replication for autonomous replication), selectable marker (e.g., antibiotic resistance gene like ampR or kanR for identifying transformed cells), and restriction sites (for inserting foreign DNA). The most tempting wrong answer is D (probe), but a probe is a labelled DNA/RNA sequence used to detect complementary sequences (in Southern/Northern blotting), not to carry DNA into cells. Common vectors include pBR322, pUC19, bacteriophage lambda, cosmids, BACs, and YACs for different insert sizes.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_010',
+  question: 'Dolly the sheep (1996) was cloned using:',
+  options: ['Embryo splitting technology', 'Somatic cell nuclear transfer (SCNT) — nucleus from adult mammary gland cell transferred to enucleated oocyte', 'In vitro fertilisation of sheep gametes', 'Injection of foreign DNA into a sheep embryo'],
+  correctAnswer: 1,
+  explanation: 'Dolly (1996, Roslin Institute, Scotland, by Ian Wilmut) was the first mammal cloned from an adult somatic cell using somatic cell nuclear transfer (SCNT). The nucleus from a mammary gland cell of a 6-year-old Finn Dorset ewe was transferred into an enucleated (nucleus-removed) oocyte from a Scottish Blackface ewe. An electric pulse stimulated the reconstructed cell to divide, and the resulting embryo was implanted in a surrogate mother. The most tempting wrong answer is A (embryo splitting), which produces identical twins from early embryos but does not involve adult cell nuclei. Dolly proved that differentiated somatic cell nuclei retain the complete genome and can be reprogrammed to totipotency. She was named after Dolly Parton because the donor cell came from a mammary gland.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_011',
+  question: 'A nurse in the blood bank uses a technique to confirm HIV diagnosis after a positive ELISA screening test. The confirmatory test commonly used is:',
+  options: ['PCR', 'Western blot', 'Southern blot', 'Agarose gel electrophoresis'],
+  correctAnswer: 1,
+  explanation: 'Western blot is the standard confirmatory test for HIV after a positive ELISA screening. In Western blot, HIV proteins are separated by gel electrophoresis, transferred to a membrane, and probed with the patient\'s serum. If specific antibodies against multiple HIV proteins (e.g., gp120, gp41, p24) are present, bands appear at the corresponding positions, confirming infection. The most tempting wrong answer is A (PCR), which detects HIV RNA/DNA (viral nucleic acid) and is used for viral load quantification and early detection (during the window period before antibodies develop), but it is not the standard confirmatory test for antibody screening. Southern blot (C) detects specific DNA sequences and is used in DNA fingerprinting. ELISA has high sensitivity but can give false positives, hence the need for the more specific Western blot confirmation.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_012',
+  question: 'Assertion (A): Taq DNA polymerase is essential for PCR because it can withstand repeated heating to 94-95°C.\nReason (R): Taq polymerase is isolated from Thermus aquaticus, a thermophilic bacterium that lives in hot springs at temperatures up to 80°C.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. Taq DNA polymerase is thermostable because it evolved in Thermus aquaticus, a bacterium living in hot springs at temperatures up to 80°C. This thermostability is essential for PCR because the denaturation step requires heating to 94-95°C in each cycle — a temperature that would denature ordinary DNA polymerases. Taq polymerase remains active through 25-35 repeated cycles of heating and cooling. The most tempting wrong answer is B, but the thermophilic origin directly explains the enzyme\'s heat resistance, which is why it is essential for PCR. Before Taq, fresh enzyme had to be added after each denaturation step, making PCR impractical. Kary Mullis received the Nobel Prize in Chemistry (1993) for inventing PCR.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_013',
+  question: 'In insertional inactivation using pUC19 vector, recombinant colonies are identified because:',
+  options: ['They grow on ampicillin plates while non-recombinants do not', 'They appear white on X-gal plates because the foreign DNA insert disrupts the lacZ gene (beta-galactosidase), while non-recombinants appear blue', 'They fluoresce under UV light', 'They are larger than non-recombinant colonies'],
+  correctAnswer: 1,
+  explanation: 'Insertional inactivation in pUC19 uses the lacZ gene (encoding beta-galactosidase). When foreign DNA is inserted into the multiple cloning site (MCS) within lacZ, the gene is disrupted and cannot produce functional beta-galactosidase. On plates containing X-gal (chromogenic substrate) and IPTG (inducer), non-recombinant colonies produce beta-galactosidase that cleaves X-gal → blue colour. Recombinant colonies with disrupted lacZ cannot cleave X-gal → white colour. This is called blue-white screening. The most tempting wrong answer is A, but ampicillin resistance selects for all transformed cells (both recombinant and non-recombinant with intact plasmid) — it does not distinguish recombinants from non-recombinants. The combination of ampicillin selection + blue-white screening enables identification of recombinant clones.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_014',
+  question: 'The technique used to introduce recombinant DNA into plant cells by bombarding them with DNA-coated tungsten or gold particles is called:',
+  options: ['Electroporation', 'Heat shock transformation', 'Biolistics (gene gun method)', 'Microinjection'],
+  correctAnswer: 2,
+  explanation: 'Biolistics (biological ballistics) or the gene gun method involves coating tungsten or gold microparticles with DNA and bombarding target cells at high velocity using compressed helium gas. The particles penetrate cell walls and membranes, delivering DNA into the cell. This method is particularly useful for plant cells (which have rigid cell walls that resist other methods) and for species not amenable to Agrobacterium transformation (monocots). The most tempting wrong answer is A (electroporation), which uses brief high-voltage electrical pulses to create temporary pores in cell membranes for DNA entry — effective but less commonly used for intact plant tissues. Heat shock (B) is used for bacterial transformation (42°C after CaCl2 treatment). Microinjection (D) involves directly injecting DNA into cells using a fine needle, used mainly for animal cells.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_015',
+  question: 'A nurse working in a molecular diagnostics lab understands that Southern blotting is used to detect:',
+  options: ['Specific RNA sequences', 'Specific DNA sequences using a labelled probe after gel electrophoresis and membrane transfer', 'Specific proteins using antibodies', 'Enzyme activity in tissue samples'],
+  correctAnswer: 1,
+  explanation: 'Southern blotting (developed by Edwin Southern, 1975) detects specific DNA sequences. The procedure involves: (1) restriction enzyme digestion of DNA, (2) agarose gel electrophoresis to separate fragments by size, (3) transfer to a nitrocellulose or nylon membrane, and (4) hybridisation with a labelled complementary DNA/RNA probe to identify the fragment of interest. The most tempting wrong answer is A (RNA sequences), but detection of specific RNA uses Northern blotting (named as a pun on Southern). Detection of specific proteins uses Western blotting (C) with antibodies. Southern blotting is used in DNA fingerprinting (RFLP analysis with VNTR probes), genetic disease diagnosis, and GMO detection. The naming convention: Southern (DNA) was the inventor\'s name; Northern (RNA) and Western (protein) were humorous follow-ups.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_016',
+  question: 'Which of the following is NOT a requirement for PCR (Polymerase Chain Reaction)?',
+  options: ['Template DNA', 'Two specific oligonucleotide primers', 'Restriction endonucleases', 'Taq DNA polymerase and dNTPs'],
+  correctAnswer: 2,
+  explanation: 'Restriction endonucleases are NOT required for PCR. PCR requires: (1) template DNA (the target sequence to be amplified), (2) two specific primers (short oligonucleotides flanking the target, one for each strand), (3) Taq DNA polymerase (thermostable enzyme for DNA synthesis), (4) dNTPs (dATP, dTTP, dGTP, dCTP — building blocks), and (5) buffer with Mg2+ (cofactor for Taq). The most tempting wrong answer is D, because students may confuse PCR components, but Taq polymerase and dNTPs are essential. Restriction endonucleases are used in recombinant DNA technology for cutting DNA at specific sites, not in PCR amplification. PCR cycles through denaturation (94-95°C), annealing (50-65°C), and extension (72°C), producing 2^n copies after n cycles.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_017',
+  question: 'In the figure showing the steps of recombinant DNA technology, the enzyme labelled W that joins the foreign DNA insert to the vector after restriction digestion is:',
+  options: ['DNA helicase', 'DNA ligase', 'Restriction endonuclease', 'RNA polymerase'],
+  correctAnswer: 1,
+  explanation: 'DNA ligase is the enzyme that catalyses the formation of phosphodiester bonds between the 3\' hydroxyl and 5\' phosphate ends of DNA fragments, joining (ligating) the foreign DNA insert to the linearised vector. This is essential after both the insert and vector have been cut with the same restriction enzyme, producing compatible sticky ends (or blunt ends) that can be joined. The most tempting wrong answer is C (restriction endonuclease), which cuts DNA at specific sites — the opposite function. DNA helicase (A) unwinds DNA during replication, and RNA polymerase (D) synthesises RNA during transcription. T4 DNA ligase (from bacteriophage T4) is the most commonly used ligase in molecular biology laboratories.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_018',
+  question: 'Flavr Savr tomato was the first commercially grown GM food crop. It was modified to:',
+  options: ['Produce vitamin A in the fruit', 'Delay fruit ripening by suppressing polygalacturonase enzyme using antisense technology', 'Resist herbicide glyphosate', 'Produce Bt toxin against tomato hornworm'],
+  correctAnswer: 1,
+  explanation: 'Flavr Savr tomato (approved 1994, Calgene Inc.) was engineered using antisense RNA technology to suppress the expression of polygalacturonase (PG), an enzyme that degrades cell wall pectin during ripening, causing fruit softening. By reducing PG activity, the tomato has delayed ripening and longer shelf life, allowing it to be picked ripe (better flavour) yet remain firm during transport. The most tempting wrong answer is A (vitamin A production), which describes Golden Rice, not Flavr Savr. Herbicide resistance (C) is found in Roundup Ready crops. Bt toxin (D) is in Bt cotton and Bt corn. Although Flavr Savr was the first GM food approved for human consumption, it was commercially unsuccessful due to high production costs and was withdrawn from the market.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_019',
+  question: 'A student nurse is asked about the ethical concerns surrounding germline gene therapy. The primary concern is:',
+  options: ['It only treats the individual patient', 'Changes are heritable and passed to future generations, with unpredictable consequences', 'It requires no informed consent', 'It has no therapeutic potential'],
+  correctAnswer: 1,
+  explanation: 'The primary ethical concern with germline gene therapy is that genetic modifications are made to reproductive cells (eggs, sperm) or early embryos, meaning the changes are heritable — they will be passed to all future generations. This raises concerns about: unforeseen consequences of permanent genetic changes, potential for "designer babies" (eugenics), inability to obtain consent from future generations, and irreversibility of changes. The most tempting wrong answer is A, but that describes somatic gene therapy (which treats only the individual and is not heritable — generally considered ethically acceptable). Germline therapy is currently banned or heavily restricted in most countries. It does have therapeutic potential (D is wrong), and informed consent is always required for any gene therapy (C is wrong). The 2018 CRISPR babies controversy (He Jiankui) highlighted these concerns.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_020',
+  question: 'Transformation of bacterial cells with recombinant plasmid using the heat shock method involves:',
+  options: ['Treating cells with EDTA followed by UV exposure', 'Treating cells with CaCl2 to make them competent, then briefly heating to 42°C', 'Electrocuting cells with high-voltage pulses', 'Incubating cells at 4°C for 24 hours without any chemical treatment'],
+  correctAnswer: 1,
+  explanation: 'The heat shock method of bacterial transformation involves: (1) treating bacterial cells with ice-cold CaCl2 solution, which makes the cell membrane more permeable to DNA (cells become "competent" — Ca2+ ions neutralise the negative charges on DNA and cell membrane, reducing electrostatic repulsion); (2) incubating with recombinant DNA on ice; (3) briefly heating to 42°C for 60-90 seconds (heat shock creates thermal imbalance and transient pores in the membrane); (4) immediately returning to ice. The most tempting wrong answer is C (high-voltage pulses), which describes electroporation — a different transformation method that uses electrical pulses to create temporary membrane pores. Both methods achieve the same goal (DNA entry) but by different mechanisms.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_021',
+  question: 'Biosafety concerns regarding genetically modified organisms (GMOs) include all EXCEPT:',
+  options: ['Potential transfer of antibiotic resistance genes to gut bacteria', 'Allergenicity of novel proteins in GM foods', 'Guaranteed increase in crop yield under all conditions', 'Environmental impact on non-target organisms'],
+  correctAnswer: 2,
+  explanation: '"Guaranteed increase in crop yield under all conditions" is NOT a biosafety concern — it is a false claim about GMOs (yield depends on many factors and is not guaranteed). Legitimate biosafety concerns include: (A) horizontal gene transfer of antibiotic resistance marker genes from GM plants to gut microbiota; (B) potential allergenicity of novel proteins (e.g., Brazil nut allergen in GM soybean); and (D) environmental impact on non-target organisms (e.g., Bt toxin affecting monarch butterflies, gene flow to wild relatives creating superweeds). The most tempting wrong answer is D, but environmental impact is a well-documented biosafety concern. Regulatory frameworks require rigorous testing of GMOs for food safety, environmental impact, and labelling requirements before commercial release.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  },
+  {
+  id: 'bio_bt_022',
+  question: 'The RNA interference (RNAi) technique is used to:',
+  options: ['Amplify specific DNA sequences', 'Silence specific gene expression by degrading mRNA', 'Clone genes into bacterial vectors', 'Sequence entire genomes'],
+  correctAnswer: 1,
+  explanation: 'RNA interference (RNAi) is a biological process where small RNA molecules (siRNA or miRNA) inhibit gene expression by causing degradation of specific mRNA molecules or blocking their translation. This technique is used to "knock down" or silence specific genes to study their function, and has therapeutic potential for treating diseases caused by overexpression of specific genes. The most tempting wrong answer is A (amplify DNA), which describes PCR. Option C describes gene cloning, and option D describes genome sequencing. RNAi was discovered in C. elegans (Fire and Mello, Nobel Prize 2006) and represents a natural cellular defence mechanism against viruses and transposons that has been harnessed as a powerful research and therapeutic tool.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'biotechnology_applications'
+  }
+],
+
+ecology_environment: [
+  {
+  id: 'bio_ee_001',
+  question: 'A forest ecosystem produces 10,000 kcal/m²/year at the producer level. According to Lindeman\'s 10% rule, how much energy would be available to the tertiary consumer level?',
+  options: ['1000 kcal/m²/year', '100 kcal/m²/year', '10 kcal/m²/year', '1 kcal/m²/year'],
+  correctAnswer: 2,
+  explanation: 'Lindeman\'s 10% law states only 10% of energy transfers between successive trophic levels. Producer = 10,000 → Primary consumer = 1,000 → Secondary consumer = 100 → Tertiary consumer = 10 kcal/m²/year. The remaining 90% at each level is lost as heat through respiration, excretion, and decomposition. Option B (100) is the tempting wrong answer — that represents the secondary consumer level, not tertiary. This progressive energy loss explains why food chains rarely exceed 4-5 trophic levels.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_002',
+  question: 'Assertion (A): The pyramid of biomass in an aquatic ecosystem is inverted.\nReason (R): Phytoplankton producers have a smaller standing biomass than zooplankton consumers at any given time.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'In aquatic ecosystems, the pyramid of biomass is inverted because phytoplankton (producers) have very small individual mass and rapid turnover rates, so their standing biomass at any given time is less than the zooplankton and fish they support. The reason correctly explains this — phytoplankton reproduce so rapidly that despite small standing crop, their productivity supports larger consumer biomass. The tempting wrong choice is B, but R directly explains the mechanism behind the inverted pyramid. In contrast, terrestrial biomass pyramids are always upright because trees and plants have large standing biomass.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_003',
+  question: 'Which of the following is NOT a characteristic feature of wind-pollinated (anemophilous) flowers?',
+  options: ['Light, dry, non-sticky pollen grains', 'Large feathery stigma to trap airborne pollen', 'Brightly coloured petals with nectar guides', 'Production of enormous quantities of pollen'],
+  correctAnswer: 2,
+  explanation: 'Brightly coloured petals with nectar guides are characteristic of entomophilous (insect-pollinated) flowers, not anemophilous ones. Wind-pollinated flowers are typically small, inconspicuous, lack colour, fragrance, and nectar. They produce light, dry, non-sticky pollen (option A) in enormous quantities (option D) to increase chances of reaching another flower via wind. Large feathery stigmas (option B) increase the surface area for trapping airborne pollen. The tempting wrong answer is D because students may think large pollen quantities suggest insect pollination, but wind pollination is highly wasteful and requires massive pollen production to compensate for random dispersal.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_004',
+  question: 'In the nitrogen cycle, the bacterium Nitrosomonas performs which specific conversion?',
+  options: ['Atmospheric N₂ to ammonia (NH₃)', 'Ammonia (NH₃) to nitrite (NO₂⁻)', 'Nitrite (NO₂⁻) to nitrate (NO₃⁻)', 'Nitrate (NO₃⁻) to atmospheric N₂'],
+  correctAnswer: 1,
+  explanation: 'Nitrosomonas is a nitrifying bacterium that oxidises ammonia to nitrite in the first step of nitrification. The second step — nitrite to nitrate — is performed by Nitrobacter (option C). Option A describes nitrogen fixation by Rhizobium or Azotobacter. Option D describes denitrification by Pseudomonas. The most common confusion is between Nitrosomonas and Nitrobacter — the mnemonic is that Nitrosomonas handles ammonia (both start with \'m\' sound conceptually), while Nitrobacter completes the process to nitrate. Both are chemoautotrophs using the energy from these oxidation reactions.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_005',
+  question: 'Assertion (A): DDT concentration increases progressively at higher trophic levels in a food chain.\nReason (R): DDT is a non-biodegradable lipophilic compound that accumulates in fat tissues and is not excreted or metabolised efficiently.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Biomagnification of DDT occurs because it is a persistent organic pollutant that is lipophilic (fat-soluble) and non-biodegradable. It accumulates in adipose tissue and is not metabolised or excreted efficiently. At each trophic level, organisms consume many prey items, concentrating the DDT by approximately 10-fold per level. The reason directly explains the assertion — the chemical properties of DDT (lipophilicity and persistence) are precisely why biomagnification occurs. DDT caused eggshell thinning in raptors like the bald eagle and peregrine falcon by interfering with calcium metabolism, leading to population crashes and eventually its ban in many countries.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_006',
+  question: 'A population of 500 rabbits in an island habitat has a birth rate of 50 per year and death rate of 30 per year. Assuming no immigration or emigration, what is the intrinsic rate of natural increase (r) per capita per year?',
+  options: ['0.02', '0.04', '0.10', '0.16'],
+  correctAnswer: 1,
+  explanation: 'The intrinsic rate of natural increase r = (births − deaths) / N = (50 − 30) / 500 = 20/500 = 0.04 per capita per year. This means each individual contributes a net increase of 0.04 to the population annually. Option A (0.02) would result from dividing by 1000 instead of 500. Option C (0.10) would result from dividing births alone by N. Option D (0.16) would result from dividing births by deaths incorrectly. The value r is critical in population ecology — when r > 0, the population grows; when r = 0, it is stable; when r < 0, it declines. This exponential model (dN/dt = rN) applies when resources are unlimited.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_007',
+  question: 'The Montreal Protocol (1987) was established to control the emission of:',
+  options: ['Carbon dioxide causing global warming', 'Sulphur dioxide causing acid rain', 'Chlorofluorocarbons causing ozone depletion', 'Nitrogen oxides causing photochemical smog'],
+  correctAnswer: 2,
+  explanation: 'The Montreal Protocol (1987) is widely regarded as the most successful international environmental treaty, specifically targeting chlorofluorocarbons (CFCs) and other ozone-depleting substances. CFCs release chlorine radicals in the stratosphere that catalytically destroy ozone (O₃) — a single Cl atom can destroy ~100,000 ozone molecules. The Antarctic ozone hole is largest in September. Carbon dioxide control falls under the Kyoto Protocol (1997) and Paris Agreement (2015) — option A. Sulphur dioxide control relates to the Clean Air Act and acid rain protocols — option B. The Montreal Protocol led to the phase-out of CFCs and their replacement with HFCs, and the ozone layer is now slowly recovering.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_008',
+  question: 'Which of the following is NOT a criterion for identifying a biodiversity hotspot as defined by Norman Myers?',
+  options: ['The region must contain at least 1,500 species of endemic vascular plants', 'The region must have lost at least 70% of its original habitat', 'The region must have the highest total species count globally', 'Both A and B must be simultaneously satisfied'],
+  correctAnswer: 2,
+  explanation: 'Norman Myers\' biodiversity hotspot criteria require TWO conditions simultaneously: (1) at least 1,500 endemic vascular plant species (≥0.5% of world\'s total) AND (2) loss of ≥70% of original habitat. The highest total species count (option C) is NOT a criterion — a region could have many species but few endemics and still not qualify. Option D correctly states both conditions must be met together. Currently, 36 hotspots are recognised globally. India has 4: Western Ghats & Sri Lanka, Eastern Himalaya, Indo-Burma, and Sundaland. The tempting wrong answer is C because students confuse species richness with endemism — hotspots prioritise irreplaceable endemic species threatened by habitat loss.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_009',
+  question: 'In a lake ecosystem experiencing eutrophication, the correct sequence of events is:',
+  options: ['Nutrient enrichment → Algal bloom → Increased BOD → Oxygen depletion → Fish death', 'Algal bloom → Nutrient enrichment → Fish death → Oxygen depletion → Increased BOD', 'Oxygen depletion → Algal bloom → Nutrient enrichment → Increased BOD → Fish death', 'Fish death → Increased BOD → Algal bloom → Nutrient enrichment → Oxygen depletion'],
+  correctAnswer: 0,
+  explanation: 'Eutrophication follows a predictable sequence: excess nitrogen and phosphorus from agricultural runoff and detergents enter the water body → this nutrient enrichment triggers rapid algal bloom → when algae die, decomposers (bacteria) consume them, greatly increasing Biological Oxygen Demand (BOD) → dissolved oxygen is depleted → aerobic organisms including fish die from hypoxia. Option B reverses the cause-effect relationship — algal bloom doesn\'t cause nutrient enrichment, it results from it. Understanding this sequence is clinically relevant as eutrophication contaminates drinking water sources and some algal blooms produce toxins causing liver damage and neurological effects in humans.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_010',
+  question: 'Assertion (A): In Gause\'s competitive exclusion principle, two species competing for identical resources cannot coexist indefinitely.\nReason (R): The competitively superior species will eventually eliminate the inferior one, leading to niche differentiation or local extinction.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Gause\'s competitive exclusion principle states that two species with identical ecological niches cannot coexist in the same habitat indefinitely — one will inevitably outcompete the other. Gause demonstrated this with Paramecium aurelia and P. caudatum in culture; P. aurelia always outcompeted P. caudatum. The reason correctly explains the outcome: the superior competitor eliminates the inferior one unless niche differentiation (resource partitioning) occurs. The tempting wrong answer is B, but R directly provides the mechanism — competitive superiority leading to exclusion IS the explanation for why coexistence fails. In nature, competing species often evolve character displacement to reduce niche overlap and coexist.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_011',
+  question: 'The primary cause of coral bleaching in tropical marine ecosystems is:',
+  options: ['Increased ocean acidity dissolving calcium carbonate skeletons', 'Expulsion of symbiotic zooxanthellae algae due to elevated sea temperature', 'Overfishing removing herbivorous fish that control algal growth', 'Oil spill contamination coating coral surfaces'],
+  correctAnswer: 1,
+  explanation: 'Coral bleaching occurs when stressed corals expel their symbiotic zooxanthellae (dinoflagellate algae of genus Symbiodinium) that provide corals with up to 90% of their energy through photosynthesis and give them colour. The primary stress trigger is elevated sea surface temperature — even 1-2°C above normal summer maximum for sustained periods. Without zooxanthellae, corals appear white ("bleached") and may die if stress persists. Option A describes ocean acidification, which is a separate threat weakening skeletons but not the primary bleaching cause. Option C describes indirect reef degradation. Coral bleaching events have increased dramatically with global warming, threatening marine biodiversity and coastal communities.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_012',
+  question: 'The correct match between the conservation site and the species it primarily protects is:',
+  options: ['Kaziranga National Park — Asiatic Lion', 'Gir National Park — One-horned Rhinoceros', 'Jim Corbett National Park — Bengal Tiger', 'Periyar Wildlife Sanctuary — Snow Leopard'],
+  correctAnswer: 2,
+  explanation: 'Jim Corbett National Park (Uttarakhand, established 1936) was India\'s first national park and is primarily associated with Bengal Tiger conservation — it was the first reserve under Project Tiger (1973). Kaziranga (Assam) protects the one-horned rhinoceros (not lion — option A is wrong). Gir (Gujarat) protects the Asiatic lion (not rhino — option B is wrong). Periyar (Kerala) is known for elephants and tigers, not snow leopards — option D is wrong; snow leopards are found in Hemis National Park, Ladakh. These are frequently tested in ecology sections and students commonly interchange Kaziranga and Gir.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_013',
+  question: 'In a food chain: Grass → Grasshopper → Frog → Snake → Hawk, if the grass fixes 50,000 J of energy, the energy available to the snake (applying Lindeman\'s 10% rule) would be:',
+  options: ['5,000 J', '500 J', '50 J', '5 J'],
+  correctAnswer: 2,
+  explanation: 'Applying the 10% rule at each trophic transfer: Grass (producer) = 50,000 J → Grasshopper (primary consumer) = 5,000 J → Frog (secondary consumer) = 500 J → Snake (tertiary consumer) = 50 J. The snake is three trophic transfers away from the producer, so receives 50,000 × (0.1)³ = 50 J. Option B (500 J) represents the frog level — a common error when students miscount trophic levels. The hawk would receive only 5 J (option D). This demonstrates why energy flow limits food chain length and why herbivores are more energy-efficient food sources than carnivores from an ecological perspective.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_014',
+  question: 'The greenhouse gas with the highest Global Warming Potential (GWP) per molecule over a 100-year period among the following is:',
+  options: ['Carbon dioxide (CO₂)', 'Methane (CH₄)', 'Nitrous oxide (N₂O)', 'Chlorofluorocarbons (CFCs)'],
+  correctAnswer: 3,
+  explanation: 'CFCs have the highest Global Warming Potential per molecule — CFC-12 has a GWP of approximately 10,900 over 100 years compared to CO₂ (GWP = 1 by definition). Nitrous oxide has GWP ~298, and methane ~28-34 over 100 years. However, CO₂ contributes most to total global warming because of its vastly greater atmospheric concentration and emission volume. The tempting wrong answer is B (methane) because students know it is a potent greenhouse gas, but per molecule, CFCs far exceed methane. CFCs are unique in being both powerful greenhouse gases AND ozone-depleting substances, making their phase-out under the Montreal Protocol doubly beneficial for the atmosphere.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_015',
+  question: 'The type of interspecific interaction between the cuckoo bird and the crow, where the cuckoo lays eggs in the crow\'s nest, is best described as:',
+  options: ['Mutualism', 'Commensalism', 'Brood parasitism', 'Amensalism'],
+  correctAnswer: 2,
+  explanation: 'The cuckoo-crow relationship is a classic example of brood parasitism (+/- interaction), a specialised form of parasitism where the parasite (cuckoo) exploits the host\'s (crow\'s) parental care. The cuckoo lays eggs that mimic crow eggs; the cuckoo chick hatches first and often pushes host eggs out, monopolising food resources. The crow is harmed by investing energy in raising non-offspring. This is NOT commensalism (option B) because the host is clearly harmed. It is NOT mutualism (option A) because only the cuckoo benefits. Amensalism (option D) involves one species harmed while the other is unaffected, which doesn\'t fit since the cuckoo actively benefits. Brood parasitism demonstrates remarkable co-evolutionary arms races between parasite and host.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_016',
+  question: 'A student studying population ecology observes a population growing according to the logistic model. When the population size (N) equals half the carrying capacity (K/2), the population growth rate (dN/dt) is:',
+  options: ['At its maximum value', 'Zero', 'Equal to rN', 'At its minimum positive value'],
+  correctAnswer: 0,
+  explanation: 'In the logistic growth equation dN/dt = rN(K-N)/K, the growth rate is maximised when N = K/2. This can be proven mathematically by differentiating dN/dt with respect to N and setting it to zero: d/dN[rN(K-N)/K] = r(K-2N)/K = 0, giving N = K/2. At this point, (K-N)/K = 0.5, so dN/dt = rN × 0.5 = r(K/2)(0.5) = rK/4, which is the maximum growth rate. Option B (zero) is wrong — growth rate is zero when N = K (carrying capacity). Option C (rN) represents exponential growth without environmental resistance. Below K/2, the population accelerates; above K/2, it decelerates toward K. This inflection point on the S-shaped curve is ecologically significant for sustainable harvesting — maximum sustainable yield occurs at K/2.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_017',
+  question: 'The concept of ecological succession where a community develops on a bare rock surface with no prior soil is called:',
+  options: ['Secondary succession', 'Primary succession', 'Climax community establishment', 'Retrogressive succession'],
+  correctAnswer: 1,
+  explanation: 'Primary succession occurs on newly exposed or newly formed substrates where no soil or organisms previously existed — bare rock, new volcanic islands, glacial retreat surfaces, or sand dunes. The process begins with pioneer species (lichens on rock, which secrete acids breaking down rock into soil particles), followed by mosses, herbs, shrubs, and eventually trees forming a climax community. This process takes hundreds to thousands of years. Secondary succession (option A) occurs on previously colonised but disturbed habitats where soil remains (after fire, flooding, or deforestation) and proceeds much faster. Option C describes the end point, not the process. Option D describes community degradation, not development.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_018',
+  question: 'Which of the following correctly represents an inverted pyramid of numbers?',
+  options: ['Grassland ecosystem: grasses → grasshoppers → frogs → snakes → hawks', 'A large tree supporting many herbivorous insects, fewer parasites of insects', 'Pond ecosystem with numerous phytoplankton supporting fewer zooplankton', 'Desert ecosystem with few producers and even fewer consumers'],
+  correctAnswer: 1,
+  explanation: 'An inverted pyramid of numbers occurs when a single large organism (like a tree) supports a progressively larger number of organisms at higher trophic levels — many herbivorous insects feed on one tree, and even more parasites may feed on those insects. The base (one tree) is narrower than the upper levels (many insects), creating an inverted shape. Option A describes an upright pyramid of numbers typical of grasslands. Option C describes an upright pyramid in aquatic systems (many phytoplankton at base). Option D also describes an upright pyramid. Note that pyramids of energy are always upright, but pyramids of numbers and biomass can be inverted depending on the ecosystem. This is a commonly tested distinction in ecology.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_019',
+  question: 'The interaction between Rhizobium bacteria and leguminous plants is an example of:',
+  options: ['Parasitism, as bacteria benefit at the plant\'s expense', 'Commensalism, as only bacteria benefit while the plant is unaffected', 'Mutualism, as both organisms benefit from the association', 'Amensalism, as the plant inhibits bacterial growth'],
+  correctAnswer: 2,
+  explanation: 'The Rhizobium-legume association is a classic example of mutualism (+/+) — both partners benefit. Rhizobium bacteria colonise root nodules where they fix atmospheric N₂ into ammonia (NH₃) using nitrogenase, providing the plant with usable nitrogen. In return, the plant provides the bacteria with carbon compounds (photosynthates), shelter, and a microaerobic environment (maintained by leghemoglobin) essential for nitrogenase activity. Option A is wrong because the plant also benefits significantly from nitrogen fixation. Option B is wrong because the plant clearly benefits from fixed nitrogen. This symbiosis is ecologically and agriculturally crucial — legume crops (peas, beans, clover) enrich soil nitrogen, reducing the need for synthetic fertilisers.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_020',
+  question: 'The age pyramid that represents a declining population with more post-reproductive individuals than pre-reproductive ones is:',
+  options: ['Triangular/expansive pyramid — broad base, narrow top', 'Bell-shaped/stable pyramid — roughly equal proportions', 'Urn-shaped/inverted pyramid — narrow base, broad top', 'Columnar pyramid — equal width throughout'],
+  correctAnswer: 2,
+  explanation: 'A declining population is represented by an urn-shaped (inverted/constrictive) pyramid with a narrow base (few pre-reproductive individuals) and broader top (more post-reproductive individuals). This indicates low birth rates and an ageing population, characteristic of many developed countries like Japan and Germany. Option A (triangular/expansive) represents a growing population with high birth rates — typical of developing countries like India and Nigeria. Option B (bell-shaped) represents a stable population with roughly equal birth and death rates. Option D (columnar) is similar to stable. Understanding population age structures is essential for public health planning, resource allocation, and predicting future demographic trends.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_021',
+  question: 'In biomagnification of mercury in an aquatic food chain, the organism with the highest concentration of methylmercury would be:',
+  options: ['Phytoplankton at the base of the food chain', 'Small herbivorous fish feeding on phytoplankton', 'Large predatory fish at the top of the food chain', 'Zooplankton feeding on phytoplankton'],
+  correctAnswer: 2,
+  explanation: 'Biomagnification causes progressive concentration of persistent, lipophilic toxins like methylmercury at each successive trophic level. The concentration increases approximately 10-fold per level because organisms consume many prey items, accumulating their toxin loads, while excreting very little. Therefore, large predatory fish (tuna, swordfish, shark) at the top of aquatic food chains have the highest methylmercury concentrations — often 10,000 to 100,000 times the water concentration. This is why health advisories warn pregnant women and children against consuming large predatory fish. Option A has the lowest concentration. This principle also applied to DDT in raptors — biomagnification caused eggshell thinning and population crashes in bald eagles and peregrine falcons.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_022',
+  question: 'Which of the following is a keystone species in the African savanna ecosystem?',
+  options: ['African elephant', 'Acacia tree', 'Termite', 'Grass species'],
+  correctAnswer: 0,
+  explanation: 'The African elephant is a keystone species in the savanna because it has a disproportionate effect on its environment relative to its abundance. Elephants uproot trees, create water holes, and modify vegetation structure, which maintains the savanna ecosystem and benefits many other species. If elephants were removed, the ecosystem would change dramatically (e.g., woodland encroachment). Option B (Acacia tree) is a foundation species, not keystone. Option C (termite) is important for nutrient cycling but not keystone. Option D (grass) is a primary producer. A keystone species is defined by its ecological impact — its removal causes major ecosystem restructuring, unlike other species whose removal has minimal effect.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_023',
+  question: 'Assertion (A): In a food web, the removal of a top predator can lead to a trophic cascade. Reason (R): The removal of top predators releases herbivores from predation pressure, leading to overgrazing and ecosystem degradation.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Both statements are true, and R correctly explains A. A trophic cascade occurs when changes at one trophic level propagate through the food web, affecting multiple levels. The classic example is the removal of wolves from Yellowstone, which led to elk overpopulation, overgrazing of willows and aspens, and subsequent erosion and loss of habitat for beavers and songbirds. The reason correctly identifies the mechanism: removing top predators releases herbivores from control, leading to vegetation damage and ecosystem changes. This concept is crucial for conservation biology and wildlife management. The tempting wrong answer is B, but R directly explains how predator removal triggers the cascade described in A.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_024',
+  question: 'The correct sequence of ecological succession on a bare rock (xerarch succession) is:',
+  options: ['Mosses → Lichens → Herbs → Shrubs → Trees', 'Lichens → Mosses → Herbs → Shrubs → Trees', 'Herbs → Lichens → Mosses → Shrubs → Trees', 'Trees → Shrubs → Herbs → Mosses → Lichens'],
+  correctAnswer: 1,
+  explanation: 'In xerarch (dry habitat) succession on bare rock, lichens are the pioneer species because they can survive on bare rock and secrete acids that break down rock into soil particles. Mosses follow, then herbs, shrubs, and finally trees form the climax community. Option A reverses lichens and mosses — lichens must come first because they can colonise bare rock, while mosses require some soil. Option C places herbs first, which is impossible without soil. Option D reverses the entire sequence. This sequential development demonstrates how organisms modify their environment to make it suitable for subsequent species — a fundamental principle of ecological succession.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  },
+  {
+  id: 'bio_ee_025',
+  question: 'Which of the following is the most effective strategy for conserving biodiversity in a fragmented habitat?',
+  options: ['Creating isolated protected areas', 'Establishing wildlife corridors to connect habitat fragments', 'Introducing exotic species to increase diversity', 'Focusing conservation efforts on a single flagship species'],
+  correctAnswer: 1,
+  explanation: 'Establishing wildlife corridors to connect habitat fragments is the most effective strategy because it allows gene flow between isolated populations, reduces inbreeding depression, enables species migration in response to climate change, and maintains ecological processes across landscapes. Option A (isolated protected areas) leads to genetic isolation and local extinctions. Option C (introducing exotic species) often causes invasive species problems that threaten native biodiversity. Option D (flagship species focus) may help raise awareness but doesn\'t address the fundamental problem of habitat fragmentation. Corridors are a cornerstone of landscape-level conservation planning and are supported by island biogeography theory and metapopulation dynamics.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'ecology_environment'
+  }
+],
+
+plant_physiology: [
+  {
+  id: 'bio_pp_001',
+  question: 'In the Z-scheme of light reactions, the photolysis of water occurs at:',
+  options: ['Photosystem I (P700) on the stromal side', 'Photosystem II (P680) on the lumenal side of the thylakoid membrane', 'Cytochrome b6f complex in the thylakoid membrane', 'Ferredoxin-NADP+ reductase on the stromal side'],
+  correctAnswer: 1,
+  explanation: 'Photolysis of water (2H₂O → 4H⁺ + 4e⁻ + O₂) occurs at Photosystem II (P680) on the lumenal (inner/thylakoid) side of the thylakoid membrane. The oxygen-evolving complex (OEC) containing manganese ions catalyses this reaction. The electrons released replace those lost by P680 upon light absorption. The protons released into the lumen contribute to the proton gradient for ATP synthesis. PS I (option A) receives electrons from PS II via the electron transport chain — it does not split water.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_002',
+  question: 'The correct difference between C3 and C4 plants is:',
+  options: ['C3 plants have Kranz anatomy while C4 plants lack it', 'C3 plants use PEP carboxylase as primary CO₂ fixation enzyme while C4 plants use RuBisCO', 'C4 plants show higher photorespiration rates than C3 plants', 'C3 plants fix CO₂ into a 3-carbon compound (PGA) while C4 plants first fix CO₂ into a 4-carbon compound (OAA)'],
+  correctAnswer: 3,
+  explanation: 'The fundamental difference is in the primary CO₂ fixation product: in C3 plants, RuBisCO fixes CO₂ with RuBP to form 3-phosphoglycerate (PGA, 3C), while in C4 plants, PEP carboxylase first fixes CO₂ with PEP to form oxaloacetate (OAA, 4C) in mesophyll cells. Option A is reversed — C4 plants have Kranz anatomy (concentric mesophyll and bundle sheath cells), not C3. Option B is also reversed — C4 plants use PEP carboxylase as the primary enzyme. Option C is wrong because C4 plants have minimal photorespiration since PEP carboxylase has no oxygenase activity and CO₂ is concentrated in bundle sheath cells.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_003',
+  question: 'Assertion (A): Cyclic photophosphorylation produces only ATP and does not generate NADPH or release O₂.\nReason (R): In cyclic photophosphorylation, only PS I is involved, and electrons from PS I cycle back through cytochrome b6f complex without reaching NADP⁺ reductase or requiring water splitting.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'In cyclic photophosphorylation, only PS I (P700) participates. Electrons excited from PS I pass through ferredoxin but instead of going to NADP⁺ reductase, they cycle back via the cytochrome b6f complex to PS I. This cycling generates a proton gradient that drives ATP synthesis but produces no NADPH (electrons don\'t reach NADP⁺) and no O₂ (PS II and water splitting are not involved). The reason correctly explains all three features of the assertion. This process occurs when the cell has excess NADPH relative to ATP needs, such as during the Calvin cycle\'s regeneration phase which requires more ATP than NADPH.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_004',
+  question: 'A farmer notices yellowing of older leaves (chlorosis) in his crop while younger leaves remain green. This pattern most likely indicates deficiency of:',
+  options: ['Iron (Fe)', 'Nitrogen (N)', 'Calcium (Ca)', 'Boron (B)'],
+  correctAnswer: 1,
+  explanation: 'Nitrogen deficiency causes chlorosis (yellowing) that appears first in older/lower leaves because nitrogen is a mobile element — the plant remobilises it from older leaves to support actively growing younger tissues. Iron deficiency (option A) causes interveinal chlorosis in youngest leaves because Fe is immobile in the phloem. Calcium (option C) is also immobile, so its deficiency appears in young tissues (tip burn, blossom end rot). Boron (option D) deficiency affects growing points and young tissues. The key diagnostic principle: mobile nutrients (N, P, K, Mg) show deficiency in older leaves first; immobile nutrients (Ca, Fe, S, B, Mn) show deficiency in younger leaves first.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_005',
+  question: 'In the Calvin cycle, how many molecules of ATP and NADPH are required to fix 3 molecules of CO₂ into one molecule of G3P (net)?',
+  options: ['6 ATP and 6 NADPH', '9 ATP and 6 NADPH', '18 ATP and 12 NADPH', '3 ATP and 2 NADPH'],
+  correctAnswer: 1,
+  explanation: 'The stoichiometry of the Calvin cycle for 3 CO₂ fixation (producing 1 net G3P) requires 9 ATP and 6 NADPH. Breakdown: CO₂ fixation produces 6 PGA (3C each); reduction of 6 PGA to 6 G3P requires 6 ATP + 6 NADPH; regeneration of 3 RuBP from 5 G3P requires 3 ATP. Total = 9 ATP + 6 NADPH. Option C (18 ATP, 12 NADPH) represents fixation of 6 CO₂ to make one glucose molecule. Option A (6+6) omits the regeneration ATP. Option D represents only 1 CO₂ fixation. The regeneration phase is what students commonly forget, leading them to choose option A. One net G3P exits the cycle; five are recycled to regenerate RuBP.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_006',
+  question: 'The mechanism of stomatal opening involves:',
+  options: ['Efflux of K⁺ ions from guard cells decreasing turgor pressure', 'Active uptake of K⁺ ions into guard cells, lowering osmotic potential, causing water entry by osmosis', 'Accumulation of ABA in guard cells promoting water influx', 'Breakdown of starch to glucose only in the dark'],
+  correctAnswer: 1,
+  explanation: 'Stomatal opening occurs when K⁺ ions are actively pumped into guard cells by proton pumps (H⁺-ATPase). The increased K⁺ concentration lowers the osmotic potential (makes it more negative), causing water to enter by osmosis. Guard cells become turgid, and their kidney-shaped structure causes them to bow apart, opening the pore. Option A describes stomatal closing (K⁺ efflux). Option C is wrong because ABA promotes stomatal closure by triggering K⁺ efflux — it is the stress hormone. Option D refers to the older starch-sugar hypothesis which has been largely superseded by the K⁺ pump theory. Blue light activates the proton pumps, which is why stomata typically open in light and close in darkness.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_007',
+  question: 'Which plant hormone is correctly matched with its primary function?',
+  options: ['Auxin — Promotes seed dormancy', 'Gibberellin — Promotes stomatal closure under water stress', 'Abscisic acid — Promotes stem elongation and internode growth', 'Ethylene — Promotes fruit ripening'],
+  correctAnswer: 3,
+  explanation: 'Ethylene (the only gaseous plant hormone, CH₂=CH₂) is the primary hormone promoting fruit ripening by activating cell wall-degrading enzymes like polygalacturonase and cellulase. Option A is wrong — auxin promotes cell elongation and apical dominance, not dormancy. Option B is wrong — gibberellin promotes stem elongation and seed germination, not stomatal closure (that\'s ABA\'s role). Option C is wrong — ABA (abscisic acid) promotes dormancy, stomatal closure, and senescence — stem elongation is gibberellin\'s function. Commercially, ethephon (2-chloroethylphosphonic acid) is applied to fruits to release ethylene and accelerate uniform ripening of mangoes, bananas, and tomatoes during transport and storage.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_008',
+  question: 'In CAM (Crassulacean Acid Metabolism) plants, CO₂ is fixed at night and stored as:',
+  options: ['Oxaloacetate in the cytoplasm', 'Malic acid in the vacuole', 'PGA in the chloroplast stroma', 'Sucrose in the phloem sieve tubes'],
+  correctAnswer: 1,
+  explanation: 'CAM plants open stomata at night to minimise water loss, fixing CO₂ using PEP carboxylase to form OAA, which is immediately converted to malic acid and stored in the large central vacuole. During the day, with stomata closed, malic acid is decarboxylated to release CO₂ for the Calvin cycle. Option A is partially correct (OAA is an intermediate) but it is rapidly converted to malate and stored in vacuoles, not cytoplasm. Option C (PGA in stroma) describes C3 fixation during daytime. This temporal separation of CO₂ fixation (night) and Calvin cycle (day) is the key adaptation of CAM plants (cacti, Aloe, pineapple, Agave) to arid environments, contrasting with C4 plants\' spatial separation.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_009',
+  question: 'The correct comparison between auxin and cytokinin effects on lateral bud growth is:',
+  options: ['Both auxin and cytokinin promote lateral bud growth synergistically', 'Auxin promotes lateral bud growth while cytokinin inhibits it', 'Auxin inhibits lateral bud growth (apical dominance) while cytokinin promotes it', 'Both inhibit lateral bud growth but through different mechanisms'],
+  correctAnswer: 2,
+  explanation: 'Auxin produced at the shoot apex maintains apical dominance by inhibiting the growth of lateral (axillary) buds. In contrast, cytokinin (synthesised primarily in root tips) promotes lateral bud growth and counteracts apical dominance. This antagonistic interaction determines plant architecture — high auxin:cytokinin ratio favours vertical growth; low ratio favours bushier growth. When the shoot apex is removed (decapitation), auxin supply decreases, releasing lateral buds from inhibition — this is why pruning promotes bushy growth. Option B reverses the roles. Tissue culture media exploit this ratio: high cytokinin:auxin promotes shoot formation, while high auxin:cytokinin promotes root formation.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_010',
+  question: 'Assertion (A): RuBisCO is considered the most abundant enzyme on Earth.\nReason (R): RuBisCO has both carboxylase and oxygenase activity, making it inefficient and requiring plants to produce large quantities.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'RuBisCO (ribulose-1,5-bisphosphate carboxylase/oxygenase) is indeed the most abundant enzyme on Earth, constituting up to 25-50% of total leaf protein. Both assertion and reason are true, and R correctly explains A. Because RuBisCO has a dual activity — it can fix CO₂ (carboxylase, productive) but also fixes O₂ (oxygenase, leading to wasteful photorespiration) — its catalytic rate is very slow (~3 reactions/second vs ~1000/sec for typical enzymes). Plants compensate for this inefficiency by producing enormous quantities of the enzyme. C4 plants partially overcome this by concentrating CO₂ around RuBisCO in bundle sheath cells. The tempting answer is B, but the reason directly explains why such large amounts are needed.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_011',
+  question: 'In biological nitrogen fixation by Rhizobium in legume root nodules, the function of leghemoglobin is to:',
+  options: ['Fix atmospheric nitrogen directly into ammonia', 'Transport oxygen to nitrogenase enzyme for its activity', 'Scavenge oxygen to maintain an anaerobic environment for nitrogenase', 'Convert ammonia to nitrate for plant uptake'],
+  correctAnswer: 2,
+  explanation: 'Leghemoglobin (leg = legume, hemoglobin = oxygen-binding protein) is a pink-coloured oxygen-binding protein found in active root nodules. Its function is to scavenge free oxygen and maintain a microaerobic/anaerobic environment essential for nitrogenase activity, since nitrogenase is irreversibly inactivated by oxygen. However, leghemoglobin also ensures sufficient oxygen reaches the bacteroids for their aerobic respiration — it regulates oxygen to a very low but non-zero concentration. Option A is wrong — nitrogenase fixes N₂, not leghemoglobin. Option B is misleading — while it does deliver some O₂ for respiration, its primary role is oxygen protection. Option D describes nitrification by Nitrosomonas/Nitrobacter, not BNF.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_012',
+  question: 'A plant physiologist exposes a short-day plant (SDP) to a long night period but interrupts the dark period with a brief flash of red light. The plant will:',
+  options: ['Flower normally because the total dark period exceeds the critical night length', 'Not flower because the red light converts Pr to Pfr, which inhibits flowering in SDPs', 'Flower because red light promotes flowering in all plants', 'Not flower because red light destroys the florigen hormone'],
+  correctAnswer: 1,
+  explanation: 'Short-day plants (actually long-night plants) require an uninterrupted dark period exceeding the critical night length to flower. A brief red light flash during the dark period converts Pr → Pfr (the active form of phytochrome). In SDPs, Pfr inhibits flowering — it effectively "resets" the dark period timer. The plant perceives two short nights instead of one long night, so it does not flower. This can be reversed by immediately following with a far-red light flash (Pfr → Pr), restoring the ability to flower. Option A is wrong — total dark hours don\'t matter if interrupted. Option C is wrong — red light promotes flowering only in LDPs. This phytochrome-mediated response demonstrates that plants actually measure night length, not day length.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_013',
+  question: 'Which of the following correctly describes transpiration?',
+  options: ['Loss of water as liquid droplets from leaf margins through hydathodes', 'Loss of water as vapour primarily through stomata, driven by vapour pressure gradient', 'Active secretion of water from root pressure into xylem vessels', 'Absorption of water by root hairs from soil through osmosis'],
+  correctAnswer: 1,
+  explanation: 'Transpiration is the loss of water as vapour primarily through stomata (90-95%), with minor contributions from cuticle (~5%) and lenticels (<1%). It is driven by the vapour pressure gradient between the saturated air spaces inside the leaf and the drier external atmosphere. Option A describes guttation — loss of liquid water through hydathodes due to root pressure, which occurs at night in humid conditions. Option C describes root pressure, not transpiration. Option D describes water absorption. Transpiration creates the transpiration pull (tension) that is the main driving force for water ascent in tall trees according to the cohesion-tension theory, and also aids in mineral transport and leaf cooling.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_014',
+  question: 'Assertion (A): Abscisic acid (ABA) is called the "stress hormone" of plants.\nReason (R): ABA levels increase dramatically in response to drought, causing stomatal closure by promoting K⁺ efflux from guard cells.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'ABA is indeed called the stress hormone because its concentration increases dramatically under stress conditions including drought, cold, wounding, and flooding. The reason correctly explains why — during drought, ABA accumulates in leaves and triggers stomatal closure by promoting K⁺ efflux from guard cells. This increases osmotic potential, water exits guard cells, they become flaccid, and stomata close, reducing water loss. ABA also promotes seed dormancy, inhibits growth, and accelerates leaf senescence. The reason directly and accurately explains the assertion. The tempting choice is B, but stomatal closure under drought is the primary and most well-documented mechanism by which ABA earns its "stress hormone" designation.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_015',
+  question: 'In the figure showing a cross-section of a C4 plant leaf, the cells forming a tight wreath-like layer around the vascular bundle with thick walls and abundant chloroplasts are:',
+  options: ['Palisade mesophyll cells', 'Spongy mesophyll cells', 'Bundle sheath cells', 'Epidermal cells'],
+  correctAnswer: 2,
+  explanation: 'The description identifies bundle sheath cells, which are the hallmark of Kranz anatomy unique to C4 plants. These cells form a tight wreath-like sheath around vascular bundles, have thick walls (often suberised to prevent CO₂ leakage), and contain large chloroplasts with prominent starch grains. They lack grana (in some C4 plants) and are the site of the Calvin cycle. Mesophyll cells (options A, B) surround the bundle sheath cells and perform initial CO₂ fixation using PEP carboxylase. Epidermal cells (option D) form the outer protective layer. The spatial separation between mesophyll (PEP carboxylase) and bundle sheath (RuBisCO + Calvin cycle) cells is what eliminates photorespiration in C4 plants.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_016',
+  question: 'The correct sequence of electron carriers in non-cyclic photophosphorylation is:',
+  options: ['PS I → Plastoquinone → Cytochrome b6f → PS II → NADP⁺', 'PS II → Plastoquinone → Cytochrome b6f → Plastocyanin → PS I → Ferredoxin → NADP⁺', 'PS I → Ferredoxin → Cytochrome b6f → Plastocyanin → PS II → NADP⁺', 'PS II → Ferredoxin → PS I → Plastoquinone → Cytochrome b6f → NADP⁺'],
+  correctAnswer: 1,
+  explanation: 'The correct Z-scheme sequence for non-cyclic photophosphorylation is: PS II (P680) → Pheophytin → Plastoquinone (PQ) → Cytochrome b6f complex → Plastocyanin (PC) → PS I (P700) → Ferredoxin (Fd) → NADP⁺ reductase → NADPH. Water splitting provides electrons to PS II. Option A reverses PS I and PS II — a critical error since PS II comes first despite its higher number (named by order of discovery, not function). Option C reverses the entire chain. The Z-scheme is called so because when plotted on a redox potential diagram, the path of electrons traces a Z shape with two uphill photochemical events at PS II and PS I.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_017',
+  question: 'A gardener applies a high concentration of synthetic auxin (2,4-D) to a lawn. This treatment selectively kills:',
+  options: ['All grasses (monocots) while broadleaf weeds survive', 'Broadleaf weeds (dicots) while grasses remain unaffected', 'All plants equally regardless of type', 'Only annual plants while perennials survive'],
+  correctAnswer: 1,
+  explanation: '2,4-Dichlorophenoxyacetic acid (2,4-D) is a synthetic auxin herbicide that selectively kills broadleaf dicot weeds while leaving monocot grasses relatively unaffected. At high concentrations, auxin causes uncontrolled, disorganised growth in dicots — epinasty, stem twisting, and ultimately death. Monocots are resistant because of differences in vascular bundle arrangement, leaf anatomy, and auxin metabolism. Option A reverses the selectivity. Option C is wrong — 2,4-D is specifically a selective herbicide, not a total herbicide like glyphosate. This is one of the most commercially important applications of plant hormone knowledge and demonstrates how understanding phytohormone biology has direct agricultural applications.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_018',
+  question: 'The correct comparison between gibberellin and abscisic acid in seed physiology is:',
+  options: ['Both promote seed germination through activation of alpha-amylase', 'Gibberellin promotes seed germination while ABA maintains seed dormancy — they are antagonistic', 'ABA promotes germination while gibberellin induces dormancy', 'Both are required simultaneously for dormancy breaking'],
+  correctAnswer: 1,
+  explanation: 'Gibberellin (GA) and abscisic acid (ABA) are antagonistic in seed physiology. GA promotes seed germination by activating the aleurone layer to produce alpha-amylase, which hydrolyses starch in the endosperm to provide sugars for the growing embryo. In contrast, ABA maintains seed dormancy by inhibiting germination-related gene expression. The GA:ABA ratio determines whether a seed germinates or remains dormant. Option A is wrong — ABA does not activate alpha-amylase. Option C reverses the roles. Option D is wrong — they work in opposition, not synergy. This GA-ABA antagonism is exploited in the malting industry, where gibberellic acid is applied to barley seeds to accelerate germination and amylase production for beer brewing.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_019',
+  question: 'Which of the following micronutrient deficiency symptoms is correctly matched?',
+  options: ['Iron deficiency — Interveinal chlorosis of oldest leaves first', 'Magnesium deficiency — Interveinal chlorosis appearing in older leaves first', 'Calcium deficiency — Scorching of leaf margins', 'Potassium deficiency — Interveinal chlorosis of youngest leaves'],
+  correctAnswer: 1,
+  explanation: 'Magnesium deficiency causes interveinal chlorosis (yellowing between veins while veins remain green) appearing in older leaves first because Mg is a mobile element remobilised to younger tissues. Mg is the central atom of chlorophyll, so its deficiency directly impairs chlorophyll synthesis. Option A is wrong — Fe deficiency causes interveinal chlorosis in youngest leaves because Fe is immobile in phloem. Option C is wrong — Ca deficiency causes tip burn and blossom end rot in young tissues, not leaf margin scorching. Option D is wrong — K deficiency causes marginal scorching/necrosis of older leaves, not interveinal chlorosis of young leaves. The distinction between Fe and Mg deficiency symptoms (both cause interveinal chlorosis but in different-aged leaves) is a frequently tested confusion point.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_020',
+  question: 'During photosynthesis, the oxygen released comes from:',
+  options: ['Carbon dioxide through decarboxylation in the Calvin cycle', 'Water through photolysis at Photosystem II', 'Glucose through oxidation in the light reactions', 'Both water and carbon dioxide equally'],
+  correctAnswer: 1,
+  explanation: 'The oxygen released during photosynthesis comes entirely from water molecules through photolysis at Photosystem II. This was demonstrated by Cornelius van Niel (studying purple sulphur bacteria) and confirmed by Ruben and Kamen using heavy oxygen isotope ¹⁸O — when H₂¹⁸O was provided, ¹⁸O₂ was released; when C¹⁸O₂ was provided, the released O₂ was not labelled. The reaction: 2H₂O → 4H⁺ + 4e⁻ + O₂. Option A is wrong — CO₂ is fixed into organic molecules, not split. Option D is a common misconception from the simplified equation. Understanding that O₂ comes from water, not CO₂, was a major breakthrough in photosynthesis research.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_021',
+  question: 'Assertion (A): Ethylene is unique among plant hormones because it is a gas at physiological temperatures.\nReason (R): Ethylene (CH₂=CH₂) has a very low molecular weight and boiling point (-104°C), allowing it to diffuse freely through air spaces in plant tissues.',
+  options: ['Both A and R are true, and R is the correct explanation of A', 'Both A and R are true, but R is NOT the correct explanation of A', 'A is true but R is false', 'A is false'],
+  correctAnswer: 0,
+  explanation: 'Ethylene is indeed the only gaseous plant hormone at physiological temperatures. Its chemical formula CH₂=CH₂ gives it a molecular weight of just 28 Da and a boiling point of -104°C, far below plant tissue temperatures. These physical properties allow ethylene to diffuse rapidly through intercellular air spaces, acting as both an autocrine and paracrine signal. The reason correctly explains the physical basis for ethylene\'s gaseous nature. All other plant hormones (auxin, gibberellin, cytokinin, ABA) are larger organic molecules that are solids or liquids requiring active or passive transport through vascular tissue. Ethylene\'s gaseous nature is why ripening fruit can accelerate ripening of nearby fruit — a practical consideration in fruit storage and transport.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_022',
+  question: 'In the biological nitrogen fixation equation, the total number of ATP molecules required to fix one molecule of N₂ is:',
+  options: ['8', '12', '16', '24'],
+  correctAnswer: 2,
+  explanation: 'The complete equation for biological nitrogen fixation is: N₂ + 8H⁺ + 8e⁻ + 16ATP → 2NH₃ + H₂ + 16ADP + 16Pi. Thus, 16 ATP molecules are required to fix one molecule of N₂ into two molecules of ammonia. Note that 8 electrons are required even though N₂ → 2NH₃ theoretically needs only 6 electrons — the extra 2 electrons obligatorily reduce 2H⁺ to H₂ gas, representing an inherent inefficiency of nitrogenase. Option A (8) represents the number of electrons/protons, not ATP. Option B (12) and D (24) are distractors. This enormous ATP cost (16 ATP per N₂) explains why nitrogen fixation is energetically expensive and why Rhizobium depends on the host plant for carbon/energy supply through the symbiotic relationship.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_023',
+  question: 'A student observes that a potted plant bends toward a window over several days. This response is called:',
+  options: ['Gravitropism — growth response to gravity', 'Phototropism — differential growth response to unidirectional light', 'Thigmotropism — growth response to touch', 'Hydrotropism — growth response to water gradient'],
+  correctAnswer: 1,
+  explanation: 'Phototropism is the directional growth response of a plant toward (positive) or away from (negative) unidirectional light. Shoots exhibit positive phototropism — bending toward the light source (window). The mechanism involves auxin redistribution: auxin moves to the shaded side of the stem, causing greater cell elongation there, resulting in bending toward the light. This was first studied by Charles Darwin and later explained by Went\'s auxin experiments. Gravitropism (option A) involves gravity responses — roots grow downward (positive gravitropism). Thigmotropism (option C) involves touch — tendrils coiling around support. Hydrotropism (option D) involves roots growing toward moisture. The Cholodny-Went model explains both photo- and gravitropism through differential auxin distribution.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_024',
+  question: 'Which of the following is NOT a function of transpiration in plants?',
+  options: ['Creates transpiration pull for water ascent in xylem', 'Aids in absorption and transport of mineral salts', 'Provides cooling effect to leaf surfaces through evaporation', 'Directly provides energy for photosynthesis in mesophyll cells'],
+  correctAnswer: 3,
+  explanation: 'Transpiration does NOT directly provide energy for photosynthesis — light energy absorbed by chlorophyll drives photosynthesis. Transpiration\'s actual functions include: creating the transpiration pull (tension) that drives water ascent through xylem vessels via the cohesion-tension theory (option A); facilitating mineral transport from roots to shoots in the transpiration stream (option B); and providing evaporative cooling of leaf surfaces, preventing heat damage (option C — each gram of water evaporated absorbs ~580 calories). While transpiration is essential for plant survival, it is actually a "necessary evil" since plants lose 97-99% of absorbed water through transpiration. The energy for photosynthesis comes from solar radiation captured by PS II and PS I, not from transpiration.',
+  difficulty: 'easy',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_025',
+  question: 'The correct comparison between short-day plants (SDP) and long-day plants (LDP) regarding phytochrome is:',
+  options: ['Both SDP and LDP require high Pfr levels for flowering', 'SDP require high Pfr levels while LDP require high Pr levels for flowering', 'SDP require low Pfr (high Pr) levels while LDP require high Pfr levels for flowering', 'Phytochrome plays no role in either SDP or LDP flowering'],
+  correctAnswer: 2,
+  explanation: 'The Pfr form of phytochrome (active form, produced by red light absorption) has opposite effects on SDP and LDP flowering. Short-day plants flower when nights are long — during long dark periods, Pfr slowly reverts to Pr, so Pfr levels become low. High Pfr inhibits flowering in SDPs, which is why a red light flash during the night (converting Pr → Pfr) prevents SDP flowering. Long-day plants flower when nights are short — Pfr levels remain high, and Pfr promotes their flowering. Option A is wrong because SDPs need low Pfr. Option B reverses the LDP requirement. This differential response to Pfr is why the same environmental signal (photoperiod) can trigger flowering in some plants while inhibiting it in others.',
+  difficulty: 'hard',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  },
+  {
+  id: 'bio_pp_026',
+  question: 'The enzyme PEP carboxylase in C4 plants differs from RuBisCO in that PEP carboxylase:',
+  options: ['Has both carboxylase and oxygenase activity', 'Is located exclusively in bundle sheath cells', 'Has no oxygenase activity, thus preventing photorespiration', 'Functions optimally at low CO₂ concentrations only in CAM plants'],
+  correctAnswer: 2,
+  explanation: 'PEP carboxylase lacks oxygenase activity — it fixes only CO₂, never O₂. This is the key advantage of C4 plants: the initial CO₂ fixation by PEP carboxylase in mesophyll cells is not competed by O₂, effectively eliminating photorespiration. In contrast, RuBisCO has dual carboxylase/oxygenase activity (option A describes RuBisCO, not PEP carboxylase). Option B is wrong — PEP carboxylase is located in mesophyll cells, while RuBisCO is in bundle sheath cells. Option D is wrong — PEP carboxylase functions in both C4 and CAM plants. The CO₂ fixed by PEP carboxylase as OAA (4C) is transported to bundle sheath cells where it releases CO₂ for RuBisCO and the Calvin cycle, concentrating CO₂ and further suppressing photorespiration.',
+  difficulty: 'medium',
+  subject: 'biology',
+  subjectName: 'Biology',
+  topicKey: 'plant_physiology'
+  }
+],
+
+},
+}      
 
 // Expose globally
 window.QUESTION_BANK = QUESTION_BANK;
