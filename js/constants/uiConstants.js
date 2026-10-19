@@ -46,12 +46,12 @@ var UIConstants = {
 
   /** View titles for browser history / document.title */
   VIEW_TITLES: {
-    'view-onboard':   'NursePrep Pro — Get Started',
-    'view-dashboard': 'NursePrep Pro — Dashboard',
-    'view-exam':      'NursePrep Pro — Exam',
-    'view-result':    'NursePrep Pro — Results',
-    'view-analytics': 'NursePrep Pro — Analytics',
-    'view-profile':   'NursePrep Pro — Profile'
+    'view-onboard':   'NursePrep Pro — AIIMS & MP PNST 2027 Entrance',
+    'view-dashboard': 'NursePrep Pro — Dashboard | AIIMS & MP PNST 2027',
+    'view-exam':      'NursePrep Pro — Live Exam Console | AIIMS & MP PNST 2027',
+    'view-result':    'NursePrep Pro — Official Scorecard | AIIMS & MP PNST 2027',
+    'view-analytics': 'NursePrep Pro — Performance Analytics | AIIMS & MP PNST 2027',
+    'view-profile':   'NursePrep Pro — Profile & Settings | AIIMS & MP PNST 2027'
   },
 
   /* ═══════════════════════════════════════════════════════════
@@ -115,11 +115,12 @@ var UIConstants = {
 
   /** Filter options for test list */
   FILTER_OPTIONS: [
-    { key: 'all',     label: 'All Tests',  icon: '📚' },
-    { key: 'topic',   label: 'Topic',      icon: '📝' },
-    { key: 'chapter', label: 'Chapter',    icon: '📖' },
-    { key: 'multi',   label: 'Multi',      icon: '🔗' },
-    { key: 'mock',    label: 'Mock',       icon: '🎯' }
+    { key: 'all',     label: 'All Tests',     icon: '📚' },
+    { key: 'multi',   label: 'Multi & 100Q',  icon: '🔗' },
+    { key: 'mock',    label: 'AIIMS Mocks',   icon: '🎯' },
+    { key: 'subject', label: 'Subject Tests', icon: '🧪' },
+    { key: 'topic',   label: 'Topic Tests',   icon: '📝' },
+    { key: 'quick',   label: 'Speed Drills',  icon: '⚡' }
   ],
 
   /* ═══════════════════════════════════════════════════════════
@@ -173,7 +174,7 @@ var UIConstants = {
 
   APP_NAME:     'NursePrep Pro',
   APP_VERSION:  '3.0.0',
-  APP_TAGLINE:  'AIIMS Nursing Exam Preparation Platform',
+  APP_TAGLINE:  'AIIMS Nursing & MP PNST 2027 Exam Preparation Platform',
   APP_LOGO:     '🏥',
 
   /** Formspree endpoint for result submission */

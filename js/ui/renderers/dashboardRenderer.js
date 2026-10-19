@@ -54,23 +54,41 @@ var DashboardRenderer = (function() {
      ───────────────────────────────────────────────────────── */
 
   function _renderGreeting() {
-    var greetEl = _el('dash-greeting');
-    if (!greetEl) return;
+    var greetEl  = _el('dash-greeting');
+    var avatarEl = _el('dash-chip-avatar');
+    var nameEl   = _el('dash-chip-name');
 
-    var greeting = 'Hello 👋';
-    if (window.UIConstants && typeof UIConstants.getGreeting === 'function') {
-      greeting = UIConstants.getGreeting();
+    var firstName = 'Aspirant';
+    var initials  = 'R';
+
+    if (window.AppState) {
+      if (typeof AppState.getFirstName === 'function') {
+        var fn = AppState.getFirstName();
+        if (fn) firstName = fn;
+      }
+      if (typeof AppState.getInitials === 'function') {
+        var ini = AppState.getInitials();
+        if (ini) initials = ini;
+      }
     }
 
-    var firstName = '';
-    if (window.AppState && typeof AppState.getFirstName === 'function') {
-      firstName = AppState.getFirstName();
-    }
+    if (avatarEl) avatarEl.textContent = initials;
+    if (nameEl)   nameEl.textContent = firstName;
 
-    greetEl.innerHTML =
-      '<span class="dash-greeting-text">' + _esc(greeting) + '</span>' +
-      (firstName ? ', <strong>' + _esc(firstName) + '</strong>' : '') +
-      ' 🩺';
+    if (greetEl) {
+      var greeting = 'Welcome';
+      if (window.UIConstants && typeof UIConstants.getGreeting === 'function') {
+        greeting = UIConstants.getGreeting().replace(/[\u{1F300}-\u{1FAFF}]/gu, '').trim();
+      }
+
+      greetEl.innerHTML =
+        '<div class="dash-greeting-badge">' +
+          '<span class="dash-greeting-time">' + _esc(greeting) + ', </span>' +
+          '<strong class="dash-greeting-name">' + _esc(firstName) + '</strong>' +
+          '<span class="dash-greeting-dot" aria-hidden="true"></span>' +
+          '<span class="dash-greeting-target">AIIMS &amp; MP PNST 2027 Target</span>' +
+        '</div>';
+    }
   }
 
   function _renderStats() {
@@ -82,26 +100,82 @@ var DashboardRenderer = (function() {
       stats = AppState.getOverallStats();
     }
 
+    var totalTests = (window.TEST_CONFIG && TEST_CONFIG.length) || 145;
+    var completionPct = totalTests > 0 ? ((stats.testsCompleted / totalTests) * 100).toFixed(0) : 0;
+
+    // Update hero progress banner if present
+    var pctEl  = _el('dash-progress-pct');
+    var fillEl = _el('dash-progress-fill');
+    var subEl  = _el('dash-progress-sub');
+    if (pctEl)  pctEl.textContent = completionPct + '%';
+    if (fillEl) fillEl.style.width = Math.max(completionPct, stats.testsCompleted > 0 ? 3 : 0) + '%';
+    if (subEl)  subEl.textContent = stats.testsCompleted + ' of ' + totalTests + ' Tests Practiced';
+
     var fmt = window.Formatters;
     var accuracyStr = fmt ? fmt.formatPercent(stats.avgAccuracy, 0) : stats.avgAccuracy.toFixed(0) + '%';
     var bestStr     = fmt ? fmt.formatScore(stats.bestScore) : String(stats.bestScore);
 
+    // Accuracy badge label
+    var accBadge = 'Baseline';
+    var accTagClass = 'tag-blue';
+    if (stats.avgAccuracy >= 80) {
+      accBadge = 'AIIMS Ready';
+      accTagClass = 'tag-green';
+    } else if (stats.avgAccuracy >= 50) {
+      accBadge = 'Good Pace';
+      accTagClass = 'tag-teal';
+    } else if (stats.totalAttempts > 0) {
+      accBadge = 'In Training';
+      accTagClass = 'tag-amber';
+    }
+
     container.innerHTML =
-      '<div class="stat-chip">' +
-        '<span class="stat-chip-val">' + stats.totalAttempts + '</span>' +
-        '<span class="stat-chip-label">Attempts</span>' +
+      '<div class="stat-card stat-card-attempts">' +
+        '<div class="sc-header">' +
+          '<div class="sc-icon sc-icon-teal" aria-hidden="true">🎯</div>' +
+          '<span class="sc-tag tag-teal">Activity</span>' +
+        '</div>' +
+        '<div class="sc-content">' +
+          '<div class="sc-val">' + stats.totalAttempts + '</div>' +
+          '<div class="sc-label">Total Attempts</div>' +
+          '<div class="sc-sub">Practice sessions completed</div>' +
+        '</div>' +
       '</div>' +
-      '<div class="stat-chip">' +
-        '<span class="stat-chip-val">' + _esc(accuracyStr) + '</span>' +
-        '<span class="stat-chip-label">Avg Accuracy</span>' +
+
+      '<div class="stat-card stat-card-accuracy">' +
+        '<div class="sc-header">' +
+          '<div class="sc-icon sc-icon-blue" aria-hidden="true">📈</div>' +
+          '<span class="sc-tag ' + accTagClass + '">' + accBadge + '</span>' +
+        '</div>' +
+        '<div class="sc-content">' +
+          '<div class="sc-val">' + _esc(accuracyStr) + '</div>' +
+          '<div class="sc-label">Average Accuracy</div>' +
+          '<div class="sc-sub">Target benchmark: 80%+</div>' +
+        '</div>' +
       '</div>' +
-      '<div class="stat-chip">' +
-        '<span class="stat-chip-val">' + _esc(bestStr) + '</span>' +
-        '<span class="stat-chip-label">Best Score</span>' +
+
+      '<div class="stat-card stat-card-score">' +
+        '<div class="sc-header">' +
+          '<div class="sc-icon sc-icon-amber" aria-hidden="true">🏆</div>' +
+          '<span class="sc-tag tag-amber">Best Run</span>' +
+        '</div>' +
+        '<div class="sc-content">' +
+          '<div class="sc-val">' + _esc(bestStr) + '<span class="sc-val-unit"> pts</span></div>' +
+          '<div class="sc-label">Personal Best Score</div>' +
+          '<div class="sc-sub">With -⅓ negative marking</div>' +
+        '</div>' +
       '</div>' +
-      '<div class="stat-chip">' +
-        '<span class="stat-chip-val">' + stats.testsCompleted + '</span>' +
-        '<span class="stat-chip-label">Tests Done</span>' +
+
+      '<div class="stat-card stat-card-done">' +
+        '<div class="sc-header">' +
+          '<div class="sc-icon sc-icon-purple" aria-hidden="true">📚</div>' +
+          '<span class="sc-tag tag-purple">' + completionPct + '% Done</span>' +
+        '</div>' +
+        '<div class="sc-content">' +
+          '<div class="sc-val">' + stats.testsCompleted + '<span class="sc-val-slash"> / ' + totalTests + '</span></div>' +
+          '<div class="sc-label">Tests Mastered</div>' +
+          '<div class="sc-sub">Across all chapters &amp; mocks</div>' +
+        '</div>' +
       '</div>';
   }
 
@@ -212,6 +286,19 @@ var DashboardRenderer = (function() {
   }
 
   /**
+   * Find a test config entry by id.
+   * @param {string} testId
+   * @returns {Object|null}
+   */
+  function _findTestConfig(testId) {
+    if (!window.TEST_CONFIG || !Array.isArray(TEST_CONFIG)) return null;
+    for (var i = 0; i < TEST_CONFIG.length; i++) {
+      if (TEST_CONFIG[i].id === testId) return TEST_CONFIG[i];
+    }
+    return null;
+  }
+
+  /**
    * Render a single test card HTML.
    * @param {Object} test - TEST_CONFIG entry
    * @returns {string}
@@ -230,47 +317,138 @@ var DashboardRenderer = (function() {
       typeBadge = info.badge;
     }
 
+    var is100Q = (test.id === 'full_mock_100_test_1' || test.totalQuestions === 100);
+    if (is100Q) {
+      typeLabel = '100Q Full Mock';
+      typeIcon  = '🌟';
+      typeBadge = 'badge-amber';
+    }
+
     // Duration
     var durStr = test.timeLimitMinutes + ' min';
     if (window.Formatters && typeof Formatters.toMinutesDuration === 'function') {
       durStr = Formatters.toMinutesDuration(test.timeLimitMinutes);
     }
 
-    // Question count
-    var qCount = test.totalQuestions || '—';
+    // Question count and marks
+    var qCount = test.totalQuestions || 10;
+    var marksTotal = qCount * 1;
+
+    // Subject pill & icon
+    var subLower = (test.subject || '').toLowerCase();
+    var subIcon = '📚';
+    var subClass = 'tc-sub-all';
+    if (subLower.indexOf('bio') !== -1) {
+      subIcon = '🧬';
+      subClass = 'tc-sub-bio';
+    } else if (subLower.indexOf('chem') !== -1) {
+      subIcon = '🧪';
+      subClass = 'tc-sub-chem';
+    } else if (subLower.indexOf('phy') !== -1) {
+      subIcon = '⚡';
+      subClass = 'tc-sub-phy';
+    } else if (subLower.indexOf('gk') !== -1 || subLower.indexOf('general') !== -1) {
+      subIcon = '📰';
+      subClass = 'tc-sub-gk';
+    } else {
+      subIcon = '🏥';
+      subClass = 'tc-sub-all';
+    }
+
+    // Chapter or topic pill
+    var chapterTag = '';
+    if (test.chapter && test.chapter !== test.title) {
+      chapterTag = '<span class="tc-chapter-pill" title="' + _esc(test.chapter) + '">' + _esc(test.chapter) + '</span>';
+    }
 
     // Previous attempt info
     var attemptInfo = _getTestAttemptInfo(test.id);
-    var prevHtml = '';
-    if (attemptInfo) {
-      var bestPct = attemptInfo.best !== null ? attemptInfo.best.toFixed(0) + '%' : '—';
-      prevHtml =
-        '<div class="tc-prev">' +
-          '<span class="tc-prev-badge">Best: ' + _esc(bestPct) + '</span>' +
-          '<span class="tc-prev-count">' + attemptInfo.attempts + ' attempt' + (attemptInfo.attempts > 1 ? 's' : '') + '</span>' +
+    var attemptHtml = '';
+    var btnText = is100Q ? 'Start 100Q Mock Test 🚀' : 'Start Test →';
+
+    if (attemptInfo && attemptInfo.attempts > 0) {
+      btnText = is100Q ? 'Retake 100Q Test ↻' : 'Retake Test ↻';
+      var bestPct = attemptInfo.best !== null ? Math.round(attemptInfo.best) : 0;
+      var scoreClass = 'score-poor';
+      var barFillClass = 'bar-rose';
+      if (bestPct >= 80) {
+        scoreClass = 'score-excellent';
+        barFillClass = 'bar-green';
+      } else if (bestPct >= 60) {
+        scoreClass = 'score-good';
+        barFillClass = 'bar-teal';
+      } else if (bestPct >= 40) {
+        scoreClass = 'score-average';
+        barFillClass = 'bar-amber';
+      }
+
+      attemptHtml =
+        '<div class="tc-attempt-box">' +
+          '<div class="tc-attempt-header">' +
+            '<span class="tc-best-score ' + scoreClass + '">Best: <strong>' + bestPct + '%</strong></span>' +
+            '<span class="tc-attempt-count">' + attemptInfo.attempts + ' attempt' + (attemptInfo.attempts > 1 ? 's' : '') + '</span>' +
+          '</div>' +
+          '<div class="tc-attempt-bar-bg" aria-hidden="true">' +
+            '<div class="tc-attempt-bar-fill ' + barFillClass + '" style="width: ' + Math.max(bestPct, 5) + '%;"></div>' +
+          '</div>' +
+        '</div>';
+    } else {
+      attemptHtml =
+        '<div class="tc-attempt-box tc-unattempted">' +
+          '<span class="tc-unattempted-text">✨ Not attempted yet • Ready to start</span>' +
         '</div>';
     }
 
-    // Negative marking indicator
+    // Negative marking badge
     var negHtml = test.negativeMarking
-      ? '<span class="tc-neg" title="Negative marking: −1/3 per wrong answer">−1/3</span>'
+      ? '<span class="tc-neg-badge" title="AIIMS Marking: +1 correct, -1/3 wrong"><span class="tc-neg-dot"></span>−⅓ Negative</span>'
+      : '<span class="tc-noneg-badge" title="No marks deducted for incorrect answers">No Negative</span>';
+
+    // Featured banner for 100Q test
+    var featuredRibbon = is100Q
+      ? '<div class="tc-featured-banner"><span class="tc-featured-star">⭐</span> HIGH-YIELD FULL MOCK</div>'
       : '';
 
-    return '<div class="test-card" data-test-id="' + _esc(test.id) + '" tabindex="0" role="button" ' +
+    var cardExtraClass = is100Q ? ' tc-featured' : '';
+
+    return '<div class="test-card' + cardExtraClass + '" data-test-id="' + _esc(test.id) + '" tabindex="0" role="button" ' +
            'aria-label="Start ' + _esc(test.title) + '">' +
+      featuredRibbon +
       '<div class="tc-header">' +
-        '<span class="tc-badge ' + _esc(typeBadge) + '">' + typeIcon + ' ' + _esc(typeLabel) + '</span>' +
+        '<span class="tc-badge ' + _esc(typeBadge) + '"><span class="tc-badge-icon">' + typeIcon + '</span> ' + _esc(typeLabel) + '</span>' +
         negHtml +
       '</div>' +
-      '<h3 class="tc-title">' + _esc(test.title) + '</h3>' +
-      '<p class="tc-subject">' + _esc(test.subject) + '</p>' +
-      (test.description ? '<p class="tc-desc">' + _esc(test.description) + '</p>' : '') +
-      '<div class="tc-meta">' +
-        '<span class="tc-meta-item">📝 ' + qCount + ' Qs</span>' +
-        '<span class="tc-meta-item">⏱️ ' + _esc(durStr) + '</span>' +
+
+      '<div class="tc-sub-strip">' +
+        '<span class="tc-subject-pill ' + subClass + '">' + subIcon + ' ' + _esc(test.subject) + '</span>' +
+        chapterTag +
       '</div>' +
-      prevHtml +
-      '<button class="tc-start-btn btn-primary" data-start-test="' + _esc(test.id) + '">Start Test →</button>' +
+
+      '<h3 class="tc-title">' + _esc(test.title) + '</h3>' +
+      (test.description ? '<p class="tc-desc">' + _esc(test.description) + '</p>' : '<p class="tc-desc tc-desc-placeholder">Curated standard AIIMS BSc Nursing practice test pattern.</p>') +
+
+      '<div class="tc-meta">' +
+        '<div class="tc-meta-item" title="Question Count">' +
+          '<span class="tc-meta-icon">📋</span>' +
+          '<span class="tc-meta-val">' + qCount + '</span>' +
+          '<span class="tc-meta-lbl">Qs</span>' +
+        '</div>' +
+        '<div class="tc-meta-item" title="Time Duration">' +
+          '<span class="tc-meta-icon">⏱️</span>' +
+          '<span class="tc-meta-val">' + _esc(durStr) + '</span>' +
+        '</div>' +
+        '<div class="tc-meta-item" title="Maximum Marks (+1 per question)">' +
+          '<span class="tc-meta-icon">🏆</span>' +
+          '<span class="tc-meta-val">' + marksTotal + '</span>' +
+          '<span class="tc-meta-lbl">Marks</span>' +
+        '</div>' +
+      '</div>' +
+
+      attemptHtml +
+
+      '<button class="tc-start-btn btn-primary" data-start-test="' + _esc(test.id) + '" type="button">' +
+        '<span>' + _esc(btnText) + '</span>' +
+      '</button>' +
     '</div>';
   }
 
@@ -319,8 +497,17 @@ var DashboardRenderer = (function() {
 
     if (attempts.length === 0) {
       tbody.innerHTML =
-        '<tr class="history-empty">' +
-          '<td colspan="6">No attempts yet. Take your first test! 🚀</td>' +
+        '<tr class="history-empty-row">' +
+          '<td colspan="6">' +
+            '<div class="history-empty-card">' +
+              '<div class="he-icon">📑</div>' +
+              '<h3 class="he-title">No Test Attempts Yet</h3>' +
+              '<p class="he-sub">Take your first practice or mock test above to see your scores, time metrics, and performance analytics here.</p>' +
+              '<button class="he-cta-btn btn-primary" data-start-test="full_mock_100_test_1" type="button">' +
+                'Start 100-Question Test 🚀' +
+              '</button>' +
+            '</div>' +
+          '</td>' +
         '</tr>';
       return;
     }
@@ -331,14 +518,26 @@ var DashboardRenderer = (function() {
     for (var i = 0; i < attempts.length; i++) {
       var a = attempts[i];
 
+      var testMeta = _findTestConfig(a.testId);
+      var testSubject = (testMeta && testMeta.subject) ? testMeta.subject : 'Practice';
+      var testType = (testMeta && testMeta.type) ? testMeta.type.toUpperCase() : 'TEST';
+
       var dateStr = a.date;
       if (fmt && typeof fmt.toRelativeDate === 'function') {
         dateStr = fmt.toRelativeDate(a.date);
       }
 
       var scoreStr = (a.score !== undefined ? a.score : '—');
-      var accStr   = (a.accuracy !== undefined) ? a.accuracy.toFixed(0) + '%' : '—';
-      var timeStr  = '—';
+      var maxScoreStr = (a.maxScore || '—');
+      var accVal = Math.round(a.accuracy !== undefined ? a.accuracy : (a.scorePercent || 0));
+      var accStr = accVal + '%';
+
+      var accTagClass = 'tag-amber';
+      if (accVal >= 80) accTagClass = 'tag-green';
+      else if (accVal >= 60) accTagClass = 'tag-teal';
+      else if (accVal < 40) accTagClass = 'tag-rose';
+
+      var timeStr = '—';
       if (a.timeTaken && fmt && typeof fmt.toHumanTime === 'function') {
         timeStr = fmt.toHumanTime(a.timeTaken);
       }
@@ -348,13 +547,30 @@ var DashboardRenderer = (function() {
         scoreClass = ExamConstants.getScoreClass(a.scorePercent || 0);
       }
 
-      html += '<tr>' +
-        '<td class="hist-date">' + _esc(dateStr) + '</td>' +
-        '<td class="hist-title">' + _esc(a.testTitle || a.testId) + '</td>' +
-        '<td class="hist-score ' + scoreClass + '">' + _esc(String(scoreStr)) + '/' + (a.maxScore || '—') + '</td>' +
-        '<td class="hist-acc">' + _esc(accStr) + '</td>' +
-        '<td class="hist-time">' + _esc(timeStr) + '</td>' +
-        '<td class="hist-method">' + _esc(a.submitMethod === 'auto' ? '⏰' : '✅') + '</td>' +
+      var statusPill = a.submitMethod === 'auto'
+        ? '<span class="hist-status-pill pill-auto" title="Submitted automatically when timer expired">⏰ Time Expired</span>'
+        : '<span class="hist-status-pill pill-manual" title="Submitted manually by candidate">✅ Completed</span>';
+
+      html += '<tr class="history-data-row">' +
+        '<td class="hist-col-test">' +
+          '<div class="hist-test-info">' +
+            '<span class="hist-test-title">' + _esc(a.testTitle || a.testId) + '</span>' +
+            '<span class="hist-test-sub"><span class="hist-sub-tag">' + _esc(testSubject) + '</span> • ' + _esc(testType) + '</span>' +
+          '</div>' +
+        '</td>' +
+        '<td class="hist-col-date">' +
+          '<span class="hist-date-main">' + _esc(dateStr) + '</span>' +
+        '</td>' +
+        '<td class="hist-col-score">' +
+          '<span class="hist-score-badge ' + scoreClass + '">' + _esc(String(scoreStr)) + ' <span class="hist-score-max">/ ' + _esc(String(maxScoreStr)) + '</span></span>' +
+        '</td>' +
+        '<td class="hist-col-acc">' +
+          '<span class="hist-acc-pill ' + accTagClass + '">' + _esc(accStr) + '</span>' +
+        '</td>' +
+        '<td class="hist-col-time">' +
+          '<span class="hist-time-tag">⏱️ ' + _esc(timeStr) + '</span>' +
+        '</td>' +
+        '<td class="hist-col-status">' + statusPill + '</td>' +
       '</tr>';
     }
 
@@ -516,11 +732,58 @@ var DashboardRenderer = (function() {
         });
       }
 
+      var historyAnalyticsBtn = _el('dash-history-analytics-btn');
+      if (historyAnalyticsBtn) {
+        historyAnalyticsBtn.addEventListener('click', function() {
+          if (window.Nav) Nav.goTo('view-analytics');
+          if (window.AnalyticsRenderer) AnalyticsRenderer.render();
+        });
+      }
+
+      // History table clicks (e.g. empty-state CTA button)
+      var histTable = _el('dash-history-table');
+      if (histTable) {
+        histTable.addEventListener('click', function(e) {
+          var startBtn = e.target.closest('[data-start-test]');
+          if (startBtn) {
+            var tid = startBtn.getAttribute('data-start-test');
+            if (tid && window.ExamEngine) {
+              ExamEngine.startExam(tid);
+            }
+          }
+        });
+      }
+
       var profileBtn = _el('dash-profile-btn');
       if (profileBtn) {
         profileBtn.addEventListener('click', function() {
           if (window.Nav) Nav.goTo('view-profile');
           if (window.ProfileRenderer) ProfileRenderer.render();
+        });
+      }
+
+      // Theme toggle button
+      var themeBtn = _el('dash-theme-btn');
+      if (themeBtn) {
+        var themeIcon = themeBtn.querySelector('.theme-icon-display');
+        var currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        if (themeIcon) {
+          themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        themeBtn.addEventListener('click', function() {
+          var cur = document.documentElement.getAttribute('data-theme') || 'light';
+          var next = cur === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          if (themeIcon) {
+            themeIcon.textContent = next === 'dark' ? '☀️' : '🌙';
+          }
+          if (window.StorageService && typeof StorageService.saveTheme === 'function') {
+            StorageService.saveTheme(next);
+          }
+          if (window.ToastManager && typeof ToastManager.show === 'function') {
+            ToastManager.show(next === 'dark' ? '🌙 Dark theme enabled' : '☀️ Light theme enabled', 'info');
+          }
         });
       }
     }

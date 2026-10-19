@@ -205,6 +205,12 @@ var PaletteManager = (function() {
         modalBtns[j].className = 'pal-btn' + (mClass ? ' ' + mClass : '');
       }
 
+      // ── Ensure active button is scrolled into view in sidebar grid ──
+      var currentBtn = document.querySelector('.exam-sidebar .pal-btn.current');
+      if (currentBtn && typeof currentBtn.scrollIntoView === 'function') {
+        currentBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+
       // ── Update summary stats ──
       this.updateSummary();
     },

@@ -1,642 +1,1316 @@
 /* ============================================================
-   PROFILE VIEW STYLES
-   NursePrep Pro v3.0
+   PROFILE VIEW STYLES — profile.css
+   NursePrep Pro v3.0 — AIIMS Nursing & MP PNST 2027 Entrance Portal
 
-   Matched to: index.html (static structure)
-             + profileRenderer.js (dynamic rendering)
-   Uses:       tokens.css design variables
-   Approach:   Mobile-first, fully responsive
+   Premier Desktop-First Executive Candidate Dossier & Settings
+   - Standard 1360px desktop width matching Dashboard, Result & Analytics
+   - Dedicated Premier Sticky Top Navbar (.profile-header-bar)
+   - 2-Column Desktop Command Center (440px : 1fr)
+   - Verified Candidate Identity Card & Inline Profile Editor
+   - AIIMS & MP PNST 2027 Goal & Merit Benchmark Tracker
+   - Storage Diagnostics & Local Cache Integrity Meter
+   - CBT Exam Preferences (Sound, Animations, Dark Theme)
+   - Data Management Suite (JSON Export/Import, Reset)
+   - Cloud Submission Queue & Regulatory Specifications
+   - Executive Bottom Action Dock
    ============================================================ */
-
 
 /* ============================================================
-   VIEW CONTAINER — #view-profile
-   The outermost wrapper for the entire profile screen.
+   1. VIEW CONTAINER
    ============================================================ */
-   #view-profile {
-    background: var(--c-bg);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
+#view-profile {
+  background: var(--c-bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ============================================================
+   2. PREMIER CBT TOP NAVBAR (.profile-header-bar)
+   ============================================================ */
+.profile-header-bar {
+  background: var(--c-surface);
+  border-bottom: 1.5px solid var(--c-border);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky, 100);
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+
+.profile-header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Header Left: AIIMS Brand Badge & Titles */
+.profile-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.profile-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 13px;
+  background: rgba(0, 184, 154, 0.1);
+  border: 1.5px solid rgba(0, 184, 154, 0.3);
+  border-radius: var(--r-pill);
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--c-teal-dark, #008771);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+[data-theme="dark"] .profile-brand-badge {
+  background: rgba(0, 184, 154, 0.15);
+  border-color: rgba(0, 184, 154, 0.35);
+  color: var(--c-teal, #00d2ad);
+}
+
+.profile-header-sep {
+  width: 1.5px;
+  height: 24px;
+  background: var(--c-border);
+  flex-shrink: 0;
+}
+
+.profile-header-title-box {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.profile-header-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--c-text);
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+}
+
+.profile-header-subtitle {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--c-text-3);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+/* Header Right: Candidate Chip & Nav Actions */
+.profile-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.profile-candidate-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 4px 12px 4px 5px;
+  background: var(--c-raised);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-pill);
+}
+
+.profile-candidate-chip .chip-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-teal), var(--c-blue));
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.profile-candidate-chip .chip-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-candidate-chip .chip-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--c-text);
+  line-height: 1.1;
+}
+
+.profile-candidate-chip .chip-role {
+  font-size: 0.65rem;
+  color: var(--c-text-3);
+  line-height: 1.1;
+}
+
+.profile-header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 15px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text-2);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.profile-header-btn:hover {
+  background: var(--c-raised);
+  border-color: var(--c-border-hi);
+  color: var(--c-text);
+}
+
+.profile-header-btn.primary {
+  background: var(--c-teal);
+  border-color: var(--c-teal);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 184, 154, 0.25);
+}
+
+.profile-header-btn.primary:hover {
+  background: var(--c-teal-dim, #009e85);
+  border-color: var(--c-teal-dim, #009e85);
+  box-shadow: 0 4px 10px rgba(0, 184, 154, 0.35);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   3. MAIN CONTENT CONTAINER (.profile-container)
+   ============================================================ */
+.profile-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 24px 28px 60px 28px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile-container::-webkit-scrollbar {
+  width: 8px;
+}
+.profile-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.profile-container::-webkit-scrollbar-thumb {
+  background: var(--c-border-hi);
+  border-radius: 4px;
+}
+.profile-container::-webkit-scrollbar-thumb:hover {
+  background: var(--c-text-3);
+}
+
+/* ============================================================
+   4. 2-COLUMN DESKTOP COMMAND CENTER (.profile-deck-layout)
+   ============================================================ */
+.profile-deck-layout {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+}
+
+.profile-deck-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.profile-deck-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* Generic Section Card Block */
+.profile-card-block {
+  background: var(--c-surface);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--r-xl, 16px);
+  padding: 22px 24px;
+  box-shadow: var(--sh-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.2s ease;
+}
+
+[data-theme="dark"] .profile-card-block {
+  background: var(--c-card);
+  border-color: var(--c-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.profile-card-block:hover {
+  border-color: var(--c-border-hi);
+}
+
+/* Card Block Header */
+.block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--c-border);
+  padding-bottom: 12px;
+}
+
+.block-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.block-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.block-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--c-text);
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.block-sub {
+  font-size: 0.74rem;
+  color: var(--c-text-3);
+  line-height: 1.2;
+  margin: 3px 0 0 0;
+}
+
+/* ============================================================
+   5. CANDIDATE IDENTITY CARD (.profile-card)
+   ============================================================ */
+.profile-card {
+  width: 100%;
+}
+
+.p-card-inner {
+  background: var(--c-surface);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--r-xl, 16px);
+  padding: 24px;
+  box-shadow: var(--sh-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .p-card-inner {
+  background: var(--c-card);
+  border-color: var(--c-border);
+}
+
+.p-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.p-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.p-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  background: rgba(0, 184, 154, 0.12);
+  border: 1px solid rgba(0, 184, 154, 0.35);
+  border-radius: var(--r-pill);
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--c-teal-dark, #008771);
+  letter-spacing: 0.04em;
+}
+
+[data-theme="dark"] .p-verified-badge {
+  color: var(--c-teal, #00d2ad);
+}
+
+.p-batch-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  background: var(--c-raised);
+  border: 1px solid var(--c-border);
+  color: var(--c-text-3);
+}
+
+.p-edit-toggle-btn {
+  background: var(--c-raised);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: 5px 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--c-text-2);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.p-edit-toggle-btn:hover {
+  background: var(--c-surface);
+  border-color: var(--c-border-hi);
+  color: var(--c-text);
+}
+
+/* Dossier Body */
+.p-dossier-body {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.p-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.p-avatar {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-teal), #2563eb);
+  color: #fff;
+  font-size: 2.1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 184, 154, 0.3);
+  border: 3px solid var(--c-surface);
+}
+
+[data-theme="dark"] .p-avatar {
+  border-color: var(--c-card);
+}
+
+.p-avatar-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--c-surface);
+}
+
+.p-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.p-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--c-text);
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.01em;
+  word-break: break-word;
+}
+
+.p-email {
+  font-size: 0.82rem;
+  color: var(--c-text-2);
+  margin: 0;
+  line-height: 1.2;
+  word-break: break-all;
+}
+
+.p-meta-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.meta-chip {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--c-text-3);
+  line-height: 1.2;
+}
+
+/* Inline Edit Form */
+.p-edit-form {
+  background: var(--c-raised);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg, 12px);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.p-edit-form-header h4 {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--c-text);
+  margin: 0 0 2px 0;
+}
+
+.p-edit-form-header p {
+  font-size: 0.72rem;
+  color: var(--c-text-3);
+  margin: 0;
+}
+
+.p-input-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.p-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.p-input-group label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--c-text-2);
+}
+
+.p-input {
+  padding: 8px 12px;
+  border-radius: var(--r-md);
+  border: 1.5px solid var(--c-border);
+  background: var(--c-surface);
+  color: var(--c-text);
+  font-size: 0.86rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.18s ease;
+}
+
+.p-input:focus {
+  border-color: var(--c-teal);
+  box-shadow: 0 0 0 3px rgba(0, 184, 154, 0.15);
+}
+
+.p-edit-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn-cancel {
+  background: transparent;
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--c-text-3);
+  cursor: pointer;
+}
+
+.btn-save {
+  background: var(--c-teal);
+  border: 1px solid var(--c-teal);
+  border-radius: var(--r-md);
+  padding: 6px 16px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 184, 154, 0.3);
+}
+
+.btn-save:hover {
+  background: var(--c-teal-dim, #009e85);
+}
+
+/* ============================================================
+   6. AIIMS GOALS CARD (.profile-goals-card)
+   ============================================================ */
+.goal-target-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: var(--r-pill);
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="dark"] .goal-target-pill {
+  color: #60a5fa;
+}
+
+.goals-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.goal-metric-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.goal-item {
+  background: var(--c-raised);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md, 8px);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.goal-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--c-text-3);
+}
+
+.goal-val {
+  font-family: var(--f-mono, monospace);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.val-target  { color: #2563eb; }
+.val-current { color: var(--c-teal-dark, #008771); }
+.val-acc     { color: #059669; }
+.val-merit   { color: #d97706; }
+
+[data-theme="dark"] .val-target  { color: #60a5fa; }
+[data-theme="dark"] .val-current { color: var(--c-teal, #00d2ad); }
+[data-theme="dark"] .val-acc     { color: #34d399; }
+[data-theme="dark"] .val-merit   { color: #fbbf24; }
+
+.goal-progress-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.goal-progress-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  color: var(--c-text-2);
+}
+
+.goal-progress-track {
+  width: 100%;
+  height: 8px;
+  background: var(--c-border);
+  border-radius: var(--r-pill);
+  overflow: hidden;
+}
+
+.goal-progress-fill {
+  height: 100%;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--c-teal), #2563eb);
+  transition: width 0.35s ease;
+}
+
+.goal-advisory-badge {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--c-text-2);
+}
+
+.advisory-icon {
+  font-size: 1rem;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+
+.advisory-text strong {
+  color: var(--c-text);
+}
+
+/* ============================================================
+   7. STORAGE & DIAGNOSTICS CARD (.profile-storage)
+   ============================================================ */
+.storage-status-pill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+}
+
+[data-theme="dark"] .storage-status-pill {
+  color: #34d399;
+}
+
+.storage-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.storage-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.storage-stat-item {
+  background: var(--c-raised);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--f-mono, monospace);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--c-text);
+}
+
+.stat-lbl {
+  font-size: 0.66rem;
+  color: var(--c-text-3);
+  font-weight: 600;
+}
+
+.storage-meter-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.storage-meter-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--c-text-3);
+}
+
+.storage-bar-bg {
+  width: 100%;
+  height: 7px;
+  background: var(--c-border);
+  border-radius: var(--r-pill);
+  overflow: hidden;
+}
+
+.storage-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, var(--c-teal));
+  border-radius: var(--r-pill);
+  transition: width 0.3s ease;
+}
+
+/* ============================================================
+   8. CBT SETTINGS & PREFERENCES (.profile-settings)
+   ============================================================ */
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.setting-item {
+  background: var(--c-raised);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg, 12px);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.setting-item:hover {
+  border-color: var(--c-border-hi);
+  transform: translateY(-1px);
+}
+
+.setting-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.setting-label-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.setting-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.setting-name {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--c-text);
+  letter-spacing: -0.01em;
+}
+
+.setting-desc {
+  font-size: 0.76rem;
+  color: var(--c-text-3);
+  line-height: 1.35;
+}
+
+/* Modern iOS/Desktop Toggle Switch */
+.switch-toggle {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.switch-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--c-border-hi);
+  transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:checked + .slider {
+  background-color: var(--c-teal);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--c-teal);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 26px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* ============================================================
+   9. DATA MANAGEMENT & BACKUP (.profile-data)
+   ============================================================ */
+.data-management-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.data-btn {
+  background: var(--c-raised);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--r-lg, 12px);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.data-btn:hover {
+  background: var(--c-surface);
+  border-color: var(--c-border-hi);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.data-btn .btn-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.btn-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.btn-text-box strong {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--c-text);
+}
+
+.btn-text-box span {
+  font-size: 0.72rem;
+  color: var(--c-text-3);
+  line-height: 1.25;
+}
+
+.data-danger-zone {
+  margin-top: 4px;
+  padding: 14px 16px;
+  border-radius: var(--r-lg, 12px);
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.danger-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.danger-info strong {
+  font-size: 0.82rem;
+  color: #dc2626;
+  font-weight: 800;
+}
+
+[data-theme="dark"] .danger-info strong {
+  color: #f87171;
+}
+
+.danger-info span {
+  font-size: 0.72rem;
+  color: var(--c-text-3);
+}
+
+.btn-danger-outline {
+  padding: 8px 16px;
+  border-radius: var(--r-md);
+  background: transparent;
+  border: 1.5px solid rgba(239, 68, 68, 0.5);
+  color: #dc2626;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .btn-danger-outline {
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.5);
+}
+
+.btn-danger-outline:hover {
+  background: #dc2626;
+  color: #fff;
+  border-color: #dc2626;
+}
+
+/* ============================================================
+   10. CLOUD SUBMISSION QUEUE (.profile-queue)
+   ============================================================ */
+.queue-status-box {
+  border-radius: var(--r-lg, 12px);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.queue-status-box.queue-synced {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.queue-status-box.queue-pending {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.queue-status-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.queue-status-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.queue-status-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--c-text);
+  margin: 0;
+}
+
+.queue-status-desc {
+  font-size: 0.74rem;
+  color: var(--c-text-3);
+  margin: 2px 0 0 0;
+}
+
+.queue-ok-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+}
+
+[data-theme="dark"] .queue-ok-badge {
+  color: #34d399;
+}
+
+.btn-flush {
+  background: var(--c-teal);
+  border: none;
+  border-radius: var(--r-md);
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ============================================================
+   11. ABOUT & PORTAL SPECIFICATIONS (.profile-about)
+   ============================================================ */
+.about-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.spec-card {
+  background: var(--c-raised);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md, 8px);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.spec-label {
+  font-size: 0.66rem;
+  color: var(--c-text-3);
+  font-weight: 600;
+}
+
+.spec-val {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--c-text);
+  line-height: 1.25;
+}
+
+.about-footer-note {
+  font-size: 0.72rem;
+  color: var(--c-text-3);
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* ============================================================
+   12. BOTTOM ACTION DOCK (.profile-actions)
+   ============================================================ */
+.profile-actions {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.profile-actions-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px 24px;
+  background: var(--c-surface);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--r-xl, 16px);
+  box-shadow: var(--sh-sm);
+  flex-wrap: wrap;
+}
+
+[data-theme="dark"] .profile-actions-inner {
+  background: var(--c-card);
+  border-color: var(--c-border);
+}
+
+.profile-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--r-md);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.profile-action-btn.primary {
+  background: var(--c-teal);
+  border: 1.5px solid var(--c-teal);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 184, 154, 0.25);
+}
+
+.profile-action-btn.primary:hover {
+  background: var(--c-teal-dim, #009e85);
+  border-color: var(--c-teal-dim, #009e85);
+  box-shadow: 0 5px 14px rgba(0, 184, 154, 0.35);
+  transform: translateY(-2px);
+}
+
+.profile-action-btn.secondary {
+  background: var(--c-raised);
+  border: 1.5px solid var(--c-border);
+  color: var(--c-text);
+}
+
+.profile-action-btn.secondary:hover {
+  background: var(--c-surface);
+  border-color: var(--c-border-hi);
+  transform: translateY(-2px);
+}
+
+.profile-action-btn.tertiary {
+  background: transparent;
+  border: 1.5px solid var(--c-border);
+  color: var(--c-text-2);
+}
+
+.profile-action-btn.tertiary:hover {
+  background: var(--c-raised);
+  color: var(--c-text);
+  border-color: var(--c-border-hi);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   13. RESPONSIVE DESIGN (Tablets & Mobile)
+   ============================================================ */
+@media (max-width: 1024px) {
+  .profile-deck-layout {
+    grid-template-columns: 1fr;
   }
-  
-  
-  /* ============================================================
-     PROFILE HEADER — .profile-header, .profile-title
-     Sticky top bar with the "Profile" heading.
-     ============================================================ */
-  .profile-header {
-    background: var(--c-surface);
-    border-bottom: 1px solid var(--c-border);
-    padding: 0 var(--s-5);
-    height: var(--dim-header-h);
-    display: flex;
-    align-items: center;
-    gap: var(--s-4);
-    flex-shrink: 0;
-    position: sticky;
-    top: 0;
-    z-index: var(--z-sticky);
+
+  .about-specs-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .profile-title {
-    flex: 1;
-    font-size: var(--f-lg);
-    font-weight: var(--fw-bold);
-    color: var(--c-text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 0;
+}
+
+@media (max-width: 768px) {
+  .profile-header-inner {
+    padding: 0 16px;
+    height: 60px;
   }
-  
-  
-  /* ============================================================
-     PROFILE CONTAINER — .profile-container
-     Scrollable body beneath the sticky header.
-     ============================================================ */
+
+  .profile-header-subtitle {
+    display: none;
+  }
+
+  .profile-candidate-chip .chip-role {
+    display: none;
+  }
+
   .profile-container {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    padding: 16px 16px 40px 16px;
+    gap: 16px;
   }
-  
-  
-  /* ============================================================
-     SHARED SECTION PADDING
-     All content sections inside .profile-container get
-     consistent horizontal padding. Vertical spacing is
-     controlled per-section for precise layout.
-     ============================================================ */
-  .profile-card,
-  .profile-settings,
-  .profile-storage,
-  .profile-data,
-  .profile-queue,
-  .profile-about,
-  .profile-actions {
-    padding-left: var(--s-5);
-    padding-right: var(--s-5);
-  }
-  
-  .profile-card {
-    padding-top: var(--s-7);
-    padding-bottom: 0;
-  }
-  
-  .profile-settings,
-  .profile-storage,
-  .profile-data,
-  .profile-queue,
-  .profile-about {
-    padding-top: var(--s-2);
-    padding-bottom: 0;
-  }
-  
-  .profile-actions {
-    padding-top: var(--s-7);
-    /* Extra bottom padding to clear bottom nav / safe area */
-    padding-bottom: calc(var(--s-16) + env(safe-area-inset-bottom, 0px));
-  }
-  
-  
-  /* ============================================================
-     PROFILE CARD — .profile-card > .p-card-inner
-     Contains: .p-avatar, .p-info > .p-name, .p-email, .p-joined
-     Rendered by: _renderProfileCard() in profileRenderer.js
-     ============================================================ */
+
   .p-card-inner {
-    background: var(--c-card);
-    border: 1px solid var(--c-border-hi);
-    border-radius: var(--r-xl);
-    padding: var(--s-7) var(--s-6);
-    display: flex;
-    align-items: center;
-    gap: var(--s-6);
-    box-shadow: var(--shadow-sm);
+    padding: 18px;
   }
-  
+
+  .data-management-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-actions-inner {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .profile-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-header-bar {
+    height: 56px;
+  }
+
+  .profile-brand-badge {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+  }
+
+  .profile-header-title {
+    font-size: 0.9rem;
+  }
+
+  .profile-candidate-chip {
+    padding: 3px 8px 3px 4px;
+  }
+
+  .profile-header-btn span:not(.btn-icon) {
+    display: none;
+  }
+
+  .p-dossier-body {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .p-avatar {
     width: 68px;
     height: 68px;
-    border-radius: var(--r-circle);
-    background: linear-gradient(135deg, var(--c-blue), var(--c-purple));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.7rem;
-    font-weight: var(--fw-bold);
-    color: var(--c-text-inverse, #ffffff);
-    flex-shrink: 0;
-    border: 3px solid var(--c-border-hi);
-    box-shadow: var(--shadow-md);
+    font-size: 1.8rem;
   }
-  
-  .p-info {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+
+  .about-specs-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .p-name {
-    font-size: var(--f-xl);
-    font-weight: var(--fw-extrabold);
-    color: var(--c-text);
-    margin: 0;
-    line-height: var(--lh-tight);
-    word-break: break-word;
+}
+
+/* ============================================================
+   14. PRINT MEDIA STYLES
+   ============================================================ */
+@media print {
+  #view-profile {
+    height: auto;
+    overflow: visible;
+    background: #fff;
   }
-  
-  .p-email {
-    font-size: var(--f-sm);
-    color: var(--c-text-2);
-    margin: 0;
-    line-height: var(--lh-normal);
-    word-break: break-all;
+
+  .profile-header-bar {
+    position: static;
+    border-bottom: 2px solid #000;
   }
-  
-  .p-joined {
-    font-size: var(--f-xs);
-    color: var(--c-text-3);
-    margin: 0;
-    line-height: var(--lh-normal);
-  }
-  
-  
-  /* ============================================================
-     SECTION TITLE — .p-section-title
-     Shared uppercase label used by settings, storage, data,
-     queue, and about sections.
-     Rendered by: each _render*() method in profileRenderer.js
-     ============================================================ */
-  .p-section-title {
-    font-size: var(--f-xs);
-    font-weight: var(--fw-bold);
-    color: var(--c-text-3);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin: var(--s-7) 0 var(--s-4) 0;
-    padding: 0;
-    line-height: var(--lh-snug);
-  }
-  
-  
-  /* ============================================================
-     SETTINGS — .profile-settings
-     Contains: .p-section-title + multiple .setting-row
-     Each .setting-row has .setting-label (.setting-desc) +
-     .setting-toggle (checkbox)
-     Rendered by: _renderSettings() in profileRenderer.js
-     ============================================================ */
-  .setting-row {
-    background: var(--c-surface);
-    border: 1px solid var(--c-border);
-    border-radius: var(--r-lg);
-    padding: var(--s-4) var(--s-5);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--s-4);
-    margin-bottom: var(--s-3);
-    min-height: var(--dim-tap-min);
-    transition: background var(--dur-fast) var(--ease-default);
-  }
-  
-  .setting-row:last-child {
-    margin-bottom: 0;
-  }
-  
-  .setting-row:active {
-    background: var(--c-raised);
-  }
-  
-  .setting-label {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    min-width: 0;
-    cursor: pointer;
-    gap: 2px;
-  }
-  
-  /* The primary text inside .setting-label (first span child) */
-  .setting-label > span:first-child {
-    font-size: var(--f-body);
-    font-weight: var(--fw-medium);
-    color: var(--c-text);
-    line-height: var(--lh-snug);
-  }
-  
-  .setting-desc {
-    font-size: var(--f-xs);
-    color: var(--c-text-3);
-    line-height: var(--lh-snug);
-    font-weight: var(--fw-regular);
-  }
-  
-  /* ── Custom Toggle Switch — .setting-toggle ── */
-  .setting-toggle {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 48px;
-    height: 28px;
-    border-radius: var(--r-pill);
-    background: var(--c-raised);
-    border: 2px solid var(--c-border);
-    position: relative;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: background var(--dur-base) var(--ease-default),
-                border-color var(--dur-base) var(--ease-default);
-    outline: none;
-  }
-  
-  .setting-toggle::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 20px;
-    height: 20px;
-    border-radius: var(--r-circle);
-    background: white;
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--dur-base) var(--ease-bounce);
-  }
-  
-  .setting-toggle:checked {
-    background: var(--c-teal);
-    border-color: var(--c-teal-dim);
-  }
-  
-  .setting-toggle:checked::after {
-    transform: translateX(20px);
-  }
-  
-  .setting-toggle:focus-visible {
-    box-shadow: var(--shadow-glow);
-  }
-  
-  
-  /* ============================================================
-     STORAGE USAGE — .profile-storage
-     Contains: .p-section-title + .storage-bar-bg
-               (.storage-bar-fill) + .storage-info
-     Rendered by: _renderStorage() in profileRenderer.js
-     ============================================================ */
-  .storage-bar-bg {
-    height: 8px;
-    background: var(--c-raised);
-    border-radius: var(--r-pill);
-    overflow: hidden;
-    margin: var(--s-3) 0;
-    border: 1px solid var(--c-border);
-  }
-  
-  .storage-bar-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--c-teal), var(--c-blue));
-    border-radius: var(--r-pill);
-    transition: width var(--dur-slow) var(--ease-default);
-    min-width: 4px;
-  }
-  
-  .storage-info {
-    font-size: var(--f-sm);
-    color: var(--c-text-3);
-    margin: 0;
-    line-height: var(--lh-normal);
-  }
-  
-  
-  /* ============================================================
-     DATA MANAGEMENT — .profile-data
-     Contains: .p-section-title + .data-actions (buttons)
-               + hidden file input
-     Rendered by: _renderDataManagement() in profileRenderer.js
-     ============================================================ */
-  .data-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--s-3);
-  }
-  
-  .data-actions .btn-secondary,
-  .data-actions .btn-danger-outline {
-    width: 100%;
-    text-align: center;
-    padding: var(--s-3) var(--s-4);
-    font-size: var(--f-sm);
-    font-weight: var(--fw-semibold);
-    font-family: var(--f-sans);
-    border-radius: var(--r-md);
-    min-height: var(--dim-tap-min);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--s-2);
-    cursor: pointer;
-    transition: background var(--dur-fast) var(--ease-default),
-                border-color var(--dur-fast) var(--ease-default),
-                color var(--dur-fast) var(--ease-default);
-  }
-  
-  /* "Clear All Data" button spans the full grid width */
-  .data-actions .btn-danger-outline {
-    grid-column: 1 / -1;
-  }
-  
-  .btn-danger-outline {
-    background: transparent;
-    border: 1.5px solid var(--c-rose);
-    color: var(--c-rose);
-    border-radius: var(--r-md);
-    padding: var(--s-3) var(--s-5);
-    font-size: var(--f-sm);
-    font-weight: var(--fw-semibold);
-    font-family: var(--f-sans);
-    cursor: pointer;
-    transition: background var(--dur-fast) var(--ease-default),
-                color var(--dur-fast) var(--ease-default);
-  }
-  
-  .btn-danger-outline:hover {
-    background: var(--c-rose-ghost);
-  }
-  
-  .btn-danger-outline:active {
-    background: var(--c-rose-ghost);
-    color: var(--c-rose-dim);
-    transform: scale(0.98);
-  }
-  
-  .btn-danger-outline:focus-visible {
-    box-shadow: var(--shadow-rose);
-    outline: none;
-  }
-  
-  
-  /* ============================================================
-     SUBMISSION QUEUE — .profile-queue
-     Contains: .p-section-title + .queue-status + optional
-               sync button (.btn-secondary)
-     Rendered by: _renderQueue() in profileRenderer.js
-     ============================================================ */
-  .queue-status {
-    font-size: var(--f-sm);
-    color: var(--c-text-2);
-    margin: 0 0 var(--s-4) 0;
-    line-height: var(--lh-relaxed);
-    background: var(--c-card);
-    padding: var(--s-4) var(--s-5);
-    border-radius: var(--r-lg);
-    border: 1px solid var(--c-border);
-  }
-  
-  .queue-status strong {
-    color: var(--c-amber);
-    font-weight: var(--fw-bold);
-  }
-  
-  #profile-queue .btn-secondary {
-    width: 100%;
-    min-height: var(--dim-tap-min);
-  }
-  
-  
-  /* ============================================================
-     ABOUT SECTION — .profile-about
-     Contains: .p-section-title + .about-card
-               (.about-name, .about-tagline, .about-copy)
-     Rendered by: _renderAbout() in profileRenderer.js
-     ============================================================ */
-  .about-card {
-    background: var(--c-card);
-    border: 1px solid var(--c-border);
-    border-radius: var(--r-xl);
-    padding: var(--s-6) var(--s-5);
-    text-align: center;
-  }
-  
-  .about-name {
-    font-size: var(--f-body);
-    font-weight: var(--fw-bold);
-    color: var(--c-text);
-    margin: 0 0 var(--s-2) 0;
-  }
-  
-  .about-tagline {
-    font-size: var(--f-sm);
-    color: var(--c-teal);
-    font-weight: var(--fw-medium);
-    margin: 0 0 var(--s-4) 0;
-  }
-  
-  .about-copy {
-    font-size: var(--f-xs);
-    color: var(--c-text-3);
-    margin: 0 0 var(--s-1) 0;
-    line-height: var(--lh-relaxed);
-  }
-  
-  .about-copy:last-child {
-    margin-bottom: 0;
-  }
-  
-  
-  /* ============================================================
-     PROFILE ACTIONS — .profile-actions
-     Contains navigation buttons (e.g., "Dashboard", "Analytics")
-     Rendered by: _renderActions() in profileRenderer.js
-     ============================================================ */
-  .profile-actions {
-    display: flex;
-    gap: var(--s-3);
-  }
-  
-  .profile-actions .btn-primary,
-  .profile-actions .btn-secondary {
-    flex: 1;
-    text-align: center;
-    padding: var(--s-4);
-    min-height: var(--dim-tap-min);
-    font-size: var(--f-body);
-    font-weight: var(--fw-semibold);
-    border-radius: var(--r-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--s-2);
-    cursor: pointer;
-  }
-  
-  
-  /* ============================================================
-     UTILITY — hidden file input for data import
-     ============================================================ */
-  .hidden {
+
+  .profile-header-right,
+  .profile-actions,
+  .p-edit-toggle-btn {
     display: none !important;
   }
-  
-  
-  /* ============================================================
-     RESPONSIVE — SMALL PHONES (≤360px)
-     Stack the card vertically, shrink avatar, go single-column
-     on data actions and profile actions.
-     ============================================================ */
-  @media (max-width: 360px) {
-    .profile-card,
-    .profile-settings,
-    .profile-storage,
-    .profile-data,
-    .profile-queue,
-    .profile-about,
-    .profile-actions {
-      padding-left: var(--s-4);
-      padding-right: var(--s-4);
-    }
-  
-    .p-card-inner {
-      flex-direction: column;
-      text-align: center;
-      padding: var(--s-6) var(--s-4);
-    }
-  
-    .p-info {
-      align-items: center;
-      text-align: center;
-    }
-  
-    .p-avatar {
-      width: 60px;
-      height: 60px;
-      font-size: 1.5rem;
-    }
-  
-    .p-name {
-      font-size: var(--f-lg);
-    }
-  
-    .profile-title {
-      font-size: var(--f-md);
-    }
-  
-    .data-actions {
-      grid-template-columns: 1fr;
-    }
-  
-    .profile-actions {
-      flex-direction: column;
-    }
-  
-    .profile-actions .btn-primary,
-    .profile-actions .btn-secondary {
-      flex: none;
-      width: 100%;
-    }
+
+  .profile-container {
+    overflow: visible;
+    padding: 0;
   }
-  
-  
-  /* ============================================================
-     RESPONSIVE — TABLETS (≥600px)
-     Increase padding, enlarge avatar, allow side-by-side
-     data action buttons.
-     ============================================================ */
-  @media (min-width: 600px) {
-    .profile-card,
-    .profile-settings,
-    .profile-storage,
-    .profile-data,
-    .profile-queue,
-    .profile-about,
-    .profile-actions {
-      padding-left: var(--s-7);
-      padding-right: var(--s-7);
-    }
-  
-    .p-card-inner {
-      padding: var(--s-8) var(--s-7);
-      gap: var(--s-7);
-    }
-  
-    .p-avatar {
-      width: 80px;
-      height: 80px;
-      font-size: 2rem;
-    }
-  
-    .p-name {
-      font-size: var(--f-2xl);
-    }
-  
-    .data-actions {
-      grid-template-columns: 1fr 1fr;
-    }
-  
-    .data-actions .btn-secondary,
-    .data-actions .btn-danger-outline {
-      min-width: 140px;
-    }
+
+  .profile-card-block,
+  .p-card-inner {
+    border: 1px solid #ccc;
+    box-shadow: none;
+    page-break-inside: avoid;
   }
-  
-  
-  /* ============================================================
-     RESPONSIVE — TABLET+ (≥768px)
-     Constrain max-width for readability, add hover states.
-     ============================================================ */
-  @media (min-width: 768px) {
-    .profile-container {
-      max-width: 600px;
-      margin: 0 auto;
-      width: 100%;
-    }
-  
-    .p-avatar {
-      width: 88px;
-      height: 88px;
-      font-size: 2.2rem;
-    }
-  
-    .setting-row {
-      border-radius: var(--r-xl);
-      padding: var(--s-5) var(--s-7);
-    }
-  
-    .setting-row:hover {
-      background: var(--c-raised);
-    }
-  
-    .about-card {
-      padding: var(--s-8) var(--s-7);
-    }
-  
-    .btn-danger-outline:hover {
-      background: var(--c-rose-ghost);
-    }
-  }
-  
-  
-  /* ============================================================
-     RESPONSIVE — DESKTOP (≥1024px)
-     Slightly wider container, more generous card padding.
-     ============================================================ */
-  @media (min-width: 1024px) {
-    .profile-container {
-      max-width: 680px;
-    }
-  
-    .profile-header {
-      padding: 0 var(--s-7);
-    }
-  
-    .p-card-inner {
-      padding: var(--s-9) var(--s-8);
-    }
-  }
+}

@@ -225,7 +225,7 @@ var Formatters = (function() {
     },
 
     /**
-     * Convert ISO date string to full date (e.g., "March 11, 2026").
+     * Convert ISO date string to full date (e.g., "March 11, 2027").
      * @param {string} isoDate
      * @returns {string}
      */

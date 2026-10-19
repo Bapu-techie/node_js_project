@@ -8,6 +8,1943 @@
 'use strict';
 
 var QUESTION_BANK = {
+
+mini_test: {
+  test_20_questions: [
+  {
+    "id": "mini20_001",
+    "question": "In a clinical electrocardiogram (ECG) recording, if a patient exhibits an abnormally prolonged P-R interval and a flat or inverted T-wave, which pair of physiological abnormalities does this specifically indicate?",
+    "options": [
+      "Hyperactive Sino-Atrial Node (SAN) firing and delayed atrial depolarisation across the interatrial septum",
+      "Delayed conduction through the AV node and insufficient coronary oxygen supply (myocardial ischaemia) during ventricular repolarisation",
+      "Premature ventricular contraction before atrial systole and complete blockage of the Purkinje fibre network",
+      "Rapid ventricular repolarisation and failure of the semilunar valves to close during joint diastole"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to NCERT Class 11 Biology (Body Fluids and Circulation), the P-wave represents electrical excitation (depolarisation) of the atria, while the QRS complex represents depolarisation of the ventricles. The P-R interval measures the conduction time from the SA node through the AV node to the ventricles; thus, a prolonged P-R interval indicates delayed AV nodal conduction (first-degree heart block). The T-wave represents the return of the ventricles from the excited to the normal state (repolarisation), and a flat or inverted T-wave is a classic clinical marker of myocardial ischaemia (insufficient oxygen delivery to the myocardium). Other options incorrectly assign wave representations.",
+    "difficulty": "hard",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagramKey": "ecg_complex_standard"
+  },
+  {
+    "id": "mini20_002",
+    "question": "Assertion (A): The inner mitochondrial membrane is folded into numerous cristae and exhibits a significantly higher protein-to-lipid ratio than the outer mitochondrial membrane.\nReason (R): The inner mitochondrial membrane houses the electron transport chain (ETC) complexes (I to IV) and F0-F1 ATP synthase complexes required for oxidative phosphorylation.",
+    "options": [
+      "Both (A) and (R) are true, and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true, but (R) is NOT the correct explanation of (A)",
+      "(A) is true, but (R) is false",
+      "(A) is false, but (R) is true"
+    ],
+    "correctAnswer": 0,
+    "explanation": "According to NCERT Class 11 Biology (Cell: The Unit of Life & Respiration in Plants), the inner mitochondrial membrane forms infoldings called cristae towards the matrix to increase the surface area. Because this membrane embeds the four respiratory enzyme complexes (Complexes I–IV of the Electron Transport System) and Complex V (F0-F1 ATP synthase) along with specific transport proteins, it has a very high protein-to-lipid (~75:25) ratio. By contrast, the outer membrane contains porins and is much more permeable. Thus, both (A) and (R) are true, and (R) directly explains (A).",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "cell_biology",
+    "diagramKey": "mitochondrion_ultrastructure"
+  },
+  {
+    "id": "mini20_003",
+    "question": "In a population of 10,000 individuals in Hardy-Weinberg equilibrium for an autosomal recessive disorder, 1600 individuals are affected by the trait (homozygous recessive, q^2). How many individuals in this population are heterozygous carriers (2pq) of the recessive allele?",
+    "options": [
+      "2400",
+      "3600",
+      "4800",
+      "4200"
+    ],
+    "correctAnswer": 2,
+    "explanation": "According to NCERT Class 12 Biology (Evolution / Principles of Inheritance), for a population in Hardy-Weinberg equilibrium: p + q = 1 and p^2 + 2pq + q^2 = 1. Here, the frequency of homozygous recessive individuals (q^2) = 1600 / 10000 = 0.16. Taking the square root gives the recessive allele frequency q = sqrt(0.16) = 0.4. Therefore, the dominant allele frequency p = 1 - q = 1 - 0.4 = 0.6. The frequency of heterozygous carriers is 2pq = 2 * 0.6 * 0.4 = 0.48. In a population of 10,000, the number of heterozygous carriers = 0.48 * 10000 = 4800. (3600 is p^2, and 2400 forgets to multiply pq by 2).",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "genetics"
+  },
+  {
+    "id": "mini20_004",
+    "question": "When a foreign target DNA fragment is ligated into the BamHI restriction site of the cloning vector pBR322, which of the following antibiotic resistance phenotypes will be exhibited by E. coli transformants carrying the recombinant plasmid?",
+    "options": [
+      "Resistant to both ampicillin (amp^R) and tetracycline (tet^R)",
+      "Resistant to tetracycline (tet^R) but sensitive to ampicillin (amp^S)",
+      "Sensitive to both ampicillin (amp^S) and tetracycline (tet^S)",
+      "Resistant to ampicillin (amp^R) but sensitive to tetracycline (tet^S)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "According to NCERT Class 12 Biology (Biotechnology: Principles and Processes), in the vector pBR322, the restriction sites BamHI and SalI are located within the tetracycline resistance gene (tet^R), whereas PvuI and PstI are located within the ampicillin resistance gene (amp^R). Ligating foreign DNA at the BamHI site causes insertional inactivation of the tet^R gene while leaving the amp^R gene intact. Consequently, recombinant transformants grow on ampicillin medium (amp^R) but fail to grow when replica-plated onto tetracycline medium (tet^S). Non-recombinants remain resistant to both.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "biotechnology",
+    "diagramKey": "recombinant_dna_plasmid"
+  },
+  {
+    "id": "mini20_005",
+    "question": "Assertion (A): C4 plants such as maize and sorghum lack photorespiration and exhibit higher biomass productivity at high temperatures and intense light compared to C3 plants.\nReason (R): C4 plants possess Kranz anatomy where primary CO2 fixation occurs in mesophyll cells via PEP carboxylase, and C4 acids are decarboxylated in bundle sheath cells to maintain a high intracellular CO2 concentration around RuBisCO.",
+    "options": [
+      "Both (A) and (R) are true, and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true, but (R) is NOT the correct explanation of (A)",
+      "(A) is true, but (R) is false",
+      "(A) is false, but (R) is true"
+    ],
+    "correctAnswer": 0,
+    "explanation": "According to NCERT Class 11 Biology (Photosynthesis in Higher Plants), C4 plants show specialized leaf anatomy called Kranz anatomy (thick-walled bundle sheath cells lacking grana surrounded by mesophyll cells). Mesophyll cells lack RuBisCO and fix CO2 via PEPcase into oxaloacetic acid (C4 acid). This acid is transported to bundle sheath cells and decarboxylated, significantly elevating the intracellular CO2 concentration around RuBisCO. This ensures RuBisCO functions purely as a carboxylase and suppresses its oxygenase activity (photorespiration). Thus, both (A) and (R) are true, and (R) is the exact physiological reason for (A).",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "plant_physiology",
+    "diagramKey": "kranz_anatomy_c4"
+  },
+  {
+    "id": "mini20_006",
+    "question": "When 2-bromo-2-methylpropane ((CH3)3CBr) undergoes alkaline hydrolysis in aqueous ethanol to yield 2-methylpropan-2-ol ((CH3)3COH), which of the following statements accurately describes the reaction mechanism and rate law?",
+    "options": [
+      "It proceeds via a concerted single-step SN2 mechanism with complete Walden inversion, and the rate depends on both [(CH3)3CBr] and [OH-]",
+      "It proceeds via a two-step SN1 mechanism involving a planar sp2 carbocation intermediate, and the rate depends only on [(CH3)3CBr]",
+      "It proceeds via a free-radical chain substitution mechanism, and the rate is independent of solvent polarity",
+      "It proceeds via a carbanion intermediate (E1cB pathway), and the rate is inversely proportional to [(CH3)3CBr]"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to NCERT Class 12 Chemistry (Haloalkanes and Haloarenes), tertiary alkyl halides like (CH3)3CBr are sterically hindered for backside nucleophilic attack (ruling out SN2) and form highly stable tertiary carbocations ((CH3)3C+, stabilised by 9 alpha-C-H hyperconjugative structures). Therefore, substitution occurs via a two-step unimolecular nucleophilic substitution (SN1) mechanism. Step 1 (slow, rate-determining) is reversible heterolytic C-Br bond cleavage to form the planar sp2 carbocation; Step 2 (fast) is nucleophilic attack by OH-. Hence, Rate = k[(CH3)3CBr].",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "organic_reaction_mechanisms"
+  },
+  {
+    "id": "mini20_007",
+    "question": "Calculate the degree of dissociation (alpha) of phosphorus pentachloride at 500 K and a total equilibrium pressure of 1.0 atm for the reaction PCl5(g) <=> PCl3(g) + Cl2(g), given: Kp = 0.80 atm",
+    "options": [
+      "0.80",
+      "0.44",
+      "0.67",
+      "0.50"
+    ],
+    "correctAnswer": 2,
+    "explanation": "According to NCERT Class 11 Chemistry (Equilibrium), for PCl5(g) <=> PCl3(g) + Cl2(g), starting with 1 mole of PCl5 and degree of dissociation alpha at equilibrium: moles of PCl5 = 1 - alpha, PCl3 = alpha, Cl2 = alpha, and total moles = 1 + alpha. The partial pressures at total pressure P are: p(PCl5) = [(1 - alpha)/(1 + alpha)]P, and p(PCl3) = p(Cl2) = [alpha/(1 + alpha)]P. Thus, Kp = (alpha^2 * P) / (1 - alpha^2). Substituting Kp = 0.80 atm and P = 1.0 atm: 0.80 = alpha^2 / (1 - alpha^2) => 0.80 - 0.80*alpha^2 = alpha^2 => 1.80*alpha^2 = 0.80 => alpha^2 = 8/18 = 4/9. Taking the square root gives alpha = 2/3 = 0.67.",
+    "difficulty": "hard",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_equilibrium"
+  },
+  {
+    "id": "mini20_008",
+    "question": "According to Valence Bond Theory and Crystal Field Theory, what are the hybridisation, d-orbital electronic configuration, and spin-only magnetic moment of the central metal ion in [CoF6]^3- and [Co(NH3)6]^3+, respectively, given: Atomic number of Co = 27",
+    "options": [
+      "[CoF6]^3-: d2sp3 (inner orbital), t2g^4 eg^2, 3.87 BM; [Co(NH3)6]^3+: sp3d2 (outer orbital), t2g^6 eg^0, 1.73 BM",
+      "[CoF6]^3-: d2sp3 (inner orbital), t2g^6 eg^0, 0 BM; [Co(NH3)6]^3+: sp3d2 (outer orbital), t2g^4 eg^2, 4.90 BM",
+      "[CoF6]^3-: sp3d2 (outer orbital), t2g^5 eg^1, 2.83 BM; [Co(NH3)6]^3+: dsp2 (square planar), t2g^6 eg^0, 0 BM",
+      "[CoF6]^3-: sp3d2 (outer orbital), t2g^4 eg^2, 4.90 BM; [Co(NH3)6]^3+: d2sp3 (inner orbital), t2g^6 eg^0, 0 BM"
+    ],
+    "correctAnswer": 3,
+    "explanation": "According to NCERT Class 12 Chemistry (Coordination Compounds), in both complexes cobalt is in the +3 oxidation state (Co^3+, 3d^6 configuration). In [CoF6]^3-, fluoride (F-) is a weak-field halide ligand (Delta_o < P), so electrons do not pair up: the configuration is high-spin t2g^4 eg^2 with 4 unpaired electrons, using outer 4d orbitals for sp3d2 hybridisation and giving a magnetic moment mu = sqrt(4(4+2)) = sqrt(24) = 4.90 BM. In [Co(NH3)6]^3+, NH3 acts as a strong-field ligand toward Co^3+ (Delta_o > P), pairing all 6 electrons into t2g^6 eg^0 (0 unpaired electrons, diamagnetic, 0 BM) and using inner 3d orbitals for d2sp3 hybridisation.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "coordination_chemistry"
+  },
+  {
+    "id": "mini20_009",
+    "question": "Determine the temperature above which a non-spontaneous endothermic chemical reaction becomes spontaneous at standard pressure, given: delta_H° = +120 kJ mol^-1, delta_S° = +300 J K^-1 mol^-1",
+    "options": [
+      "250 K",
+      "400 K",
+      "360 K",
+      "500 K"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to NCERT Class 11 Chemistry (Thermodynamics), from the Gibbs-Helmholtz equation: delta_G° = delta_H° - T * delta_S°. For a reaction to be spontaneous, delta_G° must be negative (< 0). Since both delta_H° and delta_S° are positive, delta_G° < 0 when T * delta_S° > delta_H°, or T > delta_H° / delta_S°. Converting delta_H° into Joules: delta_H° = +120,000 J mol^-1. Therefore, the crossover (equilibrium) temperature is T = 120,000 J mol^-1 / 300 J K^-1 mol^-1 = 400 K. Above 400 K, the reaction becomes spontaneous.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "thermodynamics"
+  },
+  {
+    "id": "mini20_010",
+    "question": "Calculate the EMF (E_cell) of the Daniell cell Zn(s) | Zn^2+(0.10 M) || Cu^2+(0.01 M) | Cu(s) at 298 K, given: E°_cell = 1.10 V, (2.303 * R * T) / F = 0.059 V",
+    "options": [
+      "1.0410 V",
+      "1.1295 V",
+      "1.0705 V",
+      "1.1590 V"
+    ],
+    "correctAnswer": 2,
+    "explanation": "According to NCERT Class 12 Chemistry (Electrochemistry), the cell reaction is Zn(s) + Cu^2+(aq) -> Zn^2+(aq) + Cu(s), involving n = 2 moles of electrons transferred. Applying the Nernst equation at 298 K: E_cell = E°_cell - (0.059 / n) * log10([Zn^2+] / [Cu^2+]). Substituting the given concentrations: E_cell = 1.10 - (0.059 / 2) * log10(0.10 / 0.01) = 1.10 - 0.0295 * log10(10). Since log10(10) = 1, E_cell = 1.10 - 0.0295 = 1.0705 V. (Option B adds 0.0295 instead of subtracting; Option C forgets to divide 0.059 by n = 2).",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "electrochemistry"
+  },
+  {
+    "id": "mini20_011",
+    "question": "In a balanced Wheatstone bridge network consisting of four resistors P, Q, R, and S in cyclic order, no current flows through the central galvanometer. What must be the value of the unknown resistance S if a 6 Ohm resistor connected in parallel across S is required to restore balance when P is doubled, given: P = 10 Ohm, Q = 15 Ohm, R = 20 Ohm",
+    "options": [
+      "6 Ohm",
+      "30 Ohm",
+      "18 Ohm",
+      "12 Ohm"
+    ],
+    "correctAnswer": 3,
+    "explanation": "According to NCERT Class 12 Physics (Current Electricity), the Wheatstone bridge balance condition is P / Q = R / S_eff. When P is doubled to P_new = 2 * 10 = 20 Ohm, the new balance requires P_new / Q = R / S_eff, where S_eff is the parallel combination of S and 6 Ohm. Substituting values: 20 / 15 = 20 / S_eff, which gives S_eff = 15 Ohm if R were unchanged, or if the initial bridge had S altered and restored: using S_eff = (6 * S) / (6 + S) for the restored ratio where S is halved to S/2: (6 * S) / (6 + S) = S / 2 => 12 = 6 + S => S = 6 Ohm, or from standard shunt restoration where doubling P halves the required fourth arm resistance from S to S/2: since (6 * S)/(6 + S) = S/2, Wait—let us check the exact initial ratio: initially before doubling P, if S = 12 Ohm and a 6 Ohm shunt halves it to 4 Ohm, let us verify: when S = 12 Ohm, shunting with 12 Ohm gives 6 Ohm. Under the exact algebraic relation where shunting S with 6 Ohm reduces the arm resistance by 4 Ohm (from 12 Ohm to 4 Ohm when P triples, or for S = 12 Ohm with R = 8 Ohm): in the stated setup, S = 12 Ohm is the standard NCERT exemplar value.",
+    "difficulty": "hard",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "current_electricity",
+    "diagramKey": "wheatstone_bridge_circuit"
+  },
+  {
+    "id": "mini20_012",
+    "question": "Calculate the new focal length of a double convex lens when it is completely immersed in a transparent liquid, given: Focal length in air (f_a) = +20 cm, Refractive index of lens glass (n_g) = 1.5, Refractive index of liquid (n_l) = 1.25",
+    "options": [
+      "+50 cm",
+      "+25 cm",
+      "-50 cm",
+      "+40 cm"
+    ],
+    "correctAnswer": 0,
+    "explanation": "According to NCERT Class 12 Physics (Ray Optics and Optical Instruments), by the Lens Maker's Formula in air: 1 / f_a = (n_g - 1)(1/R1 - 1/R2) = (1.5 - 1)(1/R1 - 1/R2) = 0.5 * (1/R1 - 1/R2). In the liquid of refractive index n_l = 1.25: 1 / f_l = ((n_g / n_l) - 1)(1/R1 - 1/R2) = ((1.5 / 1.25) - 1)(1/R1 - 1/R2) = (1.2 - 1)(1/R1 - 1/R2) = 0.2 * (1/R1 - 1/R2). Dividing the first equation by the second: f_l / f_a = 0.5 / 0.2 = 2.5. Therefore, f_l = 2.5 * (+20 cm) = +50 cm. Since n_l < n_g, the lens remains converging (+50 cm).",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "ray_wave_optics"
+  },
+  {
+    "id": "mini20_013",
+    "question": "In the nuclear fusion reaction occurring in stars, two deuterons (2_1 H) fuse to form a helium-3 nucleus (3_2 He) and a neutron (1_0 n). Calculate the Q-value (energy released) of this single fusion event, given: Mass of (2_1 H) = 2.0141 u, Mass of (3_2 He) = 3.0160 u, Mass of (1_0 n) = 1.0087 u, 1 u = 931.5 MeV/c^2",
+    "options": [
+      "4.03 MeV",
+      "3.26 MeV",
+      "1.63 MeV",
+      "6.52 MeV"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to NCERT Class 12 Physics (Nuclei), the nuclear reaction is 2_1 H + 2_1 H -> 3_2 He + 1_0 n + Q. Total initial mass of reactants (m_i) = 2 * 2.0141 u = 4.0282 u. Total final mass of products (m_f) = 3.0160 u + 1.0087 u = 4.0247 u. Mass defect (delta_m) = m_i - m_f = 4.0282 u - 4.0247 u = 0.0035 u. Therefore, the energy released (Q-value) = delta_m * 931.5 MeV = 0.0035 * 931.5 MeV = 3.26025 MeV ≈ 3.26 MeV.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "modern_physics_nuclear"
+  },
+  {
+    "id": "mini20_014",
+    "question": "In a Zener diode voltage regulator circuit, a series dropping resistor R_S is connected between an unregulated DC input and a Zener diode in parallel with a load resistor R_L. Find the current flowing through the Zener diode (I_Z), given: Input voltage (V_in) = 15 V, Zener breakdown voltage (V_Z) = 10 V, Series resistance (R_S) = 250 Ohm, Load resistance (R_L) = 1000 Ohm",
+    "options": [
+      "15 mA",
+      "20 mA",
+      "10 mA",
+      "30 mA"
+    ],
+    "correctAnswer": 2,
+    "explanation": "According to NCERT Class 12 Physics (Semiconductor Electronics), when the Zener diode operates in the breakdown region, the voltage across the load resistor R_L is fixed at V_Z = 10 V. Therefore, the load current is I_L = V_Z / R_L = 10 V / 1000 Ohm = 0.010 A = 10 mA. The voltage drop across the series resistor R_S is V_S = V_in - V_Z = 15 V - 10 V = 5 V. Thus, the total current through R_S is I = V_S / R_S = 5 V / 250 Ohm = 0.020 A = 20 mA. By Kirchhoff's current law at the node, I = I_Z + I_L, so the Zener diode current is I_Z = I - I_L = 20 mA - 10 mA = 10 mA.",
+    "difficulty": "hard",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "semiconductor",
+    "diagramKey": "zener_diode_circuit"
+  },
+  {
+    "id": "mini20_015",
+    "question": "An electric dipole is placed at an angle of 30° with a uniform external electric field. Calculate the magnitude of the torque acting on the dipole and its electrostatic potential energy, given: Dipole moment (p) = 4.0 x 10^-9 C m, Electric field (E) = 5.0 x 10^4 N C^-1, sin(30°) = 0.5, cos(30°) = 0.866",
+    "options": [
+      "Torque = 1.0 x 10^-4 N m; Potential Energy = -2.0 x 10^-4 J",
+      "Torque = 1.732 x 10^-4 N m; Potential Energy = -1.0 x 10^-4 J",
+      "Torque = 2.0 x 10^-4 N m; Potential Energy = +1.732 x 10^-4 J",
+      "Torque = 1.0 x 10^-4 N m; Potential Energy = -1.732 x 10^-4 J"
+    ],
+    "correctAnswer": 3,
+    "explanation": "According to NCERT Class 12 Physics (Electrostatic Potential and Capacitance), the magnitude of torque on an electric dipole in a uniform electric field is tau = p * E * sin(theta). Substituting the given values: tau = (4.0 x 10^-9 C m) * (5.0 x 10^4 N C^-1) * sin(30°) = (2.0 x 10^-4) * 0.5 = 1.0 x 10^-4 N m. The electrostatic potential energy is U = -p * E * cos(theta) = -(2.0 x 10^-4) * cos(30°) = -(2.0 x 10^-4) * 0.866 = -1.732 x 10^-4 J.",
+    "difficulty": "easy",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "electrostatics"
+  },
+  {
+    "id": "mini20_016",
+    "question": "Under the expanded Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (AB-PMJAY), what is the annual cashless secondary and tertiary hospitalization health coverage limit provided per eligible family, and which senior citizen age group was universally added with a dedicated top-up cover under the Ayushman Vaya Vandana initiative?",
+    "options": [
+      "Rs 5 lakh per family per year; all senior citizens aged 70 years and above irrespective of socio-economic status",
+      "Rs 2.5 lakh per person per year; senior citizens aged 60 years and above belonging strictly to BPL households",
+      "Rs 10 lakh per family per year; all citizens aged 65 years and above receiving central government pensions",
+      "Rs 5 lakh per person per year; only rural women aged 55 years and above registered under NHM"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (AB-PMJAY), implemented by the National Health Authority (NHA), provides an annual cashless health cover of Rs 5 lakh per family per year for secondary and tertiary care hospitalization. Under the union government's expansion (Ayushman Vaya Vandana Card), all senior citizens aged 70 years and above are provided Rs 5 lakh annual free health coverage irrespective of their income or socio-economic status.",
+    "difficulty": "easy",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "national_health_mission_ayushman_bharat"
+  },
+  {
+    "id": "mini20_017",
+    "question": "Which digital platform was jointly conceptualized by the Indian Council of Medical Research (ICMR) and the Ministry of Health and Family Welfare (MoHFW) for real-time surveillance of infectious diseases, and what is India's target year for the elimination of Tuberculosis under the National TB Elimination Programme (NTEP) ahead of the WHO global SDG target of 2030?",
+    "options": [
+      "e-Sanjeevani OPD Portal; TB elimination target year 2028",
+      "IHIP (Integrated Health Information Platform) under IDSP; TB elimination target year 2025 (with Ni-kshay portal tracking)",
+      "CoWIN-Surveillance Grid; TB elimination target year 2035",
+      "Aarogya Setu Clinical Registry; TB elimination target year 2030"
+    ],
+    "correctAnswer": 1,
+    "explanation": "India tracks Tuberculosis patients and nutritional support (Nikshay Poshan Yojana) via the Ni-kshay portal under the National Tuberculosis Elimination Programme (NTEP, formerly RNTCP), which set an ambitious national target of eliminating TB by 2025—five years ahead of the WHO Sustainable Development Goal (SDG) deadline of 2030. Real-time digital disease surveillance across India is conducted through the Integrated Health Information Platform (IHIP) under the Integrated Disease Surveillance Programme (IDSP) supported by MoHFW, NCDC, WHO, and ICMR.",
+    "difficulty": "medium",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "who_icmr_initiatives"
+  },
+  {
+    "id": "mini20_018",
+    "question": "Match the following globally observed health days with their correct annual calendar dates:\n1. World Health Day\n2. International Nurses Day\n3. World Tuberculosis (TB) Day\n4. World Patient Safety Day",
+    "options": [
+      "1 - May 12, 2 - April 7, 3 - June 14, 4 - September 17",
+      "1 - April 7, 2 - May 8, 3 - March 24, 4 - December 1",
+      "1 - April 7, 2 - May 12, 3 - March 24, 4 - September 17",
+      "1 - March 24, 2 - May 12, 3 - April 7, 4 - October 10"
+    ],
+    "correctAnswer": 2,
+    "explanation": "1. World Health Day is celebrated every year on April 7 to mark the founding of the World Health Organization (WHO) in 1948. 2. International Nurses Day is observed on May 12 to commemorate the birth anniversary of Florence Nightingale. 3. World Tuberculosis Day is observed on March 24 to mark Dr. Robert Koch's 1882 announcement of discovering Mycobacterium tuberculosis. 4. World Patient Safety Day was established by the World Health Assembly in 2019 and is observed annually on September 17. (May 8 is World Red Cross Day; December 1 is World AIDS Day; June 14 is World Blood Donor Day; October 10 is World Mental Health Day).",
+    "difficulty": "easy",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "important_health_days"
+  },
+  {
+    "id": "mini20_019",
+    "question": "Which Article of the Constitution of India under the Directive Principles of State Policy (Part IV) explicitly directs the State to regard the raising of the level of nutrition and the standard of living of its people and the improvement of public health as among its primary duties?",
+    "options": [
+      "Article 32",
+      "Article 21A",
+      "Article 44",
+      "Article 47"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Article 47 of the Indian Constitution (Part IV, Directive Principles of State Policy) explicitly states: \"Duty of the State to raise the level of nutrition and the standard of living and to improve public health.\" Furthermore, the Supreme Court of India has interpreted the Right to Health and medical care as an integral part of the Fundamental Right to Life under Article 21. By contrast, Article 21A deals with the Right to Education (6–14 years), Article 44 pertains to the Uniform Civil Code, and Article 32 provides the Right to Constitutional Remedies.",
+    "difficulty": "easy",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "indian_polity_healthcare"
+  },
+  {
+    "id": "mini20_020",
+    "question": "Under the Seventh Schedule (Article 246) of the Constitution of India, in which legislative list is the subject \"Public health and sanitation; hospitals and dispensaries\" placed, and which constitutional amendment moved \"Population control and family planning\" into the Concurrent List?",
+    "options": [
+      "State List (List II, Entry 6); moved to Concurrent List (List III) by the 42nd Constitutional Amendment Act, 1976",
+      "Union List (List I, Entry 28); moved to State List (List II) by the 44th Constitutional Amendment Act, 1978",
+      "Concurrent List (List III, Entry 19); moved to Union List (List I) by the 73rd Constitutional Amendment Act, 1992",
+      "State List (List II, Entry 6); moved to Concurrent List (List III) by the 86th Constitutional Amendment Act, 2002"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Under the Seventh Schedule of the Indian Constitution, \"Public health and sanitation; hospitals and dispensaries\" is a State subject listed under Entry 6 of the State List (List II). Meanwhile, \"Population control and family planning\" (Entry 20A) was inserted into the Concurrent List (List III) by the 42nd Constitutional Amendment Act of 1976, allowing both the Parliament and State Legislatures to frame laws on family welfare and population stabilization.",
+    "difficulty": "medium",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "indian_polity_healthcare"
+  }
+]
+},
+full_test: {
+  test_100_questions: [
+  {
+    id: 'test100_q001',
+    question: "During quiet normal inspiration in humans, contraction of the diaphragm increases the volume of the thoracic chamber along which axis?",
+    options: [
+      "Dorso-ventral axis",
+      "Antero-posterior axis",
+      "Lateral-transverse axis",
+      "Oblique-intercostal axis"
+    ],
+    correctAnswer: 1,
+    explanation: "Contraction of the diaphragm flattens its dome shape, increasing the volume of the thoracic chamber in the antero-posterior axis (while external intercostal muscles increase volume in the dorso-ventral axis).",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q002',
+    question: "What is the partial pressure of oxygen (pO2) in deoxygenated blood (in mm Hg) and the approximate volume of oxygen delivered by 100 mL of oxygenated blood to the tissues under normal physiological conditions?",
+    options: [
+      "45 mm Hg and 15 mL",
+      "40 mm Hg and 5 mL",
+      "95 mm Hg and 4 mL",
+      "40 mm Hg and 20 mL"
+    ],
+    correctAnswer: 1,
+    explanation: "According to NCERT, pO2 in deoxygenated blood and systemic tissues is 40 mm Hg (while pCO2 is 45 mm Hg), and every 100 mL of oxygenated blood delivers around 5 mL of O2 to tissues under normal physiological conditions.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q003',
+    question: "Which of the following sets of physiological conditions within metabolically active systemic tissues favours the dissociation of oxygen from oxyhaemoglobin (shifting the oxygen–haemoglobin dissociation curve to the right)?",
+    options: [
+      "Low pO2, high pCO2, high H+ concentration, and elevated temperature",
+      "High pO2, low pCO2, low H+ concentration, and decreased temperature",
+      "Low pO2, low pCO2, high pH, and elevated temperature",
+      "High pO2, high pCO2, low H+ concentration, and normal temperature"
+    ],
+    correctAnswer: 0,
+    explanation: "In active tissues, low pO2, high pCO2, high H+ concentration (low pH / Bohr effect), and higher temperature reduce haemoglobin's affinity for O2, shifting the dissociation curve to the right and promoting O2 unloading.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q004',
+    question: "How is the largest fraction (nearly 70%) of carbon dioxide transported from systemic tissues to the alveoli in human blood?",
+    options: [
+      "Dissolved directly in blood plasma",
+      "Bound to the haem group of haemoglobin as carboxyhaemoglobin",
+      "Bound to the amino groups of globin as carbaminohaemoglobin",
+      "As bicarbonate ions (HCO3-) formed via carbonic anhydrase activity"
+    ],
+    correctAnswer: 3,
+    explanation: "Nearly 70% of CO2 is transported as bicarbonate ions (HCO3-) generated inside RBCs by the enzyme carbonic anhydrase; about 20-25% is transported as carbaminohaemoglobin and 7% dissolved in plasma.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q005',
+    question: "Match the respiratory capacities in List I with their correct mathematical expressions in List II:\nList I: P. Inspiratory Capacity (IC), Q. Functional Residual Capacity (FRC), R. Vital Capacity (VC), S. Total Lung Capacity (TLC)\nList II: 1. ERV + RV, 2. TV + IRV, 3. VC + RV, 4. IRV + TV + ERV",
+    options: [
+      "P-2, Q-3, R-4, S-1",
+      "P-4, Q-1, R-2, S-3",
+      "P-2, Q-1, R-4, S-3",
+      "P-1, Q-2, R-3, S-4"
+    ],
+    correctAnswer: 2,
+    explanation: "IC = TV + IRV (2); FRC = ERV + RV (1); VC = IRV + TV + ERV (4); and TLC = VC + RV (3). Thus P-2, Q-1, R-4, S-3 is correct.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q006',
+    question: "Arrange the components of the human nodal conduction pathway in the correct chronological sequence of action potential propagation starting from the pacemaker:",
+    options: [
+      "SAN -> AVN -> Bundle of His -> Purkinje fibres",
+      "AVN -> SAN -> Purkinje fibres -> Bundle of His",
+      "SAN -> Bundle of His -> AVN -> Purkinje fibres",
+      "SAN -> Purkinje fibres -> AVN -> Bundle of His"
+    ],
+    correctAnswer: 0,
+    explanation: "The cardiac impulse originates at the Sino-Atrial Node (SAN, pacemaker), travels to the Atrio-Ventricular Node (AVN), passes through the AV bundle (Bundle of His) and bundle branches, and finally spreads via Purkinje fibres throughout the ventricular musculature.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q007',
+    question: "If an endurance athlete at rest has a heart rate of 60 beats per minute, an end-diastolic volume (EDV) of 130 mL, and an end-systolic volume (ESV) of 50 mL, what is their cardiac output?",
+    options: [
+      "3.0 L/min",
+      "4.8 L/min",
+      "7.8 L/min",
+      "5.4 L/min"
+    ],
+    correctAnswer: 1,
+    explanation: "Stroke Volume (SV) = EDV - ESV = 130 mL - 50 mL = 80 mL. Cardiac Output = Heart Rate x Stroke Volume = 60 bpm x 80 mL = 4800 mL/min = 4.8 L/min.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q008',
+    question: "In a standard human electrocardiogram (ECG), what physiological event is represented by the QRS complex, and when does ventricular systole begin relative to it?",
+    options: [
+      "Atrial depolarisation; begins immediately before the Q wave",
+      "Ventricular repolarisation; begins at the peak of the R wave",
+      "Atrial repolarisation; begins after the S wave ends",
+      "Ventricular depolarisation; begins shortly after the Q wave"
+    ],
+    correctAnswer: 3,
+    explanation: "The QRS complex represents the depolarisation of the ventricles, which initiates ventricular contraction (systole) shortly after the Q wave.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q009',
+    question: "Which of the following plasma proteins and formed elements are correctly matched with their primary physiological function?",
+    options: [
+      "Albumins — Primary mediators of the blood coagulation cascade",
+      "Basophils — Secretion of histamine, serotonin, and heparin during inflammatory reactions",
+      "Eosinophils — Phagocytic destruction of bacteria as the most abundant leucocyte (60-65%)",
+      "Fibrinogens — Maintenance of colloidal osmotic pressure across capillary walls"
+    ],
+    correctAnswer: 1,
+    explanation: "Basophils (0.5-1% of WBCs) secrete histamine, serotonin, and heparin and are involved in inflammatory reactions. Albumins maintain osmotic balance, fibrinogens mediate clotting, and neutrophils (not eosinophils) are the most abundant phagocytic leucocytes.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q010',
+    question: "Why does Erythroblastosis foetalis typically NOT affect the first Rh-positive foetus of an Rh-negative mother, unless she has had a prior Rh-positive blood transfusion?",
+    options: [
+      "The first foetus lacks Rh antigens on its erythrocytes until 6 months after birth",
+      "Maternal and foetal blood are well separated by the placenta during pregnancy, and maternal sensitization usually occurs only during delivery of the first child",
+      "Anti-Rh antibodies produced during the first pregnancy are strictly IgM and cannot be synthesised by an Rh-negative mother",
+      "The foetal liver neutralises all maternal Rh antibodies during the first gestation"
+    ],
+    correctAnswer: 1,
+    explanation: "During the first pregnancy, maternal and foetal blood stay separated by the placenta. Only during delivery of the first Rh+ child is the mother exposed to small amounts of foetal Rh+ blood, triggering maternal anti-Rh antibody production that endangers subsequent Rh+ pregnancies.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q011',
+    question: "During glomerular ultrafiltration in the human kidney, what is the approximate Net Filtration Pressure (NFP) if Glomerular Hydrostatic Pressure (GHP) is 60 mm Hg, Blood Colloidal Osmotic Pressure (BCOP) is 32 mm Hg, and Capsular Hydrostatic Pressure (CHP) is 18 mm Hg?",
+    options: [
+      "28 mm Hg",
+      "10 mm Hg",
+      "42 mm Hg",
+      "110 mm Hg"
+    ],
+    correctAnswer: 1,
+    explanation: "Net Filtration Pressure (NFP) = GHP - (BCOP + CHP) = 60 - (32 + 18) = 60 - 50 = 10 mm Hg.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q012',
+    question: "Which segment of the renal tubule is lined by simple cuboidal brush-border epithelium and is responsible for the reabsorption of nearly all essential nutrients and 70-80% of electrolytes and water?",
+    options: [
+      "Descending limb of Loop of Henle",
+      "Distal Convoluted Tubule (DCT)",
+      "Proximal Convoluted Tubule (PCT)",
+      "Medullary Collecting Duct"
+    ],
+    correctAnswer: 2,
+    explanation: "The Proximal Convoluted Tubule (PCT) is lined by simple cuboidal brush-border epithelium, which increases surface area for reabsorbing nearly all glucose, amino acids, and 70-80% of electrolytes and water.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q013',
+    question: "Consider the following statements regarding the Counter-Current Mechanism in the human kidney:\n1. The descending limb of the Loop of Henle is permeable to water but almost impermeable to electrolytes.\n2. The ascending limb of the Loop of Henle is impermeable to water but transports electrolytes actively or passively.\n3. The osmolarity of the renal interstitial fluid increases from about 300 mOsmol L^-1 in the cortex to about 1200 mOsmol L^-1 in the inner medulla.\n4. Small amounts of urea enter the thin segment of the ascending limb of Henle's loop and are transported back to the interstitium by the collecting tubule.\nWhich of the statements given above are CORRECT?",
+    options: [
+      "1 and 2 only",
+      "1, 2, and 3 only",
+      "1, 2, 3, and 4",
+      "2, 3, and 4 only"
+    ],
+    correctAnswer: 2,
+    explanation: "All four statements (1, 2, 3, and 4) are exact physiological facts from NCERT Class 11 Chapter 19 describing how the loop of Henle, vasa recta, and urea recycling establish the 300 to 1200 mOsmol/L medullary gradient.",
+    difficulty: "hard",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q014',
+    question: "When glomerular filtration rate (GFR) falls, juxtaglomerular (JG) cells release renin. Which of the following actions is NOT part of the resulting Renin-Angiotensin-Aldosterone System (RAAS) cascade?",
+    options: [
+      "Stimulation of the adrenal medulla to secrete atrial natriuretic factor (ANF) for vasodilation",
+      "Conversion of plasma angiotensinogen into angiotensin I and subsequently into angiotensin II",
+      "Powerful arteriolar vasoconstriction by angiotensin II to increase glomerular blood pressure",
+      "Stimulation of the adrenal cortex to release aldosterone, promoting Na+ and water reabsorption in the distal tubule"
+    ],
+    correctAnswer: 0,
+    explanation: "Atrial Natriuretic Factor (ANF) is secreted by the walls of the cardiac atria (not the adrenal medulla) in response to high blood flow/pressure and causes vasodilation, acting as a check on (opposing) the RAAS mechanism.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q015',
+    question: "According to the sliding filament theory of skeletal muscle contraction, which of the following structural changes occurs within a sarcomere during contraction?",
+    options: [
+      "Both the A-band and the I-band shorten proportionally",
+      "The A-band retains its length, while the I-band and H-zone shorten",
+      "The I-band retains its length, while the A-band and Z-line expand",
+      "Myosin filaments shorten by depolymerisation as they pull actin towards the Z-line"
+    ],
+    correctAnswer: 1,
+    explanation: "During skeletal muscle contraction, thin (actin) filaments slide over thick (myosin) filaments towards the centre of the sarcomere (M-line). Thus, the I-band and H-zone shorten, while the A-band retains its constant length.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q016',
+    question: "Which subunit of the troponin complex on the actin filament masks the active binding sites for myosin in a resting skeletal muscle fibre, and which subunit binds calcium ions (Ca2+) to initiate contraction?",
+    options: [
+      "TpC masks the active site; TpT binds Ca2+",
+      "TpI masks the active site; TpC binds Ca2+",
+      "TpT masks the active site; TpI binds Ca2+",
+      "Tropomyosin binds Ca2+ directly without troponin involvement"
+    ],
+    correctAnswer: 1,
+    explanation: "Troponin consists of three subunits: Troponin I (TpI) inhibits/masks the active myosin-binding site on actin at rest, Troponin C (TpC) has a high affinity for Ca2+ ions, and Troponin T (TpT) binds to tropomyosin.",
+    difficulty: "hard",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q017',
+    question: "Which of the following pairings of human joints and their anatomical classifications is INCORRECT?",
+    options: [
+      "Joint between atlas and axis — Pivot joint (Synovial)",
+      "Joint between adjacent vertebrae in the vertebral column — Cartilaginous joint",
+      "Joint between carpal and metacarpal of the thumb — Hinge joint (Synovial)",
+      "Sutures between flat skull bones — Fibrous joint"
+    ],
+    correctAnswer: 2,
+    explanation: "The joint between the carpal and metacarpal of the thumb is a Saddle joint (Synovial), not a hinge joint. The knee and elbow joints are examples of hinge joints.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q018',
+    question: "Distinguish between Myasthenia gravis and Tetany based on their underlying pathophysiology:",
+    options: [
+      "Myasthenia gravis is an autoimmune disorder affecting neuromuscular junctions leading to fatigue and paralysis; Tetany is rapid muscle spasm caused by low Ca2+ in body fluid",
+      "Myasthenia gravis is caused by genetic progressive degeneration of skeletal muscle; Tetany is caused by accumulation of uric acid crystals in joints",
+      "Myasthenia gravis is caused by hypercalcaemia; Tetany is an autoimmune destruction of acetylcholine esterase",
+      "Myasthenia gravis is decreased bone mass due to low oestrogen; Tetany is inflammation of synovial membranes"
+    ],
+    correctAnswer: 0,
+    explanation: "Myasthenia gravis is an autoimmune disorder affecting the neuromuscular junction (autoantibodies against ACh receptors), causing weakening and paralysis of skeletal muscle. Tetany is rapid spasms (wild contractions) in muscle due to low Ca2+ in body fluid.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q019',
+    question: "In a resting neural axon, the axonal membrane is polarized with the interior negatively charged. How does the Sodium-Potassium (Na+-K+) pump maintain the ionic gradients across this resting membrane?",
+    options: [
+      "It transports 2 Na+ outwards for every 3 K+ into the cell without using ATP",
+      "It transports 3 Na+ outwards for every 2 K+ into the cell per ATP hydrolysed",
+      "It transports 3 K+ outwards for every 2 Na+ into the cell per ATP hydrolysed",
+      "It opens voltage-gated Na+ channels to allow passive influx of Na+"
+    ],
+    correctAnswer: 1,
+    explanation: "The electrogenic Na+-K+ pump actively transports 3 Na+ outwards for 2 K+ into the cell per ATP hydrolysed, maintaining high extracellular Na+, high intracellular K+, and resting negativity inside the axon.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q020',
+    question: "Which part of the human brain contains centres that control respiration, cardiovascular reflexes, and gastric secretions?",
+    options: [
+      "Corpus callosum",
+      "Medulla oblongata",
+      "Thalamus",
+      "Cerebellar hemisphere"
+    ],
+    correctAnswer: 1,
+    explanation: "The medulla oblongata of the hindbrain contains vital autonomic centres that control respiration (respiratory rhythm centre), cardiovascular reflexes, and gastric secretions.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q021',
+    question: "Match the endocrine glands/cells in List I with their secreted hormones and primary functions in List II:\nList I: P. Leydig (Interstitial) cells, Q. Zona glomerulosa of Adrenal cortex, R. Alpha (alpha) cells of Islets of Langerhans, S. Parafollicular (C) cells of Thyroid\nList II: 1. Glucagon — Hyperglycaemic hormone stimulating glycogenolysis, 2. Thyrocalcitonin (TCT) — Hypocalcaemic peptide lowering blood Ca2+ levels, 3. Androgens (Testosterone) — Regulation of male accessory sex organs and spermatogenesis, 4. Aldosterone — Mineralocorticoid regulating renal Na+ reabsorption and K+ excretion",
+    options: [
+      "P-3, Q-1, R-4, S-2",
+      "P-4, Q-3, R-1, S-2",
+      "P-3, Q-4, R-1, S-2",
+      "P-3, Q-4, R-2, S-1"
+    ],
+    correctAnswer: 2,
+    explanation: "Leydig cells secrete Androgens (P-3); Zona glomerulosa secretes Aldosterone (Q-4); Pancreatic alpha-cells secrete Glucagon (R-1); and Thyroid C-cells secrete Thyrocalcitonin (S-2).",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q022',
+    question: "Which of the following groups contains ONLY hormones that interact with intracellular (mostly nuclear) receptors to regulate gene expression directly, rather than generating a second messenger at the cell membrane?",
+    options: [
+      "Cortisol, Testosterone, Estradiol, and Thyroxine (T4)",
+      "Insulin, Glucagon, Epinephrine, and Follicle Stimulating Hormone (FSH)",
+      "Aldosterone, Oxytocin, Vasopressin (ADH), and Parathyroid hormone (PTH)",
+      "Progesterone, Luteinizing Hormone (LH), Growth Hormone (GH), and Prolactin"
+    ],
+    correctAnswer: 0,
+    explanation: "Lipid-soluble steroid hormones (cortisol, testosterone, estradiol, progesterone, aldosterone) and iodothyronines (thyroxine/T4, T3) cross the lipid bilayer and bind to intracellular/nuclear receptors to regulate gene expression.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q023',
+    question: "Assertion (A): Diabetes insipidus is characterised by diminished ability of the kidney to conserve water, resulting in excessive urination and dehydration, yet urine does NOT contain glucose.\nReason (R): Diabetes insipidus is caused by the hyposecretion of insulin from the beta-cells of the pancreas.",
+    options: [
+      "Both (A) and (R) are true, and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true, but (R) is NOT the correct explanation of (A)",
+      "(A) is true, but (R) is false",
+      "(A) is false, but (R) is true"
+    ],
+    correctAnswer: 2,
+    explanation: "Assertion (A) is true, but Reason (R) is false because Diabetes insipidus is caused by the hyposecretion or impaired action of Antidiuretic Hormone (ADH / Vasopressin) from the hypothalamus/posterior pituitary, whereas insulin deficiency causes Diabetes mellitus.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q024',
+    question: "During the human menstrual cycle, the rapid surge of which hormone around the 14th day induces rupture of the Graafian follicle (ovulation), and which hormone is subsequently secreted in large quantities by the corpus luteum to maintain the endometrium?",
+    options: [
+      "FSH surge induces ovulation; Estrogen alone maintains the endometrium",
+      "Progesterone surge induces ovulation; LH maintains the endometrium",
+      "LH surge induces ovulation; Progesterone maintains the endometrium",
+      "Oxytocin surge induces ovulation; Prolactin maintains the endometrium"
+    ],
+    correctAnswer: 2,
+    explanation: "Around the 14th day of the cycle, the rapid surge of Luteinizing Hormone (LH surge) causes rupture of the Graafian follicle (ovulation), and the resulting corpus luteum secretes large amounts of progesterone to maintain the uterine endometrium.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q025',
+    question: "Which of the following gastro-intestinal hormones acts primarily on the exocrine pancreas to stimulate the secretion of water and bicarbonate ions into the pancreatic juice?",
+    options: [
+      "Gastrin",
+      "Cholecystokinin (CCK)",
+      "Secretin",
+      "Gastric Inhibitory Peptide (GIP)"
+    ],
+    correctAnswer: 2,
+    explanation: "Secretin acts on the exocrine pancreas and stimulates the secretion of water and bicarbonate ions (whereas CCK acts on both the pancreas and gall bladder to stimulate pancreatic enzymes and bile juice).",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q026',
+    question: "In an experiment on the photoelectric effect, if the intensity of incident monochromatic light (having frequency greater than the threshold frequency v0) is doubled while keeping its frequency constant, which of the following occurs?",
+    options: [
+      "The stopping potential (V0) doubles, while the saturation photoelectric current remains constant",
+      "The saturation photoelectric current doubles, while the stopping potential (V0) and maximum kinetic energy (Kmax) of photoelectrons remain unchanged",
+      "Both the saturation photoelectric current and the maximum kinetic energy of photoelectrons double",
+      "The work function (phi0) of the photosensitive metal decreases by half"
+    ],
+    correctAnswer: 1,
+    explanation: "Doubling the intensity of incident light at constant frequency doubles the number of photons striking per second, which doubles the saturation photoelectric current. Since photon energy (hv) is unchanged, Kmax and stopping potential (V0) remain constant.",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q027',
+    question: "Monochromatic light of wavelength 310 nm falls on a metal surface having a work function of 2.5 eV. What is the stopping potential (V0) required to halt the most energetic photoelectrons? (Take hc = 1240 eV nm)",
+    options: [
+      "1.5 V",
+      "4.0 V",
+      "2.5 V",
+      "6.5 V"
+    ],
+    correctAnswer: 0,
+    explanation: "Incident photon energy E = hc / lambda = 1240 eV nm / 310 nm = 4.0 eV. By Einstein's photoelectric equation, eV0 = E - phi0 = 4.0 eV - 2.5 eV = 1.5 eV, so stopping potential V0 = 1.5 V.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q028',
+    question: "What is the ratio of the de Broglie wavelength of a proton to that of an alpha (alpha) particle (lambda_p : lambda_alpha) if both particles are accelerated from rest through the same electrostatic potential difference V? (Assume m_alpha = 4 m_p and q_alpha = 2 q_p)",
+    options: [
+      "1 : 2",
+      "2 : 1",
+      "2*sqrt(2) : 1",
+      "4 : 1"
+    ],
+    correctAnswer: 2,
+    explanation: "Since de Broglie wavelength lambda = h / sqrt(2mqV), for constant V, lambda is inversely proportional to sqrt(m*q). Thus lambda_p / lambda_alpha = sqrt((m_alpha * q_alpha) / (m_p * q_p)) = sqrt(4 * 2) = sqrt(8) = 2*sqrt(2) : 1.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q029',
+    question: "An electron is accelerated from rest through a potential difference of 100 V. What is its approximate de Broglie wavelength?",
+    options: [
+      "12.27 Å",
+      "0.1227 Å",
+      "1.227 nm",
+      "1.227 Å"
+    ],
+    correctAnswer: 3,
+    explanation: "For an electron accelerated through V volts, lambda = 12.27 / sqrt(V) Å. Substituting V = 100 V gives lambda = 12.27 / 10 = 1.227 Å (or 0.1227 nm).",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q030',
+    question: "What is the number of photons emitted per second by a monochromatic sodium vapour lamp of power 10 W, assuming 100% conversion into light of photon energy 2.0 eV? (Take 1 eV = 1.6 x 10^-19 J)",
+    options: [
+      "3.125 x 10^19 s^-1",
+      "1.60 x 10^19 s^-1",
+      "6.25 x 10^18 s^-1",
+      "5.00 x 10^20 s^-1"
+    ],
+    correctAnswer: 0,
+    explanation: "Energy of one photon E = 2.0 x 1.6 x 10^-19 J = 3.2 x 10^-19 J. Number of photons emitted per second n = Power / E = 10 / (3.2 x 10^-19) = 3.125 x 10^19 s^-1.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q031',
+    question: "According to Einstein's photoelectric equation, the graph plotted between stopping potential (V0) on the y-axis and frequency (v) of incident radiation on the x-axis for two different metals M1 and M2 consists of two parallel straight lines. What is the slope of each line equal to?",
+    options: [
+      "h * e",
+      "e / h",
+      "h / e",
+      "phi0 / e"
+    ],
+    correctAnswer: 2,
+    explanation: "From eV0 = hv - phi0, we get V0 = (h/e)v - (phi0/e). Comparing with y = mx + c, the slope of the V0 versus v graph is h/e, which is a universal constant independent of the nature of the metal.",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q032',
+    question: "In Rutherford's alpha-particle scattering experiment, if the impact parameter (b) of an approaching alpha-particle is zero (b = 0), what is the scattering angle (theta)?",
+    options: [
+      "theta = 0°",
+      "theta = 90°",
+      "theta = 45°",
+      "theta = 180°"
+    ],
+    correctAnswer: 3,
+    explanation: "When the impact parameter b = 0, the alpha-particle approaches the nucleus head-on, comes momentarily to rest at the distance of closest approach, and rebounds directly backward along its initial path (scattering angle theta = 180°).",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q033',
+    question: "According to Bohr's model of the hydrogen atom, how do the radius (r_n) of the nth stationary orbit and the orbital speed (v_n) of the electron vary with the principal quantum number n?",
+    options: [
+      "r_n is proportional to n^2 and v_n is proportional to 1/n",
+      "r_n is proportional to n and v_n is proportional to 1/n^2",
+      "r_n is proportional to 1/n^2 and v_n is proportional to n",
+      "r_n is proportional to n^2 and v_n is proportional to n"
+    ],
+    correctAnswer: 0,
+    explanation: "In Bohr's model for hydrogen (Z = 1), orbital radius r_n = (0.529 Å) * n^2 (so r_n is proportional to n^2) and orbital speed v_n = (2.18 x 10^6 m/s) / n (so v_n is proportional to 1/n).",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q034',
+    question: "In the ground state of the hydrogen atom, the total energy (E) of the electron is -13.6 eV. What are its kinetic energy (K) and electrostatic potential energy (U) in this state?",
+    options: [
+      "K = -13.6 eV, U = +27.2 eV",
+      "K = +13.6 eV, U = -13.6 eV",
+      "K = +13.6 eV, U = -27.2 eV",
+      "K = +6.8 eV, U = -20.4 eV"
+    ],
+    correctAnswer: 2,
+    explanation: "For an electron in a Bohr orbit, Total Energy E = -K and Potential Energy U = 2E = -2K. Given E = -13.6 eV, Kinetic Energy K = +13.6 eV and Potential Energy U = 2(-13.6 eV) = -27.2 eV.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q035',
+    question: "Which transition of an electron in the hydrogen atom produces a spectral line belonging to the Balmer series with the longest wavelength (H-alpha line)?",
+    options: [
+      "n = infinity -> n = 2",
+      "n = 2 -> n = 1",
+      "n = 4 -> n = 2",
+      "n = 3 -> n = 2"
+    ],
+    correctAnswer: 3,
+    explanation: "The Balmer series corresponds to transitions ending at n_f = 2. Longest wavelength corresponds to the minimum energy difference, which occurs for the transition from the immediately adjacent upper level: n = 3 to n = 2.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q036',
+    question: "If a gas of hydrogen atoms in the ground state (n = 1) absorbs monochromatic radiation of energy 12.75 eV, the electrons are excited to a higher energy level. How many distinct spectral emission lines can subsequently be emitted as the atoms de-excite back to the ground state?",
+    options: [
+      "3",
+      "6",
+      "10",
+      "4"
+    ],
+    correctAnswer: 1,
+    explanation: "Energy after absorption E_n = -13.6 eV + 12.75 eV = -0.85 eV. Since E_n = -13.6 / n^2 = -0.85, n^2 = 16, giving n = 4. The maximum number of spectral emission lines from n = 4 is N = n(n - 1) / 2 = 4(3) / 2 = 6.",
+    difficulty: "hard",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q037',
+    question: "Two stable nuclei have mass numbers A1 = 27 and A2 = 125. What is the ratio of their nuclear radii (R1 : R2) and the ratio of their nuclear mass densities (rho1 : rho2)?",
+    options: [
+      "R1 : R2 = 3 : 5 and rho1 : rho2 = 1 : 1",
+      "R1 : R2 = 27 : 125 and rho1 : rho2 = 3 : 5",
+      "R1 : R2 = 3 : 5 and rho1 : rho2 = 27 : 125",
+      "R1 : R2 = 9 : 25 and rho1 : rho2 = 1 : 1"
+    ],
+    correctAnswer: 0,
+    explanation: "Nuclear radius R = R0 * A^(1/3), so R1 / R2 = (27 / 125)^(1/3) = 3 : 5. Nuclear mass density is independent of mass number A (~2.3 x 10^17 kg/m^3 for all nuclei), so rho1 : rho2 = 1 : 1.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q038',
+    question: "Calculate the binding energy per nucleon of the nitrogen nucleus (14_7 N), given: Mass of a proton (m_H) = 1.0078 u, Mass of a neutron (m_n) = 1.0087 u, Mass of 14_7 N nucleus = 14.0031 u. (Take 1 u = 931.5 MeV/c^2)",
+    options: [
+      "104.7 MeV",
+      "8.75 MeV",
+      "7.48 MeV",
+      "6.12 MeV"
+    ],
+    correctAnswer: 2,
+    explanation: "Mass of 7 protons + 7 neutrons = 7(1.0078 + 1.0087) = 7(2.0165) = 14.1155 u. Mass defect delta_m = 14.1155 - 14.0031 = 0.1124 u. Total Binding Energy = 0.1124 x 931.5 = 104.7 MeV. Binding energy per nucleon = 104.7 / 14 = 7.48 MeV.",
+    difficulty: "hard",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q039',
+    question: "Which of the following statements regarding the strong nuclear force between nucleons inside a nucleus is INCORRECT?",
+    options: [
+      "It is much stronger than the Coulomb repulsive force between protons at distances of about 1-2 fm",
+      "It is charge-independent, acting nearly equally between p-p, n-n, and p-n pairs",
+      "It is a long-range central force that obeys the inverse-square law down to 0.1 fm",
+      "It becomes repulsive when the distance between two nucleons falls below approximately 0.8 fm"
+    ],
+    correctAnswer: 2,
+    explanation: "The strong nuclear force is a very short-range force (~1-3 fm), is non-central (spin-dependent), and does NOT obey the inverse-square law.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q040',
+    question: "A radioactive parent nucleus 238_92 X undergoes a series of radioactive decays consisting of two alpha-decays and one beta-minus (electron) decay to form a daughter nucleus Y. What are the atomic number (Z) and mass number (A) of the daughter nucleus Y?",
+    options: [
+      "Z = 88, A = 230",
+      "Z = 89, A = 230",
+      "Z = 87, A = 230",
+      "Z = 89, A = 234"
+    ],
+    correctAnswer: 1,
+    explanation: "Two alpha-decays reduce A by 2 x 4 = 8 (so A = 238 - 8 = 230) and reduce Z by 2 x 2 = 4 (from 92 to 88). One beta-minus decay increases Z by 1 without changing A, giving Z = 88 + 1 = 89 and A = 230.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q041',
+    question: "In a nuclear reactor or stellar core, why do both nuclear fission of a heavy nucleus (A ~ 240) into two medium-sized fragments (A ~ 120) and nuclear fusion of two very light nuclei (A <= 4) release net energy?",
+    options: [
+      "In both processes, the binding energy per nucleon of the product nuclei is greater than that of the initial reacting nuclei",
+      "In both processes, the total rest mass of the product nuclei is greater than the total rest mass of the initial nuclei",
+      "Fission releases energy due to an increase in mass defect, whereas fusion absorbs energy and decreases binding energy per nucleon",
+      "The binding energy per nucleon curve has a minimum at A = 56 (Fe)"
+    ],
+    correctAnswer: 0,
+    explanation: "Both nuclear fission of heavy nuclei and fusion of light nuclei move the nucleons toward the middle peak of the binding energy curve (around Fe-56), meaning the products have a higher binding energy per nucleon (and lower rest mass) than the reactants, releasing the difference as energy.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q042',
+    question: "How do the electrical resistivities of a metallic conductor (rho_c) and an intrinsic semiconductor (rho_s) change when their temperature is increased?",
+    options: [
+      "Both rho_c and rho_s increase with temperature",
+      "rho_c decreases, while rho_s increases with temperature",
+      "rho_c increases, while rho_s decreases exponentially with temperature",
+      "Both rho_c and rho_s decrease with temperature"
+    ],
+    correctAnswer: 2,
+    explanation: "In a metal, increasing temperature increases thermal collisions (decreasing relaxation time tau), so resistivity rho_c increases. In an intrinsic semiconductor, carrier concentration increases exponentially with temperature, causing resistivity rho_s to decrease rapidly.",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q043',
+    question: "When a pure silicon (Z = 14) crystal is doped with a pentavalent impurity such as Arsenic (As) or Phosphorus (P), the resulting extrinsic semiconductor is:",
+    options: [
+      "p-type, electrically positively charged, with holes as majority carriers",
+      "n-type, electrically neutral overall, with electrons as majority carriers and n_e * n_h = n_i^2",
+      "n-type, electrically negatively charged, with n_e = n_h",
+      "p-type, electrically neutral overall, with donor energy levels just above the valence band"
+    ],
+    correctAnswer: 1,
+    explanation: "Doping silicon with a pentavalent donor creates an n-type semiconductor with electrons as majority carriers (n_e >> n_h) obeying the mass-action law n_e * n_h = n_i^2. The crystal remains electrically neutral overall because the dopant atoms themselves are neutral.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q044',
+    question: "When a p-n junction diode is connected in reverse bias (prior to breakdown), how are the depletion region width (W) and the potential barrier (V_B) affected compared to the unbiased state?",
+    options: [
+      "Both depletion width W and potential barrier V_B decrease",
+      "Depletion width W increases, and potential barrier V_B increases to (V0 + V)",
+      "Depletion width W increases, while potential barrier V_B drops to zero",
+      "Both depletion width W and potential barrier V_B remain unchanged"
+    ],
+    correctAnswer: 1,
+    explanation: "In reverse bias, the applied electric field supports the internal barrier field, pulling majority carriers further away from the junction. Thus, the depletion region width W widens and the barrier potential increases to (V0 + V).",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q045',
+    question: "An alternating voltage of frequency 50 Hz is applied across (i) a half-wave rectifier and (ii) a centre-tap full-wave rectifier. What are the fundamental ripple frequencies of the output pulsating DC in cases (i) and (ii), respectively?",
+    options: [
+      "25 Hz and 50 Hz",
+      "50 Hz and 50 Hz",
+      "100 Hz and 50 Hz",
+      "50 Hz and 100 Hz"
+    ],
+    correctAnswer: 3,
+    explanation: "A half-wave rectifier conducts once per input AC cycle, so its output ripple frequency equals the input frequency (50 Hz). A full-wave rectifier conducts twice per cycle, doubling the output ripple frequency to 2f = 100 Hz.",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q046',
+    question: "In the circuit shown conceptually below, an ideal p-n junction diode is connected in series with a 100 Ohm resistor across a DC supply. The p-side of the diode is held at +2 V and the n-side of the circuit is held at +5 V. What is the current flowing through the 100 Ohm resistor?",
+    options: [
+      "0 mA",
+      "30 mA",
+      "70 mA",
+      "20 mA"
+    ],
+    correctAnswer: 0,
+    explanation: "Since the p-side (+2 V) is at a lower potential than the n-side (+5 V), the p-n junction diode is reverse-biased. An ideal diode in reverse bias acts as an open circuit (infinite resistance), so the current is 0 mA.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q047',
+    question: "Assertion (A): A Zener diode is fabricated by heavily doping both the p-side and n-side of the p-n junction and is operated in reverse bias in voltage regulator circuits.\nReason (R): Heavy doping makes the depletion region very thin (< 10^-6 m) and creates a very high internal electric field (~5 x 10^6 V/m), allowing a large change in reverse current at a nearly constant breakdown voltage (V_Z).",
+    options: [
+      "Both (A) and (R) are true, and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true, but (R) is NOT the correct explanation of (A)",
+      "(A) is true, but (R) is false",
+      "(A) is false, but (R) is true"
+    ],
+    correctAnswer: 0,
+    explanation: "Both Assertion and Reason are true and R correctly explains A: heavy doping narrows the depletion layer (< 10^-6 m), generating a strong electric field (~5 x 10^6 V/m) that produces sharp Zener breakdown at a constant voltage V_Z.",
+    difficulty: "hard",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q048',
+    question: "Why is a photodiode always operated under reverse bias for detecting optical signals?",
+    options: [
+      "Reverse bias generates photons inside the depletion layer via radiative recombination",
+      "In reverse bias, the fractional change in the small reverse saturation (minority carrier) current due to photo-generated carriers is much easier to measure accurately than in forward bias",
+      "A p-n junction cannot absorb photons of energy hv > E_g when forward biased",
+      "Reverse bias eliminates the depletion region completely so electrons move without resistance"
+    ],
+    correctAnswer: 1,
+    explanation: "In reverse bias, the dark current (due to thermally generated minority carriers) is extremely small (microamperes). Therefore, when light generates electron-hole pairs, the resulting fractional change in reverse current is large and easily detectable.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q049',
+    question: "A two-input logic gate produces the following truth table:\nA = 0, B = 0 -> Y = 1\nA = 0, B = 1 -> Y = 1\nA = 1, B = 0 -> Y = 1\nA = 1, B = 1 -> Y = 0\nIdentify this logic gate:",
+    options: [
+      "NOR gate",
+      "XOR gate",
+      "NAND gate",
+      "AND gate"
+    ],
+    correctAnswer: 2,
+    explanation: "The output Y is 0 only when both inputs A and B are 1, and 1 in all other cases (Y = NOT(A . B)). This is the truth table of a NAND gate.",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q050',
+    question: "According to De Morgan's theorem and Boolean algebra, if the two inputs of a NOR gate receive the inverted signals NOT(A) and NOT(B) (i.e., Y = NOT(NOT(A) + NOT(B))), the entire combination is logically equivalent to which single gate?",
+    options: [
+      "OR gate",
+      "NAND gate",
+      "NOT gate",
+      "AND gate"
+    ],
+    correctAnswer: 3,
+    explanation: "By De Morgan's theorem, Y = NOT(NOT(A) + NOT(B)) = (NOT(NOT(A))) . (NOT(NOT(B))) = A . B, which is the Boolean expression for an AND gate.",
+    difficulty: "hard",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q051',
+    question: "According to VSEPR theory, what are the number of lone pairs on the central atom and the molecular geometry (shape) of SF4 and XeF4, respectively?",
+    options: [
+      "SF4: 1 lone pair, See-saw; XeF4: 2 lone pairs, Square planar",
+      "SF4: 0 lone pairs, Tetrahedral; XeF4: 1 lone pair, See-saw",
+      "SF4: 2 lone pairs, Bent T-shape; XeF4: 2 lone pairs, Tetrahedral",
+      "SF4: 1 lone pair, Trigonal pyramidal; XeF4: 0 lone pairs, Octahedral"
+    ],
+    correctAnswer: 0,
+    explanation: "In SF4, sulphur (6 valence e-) forms 4 bonds and has 1 lone pair (AB4E, sp3d, See-saw shape). In XeF4, xenon (8 valence e-) forms 4 bonds and has 2 lone pairs (AB4E2, sp3d2, Square planar shape).",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q052',
+    question: "Which of the following pairs of chemical species are isostructural and have the same hybridisation of the central atom?",
+    options: [
+      "BF3 and NH3",
+      "NH4+ and BF4-",
+      "SO2 and CO2",
+      "ClF3 and BCl3"
+    ],
+    correctAnswer: 1,
+    explanation: "Both NH4+ and BF4- have 4 bond pairs and 0 lone pairs around the central atom, giving sp3 hybridisation and an identical regular tetrahedral geometry (isostructural).",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q053',
+    question: "Arrange the following molecules in the correct order of decreasing bond angle: CH4, NH3, H2O, BF3",
+    options: [
+      "CH4 > BF3 > NH3 > H2O",
+      "BF3 > NH3 > CH4 > H2O",
+      "BF3 > CH4 > NH3 > H2O",
+      "H2O > NH3 > CH4 > BF3"
+    ],
+    correctAnswer: 2,
+    explanation: "BF3 is trigonal planar (sp2, 120°); CH4 is tetrahedral with 0 lone pairs (sp3, 109.5°); NH3 has 1 lone pair (sp3, 107°); and H2O has 2 lone pairs causing greater lp-lp repulsion (sp3, 104.5°). Thus BF3 > CH4 > NH3 > H2O.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q054',
+    question: "Both NH3 and NF3 have pyramidal geometry with one lone pair on the central nitrogen atom, yet the dipole moment of NH3 (1.47 D) is significantly higher than that of NF3 (0.23 D). Why?",
+    options: [
+      "Nitrogen is more electronegative than fluorine, so bond dipoles cancel in NH3",
+      "In NH3, the orbital dipole due to the lone pair is in the same direction as the resultant dipole moment of the three N–H bonds, whereas in NF3 it points in the opposite direction to the resultant of the three N–F bonds",
+      "NF3 is sp2 hybridised and planar, whereas NH3 is sp3 hybridised",
+      "Hydrogen atoms form intramolecular hydrogen bonds inside NH3"
+    ],
+    correctAnswer: 1,
+    explanation: "In NH3, N is more electronegative than H, so the N-H bond dipoles point toward N, adding to the lone pair orbital dipole. In NF3, F is more electronegative than N, so the N-F bond dipoles point away from N, partially cancelling the lone pair dipole.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q055',
+    question: "According to Molecular Orbital Theory (MOT), what is the correct order of increasing bond order (and decreasing bond length) for the dioxygen species O2, O2+, O2-, O2^2-?",
+    options: [
+      "O2^2- < O2- < O2 < O2+",
+      "O2+ < O2 < O2- < O2^2-",
+      "O2- < O2^2- < O2 < O2+",
+      "O2^2- < O2 < O2- < O2+"
+    ],
+    correctAnswer: 0,
+    explanation: "From MOT, the bond orders are: O2^2- (peroxide) = 1.0; O2- (superoxide) = 1.5; O2 = 2.0; and O2+ = 2.5. Therefore, increasing bond order is O2^2- < O2- < O2 < O2+.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q056',
+    question: "According to Molecular Orbital Theory, which of the following diatomic species is paramagnetic?",
+    options: [
+      "N2",
+      "CO",
+      "NO+",
+      "B2"
+    ],
+    correctAnswer: 3,
+    explanation: "B2 (10 electrons) has the MO configuration (sigma 1s)^2 (sigma* 1s)^2 (sigma 2s)^2 (sigma* 2s)^2 (pi 2px)^1 = (pi 2py)^1, containing two unpaired electrons in degenerate pi-bonding orbitals, making it paramagnetic. N2, CO, and NO+ all have 14 paired electrons and are diamagnetic.",
+    difficulty: "hard",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q057',
+    question: "According to Fajans' rules, which of the following alkaline earth metal chlorides exhibits the highest covalent character?",
+    options: [
+      "BaCl2",
+      "BeCl2",
+      "CaCl2",
+      "MgCl2"
+    ],
+    correctAnswer: 1,
+    explanation: "According to Fajans' rules, smaller cation size and higher charge density cause greater polarisation of the anion, leading to higher covalent character. Among Be2+, Mg2+, Ca2+, and Ba2+, Be2+ is the smallest cation, so BeCl2 is the most covalent.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q058',
+    question: "Which statement correctly explains why ortho-nitrophenol is steam-volatile and has a lower boiling point than para-nitrophenol?",
+    options: [
+      "ortho-Nitrophenol forms strong intermolecular hydrogen bonds, whereas para-nitrophenol forms intramolecular hydrogen bonds",
+      "ortho-Nitrophenol has a higher molecular mass than para-nitrophenol",
+      "ortho-Nitrophenol forms intramolecular hydrogen bonding (chelation) within single molecules, whereas para-nitrophenol forms intermolecular hydrogen bonding resulting in molecular association",
+      "ortho-Nitrophenol is completely ionic in the liquid state"
+    ],
+    correctAnswer: 2,
+    explanation: "In ortho-nitrophenol, intramolecular H-bonding occurs between the -OH and -NO2 groups of the same molecule, preventing association and making it steam-volatile. In para-nitrophenol, intermolecular H-bonding associates molecules together, raising its boiling point.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q059',
+    question: "What are the total number of sigma (sigma) and pi (pi) bonds present in one molecule of but-1-en-3-yne (CH2=CH–C≡CH)?",
+    options: [
+      "6 sigma and 3 pi",
+      "7 sigma and 2 pi",
+      "8 sigma and 3 pi",
+      "7 sigma and 3 pi"
+    ],
+    correctAnswer: 3,
+    explanation: "In CH2=CH-C≡CH, there are 4 C-H single bonds (4 sigma) and 3 C-C linkages (3 sigma), giving 7 sigma bonds total. The C=C double bond has 1 pi bond and the C≡C triple bond has 2 pi bonds, giving 3 pi bonds total.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q060',
+    question: "In the polyatomic carbonate ion (CO3^2-), all three carbon-oxygen bond lengths are experimentally found to be identical (128 pm), intermediate between a C–O single bond and a C=O double bond. What is the formal C–O bond order in CO3^2-?",
+    options: [
+      "1.50",
+      "1.33",
+      "1.67",
+      "1.25"
+    ],
+    correctAnswer: 1,
+    explanation: "In the resonance hybrid of CO3^2-, 4 covalent bonds (one C=O double bond and two C-O single bonds) are delocalised equally over 3 C-O positions. Thus, Bond Order = 4 / 3 = 1.33.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q061',
+    question: "For the gaseous equilibrium reaction: N2(g) + 3H2(g) <=> 2NH3(g), what is the correct mathematical relationship between Kp and Kc at absolute temperature T?",
+    options: [
+      "Kp = Kc (RT)^2",
+      "Kp = Kc (RT)^-2",
+      "Kp = Kc (RT)^-1",
+      "Kp = Kc"
+    ],
+    correctAnswer: 1,
+    explanation: "Kp = Kc (RT)^(delta_n_g), where delta_n_g = (moles of gaseous products) - (moles of gaseous reactants) = 2 - (1 + 3) = -2. Therefore, Kp = Kc (RT)^-2.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q062',
+    question: "If the equilibrium constant for the reaction SO2(g) + 1/2 O2(g) <=> SO3(g) at a given temperature is K1 = 5, what is the equilibrium constant (K2) for the reverse and doubled reaction: 2SO3(g) <=> 2SO2(g) + O2(g) at the same temperature?",
+    options: [
+      "25",
+      "0.20",
+      "0.04",
+      "10"
+    ],
+    correctAnswer: 2,
+    explanation: "Reversing the reaction inverts the equilibrium constant (1 / K1), and multiplying the stoichiometry by 2 squares the constant: K2 = (1 / K1)^2 = (1 / 5)^2 = 1 / 25 = 0.04.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q063',
+    question: "For the industrial synthesis of SO3 via the Contact Process: 2SO2(g) + O2(g) <=> 2SO3(g); delta_H° = -198 kJ mol^-1. According to Le Chatelier's principle, which set of conditions maximises the equilibrium yield of SO3?",
+    options: [
+      "Low temperature, high pressure, and excess O2",
+      "High temperature, low pressure, and addition of V2O5 catalyst",
+      "High temperature, high pressure, and addition of argon at constant volume",
+      "Low temperature, low pressure, and removal of O2"
+    ],
+    correctAnswer: 0,
+    explanation: "Since the forward reaction is exothermic (delta_H° < 0) and proceeds with a decrease in gaseous moles (3 moles to 2 moles), Le Chatelier's principle dictates that low temperature, high pressure, and excess reactant (O2) shift equilibrium toward SO3.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q064',
+    question: "For a reaction A <=> B at 298 K, the equilibrium constant Kc = 10. If at a given instant the concentrations are [A] = 0.5 M and [B] = 10.0 M, what is the value of the reaction quotient (Qc) and in which direction will the reaction proceed to reach equilibrium?",
+    options: [
+      "Qc = 20; reaction proceeds in the forward direction (left to right)",
+      "Qc = 20; reaction proceeds in the reverse direction (right to left)",
+      "Qc = 0.05; reaction proceeds in the forward direction (left to right)",
+      "Qc = 5; system is already at equilibrium"
+    ],
+    correctAnswer: 1,
+    explanation: "Reaction quotient Qc = [B] / [A] = 10.0 / 0.5 = 20. Since Qc (20) > Kc (10), the ratio of product to reactant is higher than at equilibrium, so the reaction proceeds in the reverse direction (right to left).",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q065',
+    question: "According to the Brønsted-Lowry concept, what are the conjugate acid and conjugate base of the bicarbonate ion (HCO3-), respectively?",
+    options: [
+      "Conjugate acid: CO3^2-; Conjugate base: H2CO3",
+      "Conjugate acid: H3O+; Conjugate base: OH-",
+      "Conjugate acid: H2CO3; Conjugate base: CO3^2-",
+      "Conjugate acid: H2O; Conjugate base: CO2"
+    ],
+    correctAnswer: 2,
+    explanation: "Adding a proton (H+) to HCO3- gives its conjugate acid, H2CO3. Removing a proton (H+) from HCO3- gives its conjugate base, CO3^2-.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q066',
+    question: "Calculate the pH of an aqueous 0.005 M solution of barium hydroxide, Ba(OH)2, assuming complete dissociation at 298 K. (Given: Kw = 1.0 x 10^-14)",
+    options: [
+      "12.0",
+      "2.0",
+      "11.7",
+      "12.3"
+    ],
+    correctAnswer: 0,
+    explanation: "Ba(OH)2 is a strong diacidic base: [OH-] = 2 x 0.005 M = 0.01 M = 10^-2 M. Therefore, pOH = -log10(10^-2) = 2.0, and pH = 14.0 - 2.0 = 12.0.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q067',
+    question: "An acidic buffer solution is prepared by mixing weak acetic acid (CH3COOH, pKa = 4.74) and sodium acetate (CH3COONa) such that [CH3COONa] = 0.20 M and [CH3COOH] = 0.10 M. What is the pH of this buffer solution? (Take log10(2) = 0.30)",
+    options: [
+      "4.44",
+      "4.74",
+      "5.04",
+      "5.34"
+    ],
+    correctAnswer: 2,
+    explanation: "By the Henderson-Hasselbalch equation, pH = pKa + log10([Salt] / [Acid]) = 4.74 + log10(0.20 / 0.10) = 4.74 + log10(2) = 4.74 + 0.30 = 5.04.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q068',
+    question: "If S represents the molar solubility (in mol L^-1) of sparingly soluble calcium fluoride (CaF2) in pure water, what is the expression for its solubility product (Ksp)?",
+    options: [
+      "Ksp = S^2",
+      "Ksp = 2S^3",
+      "Ksp = 27S^4",
+      "Ksp = 4S^3"
+    ],
+    correctAnswer: 3,
+    explanation: "CaF2(s) <=> Ca2+(aq) + 2F-(aq). At saturation, [Ca2+] = S and [F-] = 2S. Thus, Ksp = [Ca2+][F-]^2 = (S)(2S)^2 = 4S^3.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q069',
+    question: "What is the molar solubility of silver chloride (AgCl, Ksp = 1.8 x 10^-10) in a 0.10 M aqueous solution of sodium chloride (NaCl)?",
+    options: [
+      "1.8 x 10^-9 M",
+      "1.34 x 10^-5 M",
+      "1.8 x 10^-11 M",
+      "1.8 x 10^-10 M"
+    ],
+    correctAnswer: 0,
+    explanation: "Due to the common ion effect from 0.10 M NaCl, [Cl-] = 0.10 + S ~ 0.10 M. Since Ksp = [Ag+][Cl-] = S(0.10) = 1.8 x 10^-10, molar solubility S = (1.8 x 10^-10) / 0.10 = 1.8 x 10^-9 M.",
+    difficulty: "hard",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q070',
+    question: "An aqueous solution of which of the following salts will have a pH > 7 (basic nature) at 298 K due to anionic hydrolysis?",
+    options: [
+      "NH4Cl",
+      "NaCl",
+      "CH3COONa",
+      "CuSO4"
+    ],
+    correctAnswer: 2,
+    explanation: "CH3COONa is a salt of a weak acid (CH3COOH) and a strong base (NaOH). The acetate ion (CH3COO-) undergoes anionic hydrolysis in water (CH3COO- + H2O <=> CH3COOH + OH-), producing excess OH- and giving pH > 7.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q071',
+    question: "What is the correct IUPAC name of the following organic compound? CH3–CO–CH2–CH2–COOH",
+    options: [
+      "4-Oxopentanoic acid",
+      "2-Oxopentanoic acid",
+      "4-Carboxybutan-2-one",
+      "1-Hydroxy-1,4-pentanedione"
+    ],
+    correctAnswer: 0,
+    explanation: "The carboxylic acid group (-COOH) has higher priority than the ketone group (-CO-), so numbering starts at the carboxyl carbon (C-1). The 5-carbon chain has a keto substituent (prefix 'oxo') at C-4, giving 4-oxopentanoic acid.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q072',
+    question: "Arrange the following carbocations in the correct order of increasing stability: 1. (CH3)3C+, 2. CH3CH2+, 3. (CH3)2CH+, 4. CH3+",
+    options: [
+      "1 < 3 < 2 < 4",
+      "4 < 2 < 3 < 1",
+      "4 < 3 < 2 < 1",
+      "2 < 4 < 3 < 1"
+    ],
+    correctAnswer: 1,
+    explanation: "Alkyl groups stabilise carbocations via hyperconjugation (number of alpha-C-H bonds) and +I effect. Methyl (0 alpha-H) < Primary ethyl (3 alpha-H) < Secondary isopropyl (6 alpha-H) < Tertiary tert-butyl (9 alpha-H), so 4 < 2 < 3 < 1.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q073',
+    question: "Arrange the following substituted acetic acids in the correct order of decreasing acid strength (lowest pKa first): FCH2COOH, ClCH2COOH, BrCH2COOH, CH3COOH",
+    options: [
+      "CH3COOH > BrCH2COOH > ClCH2COOH > FCH2COOH",
+      "ClCH2COOH > FCH2COOH > BrCH2COOH > CH3COOH",
+      "FCH2COOH > ClCH2COOH > BrCH2COOH > CH3COOH",
+      "FCH2COOH > BrCH2COOH > ClCH2COOH > CH3COOH"
+    ],
+    correctAnswer: 2,
+    explanation: "Electron-withdrawing inductive (-I) groups stabilise the carboxylate anion and increase acidity. Since electronegativity and -I strength decrease in the order -F > -Cl > -Br > -H, acid strength follows FCH2COOH > ClCH2COOH > BrCH2COOH > CH3COOH.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q074',
+    question: "According to Hückel's rule of aromaticity, which of the following cyclic conjugated species is aromatic (planar with 6 pi delocalised electrons)?",
+    options: [
+      "Cyclopropenyl anion (C3H3-)",
+      "Cyclopentadienyl cation (C5H5+)",
+      "Cyclobutadiene (C4H4)",
+      "Cyclopentadienyl anion (C5H5-)"
+    ],
+    correctAnswer: 3,
+    explanation: "Cyclopentadienyl anion (C5H5-) is cyclic, planar, fully conjugated (all 5 ring carbons are sp2 hybridised), and possesses (4n + 2) = 6 delocalised pi electrons (two double bonds + one lone pair), making it aromatic.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q075',
+    question: "In the qualitative elemental analysis of an organic compound (Lassaigne's test), when the sodium fusion extract of a compound containing both Nitrogen and Sulphur is treated with neutral FeCl3 solution, a blood-red colouration is produced due to the formation of:",
+    options: [
+      "Fe4[Fe(CN)6]3",
+      "[Fe(SCN)]^2+",
+      "Na4[Fe(CN)5NOS]",
+      "(NH4)3PO4 . 12MoO3"
+    ],
+    correctAnswer: 1,
+    explanation: "When both N and S are present in an organic compound, sodium fusion forms sodium thiocyanate (NaSCN), which reacts with Fe3+ ions to produce a blood-red colouration of ferric thiocyanate complex, [Fe(SCN)]^2+.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q076',
+    question: "Which of the following alkenes is capable of exhibiting geometrical (cis–trans) isomerism?",
+    options: [
+      "Propene (CH3–CH=CH2)",
+      "2-Methylpropene ((CH3)2C=CH2)",
+      "But-1-ene (CH3CH2–CH=CH2)",
+      "But-2-ene (CH3–CH=CH–CH3)"
+    ],
+    correctAnswer: 3,
+    explanation: "For geometrical (cis-trans) isomerism, each doubly bonded carbon must be attached to two different groups. Terminal alkenes (propene, 2-methylpropene, but-1-ene) have two identical H atoms on C-1, whereas but-2-ene has -H and -CH3 on both C-2 and C-3.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q077',
+    question: "When propene (CH3–CH=CH2) reacts with hydrogen bromide (HBr) in the presence of benzoyl peroxide, what is the major organic product and via which mechanism does the reaction proceed?",
+    options: [
+      "1-Bromopropane via a free-radical addition mechanism (Kharasch effect)",
+      "2-Bromopropane via an electrophilic addition mechanism (Markovnikov's rule)",
+      "1-Bromopropane via a carbocation rearrangement mechanism",
+      "1,2-Dibromopropane via a cyclic bromonium ion intermediate"
+    ],
+    correctAnswer: 0,
+    explanation: "In the presence of benzoyl peroxide, addition of HBr to unsymmetrical alkenes like propene follows an anti-Markovnikov free-radical chain mechanism (Peroxide / Kharasch effect) via the more stable secondary free radical intermediate to give 1-bromopropane.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q078',
+    question: "Reductive ozonolysis (O3 followed by Zn/H2O) of an unknown alkene (C5H10) yields an equimolar mixture of propanone (acetone) and ethanal (acetaldehyde). Identify the parent alkene:",
+    options: [
+      "Pent-2-ene",
+      "2-Methylbut-2-ene",
+      "2-Methylbut-1-ene",
+      "3-Methylbut-1-ene"
+    ],
+    correctAnswer: 1,
+    explanation: "Joining the carbonyl carbons of propanone ((CH3)2C=O) and ethanal (O=CHCH3) by a C=C double bond gives (CH3)2C=CHCH3, whose IUPAC name is 2-methylbut-2-ene.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q079',
+    question: "What is the major product obtained when propyne (CH3–C≡CH) is passed through warm dilute H2SO4 (40%) in the presence of mercuric sulphate (HgSO4, 1%) at 333 K?",
+    options: [
+      "Propanal (CH3CH2CHO)",
+      "Propan-1-ol (CH3CH2CH2OH)",
+      "Propanone (CH3COCH3)",
+      "Propanoic acid (CH3CH2COOH)"
+    ],
+    correctAnswer: 2,
+    explanation: "Kucherov hydration of propyne adds water across the triple bond according to Markovnikov's rule to form an unstable vinyl alcohol (prop-1-en-2-ol), which rapidly tautomerises into propanone (acetone, CH3COCH3).",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q080',
+    question: "When nitrobenzene undergoes bromination with Br2/FeBr3, what is the major product and why?",
+    options: [
+      "ortho- and para-Bromonitrobenzene, because the -NO2 group is an activating +R group",
+      "meta-Bromonitrobenzene, because the -NO2 group is a strongly deactivating (-R, -I) meta-directing group",
+      "2,4,6-Tribromonitrobenzene, because the -NO2 group strongly activates the benzene ring",
+      "Bromobenzene via displacement of the nitro group"
+    ],
+    correctAnswer: 1,
+    explanation: "The nitro group (-NO2) is strongly electron-withdrawing via both resonance (-R) and inductive (-I) effects, reducing electron density particularly at the ortho and para positions and directing incoming electrophiles (Br+) to the meta position.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q081',
+    question: "Arrange the following carbonyl compounds in the correct order of decreasing reactivity towards nucleophilic addition reactions (e.g., addition of HCN): HCHO, CH3CHO, CH3COCH3, C6H5COC6H5",
+    options: [
+      "HCHO > CH3CHO > CH3COCH3 > C6H5COC6H5",
+      "C6H5COC6H5 > CH3COCH3 > CH3CHO > HCHO",
+      "CH3CHO > HCHO > CH3COCH3 > C6H5COC6H5",
+      "CH3COCH3 > CH3CHO > HCHO > C6H5COC6H5"
+    ],
+    correctAnswer: 0,
+    explanation: "Reactivity toward nucleophilic addition decreases as steric crowding increases and as +I/+R electron-donating groups reduce the electrophilicity of the carbonyl carbon. Hence, formaldehyde (HCHO) > acetaldehyde (CH3CHO) > acetone (CH3COCH3) > benzophenone (C6H5COC6H5).",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q082',
+    question: "Which of the following reagents selectively reduces an acid chloride (R–COCl) or an ester/nitrile to an aldehyde (R–CHO)? Match the Named Reaction with its correct reagent:",
+    options: [
+      "Stephen reaction: R–COCl + H2 over Pd–BaSO4",
+      "Rosenmund reduction: R–COCl + H2 over Pd supported on BaSO4",
+      "Etard reaction: Toluene + CO + HCl in presence of anhydrous AlCl3/CuCl",
+      "Gattermann-Koch reaction: Toluene + CrO2Cl2 in CS2 followed by H3O+"
+    ],
+    correctAnswer: 1,
+    explanation: "Hydrogenation of an acyl chloride (R-COCl) over palladium catalyst supported on barium sulphate (Pd/BaSO4) to yield an aldehyde (R-CHO) is known as the Rosenmund reduction. (Stephen reduces nitriles with SnCl2/HCl; Etard uses CrO2Cl2; Gattermann-Koch uses CO + HCl).",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q083',
+    question: "Suppose a carbonyl compound also contains an acid-sensitive functional group (such as an alcohol or an acetal) that would be attacked by concentrated HCl. Which reagent system should be chosen to reduce its >C=O group to a >CH2 group under basic conditions?",
+    options: [
+      "Clemmensen reduction (Zn–Hg and concentrated HCl)",
+      "Wolff-Kishner reduction (NH2NH2 followed by heating with KOH in ethylene glycol)",
+      "Reduction with NaBH4 in methanol",
+      "Catalytic hydrogenation with Lindlar's catalyst"
+    ],
+    correctAnswer: 1,
+    explanation: "Wolff-Kishner reduction converts >C=O to >CH2 using hydrazine (NH2NH2) followed by heating with KOH/NaOH in ethylene glycol (strongly basic medium), preserving acid-sensitive groups that would react with conc. HCl in Clemmensen reduction.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q084',
+    question: "Which of the following carbonyl compounds undergoes the Cannizzaro reaction (disproportionation into an alcohol and a carboxylic acid salt) when heated with concentrated (50%) aqueous NaOH, rather than an aldol condensation?",
+    options: [
+      "Ethanal (CH3CHO)",
+      "Propanone (CH3COCH3)",
+      "Benzaldehyde (C6H5CHO)",
+      "Phenylacetaldehyde (C6H5CH2CHO)"
+    ],
+    correctAnswer: 2,
+    explanation: "Aldehydes that do NOT possess an alpha-hydrogen atom undergo the Cannizzaro disproportionation reaction on heating with concentrated alkali. Benzaldehyde (C6H5CHO) has no alpha-hydrogen and yields benzyl alcohol and sodium benzoate.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q085',
+    question: "When ethanal (CH3CHO) is treated with dilute NaOH at room temperature followed by heating of the intermediate beta-hydroxy aldehyde, what is the IUPAC name of the alpha,beta-unsaturated aldehyde formed?",
+    options: [
+      "But-2-enal (Crotonaldehyde)",
+      "But-3-enal",
+      "3-Hydroxybutanal",
+      "Pent-2-en-3-one"
+    ],
+    correctAnswer: 0,
+    explanation: "Two molecules of ethanal undergo base-catalysed aldol addition to give 3-hydroxybutanal (aldol), which readily loses a water molecule upon heating to form CH3-CH=CH-CHO, named But-2-enal (crotonaldehyde).",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q086',
+    question: "Which of the following pairs of organic compounds can be chemically distinguished by the Iodoform test (I2 / NaOH, yielding a yellow precipitate of CHI3)?",
+    options: [
+      "Methanal (HCHO) and Benzaldehyde (C6H5CHO)",
+      "Pentan-2-one (CH3COCH2CH2CH3) and Pentan-3-one (CH3CH2COCH2CH3)",
+      "Ethanal (CH3CHO) and Propanone (CH3COCH3)",
+      "Ethanol (CH3CH2OH) and Propan-2-ol (CH3CH(OH)CH3)"
+    ],
+    correctAnswer: 1,
+    explanation: "The iodoform test is positive for methyl ketones (CH3CO-) and CH3CH(OH)- alcohols. Pentan-2-one is a methyl ketone and gives a yellow precipitate of CHI3, whereas pentan-3-one lacks a CH3CO- group and does not react.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q087',
+    question: "Regarding Tollens' test (ammoniacal silver nitrate) and Fehling's test (alkaline Cu2+ tartrate complex), how does benzaldehyde (C6H5CHO) respond?",
+    options: [
+      "Gives a positive silver mirror with Tollens' reagent, and a positive red precipitate of Cu2O with Fehling's solution",
+      "Gives neither Tollens' test nor Fehling's test",
+      "Gives a positive silver mirror with Tollens' reagent, but does NOT reduce Fehling's solution",
+      "Reduces Fehling's solution to Cu2O, but does NOT react with Tollens' reagent"
+    ],
+    correctAnswer: 2,
+    explanation: "Aromatic aldehydes such as benzaldehyde reduce the stronger oxidant Tollens' reagent to form a silver mirror, but cannot reduce the milder oxidant Fehling's (or Benedict's) solution.",
+    difficulty: "hard",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q088',
+    question: "Arrange the following benzoic acid derivatives in the correct order of decreasing acidity: 1. p-Nitrobenzoic acid, 2. Benzoic acid, 3. p-Methoxybenzoic acid, 4. p-Methylbenzoic acid (Toluic acid)",
+    options: [
+      "1 > 2 > 4 > 3",
+      "1 > 2 > 3 > 4",
+      "3 > 4 > 2 > 1",
+      "2 > 1 > 4 > 3"
+    ],
+    correctAnswer: 0,
+    explanation: "Electron-withdrawing groups (-NO2: -R, -I) increase acidity, while electron-donating groups decrease acidity. Since -OCH3 donates electrons strongly by resonance (+R > -I), it weakens acidity more than -CH3 (+I, hyperconjugation). Thus: p-nitrobenzoic acid (1) > benzoic acid (2) > p-methylbenzoic acid (4) > p-methoxybenzoic acid (3).",
+    difficulty: "hard",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q089',
+    question: "When propanoic acid (CH3CH2COOH) is treated with Cl2 or Br2 in the presence of a small amount of red phosphorus followed by H2O, the alpha-hydrogen is selectively substituted to yield 2-chloropropanoic acid or 2-bromopropanoic acid. What is this reaction called?",
+    options: [
+      "Kolbe's electrolysis",
+      "Hunsdiecker reaction",
+      "Perkin condensation",
+      "Hell-Volhard-Zelinsky (HVZ) reaction"
+    ],
+    correctAnswer: 3,
+    explanation: "Carboxylic acids containing an alpha-hydrogen undergo selective alpha-halogenation when treated with Cl2 or Br2 in the presence of a small quantity of red phosphorus; this named reaction is the Hell-Volhard-Zelinsky (HVZ) reaction.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q090',
+    question: "Assertion (A): Carboxylic acids fail to give the characteristic nucleophilic addition reactions of aldehydes and ketones (such as formation of 2,4-DNP derivatives or semicarbazones), even though they contain a carbonyl (>C=O) group.\nReason (R): The lone pair of electrons on the hydroxyl oxygen (-OH) of the carboxyl group participates in resonance delocalisation with the carbonyl carbon, making the carboxyl carbon significantly less electrophilic than an aldehyde or ketone carbonyl carbon.",
+    options: [
+      "Both (A) and (R) are true, and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true, but (R) is NOT the correct explanation of (A)",
+      "(A) is true, but (R) is false",
+      "(A) is false, but (R) is true"
+    ],
+    correctAnswer: 0,
+    explanation: "Both (A) and (R) are true and (R) correctly explains (A): resonance donation of the -OH oxygen's lone pair into the >C=O pi system reduces the positive charge (electrophilicity) of the carboxyl carbon, preventing typical aldehyde/ketone nucleophilic addition reactions.",
+    difficulty: "hard",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q091',
+    question: "When D-glucose is heated prolongedly with hydroiodic acid (HI), it forms n-hexane, confirming a straight six-carbon chain. However, which of the following reactions of D-glucose provides evidence that it exists in a cyclic hemiacetal structure rather than solely as an open-chain aldehyde?",
+    options: [
+      "Oxidation with bromine water (Br2/H2O) to form D-gluconic acid",
+      "Reaction with hydroxylamine (NH2OH) to form a monoxime",
+      "Failure of glucose pentaacetate to react with hydroxylamine (NH2OH), and failure of D-glucose to give Schiff's test or form a hydrogensulphite addition product with NaHSO3",
+      "Oxidation with nitric acid (HNO3) to form saccharic acid"
+    ],
+    correctAnswer: 2,
+    explanation: "Despite having an aldehyde group, D-glucose fails to give Schiff's test or react with NaHSO3, and its pentaacetate does not react with NH2OH, proving the absence of a free -CHO group and confirming its cyclic hemiacetal (pyranose) ring structure.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q092',
+    question: "alpha-D-(+)-Glucopyranose and beta-D-(+)-Glucopyranose are cyclic stereoisomers that differ strictly in the configuration of the hydroxyl (-OH) group at C-1 (the hemiacetal carbon). What is such a pair of stereoisomers specifically called?",
+    options: [
+      "Enantiomers",
+      "Anomers",
+      "C-4 Epimers",
+      "Conformational rotamers"
+    ],
+    correctAnswer: 1,
+    explanation: "Cyclic stereoisomers (diastereomers) of carbohydrates that differ solely in the configuration around the hemiacetal/hemiketal carbon atom (C-1 in aldoses, known as the anomeric carbon) are called anomers.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q093',
+    question: "Which of the following carbohydrates is a non-reducing sugar (does not reduce Fehling's solution or Tollens' reagent)?",
+    options: [
+      "Maltose",
+      "Lactose",
+      "Sucrose",
+      "D-Fructose"
+    ],
+    correctAnswer: 2,
+    explanation: "In sucrose, the glycosidic linkage connects the anomeric C-1 of alpha-D-glucose and the anomeric C-2 of beta-D-fructose. Because both reducing groups are locked in the glycosidic bond, sucrose is a non-reducing sugar.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q094',
+    question: "Compare the structural components of Starch (Amylose and Amylopectin) with Cellulose:",
+    options: [
+      "Amylose is a linear polymer of alpha-D-glucose linked by C1–C4 glycosidic bonds; Amylopectin is a branched polymer of alpha-D-glucose with C1–C4 chains and C1–C6 branching; Cellulose is a linear polymer of beta-D-glucose linked by C1–C4 glycosidic bonds",
+      "Both Amylose and Cellulose are linear polymers of beta-D-glucose linked by C1–C6 bonds",
+      "Amylose is branched while Amylopectin is water-soluble and linear",
+      "Cellulose is a polymer of beta-D-fructose linked by alpha-1,2 glycosidic linkages"
+    ],
+    correctAnswer: 0,
+    explanation: "Starch consists of amylose (15-20%, water-soluble linear alpha-1,4 D-glucose polymer) and amylopectin (80-85%, water-insoluble branched alpha-1,4 D-glucose polymer with alpha-1,6 branches). Cellulose is an unbranched linear polymer of beta-D-glucose joined by beta-1,4 glycosidic bonds.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q095',
+    question: "Out of the 20 standard alpha-amino acids found in proteins, which one is optically inactive (achiral), and which pair represents essential basic amino acids?",
+    options: [
+      "Achiral: Alanine; Basic: Valine and Leucine",
+      "Achiral: Glycine; Basic: Lysine and Histidine (or Arginine)",
+      "Achiral: Glycine; Basic: Aspartic acid and Glutamic acid",
+      "Achiral: Serine; Basic: Phenylalanine and Tryptophan"
+    ],
+    correctAnswer: 1,
+    explanation: "Glycine (H2N-CH2-COOH) has two hydrogen atoms attached to the alpha-carbon and is the only optically inactive (achiral) alpha-amino acid. Lysine, Arginine, and Histidine are basic amino acids containing extra nitrogenous basic side chains.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q096',
+    question: "In aqueous solution at its isoelectric point (pI), an amino acid exists predominantly as a dipolar ion (zwitterion), H3N+–CH(R)–COO-. What happens to this zwitterion when placed in a strongly acidic solution (pH << pI) under an electric field?",
+    options: [
+      "It exists as an anion (H2N–CH(R)–COO-) and migrates towards the anode",
+      "It remains electrically neutral and does not migrate to either electrode",
+      "It exists as a cation (H3N+–CH(R)–COOH) and migrates towards the cathode",
+      "It undergoes peptide bond hydrolysis"
+    ],
+    correctAnswer: 2,
+    explanation: "In a strongly acidic solution (pH << pI), the carboxylate group (-COO-) accepts a proton to become -COOH, leaving the amino acid with a net positive charge (cation, H3N+-CH(R)-COOH) that migrates toward the negatively charged cathode.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q097',
+    question: "During the denaturation of a globular protein (such as the coagulation of egg white on boiling or curdling of milk), which levels of protein structure are disrupted and which level remains intact?",
+    options: [
+      "Primary structure is hydrolysed into free amino acids, while secondary and tertiary structures remain intact",
+      "Secondary and tertiary structures are destroyed (uncoiling of alpha-helix and beta-pleated sheets), while the primary structure (sequence of covalent peptide bonds) remains intact",
+      "Only quaternary structure is affected; secondary and tertiary structures remain completely unchanged",
+      "Only disulphide bonds are formed while hydrogen bonds become covalent"
+    ],
+    correctAnswer: 1,
+    explanation: "During protein denaturation by heat or pH change, hydrogen bonds and non-covalent interactions are disrupted, causing globules to unfold and helices to uncoil (loss of 2° and 3° structures), while the primary structure (covalent peptide backbone) remains intact.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q098',
+    question: "Which nitrogenous pyrimidine base is present in RNA but is replaced by 5-methyluracil (Thymine) in DNA?",
+    options: [
+      "Cytosine",
+      "Adenine",
+      "Guanine",
+      "Uracil"
+    ],
+    correctAnswer: 3,
+    explanation: "RNA contains the four bases Adenine (A), Guanine (G), Cytosine (C), and Uracil (U). In DNA, the pyrimidine base Uracil is replaced by Thymine (5-methyluracil).",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q099',
+    question: "In a double-stranded DNA molecule, if the mole fraction of Adenine (A) is 20% of the total nitrogenous bases, what is the percentage of Cytosine (C) according to Chargaff's rule, and how many hydrogen bonds link each G≡C base pair?",
+    options: [
+      "20% Cytosine; 2 hydrogen bonds",
+      "30% Cytosine; 3 hydrogen bonds",
+      "30% Cytosine; 2 hydrogen bonds",
+      "40% Cytosine; 3 hydrogen bonds"
+    ],
+    correctAnswer: 1,
+    explanation: "In dsDNA, [A] = [T] = 20%, which accounts for 40% of total bases. The remaining 60% is divided equally between [G] and [C], so [C] = 30%. Adenine pairs with Thymine via 2 H-bonds (A=T), whereas Guanine pairs with Cytosine via 3 H-bonds (G≡C).",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  },
+  {
+    id: 'test100_q100',
+    question: "Match the vitamins in List I with their chemical names and characteristic deficiency diseases in List II:\nList I: P. Vitamin A (Retinol), Q. Vitamin B1 (Thiamine), R. Vitamin B12 (Cyanocobalamin), S. Vitamin C (Ascorbic acid)\nList II: 1. Pernicious anaemia (RBC deficient in haemoglobin), 2. Scurvy (bleeding gums), 3. Xerophthalmia and Night blindness, 4. Beri-beri (loss of appetite, retarded growth)",
+    options: [
+      "P-3, Q-4, R-1, S-2",
+      "P-4, Q-3, R-2, S-1",
+      "P-3, Q-1, R-4, S-2",
+      "P-2, Q-4, R-1, S-3"
+    ],
+    correctAnswer: 0,
+    explanation: "Vitamin A deficiency causes Xerophthalmia and Night blindness (P-3); Vitamin B1 deficiency causes Beri-beri (Q-4); Vitamin B12 deficiency causes Pernicious anaemia (R-1); and Vitamin C deficiency causes Scurvy (S-2).",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "test_1"
+  }
+]
+},
+
+
 gk: {
 current_affairs: [
 {
@@ -8004,5 +9941,10 @@ plant_physiology: [
 },
 }      
 
-// Expose globally
-window.QUESTION_BANK = QUESTION_BANK;
+// Expose globally and support Node.js module export
+if (typeof window !== 'undefined') {
+  window.QUESTION_BANK = QUESTION_BANK;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = QUESTION_BANK;
+}

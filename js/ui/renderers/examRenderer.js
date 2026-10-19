@@ -73,6 +73,21 @@ var ExamRenderer = (function() {
       titleEl.textContent = ExamState.getTestTitle();
     }
 
+    // Populate candidate identity
+    var user = (window.AppState && typeof AppState.getUser === 'function') ? AppState.getUser() : null;
+    var name = (user && user.name) ? user.name : 'Rohit';
+    var initial = name.charAt(0).toUpperCase();
+
+    var nameEl     = _el('exam-candidate-name');
+    var avatarEl   = _el('exam-candidate-avatar');
+    var scNameEl   = _el('sc-name');
+    var scAvatarEl = _el('sc-avatar');
+
+    if (nameEl)     nameEl.textContent = name;
+    if (avatarEl)   avatarEl.textContent = initial;
+    if (scNameEl)   scNameEl.textContent = name;
+    if (scAvatarEl) scAvatarEl.textContent = initial;
+
     _updateProgress();
     _updateTimer(ExamState.getTimeRemaining(), {
       isWarning:  ExamState.isTimerWarning(),
@@ -124,6 +139,13 @@ var ExamRenderer = (function() {
     if (subjEl) {
       var subjLabel = q.subjectName || q.subject || '';
       var subjIcon  = '';
+      var subjLower = (q.subject || '').toLowerCase();
+      if (subjLower.indexOf('bio') !== -1) subjIcon = '🧬 ';
+      else if (subjLower.indexOf('chem') !== -1) subjIcon = '🧪 ';
+      else if (subjLower.indexOf('phy') !== -1) subjIcon = '⚡ ';
+      else if (subjLower.indexOf('gk') !== -1) subjIcon = '📰 ';
+      else subjIcon = '📚 ';
+
       if (EC && typeof EC.getSubjectInfo === 'function') {
         var si = EC.getSubjectInfo(q.subject);
         subjLabel = si.label;
@@ -142,18 +164,26 @@ var ExamRenderer = (function() {
         diffLabel = di.label;
         diffClass = di.cssClass;
       }
-      diffEl.textContent = diffLabel;
-      diffEl.className = 'q-diff-badge ' + diffClass;
+      diffEl.textContent = diffLabel.toUpperCase();
+      diffEl.className = 'q-diff-badge ' + (diffClass || ('diff-' + diffLabel.toLowerCase()));
     }
 
     // Question text
     var textEl = _el('exam-q-text');
     if (textEl) {
-      textEl.textContent = q.question;
+      if (window.StemFormatter && typeof StemFormatter.renderTo === 'function') {
+        StemFormatter.renderTo(textEl, q);
+      } else {
+        textEl.textContent = q.question;
+      }
     }
 
     // Options
     _renderOptions();
+
+    // Reset scroll to top
+    var cardEl = document.querySelector('.question-card');
+    if (cardEl) cardEl.scrollTop = 0;
 
     // Review button state
     var isMarked = ExamState.isMarkedForReview(idx);
@@ -178,13 +208,19 @@ var ExamRenderer = (function() {
       var label      = labels[i] || String.fromCharCode(65 + i);
       var ariaLabel  = 'Option ' + label + ': ' + q.options[i] + (isSelected ? ' (selected)' : '');
 
+      var optContent = (window.StemFormatter && typeof StemFormatter.formatOption === 'function')
+        ? StemFormatter.formatOption(q.options[i])
+        : _esc(q.options[i]);
+
       html += '<button class="option-btn' + selClass + '" ' +
               'data-option-idx="' + i + '" ' +
               'role="radio" ' +
               'aria-checked="' + (isSelected ? 'true' : 'false') + '" ' +
               'aria-label="' + _esc(ariaLabel) + '">' +
                 '<span class="opt-label">' + _esc(label) + '</span>' +
-                '<span class="opt-text">' + _esc(q.options[i]) + '</span>' +
+                '<span class="opt-text">' + optContent + '</span>' +
+                '<span class="opt-key-hint" title="Press key ' + (i + 1) + '">' + (i + 1) + '</span>' +
+                '<span class="opt-radio-dot" aria-hidden="true"></span>' +
               '</button>';
     }
 
@@ -209,10 +245,10 @@ var ExamRenderer = (function() {
     if (nextBtn) {
       // Change text on last question
       if (ExamState.isLastQuestion()) {
-        nextBtn.textContent = 'Submit →';
+        nextBtn.innerHTML = '<span>Submit Test</span> <span class="btn-arrow" aria-hidden="true">❯</span>';
         nextBtn.classList.add('btn-submit-last');
       } else {
-        nextBtn.textContent = 'Next →';
+        nextBtn.innerHTML = '<span>Next Question</span> <span class="btn-arrow" aria-hidden="true">❯</span>';
         nextBtn.classList.remove('btn-submit-last');
       }
     }
@@ -224,11 +260,11 @@ var ExamRenderer = (function() {
 
     if (isMarked) {
       btn.classList.add('active');
-      btn.textContent = '🔖 Marked';
+      btn.innerHTML = '<span class="btn-icon" aria-hidden="true">★</span> <span>Marked for Review</span>';
       btn.setAttribute('aria-pressed', 'true');
     } else {
       btn.classList.remove('active');
-      btn.textContent = '🔖 Review';
+      btn.innerHTML = '<span class="btn-icon" aria-hidden="true">★</span> <span>Mark for Review</span>';
       btn.setAttribute('aria-pressed', 'false');
     }
   }
@@ -242,14 +278,21 @@ var ExamRenderer = (function() {
     var timerEl = _el('exam-timer');
     if (!timerEl) return;
 
-    // Format time
+    // Format time: HH:MM:SS for >= 3600 seconds, MM:SS for < 3600
     var timeStr = '00:00';
-    if (window.Formatters && typeof Formatters.toMMSS === 'function') {
-      timeStr = Formatters.toMMSS(remaining);
+    if (window.Formatters) {
+      if (remaining >= 3600 && typeof Formatters.toHHMMSS === 'function') {
+        timeStr = Formatters.toHHMMSS(remaining);
+      } else if (typeof Formatters.toMMSS === 'function') {
+        timeStr = Formatters.toMMSS(remaining);
+      }
     } else {
-      var m = Math.floor(remaining / 60);
+      var h = Math.floor(remaining / 3600);
+      var m = Math.floor((remaining % 3600) / 60);
       var s = remaining % 60;
-      timeStr = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      timeStr = (h > 0 ? (h < 10 ? '0' : '') + h + ':' : '') +
+                (m < 10 ? '0' : '') + m + ':' +
+                (s < 10 ? '0' : '') + s;
     }
 
     timerEl.textContent = timeStr;
@@ -284,34 +327,51 @@ var ExamRenderer = (function() {
     overlay.setAttribute('aria-modal', 'true');
     overlay.setAttribute('aria-label', 'Submit Exam Confirmation');
 
-    var unansweredWarning = counts.unanswered > 0
-      ? '<p class="submit-warn">⚠️ <strong>' + counts.unanswered + ' question' + (counts.unanswered > 1 ? 's' : '') + '</strong> unanswered!</p>'
-      : '';
-
-    var reviewWarning = counts.review > 0
-      ? '<p class="submit-warn">🔖 <strong>' + counts.review + ' question' + (counts.review > 1 ? 's' : '') + '</strong> marked for review.</p>'
-      : '';
-
     overlay.innerHTML =
       '<div class="modal-sheet submit-modal">' +
         '<div class="modal-header">' +
-          '<h3 class="modal-title">Submit Exam?</h3>' +
+          '<div class="submit-modal-title-wrap">' +
+            '<span class="submit-modal-icon">📑</span>' +
+            '<div>' +
+              '<h3 class="modal-title">Final Exam Submission</h3>' +
+              '<p class="submit-modal-sub">' + _esc(summary.testTitle) + '</p>' +
+            '</div>' +
+          '</div>' +
           '<button class="modal-close-btn" id="submit-modal-close" aria-label="Cancel">&times;</button>' +
         '</div>' +
         '<div class="modal-body">' +
-          '<h4>' + _esc(summary.testTitle) + '</h4>' +
-          '<div class="submit-stats">' +
-            '<div class="submit-stat">✅ Answered: <strong>' + counts.answered + '</strong></div>' +
-            '<div class="submit-stat">❌ Unanswered: <strong>' + counts.unanswered + '</strong></div>' +
-            '<div class="submit-stat">🔖 Review: <strong>' + counts.review + '</strong></div>' +
-            '<div class="submit-stat">⏱️ Time left: <strong>' + _esc(summary.timeFormatted) + '</strong></div>' +
+          '<div class="submit-stats-grid">' +
+            '<div class="sub-stat-card sub-stat-ans">' +
+              '<span class="sub-stat-num">' + counts.answered + '</span>' +
+              '<span class="sub-stat-label">✅ Answered</span>' +
+            '</div>' +
+            '<div class="sub-stat-card sub-stat-unans">' +
+              '<span class="sub-stat-num">' + counts.unanswered + '</span>' +
+              '<span class="sub-stat-label">⬜ Unanswered</span>' +
+            '</div>' +
+            '<div class="sub-stat-card sub-stat-rev">' +
+              '<span class="sub-stat-num">' + counts.review + '</span>' +
+              '<span class="sub-stat-label">🔖 Marked Review</span>' +
+            '</div>' +
+            '<div class="sub-stat-card sub-stat-time">' +
+              '<span class="sub-stat-num">' + _esc(summary.timeFormatted) + '</span>' +
+              '<span class="sub-stat-label">⏱️ Time Left</span>' +
+            '</div>' +
           '</div>' +
-          unansweredWarning +
-          reviewWarning +
+          (counts.unanswered > 0
+            ? '<div class="submit-alert-box">' +
+                '<span class="alert-icon">⚠️</span>' +
+                '<span>You still have <strong>' + counts.unanswered + ' unanswered question' + (counts.unanswered > 1 ? 's' : '') + '</strong>. Are you sure you want to finish now?</span>' +
+              '</div>'
+            : '<div class="submit-alert-box alert-success">' +
+                '<span class="alert-icon">🎉</span>' +
+                '<span>All <strong>' + counts.answered + ' questions</strong> answered! Ready for evaluation.</span>' +
+              '</div>'
+          ) +
         '</div>' +
         '<div class="modal-footer">' +
-          '<button class="btn-secondary" id="submit-modal-cancel">Continue Exam</button>' +
-          '<button class="btn-primary btn-danger" id="submit-modal-confirm">Submit Now</button>' +
+          '<button class="btn-secondary" id="submit-modal-cancel">← Return to Exam</button>' +
+          '<button class="btn-primary btn-submit-final" id="submit-modal-confirm">Confirm &amp; Submit Score 🚀</button>' +
         '</div>' +
       '</div>';
 
@@ -368,6 +428,22 @@ var ExamRenderer = (function() {
   function _bindEvents() {
     if (_bound) return;
     _bound = true;
+
+    // Fullscreen toggle button
+    var fsBtn = _el('exam-fullscreen-btn');
+    if (fsBtn) {
+      fsBtn.addEventListener('click', function() {
+        if (!document.fullscreenElement) {
+          if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen().catch(function() {});
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen().catch(function() {});
+          }
+        }
+      });
+    }
 
     // Options — event delegation
     var optionsEl = _el('exam-options');

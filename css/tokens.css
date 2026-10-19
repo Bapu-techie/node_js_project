@@ -183,9 +183,9 @@
     --dim-header-h:   58px;
     --dim-bottom-nav: 68px;
     --dim-max-width:  800px;
-    --dim-exam-max:   760px;
-    --dim-modal-max:  500px;
-    --dim-sidebar-w:  260px;
+    --dim-exam-max:   1040px;
+    --dim-modal-max:  540px;
+    --dim-sidebar-w:  340px;
   
     /* ─── Z-INDEX SCALE ─── */
     --z-base:     1;

@@ -137,6 +137,10 @@ var App = (function() {
 
     var data = StorageService.loadAll();
     AppState.hydrate(data);
+
+    // Apply saved theme
+    var savedTheme = StorageService.loadTheme() || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
   }
 
   /**

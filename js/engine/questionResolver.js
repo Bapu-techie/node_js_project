@@ -350,5 +350,10 @@ var QuestionResolver = (function() {
 
 })();
 
-// Expose globally
-window.QuestionResolver = QuestionResolver;
+// Expose globally and support Node.js module export
+if (typeof window !== 'undefined') {
+  window.QuestionResolver = QuestionResolver;
+}
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = QuestionResolver;
+}

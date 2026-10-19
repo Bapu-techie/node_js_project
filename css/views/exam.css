@@ -43,6 +43,30 @@
     height: 100vh; /* fallback for older browsers */
     overflow: hidden;
   }
+
+  /* Thin, modern scrollbars throughout exam */
+  #view-exam * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-border-hi) transparent;
+  }
+
+  #view-exam *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  #view-exam *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #view-exam *::-webkit-scrollbar-thumb {
+    background: var(--c-border-hi);
+    border-radius: var(--r-pill);
+  }
+
+  #view-exam *::-webkit-scrollbar-thumb:hover {
+    background: var(--c-text-3);
+  }
   
   
   /* ============================================================
@@ -58,128 +82,234 @@
   
   
   /* ============================================================
-     3. EXAM HEADER (sticky top bar)
-     ============================================================ */
+   3. EXAM HEADER (Sticky Professional CBT Top Bar)
+   ============================================================ */
+.exam-header {
+  background: var(--c-surface);
+  border-bottom: 1.5px solid var(--c-border);
+  padding: 0 var(--s-6);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  flex-shrink: 0;
+  z-index: var(--z-sticky);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ── Header Left: Brand Badge + Title ── */
+.exam-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+
+.exam-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(0, 184, 154, 0.1);
+  border: 1px solid rgba(0, 184, 154, 0.25);
+  border-radius: var(--r-pill);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--c-teal-dark);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+[data-theme="dark"] .exam-brand-badge {
+  color: var(--c-teal);
+}
+
+.exam-header-sep {
+  width: 1.5px;
+  height: 22px;
+  background: var(--c-border);
+  flex-shrink: 0;
+}
+
+.exam-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--c-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+/* ── Header Center: Prominent Digital Countdown Timer ── */
+.exam-header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.exam-timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.timer-label {
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: var(--c-text-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.exam-timer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-mono);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--c-text);
+  background: var(--c-raised);
+  border: 1.5px solid var(--c-border);
+  border-radius: 8px;
+  padding: 3px 14px;
+  letter-spacing: 0.04em;
+  min-width: 95px;
+  text-align: center;
+  transition: all var(--dur-base) var(--ease-default);
+}
+
+.exam-timer.warning {
+  border-color: #f59e0b;
+  color: #d97706;
+  background: rgba(245, 158, 11, 0.1);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+}
+
+.exam-timer.critical {
+  border-color: #ef4444;
+  color: #dc2626;
+  background: rgba(239, 68, 68, 0.12);
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.3);
+  animation: timerPulse 0.8s infinite ease-in-out;
+}
+
+@keyframes timerPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.02); }
+}
+
+/* ── Header Right: Candidate Chip, Fullscreen & Submit ── */
+.exam-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  justify-content: flex-end;
+}
+
+.exam-candidate-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 5px;
+  background: var(--c-raised);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-pill);
+  user-select: none;
+}
+
+.candidate-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00b89a, #008f77);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.candidate-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--c-text);
+}
+
+.exam-nav-icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-raised);
+  border: 1.5px solid var(--c-border);
+  color: var(--c-text-2);
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+}
+
+.exam-nav-icon-btn:hover {
+  background: var(--c-card);
+  border-color: var(--c-teal);
+  color: var(--c-teal);
+  transform: translateY(-1px);
+}
+
+/* Submit button in header */
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  min-height: 38px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .exam-brand-badge,
+  .exam-header-sep,
+  .exam-candidate-chip,
+  .exam-nav-icon-btn {
+    display: none;
+  }
   .exam-header {
-    background: var(--c-surface);
-    border-bottom: 1px solid var(--c-border);
-    padding: 0 var(--s-4);
-    height: var(--dim-header-h);
-    display: flex;
-    align-items: center;
-    gap: var(--s-3);
-    flex-shrink: 0;
-    z-index: var(--z-sticky);
+    padding: 0 14px;
+    height: 56px;
   }
-  
-  @media (min-width: 768px) {
-    .exam-header {
-      padding: 0 var(--s-7);
-      gap: var(--s-5);
-    }
-  }
-  
-  /* ── Exam title ── */
-  .exam-title {
-    flex: 1;
-    min-width: 0;
-    font-size: var(--f-body);
-    font-weight: var(--fw-bold);
-    color: var(--c-text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 0;
-    line-height: var(--lh-snug);
-  }
-  
-  /* ── Header right section (timer + submit) ── */
-  .exam-header-right {
-    display: flex;
-    align-items: center;
-    gap: var(--s-3);
-    flex-shrink: 0;
-  }
-  
-  /* ── Timer pill ── */
-  .exam-timer {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--c-raised);
-    border: 1.5px solid var(--c-border-hi);
-    border-radius: var(--r-pill);
-    padding: 5px 12px;
-    font-family: var(--f-mono);
-    font-size: var(--f-md);
-    font-weight: var(--fw-semibold);
-    color: var(--c-text);
-    flex-shrink: 0;
-    transition: all var(--dur-base) var(--ease-default);
-    white-space: nowrap;
-  }
-  
-  @media (min-width: 768px) {
-    .exam-timer {
-      padding: 5px 14px;
-      font-size: var(--f-md);
-      gap: 6px;
-    }
-  }
-  
-  /* Timer warning state (set by JS when time is running low) */
-  .exam-timer.warning {
-    border-color: var(--c-amber);
-    color: var(--c-amber);
-    background: var(--c-amber-ghost);
-  }
-  
-  /* Timer critical state (set by JS when time is almost up) */
-  .exam-timer.critical {
-    border-color: var(--c-rose);
-    color: var(--c-rose);
-    background: var(--c-rose-ghost);
-    animation: timerBlink 0.5s var(--ease-default) infinite;
-  }
-  
-  @keyframes timerBlink {
-    0%, 100% { opacity: 1; }
-    50%      { opacity: 0.4; }
-  }
-  
-  /* ── Submit button in header ── */
-  .btn-submit {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px 14px;
-    border-radius: var(--r-md);
-    background: var(--c-teal);
-    color: var(--c-text-inverse);
-    font-size: var(--f-sm);
-    font-weight: var(--fw-bold);
-    border: none;
-    cursor: pointer;
-    min-height: 36px;
-    white-space: nowrap;
-    transition: all var(--dur-base) var(--ease-default);
-    font-family: inherit;
-  }
-  
-  .btn-submit:hover {
-    background: var(--c-teal-dim);
-  }
-  
-  .btn-submit:active {
-    transform: scale(0.97);
-  }
-  
-  @media (min-width: 768px) {
-    .btn-submit {
-      padding: 7px 18px;
-      font-size: var(--f-base);
-    }
-  }
+}
   
   
   /* ============================================================
@@ -243,6 +373,8 @@
     display: flex;
     overflow: hidden;
     min-height: 0;
+    width: 100%;
+    background: var(--c-surface);
   }
   
   /* ── Exam main (scrollable question area + nav) ── */
@@ -252,33 +384,51 @@
     flex-direction: column;
     overflow: hidden;
     min-width: 0;
+    min-height: 0;
+    background: var(--c-surface);
   }
   
   
   /* ============================================================
-     6. QUESTION CARD — scrollable question content
+     6. QUESTION PANE — Left scrollable question content
      ============================================================ */
   .question-card {
     flex: 1;
+    min-height: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: var(--s-5) var(--s-4);
-    padding-bottom: var(--s-8);
+    padding: 28px 48px 24px 48px;
+    background: var(--c-surface);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-border-hi) transparent;
+    display: flex;
+    flex-direction: column;
   }
   
-  @media (min-width: 768px) {
-    .question-card {
-      padding: var(--s-8) var(--s-10);
-      max-width: var(--dim-exam-max);
-      margin: 0 auto;
-      width: 100%;
-    }
+  .question-card::-webkit-scrollbar {
+    width: 6px;
   }
   
-  @media (min-width: 1024px) {
+  .question-card::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .question-card::-webkit-scrollbar-thumb {
+    background: var(--c-border-hi);
+    border-radius: var(--r-pill);
+  }
+
+  .question-card::-webkit-scrollbar-thumb:hover {
+    background: var(--c-text-3);
+  }
+  
+  @media (min-width: 1400px) {
     .question-card {
-      padding: var(--s-10) var(--s-14);
+      padding: 32px 56px 28px 56px;
     }
   }
   
@@ -289,70 +439,112 @@
   .q-meta {
     display: flex;
     align-items: center;
-    gap: var(--s-3);
+    justify-content: space-between;
+    gap: 16px;
     flex-wrap: wrap;
-    margin-bottom: var(--s-5);
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1.5px solid var(--c-border);
+    flex-shrink: 0;
   }
-  
-  @media (min-width: 768px) {
-    .q-meta {
-      margin-bottom: var(--s-7);
-    }
+
+  .q-meta-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .q-meta-right {
+    display: flex;
+    align-items: center;
   }
   
   /* Question number */
   .q-number {
-    font-size: var(--f-md);
-    font-weight: var(--fw-bold);
+    font-size: 1.18rem;
+    font-weight: 800;
     color: var(--c-teal);
     font-family: var(--f-mono);
     white-space: nowrap;
+    letter-spacing: -0.01em;
   }
   
   /* Subject badge */
   .q-subject-badge {
     display: inline-flex;
     align-items: center;
-    padding: 2px 10px;
+    padding: 4px 12px;
     border-radius: var(--r-pill);
-    font-size: var(--f-xs);
-    font-weight: var(--fw-medium);
-    color: var(--c-text-2);
-    background: var(--c-card);
-    border: 1px solid var(--c-border);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--c-teal-dark);
+    background: rgba(0, 184, 154, 0.1);
+    border: 1px solid rgba(0, 184, 154, 0.25);
     white-space: nowrap;
+  }
+
+  [data-theme="dark"] .q-subject-badge {
+    color: var(--c-teal);
   }
   
   /* Difficulty badge */
   .q-diff-badge {
     display: inline-flex;
     align-items: center;
-    padding: 2px 8px;
+    padding: 4px 10px;
     border-radius: var(--r-pill);
-    font-size: var(--f-xs);
-    font-weight: var(--fw-bold);
+    font-size: 0.72rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     white-space: nowrap;
   }
   
-  /* Difficulty variant classes (set by JS via ExamConstants.getDifficultyInfo) */
   .diff-easy,
   .q-diff-badge.diff-easy {
-    background: var(--c-green-ghost);
-    color: var(--c-green);
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.25);
   }
   
   .diff-medium,
   .q-diff-badge.diff-medium {
-    background: var(--c-amber-ghost);
-    color: var(--c-amber);
+    background: rgba(245, 158, 11, 0.12);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.25);
   }
   
   .diff-hard,
   .q-diff-badge.diff-hard {
-    background: var(--c-rose-ghost);
-    color: var(--c-rose);
+    background: rgba(239, 68, 68, 0.12);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+  }
+
+  /* Marking scheme pill */
+  .q-marking-scheme {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    border-radius: var(--r-pill);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--c-text-2);
+    background: var(--c-raised);
+    border: 1px solid var(--c-border);
+    white-space: nowrap;
+  }
+
+  .q-marking-scheme .marks-pos {
+    color: #10b981;
+    font-weight: 800;
+  }
+
+  .q-marking-scheme .marks-neg {
+    color: #ef4444;
+    font-weight: 800;
   }
   
   
@@ -360,20 +552,17 @@
      8. QUESTION TEXT
      ============================================================ */
   .q-text {
-    font-size: var(--f-lg);
-    font-weight: var(--fw-semibold);
-    line-height: var(--lh-loose);
+    font-size: 1.22rem;
+    font-weight: 600;
+    line-height: 1.72;
     color: var(--c-text);
-    margin: 0 0 var(--s-7);
+    margin: 0 0 24px 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
-  }
-  
-  @media (min-width: 768px) {
-    .q-text {
-      font-size: var(--f-xl);
-      margin-bottom: var(--s-9);
-    }
+    letter-spacing: -0.01em;
+    user-select: text;
+    max-width: 1040px;
+    flex-shrink: 0;
   }
   
   
@@ -381,295 +570,347 @@
      9. OPTIONS — rendered by examRenderer.js
      Container: .q-options
      Each option: button.option-btn (.selected)
-     Children: span.opt-label, span.opt-text
+     Children: span.opt-label, span.opt-text, span.opt-key-hint, span.opt-radio-dot
      ============================================================ */
   .q-options {
     display: flex;
     flex-direction: column;
-    gap: var(--s-3);
-  }
-  
-  @media (min-width: 768px) {
-    .q-options {
-      gap: var(--s-4);
-    }
+    gap: 13px;
+    max-width: 1040px;
+    width: 100%;
   }
   
   /* ── Individual option button ── */
   .option-btn {
     display: flex;
-    align-items: flex-start;
-    gap: var(--s-4);
+    align-items: flex-start; /* Aligns badge and radio dot with line 1 */
+    gap: 16px;
     width: 100%;
     background: var(--c-card);
     border: 1.5px solid var(--c-border);
-    border-radius: var(--r-lg);
-    padding: var(--s-4) var(--s-5);
+    border-radius: 12px;
+    padding: 14px 20px;
     cursor: pointer;
     text-align: left;
     font-family: inherit;
     font-size: inherit;
     color: var(--c-text);
-    min-height: var(--dim-tap-min);
-    transition:
-      background var(--dur-base) var(--ease-default),
-      border-color var(--dur-base) var(--ease-default),
-      transform var(--dur-fast) var(--ease-default),
-      box-shadow var(--dur-base) var(--ease-default);
+    min-height: 52px;
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-tap-highlight-color: transparent;
-  }
-  
-  @media (min-width: 768px) {
-    .option-btn {
-      padding: var(--s-5) var(--s-6);
-      gap: var(--s-5);
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .option-btn {
-      padding: var(--s-6) var(--s-8);
-    }
+    position: relative;
   }
   
   .option-btn:hover {
-    border-color: var(--c-border-hi);
     background: var(--c-raised);
+    border-color: var(--c-teal);
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
   }
   
   .option-btn:active {
-    transform: scale(0.985);
+    transform: translateY(0);
   }
   
-  /* Focus for keyboard navigation */
   .option-btn:focus-visible {
     border-color: var(--c-teal);
     outline: none;
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 0 0 3px rgba(0, 184, 154, 0.25);
   }
   
   /* Selected state (JS adds .selected class) */
   .option-btn.selected {
-    background: var(--c-teal-ghost);
+    background: rgba(0, 184, 154, 0.08);
     border-color: var(--c-teal);
-    box-shadow: 0 0 0 1px var(--c-teal-ghost);
+    box-shadow: 0 0 0 1.5px var(--c-teal), 0 4px 14px rgba(0, 184, 154, 0.14);
   }
   
-  .option-btn.selected .opt-label {
-    background: var(--c-teal);
-    color: var(--c-text-inverse);
-    border-color: var(--c-teal);
-  }
-  
-  /* Option label (A, B, C, D) */
+  /* Option letter pill (A, B, C, D) */
   .opt-label {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    border-radius: var(--r-sm);
-    background: var(--c-raised);
-    border: 1.5px solid var(--c-border-hi);
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 8px;
+    background: var(--c-surface);
+    border: 1.5px solid var(--c-border);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--f-sm);
-    font-weight: var(--fw-bold);
+    font-size: 0.9rem;
+    font-weight: 800;
     color: var(--c-text-2);
     flex-shrink: 0;
-    transition: all var(--dur-base) var(--ease-default);
+    transition: all 0.18s ease;
     line-height: 1;
+    margin-top: 1px;
   }
   
-  @media (min-width: 768px) {
-    .opt-label {
-      width: 32px;
-      height: 32px;
-      min-width: 32px;
-      font-size: var(--f-base);
-    }
+  .option-btn:hover .opt-label {
+    border-color: var(--c-teal);
+    color: var(--c-teal);
+  }
+
+  .option-btn.selected .opt-label {
+    background: var(--c-teal);
+    border-color: var(--c-teal);
+    color: #ffffff;
+    transform: scale(1.04);
   }
   
   /* Option text */
   .opt-text {
-    font-size: var(--f-body);
-    line-height: var(--lh-relaxed);
-    padding-top: 4px;
+    flex: 1;
+    font-size: 1.02rem;
+    font-weight: 500;
+    line-height: 1.56;
     color: var(--c-text);
     word-wrap: break-word;
     overflow-wrap: break-word;
+    padding-top: 3px;
   }
   
-  @media (min-width: 768px) {
-    .opt-text {
-      font-size: var(--f-body);
+  .option-btn.selected .opt-text {
+    font-weight: 600;
+  }
+
+  /* Keyboard hint shortcut [1], [2], [3], [4] */
+  .opt-key-hint {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--c-text-3);
+    font-family: var(--f-mono);
+    flex-shrink: 0;
+    opacity: 0.6;
+    transition: all 0.18s ease;
+    margin-top: 5px;
+  }
+
+  .option-btn:hover .opt-key-hint {
+    opacity: 1;
+    border-color: var(--c-teal);
+    color: var(--c-teal);
+  }
+
+  /* Custom radio indicator dot */
+  .opt-radio-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--c-border-hi);
+    flex-shrink: 0;
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+    margin-left: 2px;
+  }
+
+  .option-btn:hover .opt-radio-dot {
+    border-color: var(--c-teal);
+  }
+
+  .option-btn.selected .opt-radio-dot {
+    border-color: var(--c-teal);
+    background: var(--c-teal);
+    box-shadow: inset 0 0 0 3px var(--c-surface);
+  }
+
+  @media (max-width: 768px) {
+    .opt-key-hint {
+      display: none;
     }
   }
   
   
   /* ============================================================
      10. EXAM NAVIGATION BAR — nav.exam-nav
-     Contains: prev (btn-secondary), clear (btn-ghost),
-     review (btn-ghost), next (btn-primary)
+     Contains: nav-left (prev), nav-center (clear, review),
+     nav-right (next/submit)
      ============================================================ */
   .exam-nav {
     display: flex;
     align-items: center;
-    gap: var(--s-2);
-    padding: var(--s-3) var(--s-4);
+    justify-content: space-between;
+    padding: 13px 40px;
     background: var(--c-surface);
-    border-top: 1px solid var(--c-border);
+    border-top: 1.5px solid var(--c-border);
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.03);
     flex-shrink: 0;
     z-index: var(--z-sticky);
+    gap: 16px;
+    height: 68px;
+    min-height: 68px;
+  }
+
+  .nav-left,
+  .nav-right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .nav-center {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .exam-nav .btn-arrow {
+    font-size: 0.88rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .exam-nav .btn-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
   }
   
-  @media (min-width: 768px) {
-    .exam-nav {
-      padding: var(--s-4) var(--s-7);
-      max-width: var(--dim-exam-max);
-      margin: 0 auto;
-      width: 100%;
-      gap: var(--s-3);
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .exam-nav {
-      padding: var(--s-5) var(--s-14);
-    }
-  }
-  
-  /* ── btn-secondary (Prev button) ── */
+  /* ── Prev Button (btn-secondary) ── */
   .exam-nav .btn-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 16px;
-    border-radius: var(--r-md);
+    gap: 8px;
+    padding: 0 22px;
+    border-radius: 10px;
     background: var(--c-raised);
     border: 1.5px solid var(--c-border);
-    color: var(--c-text-2);
-    font-size: var(--f-sm);
-    font-weight: var(--fw-semibold);
+    color: var(--c-text);
+    font-size: 0.9rem;
+    font-weight: 700;
     cursor: pointer;
-    min-height: var(--dim-tap-min);
+    height: 42px;
+    min-height: 42px;
     white-space: nowrap;
-    transition: all var(--dur-base) var(--ease-default);
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: inherit;
   }
   
   .exam-nav .btn-secondary:hover {
-    background: var(--c-border);
+    background: var(--c-card);
     border-color: var(--c-border-hi);
-    color: var(--c-text);
+    transform: translateX(-2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   }
   
   .exam-nav .btn-secondary:disabled {
     opacity: 0.35;
     pointer-events: none;
+    transform: none;
+    box-shadow: none;
   }
   
-  /* ── btn-ghost (Clear + Review buttons) ── */
+  /* ── Clear & Review Buttons (btn-ghost) ── */
   .exam-nav .btn-ghost {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 12px;
-    border-radius: var(--r-md);
-    background: transparent;
-    border: 1.5px solid transparent;
-    color: var(--c-text-3);
-    font-size: var(--f-sm);
-    font-weight: var(--fw-medium);
+    gap: 7px;
+    padding: 0 18px;
+    border-radius: 10px;
+    background: var(--c-raised);
+    border: 1.5px solid var(--c-border);
+    color: var(--c-text-2);
+    font-size: 0.86rem;
+    font-weight: 700;
     cursor: pointer;
-    min-height: var(--dim-tap-min);
+    height: 42px;
+    min-height: 42px;
     white-space: nowrap;
-    transition: all var(--dur-base) var(--ease-default);
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: inherit;
   }
   
-  .exam-nav .btn-ghost:hover {
-    background: var(--c-card);
-    color: var(--c-text-2);
-    border-color: var(--c-border);
+  #exam-clear-btn:hover {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: #ef4444;
+    color: #ef4444;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(239, 68, 68, 0.12);
+  }
+
+  #exam-review-btn:hover {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: #f59e0b;
+    color: #d97706;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(245, 158, 11, 0.15);
   }
   
-  /* Review button active/marked state (JS adds .active class) */
-  .exam-nav .btn-ghost.active {
-    background: var(--c-amber-ghost);
-    border-color: var(--c-amber);
-    color: var(--c-amber);
-    font-weight: var(--fw-semibold);
+  #exam-review-btn.active {
+    background: rgba(245, 158, 11, 0.16);
+    border-color: #f59e0b;
+    color: #d97706;
+    font-weight: 800;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
   }
   
-  /* ── btn-primary (Next button) ── */
+  /* ── Next Button (btn-primary) ── */
   .exam-nav .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 20px;
-    border-radius: var(--r-md);
-    background: var(--c-teal);
+    gap: 8px;
+    padding: 0 24px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--c-teal), var(--c-teal-dark));
     border: none;
-    color: var(--c-text-inverse);
-    font-size: var(--f-sm);
-    font-weight: var(--fw-bold);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 800;
     cursor: pointer;
-    min-height: var(--dim-tap-min);
-    margin-left: auto;
+    height: 42px;
+    min-height: 42px;
     white-space: nowrap;
-    transition: all var(--dur-base) var(--ease-default);
+    box-shadow: 0 4px 14px rgba(0, 184, 154, 0.3);
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     font-family: inherit;
   }
   
   .exam-nav .btn-primary:hover {
-    background: var(--c-teal-dim);
+    transform: translateX(2px);
+    box-shadow: 0 6px 18px rgba(0, 184, 154, 0.45);
   }
   
   .exam-nav .btn-primary:active {
-    transform: scale(0.97);
+    transform: translateX(0);
   }
   
-  /* Submit-last state on Next button (JS adds .btn-submit-last on last question) */
+  /* Submit-last state on Next button */
   .exam-nav .btn-primary.btn-submit-last {
-    background: var(--c-rose);
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
   }
   
   .exam-nav .btn-primary.btn-submit-last:hover {
-    background: var(--c-rose-dim);
-  }
-  
-  /* On very small screens, tighten up nav buttons */
-  @media (max-width: 374px) {
-    .exam-nav .btn-ghost {
-      padding: 8px 6px;
-      font-size: var(--f-xs);
-    }
-    .exam-nav .btn-secondary {
-      padding: 8px 8px;
-      font-size: var(--f-xs);
-    }
-    .exam-nav .btn-primary {
-      padding: 8px 10px;
-      font-size: var(--f-xs);
-    }
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.45);
   }
   
   
   /* ============================================================
      11. EXAM SIDEBAR — aside.exam-sidebar (desktop palette)
-     Hidden on mobile, shown on desktop
      ============================================================ */
   .exam-sidebar {
     display: none;
   }
   
-  .sidebar-palette {
-    display: flex;
-    flex-direction: column;
-    gap: var(--s-5);
-  }
-  
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     .exam-body {
       flex-direction: row;
     }
@@ -677,58 +918,238 @@
     .exam-sidebar {
       display: flex;
       flex-direction: column;
-      width: var(--dim-sidebar-w);
-      min-width: var(--dim-sidebar-w);
+      width: 356px;
+      min-width: 356px;
+      max-width: 356px;
+      height: 100%;
+      min-height: 0;
       background: var(--c-surface);
-      border-left: 1px solid var(--c-border);
-      overflow-y: auto;
-      padding: var(--s-7);
+      border-left: 1.5px solid var(--c-border);
+      overflow: hidden; /* Never scrolls as a whole: keeps candidate box pinned */
+      padding: 16px 16px 14px 16px;
+      gap: 12px;
       flex-shrink: 0;
     }
   }
   
-  /* Sidebar sub-elements (rendered by PaletteManager) */
-  .sidebar-title {
-    font-size: var(--f-md);
-    font-weight: var(--fw-bold);
-    margin-bottom: var(--s-5);
-    color: var(--c-text-2);
-  }
-  
-  .sidebar-stats {
-    display: flex;
-    gap: var(--s-4);
-    margin-bottom: var(--s-6);
-    font-size: var(--f-sm);
-    flex-wrap: wrap;
-  }
-  
-  .sidebar-stat {
+  /* ── Candidate Card in Sidebar (Pinned at Top) ── */
+  .sidebar-candidate-box {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 12px;
+    padding: 10px 14px;
+    background: var(--c-raised);
+    border: 1px solid var(--c-border);
+    border-radius: 10px;
+    flex-shrink: 0;
   }
-  
-  .sidebar-actions {
-    margin-top: auto;
-    padding-top: var(--s-6);
-    border-top: 1px solid var(--c-border);
+
+  .sidebar-candidate-box .sc-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00b89a, #008f77);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 184, 154, 0.3);
+    flex-shrink: 0;
+  }
+
+  .sidebar-candidate-box .sc-meta {
     display: flex;
     flex-direction: column;
-    gap: var(--s-3);
+    gap: 1px;
+    min-width: 0;
+  }
+
+  .sidebar-candidate-box .sc-name {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--c-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sidebar-candidate-box .sc-role {
+    font-size: 0.74rem;
+    color: var(--c-text-3);
+    font-weight: 600;
+  }
+
+  /* ── Sidebar Palette Container ── */
+  .sidebar-palette {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    gap: 10px;
+    overflow: hidden;
+  }
+
+  /* ── Palette Summary / Legend (Pinned below candidate box) ── */
+  .palette-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding: 9px 12px;
+    background: var(--c-card);
+    border: 1px solid var(--c-border);
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+
+  .pal-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--c-text-2);
+    white-space: nowrap;
+  }
+
+  .pal-stat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── Palette Grid (5 columns: ONLY scrolling element in sidebar) ── */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 6px 10px 18px 8px; /* Clean margin from container walls and scrollbar! */
+    align-content: start;
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-border-hi) transparent;
+  }
+
+  .palette-grid::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .palette-grid::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 4px 0;
+  }
+
+  .palette-grid::-webkit-scrollbar-thumb {
+    background: var(--c-border-hi);
+    border-radius: var(--r-pill);
+  }
+
+  .palette-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--c-text-3);
+  }
+
+  /* ── Palette Button ── */
+  .pal-btn {
+    width: 100%;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: var(--c-raised);
+    border: 1.5px solid var(--c-border);
+    color: var(--c-text-2);
+    font-size: 0.84rem;
+    font-weight: 700;
+    font-family: var(--f-mono);
+    cursor: pointer;
+    transition: all 0.16s ease;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
+    position: relative;
+  }
+
+  .pal-btn:hover {
+    border-color: var(--c-teal);
+    color: var(--c-teal);
+    background: var(--c-card);
+    transform: translateY(-2px); /* Vertical elevation only — no horizontal collision! */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    z-index: 2;
+  }
+
+  .pal-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
   }
   
-  
+
+  /* Status variants */
+  .pal-btn.current {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: #3b82f6;
+    color: #2563eb;
+    font-weight: 800;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35);
+  }
+
+  [data-theme="dark"] .pal-btn.current {
+    color: #60a5fa;
+    background: rgba(59, 130, 246, 0.22);
+  }
+
+  .pal-btn.answered {
+    background: rgba(16, 185, 129, 0.16);
+    border-color: #10b981;
+    color: #059669;
+    font-weight: 800;
+  }
+
+  [data-theme="dark"] .pal-btn.answered {
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.22);
+  }
+
+  .pal-btn.review {
+    background: rgba(245, 158, 11, 0.16);
+    border-color: #f59e0b;
+    color: #d97706;
+    font-weight: 800;
+  }
+
+  [data-theme="dark"] .pal-btn.review {
+    color: #fbbf24;
+    background: rgba(245, 158, 11, 0.22);
+  }
+
+  .pal-btn.answered.review {
+    background: rgba(168, 85, 247, 0.18);
+    border-color: #a855f7;
+    color: #9333ea;
+    font-weight: 800;
+  }
+
+  [data-theme="dark"] .pal-btn.answered.review {
+    color: #c084fc;
+    background: rgba(168, 85, 247, 0.25);
+  }
+
+
   /* ============================================================
-     12. EXAM STATUS STRIP — div.exam-status-strip
-     Mobile only: shows answered/unanswered/review counts
+     12. EXAM STATUS STRIP — div.exam-status-strip (mobile only)
      ============================================================ */
   .exam-status-strip {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--s-5);
-    padding: 6px var(--s-4);
+    padding: 8px var(--s-4);
     background: var(--c-card);
     border-top: 1px solid var(--c-border);
     flex-shrink: 0;
@@ -736,58 +1157,29 @@
     position: relative;
     z-index: var(--z-sticky);
   }
-  
-  @media (min-width: 768px) {
+
+  @media (min-width: 900px) {
     .exam-status-strip {
       display: none;
     }
   }
-  
+
   .ss-item {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
     color: var(--c-text-2);
     font-family: var(--f-mono);
     font-weight: var(--fw-medium);
     font-size: var(--f-sm);
     white-space: nowrap;
   }
-  
-  .ss-answered {
-    color: var(--c-green);
-  }
-  
-  .ss-unanswered {
-    color: var(--c-text-3);
-  }
-  
-  .ss-review {
-    color: var(--c-amber);
-  }
-  
-  /* Status strip dot indicators */
-  .ss-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: var(--r-circle);
-    flex-shrink: 0;
-  }
-  
-  .ss-dot-ans  { background: var(--c-green); }
-  .ss-dot-unans { background: var(--c-text-3); }
-  .ss-dot-rev  { background: var(--c-amber); }
-  
-  .ss-count {
-    font-family: var(--f-mono);
-    font-weight: var(--fw-semibold);
-  }
-  
-  .ss-label {
-    color: var(--c-text-3);
-  }
-  
-  
+
+  .ss-answered   { color: var(--c-green); }
+  .ss-unanswered { color: var(--c-text-3); }
+  .ss-review     { color: var(--c-amber); }
+
+
   /* ============================================================
      13. PALETTE FAB — Mobile floating action button
      ============================================================ */
@@ -799,7 +1191,7 @@
     width: 40px;
     height: 40px;
     border-radius: var(--r-circle);
-    background: var(--c-blue);
+    background: var(--c-teal);
     color: white;
     border: none;
     display: flex;
@@ -807,328 +1199,258 @@
     justify-content: center;
     font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px rgba(0, 184, 154, 0.35);
     transition: all var(--dur-base) var(--ease-default);
     z-index: var(--z-sticky);
     -webkit-tap-highlight-color: transparent;
   }
-  
+
   .palette-fab:hover {
-    background: var(--c-blue-dim);
+    background: var(--c-teal-dim);
   }
-  
+
   .palette-fab:active {
     transform: translateY(-50%) scale(0.92);
   }
-  
-  @media (min-width: 768px) {
+
+  @media (min-width: 900px) {
     .palette-fab {
       display: none;
     }
   }
-  
-  
+
+
   /* ============================================================
-     14. PALETTE GRID (shared between sidebar + modal)
+     14. SUBMIT CONFIRMATION SCORECARD MODAL
      ============================================================ */
-  .palette-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 6px;
-  }
-  
-  @media (min-width: 768px) {
-    .palette-grid {
-      grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
-    }
-  }
-  
-  .pal-btn {
-    width: 100%;
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--r-sm);
-    background: var(--c-raised);
-    border: 1.5px solid var(--c-border);
-    color: var(--c-text-2);
-    font-size: var(--f-sm);
-    font-weight: var(--fw-medium);
-    font-family: var(--f-mono);
-    cursor: pointer;
-    transition: all var(--dur-fast) var(--ease-default);
-    -webkit-tap-highlight-color: transparent;
-    min-height: 36px;
-    padding: 0;
-  }
-  
-  .pal-btn:hover {
-    border-color: var(--c-border-hi);
-  }
-  
-  .pal-btn:active {
-    transform: scale(0.93);
-  }
-  
-  .pal-btn.current {
-    background: var(--c-blue-ghost);
-    border-color: var(--c-blue);
-    color: var(--c-blue);
-    font-weight: var(--fw-bold);
-    box-shadow: 0 0 0 2px var(--c-blue-ghost);
-  }
-  
-  .pal-btn.answered {
-    background: var(--c-green-ghost);
-    border-color: var(--c-green);
-    color: var(--c-green);
-  }
-  
-  .pal-btn.review {
-    background: var(--c-amber-ghost);
-    border-color: var(--c-amber);
-    color: var(--c-amber);
-  }
-  
-  /* Both answered AND review */
-  .pal-btn.answered.review {
-    background: var(--c-amber-ghost);
-    border-color: var(--c-amber);
-    color: var(--c-amber);
-  }
-  
-  /* ── Palette summary row ── */
-  .palette-summary {
-    display: flex;
-    gap: var(--s-5);
-    margin-bottom: var(--s-5);
-    flex-wrap: wrap;
-  }
-  
-  .pal-stat {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: var(--f-sm);
-    color: var(--c-text-2);
-  }
-  
-  .pal-stat-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: var(--r-circle);
-    flex-shrink: 0;
-  }
-  
-  
-  /* ============================================================
-     15. SUBMIT CONFIRMATION MODAL
-     Generated dynamically by examRenderer.js
-     ============================================================ */
-  
-  /* ── Modal overlay backdrop ── */
   .modal-overlay {
     position: fixed;
     inset: 0;
-    background: var(--c-overlay);
+    background: rgba(0, 0, 0, 0.65);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: var(--z-modal);
-    padding: var(--s-4);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    padding: 20px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     opacity: 0;
-    transition: opacity var(--dur-slow) var(--ease-default);
+    transition: opacity 0.25s ease;
   }
-  
-  /* Modal enter animation */
+
   .modal-overlay.modal-enter {
     opacity: 1;
   }
-  
-  .modal-overlay.modal-enter .modal-sheet {
-    transform: translateY(0) scale(1);
-  }
-  
-  /* Modal exit animation */
+
   .modal-overlay.modal-exit {
     opacity: 0;
     pointer-events: none;
   }
-  
-  .modal-overlay.modal-exit .modal-sheet {
-    transform: translateY(20px) scale(0.97);
-  }
-  
-  /* ── Modal sheet (card) ── */
+
   .modal-sheet {
     background: var(--c-surface);
-    border-radius: var(--r-xl);
+    border: 1.5px solid var(--c-border);
+    border-radius: 20px;
     width: 100%;
-    max-width: var(--dim-modal-max);
+    max-width: 520px;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: var(--shadow-xl);
-    transform: translateY(20px) scale(0.97);
-    transition: transform var(--dur-slow) var(--ease-bounce);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    transform: translateY(16px) scale(0.98);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  
-  .submit-modal {
-    /* Inherits from .modal-sheet — add overrides here if needed */
+
+  .modal-overlay.modal-enter .modal-sheet {
+    transform: translateY(0) scale(1);
   }
-  
-  /* ── Modal header ── */
-  .modal-header {
+
+  .modal-overlay.modal-exit .modal-sheet {
+    transform: translateY(16px) scale(0.98);
+  }
+
+  /* Modal header */
+  .submit-modal .modal-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--s-6) var(--s-7);
-    border-bottom: 1px solid var(--c-border);
+    padding: 22px 26px;
+    border-bottom: 1.5px solid var(--c-border);
   }
-  
-  .modal-title {
-    font-size: var(--f-xl);
-    font-weight: var(--fw-bold);
+
+  .submit-modal-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .submit-modal-icon {
+    font-size: 1.6rem;
+  }
+
+  .submit-modal .modal-title {
+    font-size: 1.25rem;
+    font-weight: 800;
     color: var(--c-text);
     margin: 0;
   }
-  
+
+  .submit-modal-sub {
+    font-size: 0.84rem;
+    color: var(--c-text-3);
+    margin: 2px 0 0;
+    font-weight: 600;
+  }
+
   .modal-close-btn {
     width: 36px;
     height: 36px;
-    border-radius: var(--r-circle);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--c-raised);
-    border: none;
+    border: 1px solid var(--c-border);
     color: var(--c-text-2);
     font-size: 1.3rem;
     cursor: pointer;
-    transition: all var(--dur-base) var(--ease-default);
-    flex-shrink: 0;
+    transition: all 0.2s ease;
     line-height: 1;
   }
-  
+
   .modal-close-btn:hover {
     background: var(--c-border);
     color: var(--c-text);
   }
-  
-  /* ── Modal body ── */
-  .modal-body {
-    padding: var(--s-6) var(--s-7);
+
+  /* Modal body */
+  .submit-modal .modal-body {
+    padding: 24px 26px;
   }
-  
-  .modal-body h4 {
-    font-size: var(--f-md);
-    font-weight: var(--fw-semibold);
-    color: var(--c-text-2);
-    margin: 0 0 var(--s-5);
-  }
-  
-  /* Submit stats grid */
-  .submit-stats {
+
+  /* Stats grid */
+  .submit-stats-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--s-3);
-    margin-bottom: var(--s-5);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
   }
-  
-  .submit-stat {
-    padding: var(--s-3) var(--s-4);
+
+  .sub-stat-card {
+    padding: 14px 16px;
     background: var(--c-card);
-    border-radius: var(--r-md);
-    font-size: var(--f-sm);
-    color: var(--c-text-2);
+    border: 1.5px solid var(--c-border);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: transform 0.2s ease;
   }
-  
-  .submit-stat strong {
-    color: var(--c-text);
-    font-weight: var(--fw-bold);
+
+  .sub-stat-card:hover {
+    transform: translateY(-1px);
   }
-  
-  /* Submit warnings */
-  .submit-warn {
-    padding: var(--s-3) var(--s-4);
-    background: var(--c-amber-ghost);
-    border-radius: var(--r-md);
-    border-left: 3px solid var(--c-amber);
-    font-size: var(--f-sm);
-    color: var(--c-amber);
-    margin: var(--s-3) 0 0;
+
+  .sub-stat-num {
+    font-size: 1.6rem;
+    font-weight: 900;
+    font-family: var(--f-mono);
+    line-height: 1.1;
   }
-  
-  .submit-warn strong {
-    font-weight: var(--fw-bold);
+
+  .sub-stat-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--c-text-3);
   }
-  
-  /* ── Modal footer ── */
-  .modal-footer {
+
+  .sub-stat-ans .sub-stat-num { color: #10b981; }
+  .sub-stat-unans .sub-stat-num { color: #f59e0b; }
+  .sub-stat-rev .sub-stat-num { color: #8b5cf6; }
+  .sub-stat-time .sub-stat-num { color: var(--c-teal); }
+
+  /* Alert box */
+  .submit-alert-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1.5px solid rgba(245, 158, 11, 0.3);
+    color: #d97706;
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+
+  [data-theme="dark"] .submit-alert-box {
+    color: #fbbf24;
+  }
+
+  .submit-alert-box.alert-success {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #059669;
+  }
+
+  [data-theme="dark"] .submit-alert-box.alert-success {
+    color: #34d399;
+  }
+
+  .submit-alert-box .alert-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  /* Modal footer */
+  .submit-modal .modal-footer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: var(--s-3);
-    padding: var(--s-5) var(--s-7);
-    border-top: 1px solid var(--c-border);
-  }
-  
-  /* Modal footer buttons */
-  .modal-footer .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    border-radius: var(--r-md);
+    gap: 12px;
+    padding: 18px 26px;
+    border-top: 1.5px solid var(--c-border);
     background: var(--c-raised);
+    border-radius: 0 0 20px 20px;
+  }
+
+  .submit-modal .modal-footer .btn-secondary {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: var(--c-surface);
     border: 1.5px solid var(--c-border);
     color: var(--c-text-2);
-    font-size: var(--f-md);
-    font-weight: var(--fw-semibold);
+    font-size: 0.9rem;
+    font-weight: 700;
     cursor: pointer;
-    min-height: var(--dim-tap-min);
-    transition: all var(--dur-base) var(--ease-default);
-    font-family: inherit;
+    transition: all 0.2s ease;
+    min-height: 42px;
   }
-  
-  .modal-footer .btn-secondary:hover {
-    background: var(--c-border);
+
+  .submit-modal .modal-footer .btn-secondary:hover {
+    background: var(--c-card);
     color: var(--c-text);
+    border-color: var(--c-border-hi);
   }
-  
-  .modal-footer .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+
+  .submit-modal .modal-footer .btn-submit-final {
     padding: 10px 24px;
-    border-radius: var(--r-md);
-    background: var(--c-teal);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
     border: none;
-    color: var(--c-text-inverse);
-    font-size: var(--f-md);
-    font-weight: var(--fw-bold);
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 800;
     cursor: pointer;
-    min-height: var(--dim-tap-min);
-    transition: all var(--dur-base) var(--ease-default);
-    font-family: inherit;
+    min-height: 42px;
+    box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
-  .modal-footer .btn-primary:hover {
-    background: var(--c-teal-dim);
-  }
-  
-  /* Danger variant for submit confirm button */
-  .modal-footer .btn-primary.btn-danger,
-  .modal-footer .btn-danger {
-    background: var(--c-rose);
-  }
-  
-  .modal-footer .btn-primary.btn-danger:hover,
-  .modal-footer .btn-danger:hover {
-    background: var(--c-rose-dim);
+
+  .submit-modal .modal-footer .btn-submit-final:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.45);
+    transform: translateY(-1px);
   }
   
   

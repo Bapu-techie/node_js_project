@@ -10,11 +10,47 @@
 // TOTAL: 140 Tests | Generated: Production-Ready
 // ============================================================
 
-window.TEST_CONFIG = [
+var TEST_CONFIG = [
 // ============================================================
 // SECTION 1 — TOPIC TESTS ROUND 1 (30 tests) [KEPT AS-IS]
 // One test per chapter: 10 Qs, 12 min each (GK: 10 min)
 // ============================================================
+
+  // ═══════════════════════════════════════════════════════════
+  // 20-QUESTION HIGH-YIELD MINI SPEED MOCK TEST
+  // ═══════════════════════════════════════════════════════════
+  {
+    id: 'mini_mock_20_test_1',
+    title: 'AIIMS & MP PNST 2027 Mini Speed Mock (20 Questions)',
+    type: 'multi',                     // Appears in 'All Tests' and 'Multi' tab
+    subject: 'All Subjects',
+    chapter: 'Biology, Chemistry, Physics & GK High-Yield',
+    timeLimitMinutes: 25,             // 25 minutes
+    negativeMarking: true,             // -1/3 negative marking
+    totalQuestions: 20,               // 20 questions
+    description: 'High-yield 20-question speed simulation covering Biology (5), Chemistry (5), Physics (5), and General Knowledge (5) with negative marking (-1/3), official vector schematics, and NCERT step-by-step explanations.',
+    sections: [
+      { subject: 'mini_test', topics: ['test_20_questions'] }
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // 100-QUESTION FULL LENGTH TEST
+  // ═══════════════════════════════════════════════════════════
+  {
+    id: 'full_mock_100_test_1',
+    title: 'AIIMS & MP PNST 2027 Full Length Test 1 (100 Questions)',
+    type: 'multi',                     // Appears in 'All Tests' and 'Multi' tab
+    subject: 'All Subjects',
+    chapter: 'Biology & Chemistry High-Yield Full Syllabus',
+    timeLimitMinutes: 120,             // 120 minutes (2 Hours)
+    negativeMarking: true,             // -1/3 negative marking
+    totalQuestions: 100,               // 100 questions
+    description: 'Comprehensive 100-question full-length simulation for AIIMS B.Sc. Nursing & MP PNST 2027 with negative marking (-1/3) and step-by-step NCERT explanations.',
+    sections: [
+      { subject: 'full_test', topics: ['test_100_questions'] }
+    ]
+  },
 {
 id: 'topic_phy_current_electricity',
 title: 'Current Electricity',
@@ -381,10 +417,10 @@ sections: [
 },
 {
 id: 'topic_gk_current_affairs',
-title: 'Current Affairs 2023-2026',
+title: 'Current Affairs 2023-2027',
 type: 'topic',
 subject: 'General Knowledge',
-chapter: 'Current Affairs 2023-2026',
+chapter: 'Current Affairs 2023-2027',
 timeLimitMinutes: 10,
 negativeMarking: true,
 totalQuestions: 10,
@@ -811,7 +847,7 @@ sections: [
   title: 'Current Affairs — Round 2',
   type: 'topic',
   subject: 'General Knowledge',
-  chapter: 'Current Affairs 2023-2026',
+  chapter: 'Current Affairs 2023-2027',
   timeLimitMinutes: 12,
   negativeMarking: true,
   totalQuestions: 15,
@@ -1891,20 +1927,20 @@ sections: [
 
 // Continue TEST_CONFIG array from Part 9
 // ============================================================
-// SECTION 10 — FULL AIIMS MOCK TESTS (12 tests, type: 'mock')
+// SECTION 10 — FULL AIIMS & MP PNST MOCK TESTS (12 tests, type: 'mock')
 // 5 Existing + 7 New | 70 Qs, 90 min each (Mock 11: 80 min)
-// AIIMS Pattern: Physics + Chemistry + Biology + GK
+// AIIMS & MP PNST Pattern: Physics + Chemistry + Biology + GK
 // ============================================================
 {
   id: 'mock_aiims_1',
-  title: 'AIIMS Mock Test 1 — Balanced All-Chapters',
+  title: 'AIIMS & MP PNST Mock Test 1 — Balanced All-Chapters',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Complete Syllabus',
   timeLimitMinutes: 90,
   negativeMarking: true,
   totalQuestions: 70,
-  description: 'Full-length AIIMS-pattern mock test with balanced coverage of all chapters across Physics, Chemistry, Biology, and General Knowledge',
+  description: 'Full-length AIIMS & MP PNST pattern mock test with balanced coverage of all chapters across Physics, Chemistry, Biology, and General Knowledge',
   sections: [
   { subject: 'physics', topics: ['current_electricity', 'electrostatics', 'ray_optics', 'kinematics', 'work_energy_power', 'modern_physics', 'magnetic_effects_current'] },
   { subject: 'chemistry', topics: ['chemical_bonding', 'p_block_elements', 'organic_reactions_mechanisms', 'chemical_ionic_equilibrium', 'coordination_compounds', 'thermodynamics_chem', 'electrochemistry'] },
@@ -1914,14 +1950,14 @@ sections: [
   },
   {
   id: 'mock_aiims_2',
-  title: 'AIIMS Mock Test 2 — Organic Chemistry and Genetics Focus',
+  title: 'AIIMS & MP PNST Mock Test 2 — Organic Chemistry and Genetics Focus',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Organic Chemistry and Genetics Emphasis',
   timeLimitMinutes: 90,
   negativeMarking: true,
   totalQuestions: 70,
-  description: 'AIIMS mock with emphasis on organic chemistry mechanisms and molecular genetics — high-yield topics for nursing entrance',
+  description: 'AIIMS & MP PNST mock with emphasis on organic chemistry mechanisms and molecular genetics — high-yield topics for nursing entrance',
   sections: [
   { subject: 'physics', topics: ['electromagnetic_induction_ac', 'wave_optics', 'modern_physics', 'kinematics', 'electrostatics'] },
   { subject: 'chemistry', topics: ['general_organic_chemistry', 'organic_reactions_mechanisms', 'alcohols_aldehydes_ketones_acids', 'chemical_ionic_equilibrium', 'electrochemistry'] },
@@ -1931,14 +1967,14 @@ sections: [
   },
   {
   id: 'mock_aiims_3',
-  title: 'AIIMS Mock Test 3 — Plant Biology and Electrochemistry Focus',
+  title: 'AIIMS & MP PNST Mock Test 3 — Plant Biology and Electrochemistry Focus',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Plant Physiology and Electrochemistry Emphasis',
   timeLimitMinutes: 90,
   negativeMarking: true,
   totalQuestions: 70,
-  description: 'AIIMS mock emphasising plant physiology, electrochemistry, and related interdisciplinary concepts',
+  description: 'AIIMS & MP PNST mock emphasising plant physiology, electrochemistry, and related interdisciplinary concepts',
   sections: [
   { subject: 'physics', topics: ['ray_optics', 'wave_optics', 'work_energy_power', 'current_electricity', 'magnetic_effects_current'] },
   { subject: 'chemistry', topics: ['electrochemistry', 'thermodynamics_chem', 'coordination_compounds', 'chemical_bonding', 'p_block_elements'] },
@@ -1948,14 +1984,14 @@ sections: [
   },
   {
   id: 'mock_aiims_4',
-  title: 'AIIMS Mock Test 4 — Maximum Difficulty Mix',
+  title: 'AIIMS & MP PNST Mock Test 4 — Maximum Difficulty Mix',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Challenging Topics Integration',
   timeLimitMinutes: 90,
   negativeMarking: true,
   totalQuestions: 70,
-  description: 'High-difficulty AIIMS mock combining challenging topics from all subjects to test advanced problem-solving skills',
+  description: 'High-difficulty AIIMS & MP PNST mock combining challenging topics from all subjects to test advanced problem-solving skills',
   sections: [
   { subject: 'physics', topics: ['electrostatics', 'electromagnetic_induction_ac', 'wave_optics', 'modern_physics', 'magnetic_effects_current'] },
   { subject: 'chemistry', topics: ['general_organic_chemistry', 'organic_reactions_mechanisms', 'alcohols_aldehydes_ketones_acids', 'thermodynamics_chem', 'electrochemistry'] },
@@ -1965,14 +2001,14 @@ sections: [
   },
   {
   id: 'mock_aiims_5',
-  title: 'AIIMS Mock Test 5 — Speed and Accuracy Drill',
+  title: 'AIIMS & MP PNST Mock Test 5 — Speed and Accuracy Drill',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Timed Practice for Speed and Accuracy',
   timeLimitMinutes: 85,
   negativeMarking: true,
   totalQuestions: 70,
-  description: 'Slightly reduced time limit to train speed and accuracy under pressure — essential for AIIMS exam strategy',
+  description: 'Slightly reduced time limit to train speed and accuracy under pressure — essential for AIIMS & MP PNST exam strategy',
   sections: [
   { subject: 'physics', topics: ['kinematics', 'work_energy_power', 'current_electricity', 'ray_optics', 'electrostatics'] },
   { subject: 'chemistry', topics: ['chemical_bonding', 'chemical_ionic_equilibrium', 'coordination_compounds', 'p_block_elements', 'general_organic_chemistry'] },
@@ -1982,14 +2018,14 @@ sections: [
   },
   {
   id: 'mock_aiims_6',
-  title: 'AIIMS Mock Test 6 — Kinematics + Organic + Cell Biology + Health Polity',
+  title: 'AIIMS & MP PNST Mock Test 6 — Kinematics + Organic + Cell Biology + Health Polity',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Kinematics, Organic Chemistry, Cell Biology Focus',
   timeLimitMinutes: 90,
   negativeMarking: true,
   totalQuestions: 70,
-  description: 'AIIMS mock focusing on kinematics, organic chemistry mechanisms, cell biology, and health-related polity topics',
+  description: 'AIIMS & MP PNST mock focusing on kinematics, organic chemistry mechanisms, cell biology, and health-related polity topics',
   sections: [
   { subject: 'physics', topics: ['kinematics', 'work_energy_power', 'current_electricity', 'ray_optics', 'electrostatics'] },
   { subject: 'chemistry', topics: ['organic_reactions_mechanisms', 'alcohols_aldehydes_ketones_acids', 'general_organic_chemistry', 'chemical_bonding', 'p_block_elements'] },
@@ -1999,14 +2035,14 @@ sections: [
   },
   {
   id: 'mock_aiims_7',
-  title: 'AIIMS Mock Test 7 — Optics + Coordination + Plant Bio + GK Awards',
+  title: 'AIIMS & MP PNST Mock Test 7 — Optics + Coordination + Plant Bio + GK Awards',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Optics, Coordination Chemistry, Plant Biology Focus',
   timeLimitMinutes: 90,
   negativeMarking: true,
   totalQuestions: 70,
-  description: 'AIIMS mock emphasising optics, coordination compounds, plant biology, and GK awards/important days',
+  description: 'AIIMS & MP PNST mock emphasising optics, coordination compounds, plant biology, and GK awards/important days',
   sections: [
   { subject: 'physics', topics: ['ray_optics', 'wave_optics', 'magnetic_effects_current', 'modern_physics', 'kinematics'] },
   { subject: 'chemistry', topics: ['coordination_compounds', 'chemical_ionic_equilibrium', 'chemical_bonding', 'electrochemistry', 'general_organic_chemistry'] },
@@ -2016,14 +2052,14 @@ sections: [
   },
   {
   id: 'mock_aiims_8',
-  title: 'AIIMS Mock Test 8 — Electricity + Inorganic + Reproduction + Current Affairs',
+  title: 'AIIMS & MP PNST Mock Test 8 — Electricity + Inorganic + Reproduction + Current Affairs',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Electricity, Inorganic Chemistry, Reproduction Focus',
   timeLimitMinutes: 90,
   negativeMarking: true,
   totalQuestions: 70,
-  description: 'AIIMS mock focusing on electricity chapters, inorganic chemistry, human reproduction, and current affairs',
+  description: 'AIIMS & MP PNST mock focusing on electricity chapters, inorganic chemistry, human reproduction, and current affairs',
   sections: [
   { subject: 'physics', topics: ['current_electricity', 'electrostatics', 'magnetic_effects_current', 'electromagnetic_induction_ac', 'work_energy_power'] },
   { subject: 'chemistry', topics: ['chemical_bonding', 'p_block_elements', 'coordination_compounds', 'thermodynamics_chem', 'chemical_ionic_equilibrium'] },
@@ -2033,14 +2069,14 @@ sections: [
   },
   {
   id: 'mock_aiims_9',
-  title: 'AIIMS Mock Test 9 — Progressive Difficulty (Easy to Hard)',
+  title: 'AIIMS & MP PNST Mock Test 9 — Progressive Difficulty (Easy to Hard)',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Progressive Difficulty Structure',
   timeLimitMinutes: 90,
   negativeMarking: true,
   totalQuestions: 70,
-  description: 'AIIMS mock structured with progressive difficulty from easy to hard questions to build confidence and stamina',
+  description: 'AIIMS & MP PNST mock structured with progressive difficulty from easy to hard questions to build confidence and stamina',
   sections: [
   { subject: 'physics', topics: ['kinematics', 'ray_optics', 'work_energy_power', 'electrostatics', 'modern_physics'] },
   { subject: 'chemistry', topics: ['general_organic_chemistry', 'chemical_bonding', 'organic_reactions_mechanisms', 'chemical_ionic_equilibrium', 'thermodynamics_chem'] },
@@ -2050,7 +2086,7 @@ sections: [
   },
   {
   id: 'mock_aiims_10',
-  title: 'AIIMS Mock Test 10 — Complete All-Chapter Coverage',
+  title: 'AIIMS & MP PNST Mock Test 10 — Complete All-Chapter Coverage',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Every Single Chapter Covered',
@@ -2067,7 +2103,7 @@ sections: [
   },
   {
   id: 'mock_aiims_11',
-  title: 'AIIMS Mock Test 11 — Timed Pressure Mock (80 min)',
+  title: 'AIIMS & MP PNST Mock Test 11 — Timed Pressure Mock (80 min)',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Reduced Time for Speed Training',
@@ -2084,14 +2120,14 @@ sections: [
   },
   {
   id: 'mock_aiims_12',
-  title: 'AIIMS Mock Test 12 — Final Revision Sweep',
+  title: 'AIIMS & MP PNST Mock Test 12 — Final Revision Sweep',
   type: 'mock',
   subject: 'All Subjects',
   chapter: 'Final Full-Length Practice Before Exam',
   timeLimitMinutes: 90,
   negativeMarking: true,
   totalQuestions: 70,
-  description: 'Your final full-length practice before the exam. High-yield chapters, full AIIMS pattern, 70 questions in 90 minutes',
+  description: 'Your final full-length practice before the exam. High-yield chapters, full AIIMS & MP PNST pattern, 70 questions in 90 minutes',
   sections: [
   { subject: 'physics', topics: ['modern_physics', 'electromagnetic_induction_ac', 'ray_optics', 'kinematics', 'electrostatics'] },
   { subject: 'chemistry', topics: ['organic_reactions_mechanisms', 'coordination_compounds', 'chemical_ionic_equilibrium', 'electrochemistry', 'chemical_bonding'] },
@@ -2162,8 +2198,13 @@ sections: [
   },
   ];
   
-  // Expose globally
-window.TEST_CONFIG = TEST_CONFIG;
+  // Expose globally and support Node.js module export
+  if (typeof window !== 'undefined') {
+    window.TEST_CONFIG = TEST_CONFIG;
+  }
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = TEST_CONFIG;
+  }
   // ============================================================
   // VERIFICATION — COMPLETE TEST SUITE SUMMARY
   // ============================================================
