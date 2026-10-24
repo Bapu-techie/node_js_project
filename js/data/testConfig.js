@@ -12,6 +12,23 @@
 
 var TEST_CONFIG = [
   {
+  id: 'full_mock_100_test_3',
+  title: 'Nursing Entrance Practice Test 3 (100 Questions)',
+  type: 'multi',
+  subject: 'All Subjects',
+  chapter: 'Physiology, Reproduction, Physics & Chemistry',
+  timeLimitMinutes: 120,
+  negativeMarking: true,
+  totalQuestions: 100,
+  description: '100-question nursing entrance practice: Biology 30, Physics 25, Chemistry 35 and Health GK 10. Includes explanations, with +1 for correct answers and −1/3 for incorrect answers.',
+  sections: [
+    {
+      subject: 'full_test',
+      topics: ['test_100_questions_3']
+    }
+  ]
+},
+  {
   "id": "full_mock_100_test_2",
   "title": "Nursing Entrance Practice Test 2 — 100 Questions",
   "type": "multi",
