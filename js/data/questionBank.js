@@ -906,7 +906,7 @@ full_test: {
     question: "Find the energy equivalent of $1.0\\,\\mathrm g$ of mass. Given: $c=3.0\\times10^8\\,\\mathrm{m\\,s^{-1}}$, $1\\,\\mathrm{kWh}=3.6\\times10^6\\,\\mathrm J$.",
     options: [
       "$9.0\\times10^{13}\\,\\mathrm J$; $2.5\\times10^7\\,\\mathrm{kWh}$",
-      "$3.0\\times10^8}\\,\\mathrm J$; $83.3\\,\\mathrm{kWh}$",
+      "$3.0\\times10^8\\,\\mathrm J$; $83.3\\,\\mathrm{kWh}$",
       "$9.0\\times10^{10}\\,\\mathrm J$; $2.5\\times10^4\\,\\mathrm{kWh}$",
       "$9.0\\times10^{16}\\,\\mathrm J$; $2.5\\times10^{10}\\,\\mathrm{kWh}$"
     ],
