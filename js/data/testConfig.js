@@ -11,6 +11,27 @@
 // ============================================================
 
 var TEST_CONFIG = [
+  {
+  "id": "full_mock_100_test_2",
+  "title": "Nursing Entrance Practice Test 2 — 100 Questions",
+  "type": "multi",
+  "subject": "All Subjects",
+  "chapter": "Human Physiology, Reproduction, Optics & Chemistry",
+  "timeLimitMinutes": 120,
+  "negativeMarking": true,
+  "totalQuestions": 100,
+  "presentation": "formal",
+  "requireExactQuestionCount": true,
+  "description": "Subject-focused 10+2 practice: Biology 30, Physics 25, Chemistry 35 and Health GK 10. Two hours; +1 correct, −1/3 incorrect. Explanations after submission.",
+  "sections": [
+    {
+      "subject": "full_test",
+      "topics": [
+        "test_100_questions_2"
+      ]
+    }
+  ]
+},
 // ============================================================
 // SECTION 1 — TOPIC TESTS ROUND 1 (30 tests) [KEPT AS-IS]
 // One test per chapter: 10 Qs, 12 min each (GK: 10 min)
