@@ -1192,6 +1192,19 @@ input:checked + .slider:before {
   transform: translateY(-2px);
 }
 
+.profile-action-btn.danger {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1.5px solid rgba(239, 68, 68, 0.25);
+  color: #ef4444;
+}
+
+.profile-action-btn.danger:hover {
+  background: rgba(239, 68, 68, 0.18);
+  border-color: #ef4444;
+  color: #dc2626;
+  transform: translateY(-2px);
+}
+
 /* ============================================================
    13. RESPONSIVE DESIGN (Tablets & Mobile)
    ============================================================ */

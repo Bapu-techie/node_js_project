@@ -124,6 +124,9 @@ var ProfileRenderer = (function() {
           '<div class="p-badge-row">' +
             '<span class="p-verified-badge">🏥 VERIFIED CBT ASPIRANT · AIIMS &amp; MP PNST</span>' +
             '<span class="p-batch-badge">BATCH 2027</span>' +
+            ((window.FirebaseService && FirebaseService.isReady())
+              ? '<span class="p-cloud-badge" style="background:rgba(0,184,154,0.15);color:var(--c-teal-dark,#0f766e);border:1px solid rgba(0,184,154,0.3);padding:3px 8px;border-radius:6px;font-size:0.75rem;font-weight:700;">☁️ Cloud Synced</span>'
+              : '<span class="p-cloud-badge" style="background:rgba(100,116,139,0.12);color:var(--c-text-muted);border:1px solid rgba(100,116,139,0.25);padding:3px 8px;border-radius:6px;font-size:0.75rem;font-weight:700;">💻 Local Storage</span>') +
           '</div>' +
           '<button class="p-edit-toggle-btn" id="profile-edit-toggle-btn" type="button" title="Edit candidate details">' +
             (_isEditingProfile ? '✖ Cancel' : '✏️ Edit Profile') +
@@ -534,6 +537,9 @@ var ProfileRenderer = (function() {
         '<button class="profile-action-btn tertiary" id="profile-practice-btn" type="button">' +
           '<span class="btn-icon">🚀</span> <span>Practice Full Mock</span>' +
         '</button>' +
+        '<button class="profile-action-btn danger" id="profile-signout-btn" type="button" title="Sign out on this device">' +
+          '<span class="btn-icon">🚪</span> <span>Sign Out</span>' +
+        '</button>' +
       '</div>';
   }
 
@@ -739,6 +745,24 @@ var ProfileRenderer = (function() {
         setTimeout(function() {
           _renderQueue();
         }, 4000);
+        return;
+      }
+
+      // 9. Sign Out (Cloud & Local)
+      if (target.closest('#profile-signout-btn')) {
+        if (confirm('Are you sure you want to sign out on this device? Your data is safely preserved in the cloud.')) {
+          if (window.FirebaseService && FirebaseService.isReady()) {
+            FirebaseService.signOut();
+          }
+          if (window.StorageService) StorageService.clearAll();
+          if (window.AppState) {
+            AppState.setStudent(null);
+            AppState.setAttempts([]);
+          }
+          if (window.Nav) Nav.goTo('view-onboard');
+          if (window.OnboardRenderer) OnboardRenderer.render();
+          if (window.ToastManager) ToastManager.info('Signed out successfully.');
+        }
         return;
       }
     });

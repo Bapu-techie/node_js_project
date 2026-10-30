@@ -25,14 +25,14 @@
 
 'use strict';
 
-var ExamEngine = (function() {
+var ExamEngine = (function () {
 
   /* ═══════════════════════════════════════════════════════════
      PRIVATE STATE
      ═══════════════════════════════════════════════════════════ */
 
   var _currentResult = null;   // Latest result from ScoringEngine
-  var _isProcessing  = false;  // Guard against double-submit
+  var _isProcessing = false;  // Guard against double-submit
 
 
   /* ═══════════════════════════════════════════════════════════
@@ -79,7 +79,7 @@ var ExamEngine = (function() {
      * @param {string} testId - The TEST_CONFIG id to start
      * @returns {boolean} Success
      */
-    startExam: function(testId) {
+    startExam: function (testId) {
       // ── Guard: Check if can start ──
       if (window.StateManager) {
         var check = StateManager.canStartExam();
@@ -120,7 +120,7 @@ var ExamEngine = (function() {
 
       // ── Step 4: Reset processing flag ──
       _currentResult = null;
-      _isProcessing  = false;
+      _isProcessing = false;
 
       // ── Step 5: Navigate to exam view ──
       if (window.Nav && typeof Nav.goTo === 'function') {
@@ -133,18 +133,18 @@ var ExamEngine = (function() {
       // ── Step 7: Start timer ──
       if (window.TimerModule) {
         TimerModule.start({
-          onTick: function(remaining, timerState) {
+          onTick: function (remaining, timerState) {
             _render('updateTimer', remaining, timerState);
           },
-          onWarning: function() {
+          onWarning: function () {
             _render('setTimerWarning');
             _toast('⚠️ Only 2 minutes remaining!', 'warning');
           },
-          onCritical: function() {
+          onCritical: function () {
             _render('setTimerCritical');
             _toast('🚨 30 seconds left! Submit now!', 'error');
           },
-          onExpire: function() {
+          onExpire: function () {
             _toast('⏰ Time\'s up! Auto-submitting...', 'warning');
             ExamEngine.submitExam('auto');
           }
@@ -163,7 +163,7 @@ var ExamEngine = (function() {
      * Select an answer for the current question.
      * @param {number} optionIndex - 0-based option index
      */
-    selectAnswer: function(optionIndex) {
+    selectAnswer: function (optionIndex) {
       if (!ExamState.isActive()) return;
 
       var currentAnswer = ExamState.getCurrentAnswer();
@@ -184,7 +184,7 @@ var ExamEngine = (function() {
     /**
      * Clear the answer for the current question.
      */
-    clearAnswer: function() {
+    clearAnswer: function () {
       if (!ExamState.isActive()) return;
 
       ExamState.clearAnswer();
@@ -201,7 +201,7 @@ var ExamEngine = (function() {
     /**
      * Toggle the "marked for review" flag on the current question.
      */
-    toggleReview: function() {
+    toggleReview: function () {
       if (!ExamState.isActive()) return;
 
       var isMarked = ExamState.toggleReview();
@@ -222,7 +222,7 @@ var ExamEngine = (function() {
     /**
      * Navigate to the next question.
      */
-    goNext: function() {
+    goNext: function () {
       if (!ExamState.isActive()) return;
 
       if (ExamState.goNext()) {
@@ -236,7 +236,7 @@ var ExamEngine = (function() {
     /**
      * Navigate to the previous question.
      */
-    goPrev: function() {
+    goPrev: function () {
       if (!ExamState.isActive()) return;
 
       if (ExamState.goPrev()) {
@@ -251,7 +251,7 @@ var ExamEngine = (function() {
      * Jump to a specific question by index.
      * @param {number} idx - 0-based index
      */
-    goToQuestion: function(idx) {
+    goToQuestion: function (idx) {
       if (!ExamState.isActive()) return;
 
       if (ExamState.goToQuestion(idx)) {
@@ -272,7 +272,7 @@ var ExamEngine = (function() {
      * @param {string} [method='manual'] - 'manual' (user clicked) or 'auto' (timer expired)
      * @returns {Object|null} The full result object
      */
-    submitExam: function(method) {
+    submitExam: function (method) {
       // ── Guard: Prevent double submit ──
       if (_isProcessing) {
         console.warn('[ExamEngine] Submit already in progress.');
@@ -329,6 +329,15 @@ var ExamEngine = (function() {
         if (window.StorageService && typeof StorageService.addAttempt === 'function') {
           StorageService.addAttempt(attemptSummary);
         }
+
+        // ── Cloud Firestore Sync (async, non-blocking) ──
+        if (window.FirebaseService && FirebaseService.isReady()) {
+          FirebaseService.saveAttempt(attemptSummary).then(function() {
+            if (window.ToastManager) ToastManager.info('Scorecard synced to cloud ☁️');
+          }).catch(function(err) {
+            console.warn('[ExamEngine] Firestore cloud sync will retry offline:', err);
+          });
+        }
       }
 
       // ── Step 6: Submit to Formspree (async, non-blocking) ──
@@ -370,7 +379,7 @@ var ExamEngine = (function() {
      * Exit the exam without submitting.
      * Resets all exam state and navigates to dashboard.
      */
-    exitExam: function() {
+    exitExam: function () {
       // Stop timer
       if (window.TimerModule) {
         TimerModule.stop();
@@ -395,12 +404,12 @@ var ExamEngine = (function() {
      * Get data for the submit confirmation modal.
      * @returns {Object} { counts, timeRemaining, timeFormatted }
      */
-    getSubmitSummary: function() {
+    getSubmitSummary: function () {
       return {
-        counts:         ExamState.getCounts(),
-        timeRemaining:  ExamState.getTimeRemaining(),
-        timeFormatted:  window.TimerModule ? TimerModule.getFormattedTime() : '00:00',
-        testTitle:      ExamState.getTestTitle(),
+        counts: ExamState.getCounts(),
+        timeRemaining: ExamState.getTimeRemaining(),
+        timeFormatted: window.TimerModule ? TimerModule.getFormattedTime() : '00:00',
+        testTitle: ExamState.getTestTitle(),
         totalQuestions: ExamState.getTotalQuestions()
       };
     },
@@ -415,7 +424,7 @@ var ExamEngine = (function() {
      *
      * @param {KeyboardEvent} e
      */
-    handleKeyboard: function(e) {
+    handleKeyboard: function (e) {
       if (!ExamState.isActive()) return;
 
       // Don't intercept if user is typing in an input
@@ -423,7 +432,7 @@ var ExamEngine = (function() {
       if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
 
       var key = e.key;
-      var EC  = window.ExamConstants;
+      var EC = window.ExamConstants;
 
       if (!EC) return;
 
@@ -481,7 +490,7 @@ var ExamEngine = (function() {
      * Get the most recent exam result.
      * @returns {Object|null}
      */
-    getLastResult: function() {
+    getLastResult: function () {
       return _currentResult;
     },
 
@@ -489,7 +498,7 @@ var ExamEngine = (function() {
      * Check if an exam is currently active.
      * @returns {boolean}
      */
-    isActive: function() {
+    isActive: function () {
       return window.ExamState ? ExamState.isActive() : false;
     }
   };

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="description" content="NursePrep Pro — AIIMS BSc Nursing &amp; MP PNST 2027 Entrance Exam Preparation Portal" />
+  <meta name="description"
+    content="NursePrep Pro — AIIMS BSc Nursing &amp; MP PNST 2027 Entrance Exam Preparation Portal" />
   <meta name="theme-color" content="#f8fafc" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -11,7 +13,8 @@
   <meta name="apple-mobile-web-app-title" content="NursePrep" />
   <meta name="application-name" content="NursePrep Pro" />
   <meta property="og:title" content="NursePrep Pro — AIIMS Nursing &amp; MP PNST 2027 Entrance" />
-  <meta property="og:description" content="Crack AIIMS BSc Nursing &amp; MP PNST 2027 Entrance with full mock tests, sectional drills, analytics and NCERT explanations." />
+  <meta property="og:description"
+    content="Crack AIIMS BSc Nursing &amp; MP PNST 2027 Entrance with full mock tests, sectional drills, analytics and NCERT explanations." />
   <meta property="og:type" content="website" />
 
   <title>NursePrep Pro — AIIMS Nursing &amp; MP PNST 2027 Entrance</title>
@@ -21,8 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
   <!-- KaTeX for High-Precision Mathematical & Scientific Typesetting -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
@@ -45,12 +47,7 @@
 <body>
 
   <!-- Screen reader live region — nav.js writes here on view change -->
-  <div
-    id="sr-announcement"
-    class="sr-only"
-    aria-live="polite"
-    aria-atomic="true"
-  ></div>
+  <div id="sr-announcement" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
   <div id="app">
 
@@ -67,14 +64,7 @@
          Moving it outside would make it a 3rd flex child
          and it would float to the right of the card.
     ═══════════════════════════════════════════════════════════ -->
-    <section
-      id="view-onboard"
-      class="view hidden"
-      role="main"
-      aria-label="Registration"
-      aria-hidden="true"
-      inert
-    >
+    <section id="view-onboard" class="view hidden" role="main" aria-label="Registration" aria-hidden="true" inert>
       <div class="onboard-container">
 
         <!-- Child 1: Hero — logo + title + tagline -->
@@ -85,66 +75,58 @@
         </div>
 
         <!-- Child 2: Form card — inputs + button + footer note -->
-        <form
-          id="onboard-form"
-          class="onboard-form"
-          novalidate
-          autocomplete="on"
-        >
+        <form id="onboard-form" class="onboard-form" novalidate autocomplete="on">
 
-          <div class="form-group">
-            <label for="onboard-name" class="form-label">Full Name</label>
-            <input
-              type="text"
-              id="onboard-name"
-              class="form-input"
-              placeholder="Enter your full name"
-              autocomplete="name"
-              inputmode="text"
-              required
-              aria-required="true"
-              aria-describedby="onboard-name-error"
-            />
-            <span
-              id="onboard-name-error"
-              class="form-error"
-              role="alert"
-              aria-live="polite"
-            ></span>
+          <!-- Auth Mode Tabs (Sign In / Register) -->
+          <div class="auth-tabs" role="tablist">
+            <button type="button" class="auth-tab active" id="tab-auth-login" role="tab" aria-selected="true">Sign In</button>
+            <button type="button" class="auth-tab" id="tab-auth-register" role="tab" aria-selected="false">Create Account</button>
           </div>
 
+          <!-- Name Field (Visible during Create Account) -->
+          <div class="form-group" id="form-group-name" style="display: none;">
+            <label for="onboard-name" class="form-label">Candidate Full Name</label>
+            <input type="text" id="onboard-name" class="form-input" placeholder="Enter your full name"
+              autocomplete="name" inputmode="text" aria-describedby="onboard-name-error" />
+            <span id="onboard-name-error" class="form-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Email Field -->
           <div class="form-group">
             <label for="onboard-email" class="form-label">Email Address</label>
-            <input
-              type="email"
-              id="onboard-email"
-              class="form-input"
-              placeholder="Enter your email"
-              autocomplete="email"
-              inputmode="email"
-              required
-              aria-required="true"
-              aria-describedby="onboard-email-error"
-            />
-            <span
-              id="onboard-email-error"
-              class="form-error"
-              role="alert"
-              aria-live="polite"
-            ></span>
+            <input type="email" id="onboard-email" class="form-input" placeholder="candidate@example.com"
+              autocomplete="email" inputmode="email" required aria-required="true"
+              aria-describedby="onboard-email-error" />
+            <span id="onboard-email-error" class="form-error" role="alert" aria-live="polite"></span>
           </div>
 
-          <button
-            type="submit"
-            id="onboard-submit-btn"
-            class="btn-primary btn-full"
-          >
-            🚀 Start Preparing
+          <!-- Password Field -->
+          <div class="form-group" id="form-group-password">
+            <div class="form-label-row">
+              <label for="onboard-password" class="form-label">Password</label>
+              <a href="#" id="onboard-forgot-link" class="auth-forgot-link">Forgot?</a>
+            </div>
+            <input type="password" id="onboard-password" class="form-input" placeholder="Enter password (min 6 characters)"
+              autocomplete="current-password" required aria-required="true"
+              aria-describedby="onboard-password-error" />
+            <span id="onboard-password-error" class="form-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="onboard-submit-btn" class="btn-primary btn-full">
+            🚀 Sign In &amp; Load Tests
           </button>
 
-          <!-- Footer note is INSIDE the form so it stays in the card -->
-          <p class="onboard-footer">
-            Your data is stored locally on your device only.
+          <!-- Offline / Demo Fallback -->
+          <div class="auth-alt-row">
+            <button type="button" id="onboard-offline-btn" class="auth-offline-btn" title="Continue on this computer without cloud sync">
+              ⚡ Continue in Local Mode (Offline)
+            </button>
+          </div>
+
+          <!-- Cloud Synced Notice -->
+          <p class="onboard-footer" id="onboard-footer-text">
+            ☁️ Cloud Synced — Access your test attempts and statistics from any device.
           </p>
 
         </form>
@@ -156,14 +138,7 @@
     <!-- ═══════════════════════════════════════════════════════
          VIEW 2 — DASHBOARD
     ═══════════════════════════════════════════════════════════ -->
-    <section
-      id="view-dashboard"
-      class="view hidden"
-      role="main"
-      aria-label="Dashboard"
-      aria-hidden="true"
-      inert
-    >
+    <section id="view-dashboard" class="view hidden" role="main" aria-label="Dashboard" aria-hidden="true" inert>
       <!-- Full-Width Professional Top Navbar -->
       <header class="dash-header">
         <div class="dash-header-inner">
@@ -193,36 +168,21 @@
             </div>
 
             <!-- Theme Switcher -->
-            <button
-              id="dash-theme-btn"
-              class="header-nav-btn theme-toggle-btn"
-              aria-label="Toggle dark/light theme"
-              title="Toggle Theme"
-              type="button"
-            >
+            <button id="dash-theme-btn" class="header-nav-btn theme-toggle-btn" aria-label="Toggle dark/light theme"
+              title="Toggle Theme" type="button">
               <span class="theme-icon-display">🌙</span>
             </button>
 
             <!-- Analytics Button -->
-            <button
-              id="dash-analytics-btn"
-              class="header-nav-btn analytics-btn"
-              aria-label="View performance analytics"
-              title="Performance Analytics"
-              type="button"
-            >
+            <button id="dash-analytics-btn" class="header-nav-btn analytics-btn" aria-label="View performance analytics"
+              title="Performance Analytics" type="button">
               <span class="btn-icon">📊</span>
               <span class="btn-label">Analytics</span>
             </button>
 
             <!-- Candidate Profile Chip -->
-            <button
-              id="dash-profile-btn"
-              class="header-profile-chip"
-              aria-label="View candidate profile and settings"
-              title="Candidate Profile & Settings"
-              type="button"
-            >
+            <button id="dash-profile-btn" class="header-profile-chip" aria-label="View candidate profile and settings"
+              title="Candidate Profile & Settings" type="button">
               <div class="chip-avatar" id="dash-chip-avatar">R</div>
               <div class="chip-details">
                 <span class="chip-name" id="dash-chip-name">Rohit</span>
@@ -246,7 +206,8 @@
             </div>
             <h1 class="dash-hero-title">AIIMS B.Sc. Nursing &amp; MP PNST 2027 Examination Portal</h1>
             <p class="dash-hero-desc">
-              Master Physics, Chemistry, Biology &amp; GK for AIIMS B.Sc. Nursing and MP PNST 2027 with full-length timed simulations, negative marking (−⅓), and step-by-step NCERT explanations.
+              Master Physics, Chemistry, Biology &amp; GK for AIIMS B.Sc. Nursing and MP PNST 2027 with full-length
+              timed simulations, negative marking (−⅓), and step-by-step NCERT explanations.
             </p>
           </div>
           <div class="dash-hero-progress">
@@ -255,7 +216,8 @@
                 <span class="hero-progress-label">Syllabus Progress</span>
                 <span class="hero-progress-pct" id="dash-progress-pct">1%</span>
               </div>
-              <div class="hero-progress-bar-bg" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="1">
+              <div class="hero-progress-bar-bg" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                aria-valuenow="1">
                 <div class="hero-progress-bar-fill" id="dash-progress-fill" style="width: 2%;"></div>
               </div>
               <span class="hero-progress-sub" id="dash-progress-sub">1 of 145 Tests Completed</span>
@@ -263,44 +225,18 @@
           </div>
         </div>
 
-        <div
-          id="dash-stats-strip"
-          class="dash-stats-strip"
-          aria-label="Your stats"
-        ></div>
+        <div id="dash-stats-strip" class="dash-stats-strip" aria-label="Your stats"></div>
 
         <div class="dash-controls">
-          <div
-            id="dash-filter-bar"
-            class="filter-bar"
-            role="group"
-            aria-label="Filter tests"
-          ></div>
+          <div id="dash-filter-bar" class="filter-bar" role="group" aria-label="Filter tests"></div>
           <div class="search-wrap">
-            <input
-              type="search"
-              id="dash-search"
-              class="search-input"
-              placeholder="🔍 Search tests..."
-              aria-label="Search tests"
-              autocomplete="off"
-              spellcheck="false"
-            />
+            <input type="search" id="dash-search" class="search-input" placeholder="🔍 Search tests..."
+              aria-label="Search tests" autocomplete="off" spellcheck="false" />
           </div>
-          <span
-            id="dash-test-count"
-            class="dash-test-count"
-            aria-live="polite"
-            aria-atomic="true"
-          ></span>
+          <span id="dash-test-count" class="dash-test-count" aria-live="polite" aria-atomic="true"></span>
         </div>
 
-        <div
-          id="dash-test-grid"
-          class="test-grid"
-          role="list"
-          aria-label="Available tests"
-        ></div>
+        <div id="dash-test-grid" class="test-grid" role="list" aria-label="Available tests"></div>
 
         <!-- Recent Examination Attempts Card -->
         <section class="dash-history" aria-label="Recent examination attempts">
@@ -309,26 +245,18 @@
               <div class="history-header-icon" aria-hidden="true">📋</div>
               <div class="history-header-text">
                 <h2 class="dash-section-title">Recent Examination Attempts</h2>
-                <p class="dash-section-subtitle">Track your practice test scores, timing efficiency, and AIIMS ranking readiness</p>
+                <p class="dash-section-subtitle">Track your practice test scores, timing efficiency, and AIIMS ranking
+                  readiness</p>
               </div>
             </div>
-            <button
-              id="dash-history-analytics-btn"
-              class="history-analytics-link-btn"
-              type="button"
-              aria-label="View comprehensive analytics"
-            >
+            <button id="dash-history-analytics-btn" class="history-analytics-link-btn" type="button"
+              aria-label="View comprehensive analytics">
               <span>Detailed Analytics</span>
               <span class="btn-arrow" aria-hidden="true">→</span>
             </button>
           </div>
 
-          <div
-            class="history-table-wrap"
-            role="region"
-            aria-label="Recent examination history table"
-            tabindex="0"
-          >
+          <div class="history-table-wrap" role="region" aria-label="Recent examination history table" tabindex="0">
             <table class="history-table">
               <thead>
                 <tr>
@@ -352,14 +280,7 @@
     <!-- ═══════════════════════════════════════════════════════
          VIEW 3 — EXAM
     ═══════════════════════════════════════════════════════════ -->
-    <section
-      id="view-exam"
-      class="view hidden"
-      role="main"
-      aria-label="Exam"
-      aria-hidden="true"
-      inert
-    >
+    <section id="view-exam" class="view hidden" role="main" aria-label="Exam" aria-hidden="true" inert>
       <div class="exam-layout">
 
         <header class="exam-header">
@@ -377,13 +298,8 @@
           <div class="exam-header-center">
             <div class="exam-timer-wrapper">
               <span class="timer-label">TIME REMAINING</span>
-              <span
-                id="exam-timer"
-                class="exam-timer"
-                role="timer"
-                aria-live="off"
-                aria-label="Time remaining"
-              >00:00</span>
+              <span id="exam-timer" class="exam-timer" role="timer" aria-live="off"
+                aria-label="Time remaining">00:00</span>
             </div>
           </div>
 
@@ -396,45 +312,24 @@
             </div>
 
             <!-- Fullscreen Button -->
-            <button
-              id="exam-fullscreen-btn"
-              class="exam-nav-icon-btn"
-              type="button"
-              aria-label="Toggle full screen"
-              title="Toggle Fullscreen"
-            >
+            <button id="exam-fullscreen-btn" class="exam-nav-icon-btn" type="button" aria-label="Toggle full screen"
+              title="Toggle Fullscreen">
               <span class="fs-icon" aria-hidden="true">⛶</span>
             </button>
 
             <!-- Submit Button -->
-            <button
-              id="exam-submit-btn"
-              class="btn-submit"
-              aria-label="Submit exam"
-              type="button"
-            >
+            <button id="exam-submit-btn" class="btn-submit" aria-label="Submit exam" type="button">
               <span>Submit Test</span>
             </button>
           </div>
         </header>
 
-        <div
-          id="exam-progress-wrap"
-          class="exam-progress-wrap"
-          role="progressbar"
-          aria-label="Exam progress"
-          aria-valuemin="0"
-          aria-valuemax="100"
-          aria-valuenow="0"
-        >
+        <div id="exam-progress-wrap" class="exam-progress-wrap" role="progressbar" aria-label="Exam progress"
+          aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
           <div class="exam-progress-bg">
             <div id="exam-progress-bar" class="exam-progress-fill"></div>
           </div>
-          <span
-            id="exam-progress-text"
-            class="exam-progress-text"
-            aria-hidden="true"
-          ></span>
+          <span id="exam-progress-text" class="exam-progress-text" aria-hidden="true"></span>
         </div>
 
         <div class="exam-body">
@@ -444,8 +339,8 @@
 
               <div class="q-meta">
                 <div class="q-meta-left">
-                  <span id="exam-q-number"     class="q-number"></span>
-                  <span id="exam-q-subject"    class="q-subject-badge"></span>
+                  <span id="exam-q-number" class="q-number"></span>
+                  <span id="exam-q-subject" class="q-subject-badge"></span>
                   <span id="exam-q-difficulty" class="q-diff-badge"></span>
                 </div>
                 <div class="q-meta-right">
@@ -457,46 +352,24 @@
 
               <p id="exam-q-text" class="q-text"></p>
 
-              <div
-                id="exam-options"
-                class="q-options"
-                role="radiogroup"
-                aria-label="Answer options"
-              ></div>
+              <div id="exam-options" class="q-options" role="radiogroup" aria-label="Answer options"></div>
 
             </div>
 
             <nav class="exam-nav" aria-label="Question navigation">
               <div class="nav-left">
-                <button
-                  id="exam-prev-btn"
-                  class="btn-secondary"
-                  aria-label="Previous question"
-                  type="button"
-                ><span class="btn-arrow" aria-hidden="true">❮</span> <span>Previous</span></button>
+                <button id="exam-prev-btn" class="btn-secondary" aria-label="Previous question" type="button"><span
+                    class="btn-arrow" aria-hidden="true">❮</span> <span>Previous</span></button>
               </div>
               <div class="nav-center">
-                <button
-                  id="exam-clear-btn"
-                  class="btn-ghost"
-                  aria-label="Clear response"
-                  type="button"
-                ><span class="btn-icon" aria-hidden="true">↺</span> <span>Clear Response</span></button>
-                <button
-                  id="exam-review-btn"
-                  class="btn-ghost"
-                  aria-label="Mark for review"
-                  aria-pressed="false"
-                  type="button"
-                ><span class="btn-icon" aria-hidden="true">★</span> <span>Mark for Review</span></button>
+                <button id="exam-clear-btn" class="btn-ghost" aria-label="Clear response" type="button"><span
+                    class="btn-icon" aria-hidden="true">↺</span> <span>Clear Response</span></button>
+                <button id="exam-review-btn" class="btn-ghost" aria-label="Mark for review" aria-pressed="false"
+                  type="button"><span class="btn-icon" aria-hidden="true">★</span> <span>Mark for Review</span></button>
               </div>
               <div class="nav-right">
-                <button
-                  id="exam-next-btn"
-                  class="btn-primary"
-                  aria-label="Next question"
-                  type="button"
-                ><span>Next Question</span> <span class="btn-arrow" aria-hidden="true">❯</span></button>
+                <button id="exam-next-btn" class="btn-primary" aria-label="Next question" type="button"><span>Next
+                    Question</span> <span class="btn-arrow" aria-hidden="true">❯</span></button>
               </div>
             </nav>
           </main>
@@ -524,13 +397,8 @@
           <span class="ss-item ss-review" aria-label="Marked for review">
             🔖 <span id="ss-review-count">0</span>
           </span>
-          <button
-            id="exam-palette-fab"
-            class="palette-fab"
-            aria-label="Open question palette"
-            aria-expanded="false"
-            type="button"
-          >📋</button>
+          <button id="exam-palette-fab" class="palette-fab" aria-label="Open question palette" aria-expanded="false"
+            type="button">📋</button>
         </div>
 
       </div>
@@ -540,14 +408,7 @@
     <!-- ═══════════════════════════════════════════════════════
          VIEW 4 — RESULT
     ═══════════════════════════════════════════════════════════ -->
-    <section
-      id="view-result"
-      class="view hidden"
-      role="main"
-      aria-label="Results"
-      aria-hidden="true"
-      inert
-    >
+    <section id="view-result" class="view hidden" role="main" aria-label="Results" aria-hidden="true" inert>
       <!-- Dedicated Premier CBT Result Top Navbar -->
       <header class="result-header">
         <div class="result-header-inner">
@@ -559,7 +420,8 @@
             <div class="result-header-sep" aria-hidden="true"></div>
             <div class="result-header-title-box">
               <h1 class="result-header-title">Official Scorecard &amp; Performance Evaluation</h1>
-              <span class="result-header-subtitle">AIIMS &amp; MP PNST 2027 Computer Based Test (CBT) Final Result Report</span>
+              <span class="result-header-subtitle">AIIMS &amp; MP PNST 2027 Computer Based Test (CBT) Final Result
+                Report</span>
             </div>
           </div>
 
@@ -574,7 +436,8 @@
             <button id="result-print-header-btn" class="result-header-btn" type="button" title="Print Scorecard">
               <span class="btn-icon" aria-hidden="true">🖨️</span> <span>Print / Save PDF</span>
             </button>
-            <button id="result-dash-header-btn" class="result-header-btn primary" type="button" title="Back to Dashboard">
+            <button id="result-dash-header-btn" class="result-header-btn primary" type="button"
+              title="Back to Dashboard">
               <span class="btn-icon" aria-hidden="true">←</span> <span>Dashboard</span>
             </button>
           </div>
@@ -584,7 +447,7 @@
       <div class="result-container">
         <div id="result-hero" class="result-hero"></div>
         <div id="result-stats" class="result-stats"></div>
-        
+
         <!-- Desktop 2-Column Analytical Deck -->
         <div class="result-analytics-deck">
           <div id="result-subjects" class="result-subjects"></div>
@@ -600,14 +463,7 @@
     <!-- ═══════════════════════════════════════════════════════
          VIEW 5 — ANALYTICS
     ═══════════════════════════════════════════════════════════ -->
-    <section
-      id="view-analytics"
-      class="view hidden"
-      role="main"
-      aria-label="Analytics"
-      aria-hidden="true"
-      inert
-    >
+    <section id="view-analytics" class="view hidden" role="main" aria-label="Analytics" aria-hidden="true" inert>
       <!-- Dedicated Premier CBT Analytics Top Navbar -->
       <header class="analytics-header-bar">
         <div class="analytics-header-inner">
@@ -619,7 +475,8 @@
             <div class="analytics-header-sep" aria-hidden="true"></div>
             <div class="analytics-header-title-box">
               <h1 class="analytics-header-title">Performance Analytics &amp; Exam Readiness</h1>
-              <span class="analytics-header-subtitle">AIIMS &amp; MP PNST 2027 Comprehensive Metric Evaluation &amp; Accuracy Diagnostic</span>
+              <span class="analytics-header-subtitle">AIIMS &amp; MP PNST 2027 Comprehensive Metric Evaluation &amp;
+                Accuracy Diagnostic</span>
             </div>
           </div>
 
@@ -631,10 +488,12 @@
                 <span class="chip-role">AIIMS &amp; MP PNST 2027 Aspirant</span>
               </div>
             </div>
-            <button id="analytics-profile-header-btn" class="analytics-header-btn" type="button" title="View Profile & Goals">
+            <button id="analytics-profile-header-btn" class="analytics-header-btn" type="button"
+              title="View Profile & Goals">
               <span class="btn-icon" aria-hidden="true">👤</span> <span>Profile</span>
             </button>
-            <button id="analytics-dash-header-btn" class="analytics-header-btn primary" type="button" title="Return to Dashboard">
+            <button id="analytics-dash-header-btn" class="analytics-header-btn primary" type="button"
+              title="Return to Dashboard">
               <span class="btn-icon" aria-hidden="true">←</span> <span>Dashboard</span>
             </button>
           </div>
@@ -666,14 +525,8 @@
     <!-- ═══════════════════════════════════════════════════════
          VIEW 6 — PROFILE
     ═══════════════════════════════════════════════════════════ -->
-    <section
-      id="view-profile"
-      class="view hidden"
-      role="main"
-      aria-label="Profile and Settings"
-      aria-hidden="true"
-      inert
-    >
+    <section id="view-profile" class="view hidden" role="main" aria-label="Profile and Settings" aria-hidden="true"
+      inert>
       <!-- Dedicated Premier CBT Profile Top Navbar -->
       <header class="profile-header-bar">
         <div class="profile-header-inner">
@@ -685,7 +538,8 @@
             <div class="profile-header-sep" aria-hidden="true"></div>
             <div class="profile-header-title-box">
               <h1 class="profile-header-title">Candidate Profile &amp; CBT System Settings</h1>
-              <span class="profile-header-subtitle">AIIMS &amp; MP PNST 2027 Official Aspirant Registration &amp; Examination Preferences</span>
+              <span class="profile-header-subtitle">AIIMS &amp; MP PNST 2027 Official Aspirant Registration &amp;
+                Examination Preferences</span>
             </div>
           </div>
 
@@ -697,10 +551,12 @@
                 <span class="chip-role">AIIMS &amp; MP PNST 2027 Aspirant</span>
               </div>
             </div>
-            <button id="profile-analytics-header-btn" class="profile-header-btn" type="button" title="View Performance Analytics">
+            <button id="profile-analytics-header-btn" class="profile-header-btn" type="button"
+              title="View Performance Analytics">
               <span class="btn-icon" aria-hidden="true">📈</span> <span>Analytics</span>
             </button>
-            <button id="profile-dash-header-btn" class="profile-header-btn primary" type="button" title="Return to Dashboard">
+            <button id="profile-dash-header-btn" class="profile-header-btn primary" type="button"
+              title="Return to Dashboard">
               <span class="btn-icon" aria-hidden="true">←</span> <span>Dashboard</span>
             </button>
           </div>
@@ -766,7 +622,14 @@
   <script src="js/state/appState.js"></script>
   <script src="js/state/index.js"></script>
 
-  <!-- Layer 4: Services -->
+  <!-- Firebase SDKs (Official Compat for vanilla JS browser support) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <!-- Layer 4: Services & Persistence -->
+  <script src="js/services/firebaseConfig.js"></script>
+  <script src="js/services/firebaseService.js"></script>
   <script src="js/services/storageService.js"></script>
   <script src="js/services/formSubmitter.js"></script>
 
@@ -793,4 +656,5 @@
   <script src="js/app.js"></script>
 
 </body>
+
 </html>

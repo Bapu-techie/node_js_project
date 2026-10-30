@@ -141,6 +141,41 @@ var App = (function() {
     // Apply saved theme
     var savedTheme = StorageService.loadTheme() || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // ── Initialize Firebase Cloud Sync (if configured) ──
+    if (window.FirebaseService) {
+      FirebaseService.init();
+
+      FirebaseService.onAuthStateChanged(function(user) {
+        if (user) {
+          FirebaseService.loadUserData(user.uid).then(function(cloudData) {
+            if (cloudData) {
+              if (cloudData.student) {
+                AppState.setStudent(cloudData.student);
+              }
+              if (Array.isArray(cloudData.attempts)) {
+                AppState.setAttempts(cloudData.attempts);
+              }
+              // Save to local storage cache
+              StorageService.saveAll(cloudData);
+
+              // Update active view if already rendered
+              var curView = AppState.getCurrentView();
+              if (curView === 'view-onboard' && cloudData.student) {
+                if (window.Nav) Nav.goTo('view-dashboard');
+                if (window.DashboardRenderer) DashboardRenderer.render();
+              } else if (curView === 'view-dashboard' && window.DashboardRenderer) {
+                DashboardRenderer.render();
+              } else if (curView === 'view-profile' && window.ProfileRenderer) {
+                ProfileRenderer.render();
+              }
+            }
+          }).catch(function(err) {
+            console.warn('[App] Background cloud sync:', err);
+          });
+        }
+      });
+    }
   }
 
   /**
