@@ -340,6 +340,3312 @@ mini_test: {
 ]
 },
 full_test: {
+  test_100_questions_3: [
+  {
+    id: "test100_3_q001",
+    question: "A rise in arterial CO₂ normally stimulates breathing mainly through which central mechanism?",
+    options: [
+      "CO₂ enters the cerebrospinal fluid and increases H⁺ near medullary chemoreceptors",
+      "Increased blood nitrogen activates the hypothalamus",
+      "CO₂ directly stimulates the cerebellar cortex",
+      "Reduced plasma glucose activates the respiratory centre"
+    ],
+    correctAnswer: 0,
+    explanation: "CO₂ crosses the blood–brain barrier and generates H⁺ in cerebrospinal fluid, stimulating central chemoreceptors. Peripheral chemoreceptors also respond to CO₂ and H⁺ and become especially important when arterial oxygen falls markedly.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q002",
+    question: "Which pairing of respiratory disorder and characteristic change is correct?",
+    options: [
+      "Emphysema — bacterial tonsillitis; asthma — destruction of red blood cells",
+      "Emphysema — pleural fluid accumulation; asthma — alveolar wall destruction",
+      "Emphysema — pulmonary fibrosis alone; asthma — permanent loss of the diaphragm",
+      "Emphysema — alveolar wall destruction; asthma — airway inflammation and narrowing"
+    ],
+    correctAnswer: 3,
+    explanation: "Emphysema damages alveolar walls and reduces gas-exchange surface area. Asthma involves airway inflammation with variable narrowing. Some occupational dust exposures can cause pulmonary fibrosis; the affected lung region depends on the disease.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q003",
+    question: "Considering ABO compatibility alone for red-cell transfusion, why can group O red cells be given to recipients of other ABO groups?",
+    options: [
+      "They lack both A and B antigens",
+      "They lack haemoglobin",
+      "They carry both A and B antigens",
+      "They carry both anti-A and anti-B on their surface"
+    ],
+    correctAnswer: 0,
+    explanation: "Group O red cells lack A and B surface antigens. Group AB recipients lack the usual anti-A and anti-B plasma antibodies. Rh status, other antigens and compatibility testing still matter; these statements do not make whole blood or plasma universally compatible.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q004",
+    question: "Which autonomic effect on the heart is correct?",
+    options: [
+      "Sympathetic stimulation stops ventricular contraction",
+      "Both autonomic divisions generate the normal pacemaker rhythm",
+      "Sympathetic stimulation increases heart rate and ventricular contractility",
+      "Parasympathetic stimulation increases sinoatrial firing rate"
+    ],
+    correctAnswer: 2,
+    explanation: "Sympathetic stimulation increases heart rate and ventricular contractility. Vagal parasympathetic stimulation mainly slows sinoatrial firing and atrioventricular conduction. The heart is myogenic and generates its own rhythm.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q005",
+    question: "Match the conditions in List I with their descriptions in List II.\nList I: P. Coronary atherosclerosis, Q. Angina, R. Heart failure, S. Cardiac arrest\nList II: 1. Impaired cardiac filling or pumping that cannot adequately meet body needs, 2. Sudden loss of effective cardiac pumping, 3. Chest discomfort caused by myocardial ischaemia, 4. Plaque accumulation in coronary arteries",
+    options: [
+      "P-2, Q-3, R-1, S-4",
+      "P-3, Q-4, R-2, S-1",
+      "P-4, Q-3, R-1, S-2",
+      "P-4, Q-1, R-3, S-2"
+    ],
+    correctAnswer: 2,
+    explanation: "Coronary atherosclerosis involves arterial plaques; angina reflects myocardial ischaemia. Heart failure is a syndrome of inadequate cardiac function. Cardiac arrest is loss of effective circulation and need not mean complete electrical silence.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q006",
+    question: "Which nephron type is especially important for producing concentrated urine?",
+    options: [
+      "Cortical nephrons with no renal corpuscles",
+      "Nephrons that lack collecting-duct connections",
+      "Nephrons whose glomeruli lie in the renal pelvis",
+      "Juxtamedullary nephrons with long loops and associated vasa recta"
+    ],
+    correctAnswer: 3,
+    explanation: "Juxtamedullary nephrons have long loops extending deep into the medulla. Their loops and associated vasa recta help establish and preserve the medullary osmotic gradient.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q007",
+    question: "Which pairing of renal-tubule segment and function is correct?",
+    options: [
+      "Proximal tubule — substantial bicarbonate reabsorption; late distal nephron — regulated potassium secretion",
+      "Proximal tubule — routine secretion of all filtered glucose; distal tubule — no ion transport",
+      "Descending limb — active secretion of all urinary potassium",
+      "Proximal tubule — secretion of plasma proteins; distal tubule — filtration of blood"
+    ],
+    correctAnswer: 0,
+    explanation: "The proximal tubule reabsorbs most filtered bicarbonate and contributes to H⁺ and ammonium handling. Regulated K⁺ secretion occurs mainly in the late distal tubule and collecting duct. Potassium is largely reabsorbed in the proximal tubule.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q008",
+    question: "Which coordinated action permits micturition?",
+    options: [
+      "Closure of the ureters with contraction of both sphincters",
+      "Detrusor contraction with urethral outlet relaxation",
+      "Contraction of both detrusor and external sphincter",
+      "Detrusor relaxation with urethral sphincter contraction"
+    ],
+    correctAnswer: 1,
+    explanation: "Voiding involves contraction of the detrusor smooth muscle with coordinated relaxation of the urethral outlet. Voluntary control of the external urethral sphincter contributes to continence.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q009",
+    question: "Where are the actin-binding and ATPase sites of a myosin molecule located?",
+    options: [
+      "Globular heads",
+      "Tropomyosin strand",
+      "Long tail only",
+      "Z-disc actinin"
+    ],
+    correctAnswer: 0,
+    explanation: "Myosin heads bind actin and hydrolyse ATP. Heavy meromyosin comprises the heads and part of the stalk, while light meromyosin comprises the long tail region.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q010",
+    question: "Which statement about the adult human skeleton is correct?",
+    options: [
+      "There are 8 cranial and 14 facial bones; each hip bone develops from ilium, ischium and pubis",
+      "There are 14 cranial and 8 facial bones; each hip bone develops from scapula and clavicle",
+      "The acetabulum is a depression in the scapula",
+      "There are 12 ribs in total and 12 cervical vertebrae"
+    ],
+    correctAnswer: 0,
+    explanation: "The skull contains eight cranial and fourteen facial bones. Each hip bone is formed from the ilium, ischium and pubis. The acetabulum receives the femoral head; the scapular glenoid cavity receives the humeral head.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q011",
+    question: "Assertion (A): Myelination generally increases conduction speed and reduces the ionic pumping needed per unit axon length.\nReason (R): Myelin insulates internodes, while action potentials are regenerated mainly at nodes of Ranvier.",
+    options: [
+      "Both A and R are true, and R explains A",
+      "Both A and R are true, but R does not explain A",
+      "A is true, but R is false",
+      "A is false, but R is true"
+    ],
+    correctAnswer: 0,
+    explanation: "Myelin increases membrane resistance and reduces capacitance, allowing rapid spread of local current. Action potentials are regenerated at nodes; reduced membrane ion exchange lowers the pumping requirement compared with continuous conduction.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q012",
+    question: "Which forebrain structure contributes to temperature control, hunger, thirst and neuroendocrine regulation?",
+    options: [
+      "Pons",
+      "Cerebellum",
+      "Superior colliculus",
+      "Hypothalamus"
+    ],
+    correctAnswer: 3,
+    explanation: "The hypothalamus integrates autonomic and endocrine functions and contains centres involved in thermoregulation, feeding and water balance.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q013",
+    question: "Excess growth hormone after epiphyseal closure typically causes which disorder?",
+    options: [
+      "Pituitary gigantism",
+      "Acromegaly",
+      "Addison disease",
+      "Graves disease"
+    ],
+    correctAnswer: 1,
+    explanation: "After growth plates close, excess GH causes enlargement of acral parts and soft tissues rather than increased long-bone length. GH excess before growth-plate closure can cause gigantism.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q014",
+    question: "Which combination is characteristic of Graves disease?",
+    options: [
+      "Hypothyroidism, reduced metabolic rate and iodine deficiency in every case",
+      "Insulin deficiency and ketonuria",
+      "Adrenal insufficiency and hyperkalaemia",
+      "Hyperthyroidism, weight loss and possible thyroid-associated eye disease"
+    ],
+    correctAnswer: 3,
+    explanation: "Graves disease is an autoimmune cause of hyperthyroidism. It can produce weight loss, increased metabolic activity, goitre and thyroid-associated eye disease. Eye involvement is not present in every patient.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q015",
+    question: "Which pairing correctly identifies the principal adult source of erythropoietin and a major action of cholecystokinin?",
+    options: [
+      "Juxtaglomerular cells; inhibition of gallbladder contraction",
+      "Adrenal cortex; stimulation of gastric acid alone",
+      "Pancreatic beta cells; inhibition of pancreatic enzyme secretion",
+      "Renal interstitial fibroblast-like cells; gallbladder contraction and pancreatic enzyme secretion"
+    ],
+    correctAnswer: 3,
+    explanation: "Adult EPO is produced chiefly by specialised renal interstitial cells in response to reduced oxygen availability. Juxtaglomerular cells chiefly secrete renin. CCK promotes gallbladder contraction and pancreatic enzyme secretion.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "human_physiology"
+  },
+  {
+    id: "test100_3_q016",
+    question: "Which sequence correctly shows sperm transport from the testis?",
+    options: [
+      "Seminiferous tubules → rete testis → efferent ductules → epididymis → vas deferens → ejaculatory duct → urethra",
+      "Seminiferous tubules → vas deferens → efferent ductules → epididymis → urethra",
+      "Seminiferous tubules → epididymis → rete testis → vas deferens → urethra",
+      "Rete testis → seminiferous tubules → epididymis → urethra"
+    ],
+    correctAnswer: 0,
+    explanation: "Sperm pass from seminiferous tubules through the rete testis and efferent ductules to the epididymis, then through the vas deferens and ejaculatory duct into the urethra.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q017",
+    question: "Match the female reproductive structures with their functions.\nList I: P. Fimbriae, Q. Ampullary region, R. Myometrium, S. Endometrium\nList II: 1. Muscular uterine contractions, 2. Implantation and cyclical changes, 3. Collection of the ovulated oocyte, 4. Usual region of fertilisation",
+    options: [
+      "P-4, Q-3, R-2, S-1",
+      "P-2, Q-4, R-1, S-3",
+      "P-3, Q-4, R-1, S-2",
+      "P-3, Q-1, R-4, S-2"
+    ],
+    correctAnswer: 2,
+    explanation: "Fimbriae help collect the oocyte. Fertilisation usually occurs in the ampullary region of the uterine tube. Myometrium provides muscular contractions; endometrium undergoes cyclical changes and receives the implanting blastocyst.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q018",
+    question: "Which testicular cells are the principal targets of LH and FSH, respectively?",
+    options: [
+      "Prostate cells; epididymal cells",
+      "Leydig cells; Sertoli cells",
+      "Spermatids; spermatozoa",
+      "Sertoli cells; Leydig cells"
+    ],
+    correctAnswer: 1,
+    explanation: "LH stimulates Leydig cells to produce androgens. FSH acts on Sertoli cells, which support developing germ cells and secrete factors important for spermatogenesis.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q019",
+    question: "In the NCERT follicular classification, which stage is identified by the appearance of a fluid-filled antrum?",
+    options: [
+      "Corpus albicans",
+      "Primary follicle",
+      "Tertiary follicle",
+      "Primordial follicle"
+    ],
+    correctAnswer: 2,
+    explanation: "The antrum characterises the tertiary follicle in this classification. Completion of oocyte meiosis I is linked to preovulatory maturation and should not be assumed to occur in every follicle as soon as an antrum appears.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q020",
+    question: "In a typical ovulatory cycle without an established pregnancy, what directly promotes endometrial shedding?",
+    options: [
+      "A sustained rise in progesterone throughout the luteal phase",
+      "Permanent inhibition of uterine blood flow by FSH",
+      "Withdrawal of progesterone and oestrogen following corpus-luteum regression",
+      "The first menstrual period, termed menopause"
+    ],
+    correctAnswer: 2,
+    explanation: "Regression of the corpus luteum lowers ovarian steroid levels and promotes breakdown of the functional endometrium. Menarche is the first menstruation; menopause is permanent cessation of menstruation after ovarian follicular depletion.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q021",
+    question: "Which statement about fetal movement and heartbeat is correct?",
+    options: [
+      "A fetal heartbeat is normally audible with an ordinary stethoscope at one month",
+      "Embryonic cardiac activity begins only after the mother first feels movement",
+      "Fetal movements begin only after birth",
+      "Maternal perception of fetal movement usually begins in the second trimester; it occurs later than the onset of embryonic cardiac activity"
+    ],
+    correctAnswer: 3,
+    explanation: "Embryonic cardiac activity begins early in development. Quickening is the mother’s first perception of fetal movement, usually around 16–20 gestational weeks, with individual variation. Detection timing depends on the method used.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q022",
+    question: "In the simplified NCERT account of mammary ducts, which sequence carries milk towards the nipple?",
+    options: [
+      "Lactiferous duct → mammary ducts → alveoli → nipple",
+      "Alveoli → lactiferous duct → mammary ampulla → mammary tubules",
+      "Alveoli → mammary tubules → mammary ducts → mammary ampulla → lactiferous duct",
+      "Mammary ducts → alveoli → mammary tubules → lactiferous duct"
+    ],
+    correctAnswer: 2,
+    explanation: "In the textbook description, alveoli secrete milk into tubules; tubules unite into ducts, followed by the described ampullary and lactiferous-duct pathway. This is a simplified anatomical model.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q023",
+    question: "Cells of the blastocyst inner cell mass can give rise to derivatives of all three embryonic germ layers. What developmental property does this illustrate?",
+    options: [
+      "Permanent loss of differentiation potential",
+      "Ability to form only trophoblast",
+      "Ability to form only sperm",
+      "Pluripotency"
+    ],
+    correctAnswer: 3,
+    explanation: "Pluripotent cells can generate derivatives of ectoderm, mesoderm and endoderm. Formation of these germ layers occurs during gastrulation, rather than all three appearing immediately at implantation.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q024",
+    question: "Which pairing correctly distinguishes spermiogenesis from spermiation?",
+    options: [
+      "Spermiogenesis: mitosis of Leydig cells; spermiation: ovulation",
+      "Spermiogenesis: sperm capacitation; spermiation: fertilisation",
+      "Spermiogenesis: ejaculation; spermiation: meiosis I",
+      "Spermiogenesis: spermatid-to-sperm transformation; spermiation: release from Sertoli-cell attachment into the tubule lumen"
+    ],
+    correctAnswer: 3,
+    explanation: "Spermiogenesis remodels haploid spermatids into spermatozoa. Spermiation releases them into the seminiferous-tubule lumen. Further functional maturation occurs during epididymal transit.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q025",
+    question: "According to the simplified NCERT model of a 28-day menstrual cycle, which interval is avoided in periodic abstinence?",
+    options: [
+      "Days 1–5 only",
+      "Days 22–28 only",
+      "Days 10–17",
+      "Days 26–28 only"
+    ],
+    correctAnswer: 2,
+    explanation: "The textbook identifies days 10–17 as the expected fertile interval in its simplified model. Actual ovulation timing varies, so a fixed calendar interval does not ensure prevention of pregnancy.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q026",
+    question: "Which statement about barrier contraception is correct?",
+    options: [
+      "Correct, consistent condom use reduces pregnancy and many STI risks",
+      "Condoms suppress ovulation by releasing hormones",
+      "Diaphragms permanently interrupt the uterine tubes",
+      "Spermicides alone produce permanent sterilisation"
+    ],
+    correctAnswer: 0,
+    explanation: "Condoms provide a physical barrier and reduce many STI risks when used correctly and consistently. They do not eliminate every risk. Diaphragms and cervical caps are barriers, not hormonal implants.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q027",
+    question: "Which device can be used for emergency contraception within five days of unprotected intercourse in an eligible patient?",
+    options: [
+      "Oxytocin implant",
+      "FSH-releasing implant",
+      "Prolactin injection",
+      "Copper-bearing IUD"
+    ],
+    correctAnswer: 3,
+    explanation: "WHO identifies a copper-bearing IUD inserted within 120 hours as an effective emergency contraceptive option, subject to medical eligibility. Emergency pills have method-specific guidance; 72 hours is not a universal deadline for every method.",
+    difficulty: "medium",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q028",
+    question: "In which year was India’s principal Medical Termination of Pregnancy Act enacted?",
+    options: [
+      "1995",
+      "1951",
+      "2005",
+      "1971"
+    ],
+    correctAnswer: 3,
+    explanation: "The principal MTP Act was enacted in 1971 and has subsequently been amended, including in 2021. Legal eligibility and clinical safety are distinct; a 12-week textbook description is not the current universal legal limit.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q029",
+    question: "Which assisted-reproduction technique injects a single sperm directly into an oocyte?",
+    options: [
+      "ZIFT",
+      "GIFT",
+      "IUI",
+      "ICSI"
+    ],
+    correctAnswer: 3,
+    explanation: "Intracytoplasmic sperm injection introduces a sperm directly into an oocyte in the laboratory. IUI introduces prepared sperm into the uterus; it does not inject sperm into the oocyte.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q030",
+    question: "According to India’s National Health Mission, in which year was the National Family Planning Programme launched?",
+    options: [
+      "1947",
+      "1985",
+      "1952",
+      "1965"
+    ],
+    correctAnswer: 2,
+    explanation: "National Health Mission records identify 1952 as the programme’s launch year. The programme subsequently expanded beyond population stabilisation to broader reproductive and family-health objectives.",
+    difficulty: "easy",
+    subject: "biology",
+    subjectName: "Biology",
+    topicKey: "reproduction_humans_plants"
+  },
+  {
+    id: "test100_3_q031",
+    question: "Photoelectrons have maximum speeds $v_1$ and $v_2$ for incident frequencies $2\\nu_0$ and $5\\nu_0$, where $\\nu_0$ is the threshold frequency. Find $v_1:v_2$.",
+    options: [
+      "1 : √2",
+      "1 : 2",
+      "1 : 4",
+      "2 : 5"
+    ],
+    correctAnswer: 1,
+    explanation: "$K_1=h\\nu_0$ and $K_2=4h\\nu_0$. Since kinetic energy is proportional to speed squared, $v_1/v_2=\\sqrt{1/4}=1/2$.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "modern_physics"
+  },
+  {
+    id: "test100_3_q032",
+    question: "Find the momentum of a $663\\,\\mathrm{nm}$ photon and the force of a fully absorbed $30\\,\\mathrm{mW}$ beam at normal incidence. Given: $h=6.63\\times10^{-34}\\,\\mathrm{J\\,s}$, $c=3.0\\times10^8\\,\\mathrm{m\\,s^{-1}}$.",
+    options: [
+      "$10^{-27}\\,\\mathrm{kg\\,m\\,s^{-1}}$; $2\\times10^{-10}\\,\\mathrm N$",
+      "$10^{-27}\\,\\mathrm{kg\\,m\\,s^{-1}}$; $10^{-10}\\,\\mathrm N$",
+      "$2\\times10^{-27}\\,\\mathrm{kg\\,m\\,s^{-1}}$; $2\\times10^{-10}\\,\\mathrm N$",
+      "$10^{-25}\\,\\mathrm{kg\\,m\\,s^{-1}}$; $10^{-8}\\,\\mathrm N$"
+    ],
+    correctAnswer: 1,
+    explanation: "$p=h/\\lambda=10^{-27}\\,\\mathrm{kg\\,m\\,s^{-1}}$. Complete absorption gives $F=P/c=0.030/(3.0\\times10^8)=10^{-10}\\,\\mathrm N$.",
+    difficulty: "hard",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "modern_physics"
+  },
+  {
+    id: "test100_3_q033",
+    question: "Ground-state hydrogen has an ionisation energy of 13.6 eV. What is the ground-state ionisation energy of He⁺ in the Bohr model?",
+    options: [
+      "13.6 eV",
+      "54.4 eV",
+      "27.2 eV",
+      "122.4 eV"
+    ],
+    correctAnswer: 1,
+    explanation: "For a hydrogen-like ion, $E_{\\mathrm{ion}}=13.6Z^2\\,\\mathrm{eV}$ in the ground state. For $Z=2$, it is $54.4\\,\\mathrm{eV}$.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "modern_physics"
+  },
+  {
+    id: "test100_3_q034",
+    question: "Match the hydrogen spectral series with their final principal quantum numbers.\nList I: P. Lyman, Q. Balmer, R. Paschen, S. Brackett\nList II: 1. n = 2, 2. n = 1, 3. n = 4, 4. n = 3",
+    options: [
+      "P-2, Q-1, R-4, S-3",
+      "P-4, Q-1, R-2, S-3",
+      "P-2, Q-4, R-1, S-3",
+      "P-1, Q-2, R-3, S-4"
+    ],
+    correctAnswer: 0,
+    explanation: "Lyman ends at n = 1, Balmer at n = 2, Paschen at n = 3 and Brackett at n = 4. The prominent Balmer lines are visible, but its high-order lines extend into the ultraviolet.",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "modern_physics"
+  },
+  {
+    id: "test100_3_q035",
+    question: "In the Bohr model of hydrogen, how does the orbital period $T_n$ depend on $n$, and what is $T_1:T_2$?",
+    options: [
+      "$T_n\\propto n^3$; 1 : 8",
+      "$T_n\\propto n$; 1 : 2",
+      "$T_n\\propto n^2$; 1 : 4",
+      "$T_n\\propto n^{-3}$; 8 : 1"
+    ],
+    correctAnswer: 0,
+    explanation: "$r_n\\propto n^2$ and $v_n\\propto1/n$. Hence $T_n=2\\pi r_n/v_n\\propto n^3$, giving $T_1:T_2=1:8$.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "modern_physics"
+  },
+  {
+    id: "test100_3_q036",
+    question: "Find the energy equivalent of $1.0\\,\\mathrm g$ of mass. Given: $c=3.0\\times10^8\\,\\mathrm{m\\,s^{-1}}$, $1\\,\\mathrm{kWh}=3.6\\times10^6\\,\\mathrm J$.",
+    options: [
+      "$9.0\\times10^{13}\\,\\mathrm J$; $2.5\\times10^7\\,\\mathrm{kWh}$",
+      "$3.0\\times10^8\\,\\mathrm J$; $83.3\\,\\mathrm{kWh}$",
+      "$9.0\\times10^{10}\\,\\mathrm J$; $2.5\\times10^4\\,\\mathrm{kWh}$",
+      "$9.0\\times10^{16}\\,\\mathrm J$; $2.5\\times10^{10}\\,\\mathrm{kWh}$"
+    ],
+    correctAnswer: 0,
+    explanation: "$E=mc^2=(10^{-3})(3.0\\times10^8)^2=9.0\\times10^{13}\\,\\mathrm J$. Dividing by $3.6\\times10^6$ gives $2.5\\times10^7\\,\\mathrm{kWh}$.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "modern_physics"
+  },
+  {
+    id: "test100_3_q037",
+    question: "A nucleus $X$ decays into $Y$ and an alpha particle. Their total nuclear binding energies are $B_X$, $B_Y$ and $B_\\alpha$. Ignoring electronic effects, what is the decay energy $Q$?",
+    options: [
+      "$B_X-B_Y-B_\\alpha$",
+      "$B_Y-B_X-B_\\alpha$",
+      "$B_Y+B_\\alpha-B_X$",
+      "$B_X+B_Y+B_\\alpha$"
+    ],
+    correctAnswer: 2,
+    explanation: "The energy release equals the total binding energy of the products minus that of the parent. A positive Q means the products are more tightly bound.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "modern_physics"
+  },
+  {
+    id: "test100_3_q038",
+    question: "Why do thermonuclear fusion rates increase strongly at very high temperatures?",
+    options: [
+      "High temperature removes the positive charge of nuclei",
+      "All nuclei lose their binding energy",
+      "The strong nuclear force becomes long-range",
+      "Higher particle energies increase close encounters and tunnelling through the Coulomb barrier"
+    ],
+    correctAnswer: 3,
+    explanation: "Very high temperatures increase the energies and encounter rates of light nuclei. Quantum tunnelling through the Coulomb barrier remains essential in stellar fusion; typical solar-core particles do not simply climb over the full barrier classically.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "modern_physics"
+  },
+  {
+    id: "test100_3_q039",
+    question: "Which description of an unbiased p–n junction at thermal equilibrium is correct?",
+    options: [
+      "Only mobile holes remain throughout both sides",
+      "Negative fixed ions on the n-side and a continuous net current",
+      "Positive fixed donor ions on the n-side, negative fixed acceptor ions on the p-side, and zero net current",
+      "No drift current and no diffusion current individually"
+    ],
+    correctAnswer: 2,
+    explanation: "Carrier diffusion leaves fixed positive donor ions on the n-side and negative acceptor ions on the p-side. The built-in field produces a drift current opposing diffusion. Their net sum is zero at equilibrium.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "semiconductors"
+  },
+  {
+    id: "test100_3_q040",
+    question: "In silicon at a specified temperature, electron mobility is usually greater than hole mobility. Which explanation is most appropriate?",
+    options: [
+      "Electrons have twice the charge magnitude of holes",
+      "Holes move only in the conduction band",
+      "Their band structures, effective masses and scattering times differ",
+      "Electrons have zero effective mass"
+    ],
+    correctAnswer: 2,
+    explanation: "Mobility depends on effective mass and scattering, approximately $\\mu=q\\tau/m^*$. Electrons and holes occupy different bands. The mobility ordering is material- and condition-dependent, not a universal law for all semiconductors.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "semiconductors"
+  },
+  {
+    id: "test100_3_q041",
+    question: "A $6.0\\,\\mathrm V$ source feeds a $50\\,\\Omega$ resistor followed by parallel branches. Each branch has a $100\\,\\Omega$ resistor and an ideal diode; one diode is forward biased and the other reverse biased. Find the source current.",
+    options: [
+      "120 mA",
+      "40 mA",
+      "30 mA",
+      "60 mA"
+    ],
+    correctAnswer: 1,
+    explanation: "The reverse-biased ideal diode blocks its branch. The conducting branch has zero diode drop, so $R_{\\mathrm{eq}}=50+100=150\\,\\Omega$ and $I=6/150=0.040\\,\\mathrm A$.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "semiconductors"
+  },
+  {
+    id: "test100_3_q042",
+    question: "How does a large capacitor connected across a rectifier load reduce output ripple?",
+    options: [
+      "It converts the output into a pure AC waveform",
+      "It charges near voltage peaks and supplies current to the load between peaks",
+      "It doubles the mains frequency without rectification",
+      "It blocks DC while passing all load current through the diode backwards"
+    ],
+    correctAnswer: 1,
+    explanation: "The capacitor stores charge near rectified-voltage peaks and discharges through the load between them. A sufficiently large RC time constant reduces the change in output voltage between peaks.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "semiconductors"
+  },
+  {
+    id: "test100_3_q043",
+    question: "Which sequence describes photovoltaic action in a p–n junction solar cell?",
+    options: [
+      "Generation of electron–hole pairs → separation by the junction field → collection at contacts",
+      "Thermionic emission → oxidation → magnetic induction",
+      "Nuclear ionisation → avalanche breakdown → heating",
+      "External forward bias → photon emission → carrier destruction"
+    ],
+    correctAnswer: 0,
+    explanation: "Absorbed photons with sufficient energy create electron–hole pairs. The junction field helps separate the carriers, which can be collected at contacts to provide electrical output.",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "semiconductors"
+  },
+  {
+    id: "test100_3_q044",
+    question: "Why are band gaps around 1–1.5 eV useful for conventional single-junction solar cells?",
+    options: [
+      "They make all semiconductor materials direct-gap",
+      "They allow every solar photon to be converted with no energy loss",
+      "They provide a useful compromise between absorbing solar photons and obtaining output voltage",
+      "They prevent absorption of visible light"
+    ],
+    correctAnswer: 2,
+    explanation: "A small gap absorbs more photons but limits obtainable voltage; a large gap loses more low-energy photons. Silicon and GaAs offer useful band gaps, though their optical absorption and band structures differ.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "semiconductors"
+  },
+  {
+    id: "test100_3_q045",
+    question: "Which gate implements $Y=A\\overline B+\\overline AB$, and when is its output zero?",
+    options: [
+      "NOR; only when both inputs are zero",
+      "XNOR; when the inputs are identical",
+      "XOR; when the inputs are identical",
+      "AND; whenever either input is one"
+    ],
+    correctAnswer: 2,
+    explanation: "The expression defines XOR. Its outputs for inputs 00, 01, 10 and 11 are 0, 1, 1 and 0, respectively.",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "semiconductors"
+  },
+  {
+    id: "test100_3_q046",
+    question: "An object is $15\\,\\mathrm{cm}$ in front of a concave mirror of radius $20\\,\\mathrm{cm}$. Using the Cartesian sign convention, find image distance $v$ and magnification $m$.",
+    options: [
+      "$v=-10\\,\\mathrm{cm}$, $m=-0.5$",
+      "$v=-6\\,\\mathrm{cm}$, $m=+0.4$",
+      "$v=+30\\,\\mathrm{cm}$, $m=+2$",
+      "$v=-30\\,\\mathrm{cm}$, $m=-2$"
+    ],
+    correctAnswer: 3,
+    explanation: "$u=-15\\,\\mathrm{cm}$ and $f=-10\\,\\mathrm{cm}$. From $1/v=1/f-1/u$, $v=-30\\,\\mathrm{cm}$. Thus $m=-v/u=-2$, indicating a real inverted image.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "ray_optics"
+  },
+  {
+    id: "test100_3_q047",
+    question: "A mark lies $16.0\\,\\mathrm{cm}$ below a flat water surface. Viewed from air nearly normally, find its apparent depth and upward shift. Given: $n_{\\mathrm{water}}=4/3$.",
+    options: [
+      "10.6 cm; 5.4 cm",
+      "12.0 cm; 4.0 cm",
+      "4.0 cm; 12.0 cm",
+      "21.3 cm; 5.3 cm"
+    ],
+    correctAnswer: 1,
+    explanation: "Apparent depth = real depth / refractive index = 16 × 3/4 = 12 cm. The upward shift is 16 − 12 = 4 cm. Only the flat air–water interface is considered.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "ray_optics"
+  },
+  {
+    id: "test100_3_q048",
+    question: "Which condition supports total internal reflection in a step-index optical fibre?",
+    options: [
+      "Core index is lower than cladding index",
+      "Core index exceeds cladding index and incidence at the interface exceeds the critical angle",
+      "The core is opaque and the cladding metallic",
+      "Core and cladding indices are equal"
+    ],
+    correctAnswer: 1,
+    explanation: "Total internal reflection requires travel from higher to lower refractive index and incidence greater than the critical angle. Real fibres still have attenuation losses.",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "ray_optics"
+  },
+  {
+    id: "test100_3_q049",
+    question: "A microscope objective forms an intermediate image with magnification magnitude $5$. Its eyepiece has $f_e=2.5\\,\\mathrm{cm}$ and forms the final image at the near point $D=25\\,\\mathrm{cm}$. Find the total magnifying-power magnitude.",
+    options: [
+      "50",
+      "66",
+      "55",
+      "11"
+    ],
+    correctAnswer: 2,
+    explanation: "For the eyepiece, $m_e=1+D/f_e=11$. The total magnitude is $|M|=5\\times11=55$. The complete microscope image is inverted.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "ray_optics"
+  },
+  {
+    id: "test100_3_q050",
+    question: "Which is an advantage of a mirror objective over a large refracting objective in a telescope?",
+    options: [
+      "Mirrors cannot form real images",
+      "Reflection avoids chromatic aberration, and the mirror can be supported from behind",
+      "Reflecting telescopes never need detectors or eyepieces",
+      "Every mirror removes all optical aberrations"
+    ],
+    correctAnswer: 1,
+    explanation: "Reflection does not disperse colours in the way refraction does, so a mirror objective has no chromatic aberration. Rear support also helps construction of large apertures. Other aberrations can still occur.",
+    difficulty: "easy",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "ray_optics"
+  },
+  {
+    id: "test100_3_q051",
+    question: "Two coherent waves of the same polarisation each have intensity $I_0$. Find the resultant intensity for phase difference $\\pi/3$.",
+    options: [
+      "$4I_0$",
+      "$3I_0$",
+      "$2I_0$",
+      "$I_0$"
+    ],
+    correctAnswer: 1,
+    explanation: "$I=2I_0(1+\\cos\\phi)$. With $\\phi=\\pi/3$, $I=3I_0$, which is three-quarters of the maximum intensity $4I_0$.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "wave_optics"
+  },
+  {
+    id: "test100_3_q052",
+    question: "In YDSE, wavelengths $650\\,\\mathrm{nm}$ and $520\\,\\mathrm{nm}$ produce fringes. Find their smallest positive coincident bright-fringe orders and distance from the centre. Given: $d=2.0\\,\\mathrm{mm}$, $D=1.2\\,\\mathrm m$.",
+    options: [
+      "Orders 4 and 5; 3.12 mm",
+      "Orders 4 and 5; 1.56 mm",
+      "Orders 2 and 3; 0.78 mm",
+      "Orders 5 and 4; 1.95 mm"
+    ],
+    correctAnswer: 1,
+    explanation: "Coincidence requires $n_1\\lambda_1=n_2\\lambda_2$, so $n_1:n_2=4:5$. The first noncentral coincidence is at $y=4(650\\times10^{-9})(1.2)/(2\\times10^{-3})=1.56\\,\\mathrm{mm}$.",
+    difficulty: "hard",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "wave_optics"
+  },
+  {
+    id: "test100_3_q053",
+    question: "For single-slit diffraction, what is the first-minimum condition, and how does halving slit width affect the central angular width in the small-angle approximation?",
+    options: [
+      "$a\\sin\\theta=\\lambda/2$; width halves",
+      "$a\\sin\\theta=\\lambda$; width doubles",
+      "$a\\sin\\theta=3\\lambda/2$; width is unchanged",
+      "$a\\sin\\theta=2\\lambda$; width becomes one-quarter"
+    ],
+    correctAnswer: 1,
+    explanation: "The first minima satisfy $a\\sin\\theta=\\pm\\lambda$. For small angles, the full central width is approximately $2\\lambda/a$, so halving $a$ doubles that width.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "wave_optics"
+  },
+  {
+    id: "test100_3_q054",
+    question: "Unpolarised light of intensity $I_0$ passes through three ideal polaroids with axes at $0^\\circ$, $45^\\circ$ and $90^\\circ$. What intensity emerges?",
+    options: [
+      "$I_0/4$",
+      "Zero",
+      "$I_0/2$",
+      "$I_0/8$"
+    ],
+    correctAnswer: 3,
+    explanation: "The first polaroid transmits $I_0/2$. Each subsequent 45° step contributes a factor $\\cos^2(45^\\circ)=1/2$, giving $I_0/8$.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "wave_optics"
+  },
+  {
+    id: "test100_3_q055",
+    question: "At oblique incidence, light enters a medium with speed $v_2<v_1$. Which relation is correct, and what phase difference corresponds to path difference $\\lambda/4$ in a single medium?",
+    options: [
+      "$\\sin i/\\sin r=v_1v_2$; $2\\pi$",
+      "$\\sin i/\\sin r=v_1/v_2$; $\\pi/2$",
+      "$\\sin i/\\sin r=v_2/v_1$; $\\pi$",
+      "$i=r$; $\\pi/4$"
+    ],
+    correctAnswer: 1,
+    explanation: "Snell’s law gives $\\sin i/\\sin r=v_1/v_2>1$, so the ray bends towards the normal. Also $\\Delta\\phi=2\\pi\\Delta x/\\lambda=\\pi/2$.",
+    difficulty: "medium",
+    subject: "physics",
+    subjectName: "Physics",
+    topicKey: "wave_optics"
+  },
+  {
+    id: "test100_3_q056",
+    question: "According to VSEPR theory, what are the shapes of BrF₅ and XeF₂, respectively?",
+    options: [
+      "Trigonal bipyramidal; bent",
+      "Octahedral; tetrahedral",
+      "Square planar; trigonal planar",
+      "Square pyramidal; linear"
+    ],
+    correctAnswer: 3,
+    explanation: "BrF₅ has five bond domains and one lone pair, giving a square-pyramidal shape. XeF₂ has two bond domains and three equatorial lone pairs in the VSEPR model, giving a linear shape.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_bonding"
+  },
+  {
+    id: "test100_3_q057",
+    question: "In allene, $\\mathrm{H_2C=C=CH_2}$, what are the hybridisations of the terminal and central carbons?",
+    options: [
+      "Terminal sp²; central sp",
+      "Terminal sp; central sp³",
+      "All sp²",
+      "All sp"
+    ],
+    correctAnswer: 0,
+    explanation: "Each terminal carbon has three sigma-bond domains and is sp²-hybridised. The central carbon has two sigma-bond domains and is sp-hybridised. Its perpendicular p orbitals place the terminal CH₂ groups in perpendicular planes.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_bonding"
+  },
+  {
+    id: "test100_3_q058",
+    question: "In the elementary molecular-orbital description of C₂, what are its bond order and magnetic character?",
+    options: [
+      "1; paramagnetic",
+      "2; paramagnetic with two unpaired electrons",
+      "3; diamagnetic",
+      "2; diamagnetic"
+    ],
+    correctAnswer: 3,
+    explanation: "The elementary MO configuration fills both bonding 2p π orbitals with paired electrons while leaving the 2p sigma orbital empty. The resulting bond order is 2 and the molecule is diamagnetic.",
+    difficulty: "hard",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_bonding"
+  },
+  {
+    id: "test100_3_q059",
+    question: "Which option correctly gives decreasing lattice-dissociation-enthalpy magnitude for alkali-metal fluorides and explains why ice floats?",
+    options: [
+      "NaF > LiF > KF > RbF > CsF; covalent O–H bonds break on freezing",
+      "LiF > NaF > KF > RbF > CsF; ice is denser than water",
+      "CsF > RbF > KF > NaF > LiF; ice has no hydrogen bonds",
+      "LiF > NaF > KF > RbF > CsF; ice has an open hydrogen-bonded network"
+    ],
+    correctAnswer: 3,
+    explanation: "For comparable ionic structures and charges, increasing cation size lowers lattice-dissociation-enthalpy magnitude. Ice has an open, approximately tetrahedral network of water molecules and is less dense than liquid water.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_bonding"
+  },
+  {
+    id: "test100_3_q060",
+    question: "Match each species with its molecular shape.\nList I: P. NO₃⁻, Q. SO₄²⁻, R. H₃O⁺, S. XeF₄\nList II: 1. Tetrahedral, 2. Trigonal planar, 3. Square planar, 4. Trigonal pyramidal",
+    options: [
+      "P-2, Q-1, R-4, S-3",
+      "P-2, Q-4, R-1, S-3",
+      "P-1, Q-2, R-3, S-4",
+      "P-4, Q-1, R-2, S-3"
+    ],
+    correctAnswer: 0,
+    explanation: "Nitrate is trigonal planar; sulfate is tetrahedral; hydronium is trigonal pyramidal; xenon tetrafluoride is square planar. Molecular shape counts atom positions rather than treating lone pairs as atoms.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_bonding"
+  },
+  {
+    id: "test100_3_q061",
+    question: "Find the equilibrium constant at $300\\,\\mathrm K$ when $\\Delta_rG^\\circ=-11.49\\,\\mathrm{kJ\\,mol^{-1}}$. Given: $2.303R=19.15\\,\\mathrm{J\\,K^{-1}\\,mol^{-1}}$.",
+    options: [
+      "10",
+      "2",
+      "100",
+      "1000"
+    ],
+    correctAnswer: 2,
+    explanation: "$\\Delta_rG^\\circ=-2.303RT\\log_{10}K$. Therefore $\\log_{10}K=11490/(19.15\\times300)=2$, giving $K=100$.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_ionic_equilibrium"
+  },
+  {
+    id: "test100_3_q062",
+    question: "Which order applies to the successive acid-dissociation constants of phosphoric acid?",
+    options: [
+      "$K_{a1}>K_{a2}>K_{a3}$",
+      "$K_{a1}=K_{a2}=K_{a3}$",
+      "$K_{a1}<K_{a2}<K_{a3}$",
+      "$K_{a2}>K_{a1}>K_{a3}$"
+    ],
+    correctAnswer: 0,
+    explanation: "Successive protons are removed from increasingly negative species: H₃PO₄, H₂PO₄⁻ and HPO₄²⁻. For phosphoric acid, each successive ionisation is substantially less favourable.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_ionic_equilibrium"
+  },
+  {
+    id: "test100_3_q063",
+    question: "A buffer contains $0.10\\,\\mathrm M$ NH₃ and $0.20\\,\\mathrm M$ NH₄Cl. Estimate its pH. Given: $pK_b=4.74$, $pK_w=14.00$, $\\log_{10}2\\approx0.30$.",
+    options: [
+      "5.04",
+      "9.26",
+      "8.96",
+      "9.56"
+    ],
+    correctAnswer: 2,
+    explanation: "$\\mathrm{pOH}\\approx pK_b+\\log([\\mathrm{NH_4^+}]/[\\mathrm{NH_3}])=5.04$. Thus $\\mathrm{pH}\\approx14.00-5.04=8.96$. Activities are approximated by concentrations.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_ionic_equilibrium"
+  },
+  {
+    id: "test100_3_q064",
+    question: "In an idealised solubility calculation, let $s$ be the molar solubility of each solid separately. Ignoring hydrolysis, complexation and other equilibria, what are $K_{sp}$ for Zr₃(PO₄)₄ and Al(OH)₃?",
+    options: [
+      "$6912s^7$; $27s^4$",
+      "$6912s^5$; $4s^3$",
+      "$12s^7$; $3s^4$",
+      "$108s^5$; $9s^3$"
+    ],
+    correctAnswer: 0,
+    explanation: "Complete dissociation gives $(3s)^3(4s)^4=6912s^7$ for zirconium phosphate and $s(3s)^3=27s^4$ for aluminium hydroxide. Real solubilities require consideration of additional equilibria.",
+    difficulty: "hard",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_ionic_equilibrium"
+  },
+  {
+    id: "test100_3_q065",
+    question: "Why does passing H₂S through an acidic solution selectively precipitate certain very insoluble metal sulfides?",
+    options: [
+      "All metal sulfides have identical solubility products",
+      "Acid increases sulfide concentration without limit",
+      "HCl converts all sulfide into sulfate",
+      "H⁺ suppresses sulfide-ion availability, so only sufficiently insoluble sulfides precipitate"
+    ],
+    correctAnswer: 3,
+    explanation: "Added H⁺ suppresses the dissociation of H₂S and HS⁻, lowering free S²⁻ concentration. Metal sulfides with sufficiently small solubility products can still precipitate under these conditions.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_ionic_equilibrium"
+  },
+  {
+    id: "test100_3_q066",
+    question: "Match the isomer pairs with the type of structural isomerism.\nList I: P. Ethoxyethane and 1-methoxypropane, Q. Propan-1-ol and methoxyethane, R. Pentan-1-ol and 3-methylbutan-1-ol, S. Propan-1-ol and propan-2-ol\nList II: 1. Functional-group, 2. Metamerism, 3. Position, 4. Chain",
+    options: [
+      "P-3, Q-1, R-4, S-2",
+      "P-2, Q-4, R-1, S-3",
+      "P-1, Q-2, R-3, S-4",
+      "P-2, Q-1, R-4, S-3"
+    ],
+    correctAnswer: 3,
+    explanation: "The ethers differ in alkyl-group distribution around oxygen; the alcohol/ether pair differs in functional group; the pentanol pair differs in carbon skeleton; the propanol pair differs in hydroxyl position.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "general_organic_chemistry"
+  },
+  {
+    id: "test100_3_q067",
+    question: "Why is the ordinary Kjeldahl method unsuitable for estimating nitrogen in nitrobenzene, azobenzene and pyridine?",
+    options: [
+      "Every nitrogen-containing compound sublimes before digestion",
+      "The method measures only oxygen",
+      "Their nitrogen is not quantitatively converted into ammonium sulfate under the usual digestion conditions",
+      "They contain no nitrogen atoms"
+    ],
+    correctAnswer: 2,
+    explanation: "Nitro, azo and ring nitrogen are not quantitatively converted into ammonium sulfate under ordinary Kjeldahl conditions. The limitation concerns the standard method, not every possible modification.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "general_organic_chemistry"
+  },
+  {
+    id: "test100_3_q068",
+    question: "During Kolbe electrolysis of concentrated aqueous sodium ethanoate using suitable inert electrodes, which gases are the expected principal products?",
+    options: [
+      "Anode: ethane and CO₂; cathode: H₂",
+      "Anode: ethene; cathode: CO₂",
+      "Anode: methane and O₂; cathode: sodium vapour",
+      "Anode: H₂; cathode: ethane and CO₂"
+    ],
+    correctAnswer: 0,
+    explanation: "Ethanoate is oxidised at the anode, loses CO₂ and forms methyl radicals that couple to give ethane. Water is reduced at the cathode to produce hydrogen.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "general_organic_chemistry"
+  },
+  {
+    id: "test100_3_q069",
+    question: "What products result from propene with (i) cold dilute alkaline KMnO₄ and (ii) vigorous hot acidified KMnO₄ oxidation?",
+    options: [
+      "(i) Propan-1-ol; (ii) propanal",
+      "(i) Propane; (ii) ethanal",
+      "(i) Propane-1,2-diol; (ii) ethanoic acid and CO₂",
+      "(i) Propanone; (ii) propanoic acid"
+    ],
+    correctAnswer: 2,
+    explanation: "Cold dilute permanganate gives vicinal dihydroxylation. Vigorous oxidation cleaves the double bond: the substituted carbon gives ethanoic acid and the terminal carbon is ultimately oxidised to CO₂.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "general_organic_chemistry"
+  },
+  {
+    id: "test100_3_q070",
+    question: "Why does aniline fail to undergo ordinary Friedel–Crafts alkylation with anhydrous AlCl₃?",
+    options: [
+      "Its nitrogen lone pair binds the Lewis acid, strongly deactivating the ring under these conditions",
+      "Aniline has no electrons available for any chemical reaction",
+      "AlCl₃ supplies hydroxide ions that reduce the ring",
+      "Aniline contains no aromatic ring"
+    ],
+    correctAnswer: 0,
+    explanation: "Aniline forms a Lewis acid–base complex with AlCl₃. Binding of the amino lone pair removes its usual activating effect and strongly disfavors ordinary Friedel–Crafts substitution.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "general_organic_chemistry"
+  },
+  {
+    id: "test100_3_q071",
+    question: "Which set contains only activating, ortho/para-directing substituents on benzene under ordinary electrophilic-substitution conditions?",
+    options: [
+      "–OH, –OCH₃, –NHCOCH₃",
+      "–NO₂, –CN, –CHO",
+      "–COOH, –COOR, –SO₃H",
+      "–CF₃, –N(CH₃)₃⁺, –NO₂"
+    ],
+    correctAnswer: 0,
+    explanation: "The first set can donate electron density to the ring by resonance and favours ortho/para substitution. Their activating strengths are not identical.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "general_organic_chemistry"
+  },
+  {
+    id: "test100_3_q072",
+    question: "Which reagent is suitable for converting but-2-en-1-ol to but-2-enal while retaining the carbon–carbon double bond?",
+    options: [
+      "PCC in dry dichloromethane",
+      "Hot alkaline KMnO₄",
+      "Concentrated HNO₃",
+      "Hot acidified KMnO₄"
+    ],
+    correctAnswer: 0,
+    explanation: "Under suitable anhydrous conditions, PCC oxidises a primary alcohol to an aldehyde without ordinarily oxidising an isolated carbon–carbon double bond.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "alcohols_aldehydes_ketones_acids"
+  },
+  {
+    id: "test100_3_q073",
+    question: "Why is a mildly acidic rather than strongly acidic medium generally useful for carbonyl condensation with hydroxylamine or hydrazine derivatives?",
+    options: [
+      "All such reactions have exactly the same optimum pH",
+      "Acid catalyses the condensation, but excessive protonation lowers the nucleophile concentration",
+      "Strong acid converts the reagent into a Grignard compound",
+      "Neutral carbonyl compounds contain no polar bonds"
+    ],
+    correctAnswer: 1,
+    explanation: "Acid can facilitate carbonyl activation and dehydration. Excess acid protonates the nitrogen nucleophile and reduces its availability for attack. The optimum pH depends on the particular reactants.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "alcohols_aldehydes_ketones_acids"
+  },
+  {
+    id: "test100_3_q074",
+    question: "An aldehyde reacts with alcohol to form first an alkoxyalcohol and then a geminal dialkoxy product under suitable acid-catalysed conditions. What are these products?",
+    options: [
+      "Hemiacetal and acetal",
+      "Oxime and hydrazone",
+      "Ester and anhydride",
+      "Aldol and ketene"
+    ],
+    correctAnswer: 0,
+    explanation: "Addition of one alcohol molecule gives a hemiacetal. Further reaction with alcohol, with removal of water, produces an acetal. A ketone and ethylene glycol can form a cyclic ketal.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "alcohols_aldehydes_ketones_acids"
+  },
+  {
+    id: "test100_3_q075",
+    question: "Which decreasing boiling-point order is correct for these compounds of similar molar masses?",
+    options: [
+      "Butane > propanal > propan-1-ol > ethanoic acid",
+      "Propan-1-ol > ethanoic acid > butane > propanal",
+      "Ethanoic acid > propan-1-ol > propanal > butane",
+      "Propanal > butane > ethanoic acid > propan-1-ol"
+    ],
+    correctAnswer: 2,
+    explanation: "Hydrogen-bonded association gives ethanoic acid the highest boiling point, followed by the alcohol, aldehyde and alkane. Ethanoic acid can dimerise in benzene; an apparent molar mass of 120 g mol⁻¹ assumes essentially complete dimerisation.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "alcohols_aldehydes_ketones_acids"
+  },
+  {
+    id: "test100_3_q076",
+    question: "Why is SOCl₂ often convenient for converting a carboxylic acid into an acyl chloride?",
+    options: [
+      "It eliminates the need for any product purification in every reaction",
+      "It is the only reagent capable of forming acyl chlorides",
+      "Its SO₂ and HCl by-products are gaseous and can be removed readily",
+      "It converts every carboxylic acid directly into an amide"
+    ],
+    correctAnswer: 2,
+    explanation: "The reaction produces acyl chloride, SO₂ and HCl. Removal of the gaseous by-products facilitates work-up, though it does not guarantee a pure product without further processing.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "alcohols_aldehydes_ketones_acids"
+  },
+  {
+    id: "test100_3_q077",
+    question: "Which pairing is correct for benzoic acid nitration and ordinary Fischer esterification with oxygen-18-labelled methanol, neglecting isotope exchange?",
+    options: [
+      "Major nitration product: meta-nitrobenzoic acid; alcohol oxygen retained in the ester",
+      "Major nitration product: chlorobenzoic acid; alcohol oxygen becomes the carbonyl carbon",
+      "Major nitration product: para-nitrobenzoic acid; alcohol oxygen released as O₂",
+      "Major nitration product: ortho-nitrobenzoic acid; alcohol oxygen lost entirely into water"
+    ],
+    correctAnswer: 0,
+    explanation: "The carboxyl group is deactivating and meta-directing. In the usual Fischer mechanism, the alcohol oxygen becomes the ester’s alkoxy oxygen. Isotope exchange is excluded by the question.",
+    difficulty: "hard",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "alcohols_aldehydes_ketones_acids"
+  },
+  {
+    id: "test100_3_q078",
+    question: "What organic product forms when two ethanoic acid molecules undergo dehydration with a suitable dehydrating agent such as phosphorus pentoxide?",
+    options: [
+      "Methanal",
+      "Propanone",
+      "Ethyl ethanoate",
+      "Ethanoic anhydride"
+    ],
+    correctAnswer: 3,
+    explanation: "Loss of one water molecule from two ethanoic acid molecules gives ethanoic anhydride, (CH₃CO)₂O. This is an anhydride-forming dehydration.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "alcohols_aldehydes_ketones_acids"
+  },
+  {
+    id: "test100_3_q079",
+    question: "What do D and (+) signify in D-(+)-glucose?",
+    options: [
+      "Disaccharide structure and positive ionic charge, respectively",
+      "The same property in two equivalent notations",
+      "Dextrorotation and positive ionic charge, respectively",
+      "Relative configuration and experimentally observed dextrorotation, respectively"
+    ],
+    correctAnswer: 3,
+    explanation: "D describes configuration relative to D-glyceraldehyde; in the conventional Fischer projection of glucose, the C-5 hydroxyl is on the right. (+) independently indicates positive optical rotation.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "biomolecules"
+  },
+  {
+    id: "test100_3_q080",
+    question: "Which description of glycogen is correct?",
+    options: [
+      "A less-branched form of amylose found only in plants",
+      "A highly branched glucose polymer stored chiefly in liver and skeletal muscle",
+      "A structural cellulose polymer in human bones",
+      "An unbranched fructose polymer stored in red cells"
+    ],
+    correctAnswer: 1,
+    explanation: "Glycogen is an α-glucose storage polymer with more frequent branching than amylopectin. The major body stores are in liver and skeletal muscle, although smaller stores occur in other tissues.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "biomolecules"
+  },
+  {
+    id: "test100_3_q081",
+    question: "How many peptide bonds and amino-acid residues are present in a linear tetrapeptide, and which enzyme class catalyses redox reactions?",
+    options: [
+      "4 bonds; 5 residues; transferases",
+      "3 bonds; 4 residues; oxidoreductases",
+      "4 bonds; 4 residues; hydrolases",
+      "2 bonds; 4 residues; isomerases"
+    ],
+    correctAnswer: 1,
+    explanation: "A linear chain of n amino-acid residues contains n − 1 peptide bonds. Thus a tetrapeptide has three peptide bonds and four residues. Oxidoreductases catalyse oxidation–reduction reactions.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "biomolecules"
+  },
+  {
+    id: "test100_3_q082",
+    question: "Which statement correctly distinguishes DNA and RNA sugars and identifies three major RNA classes involved in protein synthesis?",
+    options: [
+      "DNA: 2-deoxyribose; RNA: ribose; mRNA, rRNA and tRNA",
+      "DNA and RNA: identical sugars; proteins are made by DNA alone",
+      "DNA: glucose; RNA: fructose; only tRNA exists",
+      "DNA: ribose; RNA: 2-deoxyribose; mRNA, rRNA and tRNA"
+    ],
+    correctAnswer: 0,
+    explanation: "DNA lacks the 2′ hydroxyl present in RNA’s ribose. Messenger, ribosomal and transfer RNA are major functional classes in protein synthesis; they are not the only RNA classes.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "biomolecules"
+  },
+  {
+    id: "test100_3_q083",
+    question: "How does an enzyme increase reaction rate without changing the reaction’s equilibrium constant?",
+    options: [
+      "It makes the standard Gibbs energy change more negative",
+      "It provides a pathway with a lower activation barrier",
+      "It permanently increases the equilibrium constant",
+      "It is consumed as a stoichiometric reactant"
+    ],
+    correctAnswer: 1,
+    explanation: "Enzymes lower activation barriers and accelerate approach to equilibrium without changing the equilibrium position. Most are proteins, but catalytic RNA also exists. Enzyme optima are not universally neutral pH.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "biomolecules"
+  },
+  {
+    id: "test100_3_q084",
+    question: "Which pairing correctly explains glucose–mannose stereoisomerism and fructose’s positive Tollens test?",
+    options: [
+      "Enantiomers; fructose contains an aldehyde group in every form",
+      "Metamers; fructose releases formaldehyde on simple dissolution",
+      "Anomers; fructose is reduced to an alkane",
+      "C-2 epimers; fructose can isomerise through enediol intermediates to aldoses in alkaline solution"
+    ],
+    correctAnswer: 3,
+    explanation: "Glucose and mannose differ at C-2 and are epimers. Alkaline conditions permit fructose–aldose interconversion through enediol intermediates, allowing reduction of Tollens reagent. Glucose and galactose are C-4 epimers.",
+    difficulty: "hard",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "biomolecules"
+  },
+  {
+    id: "test100_3_q085",
+    question: "Which statement correctly distinguishes reaction order from molecularity?",
+    options: [
+      "Order is obtained from a rate law; molecularity counts participating species in an elementary step",
+      "Molecularity can be zero or fractional",
+      "Order has meaning only for elementary reactions",
+      "Both are always read from an overall balanced equation"
+    ],
+    correctAnswer: 0,
+    explanation: "Reaction order is the sum of the concentration exponents in the experimentally supported rate law. Molecularity is a positive integer defined for an elementary step, not for an overall multistep reaction.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_kinetics"
+  },
+  {
+    id: "test100_3_q086",
+    question: "At constant temperature, doubling the initial reactant concentration has which effects on half-life for zero-order and first-order kinetics?",
+    options: [
+      "Zero-order is unchanged; first-order doubles",
+      "Zero-order doubles; first-order is unchanged",
+      "Both double",
+      "Both halve"
+    ],
+    correctAnswer: 1,
+    explanation: "For zero order, $t_{1/2}=[A]_0/(2k)$. For first order, $t_{1/2}=\\ln2/k$. The stated result assumes the kinetic regime and rate constants remain unchanged.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_kinetics"
+  },
+  {
+    id: "test100_3_q087",
+    question: "Why can acid-catalysed hydrolysis of a dilute ester solution show pseudo-first-order kinetics?",
+    options: [
+      "The balanced equation proves the entire mechanism is unimolecular",
+      "The reaction can start only after half the ester disappears",
+      "Water is in large excess and acidity is effectively constant, so the observed rate depends mainly on ester concentration",
+      "The catalyst is consumed completely after one reaction"
+    ],
+    correctAnswer: 2,
+    explanation: "With water in large excess and catalyst activity held constant, their effects are incorporated into the observed rate constant. The observed rate can then be proportional to ester concentration. Molecularity is not assigned to the overall multistep hydrolysis.",
+    difficulty: "easy",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "chemical_kinetics"
+  },
+  {
+    id: "test100_3_q088",
+    question: "For ordinary aqueous electrolyte solutions at constant temperature, what are the usual dilution trends in the textbook concentration range?",
+    options: [
+      "Both conductivity and molar conductivity increase",
+      "Conductivity increases while molar conductivity decreases",
+      "Both remain unchanged for every electrolyte",
+      "Conductivity decreases while molar conductivity increases"
+    ],
+    correctAnswer: 3,
+    explanation: "Dilution usually reduces the number of charge carriers per unit volume, lowering conductivity. Molar conductivity increases through mobility changes and, for weak electrolytes, increased ionisation. This trend is not an unlimited universal rule at every concentration.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "electrochemistry"
+  },
+  {
+    id: "test100_3_q089",
+    question: "Under standard chlor-alkali conditions, how do the cathode products differ between molten NaCl and concentrated aqueous brine?",
+    options: [
+      "Both give sodium at the cathode",
+      "Both give chlorine at the cathode",
+      "Molten NaCl: hydrogen; aqueous brine: sodium",
+      "Molten NaCl: sodium; aqueous brine: hydrogen"
+    ],
+    correctAnswer: 3,
+    explanation: "Molten NaCl permits Na⁺ reduction to sodium. In aqueous brine, water is reduced preferentially to hydrogen. Chlorine is the expected anode product under suitable concentrated-brine operating conditions.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "electrochemistry"
+  },
+  {
+    id: "test100_3_q090",
+    question: "Which change occurs at both electrodes of a lead–acid battery during discharge?",
+    options: [
+      "Both form metallic lead while water is consumed",
+      "Both form Na₂SO₄ while sodium is deposited",
+      "Both form PbO₂ while acid concentration rises",
+      "Both form PbSO₄ while sulfuric acid is consumed"
+    ],
+    correctAnswer: 3,
+    explanation: "The negative Pb electrode and positive PbO₂ electrode are converted to PbSO₄ during discharge. Sulfuric acid is consumed and water forms. Charging reverses the overall reaction.",
+    difficulty: "medium",
+    subject: "chemistry",
+    subjectName: "Chemistry",
+    topicKey: "electrochemistry"
+  },
+  {
+    id: "test100_3_q091",
+    question: "Which bacterial eye disease did WHO validate India as having eliminated as a public-health problem in October 2024?",
+    options: [
+      "Glaucoma",
+      "Trachoma",
+      "Diabetic retinopathy",
+      "Cataract"
+    ],
+    correctAnswer: 1,
+    explanation: "WHO announced the validation on 8 October 2024. Trachoma is caused by Chlamydia trachomatis. The SAFE strategy comprises surgery, antibiotics, facial cleanliness and environmental improvement.",
+    difficulty: "easy",
+    subject: "gk",
+    subjectName: "General Knowledge",
+    topicKey: "health_organizations_schemes"
+  },
+  {
+    id: "test100_3_q092",
+    question: "The 2026 Nobel Prize in Physiology or Medicine recognised discoveries leading to which technique?",
+    options: [
+      "Polymerase chain reaction",
+      "Hybridoma production of antibodies",
+      "Optogenetics",
+      "CRISPR genome editing"
+    ],
+    correctAnswer: 2,
+    explanation: "Karl Deisseroth, Peter Hegemann and Georg Nagel were recognised for discoveries leading to optogenetics, which enables light-based control of selected cells using light-sensitive proteins.",
+    difficulty: "easy",
+    subject: "gk",
+    subjectName: "General Knowledge",
+    topicKey: "health_organizations_schemes"
+  },
+  {
+    id: "test100_3_q093",
+    question: "The 2025 Nobel Prize in Physiology or Medicine recognised discoveries concerning which process?",
+    options: [
+      "ABO blood grouping",
+      "Discovery of insulin",
+      "Peripheral immune tolerance",
+      "Discovery of penicillin"
+    ],
+    correctAnswer: 2,
+    explanation: "Mary E. Brunkow, Fred Ramsdell and Shimon Sakaguchi were recognised for discoveries concerning peripheral immune tolerance, including regulatory T-cell mechanisms that restrain harmful immune responses.",
+    difficulty: "easy",
+    subject: "gk",
+    subjectName: "General Knowledge",
+    topicKey: "health_organizations_schemes"
+  },
+  {
+    id: "test100_3_q094",
+    question: "Which platform records vaccination events and provides digital vaccination certificates under India’s Universal Immunization Programme?",
+    options: [
+      "e-RaktKosh",
+      "U-WIN",
+      "NOTTO registry",
+      "ORS"
+    ],
+    correctAnswer: 1,
+    explanation: "U-WIN supports digital recording of UIP vaccination services for pregnant women and children, reminders and QR-based vaccination certificates.",
+    difficulty: "easy",
+    subject: "gk",
+    subjectName: "General Knowledge",
+    topicKey: "health_organizations_schemes"
+  },
+  {
+    id: "test100_3_q095",
+    question: "What is the principal purpose of the BHISHM health cube?",
+    options: [
+      "Remote teaching of anatomy alone",
+      "Replacement of all district hospitals",
+      "Rapid deployment of modular emergency medical facilities during disasters",
+      "Registration of blood donors"
+    ],
+    correctAnswer: 2,
+    explanation: "The BHISHM health cube is a portable modular emergency-care system intended for rapid deployment in disaster and mass-casualty situations. Capabilities depend on the configured unit.",
+    difficulty: "easy",
+    subject: "gk",
+    subjectName: "General Knowledge",
+    topicKey: "health_organizations_schemes"
+  },
+  {
+    id: "test100_3_q096",
+    question: "What is the renamed identity of Ayushman Bharat Health and Wellness Centres?",
+    options: [
+      "National Dialysis Mandir",
+      "Ayushman Arogya Mandir",
+      "Bharat Swasthya Kendra",
+      "Pradhan Mantri Jan Chikitsalaya"
+    ],
+    correctAnswer: 1,
+    explanation: "Ayushman Bharat Health and Wellness Centres were renamed Ayushman Arogya Mandir, with the tagline Arogyam Paramam Dhanam. They deliver comprehensive primary healthcare.",
+    difficulty: "easy",
+    subject: "gk",
+    subjectName: "General Knowledge",
+    topicKey: "health_organizations_schemes"
+  },
+  {
+    id: "test100_3_q097",
+    question: "What is the central 2030 target of India’s National Action Plan for Prevention and Control of Snakebite Envenoming?",
+    options: [
+      "Replace antivenom with antibiotics",
+      "Halve snakebite-related deaths and disabilities",
+      "Restrict treatment to tertiary hospitals",
+      "Eradicate all snake species"
+    ],
+    correctAnswer: 1,
+    explanation: "NAPSE sets a strategic goal of halving deaths and disabilities due to snakebite envenoming by 2030. The goal concerns prevention and care, not eradication of snakes.",
+    difficulty: "easy",
+    subject: "gk",
+    subjectName: "General Knowledge",
+    topicKey: "health_organizations_schemes"
+  },
+  {
+    id: "test100_3_q098",
+    question: "What is Tele-MANAS primarily intended to provide?",
+    options: [
+      "A compulsory health-insurance payment platform",
+      "A blood-bank inventory system",
+      "Accessible tele-mental-health counselling and links to further care",
+      "An organ-allocation registry"
+    ],
+    correctAnswer: 2,
+    explanation: "Tele-MANAS stands for Tele Mental Health Assistance and Networking Across States. It supports remote mental-health assistance and referral linkages as part of India’s public mental-health programme.",
+    difficulty: "easy",
+    subject: "gk",
+    subjectName: "General Knowledge",
+    topicKey: "health_organizations_schemes"
+  },
+  {
+    id: "test100_3_q099",
+    question: "Which service commitment is central to Surakshit Matritva Aashwasan (SUMAN)?",
+    options: [
+      "Assured respectful quality maternal and newborn care at no cost in public facilities, with zero tolerance for denial of entitled services",
+      "Subsidised services only for privately insured patients",
+      "Mandatory home delivery without referral support",
+      "Maternity services only through high-interest loans"
+    ],
+    correctAnswer: 0,
+    explanation: "SUMAN aims to provide assured, dignified, respectful and quality care without cost and without denial of entitled services. Its beneficiaries include pregnant women, mothers up to six months after delivery and sick infants.",
+    difficulty: "easy",
+    subject: "gk",
+    subjectName: "General Knowledge",
+    topicKey: "health_organizations_schemes"
+  },
+  {
+    id: "test100_3_q100",
+    question: "Which NHM programme supports free dialysis services for poor patients with renal failure?",
+    options: [
+      "Rashtriya Bal Swasthya Karyakram",
+      "Pradhan Mantri National Dialysis Programme",
+      "Janani Shishu Suraksha Karyakram",
+      "National Programme for Palliative Care"
+    ],
+    correctAnswer: 1,
+    explanation: "PMNDP was launched under the National Health Mission in 2016 to improve access to dialysis for poor patients. Its components include haemodialysis and peritoneal dialysis.",
+    difficulty: "easy",
+    subject: "gk",
+    subjectName: "General Knowledge",
+    topicKey: "health_organizations_schemes"
+  }
+],
+  // Reviewed 100-question subject-focused practice paper; 30 Bio / 25 Physics / 35 Chemistry / 10 GK.
+  test_100_questions_2: [
+  {
+    "id": "test100_2_q001",
+    "question": "Which respiratory centre in the pons limits the duration of inspiration?",
+    "options": [
+      "Apneustic centre",
+      "Respiratory rhythm centre of the medulla",
+      "Pneumotaxic centre",
+      "Chemosensitive area of the medulla"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The pneumotaxic centre in the pons moderates the medullary respiratory rhythm by limiting inspiration. This is the terminology used in the school-level description of respiratory control.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q002",
+    "question": "Assertion (A): At systemic tissues, chloride ions enter red blood cells as bicarbonate ions leave them.\nReason (R): The exchange of Cl- and HCO3- helps maintain electrical neutrality during carbon dioxide transport.",
+    "options": [
+      "Both (A) and (R) are true, and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true, but (R) is NOT the correct explanation of (A)",
+      "(A) is true, but (R) is false",
+      "(A) is false, but (R) is true"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Carbonic anhydrase in red blood cells accelerates the conversion of CO2 and water into carbonic acid, which dissociates into H+ and HCO3-. Bicarbonate leaves in exchange for chloride. Both statements are true, and the reason explains the assertion.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q003",
+    "question": "Which valve closures are associated with the first (S1) and second (S2) heart sounds?",
+    "options": [
+      "S1: aortic valve only; S2: pulmonary valve only",
+      "S1: atrioventricular valves; S2: semilunar valves",
+      "S1: mitral valve only; S2: tricuspid valve only",
+      "S1: semilunar valves; S2: atrioventricular valves"
+    ],
+    "correctAnswer": 1,
+    "explanation": "S1 is associated with closure of the mitral and tricuspid valves at the start of ventricular systole. S2 is associated with closure of the aortic and pulmonary semilunar valves at the start of ventricular diastole.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q004",
+    "question": "Which enzyme complex converts prothrombin to thrombin, and which ion is required in the coagulation cascade?",
+    "options": [
+      "Pepsin complex; K+",
+      "Fibrinolysin complex; Mg2+",
+      "Prothrombinase complex; Ca2+",
+      "Heparin complex; Na+"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The prothrombinase complex converts prothrombin to thrombin in the presence of calcium. School texts also describe the prothrombin-activating complex as thrombokinase. Thrombin converts fibrinogen into fibrin.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q005",
+    "question": "Which vessel carries absorbed nutrients from the intestine to the liver before the blood returns to the heart?",
+    "options": [
+      "Inferior vena cava",
+      "Hepatic vein",
+      "Hepatic portal vein",
+      "Hepatic artery"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The hepatic portal vein carries nutrient-rich venous blood from the gastrointestinal tract to liver sinusoids. The hepatic veins subsequently drain the liver into the inferior vena cava.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q006",
+    "question": "A rise in plasma osmolality stimulates ADH release. Which renal action directly reduces water loss?",
+    "options": [
+      "Reduced water permeability of the collecting ducts",
+      "Increased water permeability of the late distal tubule and collecting ducts",
+      "Reduced sodium reabsorption throughout the nephron",
+      "Increased glucose filtration at the glomerulus"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ADH promotes aquaporin-2 insertion in principal cells, increasing water reabsorption in the late distal nephron and collecting ducts. The resulting urine is more concentrated. A rise in GFR is not the necessary mechanism of its antidiuretic action.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q007",
+    "question": "In the simplified school-level model of haemodialysis, why is the dialysing fluid initially free of urea?",
+    "options": [
+      "To make the blood hypertonic",
+      "To draw urea out of the blood down its concentration gradient",
+      "To prevent any movement of dissolved substances",
+      "To draw plasma proteins through the dialysis membrane"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Urea diffuses from blood across the semipermeable membrane into dialysate because its concentration is lower there. Appropriate electrolytes and glucose help limit unwanted solute loss. Actual dialysate is prescribed for the patient; it is not an exact copy of plasma and does not contain plasma proteins.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q008",
+    "question": "Which comparison between red and white skeletal muscle fibres is correct?",
+    "options": [
+      "Red: less myoglobin; white: more mitochondria",
+      "Red: rapid fatigue; white: sustained aerobic activity",
+      "Red: more myoglobin and mitochondria; white: greater reliance on anaerobic glycolysis",
+      "Red: no mitochondria; white: no sarcoplasmic reticulum"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Red fibres contain more myoglobin and mitochondria and are adapted for sustained aerobic activity. White fibres have less myoglobin, fewer mitochondria and greater glycolytic capacity, supporting brief powerful activity with earlier fatigue.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q009",
+    "question": "Which rib pairs are vertebrochondral ribs, attached indirectly to the sternum through the costal cartilage above them?",
+    "options": [
+      "Pairs 11–12",
+      "Pairs 6–8",
+      "Pairs 8–10",
+      "Pairs 1–7"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The eighth, ninth and tenth pairs are vertebrochondral ribs. Their costal cartilages join the cartilage of the rib above, providing an indirect connection to the sternum. The eleventh and twelfth pairs are floating ribs.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q010",
+    "question": "Entry of which ion into a presynaptic terminal directly triggers neurotransmitter release?",
+    "options": [
+      "Mg2+",
+      "Ca2+",
+      "K+",
+      "Cl-"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Depolarisation opens voltage-gated calcium channels. Calcium entry triggers fusion of neurotransmitter-containing vesicles with the presynaptic membrane and release by exocytosis.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q011",
+    "question": "Which pair of structures forms part of the limbic system and contributes to emotion and motivation?",
+    "options": [
+      "Amygdala and hippocampus",
+      "Superior colliculi and cerebral aqueduct",
+      "Pons and cerebellar cortex",
+      "Medulla and dorsal root ganglia"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The amygdala and hippocampus are important components of the limbic system. Together with associated cortical regions and the hypothalamus, this system contributes to emotion, motivation and memory.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q012",
+    "question": "Assertion (A): The posterior pituitary stores and releases oxytocin and ADH but does not synthesise them.\nReason (R): These hormones are synthesised by hypothalamic neurosecretory cells and transported down their axons.",
+    "options": [
+      "Both (A) and (R) are true, and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true, but (R) is NOT the correct explanation of (A)",
+      "(A) is true, but (R) is false",
+      "(A) is false, but (R) is true"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Oxytocin and ADH are synthesised in hypothalamic neurons and transported to the posterior pituitary for storage and release. Both statements are true, and the reason explains the assertion.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q013",
+    "question": "Hyposecretion of adrenal cortical hormones causes weakness, hypotension, hyperpigmentation and disturbed electrolyte balance. Which disorder is indicated?",
+    "options": [
+      "Addison’s disease",
+      "Conn’s syndrome",
+      "Graves’ disease",
+      "Cushing’s syndrome"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Primary adrenal insufficiency is called Addison’s disease. Deficiency of cortisol and, commonly, aldosterone causes fatigue, hypotension and electrolyte disturbances; increased ACTH contributes to hyperpigmentation.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q014",
+    "question": "Which combination of effects helps parathyroid hormone increase blood calcium?",
+    "options": [
+      "Reduced renal calcium reabsorption and increased phosphate retention",
+      "Increased bone deposition and reduced intestinal calcium absorption",
+      "Increased bone resorption and renal calcium reabsorption",
+      "Increased calcium excretion and reduced vitamin D activation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "PTH promotes bone resorption indirectly through osteoblast-lineage signalling, increases renal calcium reabsorption and stimulates formation of active vitamin D. Active vitamin D increases intestinal calcium absorption. PTH also promotes renal phosphate excretion.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q015",
+    "question": "Which pairing of endocrine gland and hormone is correct?",
+    "options": [
+      "Pineal gland — melatonin; thymus — thymosins",
+      "Pineal gland — melanin; thymus — calcitonin",
+      "Pineal gland — prolactin; thymus — erythropoietin",
+      "Pineal gland — inhibin; thymus — aldosterone"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The pineal gland secretes melatonin, involved in circadian rhythms. Thymic hormones, including thymosins, contribute to T-lymphocyte differentiation and immune development.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "human_physiology",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q016",
+    "question": "Which sequence correctly shows the cell stages and ploidy during human spermatogenesis?",
+    "options": [
+      "Spermatogonia (2n) -> Primary spermatocyte (n) -> Secondary spermatocyte (n) -> Spermatids (n)",
+      "Spermatogonia (n) -> Primary spermatocyte (2n) -> Secondary spermatocyte (2n) -> Spermatozoa (n)",
+      "Spermatogonia (2n) -> Primary spermatocyte (2n) -> Secondary spermatocyte (n) -> Spermatids (n) -> Spermatozoa (n)",
+      "Primary spermatocyte (2n) -> Spermatogonia (2n) -> Spermatids (2n) -> Secondary spermatocyte (n)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "diploid spermatogonia (2n, 46 chromosomes) multiply by mitosis and grow into diploid primary spermatocytes (2n, 46). A primary spermatocyte completes the first meiotic division (reduction division) to form two equal, haploid secondary spermatocytes (n, 23). The secondary spermatocytes undergo the second meiotic division to produce four equal, haploid spermatids (n, 23), which transform into spermatozoa (n, 23) by spermiogenesis.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q017",
+    "question": "Which statement correctly describes the acrosome and middle piece of a human sperm?",
+    "options": [
+      "Acrosome: tail formation; middle piece: zona pellucida formation",
+      "Acrosome: nuclear DNA; middle piece: fructose secretion",
+      "Acrosome: Golgi-derived enzymes; middle piece: mitochondria for motility",
+      "Acrosome: mitochondrial enzymes; middle piece: acrosomal cap"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Golgi apparatus forms the acrosome, which contains enzymes involved in fertilisation. Mitochondria in the middle piece supply ATP for flagellar movement.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q018",
+    "question": "At which stages are the primary oocyte and the ovulated secondary oocyte arrested, respectively?",
+    "options": [
+      "Primary oocyte arrests at Diplotene of Prophase I; Secondary oocyte arrests at Metaphase II",
+      "Primary oocyte arrests at Metaphase I; Secondary oocyte arrests at Anaphase II",
+      "Primary oocyte arrests at Pachytene of Prophase I; Secondary oocyte arrests at Telophase I",
+      "Primary oocyte arrests at Leptotene of Prophase I; Secondary oocyte arrests at Prophase II"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Primary oocytes remain arrested in the diplotene stage of prophase I from fetal life until maturation of selected follicles. The secondary oocyte is arrested in metaphase II and completes meiosis II following fertilisation.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q019",
+    "question": "Seminal plasma secreted by the male accessory glands is characteristically rich in which substances?",
+    "options": [
+      "Galactose, potassium and enterokinase",
+      "Starch, magnesium and renin",
+      "Fructose, calcium and enzymes",
+      "Sucrose, iron and pepsin"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Seminal plasma contains fructose, calcium and enzymes. Fructose is an energy source for sperm. It is not unique to semen and is also metabolised or produced in other tissues.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q020",
+    "question": "What is an embryo with 8–16 blastomeres called, and which blastocyst layer first attaches to the endometrium?",
+    "options": [
+      "Morula; trophoblast",
+      "Blastocoel; zona pellucida",
+      "Gastrula; inner cell mass",
+      "Neurula; epiblast"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The solid embryo with 8–16 blastomeres is termed a morula in the school-level description. It develops into a blastocyst; its outer trophoblast attaches to the endometrium during implantation.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q021",
+    "question": "Which pair of hormones is characteristically secreted by the human placenta during pregnancy?",
+    "options": [
+      "FSH and LH",
+      "hCG and hPL",
+      "Melatonin and thymosin",
+      "TSH and ACTH"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The placenta secretes human chorionic gonadotropin (hCG) and human placental lactogen (hPL), among other hormones. hCG helps maintain the corpus luteum in early pregnancy, while hPL contributes to maternal metabolic adaptations.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q022",
+    "question": "During parturition, how does oxytocin participate in a positive-feedback mechanism?",
+    "options": [
+      "It reduces uterine contractions and suppresses further secretion",
+      "It inhibits cervical stretching and blocks the fetal ejection reflex",
+      "It prevents contraction of the uterine myometrium",
+      "It strengthens uterine contractions, which stimulate further oxytocin release"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Signals associated with the fetus, placenta and cervical stretch initiate the parturition reflex. Oxytocin from the maternal posterior pituitary strengthens uterine contractions, and the resulting stimulation promotes further oxytocin release.",
+    "difficulty": "hard",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q023",
+    "question": "Which antibody in colostrum provides the newborn with natural passive mucosal immunity?",
+    "options": [
+      "IgM",
+      "IgE",
+      "IgD",
+      "Secretory IgA"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Colostrum is rich in secretory IgA. Maternal antibodies protect mucosal surfaces and provide passive immunity; they do not represent active immunisation of the infant.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q024",
+    "question": "Match the intrauterine devices in List I with their classes in List II.\nList I: P. Lippes loop, Q. CuT / Multiload 375, R. LNG-20 / Progestasert\nList II: 1. Hormone-releasing, 2. Non-medicated, 3. Copper-releasing",
+    "options": [
+      "P-3, Q-2, R-1",
+      "P-2, Q-1, R-3",
+      "P-1, Q-3, R-2",
+      "P-2, Q-3, R-1"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Lippes loop is non-medicated. CuT and Multiload 375 release copper, which impairs sperm function. LNG-20 and Progestasert release hormones.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q025",
+    "question": "Which non-steroidal oral contraceptive was developed at CDRI, Lucknow?",
+    "options": [
+      "Saheli (centchroman / ormeloxifene)",
+      "Norplant",
+      "Mala-D",
+      "Mifepristone"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Saheli contains centchroman, also called ormeloxifene, a non-steroidal selective oestrogen receptor modulator developed at CDRI, Lucknow.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q026",
+    "question": "Which statement about vasectomy is correct?",
+    "options": [
+      "It stops spermatogenesis by inhibiting meiosis",
+      "It blocks sperm transport through the vas deferens without stopping testosterone secretion",
+      "It immediately stops testosterone production",
+      "It removes the prostate and seminal vesicles"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Vasectomy interrupts the vas deferens; it does not stop testicular hormone secretion. It is not immediately effective because sperm may remain downstream. Follow-up and temporary additional contraception are required according to clinical guidance.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q027",
+    "question": "Why is misuse of prenatal diagnostic techniques for fetal sex determination prohibited under India’s PCPNDT law?",
+    "options": [
+      "Sex selection and disclosure can facilitate sex-selective elimination",
+      "Every diagnostic procedure inevitably causes miscarriage",
+      "The techniques permanently alter fetal DNA",
+      "The techniques cannot detect genetic abnormalities"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The PCPNDT framework prohibits sex selection and misuse of prenatal diagnostic techniques for sex determination. Prenatal diagnosis may be used for legally permitted medical indications subject to the Act’s safeguards. Chromosome analysis and targeted molecular tests are different methods.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q028",
+    "question": "Which sexually transmitted viral infection is caused by a retrovirus and requires long-term antiretroviral treatment rather than a routine curative antibiotic course?",
+    "options": [
+      "HIV infection",
+      "Gonorrhoea",
+      "Syphilis",
+      "Trichomoniasis"
+    ],
+    "correctAnswer": 0,
+    "explanation": "HIV is a retrovirus. Antiretroviral therapy suppresses viral replication but is not a routine cure. Gonorrhoea and syphilis are bacterial infections; trichomoniasis is caused by a protozoan.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q029",
+    "question": "Which transfer-site pairing is correct for assisted reproduction as described in school texts?",
+    "options": [
+      "ZIFT: early embryo into fallopian tube; IUT: embryo into uterus",
+      "ZIFT: blastocyst into ovary; IUT: ovum into ureter",
+      "ZIFT: ovum into cervix; IUT: sperm into vagina",
+      "ZIFT: embryo into uterus; IUT: sperm into an oocyte"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In the school-level classification, ZIFT transfers a zygote or early embryo up to eight blastomeres into a fallopian tube; IUT transfers an embryo with more than eight blastomeres into the uterus. GIFT involves gametes transferred into a fallopian tube.",
+    "difficulty": "medium",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q030",
+    "question": "For lactational amenorrhoea to be used as a contraceptive method, the mother should remain amenorrhoeic and fully or nearly fully breastfeed. What is the maximum postpartum interval for this method?",
+    "options": [
+      "Two years",
+      "Fourteen days",
+      "Twelve months",
+      "Six months"
+    ],
+    "correctAnswer": 3,
+    "explanation": "LAM applies during the first six months postpartum while menstruation has not returned and breastfeeding remains full or nearly full. Breastfeeding alone does not ensure contraception when these conditions are not met.",
+    "difficulty": "easy",
+    "subject": "biology",
+    "subjectName": "Biology",
+    "topicKey": "reproduction_humans_plants",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q031",
+    "question": "A metal has a work function of $4.13\\,\\mathrm{eV}$. Which option gives its approximate threshold wavelength and a wavelength that causes photoemission? Given: $hc=1240\\,\\mathrm{eV\\,nm}$.",
+    "options": [
+      "$400\\,\\mathrm{nm}$; $450\\,\\mathrm{nm}$",
+      "$600\\,\\mathrm{nm}$; $800\\,\\mathrm{nm}$",
+      "$300\\,\\mathrm{nm}$; $550\\,\\mathrm{nm}$",
+      "$300\\,\\mathrm{nm}$; $250\\,\\mathrm{nm}$"
+    ],
+    "correctAnswer": 3,
+    "explanation": "$\\lambda_0=hc/\\phi=1240/4.13\\approx300\\,\\mathrm{nm}$. Radiation of wavelength $250\\,\\mathrm{nm}$ has energy greater than the work function and causes emission.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "modern_physics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q032",
+    "question": "For a metal of work function $\\phi_0$, light of wavelength $\\lambda$ produces a stopping potential $V_1$. What stopping potential $V_2$ is produced by wavelength $\\lambda/2$?",
+    "options": [
+      "$2V_1-\\phi_0/e$",
+      "$2V_1+\\phi_0/e$",
+      "$2V_1$",
+      "$V_1/2$"
+    ],
+    "correctAnswer": 1,
+    "explanation": "$eV_1=hc/\\lambda-\\phi_0$. Hence $eV_2=2hc/\\lambda-\\phi_0=2eV_1+\\phi_0$, so $V_2=2V_1+\\phi_0/e$.",
+    "difficulty": "hard",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "modern_physics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q033",
+    "question": "Find the de Broglie wavelength of a neutron with kinetic energy $0.025\\,\\mathrm{eV}$. Given: $h=6.63\\times10^{-34}\\,\\mathrm{J\\,s}$, $m_n=1.675\\times10^{-27}\\,\\mathrm{kg}$, $1\\,\\mathrm{eV}=1.6\\times10^{-19}\\,\\mathrm{J}$.",
+    "options": [
+      "$0.181\\,\\mathrm{\\mathring A}$",
+      "$1.81\\,\\mathrm{\\mathring A}$",
+      "$3.62\\,\\mathrm{nm}$",
+      "$18.1\\,\\mathrm{\\mathring A}$"
+    ],
+    "correctAnswer": 1,
+    "explanation": "$K=4.0\\times10^{-21}\\,\\mathrm{J}$. Therefore $p=\\sqrt{2m_nK}=3.66\\times10^{-24}\\,\\mathrm{kg\\,m\\,s^{-1}}$ and $\\lambda=h/p=1.81\\times10^{-10}\\,\\mathrm{m}=1.81\\,\\mathrm{\\mathring A}$.",
+    "difficulty": "hard",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "modern_physics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q034",
+    "question": "An alpha particle approaches a stationary heavy nucleus head-on. If its initial kinetic energy doubles, how does its distance of closest approach change? Ignore nuclear recoil.",
+    "options": [
+      "It becomes $1/\\sqrt2$ times",
+      "It becomes one-quarter",
+      "It doubles",
+      "It halves"
+    ],
+    "correctAnswer": 3,
+    "explanation": "At closest approach, kinetic energy equals electrostatic potential energy: $K=k(2Ze^2)/r_0$. Thus $r_0\\propto1/K$, and doubling $K$ halves the distance.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "modern_physics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q035",
+    "question": "In the Bohr model of hydrogen, what are the principal quantum number, number of complete de Broglie wavelengths in the orbit, and angular momentum in the third excited state?",
+    "options": [
+      "$n=4$; $3$ wavelengths; $L=4h/\\pi$",
+      "$n=3$; $3$ wavelengths; $L=3h/(2\\pi)$",
+      "$n=2$; $2$ wavelengths; $L=h/\\pi$",
+      "$n=4$; $4$ wavelengths; $L=2h/\\pi$"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The third excited state is $n=4$. The standing-wave condition is $2\\pi r=n\\lambda$, so four wavelengths fit the orbit. Also $L=nh/(2\\pi)=2h/\\pi$.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "modern_physics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q036",
+    "question": "What is the ratio of the shortest to the longest wavelength in the Lyman series of hydrogen?",
+    "options": [
+      "4 : 3",
+      "3 : 4",
+      "1 : 4",
+      "5 : 9"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For the series limit, $\\lambda_{\\min}=1/R$. For the transition $n=2\\to1$, $\\lambda_{\\max}=4/(3R)$. Therefore $\\lambda_{\\min}:\\lambda_{\\max}=3:4$.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "modern_physics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q037",
+    "question": "Which of the following pairs of nuclides are correctly classified as isotones (nuclei having the same number of neutrons but different atomic numbers)?",
+    "options": [
+      "(35_17 Cl) and (37_17 Cl)",
+      "(14_6 C) and (14_7 N)",
+      "(235_92 U) and (238_92 U)",
+      "(14_6 C) and (16_8 O)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Isotones have the same neutron number $N=A-Z$ and different atomic numbers. Both ${}^{14}_{6}\\mathrm C$ and ${}^{16}_{8}\\mathrm O$ have eight neutrons. The carbon/nitrogen pair is isobaric; the chlorine and uranium pairs are isotopic.",
+    "difficulty": "easy",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "modern_physics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q038",
+    "question": "A reactor produces $160\\,\\mathrm{MW}$ of thermal power. If each fission releases $200\\,\\mathrm{MeV}$, how many fissions occur per second? Given: $1\\,\\mathrm{eV}=1.6\\times10^{-19}\\,\\mathrm J$.",
+    "options": [
+      "$5.0\\times10^{21}\\,\\mathrm{s^{-1}}$",
+      "$3.2\\times10^{16}\\,\\mathrm{s^{-1}}$",
+      "$2.5\\times10^{19}\\,\\mathrm{s^{-1}}$",
+      "$5.0\\times10^{18}\\,\\mathrm{s^{-1}}$"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Energy per fission is $200\\times10^6\\times1.6\\times10^{-19}=3.2\\times10^{-11}\\,\\mathrm J$. The rate is $P/E=1.6\\times10^8/(3.2\\times10^{-11})=5.0\\times10^{18}\\,\\mathrm{s^{-1}}$. No electrical-conversion efficiency is needed because the power specified is thermal.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "modern_physics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q039",
+    "question": "At thermal equilibrium, doped silicon has $n_i=1.5\\times10^{16}\\,\\mathrm{m^{-3}}$ and $n_e=4.5\\times10^{22}\\,\\mathrm{m^{-3}}$. Find the hole concentration using the mass-action law.",
+    "options": [
+      "$1.5\\times10^{10}\\,\\mathrm{m^{-3}}$",
+      "$3.0\\times10^6\\,\\mathrm{m^{-3}}$",
+      "$5.0\\times10^9\\,\\mathrm{m^{-3}}$",
+      "$4.5\\times10^{22}\\,\\mathrm{m^{-3}}$"
+    ],
+    "correctAnswer": 2,
+    "explanation": "$n_en_h=n_i^2$, so $n_h=(1.5\\times10^{16})^2/(4.5\\times10^{22})=5.0\\times10^9\\,\\mathrm{m^{-3}}$.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "semiconductors",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q040",
+    "question": "Where does an acceptor energy level lie in a typical p-type semiconductor?",
+    "options": [
+      "At the middle of the forbidden gap",
+      "Just below the conduction-band edge",
+      "Just above the valence-band edge",
+      "Above the conduction band"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The acceptor level is just above the valence band. Electrons can be thermally excited from the valence band into the acceptor level, leaving mobile holes. The exact ionisation energy depends on the semiconductor and dopant.",
+    "difficulty": "easy",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "semiconductors",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q041",
+    "question": "A silicon diode is modelled with a constant forward drop of $0.7\\,\\mathrm V$. It is connected in series with $200\\,\\Omega$ across $4.7\\,\\mathrm V$. What current flows?",
+    "options": [
+      "$3.5\\,\\mathrm{mA}$",
+      "$23.5\\,\\mathrm{mA}$",
+      "$27.0\\,\\mathrm{mA}$",
+      "$20.0\\,\\mathrm{mA}$"
+    ],
+    "correctAnswer": 3,
+    "explanation": "$I=(4.7-0.7)/200=0.020\\,\\mathrm A=20.0\\,\\mathrm{mA}$. The constant-drop model is explicitly assumed.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "semiconductors",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q042",
+    "question": "Over a locally linear part of a diode characteristic, the voltage rises from $0.70$ to $0.80\\,\\mathrm V$ and current from $5$ to $25\\,\\mathrm{mA}$. What is the dynamic resistance?",
+    "options": [
+      "$140\\,\\Omega$",
+      "$5\\,\\Omega$",
+      "$32\\,\\Omega$",
+      "$20\\,\\Omega$"
+    ],
+    "correctAnswer": 1,
+    "explanation": "$r_d=\\Delta V/\\Delta I=0.10/(20\\times10^{-3})=5\\,\\Omega$. This is an incremental resistance, not $V/I$ at one operating point.",
+    "difficulty": "easy",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "semiconductors",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q043",
+    "question": "Why is ordinary silicon unsuitable for making an efficient visible-light LED?",
+    "options": [
+      "Its band gap is too large for any photon emission",
+      "It cannot be doped",
+      "Its approximately 1.1 eV indirect band gap gives inefficient emission outside the visible range",
+      "It emits only ultraviolet light"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Silicon has an indirect band gap of about $1.1\\,\\mathrm{eV}$. Radiative recombination is inefficient, and photons of this energy are infrared. Suitable direct-gap compound semiconductors can emit visible light.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "semiconductors",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q044",
+    "question": "Using the passive diode sign convention (positive current entering the positive-voltage terminal), in which quadrant does an illuminated solar cell deliver electrical power?",
+    "options": [
+      "Fourth",
+      "Third",
+      "First",
+      "Second"
+    ],
+    "correctAnswer": 0,
+    "explanation": "While delivering power, the solar cell has positive terminal voltage and negative current in the stated passive convention, placing the operating region in the fourth quadrant. A different current convention changes the plotted quadrant.",
+    "difficulty": "easy",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "semiconductors",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q045",
+    "question": "An AND gate is followed by two NOT gates in series. For inputs A = 1 and B = 0, which final result is correct?",
+    "options": [
+      "Output 0; equivalent NOR function",
+      "Output 0; equivalent AND function",
+      "Output 1; equivalent OR function",
+      "Output 1; equivalent NAND function"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The two successive inversions cancel. The complete circuit implements the AND function; with one input zero, the output is zero.",
+    "difficulty": "easy",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "semiconductors",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q046",
+    "question": "Find the critical angle for light travelling from a medium of refractive index $2.0$ into one of refractive index $\\sqrt2$.",
+    "options": [
+      "90°",
+      "30°",
+      "45°",
+      "60°"
+    ],
+    "correctAnswer": 2,
+    "explanation": "$\\sin\\theta_c=n_2/n_1=\\sqrt2/2$, so $\\theta_c=45^\\circ$.",
+    "difficulty": "easy",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "ray_optics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q047",
+    "question": "Thin lenses of focal lengths $+20\\,\\mathrm{cm}$ and $-25\\,\\mathrm{cm}$ are in contact in air. Find the equivalent focal length and power.",
+    "options": [
+      "$+100\\,\\mathrm{cm}$; $+1.0\\,\\mathrm D$",
+      "$+11.1\\,\\mathrm{cm}$; $+9.0\\,\\mathrm D$",
+      "$-5.0\\,\\mathrm{cm}$; $-20.0\\,\\mathrm D$",
+      "$-100\\,\\mathrm{cm}$; $-1.0\\,\\mathrm D$"
+    ],
+    "correctAnswer": 0,
+    "explanation": "$1/F=1/20-1/25=1/100\\,\\mathrm{cm^{-1}}$. Thus $F=+100\\,\\mathrm{cm}=+1\\,\\mathrm m$ and $P=1/F=+1\\,\\mathrm D$.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "ray_optics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q048",
+    "question": "A prism in air has an apex angle of $60^\\circ$ and a minimum deviation of $30^\\circ$. Find its refractive index.",
+    "options": [
+      "1.500",
+      "1.414",
+      "1.333",
+      "1.732"
+    ],
+    "correctAnswer": 1,
+    "explanation": "$n=\\sin[(A+\\delta_m)/2]/\\sin(A/2)=\\sin45^\\circ/\\sin30^\\circ=\\sqrt2\\approx1.414$.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "ray_optics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q049",
+    "question": "An astronomical telescope in normal adjustment has $f_o=140\\,\\mathrm{cm}$ and $f_e=5.0\\,\\mathrm{cm}$. Find the magnitude of angular magnification and lens separation.",
+    "options": [
+      "$28$; $135\\,\\mathrm{cm}$",
+      "$700$; $145\\,\\mathrm{cm}$",
+      "$29$; $140\\,\\mathrm{cm}$",
+      "$28$; $145\\,\\mathrm{cm}$"
+    ],
+    "correctAnswer": 3,
+    "explanation": "$|M|=f_o/f_e=28$ and $L=f_o+f_e=145\\,\\mathrm{cm}$. The image is inverted, so the signed angular magnification is negative; the question asks for its magnitude.",
+    "difficulty": "easy",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "ray_optics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q050",
+    "question": "Light of wavelength $600\\,\\mathrm{nm}$ in air enters glass of refractive index $1.5$. Find its frequency and wavelength in the glass. Given: $c=3.0\\times10^8\\,\\mathrm{m\\,s^{-1}}$.",
+    "options": [
+      "$7.5\\times10^{14}\\,\\mathrm{Hz}$; $400\\,\\mathrm{nm}$",
+      "$3.33\\times10^{14}\\,\\mathrm{Hz}$; $600\\,\\mathrm{nm}$",
+      "$5.0\\times10^{14}\\,\\mathrm{Hz}$; $900\\,\\mathrm{nm}$",
+      "$5.0\\times10^{14}\\,\\mathrm{Hz}$; $400\\,\\mathrm{nm}$"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The frequency remains unchanged: $\\nu=c/\\lambda_{\\mathrm{air}}=5.0\\times10^{14}\\,\\mathrm{Hz}$. The wavelength becomes $\\lambda_g=600/1.5=400\\,\\mathrm{nm}$.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "wave_optics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q051",
+    "question": "In Young’s double-slit experiment, the fringe width in air is $0.60\\,\\mathrm{mm}$. What is the width when the entire arrangement is immersed in water of refractive index $4/3$?",
+    "options": [
+      "0.80 mm",
+      "0.45 mm",
+      "0.60 mm",
+      "0.30 mm"
+    ],
+    "correctAnswer": 1,
+    "explanation": "$\\beta=\\lambda D/d$. Immersion reduces wavelength by a factor $n$, so $\\beta_{\\mathrm{water}}=0.60/(4/3)=0.45\\,\\mathrm{mm}$.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "wave_optics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q052",
+    "question": "Two coherent beams of the same polarisation have an intensity ratio of 9 : 1. What is the ratio of maximum to minimum interference intensity?",
+    "options": [
+      "9 : 1",
+      "10 : 8",
+      "81 : 1",
+      "4 : 1"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The amplitude ratio is $\\sqrt9:\\sqrt1=3:1$. Thus $I_{\\max}/I_{\\min}=(3+1)^2/(3-1)^2=4$.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "wave_optics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q053",
+    "question": "Find the approximate full width of the central maximum in single-slit diffraction. Given: $a=0.20\\,\\mathrm{mm}$, $\\lambda=600\\,\\mathrm{nm}$, $D=1.0\\,\\mathrm m$.",
+    "options": [
+      "12.0 mm",
+      "6.0 mm",
+      "3.0 mm",
+      "1.5 mm"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Using the small-angle approximation, $W=2\\lambda D/a=2(600\\times10^{-9})(1.0)/(0.20\\times10^{-3})=6.0\\times10^{-3}\\,\\mathrm m=6.0\\,\\mathrm{mm}$.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "wave_optics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q054",
+    "question": "Unpolarised light of intensity $I_0$ passes through two ideal polaroids with transmission axes $60^\\circ$ apart. What intensity emerges?",
+    "options": [
+      "$3I_0/8$",
+      "$I_0/2$",
+      "$I_0/4$",
+      "$I_0/8$"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The first polaroid transmits $I_0/2$. By Malus’s law, the second transmits $(I_0/2)\\cos^2 60^\\circ=I_0/8$.",
+    "difficulty": "medium",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "wave_optics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q055",
+    "question": "Light is incident from air on a transparent dielectric at a Brewster angle of $60^\\circ$. Find the angle of refraction and refractive index of the dielectric.",
+    "options": [
+      "$30^\\circ$; $\\sqrt3$",
+      "$30^\\circ$; $1/\\sqrt3$",
+      "$45^\\circ$; $\\sqrt2$",
+      "$60^\\circ$; $1.500$"
+    ],
+    "correctAnswer": 0,
+    "explanation": "At Brewster’s angle, reflected and refracted rays are perpendicular: $r=90^\\circ-60^\\circ=30^\\circ$. For incidence from air, $n=\\tan60^\\circ=\\sqrt3$.",
+    "difficulty": "easy",
+    "subject": "physics",
+    "subjectName": "Physics",
+    "topicKey": "wave_optics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q056",
+    "question": "According to VSEPR theory, what are the molecular shapes of I3- and ClF3, respectively?",
+    "options": [
+      "Trigonal pyramidal; trigonal bipyramidal",
+      "Linear; T-shaped",
+      "Bent; trigonal planar",
+      "Linear; see-saw"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Both have five electron domains around the central atom in the school-level VSEPR model. I3- has three equatorial lone pairs and a linear molecular shape. ClF3 has two equatorial lone pairs and a T-shaped molecular shape.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_bonding",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q057",
+    "question": "Which set contains only molecules with zero net dipole moment?",
+    "options": [
+      "CHCl3, NF3, H2S, and cis-1,2-dichloroethene",
+      "CO2, SO2, O3, and ortho-dichlorobenzene",
+      "NH3, H2O, HF, and SO2",
+      "BeF2, BF3, CCl4, XeF4, and para-dichlorobenzene"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Symmetrical molecules in which individual bond dipoles cancel out completely by vector addition have zero net dipole moment (mu = 0 D): BeF2 (linear), BF3 (trigonal planar), CCl4 (regular tetrahedral), XeF4 (square planar with two trans lone pairs), and para-dichlorobenzene (180° opposing C-Cl dipoles).",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_bonding",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q058",
+    "question": "In one resonance structure of ozone, $O_1=O_2-O_3$, the central atom is $O_2$. What are the formal charges on $O_1$, $O_2$ and $O_3$?",
+    "options": [
+      "0, +1, −1",
+      "+1, −2, +1",
+      "−1, 0, +1",
+      "0, 0, 0"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Formal charge equals valence electrons minus nonbonding electrons minus half the bonding electrons. The double-bonded terminal atom has charge $0$, the central atom $+1$, and the single-bonded terminal atom $-1$. The overall molecule is neutral.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_bonding",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q059",
+    "question": "On ionisation of N2 to N2+ and O2 to O2+, which changes in bond order and magnetism are correct?",
+    "options": [
+      "In N2 -> N2+, bond order decreases from 3.0 to 2.5 and it becomes paramagnetic; in O2 -> O2+, bond order increases from 2.0 to 2.5 and it remains paramagnetic",
+      "In both N2 -> N2+ and O2 -> O2+, bond order increases by 0.5 and both become diamagnetic",
+      "In N2 -> N2+, bond order remains 3.0; in O2 -> O2+, bond order decreases to 1.0",
+      "In N2 -> N2+, bond order increases from 3.0 to 3.5; in O2 -> O2+, bond order decreases from 2.0 to 1.5"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In N2 (14 e-, bond order 3.0, diamagnetic), ionisation removes an electron from the bonding sigma(2pz) orbital to form N2+ (13 e-, bond order 2.5, paramagnetic with 1 unpaired e-). In O2 (16 e-, bond order 2.0, paramagnetic), ionisation removes an electron from the antibonding pi*(2p) orbital to form O2+ (15 e-, bond order 2.5, paramagnetic with 1 unpaired e-).",
+    "difficulty": "hard",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_bonding",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q060",
+    "question": "Assertion (A): In gaseous PCl5, the axial P–Cl bonds are longer and weaker than the equatorial P–Cl bonds.\nReason (R): Each axial bond pair experiences three 90° bond-pair interactions, whereas each equatorial bond pair experiences two.",
+    "options": [
+      "Both (A) and (R) are true, and (R) is the correct explanation of (A)",
+      "Both (A) and (R) are true, but (R) is NOT the correct explanation of (A)",
+      "(A) is true, but (R) is false",
+      "(A) is false, but (R) is true"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In the trigonal-bipyramidal VSEPR model of gaseous PCl5, an axial bond pair has three 90° interactions and an equatorial bond pair has two. Greater repulsion is associated with longer, weaker axial bonds. Both statements are true, and the reason explains the assertion.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_bonding",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q061",
+    "question": "A weak monoprotic acid has concentration $0.10\\,\\mathrm M$ and $K_a=1.0\\times10^{-5}$ at $298\\,\\mathrm K$. Using the weak-ionisation approximation, find its degree of ionisation and pH.",
+    "options": [
+      "$\\alpha\\approx0.01$; pH $\\approx3.0$",
+      "$\\alpha\\approx0.001$; pH $\\approx4.0$",
+      "$\\alpha\\approx0.10$; pH $\\approx2.0$",
+      "$\\alpha\\approx0.01$; pH $\\approx5.0$"
+    ],
+    "correctAnswer": 0,
+    "explanation": "$\\alpha\\approx\\sqrt{K_a/C}=0.01$. Thus $[\\mathrm H^+]\\approx C\\alpha=10^{-3}\\,\\mathrm M$ and $\\mathrm{pH}\\approx3.0$. These are approximate values, not the exact quadratic solution.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_ionic_equilibrium",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q062",
+    "question": "Which group consists only of Lewis acids (electron-pair acceptors)?",
+    "options": [
+      "NH4+, CH4, CCl4, and N2",
+      "NH3, H2O, OH-, and F-",
+      "BF3, AlCl3, Ag+, and Mg2+",
+      "PH3, R-O-R, CN-, and CO"
+    ],
+    "correctAnswer": 2,
+    "explanation": "a Lewis acid is an electron-deficient species capable of accepting a lone pair of electrons. Electron-deficient neutral molecules with incomplete octets (BF3, AlCl3) and simple cations (Ag+, Mg2+, Cu2+) act as Lewis acids, whereas species with lone pairs (NH3, H2O, OH-, F-) act as Lewis bases.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_ionic_equilibrium",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q063",
+    "question": "Estimate the pH of $0.10\\,\\mathrm M$ ammonium cyanide at $298\\,\\mathrm K$ using the usual weak-acid/weak-base salt approximation. Given: $pK_a(\\mathrm{HCN})=9.30$, $pK_b(\\mathrm{NH_3})=4.74$, $pK_w=14.00$.",
+    "options": [
+      "7.02",
+      "9.28",
+      "7.00",
+      "4.72"
+    ],
+    "correctAnswer": 1,
+    "explanation": "$\\mathrm{pH}\\approx\\tfrac12(pK_w+pK_a-pK_b)=7+\\tfrac12(9.30-4.74)=9.28$. This is the conventional approximation; it is not an exact concentration-independent law under all conditions.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_ionic_equilibrium",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q064",
+    "question": "Equal volumes of $2.0\\times10^{-4}\\,\\mathrm M$ BaCl2 and $2.0\\times10^{-4}\\,\\mathrm M$ Na2SO4 are mixed. What is the initial ionic product for BaSO4, and does precipitation occur? Given: $K_{sp}=1.1\\times10^{-10}$.",
+    "options": [
+      "$1.0\\times10^{-8}$; yes",
+      "$4.0\\times10^{-8}$; no",
+      "$1.1\\times10^{-10}$; just saturated",
+      "$1.0\\times10^{-12}$; no"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Mixing equal volumes halves each ion concentration to $10^{-4}\\,\\mathrm M$. Therefore $Q_{sp}=[\\mathrm{Ba}^{2+}][\\mathrm{SO_4}^{2-}]=10^{-8}$. Since $Q_{sp}>K_{sp}$, precipitation occurs. Activities are approximated by concentrations.",
+    "difficulty": "hard",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_ionic_equilibrium",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q065",
+    "question": "For the ideal-gas equilibrium PCl5(g) ⇌ PCl3(g) + Cl2(g), an inert gas is added at constant temperature. What happens (i) at constant volume and (ii) at constant total pressure?",
+    "options": [
+      "(i) Shifts backward; (ii) No change in equilibrium position",
+      "(i) Shifts forward; (ii) Shifts backward",
+      "(i) No change in equilibrium position; (ii) Shifts in the reverse direction toward PCl5",
+      "(i) No change in equilibrium position; (ii) Shifts in the forward direction toward products"
+    ],
+    "correctAnswer": 3,
+    "explanation": "At constant volume and temperature, adding an inert gas leaves reacting-gas partial pressures unchanged, so the equilibrium does not shift. At constant total pressure, volume increases and the equilibrium shifts toward the side with more gas molecules: the products.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_ionic_equilibrium",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q066",
+    "question": "Why is ethyne more acidic than ethene and ethane, allowing it to react with NaNH2?",
+    "options": [
+      "Its carbon atoms are sp3-hybridised",
+      "Its hydrogen atoms have no covalent bonds",
+      "Its sp-hybridised carbon stabilises the acetylide conjugate base more effectively",
+      "It forms an aromatic ring on deprotonation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An sp carbon has 50% s-character and stabilises a negative charge better than sp2 or sp3 carbon. With sodamide, proton transfer produces ammonia: HC≡CH + NaNH2 → HC≡CNa + NH3. Reaction with sodium metal instead liberates H2.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "hydrocarbons",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q067",
+    "question": "Which compound lacks an α-hydrogen and therefore does not undergo ordinary keto–enol tautomerism?",
+    "options": [
+      "Cyclohexanone",
+      "Acetylacetone (Pentane-2,4-dione)",
+      "Propanone (CH3COCH3)",
+      "Benzophenone (C6H5COC6H5)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Benzophenone has no hydrogen on an α-carbon next to its carbonyl group, so it cannot undergo ordinary keto–enol tautomerism. Propanone, cyclohexanone and acetylacetone have α-hydrogens.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "hydrocarbons",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q068",
+    "question": "Why is staggered ethane more stable than eclipsed ethane?",
+    "options": [
+      "It is converted into ethene at room temperature",
+      "Its central C–C bond is broken",
+      "Its adjacent C–H bonds have less torsional strain",
+      "Its methyl groups form strong hydrogen bonds"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the staggered conformation, adjacent C–H bonds are separated by a 60° dihedral angle. The torsional strain is lower than in the eclipsed conformation. The energy barrier to rotation is about 12 kJ mol^-1.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "hydrocarbons",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q069",
+    "question": "On heating 2-bromobutane with alcoholic KOH, which alkene is the major elimination product?",
+    "options": [
+      "But-2-ene",
+      "Propene",
+      "2-Methylpropene",
+      "But-1-ene"
+    ],
+    "correctAnswer": 0,
+    "explanation": "By Zaitsev’s rule, the more substituted alkene is generally favoured under these conditions. But-2-ene is more substituted than but-1-ene. A precise percentage is not universal and depends on reaction conditions.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "hydrocarbons",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q070",
+    "question": "But-2-yne is partially reduced separately using (i) H2 with Lindlar catalyst and (ii) sodium in liquid ammonia. Which products result?",
+    "options": [
+      "(i) But-1-ene; (ii) butane",
+      "(i) Butane; (ii) but-1-ene",
+      "(i) trans-But-2-ene; (ii) cis-but-2-ene",
+      "(i) cis-But-2-ene; (ii) trans-but-2-ene"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Lindlar-catalysed hydrogenation gives syn addition and the cis alkene. Dissolving-metal reduction with sodium in liquid ammonia gives the trans alkene. Lindlar catalyst is poisoned palladium, conventionally on calcium carbonate; BaSO4 is associated with the Rosenmund catalyst.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "hydrocarbons",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q071",
+    "question": "In Friedel–Crafts monoalkylation of benzene with 1-chloropropane and anhydrous AlCl3, which product is favoured by rearrangement?",
+    "options": [
+      "n-Propylbenzene",
+      "Isopropylbenzene (Cumene)",
+      "1,3,5-Trimethylbenzene (Mesitylene)",
+      "Chlorobenzene"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Rearrangement of the propyl electrophile to the more stable secondary arrangement favours isopropylbenzene (cumene). The question concerns the major monoalkylated product; real Friedel–Crafts reactions may also give further alkylation.",
+    "difficulty": "hard",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "hydrocarbons",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q072",
+    "question": "Which reagent can convert suitable nitriles and esters into aldehydes under controlled low-temperature conditions followed by aqueous work-up?",
+    "options": [
+      "Sodium borohydride (NaBH4) in ethanol",
+      "Diisobutylaluminium hydride (DIBAL-H)",
+      "Acidified potassium dichromate (K2Cr2O7 / H2SO4)",
+      "Anhydrous zinc chloride and concentrated HCl (Lucas reagent)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DIBAL-H can partially reduce suitable nitriles and esters to aldehydes with controlled reagent quantity and temperature, commonly about −78 °C for ester reductions, followed by hydrolysis. Excess reagent or inappropriate conditions can lead to further reduction.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "alcohols_aldehydes_ketones_acids",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q073",
+    "question": "Which option correctly distinguishes the Etard and Gattermann–Koch reactions for preparing benzaldehyde?",
+    "options": [
+      "Both reactions use alkaline KMnO4 to oxidise ethylbenzene directly to benzaldehyde",
+      "Etard reaction reduces benzonitrile with SnCl2/HCl; Gattermann-Koch reaction oxidises benzyl alcohol with PCC",
+      "Etard reaction oxidises toluene using chromyl chloride (CrO2Cl2) in CS2 followed by H3O+; Gattermann-Koch reaction formylates benzene using CO and HCl in the presence of anhydrous AlCl3 / CuCl",
+      "Etard reaction uses CO and HCl on benzene; Gattermann-Koch reaction uses CrO2Cl2 on toluene"
+    ],
+    "correctAnswer": 2,
+    "explanation": "in the Etard reaction, chromyl chloride (CrO2Cl2) in CS2 oxidises the methyl group of toluene to a brown chromium complex, which on hydrolysis gives benzaldehyde. In the Gattermann-Koch reaction, benzene (or its derivative) is treated with carbon monoxide (CO) and hydrogen chloride (HCl) in the presence of anhydrous aluminium chloride and cuprous chloride (AlCl3/CuCl) to give benzaldehyde.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "alcohols_aldehydes_ketones_acids",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q074",
+    "question": "In semicarbazide, H2N–NH–CO–NH2, why does the terminal hydrazino –NH2 preferentially form a semicarbazone with a carbonyl compound?",
+    "options": [
+      "The carbonyl group has no π bond",
+      "Resonance makes the carbonyl-attached amino group much less nucleophilic",
+      "The terminal amino group is permanently protonated",
+      "Both amino groups must react simultaneously"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lone pair on the –NH2 group directly attached to the carbonyl is delocalised into that carbonyl, making it much less nucleophilic. The terminal hydrazino –NH2 has a more available lone pair and reacts to form the semicarbazone.",
+    "difficulty": "hard",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "alcohols_aldehydes_ketones_acids",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q075",
+    "question": "Which test distinguishes benzoic acid from phenol by gas evolution?",
+    "options": [
+      "Lucas test, where phenol forms an immediate turbidity while benzoic acid does not",
+      "Aqueous sodium hydrogencarbonate (NaHCO3) test, where benzoic acid produces brisk effervescence of CO2 gas while phenol does NOT react",
+      "Reaction with metallic sodium (Na), where only phenol liberates H2 gas",
+      "Iodoform test (I2 / NaOH), where benzoic acid forms a yellow precipitate of CHI3"
+    ],
+    "correctAnswer": 1,
+    "explanation": "carboxylic acids like benzoic acid (pKa ~ 4.2) are stronger acids than carbonic acid (H2CO3, pKa ~ 6.4) and therefore react with weak bases like aqueous sodium bicarbonate (NaHCO3) to liberate brisk effervescence of CO2. Phenols (pKa ~ 10.0) are weaker acids than carbonic acid and do not react with NaHCO3.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "alcohols_aldehydes_ketones_acids",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q076",
+    "question": "What hydrocarbon forms when sodium propanoate is heated with soda lime?",
+    "options": [
+      "Propane",
+      "Methane",
+      "Ethane",
+      "Butane"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Soda-lime decarboxylation gives an alkane with one carbon fewer than the carboxylate. CH3CH2COONa + NaOH → C2H6 + Na2CO3, on heating with CaO. Carbon dioxide is retained as carbonate rather than necessarily released as a gas.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "alcohols_aldehydes_ketones_acids",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q077",
+    "question": "In the crossed Cannizzaro reaction of methanal and benzaldehyde with concentrated aqueous NaOH, which major products form?",
+    "options": [
+      "Cinnamaldehyde and water",
+      "Benzoin and hydrogen",
+      "Benzyl alcohol and sodium formate",
+      "Methanol and sodium benzoate"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In a Crossed Cannizzaro reaction between HCHO and an aromatic aldehyde (C6H5CHO), formaldehyde (HCHO) has a much more electrophilic and sterically unhindered carbonyl carbon. Therefore, OH- attacks HCHO preferentially to form the hydride-donor intermediate, which transfers a hydride ion (H-) to benzaldehyde. As a result, HCHO is oxidised to sodium formate (HCOONa) and benzaldehyde is reduced to benzyl alcohol (C6H5CH2OH).",
+    "difficulty": "hard",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "alcohols_aldehydes_ketones_acids",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q078",
+    "question": "Which reagent does not normally reduce a carboxylic acid to a primary alcohol under standard textbook conditions?",
+    "options": [
+      "Borane in THF followed by work-up",
+      "LiAlH4 followed by aqueous work-up",
+      "NaBH4 in methanol",
+      "Diborane followed by work-up"
+    ],
+    "correctAnswer": 2,
+    "explanation": "LiAlH4 and borane/diborane reduce carboxylic acids to primary alcohols. NaBH4 in methanol is too mild for this transformation under standard conditions.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "alcohols_aldehydes_ketones_acids",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q079",
+    "question": "Which products are obtained by oxidation of glucose with (i) bromine water and (ii) nitric acid?",
+    "options": [
+      "(i) Sorbitol; (ii) fructose",
+      "(i) Hexanoic acid; (ii) tartaric acid",
+      "(i) Saccharic acid; (ii) gluconic acid",
+      "(i) Gluconic acid; (ii) saccharic acid"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Bromine water oxidises the aldehyde group of glucose to give gluconic acid. Nitric acid oxidises both terminal groups to give saccharic (glucaric) acid. The second reaction supports the presence of the terminal primary alcohol group.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "biomolecules",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q080",
+    "question": "Why is hydrolysis of sucrose called inversion of sugar?",
+    "options": [
+      "The initially dextrorotatory solution becomes laevorotatory",
+      "The solution changes from laevorotatory to dextrorotatory",
+      "D-glucose is converted into L-glucose",
+      "The products are optically inactive"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Hydrolysis gives equimolar glucose and fructose. The magnitude of fructose’s negative rotation exceeds glucose’s positive rotation, so the mixture is laevorotatory. Specific rotations must be combined with appropriate concentrations; simply adding +52.5° and −92.4° does not give the mixture’s specific rotation.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "biomolecules",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q081",
+    "question": "Which glycosidic-linkage description is correct for maltose and lactose?",
+    "options": [
+      "Both contain only fructose units linked by β(1→2) bonds",
+      "Maltose: glucose–fructose, α(1→2); lactose: galactose–galactose, β(1→6)",
+      "Maltose: glucose–glucose, β(1→4); lactose: glucose–mannose, α(1→1)",
+      "Maltose: glucose–glucose, α(1→4); lactose: galactose–glucose, β(1→4)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Maltose has an α(1→4) linkage from one glucose residue to another. Lactose has a β(1→4) linkage from galactose to glucose. The reducing-end anomeric carbon is free to mutarotate, so it need not be fixed as one anomer.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "biomolecules",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q082",
+    "question": "Which pairing correctly identifies a fibrous protein, a globular protein and the principal stabilising interaction in an α-helix?",
+    "options": [
+      "Insulin; keratin; ionic bonds",
+      "Albumin; myosin; glycosidic bonds",
+      "Keratin; albumin; backbone hydrogen bonds",
+      "Haemoglobin; collagen; phosphodiester bonds"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Keratin is a fibrous protein and albumin is a globular protein. In an α-helix, hydrogen bonds form between backbone carbonyl and N–H groups within the polypeptide.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "biomolecules",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q083",
+    "question": "In a typical nucleoside 5′-monophosphate, where are the base and phosphate attached to the pentose, and what linkage joins successive residues in DNA or RNA?",
+    "options": [
+      "Base at 2′; phosphate at 3′; peptide linkage",
+      "Base at 1′; phosphate at 5′; 3′–5′ phosphodiester linkage",
+      "Base at 5′; phosphate at 1′; glycosidic chain linkage",
+      "Base at 1′; phosphate at 2′; disulphide linkage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The base is attached at the sugar’s 1′ carbon. A 5′-monophosphate has phosphate at 5′. In a nucleic acid chain, phosphate bridges the 3′ and 5′ sugar positions. Other nucleotide phosphate isomers exist, so the 5′-monophosphate context matters.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "biomolecules",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q084",
+    "question": "Which pairing is correct: a water-soluble vitamin with substantial liver stores, and a vitamin needed for normal blood clotting?",
+    "options": [
+      "Vitamin B6; vitamin D",
+      "Vitamin B1; vitamin E",
+      "Vitamin B2; vitamin A",
+      "Vitamin B12; vitamin K"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Vitamin B12 is water-soluble yet has substantial body stores, principally in the liver. Vitamin K is required for activation of several coagulation proteins.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "biomolecules",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q085",
+    "question": "For a first-order reaction, approximately how many half-lives are required for $99.9\\%$ completion? Given: $\\log_{10}2\\approx0.30$.",
+    "options": [
+      "6.67",
+      "2",
+      "10",
+      "3.33"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The remaining fraction is $0.001=10^{-3}$. Therefore $t/t_{1/2}=\\log_{10}(1000)/\\log_{10}2\\approx3/0.30=10$. Using a more precise logarithm gives about 9.97 half-lives.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_kinetics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q086",
+    "question": "Rate constants have units (X) $\\mathrm{mol\\,L^{-1}\\,s^{-1}}$ and (Y) $\\mathrm{L\\,mol^{-1}\\,s^{-1}}$. What are the overall orders of X and Y?",
+    "options": [
+      "Second; zero",
+      "Zero; first",
+      "Zero; second",
+      "First; second"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For order $n$, rate-constant units are $(\\mathrm{mol\\,L^{-1}})^{1-n}\\mathrm{s^{-1}}$. The stated units correspond to zero order for X and second order for Y.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_kinetics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q087",
+    "question": "The slope of a graph of $\\log_{10}k$ against $1/T$ is $-2000\\,\\mathrm K$. Find the activation energy. Given: $2.303R=19.15\\,\\mathrm{J\\,K^{-1}\\,mol^{-1}}$.",
+    "options": [
+      "$9.58\\,\\mathrm{kJ\\,mol^{-1}}$",
+      "$38.3\\,\\mathrm{kJ\\,mol^{-1}}$",
+      "$16.6\\,\\mathrm{kJ\\,mol^{-1}}$",
+      "$76.6\\,\\mathrm{kJ\\,mol^{-1}}$"
+    ],
+    "correctAnswer": 1,
+    "explanation": "From $\\log_{10}k=\\log_{10}A-E_a/(2.303RT)$, the slope is $-E_a/(2.303R)$. Thus $E_a=2000(19.15)=38300\\,\\mathrm{J\\,mol^{-1}}=38.3\\,\\mathrm{kJ\\,mol^{-1}}$.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "chemical_kinetics",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q088",
+    "question": "Use Kohlrausch’s law to find $\\Lambda_m^\\circ$ for CH3COOH. Given: values for HCl, NaCl and CH3COONa are $426$, $126$ and $91\\,\\mathrm{S\\,cm^2\\,mol^{-1}}$, respectively.",
+    "options": [
+      "$391\\,\\mathrm{S\\,cm^2\\,mol^{-1}}$",
+      "$209\\,\\mathrm{S\\,cm^2\\,mol^{-1}}$",
+      "$643\\,\\mathrm{S\\,cm^2\\,mol^{-1}}$",
+      "$300\\,\\mathrm{S\\,cm^2\\,mol^{-1}}$"
+    ],
+    "correctAnswer": 0,
+    "explanation": "$\\Lambda_m^\\circ(\\mathrm{CH_3COOH})=\\Lambda_m^\\circ(\\mathrm{HCl})+\\Lambda_m^\\circ(\\mathrm{CH_3COONa})-\\Lambda_m^\\circ(\\mathrm{NaCl})=426+91-126=391\\,\\mathrm{S\\,cm^2\\,mol^{-1}}$.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "electrochemistry",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q089",
+    "question": "A current of $2.0\\,\\mathrm A$ passes through aqueous CuSO4 for $965\\,\\mathrm s$. Assuming $100\\%$ current efficiency for copper deposition, find the mass deposited. Given: $M(\\mathrm{Cu})=63.5\\,\\mathrm{g\\,mol^{-1}}$, $F=96500\\,\\mathrm{C\\,mol^{-1}}$.",
+    "options": [
+      "1.270 g",
+      "0.3175 g",
+      "0.635 g",
+      "2.540 g"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For $\\mathrm{Cu}^{2+}+2e^-\\to\\mathrm{Cu}$, two moles of electrons deposit one mole of copper. Thus $m=MIt/(2F)=63.5(2)(965)/(2\\times96500)=0.635\\,\\mathrm g$.",
+    "difficulty": "medium",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "electrochemistry",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q090",
+    "question": "Find $\\Delta_rG^\\circ$ for Zn(s) + Cu^2+(aq) → Zn^2+(aq) + Cu(s). Given: $E_{\\mathrm{cell}}^\\circ=1.10\\,\\mathrm V$, $F=96500\\,\\mathrm{C\\,mol^{-1}}$.",
+    "options": [
+      "$-106.15\\,\\mathrm{kJ\\,mol^{-1}}$",
+      "$+212.30\\,\\mathrm{kJ\\,mol^{-1}}$",
+      "$-424.60\\,\\mathrm{kJ\\,mol^{-1}}$",
+      "$-212.30\\,\\mathrm{kJ\\,mol^{-1}}$"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Two electrons are transferred per reaction as written. Hence $\\Delta_rG^\\circ=-nFE^\\circ=-2(96500)(1.10)=-212300\\,\\mathrm{J\\,mol^{-1}}=-212.30\\,\\mathrm{kJ\\,mol^{-1}}$.",
+    "difficulty": "easy",
+    "subject": "chemistry",
+    "subjectName": "Chemistry",
+    "topicKey": "electrochemistry",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q091",
+    "question": "At its launch in 2023, the National Sickle Cell Anaemia Elimination Mission set which target year and screening age group?",
+    "options": [
+      "2047; ages 0–40 years",
+      "2028; newborns only",
+      "2030; ages 18–60 years",
+      "2035; ages 60 years and above"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The mission’s stated goal is elimination of sickle cell anaemia as a public-health problem by 2047. Its initial screening plan covered approximately seven crore people aged 0–40 years in affected tribal areas.",
+    "difficulty": "easy",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "health_organizations_schemes",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q092",
+    "question": "Which HPV types are covered by the indigenous quadrivalent vaccine CERVAVAC?",
+    "options": [
+      "12, 14, 20 and 22",
+      "1, 2, 3 and 4",
+      "6, 11, 16 and 18",
+      "5, 8, 15 and 31"
+    ],
+    "correctAnswer": 2,
+    "explanation": "CERVAVAC contains HPV types 6, 11, 16 and 18. Types 16 and 18 are high-risk oncogenic types; types 6 and 11 are associated mainly with anogenital warts. Vaccination is preventive and is not treatment for an existing cancer.",
+    "difficulty": "easy",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "health_organizations_schemes",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q093",
+    "question": "How many digits are in an Ayushman Bharat Health Account (ABHA) number?",
+    "options": [
+      "12",
+      "14",
+      "16",
+      "10"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An ABHA number is a 14-digit identifier in the Ayushman Bharat Digital Mission ecosystem. It facilitates consent-based linking and sharing of health records. It is distinct from an ABHA address.",
+    "difficulty": "easy",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "health_organizations_schemes",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q094",
+    "question": "In which Indian city is the WHO Global Traditional Medicine Centre located?",
+    "options": [
+      "Jamnagar",
+      "Bhopal",
+      "Rishikesh",
+      "Varanasi"
+    ],
+    "correctAnswer": 0,
+    "explanation": "WHO established the Global Traditional Medicine Centre in 2022 with support from the Government of India. It is outposted to Jamnagar, Gujarat.",
+    "difficulty": "easy",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "health_organizations_schemes",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q095",
+    "question": "Which pairing correctly describes the two established eSanjeevani service models?",
+    "options": [
+      "AB-HWC: drone pharmacy; OPD: robotic surgery",
+      "AB-HWC: hospital billing; OPD: ambulance dispatch",
+      "AB-HWC: blood donation; OPD: organ allocation",
+      "AB-HWC: provider-to-provider assisted consultation; OPD: patient-to-doctor consultation"
+    ],
+    "correctAnswer": 3,
+    "explanation": "eSanjeevani AB-HWC supports assisted provider-to-provider consultations using a hub-and-spoke model. eSanjeevani OPD connects patients directly with doctors remotely.",
+    "difficulty": "medium",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "health_organizations_schemes",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q096",
+    "question": "PMSMA ordinarily schedules its fixed-day free antenatal-care services on which day of each month?",
+    "options": [
+      "24th",
+      "9th",
+      "1st",
+      "15th"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Pradhan Mantri Surakshit Matritva Abhiyan provides fixed-day antenatal services on the ninth of each month, particularly for women in the second and third trimesters. Local arrangements may move a clinic to the next working day when the ninth is a holiday.",
+    "difficulty": "easy",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "health_organizations_schemes",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q097",
+    "question": "The 2023 Intensified Mission Indradhanush 5.0 campaign placed special emphasis on improving coverage against which disease pair?",
+    "options": [
+      "Measles and rubella",
+      "Rabies and mpox",
+      "Malaria and kala-azar",
+      "Yellow fever and dengue"
+    ],
+    "correctAnswer": 0,
+    "explanation": "IMI 5.0 was a catch-up immunisation campaign covering missed or due vaccine doses in eligible children and pregnant women. It placed special emphasis on measles–rubella coverage; it was not exclusively a two-vaccine campaign.",
+    "difficulty": "medium",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "health_organizations_schemes",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q098",
+    "question": "How does the Ni-kshay Mitra initiative complement Nikshay Poshan Yojana?",
+    "options": [
+      "It makes all TB patients subject to compulsory institutional quarantine",
+      "It provides only surgical treatment for TB",
+      "It replaces TB treatment with traditional remedies",
+      "It mobilises community nutritional and other support alongside government direct benefit transfers"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Ni-kshay Mitras provide community support such as nutrition and other agreed assistance, complementing the government’s direct benefit transfer under Nikshay Poshan Yojana. Current guidance also includes nutritional support for eligible household contacts. The two initiatives are complementary, not substitutes for anti-TB treatment.",
+    "difficulty": "medium",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "health_organizations_schemes",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q099",
+    "question": "Which city hosts the National Institute of One Health, an anchor institution for India’s National One Health Mission?",
+    "options": [
+      "Hyderabad",
+      "Nagpur",
+      "Shimla",
+      "Pune"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The National Institute of One Health is in Nagpur, Maharashtra. It anchors coordination across sectors for the National One Health Mission.",
+    "difficulty": "medium",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "health_organizations_schemes",
+    "diagram": false
+  },
+  {
+    "id": "test100_2_q100",
+    "question": "Which 2023 Act provides for a national commission and autonomous boards for nursing and midwifery regulation?",
+    "options": [
+      "National Medical Commission Act, 2019",
+      "National Commission for Allied and Healthcare Professions Act, 2021",
+      "Clinical Establishments Act, 2010",
+      "National Nursing and Midwifery Commission Act, 2023"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The National Nursing and Midwifery Commission Act, 2023 provides the statutory framework for a national commission and autonomous boards for nursing and midwifery regulation.",
+    "difficulty": "easy",
+    "subject": "gk",
+    "subjectName": "General Knowledge",
+    "topicKey": "health_organizations_schemes",
+    "diagram": false
+  }
+],
+
   test_100_questions: [
   {
     id: 'test100_q001',
